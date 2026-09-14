@@ -1,5 +1,5 @@
-# Shared helpers for pages that render content exported from the cv repo
-# (see R/export_site.R there). Base R + jsonlite only.
+# Shared helpers for pages that render the generated data in _data/.
+# Base R + jsonlite only.
 
 site_root <- function() {
   root <- Sys.getenv("QUARTO_PROJECT_DIR")

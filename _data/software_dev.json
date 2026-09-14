@@ -2,7 +2,7 @@
   {
     "name": "Nebraska Suicide Mortality Review Reporting Application",
     "when": "2026–present",
-    "role": "Lead developer, R",
+    "role": "Lead developer, R / Shiny",
     "description": "Application supporting Nebraska's veteran suicide mortality review process: integrates and reconciles successive Nebraska Violent Death Reporting System (NVDRS) exports, detects and tracks record-level changes between exports, supports structured case annotation, and generates both individual case reports and the annual report to the Legislature. Internal; not publicly released."
   },
   {
