@@ -8,12 +8,16 @@
     "tools": "tidysynthesis; syntheval (R packages, Urban Institute)"
   },
   {
-    "category": "Data Collection & Signal Processing",
-    "tools": "LabVIEW (data collection, signal processing, and analysis); Biopac (EMG/MMG data collection)"
+    "category": "Data Collection",
+    "tools": "Qualtrics; REDCap; LabVIEW (data collection, signal processing, and analysis); Biopac (EMG/MMG data collection)"
   },
   {
-    "category": "Survey & Data Management",
-    "tools": "Qualtrics; REDCap"
+    "category": "Data Management & Databases",
+    "tools": "dbplyr (R); SQL; Microsoft Access"
+  },
+  {
+    "category": "Visualization & Interactive Applications",
+    "tools": "ggplot2 (R); gt (R); Shiny (R); Veusz"
   },
   {
     "category": "Reproducible Reporting & Publishing",
@@ -24,23 +28,19 @@
     "tools": "targets (R package for reproducible pipelines); renv; Zotero; Obsidian; Open Science Framework (OSF)"
   },
   {
+    "category": "Programming & Version Control",
+    "tools": "Git (GitHub, GitLab); Python (basic & LLM-assisted); Unix / Bash"
+  },
+  {
     "category": "Development Environments & Editors",
     "tools": "Positron; RStudio; Visual Studio Code; Notepad++"
   },
   {
     "category": "LLM-Assisted Development",
-    "tools": "Claude Code; Gemini / Gemini CLI; Antigravity; GitHub Copilot"
-  },
-  {
-    "category": "Programming & Version Control",
-    "tools": "Git (GitHub, GitLab); Python; Unix / Bash"
-  },
-  {
-    "category": "Visualization",
-    "tools": "ggplot2 (R); Shiny (R); gt (R); LabVIEW; Veusz"
+    "tools": "Claude Code; Gemini / Gemini CLI; GitHub Copilot; Antigravity IDE; Cursor"
   },
   {
     "category": "Productivity & Collaboration",
-    "tools": "Microsoft Office Suite (Excel, PowerPoint, Word, Access, Teams, SharePoint); Adobe Acrobat Pro DC; Adobe Illustrator"
+    "tools": "Microsoft Office Suite (Excel, PowerPoint, Word, Teams, SharePoint); Adobe Acrobat Pro DC; Adobe Illustrator"
   }
 ]
