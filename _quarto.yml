@@ -58,7 +58,7 @@ website:
         aria-label: Email
   page-footer:
     left: "&copy; Amelia Miramonti"
-    right: "Written in [R](https://www.r-project.org), stitched together with [Quarto](https://quarto.org)."
+    right: "Written in [R](https://www.r-project.org), stitched together with [Quarto](https://quarto.org), with assistance from [Claude](https://claude.ai) and [GitHub Copilot](https://github.com/features/copilot)."
 
 format:
   html:
