@@ -1,0 +1,23 @@
+[
+  {
+    "skill": "Heart rate (Polar monitors), blood pressure, anthropometrics"
+  },
+  {
+    "skill": "Resting metabolic rate and maximal oxygen uptake (ParvoMedics TrueOne 2400, Sensormedics Vmax Encore); Wingate and 3-minute critical power testing (Lode Corrival cycle ergometer)"
+  },
+  {
+    "skill": "Isometric, isokinetic, and isotonic strength testing (Biodex System)"
+  },
+  {
+    "skill": "Electromyographic and mechanomyographic data collection and processing (Noraxon Desktop DTS, Biopac)"
+  },
+  {
+    "skill": "Sport performance testing: sprints, agility, jumps, and force plate assessments using custom LabVIEW data collection interfaces"
+  },
+  {
+    "skill": "Physical activity monitoring (Actigraph wGT3X-BT)"
+  },
+  {
+    "skill": "Finger prick blood sample collection, basic sample processing"
+  }
+]

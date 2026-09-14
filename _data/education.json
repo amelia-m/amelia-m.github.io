@@ -1,0 +1,30 @@
+[
+  {
+    "degree": "PhD, Interdisciplinary",
+    "institution": "University of Nebraska–Lincoln",
+    "location": "Lincoln, NE",
+    "dates": "2015–2025",
+    "details": ["Majors: Quantitative, Qualitative, & Psychometric Methods (Educational Psychology)", "Human Sciences: Exercise Physiology & Nutrition (Nutrition & Health Sciences)", "Dissertation: Youth Sport Participation and Cognitive Development: The Need for Improved Measurement", "Conferred May 17, 2025"]
+  },
+  {
+    "degree": "MA, Quantitative, Qualitative, and Psychometric Methods",
+    "institution": "University of Nebraska–Lincoln",
+    "location": "Lincoln, NE",
+    "dates": "2018",
+    "details": ["Educational Psychology", "Thesis: Evaluation of the Feasibility of a Two-Method Measurement Design for the Assessment of Healthy Physical Activity Behavior in Youth"]
+  },
+  {
+    "degree": "MSc, Sport & Exercise Science",
+    "institution": "University of Central Florida",
+    "location": "Orlando, FL",
+    "dates": "2013–2015",
+    "details": ["Applied Exercise Physiology Track", "Thesis: The Effects of Four Weeks of High-Intensity Interval Training and β-Hydroxy-β-Methylbutyric Free Acid Supplementation on the Onset of Neuromuscular Fatigue"]
+  },
+  {
+    "degree": "BSc, Sport and Exercise Science",
+    "institution": "University of Central Florida",
+    "location": "Orlando, FL",
+    "dates": "2007–2013",
+    "details": "Human Performance Specialization"
+  }
+]

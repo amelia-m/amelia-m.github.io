@@ -1,0 +1,29 @@
+---
+title: "Teaching"
+---
+
+## Courses (instructor of record)
+
+**EDPS 900D: Survey Methods in Educational Research**
+Department of Educational Psychology, University of Nebraska–Lincoln · Fall 2026
+
+**EDPS 845: Computer-Assisted Research Data Analysis**
+Department of Educational Psychology, University of Nebraska–Lincoln · Spring 2026
+
+## Workshops & training series
+
+**Data Management Brown Bagger Series**
+University of Nebraska Public Policy Center · 2026
+Session 1: *Data documentation for Teams* (June 2026)
+
+**Non-credit graduate methods sessions**
+Informal methods training for graduate students; precursor to EDPS 845 · Fall 2025
+
+## Guest lectures
+
+**Interaction Contrasts in ANOVA**
+EDPS 941: Intermediate Statistics: Experimental Methods · March 26, 2026
+
+## Earlier teaching
+
+Graduate teaching assistant for statistical methods (EDPS 459) at UNL, for human nutrition and exercise physiology courses at UNL, and for personal fitness and sport and exercise science courses at the University of Central Florida. Details are in the [CV](cv/index.qmd#academic-professional-experience).

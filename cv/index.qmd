@@ -1,0 +1,128 @@
+---
+title: "Curriculum Vitae"
+toc: true
+toc-depth: 2
+toc-location: right
+---
+
+```{r}
+#| include: false
+source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", ".."), "R", "site.R"))
+entry <- function(what, when = NULL, with = NULL, why = NULL) {
+  cat("**", md(what), "**", if (!is.null(when) && nzchar(when)) paste0(" <span class='cv-when'>", md(when), "</span>"), "  \n", sep = "")
+  if (!is.null(with) && nzchar(with)) cat(with, "\n", sep = "")
+  if (length(why) && any(nzchar(why))) cat("\n", paste0("- ", md(why[nzchar(why)]), collapse = "\n"), "\n", sep = "")
+  cat("\n")
+}
+```
+
+[<i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Download PDF](../files/Miramonti_CV.pdf){.btn .btn-primary}
+
+Publications and presentations have their own pages: [Publications](../publications.qmd) · [Talks & presentations](../talks.qmd).
+
+## Education
+
+```{r}
+#| results: asis
+d <- cv_data("education")
+for (i in seq_len(nrow(d))) entry(d$degree[i], d$dates[i], md(paste(d$institution[i], d$location[i], sep = ", ")), unlist(d$details[[i]]))
+```
+
+## Academic professional experience
+
+```{r}
+#| results: asis
+d <- cv_data("positions")
+for (i in seq_len(nrow(d))) entry(d$title[i], d$dates[i], md(paste(d$unit[i], d$institution[i], sep = ", ")), if ("description" %in% names(d)) d$description[i] else NULL)
+```
+
+## Software
+
+```{r}
+#| results: asis
+d <- cv_data("software_dev")
+for (i in seq_len(nrow(d))) entry(d$name[i], d$when[i], md(d$role[i]), d$description[i])
+```
+
+## Manuscripts in progress
+
+```{r}
+#| results: asis
+d <- cv_data("manuscripts")
+ord <- order(match(d$status, c("Under review", "Revise & Resubmit", "Accepted", "In progress")))
+for (i in ord) cat("- ", md(d$authors[i]), ". ", md(d$title[i]), ". *", md(d$status[i]), "*\n", sep = "")
+```
+
+## Technical & evaluation reports
+
+```{r}
+#| results: asis
+d <- cv_data("reports")
+for (i in seq_len(nrow(d))) cat("- ", md(d$authors[i]), " (", md(d$date[i]), "). ", md(d$title[i]), " ", md(d$outlet[i]), "\n", sep = "")
+```
+
+## Invited & guest lectures
+
+```{r}
+#| results: asis
+d <- cv_data("lectures")
+for (i in seq_len(nrow(d))) entry(d$title[i], d$date[i], md(d$context[i]))
+```
+
+## Mentoring
+
+```{r}
+#| results: asis
+d <- cv_data("mentoring")
+for (i in seq_len(nrow(d))) entry(d$role[i], d$dates[i], md(paste(d$program[i], d$institution[i], sep = ", ")))
+```
+
+## Additional professional training
+
+```{r}
+#| results: asis
+d <- cv_data("training")
+for (i in seq_len(nrow(d))) entry(d$title[i], d$date[i], md(paste0(d$presenter[i], " (", d$series[i], ")")))
+```
+
+## Awards, fellowships, & scholarships
+
+```{r}
+#| results: asis
+d <- cv_data("awards")
+for (i in seq_len(nrow(d))) entry(d$award[i], d$dates[i], md(d$organization[i]))
+```
+
+## Professional service
+
+```{r}
+#| results: asis
+d <- cv_data("service")
+for (i in seq_len(nrow(d))) entry(d$role[i], d$dates[i], md(d$organization[i]))
+```
+
+## Professional associations
+
+```{r}
+#| results: asis
+d <- cv_data("associations")
+for (i in seq_len(nrow(d))) entry(d$organization[i], d$dates[i], md(d$membership[i]))
+```
+
+## Professional credentials
+
+```{r}
+#| results: asis
+d <- cv_data("credentials")
+for (i in seq_len(nrow(d))) entry(d$credential[i], d$status[i], md(d$organization[i]))
+```
+
+## Technical skills
+
+```{r}
+#| results: asis
+d <- cv_data("software")
+for (i in seq_len(nrow(d))) cat("- **", md(d$category[i]), ":** ", md(d$tools[i]), "\n", sep = "")
+cat("\n### Laboratory assessments\n\n")
+cat(paste0("- ", md(cv_data("lab_skills")$skill), collapse = "\n"), "\n")
+```

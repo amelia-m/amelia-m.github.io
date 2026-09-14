@@ -1,0 +1,13 @@
+/.quarto/
+/_site/
+/_freeze/
+*_files/
+.Rhistory
+.RData
+.Rproj.user/
+**/*.quarto_ipynb
+
+# Original photos (web-sized copies are images/headshot.jpg, images/banner.jpg)
+images/background.jpg
+images/headshot-1.jpg
+images/headshot-2.jpg

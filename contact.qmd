@@ -1,0 +1,24 @@
+---
+title: "Contact"
+---
+
+## Email
+
+- University: [amiramonti2@unl.edu](mailto:amiramonti2@unl.edu)
+- Personal: [amelia.miramonti@gmail.com](mailto:amelia.miramonti@gmail.com)
+
+## Profiles
+
+**Code:** [GitHub](https://github.com/amelia-m) · [GitLab](https://gitlab.com/amelia-m) · [UNL GitLab](https://git.unl.edu/amiramonti)
+
+**Scholarly:** [ORCID](https://orcid.org/0000-0002-0277-4064) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=AcbJlasAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Amelia-Miramonti) · [OSF](https://osf.io/zk8rv/) · [Scopus](https://www.scopus.com/authid/detail.uri?authorId=56123562400) · [Lens](https://www.lens.org/lens/profile/528341700/scholar)
+
+**Social:** [LinkedIn](https://www.linkedin.com/in/amelia-miramonti/) · [Bluesky](https://bsky.app/profile/ameliamiramonti.bsky.social) · [X](https://x.com/AmeliaMiramonti)
+
+## Short bio
+
+For programs, introductions, and session chairs:
+
+::: {.bio-block}
+Amelia Miramonti, PhD, is a postdoctoral researcher at the Nebraska Evaluation and Research (NEAR) Center and adjunct faculty in the Department of Educational Psychology at the University of Nebraska–Lincoln. She partners with the University of Nebraska Public Policy Center and the Nebraska Statewide Workforce and Educational Reporting System (NSWERS), where she develops privacy-preserving synthetic datasets from administrative records. Her work combines quantitative methodology and psychometrics with practical R and Shiny tools for data documentation, cleaning, and reporting. She earned her PhD at the University of Nebraska–Lincoln in 2025 and teaches graduate courses in computer-assisted data analysis and survey methods.
+:::

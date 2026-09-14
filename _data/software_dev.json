@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Nebraska Suicide Mortality Review Reporting Application",
+    "when": "2026–present",
+    "role": "Lead developer, R",
+    "description": "Application supporting Nebraska's veteran suicide mortality review process: integrates and reconciles successive Nebraska Violent Death Reporting System (NVDRS) exports, detects and tracks record-level changes between exports, supports structured case annotation, and generates both individual case reports and the annual report to the Legislature. Internal; not publicly released."
+  },
+  {
+    "name": "NSWERS Data Explorer & Pipeline Visualization",
+    "when": "2025–present",
+    "role": "Author, R / Shiny",
+    "description": "Internal application for the Nebraska Statewide Workforce and Educational Reporting System data warehouse: locates which tables hold which variables, retrieves definitions, and traces data lineage back to the queries and source tables each variable depends on. Improves pipeline transparency, makes problems easier to pinpoint, and shortens onboarding for the team. Not publicly released."
+  },
+  {
+    "name": "Recode Studio",
+    "when": "Ongoing",
+    "role": "Author & maintainer, R / Shiny",
+    "description": "Dataset-agnostic R/Shiny app for cleaning messy string variables without hand-writing R: browse values, flag likely typos via spellcheck, build and preview recode rules, and export both a reusable rule set and runnable R code. Open source: github.com/amelia-m/recode-studio"
+  },
+  {
+    "name": "Table Relationship Explorer",
+    "when": "Ongoing",
+    "role": "Author & maintainer, R / Shiny",
+    "description": "Interactive tool for discovering and visualizing primary/foreign-key relationships across tabular data: multi-signal key inference with confidence scoring, interactive entity-relationship diagrams, and exportable reports across many file and database formats (with a Python/Streamlit port). Open source: github.com/amelia-m/table-explorer"
+  }
+]

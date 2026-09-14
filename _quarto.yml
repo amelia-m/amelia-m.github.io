@@ -1,0 +1,70 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "!README.md"
+
+execute:
+  echo: false
+  warning: false
+  message: false
+
+website:
+  title: "Amelia Miramonti"
+  site-url: https://amelia-m.github.io
+  description: "Amelia Miramonti, PhD - research methodology, psychometrics, synthetic data, and R/Shiny tools for applied research."
+  favicon: images/favicon.png
+  open-graph: true
+  twitter-card: true
+  page-navigation: false
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: cv/index.qmd
+        text: CV
+      - text: Research
+        menu:
+          - href: research.qmd
+            text: Research interests
+          - href: publications.qmd
+            text: Publications
+          - href: talks.qmd
+            text: Talks & presentations
+      - href: software.qmd
+        text: Software
+      - href: teaching.qmd
+        text: Teaching
+      - href: blog/index.qmd
+        text: Blog
+      - href: contact.qmd
+        text: Contact
+    right:
+      - icon: github
+        href: https://github.com/amelia-m
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/amelia-miramonti/
+        aria-label: LinkedIn
+      - icon: bluesky
+        href: https://bsky.app/profile/ameliamiramonti.bsky.social
+        aria-label: Bluesky
+      - icon: twitter-x
+        href: https://x.com/AmeliaMiramonti
+        aria-label: X
+      - icon: envelope
+        href: mailto:amiramonti2@unl.edu
+        aria-label: Email
+  page-footer:
+    left: "&copy; Amelia Miramonti"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles.scss]
+      dark: [darkly, styles-dark.scss]
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true

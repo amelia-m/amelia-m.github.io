@@ -1,0 +1,15 @@
+---
+title: "Talks & presentations"
+---
+
+```{r}
+#| include: false
+source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
+```
+
+Papers and posters presented at professional meetings, newest first. Invited and guest lectures are in the [CV](cv/index.qmd#invited-guest-lectures).
+
+```{r}
+#| results: asis
+print_bib("presentations.bib")
+```
