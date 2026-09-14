@@ -2,26 +2,31 @@
   {
     "role": "Conference Abstract Reviewer",
     "organization": "National Strength & Conditioning Association",
-    "dates": "2016, 2019"
+    "dates": "2016, 2019",
+    "current": false
   },
   {
     "role": "Reviewer",
     "organization": "Journal of Strength and Conditioning Research",
-    "dates": "2016–2020"
+    "dates": "2016–2020",
+    "current": false
   },
   {
     "role": "Reviewer",
     "organization": "Research Quarterly for Exercise and Sport",
-    "dates": "2019–2020"
+    "dates": "2019–2020",
+    "current": false
   },
   {
     "role": "Reviewer",
     "organization": "Women in Sport and Physical Activity Journal",
-    "dates": "2026–present"
+    "dates": "2026–present",
+    "current": true
   },
   {
     "role": "Graduate Student Volunteer Poster Judge",
     "organization": "UNL CEHS Undergraduate Research Fair",
-    "dates": "2019"
+    "dates": "2019",
+    "current": false
   }
 ]

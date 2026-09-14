@@ -1,0 +1,74 @@
+# Public profile, contact, and project links: the single source for the
+# home, contact, software, publications, and conference pages (read through
+# the link helpers in R/site.R).
+#
+# The navbar in _quarto.yml cannot read this file. Every render checks that
+# each external navbar link also appears here and stops if one does not, so
+# change a URL here and in _quarto.yml together.
+#
+# icon: a Bootstrap Icons name (https://icons.getbootstrap.com), optional.
+
+email:
+  - id: email-unl
+    label: University
+    text: amiramonti2@unl.edu
+    url: mailto:amiramonti2@unl.edu
+    icon: envelope
+  - id: email-personal
+    label: Personal
+    text: amelia.miramonti@gmail.com
+    url: mailto:amelia.miramonti@gmail.com
+
+code:
+  - id: github
+    label: GitHub
+    url: https://github.com/amelia-m
+    icon: github
+  - id: gitlab
+    label: GitLab
+    url: https://gitlab.com/amelia-m
+  - id: gitlab-unl
+    label: UNL GitLab
+    url: https://git.unl.edu/amiramonti
+
+scholarly:
+  - id: orcid
+    label: ORCID
+    url: https://orcid.org/0000-0002-0277-4064
+  - id: scholar
+    label: Google Scholar
+    url: https://scholar.google.com/citations?hl=en&user=AcbJlasAAAAJ
+  - id: researchgate
+    label: ResearchGate
+    url: https://www.researchgate.net/profile/Amelia-Miramonti
+  - id: osf
+    label: OSF
+    url: https://osf.io/zk8rv/
+  - id: scopus
+    label: Scopus
+    url: https://www.scopus.com/authid/detail.uri?authorId=56123562400
+  - id: lens
+    label: Lens
+    url: https://www.lens.org/lens/profile/528341700/scholar
+
+social:
+  - id: linkedin
+    label: LinkedIn
+    url: https://www.linkedin.com/in/amelia-miramonti/
+    icon: linkedin
+  - id: bluesky
+    label: Bluesky
+    url: https://bsky.app/profile/ameliamiramonti.bsky.social
+    icon: bluesky
+  - id: x
+    label: X
+    url: https://x.com/AmeliaMiramonti
+    icon: twitter-x
+
+projects:
+  - id: recode-studio
+    label: Recode Studio
+    url: https://github.com/amelia-m/recode-studio
+  - id: table-explorer
+    label: Table Relationship Explorer
+    url: https://github.com/amelia-m/table-explorer

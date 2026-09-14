@@ -8,11 +8,40 @@ toc-location: right
 ```{r}
 #| include: false
 source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", ".."), "R", "site.R"))
+
+# Non-empty text values only. Fields can arrive missing (NULL), as NA, as an
+# empty string, or as a one-item string where a list was expected; all of these
+# are flattened to a plain character vector with NA and blanks dropped.
+clean <- function(x) {
+  x <- unlist(x, use.names = FALSE)
+  if (is.null(x)) return(character())
+  x <- trimws(as.character(x[!is.na(x)]))
+  x[nzchar(x)]
+}
+
+# Join the non-empty parts, so a missing part never leaves "NA" or a stray comma.
+join <- function(..., sep = ", ") paste(clean(c(...)), collapse = sep)
+
+# End text with a period unless it already ends in terminal punctuation.
+sentence <- function(x) {
+  x <- paste(clean(x), collapse = " ")
+  if (!nzchar(x) || grepl("[.?!]$", x)) x else paste0(x, ".")
+}
+
 entry <- function(what, when = NULL, with = NULL, why = NULL) {
-  cat("**", md(what), "**", if (!is.null(when) && nzchar(when)) paste0(" <span class='cv-when'>", md(when), "</span>"), "  \n", sep = "")
-  if (!is.null(with) && nzchar(with)) cat(with, "\n", sep = "")
-  if (length(why) && any(nzchar(why))) cat("\n", paste0("- ", md(why[nzchar(why)]), collapse = "\n"), "\n", sep = "")
+  when <- clean(when)
+  with <- clean(with)
+  why <- clean(why)
+  cat("**", md(what), "**", if (length(when)) paste0(" <span class='cv-when'>", md(when[1]), "</span>"), "  \n", sep = "")
+  if (length(with)) cat(with[1], "\n", sep = "")
+  if (length(why)) cat("\n", paste0("- ", md(why), collapse = "\n"), "\n", sep = "")
   cat("\n")
+}
+
+# One bulleted list item per row, skipping rows whose text comes out empty.
+bullets <- function(x) {
+  x <- clean(x)
+  if (length(x)) cat(paste0("- ", x, collapse = "\n"), "\n", sep = "")
 }
 ```
 
@@ -25,7 +54,7 @@ Publications and presentations have their own pages: [Publications](../publicati
 ```{r}
 #| results: asis
 d <- cv_data("education")
-for (i in seq_len(nrow(d))) entry(d$degree[i], d$dates[i], md(paste(d$institution[i], d$location[i], sep = ", ")), unlist(d$details[[i]]))
+for (i in seq_len(nrow(d))) entry(d$degree[i], d$dates[i], md(join(d$institution[i], d$location[i])), if ("details" %in% names(d)) d$details[[i]])
 ```
 
 ## Academic professional experience
@@ -33,7 +62,7 @@ for (i in seq_len(nrow(d))) entry(d$degree[i], d$dates[i], md(paste(d$institutio
 ```{r}
 #| results: asis
 d <- cv_data("positions")
-for (i in seq_len(nrow(d))) entry(d$title[i], d$dates[i], md(paste(d$unit[i], d$institution[i], sep = ", ")), if ("description" %in% names(d)) d$description[i] else NULL)
+for (i in seq_len(nrow(d))) entry(d$title[i], d$dates[i], md(join(d$unit[i], d$institution[i])), if ("description" %in% names(d)) d$description[[i]])
 ```
 
 ## Software
@@ -41,7 +70,7 @@ for (i in seq_len(nrow(d))) entry(d$title[i], d$dates[i], md(paste(d$unit[i], d$
 ```{r}
 #| results: asis
 d <- cv_data("software_dev")
-for (i in seq_len(nrow(d))) entry(d$name[i], d$when[i], md(d$role[i]), d$description[i])
+for (i in seq_len(nrow(d))) entry(d$name[i], d$when[i], md(join(d$role[i])), if ("description" %in% names(d)) d$description[[i]])
 ```
 
 ## Manuscripts in progress
@@ -50,7 +79,11 @@ for (i in seq_len(nrow(d))) entry(d$name[i], d$when[i], md(d$role[i]), d$descrip
 #| results: asis
 d <- cv_data("manuscripts")
 ord <- order(match(d$status, c("Under review", "Revise & Resubmit", "Accepted", "In progress")))
-for (i in ord) cat("- ", md(d$authors[i]), ". ", md(d$title[i]), ". *", md(d$status[i]), "*\n", sep = "")
+bullets(vapply(ord, function(i) {
+  status <- clean(d$status[i])
+  paste0(join(md(sentence(d$authors[i])), md(sentence(d$title[i])), sep = " "),
+         if (length(status)) paste0(" *", md(status[1]), "*"))
+}, character(1)))
 ```
 
 ## Technical & evaluation reports
@@ -58,7 +91,11 @@ for (i in ord) cat("- ", md(d$authors[i]), ". ", md(d$title[i]), ". *", md(d$sta
 ```{r}
 #| results: asis
 d <- cv_data("reports")
-for (i in seq_len(nrow(d))) cat("- ", md(d$authors[i]), " (", md(d$date[i]), "). ", md(d$title[i]), " ", md(d$outlet[i]), "\n", sep = "")
+bullets(vapply(seq_len(nrow(d)), function(i) {
+  date <- clean(d$date[i])
+  head <- join(d$authors[i], if (length(date)) paste0("(", date[1], ")"), sep = " ")
+  join(md(sentence(head)), md(sentence(d$title[i])), md(sentence(d$outlet[i])), sep = " ")
+}, character(1)))
 ```
 
 ## Invited & guest lectures
@@ -66,7 +103,7 @@ for (i in seq_len(nrow(d))) cat("- ", md(d$authors[i]), " (", md(d$date[i]), ").
 ```{r}
 #| results: asis
 d <- cv_data("lectures")
-for (i in seq_len(nrow(d))) entry(d$title[i], d$date[i], md(d$context[i]))
+for (i in seq_len(nrow(d))) entry(d$title[i], d$date[i], md(join(d$context[i])))
 ```
 
 ## Mentoring
@@ -74,7 +111,7 @@ for (i in seq_len(nrow(d))) entry(d$title[i], d$date[i], md(d$context[i]))
 ```{r}
 #| results: asis
 d <- cv_data("mentoring")
-for (i in seq_len(nrow(d))) entry(d$role[i], d$dates[i], md(paste(d$program[i], d$institution[i], sep = ", ")))
+for (i in seq_len(nrow(d))) entry(d$role[i], d$dates[i], md(join(d$program[i], d$institution[i])))
 ```
 
 ## Additional professional training
@@ -82,7 +119,10 @@ for (i in seq_len(nrow(d))) entry(d$role[i], d$dates[i], md(paste(d$program[i], 
 ```{r}
 #| results: asis
 d <- cv_data("training")
-for (i in seq_len(nrow(d))) entry(d$title[i], d$date[i], md(paste0(d$presenter[i], " (", d$series[i], ")")))
+for (i in seq_len(nrow(d))) {
+  series <- clean(d$series[i])
+  entry(d$title[i], d$date[i], md(join(d$presenter[i], if (length(series)) paste0("(", series[1], ")"), sep = " ")))
+}
 ```
 
 ## Awards, fellowships, & scholarships
@@ -90,7 +130,7 @@ for (i in seq_len(nrow(d))) entry(d$title[i], d$date[i], md(paste0(d$presenter[i
 ```{r}
 #| results: asis
 d <- cv_data("awards")
-for (i in seq_len(nrow(d))) entry(d$award[i], d$dates[i], md(d$organization[i]))
+for (i in seq_len(nrow(d))) entry(d$award[i], d$dates[i], md(join(d$organization[i])))
 ```
 
 ## Professional service
@@ -98,7 +138,7 @@ for (i in seq_len(nrow(d))) entry(d$award[i], d$dates[i], md(d$organization[i]))
 ```{r}
 #| results: asis
 d <- cv_data("service")
-for (i in seq_len(nrow(d))) entry(d$role[i], d$dates[i], md(d$organization[i]))
+for (i in seq_len(nrow(d))) entry(d$role[i], d$dates[i], md(join(d$organization[i])))
 ```
 
 ## Professional associations
@@ -106,7 +146,7 @@ for (i in seq_len(nrow(d))) entry(d$role[i], d$dates[i], md(d$organization[i]))
 ```{r}
 #| results: asis
 d <- cv_data("associations")
-for (i in seq_len(nrow(d))) entry(d$organization[i], d$dates[i], md(d$membership[i]))
+for (i in seq_len(nrow(d))) entry(d$organization[i], d$dates[i], md(join(d$membership[i])))
 ```
 
 ## Professional credentials
@@ -114,7 +154,7 @@ for (i in seq_len(nrow(d))) entry(d$organization[i], d$dates[i], md(d$membership
 ```{r}
 #| results: asis
 d <- cv_data("credentials")
-for (i in seq_len(nrow(d))) entry(d$credential[i], d$status[i], md(d$organization[i]))
+for (i in seq_len(nrow(d))) entry(d$credential[i], d$status[i], md(join(d$organization[i])))
 ```
 
 ## Technical skills
@@ -122,7 +162,10 @@ for (i in seq_len(nrow(d))) entry(d$credential[i], d$status[i], md(d$organizatio
 ```{r}
 #| results: asis
 d <- cv_data("software")
-for (i in seq_len(nrow(d))) cat("- **", md(d$category[i]), ":** ", md(d$tools[i]), "\n", sep = "")
+bullets(vapply(seq_len(nrow(d)), function(i) {
+  tools <- clean(d$tools[i])
+  if (length(tools)) paste0("**", md(join(d$category[i])), ":** ", md(tools[1])) else ""
+}, character(1)))
 cat("\n### Laboratory assessments\n\n")
-cat(paste0("- ", md(cv_data("lab_skills")$skill), collapse = "\n"), "\n")
+bullets(md(clean(cv_data("lab_skills")$skill)))
 ```

@@ -4,6 +4,7 @@
     "unit": "Department of Educational Psychology",
     "institution": "University of Nebraska–Lincoln",
     "dates": "January 2026–present",
+    "current": true,
     "description": "EDPS 900D – Survey Methods in Educational Research (Fall 2026); EDPS 845 – Computer-Assisted Research Data Analysis (Spring 2026)."
   },
   {
@@ -11,6 +12,7 @@
     "unit": "Nebraska Evaluation and Research Center (NEAR Center), Department of Educational Psychology",
     "institution": "University of Nebraska–Lincoln",
     "dates": "July 2025–present",
+    "current": true,
     "description": "Cross-disciplinary appointment integrating research design and methodology, statistics and data science, and public policy. Primary responsibilities include collaborating on funded research projects, contributing to research design, data analysis, and reporting, and supervising graduate research assistants (currently five) in the Quantitative, Qualitative, and Psychometric Methods (QQPM) program."
   },
   {
@@ -18,6 +20,7 @@
     "unit": "Nebraska Statewide Workforce & Educational Reporting System (NSWERS)",
     "institution": "University of Nebraska–Lincoln",
     "dates": "July 2025–present",
+    "current": true,
     "description": "Creating privacy-preserving synthetic datasets from large-scale, longitudinal administrative data to support public research initiatives."
   },
   {
@@ -25,6 +28,7 @@
     "unit": "University of Nebraska Public Policy Center (NUPPC)",
     "institution": "University of Nebraska–Lincoln",
     "dates": "July 2025–present",
+    "current": true,
     "description": "Analysis, data management, and reporting across Center projects serving Nebraska state agencies and communities: Nebraska Suicide Mortality Review; Ryan White Clinical Quality Management program; Lincoln Food & Recyclable Waste initiative; Community Crops classes evaluation; and survey design for the Get in the Game project with Lincoln Public Schools Community Learning Centers."
   },
   {
@@ -32,37 +36,43 @@
     "unit": "Nebraska Evaluation and Research Center, Department of Educational Psychology",
     "institution": "University of Nebraska–Lincoln",
     "dates": "September 2024–July 2025",
+    "current": false,
     "description": "Methodological and analytic support across concurrent projects spanning multiple content areas, including graduate thesis and dissertation research and funded studies. Supervised four graduate research assistants, training them in analysis and managing their assignments across projects."
   },
   {
     "title": "Graduate Research Assistant",
     "unit": "Nebraska Evaluation and Research Center, Department of Educational Psychology",
     "institution": "University of Nebraska–Lincoln",
-    "dates": "2021–August 2024"
+    "dates": "2021–August 2024",
+    "current": false
   },
   {
     "title": "Graduate Research Assistant",
     "unit": "Nebraska Academy for Methodology, Analytics & Psychometrics, Nebraska Center for Research on Children, Youth, Families, & Schools",
     "institution": "University of Nebraska–Lincoln",
-    "dates": "2018–2021"
+    "dates": "2018–2021",
+    "current": false
   },
   {
     "title": "Graduate Research Assistant",
     "unit": "Nebraska Extension: 4-H Youth Development, Institute of Agriculture and Natural Resources",
     "institution": "University of Nebraska–Lincoln",
-    "dates": "Spring 2018"
+    "dates": "Spring 2018",
+    "current": false
   },
   {
     "title": "Graduate Research Assistant",
     "unit": "Nebraska Extension: Nutrition Education Program/SNAP-Ed, Department of Nutrition & Health Sciences",
     "institution": "University of Nebraska–Lincoln",
-    "dates": "Fall 2017"
+    "dates": "Fall 2017",
+    "current": false
   },
   {
     "title": "Graduate Research Assistant",
     "unit": "Neuromuscular Research & Imaging Laboratory, Department of Nutrition & Health Sciences",
     "institution": "University of Nebraska–Lincoln",
     "dates": "2015–2017",
+    "current": false,
     "description": "Study administration and data collection for laboratory and field research with participants from age nine through older adulthood: participant recruitment and scheduling, research staff scheduling, and electromyographic, mechanomyographic, and strength data collection and processing."
   },
   {
@@ -70,6 +80,7 @@
     "unit": "Department of Educational Psychology",
     "institution": "University of Nebraska–Lincoln",
     "dates": "Spring 2022",
+    "current": false,
     "description": "EDPS 459 – Statistical Methods."
   },
   {
@@ -77,6 +88,7 @@
     "unit": "Department of Nutrition & Health Sciences",
     "institution": "University of Nebraska–Lincoln",
     "dates": "2015–2017",
+    "current": false,
     "description": "NUTR 250 – Human Nutrition & Metabolism (Fall 2015, Fall 2016, Spring 2017); NUTR 484 – Physiology of Exercise Laboratory (Spring 2016); NUTR 486 – Exercise Testing & Prescription Laboratory (Spring 2016)."
   },
   {
@@ -84,6 +96,7 @@
     "unit": "Institute of Exercise Physiology & Wellness, Department of Educational & Human Science",
     "institution": "University of Central Florida",
     "dates": "2013–2015",
+    "current": false,
     "description": "Study administration and data collection for laboratory research: participant recruitment and scheduling, research staff scheduling, and data collection across metabolic, strength, and neuromuscular assessment protocols."
   },
   {
@@ -91,12 +104,14 @@
     "unit": "Department of Educational & Human Science",
     "institution": "University of Central Florida",
     "dates": "2014–2015",
+    "current": false,
     "description": "PEM 2104 Personal Fitness (Summer 2014); PET 3005 Intro to Sport & Exercise Science (Summer 2014, Fall 2014, Spring 2015); PET 4083 Personal Training Methods (Spring 2015)."
   },
   {
     "title": "Research Practicum",
     "unit": "Institute of Exercise Physiology & Wellness, Department of Educational & Human Science",
     "institution": "University of Central Florida",
-    "dates": "Fall 2012"
+    "dates": "Fall 2012",
+    "current": false
   }
 ]

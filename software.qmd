@@ -5,10 +5,9 @@ title: "Software"
 ```{r}
 #| include: false
 source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
-links <- c(
-  "Recode Studio" = "https://github.com/amelia-m/recode-studio",
-  "Table Relationship Explorer" = "https://github.com/amelia-m/table-explorer"
-)
+proj <- site_links()
+proj <- proj[proj$group == "projects", ]
+links <- setNames(proj$url, proj$label)
 ```
 
 I build R and Shiny tools for the unglamorous middle of applied research: documenting, cleaning, linking, and reporting on administrative data.
@@ -36,4 +35,4 @@ d <- cv_data("software")
 for (i in seq_len(nrow(d))) cat("- **", md(d$category[i]), ":** ", md(d$tools[i]), "\n", sep = "")
 ```
 
-More code: [GitHub](https://github.com/amelia-m) · [GitLab](https://gitlab.com/amelia-m) · [UNL GitLab](https://git.unl.edu/amiramonti)
+More code: `r link_line("code")`

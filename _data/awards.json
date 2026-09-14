@@ -2,35 +2,42 @@
   {
     "award": "Plake Fellowship",
     "organization": "Department of Educational Psychology, University of Nebraska–Lincoln",
-    "dates": "2024"
+    "dates": "2024",
+    "current": false
   },
   {
     "award": "AAUW Fellowship",
     "organization": "American Association of University Women, Lincoln, NE Chapter",
-    "dates": "2019–2020"
+    "dates": "2019–2020",
+    "current": false
   },
   {
     "award": "Women's Scholarship",
     "organization": "National Strength & Conditioning Association",
-    "dates": "2016, 2017"
+    "dates": "2016, 2017",
+    "current": false
   },
   {
     "award": "Othmer Fellowship",
     "organization": "University of Nebraska–Lincoln",
-    "dates": "2015–2018"
+    "dates": "2015–2018",
+    "current": false
   },
   {
     "award": "Graduate Research Excellence Fellowship",
     "organization": "University of Central Florida",
-    "dates": "2014–2015"
+    "dates": "2014–2015",
+    "current": false
   },
   {
     "award": "Pegasus Scholarship",
     "organization": "University of Central Florida",
-    "dates": "2007–2010"
+    "dates": "2007–2010",
+    "current": false
   },
   {
     "award": "Finalist, National Merit Scholarship Competition",
-    "dates": "2007"
+    "dates": "2007",
+    "current": false
   }
 ]

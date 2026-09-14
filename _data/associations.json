@@ -2,30 +2,36 @@
   {
     "organization": "American Psychological Association",
     "membership": "Member",
-    "dates": "2024–2025"
+    "dates": "2024–2025",
+    "current": false
   },
   {
     "organization": "American Statistical Association",
     "membership": "Member",
-    "dates": "2019–2020"
+    "dates": "2019–2020",
+    "current": false
   },
   {
     "organization": "Society for Transparency, Openness, and Replication in Kinesiology",
     "membership": "Member",
-    "dates": "2019–present"
+    "dates": "2019–present",
+    "current": true
   },
   {
     "organization": "National Strength & Conditioning Association",
-    "membership": "Member, 2014–2020; Research Consortium Member, 2019–2020"
+    "membership": "Member, 2014–2020; Research Consortium Member, 2019–2020",
+    "current": false
   },
   {
     "organization": "American College of Sports Medicine",
     "membership": "Member",
-    "dates": "2013–2020"
+    "dates": "2013–2020",
+    "current": false
   },
   {
     "organization": "National Intramural Recreational Sports Association",
     "membership": "Member",
-    "dates": "2009–2010"
+    "dates": "2009–2010",
+    "current": false
   }
 ]

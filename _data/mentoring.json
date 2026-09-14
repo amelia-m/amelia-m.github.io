@@ -3,24 +3,28 @@
     "role": "Graduate Research Assistant Supervisor",
     "program": "Nebraska Evaluation and Research Center",
     "institution": "University of Nebraska–Lincoln",
-    "dates": "2024–present"
+    "dates": "2024–present",
+    "current": true
   },
   {
     "role": "Instructor, non-credit methods sessions",
     "program": "Informal graduate methods training for six students; precursor to EDPS 845",
     "institution": "University of Nebraska–Lincoln",
-    "dates": "Fall 2025"
+    "dates": "Fall 2025",
+    "current": false
   },
   {
     "role": "McNair Graduate Mentor",
     "program": "Ronald E. McNair Scholars Program",
     "institution": "University of Nebraska–Lincoln",
-    "dates": "2016–2017"
+    "dates": "2016–2017",
+    "current": false
   },
   {
     "role": "UCARE Graduate Mentor",
     "program": "Undergraduate Creative Activities and Research Experience (UCARE) Program",
     "institution": "University of Nebraska–Lincoln",
-    "dates": "2017"
+    "dates": "2017",
+    "current": false
   }
 ]

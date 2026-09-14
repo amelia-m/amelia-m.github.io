@@ -2,15 +2,20 @@
 title: "Hi from posit::conf(2026)!"
 ---
 
+```{r}
+#| include: false
+source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
+```
+
 I'm attending this year and would love to meet people. Things I'm always happy to talk about:
 
-- **Shiny apps for messy data**: cleaning string variables, inferring table relationships, documenting data warehouses ([Recode Studio](https://github.com/amelia-m/recode-studio), [Table Relationship Explorer](https://github.com/amelia-m/table-explorer))
+- **Shiny apps for messy data**: cleaning string variables, inferring table relationships, documenting data warehouses (`r link("recode-studio")`, `r link("table-explorer")`)
 - **Synthetic data** for sharing administrative records safely
 - **Teaching data management and R** to graduate students
 - **Quarto** for course sites, reports, and parameterized reporting
 - **R in public-sector and evaluation work**
 
-Best ways to follow up: [LinkedIn](https://www.linkedin.com/in/amelia-miramonti/), [Bluesky](https://bsky.app/profile/ameliamiramonti.bsky.social), or [email](contact.qmd).
+Best ways to follow up: `r link("linkedin")`, `r link("bluesky")`, or [email](contact.qmd).
 
 ::: {.qr-block}
 ![](images/qr-site.svg){width=220 fig-alt="QR code linking to amelia-m.github.io"}

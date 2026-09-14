@@ -7,7 +7,7 @@ title: "Publications"
 source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
 ```
 
-Peer-reviewed journal articles, newest first. See also [Google Scholar](https://scholar.google.com/citations?hl=en&user=AcbJlasAAAAJ) and [ORCID](https://orcid.org/0000-0002-0277-4064). Manuscripts in progress are listed in the [CV](cv/index.qmd#manuscripts-in-progress).
+Peer-reviewed journal articles, newest first. See also `r link("scholar")` and `r link("orcid")`. Manuscripts in progress are listed in the [CV](cv/index.qmd#manuscripts-in-progress).
 
 ```{r}
 #| results: asis

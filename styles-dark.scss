@@ -1,10 +1,11 @@
 /*-- scss:defaults --*/
+// No web font: the theme would otherwise fetch one from Google Fonts.
+$web-font-path: false;
 $primary: #33b5dd;
 $link-color: #5cc6e8;
-$font-family-sans-serif: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
 /*-- scss:rules --*/
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap");
 
 .hero-banner img { width: 100%; height: clamp(160px, 26vw, 320px); object-fit: cover; object-position: center 40%; display: block; }
 .hero-banner p { margin: 0; }

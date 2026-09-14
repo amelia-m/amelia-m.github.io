@@ -7,7 +7,7 @@ title: "Talks & presentations"
 source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
 ```
 
-Papers and posters presented at professional meetings, newest first. Invited and guest lectures are in the [CV](cv/index.qmd#invited-guest-lectures).
+Papers, posters, and abstracts for professional meetings, newest first, with presentation status where recorded. Invited and guest lectures are in the [CV](cv/index.qmd#invited-guest-lectures).
 
 ```{r}
 #| results: asis

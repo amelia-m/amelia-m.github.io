@@ -2,18 +2,23 @@
 title: "Contact"
 ---
 
+```{r}
+#| include: false
+source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
+```
+
 ## Email
 
-- University: [amiramonti2@unl.edu](mailto:amiramonti2@unl.edu)
-- Personal: [amelia.miramonti@gmail.com](mailto:amelia.miramonti@gmail.com)
+- University: `r link("email-unl")`
+- Personal: `r link("email-personal")`
 
 ## Profiles
 
-**Code:** [GitHub](https://github.com/amelia-m) · [GitLab](https://gitlab.com/amelia-m) · [UNL GitLab](https://git.unl.edu/amiramonti)
+**Code:** `r link_line("code")`
 
-**Scholarly:** [ORCID](https://orcid.org/0000-0002-0277-4064) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=AcbJlasAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Amelia-Miramonti) · [OSF](https://osf.io/zk8rv/) · [Scopus](https://www.scopus.com/authid/detail.uri?authorId=56123562400) · [Lens](https://www.lens.org/lens/profile/528341700/scholar)
+**Scholarly:** `r link_line("scholarly")`
 
-**Social:** [LinkedIn](https://www.linkedin.com/in/amelia-miramonti/) · [Bluesky](https://bsky.app/profile/ameliamiramonti.bsky.social) · [X](https://x.com/AmeliaMiramonti)
+**Social:** `r link_line("social")`
 
 ## Short bio
 
