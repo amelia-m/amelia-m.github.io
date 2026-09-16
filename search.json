@@ -291,7 +291,7 @@
     "href": "posit-conf-2026.html",
     "title": "Hi from posit::conf(2026)!",
     "section": "",
-    "text": "I’m attending this year and would love to meet people. Things I’m always happy to talk about:\n\nShiny apps for messy data: cleaning string variables, inferring table relationships, documenting data warehouses (Recode Studio, Table Relationship Explorer)\nSynthetic data for sharing administrative records safely\nTeaching data management and R to graduate students\nQuarto for course sites, reports, and parameterized reporting\nR in public-sector and evaluation work\n\nBest ways to follow up: LinkedIn, Bluesky, or email.\n\n\namelia-m.github.io"
+    "text": "I’m attending this year and would love to meet people. Things I’m always happy to talk about:\n\nShiny apps for messy data: cleaning string variables, inferring table relationships, documenting data warehouses (Recode Studio, Table Relationship Explorer)\nSynthetic data that lowers the barriers for researchers and stakeholders to work with administrative data, without making it public\nTeaching data management and R to graduate students\nQuarto for course sites, reports, and parameterized reporting\nR in public-sector and evaluation work\n\nBest ways to follow up: LinkedIn, Bluesky, or email.\n\n\namelia-m.github.io"
   },
   {
     "objectID": "research.html",
