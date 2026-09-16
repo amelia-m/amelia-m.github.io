@@ -1,0 +1,265 @@
+# Things I Like: the data behind things-i-like.qmd.
+#
+# Each section has either `items` directly or `groups` of items. Sections and
+# groups with no items are skipped on the page, so an empty section here is a
+# placeholder, not a blank heading.
+#
+# Item fields (only `name` is required):
+#   name:        shown as the card title
+#   url:         where the title links
+#   by:          author or maker, shown after the title
+#   description: Markdown allowed, including inline links
+#   links:       extra links, each with `label` and `url`
+#                (for people: their website, Bluesky, GitHub, etc.)
+
+sections:
+  - title: Software
+    groups:
+      - title: Files and folders
+        items:
+          - name: WizTree
+            url: https://diskanalyzer.com/download
+            description: >-
+              Scans entire directories, folders and subfolders, and shows a
+              treemap of where files are taking up space, among other things.
+              I used to recommend TreeSize Free, but WizTree is faster and
+              doesn't push the paid version as much.
+          - name: Path Length Checker
+            url: https://github.com/deadlydog/PathLengthChecker
+            by: deadlydog on GitHub
+            description: >-
+              A stand-alone app that lists the path and length of every file
+              and directory in a folder. Handy for tracking down Windows paths
+              that are too long for some programs to handle.
+          - name: Beyond Compare
+            url: https://www.scootersoftware.com/
+            description: >-
+              File and folder comparison: versions by date or folder, folder
+              structure, and line-level differences in text files. It also
+              syncs one folder to another.
+          - name: 7-Zip
+            url: https://www.7-zip.org/
+            description: >-
+              Unzips files, with more options than the standard Windows unzip.
+              Handy.
+
+      - title: Windows utilities and automation
+        items:
+          - name: PowerToys
+            url: https://learn.microsoft.com/en-us/windows/powertoys/
+            by: Microsoft
+            description: >-
+              Handy Windows utilities, e.g. Find My Mouse, Workspaces,
+              PowerRename, and the Command Palette.
+          - name: AutoHotkey
+            url: https://www.autohotkey.com/
+            description: Automates keystrokes and repetitive tasks on Windows.
+            links:
+              - label: Save Time by Saving Keystrokes with AutoHotkey
+                url: https://diyivorytower.wordpress.com/2011/01/25/save-time-by-saving-keystrokes-with-autohotkey/
+              - label: AHK tutorials (YouTube)
+                url: https://www.youtube.com/user/ahkTuts
+              - label: "ahkbook: the book for AutoHotkey"
+                url: https://maul-esel.github.io/ahkbook/index.html
+
+      - title: Text and writing
+        items:
+          - name: Notepad++
+            url: https://notepad-plus-plus.org/
+            description: My favorite text editor, with so many fun tools.
+            links:
+              - label: Plugin list
+                url: https://github.com/notepad-plus-plus/nppPluginList?tab=readme-ov-file
+              - label: Plugins recommended by others
+                url: https://community.notepad-plus-plus.org/topic/21830/must-have-plugins-what-are-yours/2
+          - name: Zettlr
+            url: https://www.zettlr.com/
+            description: A Markdown editor built for academic writing, with citation support.
+          - name: Obsidian
+            url: https://obsidian.md/
+            description: Notes in plain Markdown files, linked together.
+            links:
+              - label: Free for work use
+                url: https://obsidian.md/blog/free-for-work/
+          - name: Pandoc
+            url: https://pandoc.org/
+            description: Converts documents between formats, for example Markdown to Word or PDF.
+            links:
+              - label: Source on GitHub
+                url: https://github.com/jgm/pandoc
+
+      - title: Research and reading
+        items:
+          - name: Zotero
+            url: https://www.zotero.org/
+            description: Free reference manager for collecting, organizing, and citing sources.
+            links:
+              - label: Browser connectors
+                url: https://www.zotero.org/download/connectors
+              - label: Using tags
+                url: https://zotero-manual.github.io/tags/
+              - label: Zotero hotkeys in Word
+                url: https://diyivorytower.wordpress.com/2012/03/06/create-zotero-hotkeys-in-word/
+          - name: Calibre
+            url: https://calibre-ebook.com/download
+            description: Free ebook reader and library manager.
+          - name: Tesseract OCR
+            url: https://github.com/tesseract-ocr/tesseract
+            description: >-
+              Open-source optical character recognition: turns images and
+              scanned pages into text.
+          - name: PDFsam Basic
+            url: https://pdfsam.org/pdfsam-basic/
+            description: Free desktop tool to split, merge, and rearrange PDF pages.
+
+      - title: Data science and publishing
+        items:
+          - name: Positron
+            url: https://positron.posit.co/
+            by: Posit
+            description: Data science IDE for R and Python.
+            links:
+              - label: A quick tour of Positron
+                url: https://posit.co/blog/a-quick-tour-of-positron/
+              - label: Air formatter extension
+                url: https://open-vsx.org/vscode/item?itemName=posit.air-vscode
+          - name: Quarto
+            url: https://quarto.org/
+            description: >-
+              Publishing system for documents, slides, and websites. This site
+              is built with it.
+            links:
+              - label: Parameterized reports
+                url: https://quarto.org/docs/computations/parameters.html
+          - name: OpenRefine
+            url: https://openrefine.org/
+            description: >-
+              Free, open-source tool for cleaning and transforming messy data.
+              The cleaning steps can be exported and reapplied.
+          - name: diagrams.net
+            url: https://www.diagrams.net/
+            description: Free diagram and flowchart editor.
+
+  - title: R packages
+    items:
+      - name: targets
+        url: https://docs.ropensci.org/targets/
+        by: rOpenSci
+        description: >-
+          Pipeline tool that skips steps that are already up to date, so
+          reruns are faster and results stay in sync with code and data.
+      - name: arrow
+        url: https://arrow.apache.org/docs/r/
+        description: Reads and writes Parquet files and works with data larger than memory.
+
+  - title: People to follow
+    items:
+      - name: Crystal Lewis
+        url: https://cghlewis.com/
+        description: >-
+          Research data management consultant and author of *Data Management
+          in Large-Scale Education Research*.
+        links:
+          - label: Bluesky
+            url: https://bsky.app/profile/cghlewis.bsky.social
+          - label: GitHub
+            url: https://github.com/Cghlewis
+      - name: Hadley Wickham
+        url: https://hadley.nz/
+        description: Chief scientist at Posit and lead developer of the tidyverse.
+        links:
+          - label: Bluesky
+            url: https://bsky.app/profile/hadley.nz
+      - name: Jenny Bryan
+        url: https://github.com/jennybc
+        description: >-
+          R developer at Posit; co-author of R Packages and Happy Git and
+          GitHub for the useR.
+        links:
+          - label: Bluesky
+            url: https://bsky.app/profile/jennybryan.bsky.social
+      - name: Yihui Xie
+        url: https://yihui.org/
+        description: Developer of knitr, bookdown, blogdown, and TinyTeX.
+      - name: Frank Harrell
+        url: https://www.fharrell.com/
+        description: Biostatistician whose blog, Statistical Thinking, covers statistical methods and practice.
+      - name: Daniel Lakens
+        url: http://daniellakens.blogspot.com/
+        description: Metascientist who writes about statistical inference and research methods.
+
+  - title: Communities
+    items:
+      - name: Posit Data Science Hangout
+        url: https://posit.co/data-science-hangout/
+        by: Posit
+        description: Free weekly online conversation with data science leaders.
+        links:
+          - label: Past hangouts
+            url: https://posit.co/past-hangouts/
+      - name: Posit Data Science Lab
+        url: https://pos.it/dslab
+        by: Posit
+        description: Weekly live-coding and screen-sharing session. Drop in or just watch.
+        links:
+          - label: Recordings (YouTube)
+            url: https://www.youtube.com/playlist?list=PL9HYL-VRX0oSeWeMEGQt0id7adYQXebhT
+      - name: rOpenSci
+        url: https://ropensci.org/
+        description: Community and infrastructure for open, reproducible research software in R.
+      - name: TidyTuesday
+        url: https://github.com/rfordatascience/tidytuesday
+        description: A weekly dataset for practicing data wrangling and visualization.
+
+  - title: Websites and resources
+    items:
+      - name: rdrr.io
+        url: https://rdrr.io/
+        description: Searchable index of R package documentation from CRAN, Bioconductor, GitHub, and R-Forge.
+      - name: R for the Rest of Us
+        url: https://rfortherestofus.com/
+        description: Beginner-friendly R tutorials, a free book, and a YouTube channel.
+      - name: DMPTool
+        url: https://dmptool.org/
+        description: Builds data management plans from funder templates.
+      - name: Data Is Plural
+        url: https://www.data-is-plural.com/
+        description: Newsletter of interesting public datasets.
+        links:
+          - label: Dataset archive (spreadsheet)
+            url: https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0
+      - name: R Graph Gallery
+        url: https://www.r-graph-gallery.com/
+        description: Hundreds of R chart examples with code.
+      - name: Shapecatcher
+        url: https://shapecatcher.com/
+        description: Draw a symbol to find its Unicode character.
+
+  - title: Books, podcasts, and courses
+    items:
+      - name: Data Management in Large-Scale Education Research
+        url: https://datamgmtinedresearch.com/
+        by: Crystal Lewis
+        description: Free online book covering the research data management life cycle.
+      - name: R for Data Science (2e)
+        url: https://r4ds.hadley.nz/
+        by: Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund
+        description: Free online book on doing data science with the tidyverse.
+      - name: R Packages (2e)
+        url: https://r-pkgs.org/
+        by: Hadley Wickham and Jennifer Bryan
+        description: Free online book on building R packages.
+      - name: Mastering Shiny
+        url: https://mastering-shiny.org/
+        by: Hadley Wickham
+        description: Free online book on building interactive web apps in R.
+      - name: Fundamentals of Data Visualization
+        url: https://clauswilke.com/dataviz/
+        by: Claus O. Wilke
+        description: Free online book on making clear, accurate figures.
+      - name: Pro Git
+        url: https://git-scm.com/book/en/v2
+        description: The free official Git book.
+      - name: Software Carpentry lessons
+        url: https://software-carpentry.org/lessons/index.html
+        description: Open lessons on the shell, Git, R, and Python for researchers.

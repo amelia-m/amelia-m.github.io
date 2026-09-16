@@ -444,6 +444,38 @@ link_button <- function(id, label = NULL, class = "btn-outline-primary") {
          "){.btn .", class, " .w-100 .mb-2}")
 }
 
+# ---- Things I Like -------------------------------------------------------
+# likes.yml holds sections of items, either directly or in groups; see the
+# comment at the top of that file for the fields.
+
+print_likes <- function(file = "likes.yml") {
+  data <- yaml::read_yaml(site_path(file))
+  card <- function(it) {
+    if (is.null(it$name) || !nzchar(it$name)) stop(file, ": every item needs a name")
+    title <- if (is.null(it$url)) md(it$name) else paste0("[", md(it$name), "](", it$url, ")")
+    out <- c("::: {.g-col-12 .g-col-md-6 .like-card}", paste0("**", title, "**",
+             if (!is.null(it$by)) paste0(" <span class='like-by'>", md(it$by), "</span>") else ""))
+    if (!is.null(it$description)) out <- c(out, "", trimws(it$description))
+    if (length(it$links)) {
+      out <- c(out, "", vapply(it$links, function(l) paste0("- [", md(l$label), "](", l$url, ")"),
+                               character(1)))
+    }
+    c(out, ":::", "")
+  }
+  grid <- function(items) c("::: {.grid .like-grid}", "", unlist(lapply(items, card)), ":::", "")
+  for (s in data$sections) {
+    groups <- if (length(s$groups)) s$groups else list(list(title = NULL, items = s$items))
+    groups <- Filter(function(g) length(g$items) > 0, groups)
+    if (!length(groups)) next
+    cat("## ", md(s$title), "\n\n", sep = "")
+    for (g in groups) {
+      if (!is.null(g$title)) cat("### ", md(g$title), "\n\n", sep = "")
+      cat(grid(g$items), sep = "\n")
+    }
+  }
+  invisible()
+}
+
 # The navbar in _quarto.yml cannot read links.yml, so stop the render if any
 # external navbar link has drifted from it.
 check_navbar_links <- function() {

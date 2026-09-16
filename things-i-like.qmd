@@ -1,0 +1,18 @@
+---
+title: "Things I Like"
+toc: true
+toc-depth: 3
+toc-location: right
+---
+
+```{r}
+#| include: false
+source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
+```
+
+Tools, people, and resources I use and recommend.
+
+```{r}
+#| results: asis
+print_likes()
+```
