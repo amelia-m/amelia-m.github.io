@@ -10,7 +10,7 @@ source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
 I'm attending this year and would love to meet people. Things I'm always happy to talk about:
 
 - **Shiny apps for messy data**: cleaning string variables, inferring table relationships, documenting data warehouses (`r link("recode-studio")`, `r link("table-explorer")`)
-- **Synthetic data** for sharing administrative records safely
+- **Synthetic data** that lowers the barriers for researchers and stakeholders to work with administrative data, without making it public
 - **Teaching data management and R** to graduate students
 - **Quarto** for course sites, reports, and parameterized reporting
 - **R in public-sector and evaluation work**
