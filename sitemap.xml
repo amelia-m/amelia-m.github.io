@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://amelia-m.github.io/teaching.html</loc>
-    <lastmod>2026-09-13T21:21:10.109Z</lastmod>
+    <loc>https://amelia-m.github.io/things-i-like.html</loc>
+    <lastmod>2026-09-16T21:47:25.504Z</lastmod>
   </url>
   <url>
-    <loc>https://amelia-m.github.io/software.html</loc>
-    <lastmod>2026-09-14T13:05:24.963Z</lastmod>
+    <loc>https://amelia-m.github.io/talks.html</loc>
+    <lastmod>2026-09-14T12:56:47.869Z</lastmod>
   </url>
   <url>
-    <loc>https://amelia-m.github.io/publications.html</loc>
+    <loc>https://amelia-m.github.io/research.html</loc>
+    <lastmod>2026-09-13T21:21:16.498Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amelia-m.github.io/posit-conf-2026.html</loc>
+    <lastmod>2026-09-16T21:38:17.693Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amelia-m.github.io/cv/index.html</loc>
+    <lastmod>2026-09-14T12:52:50.754Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amelia-m.github.io/blog/index.html</loc>
+    <lastmod>2026-09-13T21:24:04.545Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amelia-m.github.io/contact.html</loc>
     <lastmod>2026-09-14T13:05:24.963Z</lastmod>
   </url>
   <url>
@@ -17,27 +33,15 @@
     <lastmod>2026-09-14T13:05:24.962Z</lastmod>
   </url>
   <url>
-    <loc>https://amelia-m.github.io/contact.html</loc>
+    <loc>https://amelia-m.github.io/publications.html</loc>
     <lastmod>2026-09-14T13:05:24.963Z</lastmod>
   </url>
   <url>
-    <loc>https://amelia-m.github.io/blog/index.html</loc>
-    <lastmod>2026-09-13T21:24:04.545Z</lastmod>
+    <loc>https://amelia-m.github.io/software.html</loc>
+    <lastmod>2026-09-14T13:05:24.963Z</lastmod>
   </url>
   <url>
-    <loc>https://amelia-m.github.io/cv/index.html</loc>
-    <lastmod>2026-09-14T12:52:50.754Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amelia-m.github.io/posit-conf-2026.html</loc>
-    <lastmod>2026-09-16T21:38:17.693Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amelia-m.github.io/research.html</loc>
-    <lastmod>2026-09-13T21:21:16.498Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amelia-m.github.io/talks.html</loc>
-    <lastmod>2026-09-14T12:56:47.869Z</lastmod>
+    <loc>https://amelia-m.github.io/teaching.html</loc>
+    <lastmod>2026-09-13T21:21:10.109Z</lastmod>
   </url>
 </urlset>
