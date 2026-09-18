@@ -62,6 +62,30 @@ sections:
               - label: "ahkbook: the book for AutoHotkey"
                 url: https://maul-esel.github.io/ahkbook/index.html
 
+      - title: Browser extensions
+        items:
+          - name: OneTab
+            url: https://addons.mozilla.org/en-US/firefox/addon/onetab/
+            description: >-
+              Collapses all your open tabs into one list you can restore
+              later, which clears the tab bar and frees memory.
+            links:
+              - label: one-tab.com
+                url: https://www.one-tab.com/
+          - name: Pushbullet
+            url: https://addons.mozilla.org/en-US/firefox/addon/pushbullet/
+            description: >-
+              Sends links and files between your computer and your phone, and
+              mirrors phone notifications to the desktop.
+            links:
+              - label: pushbullet.com
+                url: https://www.pushbullet.com/
+          - name: Zotero Connector
+            url: https://www.zotero.org/download/connectors
+            description: >-
+              Saves references and PDFs from a web page straight into Zotero
+              from the browser toolbar.
+
       - title: Text and writing
         items:
           - name: Notepad++
