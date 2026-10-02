@@ -33,6 +33,11 @@ cat(link_button("github"), link_button("linkedin"), link_button("orcid"),
 
 ::: {.g-col-12 .g-col-md-8}
 
+<!-- Next event from events.qmd. Update or remove when it passes. -->
+::: {.callout-tip appearance="simple"}
+**Next up:** the Nebraska Women in Tech Summit, April 2, 2027, where I'm planning to volunteer again. [More events](events.qmd).
+:::
+
 Hi, I'm Amelia! I'm a postdoctoral researcher and adjunct faculty member at the University of Nebraska–Lincoln. I work in the Nebraska Evaluation and Research (NEAR) Center, a statistics and data consulting center, and partner with the University of Nebraska Public Policy Center (NUPPC) and the Nebraska Statewide Workforce and Educational Reporting System (NSWERS), Nebraska's statewide longitudinal data system. I also teach data management and survey methods to graduate students.
 
 My training spans several fields. I started in sport and exercise science, with a BSc and an MSc from the University of Central Florida; my master's thesis examined how high-intensity interval training and HMB supplementation affect neuromuscular fatigue. At UNL I earned a second master's, an MA in Quantitative, Qualitative, and Psychometric Methods, and then an interdisciplinary PhD (2025) that paired those methods with exercise physiology and nutrition. My dissertation looked at youth sport participation and cognitive development, and at the better measurement needed to study them.
