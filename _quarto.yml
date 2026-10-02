@@ -36,6 +36,8 @@ website:
         text: Software
       - href: teaching.qmd
         text: Teaching
+      - href: events.qmd
+        text: Events
       - href: blog/index.qmd
         text: Blog
       - href: things-i-like.qmd

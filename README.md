@@ -6,7 +6,9 @@ Personal academic website for Amelia Miramonti, built with [Quarto](https://quar
 
 Files in `_data/` and `files/` are generated from a separate source repository. Do not edit them by hand; changes are overwritten on the next export.
 
-Edited by hand here: the home page, `research.qmd`, `teaching.qmd`, `contact.qmd`, `posit-conf-2026.qmd`, blog posts, and images.
+Edited by hand here: the home page, `research.qmd`, `teaching.qmd`, `contact.qmd`, `events.qmd`, `posit-conf-2026.qmd`, blog posts, and images.
+
+The home page has a "Next up" callout for the next event on `events.qmd`. When that event passes, update or remove the callout in the same change that moves the event to Past.
 
 ## Build and publish
 
