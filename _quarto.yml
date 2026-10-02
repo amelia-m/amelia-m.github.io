@@ -59,7 +59,7 @@ website:
         href: mailto:amiramonti2@unl.edu
         aria-label: Email
   page-footer:
-    left: "&copy; Amelia Miramonti"
+    left: "&copy; 2026 Amelia Miramonti"
     right: "Written in [R](https://www.r-project.org), stitched together with [Quarto](https://quarto.org), with assistance from [Claude](https://claude.ai) and [GitHub Copilot](https://github.com/features/copilot)."
 
 format:
