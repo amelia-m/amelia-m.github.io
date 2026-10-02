@@ -1,8 +1,10 @@
 /*-- scss:defaults --*/
 // No web font: the theme would otherwise fetch one from Google Fonts.
 $web-font-path: false;
-$primary: #007ba3;
-$link-color: #007ba3;
+// Slate blue taken from the banner's sky and distant ridges. White on it is
+// 7.0:1, and it on white is the same, so it works for buttons and links.
+$primary: #2b5c8a;
+$link-color: #2b5c8a;
 $navbar-bg: #ffffff;
 $navbar-fg: #1f2a33;
 $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -25,3 +27,9 @@ $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetic
 .like-card p { margin-bottom: .4rem; }
 .like-card ul { margin: .25rem 0 0; padding-left: 1.1rem; font-size: .92em; }
 .like-by { font-weight: 400; opacity: .7; font-size: .9em; }
+
+// Colour-scheme toggle: a moon while the light theme is on (click for dark).
+// Quarto adds .alternate to the toggle while the dark theme is on.
+.navbar .quarto-color-scheme-toggle:not(.alternate) .bi::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231f2a33' viewBox='0 0 16 16'%3E%3Cpath d='M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278'/%3E%3C/svg%3E");
+}
