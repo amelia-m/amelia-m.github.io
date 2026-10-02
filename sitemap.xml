@@ -2,46 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://amelia-m.github.io/things-i-like.html</loc>
-    <lastmod>2026-10-02T17:17:51.427Z</lastmod>
+    <lastmod>2026-10-02T18:22:37.516Z</lastmod>
   </url>
   <url>
     <loc>https://amelia-m.github.io/talks.html</loc>
-    <lastmod>2026-10-02T17:17:51.427Z</lastmod>
+    <lastmod>2026-10-02T18:22:37.511Z</lastmod>
   </url>
   <url>
     <loc>https://amelia-m.github.io/research.html</loc>
-    <lastmod>2026-10-02T17:17:51.426Z</lastmod>
+    <lastmod>2026-10-02T18:22:37.490Z</lastmod>
   </url>
   <url>
     <loc>https://amelia-m.github.io/posit-conf-2026.html</loc>
-    <lastmod>2026-10-02T17:17:51.423Z</lastmod>
+    <lastmod>2026-10-02T18:22:37.478Z</lastmod>
   </url>
   <url>
-    <loc>https://amelia-m.github.io/cv/index.html</loc>
-    <lastmod>2026-10-02T17:17:51.404Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amelia-m.github.io/blog/index.html</loc>
-    <lastmod>2026-10-02T17:17:51.395Z</lastmod>
+    <loc>https://amelia-m.github.io/events.html</loc>
+    <lastmod>2026-10-02T18:22:37.364Z</lastmod>
   </url>
   <url>
     <loc>https://amelia-m.github.io/contact.html</loc>
-    <lastmod>2026-10-02T17:17:51.395Z</lastmod>
+    <lastmod>2026-10-02T18:22:37.355Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amelia-m.github.io/blog/index.html</loc>
+    <lastmod>2026-10-02T18:22:37.345Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amelia-m.github.io/cv/index.html</loc>
+    <lastmod>2026-10-02T18:22:37.359Z</lastmod>
   </url>
   <url>
     <loc>https://amelia-m.github.io/index.html</loc>
-    <lastmod>2026-10-02T17:55:26.232Z</lastmod>
+    <lastmod>2026-10-02T18:22:37.449Z</lastmod>
   </url>
   <url>
     <loc>https://amelia-m.github.io/publications.html</loc>
-    <lastmod>2026-10-02T17:17:51.425Z</lastmod>
+    <lastmod>2026-10-02T18:22:37.482Z</lastmod>
   </url>
   <url>
     <loc>https://amelia-m.github.io/software.html</loc>
-    <lastmod>2026-10-02T17:17:51.426Z</lastmod>
+    <lastmod>2026-10-02T18:22:37.496Z</lastmod>
   </url>
   <url>
     <loc>https://amelia-m.github.io/teaching.html</loc>
-    <lastmod>2026-10-02T17:17:51.427Z</lastmod>
+    <lastmod>2026-10-02T18:22:37.514Z</lastmod>
   </url>
 </urlset>

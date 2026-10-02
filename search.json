@@ -32,7 +32,7 @@
     "href": "things-i-like.html#communities",
     "title": "Things I Like",
     "section": "Communities",
-    "text": "Communities\n\n\nPosit Data Science Hangout Posit\nFree weekly online conversation with data science leaders.\n\nPast hangouts\n\n\n\nPosit Data Science Lab Posit\nWeekly live-coding and screen-sharing session. Drop in or just watch.\n\nRecordings (YouTube)\n\n\n\nrOpenSci\nCommunity and infrastructure for open, reproducible research software in R.\n\n\nTidyTuesday\nA weekly dataset for practicing data wrangling and visualization."
+    "text": "Communities\n\nOnline\n\n\nPosit Data Science Hangout Posit\nFree weekly online conversation with data science leaders.\n\nPast hangouts\n\n\n\nPosit Data Science Lab Posit\nWeekly live-coding and screen-sharing session. Drop in or just watch.\n\nRecordings (YouTube)\n\n\n\nrOpenSci\nCommunity and infrastructure for open, reproducible research software in R.\n\n\nTidyTuesday\nA weekly dataset for practicing data wrangling and visualization.\n\n\n\n\nLincoln and Nebraska\n\n\n1 Million Cups Lincoln\nWednesday-morning gathering where local founders present their businesses and take questions from the community.\n\nLinkedIn\n\n\n\nLincoln.Code\nLincoln meetup for people who write code.\n\n\nLincoln AI\nLincoln meetup about artificial intelligence.\n\n\nNebraska Women in Tech Summit AKSARBEN Foundation\nAnnual summit and awards celebrating women in technology across Nebraska. I volunteer there."
   },
   {
     "objectID": "things-i-like.html#websites-and-resources",
@@ -135,9 +135,72 @@
   {
     "objectID": "posit-conf-2026.html",
     "href": "posit-conf-2026.html",
-    "title": "Hi from posit::conf(2026)!",
+    "title": "Met at posit::conf(2026)?",
     "section": "",
-    "text": "I’m attending this year and would love to meet people. Things I’m always happy to talk about:\n\nShiny apps for messy data: cleaning string variables, inferring table relationships, documenting data warehouses (Recode Studio, Table Relationship Explorer)\nSynthetic data that lowers the barriers for researchers and stakeholders to work with administrative data, without making it public\nTeaching data management and R to graduate students\nQuarto for course sites, reports, and parameterized reporting\nR in public-sector and evaluation work\n\nBest ways to follow up: LinkedIn, Bluesky, or email.\n\n\namelia-m.github.io"
+    "text": "Thanks for saying hi at posit::conf(2026). Things I’m always happy to talk about:\n\nShiny apps for messy data: cleaning string variables, inferring table relationships, documenting data warehouses (Recode Studio, Table Relationship Explorer)\nSynthetic data that lowers the barriers for researchers and stakeholders to work with administrative data, without making it public\nTeaching data management and R to graduate students\nQuarto for course sites, reports, and parameterized reporting\nR in public-sector and evaluation work\n\nBest ways to follow up: LinkedIn, Bluesky, or email.\n\n\namelia-m.github.io"
+  },
+  {
+    "objectID": "events.html",
+    "href": "events.html",
+    "title": "Events",
+    "section": "",
+    "text": "Where to find me in person. If you’ll be at one of these, come say hi."
+  },
+  {
+    "objectID": "events.html#upcoming",
+    "href": "events.html#upcoming",
+    "title": "Events",
+    "section": "Upcoming",
+    "text": "Upcoming\n\nNebraska Women in Tech Summit, Friday, April 2, 2027, Kiewit La Vista, La Vista, NE. I volunteered at the 2026 summit and am planning to volunteer again. The Nebraska Women in Tech Awards are the evening before, April 1, at the Kiewit Luminarium in Omaha."
+  },
+  {
+    "objectID": "events.html#regulars",
+    "href": "events.html#regulars",
+    "title": "Events",
+    "section": "Regulars",
+    "text": "Regulars\n\n1 Million Cups Lincoln, most Wednesday mornings. Local founders present their businesses and take questions from the community. (LinkedIn)\nLincoln.Code, a Lincoln meetup for people who write code.\nLincoln AI, a Lincoln meetup about artificial intelligence."
+  },
+  {
+    "objectID": "events.html#past",
+    "href": "events.html#past",
+    "title": "Events",
+    "section": "Past",
+    "text": "Past\n\n2026\n\nLincoln.Code meetup, September 29, 2026\nposit::conf(2026). Things I’m happy to talk about.\nNebraska Women in Tech Summit, event volunteer."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "University: amiramonti2@unl.edu\nPersonal: amelia.miramonti@gmail.com"
+  },
+  {
+    "objectID": "contact.html#email",
+    "href": "contact.html#email",
+    "title": "Contact",
+    "section": "",
+    "text": "University: amiramonti2@unl.edu\nPersonal: amelia.miramonti@gmail.com"
+  },
+  {
+    "objectID": "contact.html#profiles",
+    "href": "contact.html#profiles",
+    "title": "Contact",
+    "section": "Profiles",
+    "text": "Profiles\nCode: GitHub · GitLab · UNL GitLab\nScholarly: ORCID · Google Scholar · ResearchGate · OSF · Scopus · Lens\nSocial: LinkedIn · Bluesky · X"
+  },
+  {
+    "objectID": "contact.html#short-bio",
+    "href": "contact.html#short-bio",
+    "title": "Contact",
+    "section": "Short bio",
+    "text": "Short bio\nFor programs, introductions, and session chairs:\n\nAmelia Miramonti, PhD, is a postdoctoral researcher at the Nebraska Evaluation and Research (NEAR) Center and adjunct faculty in the Department of Educational Psychology at the University of Nebraska–Lincoln. She also supports applied research for Nebraska state agencies and communities with the University of Nebraska Public Policy Center, and develops privacy-preserving synthetic datasets from administrative records with the Nebraska Statewide Workforce and Educational Reporting System (NSWERS). She holds an interdisciplinary PhD from the University of Nebraska–Lincoln (2025) that combined quantitative, qualitative, and psychometric methods with exercise physiology and nutrition, an MA in Quantitative, Qualitative, and Psychometric Methods from the same institution, and a BSc and MSc in sport and exercise science from the University of Central Florida. Her more than 30 peer-reviewed articles range from neuromuscular physiology, strength and conditioning, and sports nutrition to child nutrition and career psychology. Her current work pairs measurement and missing-data methods with practical R and Shiny tools for data documentation, cleaning, and reporting, and she teaches graduate courses in computer-assisted data analysis and survey methods."
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Notes on R, data management, and methods. First posts coming soon.\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "cv/index.html",
@@ -236,41 +299,6 @@
     "title": "Curriculum Vitae",
     "section": "Technical skills",
     "text": "Technical skills\n\nStatistical & Psychometric: R Statistical Software (tidyverse; lavaan and related psychometric packages; MplusAutomation and semPlot for SEM workflows); Mplus; SAS; SPSS (including PROCESS macro); MATLAB; Jamovi; JASP\nSynthetic Data Generation & Evaluation: tidysynthesis; syntheval (R packages, Urban Institute)\nData Collection: Qualtrics; REDCap; LabVIEW (data collection, signal processing, and analysis); Biopac (EMG/MMG data collection)\nData Management & Databases: dbplyr (R); SQL; Microsoft Access\nVisualization & Interactive Applications: ggplot2 (R); gt (R); Shiny (R); Veusz\nReproducible Reporting & Publishing: Quarto (course websites, slide decks, parameterized reports, this CV); R Markdown / knitr; Markdown; LaTeX / TinyTeX\nResearch Workflow & Reference Management: targets (R package for reproducible pipelines); renv; Zotero; Obsidian; Open Science Framework (OSF)\nProgramming & Version Control: Git (GitHub, GitLab); Python (basic & LLM-assisted); Unix / Bash\nDevelopment Environments & Editors: Positron; RStudio; Visual Studio Code; Notepad++\nLLM-Assisted Development: Claude Code; Gemini / Gemini CLI; GitHub Copilot; Antigravity IDE; Cursor\nProductivity & Collaboration: Microsoft Office Suite (Excel, PowerPoint, Word, Teams, SharePoint); Adobe Acrobat Pro DC; Adobe Illustrator\n\n\nLaboratory assessments\n\nHeart rate (Polar monitors), blood pressure, anthropometrics\nResting metabolic rate and maximal oxygen uptake (ParvoMedics TrueOne 2400, Sensormedics Vmax Encore); Wingate and 3-minute critical power testing (Lode Corrival cycle ergometer)\nIsometric, isokinetic, and isotonic strength testing (Biodex System)\nElectromyographic and mechanomyographic data collection and processing (Noraxon Desktop DTS, Biopac)\nSport performance testing: sprints, agility, jumps, and force plate assessments using custom LabVIEW data collection interfaces\nPhysical activity monitoring (Actigraph wGT3X-BT)\nFinger prick blood sample collection, basic sample processing"
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Notes on R, data management, and methods. First posts coming soon.\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "University: amiramonti2@unl.edu\nPersonal: amelia.miramonti@gmail.com"
-  },
-  {
-    "objectID": "contact.html#email",
-    "href": "contact.html#email",
-    "title": "Contact",
-    "section": "",
-    "text": "University: amiramonti2@unl.edu\nPersonal: amelia.miramonti@gmail.com"
-  },
-  {
-    "objectID": "contact.html#profiles",
-    "href": "contact.html#profiles",
-    "title": "Contact",
-    "section": "Profiles",
-    "text": "Profiles\nCode: GitHub · GitLab · UNL GitLab\nScholarly: ORCID · Google Scholar · ResearchGate · OSF · Scopus · Lens\nSocial: LinkedIn · Bluesky · X"
-  },
-  {
-    "objectID": "contact.html#short-bio",
-    "href": "contact.html#short-bio",
-    "title": "Contact",
-    "section": "Short bio",
-    "text": "Short bio\nFor programs, introductions, and session chairs:\n\nAmelia Miramonti, PhD, is a postdoctoral researcher at the Nebraska Evaluation and Research (NEAR) Center and adjunct faculty in the Department of Educational Psychology at the University of Nebraska–Lincoln. She also supports applied research for Nebraska state agencies and communities with the University of Nebraska Public Policy Center, and develops privacy-preserving synthetic datasets from administrative records with the Nebraska Statewide Workforce and Educational Reporting System (NSWERS). She holds an interdisciplinary PhD from the University of Nebraska–Lincoln (2025) that combined quantitative, qualitative, and psychometric methods with exercise physiology and nutrition, an MA in Quantitative, Qualitative, and Psychometric Methods from the same institution, and a BSc and MSc in sport and exercise science from the University of Central Florida. Her more than 30 peer-reviewed articles range from neuromuscular physiology, strength and conditioning, and sports nutrition to child nutrition and career psychology. Her current work pairs measurement and missing-data methods with practical R and Shiny tools for data documentation, cleaning, and reporting, and she teaches graduate courses in computer-assisted data analysis and survey methods."
   },
   {
     "objectID": "index.html#currently",

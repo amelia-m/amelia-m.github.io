@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Software – Amelia Miramonti</title>
+<title>Events – Amelia Miramonti</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -81,10 +81,10 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="Software – Amelia Miramonti">
+<meta property="og:title" content="Events – Amelia Miramonti">
 <meta property="og:description" content="Amelia Miramonti, PhD - research methodology, psychometrics, synthetic data, and R/Shiny tools for applied research.">
 <meta property="og:site_name" content="Amelia Miramonti">
-<meta name="twitter:title" content="Software – Amelia Miramonti">
+<meta name="twitter:title" content="Events – Amelia Miramonti">
 <meta name="twitter:description" content="Amelia Miramonti, PhD - research methodology, psychometrics, synthetic data, and R/Shiny tools for applied research.">
 <meta name="twitter:card" content="summary">
 </head>
@@ -296,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="./software.html" aria-current="page"> 
+    <a class="nav-link" href="./software.html"> 
 <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
@@ -304,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./events.html"> 
+    <a class="nav-link active" href="./events.html" aria-current="page"> 
 <span class="menu-text">Events</span></a>
   </li>  
   <li class="nav-item">
@@ -365,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Software</h1>
+<h1 class="title">Events</h1>
 </div>
 
 
@@ -382,49 +382,36 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>I build R and Shiny tools for the unglamorous middle of applied research: documenting, cleaning, linking, and reporting on administrative data.</p>
-<section id="nebraska-suicide-mortality-review-reporting-application" class="level2">
-<h2 class="anchored" data-anchor-id="nebraska-suicide-mortality-review-reporting-application">Nebraska Suicide Mortality Review Reporting Application</h2>
-<p><em>Lead developer, R / Shiny · 2026–present</em></p>
-<p>Application supporting Nebraska’s veteran suicide mortality review process: integrates and reconciles successive Nebraska Violent Death Reporting System (NEVDRS) exports, detects and tracks record-level changes between exports, supports structured case annotation, and generates both individual case reports and the annual report to the Legislature. Internal; not publicly released.</p>
-<p><em>Internal tool; not publicly available.</em></p>
-</section>
-<section id="nswers-data-explorer-pipeline-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="nswers-data-explorer-pipeline-visualization">NSWERS Data Explorer &amp; Pipeline Visualization</h2>
-<p><em>Author, R / Shiny · 2025–present</em></p>
-<p>Internal application for the Nebraska Statewide Workforce and Educational Reporting System data warehouse: locates which tables hold which variables, retrieves definitions, and traces data lineage back to the queries and source tables each variable depends on. Improves pipeline transparency, makes problems easier to pinpoint, and shortens onboarding for the team. Not publicly released.</p>
-<p><em>Internal tool; not publicly available.</em></p>
-</section>
-<section id="recode-studio" class="level2">
-<h2 class="anchored" data-anchor-id="recode-studio">Recode Studio</h2>
-<p><em>Author &amp; maintainer, R / Shiny · Ongoing</em></p>
-<p>Dataset-agnostic R/Shiny app for cleaning messy string variables without hand-writing R: browse values, flag likely typos via spellcheck, build and preview recode rules, and export both a reusable rule set and runnable R code. Open source: github.com/amelia-m/recode-studio</p>
-<p><a href="https://github.com/amelia-m/recode-studio" class="btn btn-outline-primary btn-sm">Source on GitHub</a></p>
-</section>
-<section id="table-relationship-explorer" class="level2">
-<h2 class="anchored" data-anchor-id="table-relationship-explorer">Table Relationship Explorer</h2>
-<p><em>Author &amp; maintainer, R / Shiny · Ongoing</em></p>
-<p>Interactive tool for discovering and visualizing primary/foreign-key relationships across tabular data: multi-signal key inference with confidence scoring, interactive entity-relationship diagrams, and exportable reports across many file and database formats (with a Python/Streamlit port). Open source: github.com/amelia-m/table-explorer</p>
-<p><a href="https://github.com/amelia-m/table-explorer" class="btn btn-outline-primary btn-sm">Source on GitHub</a></p>
-</section>
-<section id="tools-i-use" class="level2">
-<h2 class="anchored" data-anchor-id="tools-i-use">Tools I use</h2>
+<!-- The home page (index.qmd) has a "Next up" callout for the first event under
+Upcoming. When that event passes, move it to Past here and update or remove the
+callout there too, so the home page never advertises something that is over. -->
+<p>Where to find me in person. If you’ll be at one of these, come say hi.</p>
+<section id="upcoming" class="level2">
+<h2 class="anchored" data-anchor-id="upcoming">Upcoming</h2>
 <ul>
-<li><strong>Statistical &amp; Psychometric:</strong> R Statistical Software (tidyverse; lavaan and related psychometric packages; MplusAutomation and semPlot for SEM workflows); Mplus; SAS; SPSS (including PROCESS macro); MATLAB; Jamovi; JASP</li>
-<li><strong>Synthetic Data Generation &amp; Evaluation:</strong> tidysynthesis; syntheval (R packages, Urban Institute)</li>
-<li><strong>Data Collection:</strong> Qualtrics; REDCap; LabVIEW (data collection, signal processing, and analysis); Biopac (EMG/MMG data collection)</li>
-<li><strong>Data Management &amp; Databases:</strong> dbplyr (R); SQL; Microsoft Access</li>
-<li><strong>Visualization &amp; Interactive Applications:</strong> ggplot2 (R); gt (R); Shiny (R); Veusz</li>
-<li><strong>Reproducible Reporting &amp; Publishing:</strong> Quarto (course websites, slide decks, parameterized reports, this CV); R Markdown / knitr; Markdown; LaTeX / TinyTeX</li>
-<li><strong>Research Workflow &amp; Reference Management:</strong> targets (R package for reproducible pipelines); renv; Zotero; Obsidian; Open Science Framework (OSF)</li>
-<li><strong>Programming &amp; Version Control:</strong> Git (GitHub, GitLab); Python (basic &amp; LLM-assisted); Unix / Bash</li>
-<li><strong>Development Environments &amp; Editors:</strong> Positron; RStudio; Visual Studio Code; Notepad++</li>
-<li><strong>LLM-Assisted Development:</strong> Claude Code; Gemini / Gemini CLI; GitHub Copilot; Antigravity IDE; Cursor</li>
-<li><strong>Productivity &amp; Collaboration:</strong> Microsoft Office Suite (Excel, PowerPoint, Word, Teams, SharePoint); Adobe Acrobat Pro DC; Adobe Illustrator</li>
+<li><strong><a href="https://aksarben.org/women-in-tech-summit/">Nebraska Women in Tech Summit</a></strong>, Friday, April 2, 2027, Kiewit La Vista, La Vista, NE. I volunteered at the 2026 summit and am planning to volunteer again. The Nebraska Women in Tech Awards are the evening before, April 1, at the Kiewit Luminarium in Omaha.</li>
 </ul>
-<p>More code: <a href="https://github.com/amelia-m">GitHub</a> · <a href="https://gitlab.com/amelia-m">GitLab</a> · <a href="https://git.unl.edu/amiramonti">UNL GitLab</a></p>
+</section>
+<section id="regulars" class="level2">
+<h2 class="anchored" data-anchor-id="regulars">Regulars</h2>
+<ul>
+<li><strong><a href="https://www.1millioncups.com/s/account/0014W00002AqQeaQAF/lincoln-ne">1 Million Cups Lincoln</a></strong>, most Wednesday mornings. Local founders present their businesses and take questions from the community. (<a href="https://www.linkedin.com/company/1-million-cups-lincoln/">LinkedIn</a>)</li>
+<li><strong><a href="https://www.meetup.com/lincoln-code/">Lincoln.Code</a></strong>, a Lincoln meetup for people who write code.</li>
+<li><strong><a href="https://www.meetup.com/lincoln-ai/">Lincoln AI</a></strong>, a Lincoln meetup about artificial intelligence.</li>
+</ul>
+</section>
+<section id="past" class="level2">
+<h2 class="anchored" data-anchor-id="past">Past</h2>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section">2026</h3>
+<ul>
+<li><a href="https://www.meetup.com/lincoln-code/events/316586016/">Lincoln.Code meetup, September 29, 2026</a></li>
+<li>posit::conf(2026). <a href="./posit-conf-2026.html">Things I’m happy to talk about</a>.</li>
+<li>Nebraska Women in Tech Summit, event volunteer.</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
