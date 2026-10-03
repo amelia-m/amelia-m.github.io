@@ -13,6 +13,10 @@ Things I build outside of research, mostly because I wanted them to exist.
 
 *React, TypeScript, and Vite*
 
-A skydiving weather dashboard for the Lincoln Sport Parachute Club at Brown's Airport (NE69) in Weeping Water, Nebraska. It pulls METARs, forecasts, winds aloft, and radar from the National Weather Service, Open-Meteo, and the Iowa Environmental Mesonet, then flags the conditions of concern for jumping (ground winds and gusts, winds aloft, ceiling, visibility, precipitation, density altitude, and the sunset cutoff for night jumps) and cites the published USPA or FAA rule behind each flag, so you can see why something is flagged and not just that it is. It is a reference, not a clearance: jump decisions still follow USPA guidelines, drop zone policy, and your Safety and Training Advisor.
+A skydiving weather dashboard for the Lincoln Sport Parachute Club at Brown's Airport (NE69) in Weeping Water, Nebraska, tuned to the club's Cessna 182 jump plane. It folds a three-site manual routine (NOAA hourly forecast, cloud forecast, and the KPMV METAR) into one page, and adds winds aloft for freefall drift and density altitude for jump-plane climb.
+
+It flags seven conditions: surface wind, the club waiver's gust ceiling, visibility, FAA flight category, overcast sky, a thunderstorm reported in the METAR, and parachute ops between sunset and sunrise. Each one fires only on a published limit, from the USPA SIM, the CFRs, the FAA's AIM, or the club's posted waiver, or on a plain observed fact, and cites the source it rests on. Where nothing published sets a threshold, nothing fires: no invented numbers, and no go/no-go verdict. Everything else, winds aloft and density altitude included, is a reading to judge for yourself.
+
+In development, and not endorsed by USPA, LSPC, or any licensed professional. Jump decisions stay with the jumper, the Safety and Training Advisor, and the pilot in command.
 
 `r link("lspc-weather", "Open the app")`{.btn .btn-primary .btn-sm} `r link("lspc-weather-source")`{.btn .btn-outline-primary .btn-sm}
