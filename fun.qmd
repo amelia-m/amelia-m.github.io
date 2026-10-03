@@ -1,0 +1,18 @@
+---
+title: "Fun & side projects"
+---
+
+```{r}
+#| include: false
+source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
+```
+
+Things I build outside of research, mostly because I wanted them to exist.
+
+## LSPC Weather
+
+*React, TypeScript, and Vite*
+
+A skydiving weather dashboard for the Lincoln Sport Parachute Club at Brown's Airport (NE69) in Weeping Water, Nebraska. It pulls METARs, forecasts, winds aloft, and radar from the National Weather Service, Open-Meteo, and the Iowa Environmental Mesonet, then flags the conditions of concern for jumping (ground winds and gusts, winds aloft, ceiling, visibility, precipitation, density altitude, and the sunset cutoff for night jumps) and cites the published USPA or FAA rule behind each flag, so you can see why something is flagged and not just that it is. It is a reference, not a clearance: jump decisions still follow USPA guidelines, drop zone policy, and your Safety and Training Advisor.
+
+`r link("lspc-weather", "Open the app")`{.btn .btn-primary .btn-sm} `r link("lspc-weather-source")`{.btn .btn-outline-primary .btn-sm}

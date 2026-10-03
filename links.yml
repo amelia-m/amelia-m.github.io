@@ -72,3 +72,15 @@ projects:
   - id: table-explorer
     label: Table Relationship Explorer
     url: https://github.com/amelia-m/table-explorer
+
+# Side projects, shown on fun.qmd. The `projects` group above is matched by
+# name against the software_dev data on software.qmd; this group is not, so
+# it holds both the live app and its source.
+fun:
+  - id: lspc-weather
+    label: LSPC Weather
+    url: https://amelia-m.github.io/lspc-weather/
+  - id: lspc-weather-source
+    label: Source on GitHub
+    url: https://github.com/amelia-m/lspc-weather
+    icon: github

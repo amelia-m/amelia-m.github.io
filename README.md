@@ -6,7 +6,7 @@ Personal academic website for Amelia Miramonti, built with [Quarto](https://quar
 
 Files in `_data/` and `files/` are generated from a separate source repository. Do not edit them by hand; changes are overwritten on the next export.
 
-Edited by hand here: the home page, `research.qmd`, `teaching.qmd`, `contact.qmd`, `posit-conf-2026.qmd`, blog posts, and images.
+Edited by hand here: the home page, `research.qmd`, `teaching.qmd`, `contact.qmd`, `posit-conf-2026.qmd`, `fun.qmd`, blog posts, and images.
 
 ## Build and publish
 
