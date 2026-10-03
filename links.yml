@@ -1,6 +1,6 @@
-# Public profile, contact, and project links: the single source for the
-# home, contact, software, publications, and conference pages (read through
-# the link helpers in R/site.R).
+# Public profile, contact, project, and event links: the single source for the
+# home, contact, software, publications, events, fun, and conference pages
+# (read through the link helpers in R/site.R).
 #
 # The navbar in _quarto.yml cannot read this file. Every render checks that
 # each external navbar link also appears here and stops if one does not, so
@@ -84,3 +84,23 @@ fun:
     label: Source on GitHub
     url: https://github.com/amelia-m/lspc-weather
     icon: github
+
+events:
+  - id: wit-summit
+    label: Nebraska Women in Tech Summit
+    url: https://aksarben.org/women-in-tech-summit/
+  - id: one-million-cups-lnk
+    label: 1 Million Cups Lincoln
+    url: https://www.1millioncups.com/s/account/0014W00002AqQeaQAF/lincoln-ne
+  - id: one-million-cups-lnk-linkedin
+    label: 1 Million Cups Lincoln on LinkedIn
+    url: https://www.linkedin.com/company/1-million-cups-lincoln/
+  - id: lincoln-code
+    label: Lincoln.Code
+    url: https://www.meetup.com/lincoln-code/
+  - id: lincoln-code-2026-09-29
+    label: Lincoln.Code meetup, September 29, 2026
+    url: https://www.meetup.com/lincoln-code/events/316586016/
+  - id: lincoln-ai
+    label: Lincoln AI
+    url: https://www.meetup.com/lincoln-ai/

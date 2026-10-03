@@ -213,27 +213,51 @@ sections:
         description: Metascientist who writes about statistical inference and research methods.
 
   - title: Communities
-    items:
-      - name: Posit Data Science Hangout
-        url: https://posit.co/data-science-hangout/
-        by: Posit
-        description: Free weekly online conversation with data science leaders.
-        links:
-          - label: Past hangouts
-            url: https://posit.co/past-hangouts/
-      - name: Posit Data Science Lab
-        url: https://pos.it/dslab
-        by: Posit
-        description: Weekly live-coding and screen-sharing session. Drop in or just watch.
-        links:
-          - label: Recordings (YouTube)
-            url: https://www.youtube.com/playlist?list=PL9HYL-VRX0oSeWeMEGQt0id7adYQXebhT
-      - name: rOpenSci
-        url: https://ropensci.org/
-        description: Community and infrastructure for open, reproducible research software in R.
-      - name: TidyTuesday
-        url: https://github.com/rfordatascience/tidytuesday
-        description: A weekly dataset for practicing data wrangling and visualization.
+    groups:
+      - title: Online
+        items:
+          - name: Posit Data Science Hangout
+            url: https://posit.co/data-science-hangout/
+            by: Posit
+            description: Free weekly online conversation with data science leaders.
+            links:
+              - label: Past hangouts
+                url: https://posit.co/past-hangouts/
+          - name: Posit Data Science Lab
+            url: https://pos.it/dslab
+            by: Posit
+            description: Weekly live-coding and screen-sharing session. Drop in or just watch.
+            links:
+              - label: Recordings (YouTube)
+                url: https://www.youtube.com/playlist?list=PL9HYL-VRX0oSeWeMEGQt0id7adYQXebhT
+          - name: rOpenSci
+            url: https://ropensci.org/
+            description: Community and infrastructure for open, reproducible research software in R.
+          - name: TidyTuesday
+            url: https://github.com/rfordatascience/tidytuesday
+            description: A weekly dataset for practicing data wrangling and visualization.
+      - title: Lincoln and Nebraska
+        items:
+          - name: 1 Million Cups Lincoln
+            url: https://www.1millioncups.com/s/account/0014W00002AqQeaQAF/lincoln-ne
+            description: >-
+              Wednesday-morning gathering where local founders present their
+              businesses and take questions from the community.
+            links:
+              - label: LinkedIn
+                url: https://www.linkedin.com/company/1-million-cups-lincoln/
+          - name: Lincoln.Code
+            url: https://www.meetup.com/lincoln-code/
+            description: Lincoln meetup for people who write code.
+          - name: Lincoln AI
+            url: https://www.meetup.com/lincoln-ai/
+            description: Lincoln meetup about artificial intelligence.
+          - name: Nebraska Women in Tech Summit
+            url: https://aksarben.org/women-in-tech-summit/
+            by: AKSARBEN Foundation
+            description: >-
+              Annual summit and awards celebrating women in technology across
+              Nebraska. I [volunteer](events.qmd) there.
 
   - title: Websites and resources
     items:

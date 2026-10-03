@@ -33,8 +33,9 @@ cat(link_button("github"), link_button("linkedin"), link_button("orcid"),
 
 ::: {.g-col-12 .g-col-md-8}
 
+<!-- Next event from events.qmd. Update or remove when it passes. -->
 ::: {.callout-tip appearance="simple"}
-**At posit::conf(2026) this week.** Come say hi! [What I'd love to chat about](posit-conf-2026.qmd).
+**Next up:** the Nebraska Women in Tech Summit, April 2, 2027, where I'm planning to volunteer again. [More events](events.qmd).
 :::
 
 Hi, I'm Amelia! I'm a postdoctoral researcher and adjunct faculty member at the University of Nebraska–Lincoln. I work in the Nebraska Evaluation and Research (NEAR) Center, a statistics and data consulting center, and partner with the University of Nebraska Public Policy Center (NUPPC) and the Nebraska Statewide Workforce and Educational Reporting System (NSWERS), Nebraska's statewide longitudinal data system. I also teach data management and survey methods to graduate students.

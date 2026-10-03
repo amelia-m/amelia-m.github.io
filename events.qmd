@@ -1,0 +1,32 @@
+---
+title: "Events"
+---
+
+<!-- The home page (index.qmd) has a "Next up" callout for the first event under
+Upcoming. When that event passes, move it to Past here and update or remove the
+callout there too, so the home page never advertises something that is over. -->
+
+```{r}
+#| include: false
+source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
+```
+
+Where to find me in person. If you'll be at one of these, come say hi.
+
+## Upcoming
+
+- **`r link("wit-summit")`**, Friday, April 2, 2027, Kiewit La Vista, La Vista, NE. I volunteered at the 2026 summit and am planning to volunteer again. The Nebraska Women in Tech Awards are the evening before, April 1, at the Kiewit Luminarium in Omaha.
+
+## Regulars
+
+- **`r link("one-million-cups-lnk")`**, most Wednesday mornings. Local founders present their businesses and take questions from the community. (`r link("one-million-cups-lnk-linkedin", "LinkedIn")`)
+- **`r link("lincoln-code")`**, a Lincoln meetup for people who write code.
+- **`r link("lincoln-ai")`**, a Lincoln meetup about artificial intelligence.
+
+## Past
+
+### 2026
+
+- `r link("lincoln-code-2026-09-29")`
+- posit::conf(2026). [Things I'm happy to talk about](posit-conf-2026.qmd).
+- Nebraska Women in Tech Summit, event volunteer.
