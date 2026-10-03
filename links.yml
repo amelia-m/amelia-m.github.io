@@ -84,6 +84,12 @@ fun:
     label: Source on GitHub
     url: https://github.com/amelia-m/lspc-weather
     icon: github
+  # No live link: the pkgdown url in the package's DESCRIPTION and
+  # _pkgdown.yml is not built or served yet, so only the repo is linked.
+  - id: compliment
+    label: compliment
+    url: https://github.com/amelia-m/posit-conf-2026-compliments
+    icon: github
 
 events:
   - id: wit-summit

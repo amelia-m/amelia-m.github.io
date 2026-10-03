@@ -20,3 +20,13 @@ It flags seven conditions: surface wind, the club waiver's gust ceiling, visibil
 In development, and not endorsed by USPA, LSPC, or any licensed professional. Jump decisions stay with the jumper, the Safety and Training Advisor, and the pilot in command.
 
 `r link("lspc-weather", "Open the app")`{.btn .btn-primary .btn-sm} `r link("lspc-weather-source")`{.btn .btn-outline-primary .btn-sm}
+
+## compliment
+
+*R package*
+
+Written around posit::conf(2026). `compliment()` and `farewell()` build text from template, adjective, and subject banks along four dials: a `weirdness` scale running sincere to quirky to bizarre, a `mood` (sincere, grumpy, cheerful, or dramatic), a `profanity` level that includes a deliberately silly clean tier, and a `shakespearean` flag for pseudo-Elizabethan phrasing. `compliment_of_the_day()` and `farewell_of_the_day()` give one result that is fixed for a given date and leave the global random seed alone.
+
+Most of the effort went into making randomly assembled sentences read like English: rejecting an adjective the chosen template already uses, resampling pairs that share a word stem ("creative" with "creativity"), and singularizing the subject banks so the Shakespearean blends stopped emitting "Thy vapours is." The `weirdness` dial draws each component independently with triangular weights, so a value between tiers blends them instead of flipping over. Note that the `strong` profanity tier ships explicit language in the package source.
+
+`r link("compliment", "Source on GitHub")`{.btn .btn-outline-primary .btn-sm}
