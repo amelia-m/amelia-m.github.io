@@ -90,6 +90,12 @@ fun:
     label: compliment
     url: https://github.com/amelia-m/posit-conf-2026-compliments
     icon: github
+  # The workshop compliment was started in. Posit's catalogue titles it
+  # "Our modern R workflow (ft. Positron and AI)"; the label here follows
+  # the workshop materials' own heading.
+  - id: modern-r-workflow
+    label: Modern R workflow (ft. Positron and AI)
+    url: https://github.com/posit-conf-2026/modern-r-workflow
 
 events:
   - id: wit-summit
