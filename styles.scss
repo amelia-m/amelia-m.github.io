@@ -19,6 +19,23 @@ $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetic
 html { background-color: $body-bg; }
 body { background-color: transparent; }
 
+// Quarto clips the navbar brand with overflow:hidden + text-overflow:ellipsis
+// inside a container capped at calc(100% - 115px), which rendered the name as
+// "Amelia Miram...". Let the name keep its full width; the links collapse to
+// the hamburger before the bar gets tight (navbar.collapse-below in
+// _quarto.yml), so nothing else has to give.
+.navbar-brand { overflow: visible; text-overflow: clip; }
+.navbar-brand-container { max-width: none; flex: 0 0 auto; }
+// Multi-word labels ("Things I Like") were breaking mid-phrase and making the
+// bar two rows tall while space was still free to the right. With nowrap the
+// row needs ~1206px, which overflowed the 1200px bottom of the xl range by a
+// few pixels, so the per-link padding comes in slightly to fit.
+.navbar-expand-xl .navbar-nav .nav-link {
+  white-space: nowrap;
+  padding-left: .4rem;
+  padding-right: .4rem;
+}
+
 #particles-bg {
   --particles-rgb: 43, 92, 138;
   position: fixed;
