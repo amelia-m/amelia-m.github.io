@@ -2,4 +2,7 @@
      the page content and inert to the pointer; the script appends the canvas
      and drives this element's opacity from the scroll position. -->
 <div id="particles-bg" aria-hidden="true"></div>
-<script src="js/particles-bg.js" defer></script>
+<!-- Root-relative: include-after-body content is emitted verbatim, so a
+     page-relative path would 404 if this include were reused on any page
+     below the site root. -->
+<script src="/js/particles-bg.js" defer></script>

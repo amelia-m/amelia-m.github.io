@@ -13,19 +13,22 @@ $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetic
 
 /*-- scss:rules --*/
 
-// Drifting-dot background (js/particles-bg.js); see the note in styles.scss.
-// The dots use the pale link blue, not $primary: #2f6aa8 is a button fill and
+// Drifting-dot background (js/particles-bg.js); see the notes in styles.scss.
+// The dots use the pale link blue: $primary (#2f6aa8) is a button fill and
 // nearly disappears against darkly's #222.
 html { background-color: $body-bg; }
 body { background-color: transparent; }
 
-// Navbar brand: see the note in styles.scss.
-.navbar-brand { overflow: visible; text-overflow: clip; }
-.navbar-brand-container { max-width: none; flex: 0 0 auto; }
-.navbar-expand-xl .navbar-nav .nav-link {
-  white-space: nowrap;
-  padding-left: .4rem;
-  padding-right: .4rem;
+// Navbar, expanded state only; see the note in styles.scss for why the
+// breakpoint scoping matters.
+@media (min-width: 1200px) {
+  .navbar-brand { overflow: visible; text-overflow: clip; }
+  .navbar-brand-container { max-width: none; flex: 0 0 auto; }
+  .navbar-expand-xl .navbar-nav .nav-link {
+    white-space: nowrap;
+    padding-left: .4rem;
+    padding-right: .4rem;
+  }
 }
 
 #particles-bg {
@@ -35,7 +38,6 @@ body { background-color: transparent; }
   z-index: -1;
   pointer-events: none;
   opacity: 0;
-  transition: opacity .25s linear;
 }
 @media (prefers-reduced-motion: reduce) { #particles-bg { display: none; } }
 
