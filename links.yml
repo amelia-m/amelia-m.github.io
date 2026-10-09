@@ -86,13 +86,9 @@ fun:
     icon: github
   # No live link: the pkgdown url in the package's DESCRIPTION and
   # _pkgdown.yml is not built or served yet, so only the repo is linked.
-  # The repo is still named posit-conf-2026-compliments; a rename to
-  # match the package (pleasantry) is pending. GitHub redirects the old
-  # path after a rename, so this keeps working either way, but switch it
-  # to /pleasantry once the repo moves.
   - id: pleasantry
     label: pleasantry
-    url: https://github.com/amelia-m/posit-conf-2026-compliments
+    url: https://github.com/amelia-m/pleasantry
     icon: github
   # The workshop compliment was started in. Posit's catalogue titles it
   # "Our modern R workflow (ft. Positron and AI)"; the label here follows
