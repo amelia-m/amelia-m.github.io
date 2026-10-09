@@ -4,6 +4,10 @@ project:
   render:
     - "*.qmd"
     - "!README.md"
+  # js/ is referenced from _includes/particles-bg.html, which Quarto does not
+  # scan for resources, so name it here or it is left out of _site.
+  resources:
+    - js/
 
 execute:
   echo: false

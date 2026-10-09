@@ -11,6 +11,25 @@ $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetic
 
 /*-- scss:rules --*/
 
+// Drifting-dot background (js/particles-bg.js), home page only. The layer is
+// fixed behind everything, so the page background moves to `html` and `body`
+// goes transparent — an opaque body would paint straight over a z-index: -1
+// child. --particles-rgb is read by the script each frame, which is how the
+// light/dark toggle changes the dot colour without re-initialising.
+html { background-color: $body-bg; }
+body { background-color: transparent; }
+
+#particles-bg {
+  --particles-rgb: 43, 92, 138;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .25s linear;
+}
+@media (prefers-reduced-motion: reduce) { #particles-bg { display: none; } }
+
 .hero-banner img { width: 100%; height: clamp(160px, 26vw, 320px); object-fit: cover; object-position: center 40%; display: block; }
 .hero-banner p { margin: 0; }
 .hero-banner { margin-top: -1rem; margin-bottom: 2rem; }

@@ -13,6 +13,23 @@ $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetic
 
 /*-- scss:rules --*/
 
+// Drifting-dot background (js/particles-bg.js); see the note in styles.scss.
+// The dots use the pale link blue, not $primary: #2f6aa8 is a button fill and
+// nearly disappears against darkly's #222.
+html { background-color: $body-bg; }
+body { background-color: transparent; }
+
+#particles-bg {
+  --particles-rgb: 143, 184, 230;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .25s linear;
+}
+@media (prefers-reduced-motion: reduce) { #particles-bg { display: none; } }
+
 .hero-banner img { width: 100%; height: clamp(160px, 26vw, 320px); object-fit: cover; object-position: center 40%; display: block; }
 .hero-banner p { margin: 0; }
 .hero-banner { margin-top: -1rem; margin-bottom: 2rem; }
