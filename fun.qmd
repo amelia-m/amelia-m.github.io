@@ -21,7 +21,7 @@ In development, and not endorsed by USPA, LSPC, or any licensed professional. Ju
 
 `r link("lspc-weather", "Open the app")`{.btn .btn-primary .btn-sm} `r link("lspc-weather-source")`{.btn .btn-outline-primary .btn-sm}
 
-## compliment
+## pleasantry
 
 *R package*
 
@@ -29,4 +29,4 @@ Started at posit::conf(2026) in Houston, in Hadley Wickham and Jenny Bryan's `r 
 
 Most of the effort went into making the composed compliments read like English: rejecting an adjective the chosen template already uses, resampling adjective and subject pairs that share a word stem ("creative" with "creativity"), and singularizing the subject banks so the Shakespearean blends stopped emitting "Thy vapours is." The `weirdness` scale draws each component independently with triangular weights, so a value between tiers blends them instead of flipping over. Note that the `strong` profanity tier ships explicit language in the package source.
 
-`r link("compliment", "Source on GitHub")`{.btn .btn-outline-primary .btn-sm}
+`r link("pleasantry", "Source on GitHub")`{.btn .btn-outline-primary .btn-sm}
