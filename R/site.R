@@ -406,6 +406,7 @@ site_links <- function() {
       group = g, id = l$id, label = l$label, url = l$url,
       text = if (is.null(l$text)) l$label else l$text,
       icon = if (is.null(l$icon)) "" else l$icon,
+      icon_ai = if (is.null(l$icon_ai)) "" else l$icon_ai,
       stringsAsFactors = FALSE
     )))
   })
@@ -439,7 +440,15 @@ link_line <- function(group, sep = " · ") {
 # Full-width sidebar button, with the Bootstrap icon when one is set.
 link_button <- function(id, label = NULL, class = "btn-outline-primary") {
   l <- get_link(id)
-  icon <- if (nzchar(l$icon)) paste0('<i class="bi bi-', l$icon, '" aria-hidden="true"></i> ') else ""
+  # Bootstrap Icons has no ORCID or Google Scholar glyph; those come from the
+  # academicons extension, whose shortcode Quarto expands after knitr.
+  icon <- if (nzchar(l$icon_ai)) {
+    paste0("{{< ai ", l$icon_ai, " >}} ")
+  } else if (nzchar(l$icon)) {
+    paste0('<i class="bi bi-', l$icon, '" aria-hidden="true"></i> ')
+  } else {
+    ""
+  }
   paste0("[", icon, md(if (is.null(label)) l$label else label), "](", l$url,
          "){.btn .", class, " .w-100 .mb-2}")
 }
@@ -450,15 +459,25 @@ link_button <- function(id, label = NULL, class = "btn-outline-primary") {
 
 print_likes <- function(file = "likes.yml") {
   data <- yaml::read_yaml(site_path(file))
+  # Anchor so one card can point at another (`see:`), which keeps a tool in
+  # one section instead of repeating it: browser extensions live together,
+  # and the related software card links across to them.
+  slug <- function(x) gsub("^-|-$", "", gsub("-+", "-", gsub("[^a-z0-9]+", "-", tolower(x))))
   card <- function(it) {
     if (is.null(it$name) || !nzchar(it$name)) stop(file, ": every item needs a name")
     title <- if (is.null(it$url)) md(it$name) else paste0("[", md(it$name), "](", it$url, ")")
-    out <- c("::: {.g-col-12 .g-col-md-6 .like-card}", paste0("**", title, "**",
+    out <- c(paste0("::: {#like-", slug(it$name), " .g-col-12 .g-col-md-6 .like-card}"),
+             paste0("**", title, "**",
              if (!is.null(it$by)) paste0(" <span class='like-by'>", md(it$by), "</span>") else ""))
     if (!is.null(it$description)) out <- c(out, "", trimws(it$description))
     if (length(it$links)) {
       out <- c(out, "", vapply(it$links, function(l) paste0("- [", md(l$label), "](", l$url, ")"),
                                character(1)))
+    }
+    if (length(it$see)) {
+      out <- c(out, "", paste0("*See also: ",
+        paste(vapply(it$see, function(n) paste0("[", md(n), "](#like-", slug(n), ")"), character(1)),
+              collapse = ", "), "*"))
     }
     c(out, ":::", "")
   }

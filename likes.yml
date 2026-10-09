@@ -11,6 +11,8 @@
 #   description: Markdown allowed, including inline links
 #   links:       extra links, each with `label` and `url`
 #                (for people: their website, Bluesky, GitHub, etc.)
+#   see:         names of other cards on this page to link across to, so a
+#                tool is listed once and referenced from related cards
 
 sections:
   - title: Software
@@ -117,9 +119,8 @@ sections:
           - name: Zotero
             url: https://www.zotero.org/
             description: Free reference manager for collecting, organizing, and citing sources.
+            see: [Zotero Connector]
             links:
-              - label: Browser connectors
-                url: https://www.zotero.org/download/connectors
               - label: Using tags
                 url: https://zotero-manual.github.io/tags/
               - label: Zotero hotkeys in Word
@@ -141,7 +142,10 @@ sections:
           - name: Positron
             url: https://positron.posit.co/
             by: Posit
-            description: Data science IDE for R and Python.
+            description: >-
+              A free data science IDE purpose-built for Python and R, with a
+              data explorer and AI assistance. Built on Code OSS, so VS Code
+              extensions work in it too.
             links:
               - label: A quick tour of Positron
                 url: https://posit.co/blog/a-quick-tour-of-positron/
@@ -172,6 +176,17 @@ sections:
         description: >-
           Pipeline tool that skips steps that are already up to date, so
           reruns are faster and results stay in sync with code and data.
+      - name: here
+        url: https://here.r-lib.org/
+        description: Builds file paths relative to the project root.
+      - name: conflicted
+        url: https://conflicted.r-lib.org/
+        description: >-
+          Flags functions with the same name in more than one loaded package,
+          such as filter().
+      - name: haven
+        url: https://haven.tidyverse.org/
+        description: Reads and writes SPSS, Stata, and SAS files, keeping value labels.
       - name: arrow
         url: https://arrow.apache.org/docs/r/
         description: Reads and writes Parquet files and works with data larger than memory.
@@ -184,6 +199,8 @@ sections:
           Research data management consultant and author of *Data Management
           in Large-Scale Education Research*.
         links:
+          - label: RDM Weekly newsletter
+            url: https://rdmweekly.substack.com/
           - label: Bluesky
             url: https://bsky.app/profile/cghlewis.bsky.social
           - label: GitHub
@@ -194,6 +211,9 @@ sections:
         links:
           - label: Bluesky
             url: https://bsky.app/profile/hadley.nz
+          - label: GitHub
+            url: https://github.com/hadley
+      - name: Jenny Bryan
       - name: Jenny Bryan
         url: https://github.com/jennybc
         description: >-
@@ -261,6 +281,10 @@ sections:
 
   - title: Websites and resources
     items:
+      - name: RDM Weekly
+        url: https://rdmweekly.substack.com/
+        by: Crystal Lewis
+        description: Weekly newsletter of research data management resources.
       - name: rdrr.io
         url: https://rdrr.io/
         description: Searchable index of R package documentation from CRAN, Bioconductor, GitHub, and R-Forge.

@@ -6,7 +6,9 @@
 # each external navbar link also appears here and stops if one does not, so
 # change a URL here and in _quarto.yml together.
 #
-# icon: a Bootstrap Icons name (https://icons.getbootstrap.com), optional.
+# icon:    a Bootstrap Icons name (https://icons.getbootstrap.com), optional.
+# icon_ai: an Academicons name (https://jpswalsh.github.io/academicons),
+#          for the scholarly profiles Bootstrap Icons does not cover.
 
 email:
   - id: email-unl
@@ -35,18 +37,23 @@ scholarly:
   - id: orcid
     label: ORCID
     url: https://orcid.org/0000-0002-0277-4064
+    icon_ai: orcid
   - id: scholar
     label: Google Scholar
     url: https://scholar.google.com/citations?hl=en&user=AcbJlasAAAAJ
+    icon_ai: google-scholar
   - id: researchgate
     label: ResearchGate
     url: https://www.researchgate.net/profile/Amelia-Miramonti
+    icon_ai: researchgate
   - id: osf
     label: OSF
     url: https://osf.io/zk8rv/
+    icon_ai: osf
   - id: scopus
     label: Scopus
     url: https://www.scopus.com/authid/detail.uri?authorId=56123562400
+    icon_ai: scopus
   - id: lens
     label: Lens
     url: https://www.lens.org/lens/profile/528341700/scholar
