@@ -1,6 +1,6 @@
 # Public profile, contact, project, and event links: the single source for the
-# home, contact, software, publications, events, and conference pages (read
-# through the link helpers in R/site.R).
+# home, contact, software, publications, events, fun, and conference pages
+# (read through the link helpers in R/site.R).
 #
 # The navbar in _quarto.yml cannot read this file. Every render checks that
 # each external navbar link also appears here and stops if one does not, so
@@ -8,16 +8,15 @@
 #
 # icon: a Bootstrap Icons name (https://icons.getbootstrap.com), optional.
 
+# Only the university address is published. The personal one was removed
+# rather than obfuscated: nothing client-side stops a headless-browser
+# scraper, so not publishing an address is the only measure that holds.
 email:
   - id: email-unl
     label: University
     text: amiramonti2@unl.edu
     url: mailto:amiramonti2@unl.edu
     icon: envelope
-  - id: email-personal
-    label: Personal
-    text: amelia.miramonti@gmail.com
-    url: mailto:amelia.miramonti@gmail.com
 
 code:
   - id: github
@@ -72,6 +71,30 @@ projects:
   - id: table-explorer
     label: Table Relationship Explorer
     url: https://github.com/amelia-m/table-explorer
+
+# Side projects, shown on fun.qmd. The `projects` group above is matched by
+# name against the software_dev data on software.qmd; this group is not, so
+# it holds both the live app and its source.
+fun:
+  - id: lspc-weather
+    label: LSPC Weather
+    url: https://amelia-m.github.io/lspc-weather/
+  - id: lspc-weather-source
+    label: Source on GitHub
+    url: https://github.com/amelia-m/lspc-weather
+    icon: github
+  # No live link: the pkgdown url in the package's DESCRIPTION and
+  # _pkgdown.yml is not built or served yet, so only the repo is linked.
+  - id: pleasantry
+    label: pleasantry
+    url: https://github.com/amelia-m/pleasantry
+    icon: github
+  # The workshop compliment was started in. Posit's catalogue titles it
+  # "Our modern R workflow (ft. Positron and AI)"; the label here follows
+  # the workshop materials' own heading.
+  - id: modern-r-workflow
+    label: Modern R workflow (ft. Positron and AI)
+    url: https://github.com/posit-conf-2026/modern-r-workflow
 
 events:
   - id: wit-summit

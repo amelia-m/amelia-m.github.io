@@ -4,6 +4,10 @@ project:
   render:
     - "*.qmd"
     - "!README.md"
+  # js/ is referenced from _includes/particles-bg.html, which Quarto does not
+  # scan for resources, so name it here or it is left out of _site.
+  resources:
+    - js/
 
 execute:
   echo: false
@@ -19,6 +23,10 @@ website:
   twitter-card: true
   page-navigation: false
   navbar:
+    # Ten links plus six icons do not fit beside the name at the default `lg`
+    # (992px), which is what squeezed the brand and wrapped "Things I Like"
+    # onto two lines. Collapse to the hamburger below 1200px instead.
+    collapse-below: xl
     left:
       - href: index.qmd
         text: Home
@@ -40,6 +48,8 @@ website:
         text: Events
       - href: blog/index.qmd
         text: Blog
+      - href: fun.qmd
+        text: Fun
       - href: things-i-like.qmd
         text: Things I Like
       - href: contact.qmd
@@ -57,9 +67,11 @@ website:
       - icon: twitter-x
         href: https://x.com/AmeliaMiramonti
         aria-label: X
+      # Points at the contact page rather than a mailto:, which put a live
+      # address in the navbar of all 13 pages for harvesters to read.
       - icon: envelope
-        href: mailto:amiramonti2@unl.edu
-        aria-label: Email
+        href: contact.qmd
+        aria-label: Contact
   page-footer:
     left: "&copy; 2026 Amelia Miramonti"
     right: "Written in [R](https://www.r-project.org), stitched together with [Quarto](https://quarto.org), with assistance from [Claude](https://claude.ai) and [GitHub Copilot](https://github.com/features/copilot)."

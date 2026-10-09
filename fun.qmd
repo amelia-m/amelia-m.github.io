@@ -1,0 +1,32 @@
+---
+title: "Fun & side projects"
+---
+
+```{r}
+#| include: false
+source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
+```
+
+Things I build outside of research, mostly because I wanted them to exist.
+
+## LSPC Weather
+
+*React, TypeScript, and Vite*
+
+A skydiving weather dashboard for the Lincoln Sport Parachute Club at Brown's Airport (NE69) in Weeping Water, Nebraska, tuned to the club's Cessna 182 jump plane. It folds a three-site manual routine (NOAA hourly forecast, cloud forecast, and the KPMV METAR) into one page, and adds winds aloft for freefall drift and density altitude for jump-plane climb.
+
+It flags seven conditions: surface wind, the club waiver's gust ceiling, visibility, FAA flight category, overcast sky, a thunderstorm reported in the METAR, and parachute ops between sunset and sunrise. Each one fires only on a published limit, from the USPA SIM, the CFRs, the FAA's AIM, or the club's posted waiver, or on a plain observed fact, and cites the source it rests on. Where nothing published sets a threshold, nothing fires: no invented numbers, and no go/no-go verdict. Everything else, winds aloft and density altitude included, is a reading to judge for yourself.
+
+In development, and not endorsed by USPA, LSPC, or any licensed professional. Jump decisions stay with the jumper, the Safety and Training Advisor, and the pilot in command.
+
+`r link("lspc-weather", "Open the app")`{.btn .btn-primary .btn-sm} `r link("lspc-weather-source")`{.btn .btn-outline-primary .btn-sm}
+
+## pleasantry
+
+*R package*
+
+Started at posit::conf(2026) in Houston, in Hadley Wickham and Jenny Bryan's `r link("modern-r-workflow")` workshop on Monday, September 14, and carried on from there. `compliment()` assembles a line from template, adjective, and subject banks, steered by a `weirdness` scale running sincere to quirky to bizarre, a `mood` (sincere, grumpy, cheerful, or dramatic), a `profanity` level that includes a deliberately silly clean tier, and a `shakespearean` flag for pseudo-Elizabethan phrasing. `farewell()` handles the goodbyes, drawing a whole phrase from its own mood bank rather than composing one, and takes the same options apart from `weirdness`. `compliment_of_the_day()` and `farewell_of_the_day()` each return one result that is fixed for a given date and leave the global random seed alone.
+
+Most of the effort went into making the composed compliments read like English: rejecting an adjective the chosen template already uses, resampling adjective and subject pairs that share a word stem ("creative" with "creativity"), and singularizing the subject banks so the Shakespearean blends stopped emitting "Thy vapours is." The `weirdness` scale draws each component independently with triangular weights, so a value between tiers blends them instead of flipping over. Note that the `strong` profanity tier ships explicit language in the package source.
+
+`r link("pleasantry", "Source on GitHub")`{.btn .btn-outline-primary .btn-sm}

@@ -3,6 +3,8 @@ title: "Amelia Miramonti, PhD"
 title-block-banner: false
 page-layout: article
 toc: false
+# Drifting-dot background, this page only: it fades in below the banner photo.
+include-after-body: _includes/particles-bg.html
 ---
 
 ```{r}
