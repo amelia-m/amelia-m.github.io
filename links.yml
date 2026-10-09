@@ -8,16 +8,15 @@
 #
 # icon: a Bootstrap Icons name (https://icons.getbootstrap.com), optional.
 
+# Only the university address is published. The personal one was removed
+# rather than obfuscated: nothing client-side stops a headless-browser
+# scraper, so not publishing an address is the only measure that holds.
 email:
   - id: email-unl
     label: University
     text: amiramonti2@unl.edu
     url: mailto:amiramonti2@unl.edu
     icon: envelope
-  - id: email-personal
-    label: Personal
-    text: amelia.miramonti@gmail.com
-    url: mailto:amelia.miramonti@gmail.com
 
 code:
   - id: github

@@ -67,9 +67,11 @@ website:
       - icon: twitter-x
         href: https://x.com/AmeliaMiramonti
         aria-label: X
+      # Points at the contact page rather than a mailto:, which put a live
+      # address in the navbar of all 13 pages for harvesters to read.
       - icon: envelope
-        href: mailto:amiramonti2@unl.edu
-        aria-label: Email
+        href: contact.qmd
+        aria-label: Contact
   page-footer:
     left: "&copy; 2026 Amelia Miramonti"
     right: "Written in [R](https://www.r-project.org), stitched together with [Quarto](https://quarto.org), with assistance from [Claude](https://claude.ai) and [GitHub Copilot](https://github.com/features/copilot)."
