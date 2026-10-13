@@ -8,7 +8,7 @@ source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
 ev <- site_events()
 ```
 
-Where to find me in person. If you'll be at one of these, come say hi.
+Where to find me, in person and online. If you'll be at one of these, come say hi.
 
 ```{r}
 #| results: asis

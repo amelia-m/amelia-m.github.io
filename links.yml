@@ -129,3 +129,16 @@ events:
   - id: nebraskajs
     label: NebraskaJS
     url: https://nebraskajs.com/
+  # The running notes pad for the monthly calls, which doubles as the regional
+  # community's home: agendas, notes, and the connection details live there, so
+  # it is the right thing to link rather than the per-date session pages or the
+  # Zoom room, whose URL carries its passcode in a query parameter.
+  - id: carpentries-midwest
+    label: US Midwest Carpentries Community
+    url: https://pad.carpentries.org/local-us-midwest
+  # Where every Carpentries community session is listed and registered for,
+  # the regional calls and the Welcome Sessions alike. Logged here because the
+  # individual session pages are per-date and go away after they happen.
+  - id: carpentries-sessions
+    label: The Carpentries community sessions
+    url: https://pretix.carpentries.org/community-events/
