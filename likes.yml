@@ -342,6 +342,18 @@ sections:
         url: https://software-carpentry.org/lessons/index.html
         description: Open lessons on the shell, Git, R, and Python for researchers.
         see:
+          - Collaborative Lesson Development Training
+          - The Carpentries Incubator
+          - The Carpentries Lab
+      - name: Collaborative Lesson Development Training
+        url: https://carpentries.github.io/lesson-development-training/
+        description: >-
+          The Carpentries' own course on building a lesson as an open source
+          project: lesson design, collaborating on one, and the lesson
+          infrastructure. Teams of two to five work on a single real lesson
+          across six half-days, and at least one person per team needs
+          Instructor Training or Learner-Centered Teaching first.
+        see:
           - The Carpentries Incubator
           - The Carpentries Lab
       - name: The Carpentries Incubator
