@@ -10,6 +10,8 @@ Edited by hand here: the home page, `research.qmd`, `teaching.qmd`, `contact.qmd
 
 Events live in `events.yml`, which feeds both `events.qmd` and the home page callout. One dated list covers the whole page: an entry moves from Upcoming to Past the day after it happens, filed under its year, so attending something leaves a record rather than deleting a line. The callout names the next event only within six weeks of it and falls back to the regulars otherwise. Nothing here is kept in sync by hand. A note written looking forward can carry a `past_note` to replace it afterwards.
 
+`BIOS.md` lists every place a title, employer, or short biography is written down, here and on the external profiles, for when one of them changes.
+
 ## Build and publish
 
 ```bash

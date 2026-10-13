@@ -84,3 +84,7 @@ format:
     toc: false
     smooth-scroll: true
     link-external-newwindow: true
+    # Analytics, on every page. index.qmd sets its own `include-after-body` for
+    # the drifting-dot background; this is a different key, so a page-level
+    # value cannot displace it.
+    include-in-header: _includes/analytics.html

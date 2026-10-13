@@ -53,6 +53,32 @@ body { background-color: transparent; }
   }
 }
 
+// Collapsed state. Here Quarto's calc(100% - 115px) cap has to stay, since it
+// is what reserves room for the toggler and the search icon, so on a narrow
+// window the name runs out of room. Bootstrap sets white-space: nowrap and
+// Quarto adds overflow: hidden with text-overflow: ellipsis, which together
+// rendered it "Amelia Mira...". Let it wrap onto a second line instead: it is
+// a name, and on twelve of the thirteen pages this is the only place it
+// appears, the h1 there being the page title rather than the name.
+@media (max-width: 1199.98px) {
+  .navbar-brand {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    // The brand is a flex item inside .navbar-brand-container, and a flex item
+    // defaults to min-width: auto, so it keeps the width of the unwrapped text
+    // and spills past the container rather than wrapping. Allowing it to
+    // shrink below that is what lets white-space: normal take effect.
+    min-width: 0;
+  }
+  // The name sits in .navbar-title, which Quarto makes a flex row so a logo and
+  // a subtitle can sit beside it. Bare text in a flex container becomes an
+  // anonymous flex item that also refuses to shrink below its own width, so
+  // white-space: normal above had no effect until this stopped being flex.
+  // Nothing here uses the logo or subtitle slots.
+  .navbar-brand .navbar-title { display: block; min-width: 0; }
+}
+
 // The 320px cap means a wider viewport shows a thinner horizontal slice of the
 // source, and the slice's top sits at `object-position` of the overflow, so the
 // crop creeps down the photo as the window widens. The summit of the centre

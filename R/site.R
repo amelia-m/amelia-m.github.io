@@ -21,6 +21,16 @@ cv_data <- function(name) {
 
 `%||%` <- function(a, b) if (is.null(a) || length(a) == 0 || identical(a, "")) b else a
 
+# read_yaml_utf8() reads through readLines() in the session's locale, so under
+# a C locale it truncates a value at the first non-ASCII byte: the en dash in
+# "Nebraska-Lincoln" cut a 484 character bio down to 102. Quarto sets a UTF-8
+# locale so the rendered pages were always fine, but a plain Rscript was not.
+# Reading the bytes and marking them UTF-8 makes these files parse the same
+# whatever R is set to. likes.yml needs this too.
+read_yaml_utf8 <- function(path) {
+  yaml::yaml.load(paste(readLines(path, encoding = "UTF-8", warn = FALSE), collapse = "\n"))
+}
+
 # Markdown-safe text: backslash-escape every ASCII punctuation character
 # Pandoc could read as markup (emphasis, code, links, raw HTML, math,
 # citations, headings, sub/superscript, tables). Backslash goes first.
@@ -409,7 +419,7 @@ print_bib <- function(file, notes = TRUE) {
 # links.yml is the single source for profile, contact, and project links.
 
 site_links <- function() {
-  groups <- yaml::read_yaml(site_path("links.yml"))
+  groups <- read_yaml_utf8(site_path("links.yml"))
   rows <- lapply(names(groups), function(g) {
     do.call(rbind, lapply(groups[[g]], function(l) data.frame(
       group = g, id = l$id, label = l$label, url = l$url,
@@ -467,7 +477,7 @@ link_button <- function(id, label = NULL, class = "btn-outline-primary") {
 # comment at the top of that file for the fields.
 
 print_likes <- function(file = "likes.yml") {
-  data <- yaml::read_yaml(site_path(file))
+  data <- read_yaml_utf8(site_path(file))
   # Anchor so one card can point at another (`see:`), which keeps a tool in
   # one section instead of repeating it: browser extensions live together,
   # and the related software card links across to them.
@@ -507,7 +517,7 @@ print_likes <- function(file = "likes.yml") {
 # The navbar in _quarto.yml cannot read links.yml, so stop the render if any
 # external navbar link has drifted from it.
 check_navbar_links <- function() {
-  cfg <- yaml::read_yaml(site_path("_quarto.yml"))
+  cfg <- read_yaml_utf8(site_path("_quarto.yml"))
   nav <- cfg$website$navbar
   items <- c(nav$left, nav$right)
   hrefs <- unlist(lapply(items, function(i) c(i$href, unlist(lapply(i$menu, `[[`, "href")))))
@@ -526,7 +536,7 @@ check_navbar_links <- function() {
 # the comment at the top of that file for the fields.
 
 site_events <- function(file = "events.yml") {
-  yaml::read_yaml(site_path(file))
+  read_yaml_utf8(site_path(file))
 }
 
 # Markdown for one event: the linked name, then the date or cadence, the venue,
@@ -622,4 +632,54 @@ home_callout <- function(weeks = 6, today = Sys.Date(), events = site_events()) 
     return(paste0(out, ". [More events](events.qmd)."))
   }
   ""
+}
+
+# ---- Bios -----------------------------------------------------------------
+# bios.yml lists every place a bio is published and what each one says, so a
+# job change can be worked through as a list. See BIOS.md for the order.
+
+site_bios <- function(file = "bios.yml") {
+  read_yaml_utf8(site_path(file))
+}
+
+# Whitespace-insensitive, so a stored bio still matches a file that wraps it
+# across lines. YAML folding and the pages themselves break lines differently.
+.squash <- function(x) gsub("\\s+", " ", trimws(x))
+
+# Is the recorded text still in the file it was taken from? A substring test
+# rather than pulling the paragraph back out: paragraph boundaries differ by
+# file type, and a first attempt at that swallowed an entire YAML file and a
+# stray div marker. There is nothing to get wrong here.
+bio_in_sync <- function(p) {
+  if (is.null(p$file) || is.null(p$text)) return(NA)
+  grepl(.squash(p$text), .squash(paste(readLines(site_path(p$file), encoding = "UTF-8", warn = FALSE),
+                                       collapse = " ")), fixed = TRUE)
+}
+
+# Print every bio with its length and age, flagging any that is over a
+# platform limit or no longer matches the file it was copied from.
+bio_report <- function(bios = site_bios(), today = Sys.Date()) {
+  for (p in bios$places) {
+    cat("\n", strrep("-", 70), "\n", p$label, "\n  ", p$url %||% "", "\n", sep = "")
+    if (is.null(p$text)) {
+      cat("  NOT RECORDED YET\n")
+      next
+    }
+    txt <- .squash(p$text)
+    n <- nchar(txt)
+    cat("  ", n, if (!is.null(p$limit)) paste0(" of ", p$limit) else "", " characters",
+        if (!is.null(p$limit) && n > p$limit) "   OVER THE LIMIT" else "", "\n", sep = "")
+    if (!is.null(p$updated)) {
+      age <- as.integer(today - as.Date(p$updated))
+      cat("  checked ", p$updated, " (", age, " days ago)\n", sep = "")
+    } else {
+      cat("  no `updated` date\n")
+    }
+    sync <- bio_in_sync(p)
+    if (isTRUE(sync)) cat("  matches ", p$file, "\n", sep = "")
+    if (isFALSE(sync)) cat("  DRIFTED: no longer found in ", p$file, "\n", sep = "")
+    cat(paste0("  ", strwrap(txt, width = 68)), sep = "\n")
+    cat("\n")
+  }
+  invisible()
 }
