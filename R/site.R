@@ -530,14 +530,16 @@ site_events <- function(file = "events.yml") {
 }
 
 # Markdown for one event: the linked name, then the date or cadence, the venue,
-# the note, and any further links in parentheses.
-event_line <- function(e, bold = TRUE) {
+# the note, and any further links in parentheses. A past event is not bolded
+# and prefers `past_note`, for notes that were written looking forward.
+event_line <- function(e, past = FALSE) {
   if (!is.null(e$text)) return(trimws(e$text))
   name <- link(e$id)
-  if (bold) name <- paste0("**", name, "**")
+  if (!past) name <- paste0("**", name, "**")
   parts <- c(name, e$when %||% NULL, e$cadence %||% NULL, e$where %||% NULL)
   out <- paste(Filter(nzchar, parts), collapse = ", ")
-  if (!is.null(e$note)) out <- paste(end_period(out), trimws(e$note))
+  note <- if (past) e$past_note %||% e$note else e$note
+  if (!is.null(note)) out <- paste(end_period(out), trimws(note))
   if (length(e$more)) {
     extra <- vapply(e$more, function(m) link(m$id, m$label), character(1))
     out <- paste0(end_period(out), " (", paste(extra, collapse = ", "), ")")
@@ -545,14 +547,49 @@ event_line <- function(e, bold = TRUE) {
   out
 }
 
-# Upcoming events still ahead of `today`, soonest first. An event drops out of
+# The dates of every entry in `events`, NA where only a `year` is recorded.
+event_dates <- function(ev) {
+  as.Date(vapply(ev, function(e) as.character(e$date %||% NA), character(1)))
+}
+
+# The year an event is filed under: from its date, or from `year` for a past
+# event whose exact day is not recorded.
+event_year <- function(e) {
+  if (!is.null(e$date)) {
+    as.integer(format(as.Date(e$date), "%Y"))
+  } else {
+    as.integer(e$year %||% NA)
+  }
+}
+
+# Upcoming events still ahead of `today`, soonest first. An event leaves
 # Upcoming on its own the day after it happens.
 upcoming_events <- function(today = Sys.Date(), events = site_events()) {
-  up <- events$upcoming
-  if (!length(up)) return(list())
-  dates <- as.Date(vapply(up, function(e) as.character(e$date %||% NA), character(1)))
+  ev <- events$events
+  if (!length(ev)) return(list())
+  dates <- event_dates(ev)
   keep <- !is.na(dates) & dates >= today
-  up[keep][order(dates[keep])]
+  ev[keep][order(dates[keep])]
+}
+
+# Everything else, as year blocks, newest year first. This is the other half of
+# the same list: an event does not need moving once it happens, it just stops
+# being upcoming, which is what keeps a record of where I have actually been.
+# Within a year the dated ones come newest first, the undated ones after them.
+past_events <- function(today = Sys.Date(), events = site_events()) {
+  ev <- events$events
+  if (!length(ev)) return(list())
+  dates <- event_dates(ev)
+  keep <- is.na(dates) | dates < today
+  ev <- ev[keep]
+  dates <- dates[keep]
+  if (!length(ev)) return(list())
+  years <- vapply(ev, event_year, integer(1))
+  lapply(sort(unique(years), decreasing = TRUE), function(y) {
+    i <- which(years == y)
+    i <- i[order(is.na(dates[i]), -as.integer(dates[i]))]
+    list(year = y, items = ev[i])
+  })
 }
 
 # The home page callout.

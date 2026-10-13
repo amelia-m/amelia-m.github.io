@@ -31,9 +31,9 @@ for (e in ev$regulars) cat("- ", event_line(e), "\n", sep = "")
 
 ```{r}
 #| results: asis
-for (block in ev$past) {
+for (block in past_events(events = ev)) {
   cat("### ", block$year, "\n\n", sep = "")
-  for (e in block$items) cat("- ", event_line(e, bold = FALSE), "\n", sep = "")
+  for (e in block$items) cat("- ", event_line(e, past = TRUE), "\n", sep = "")
   cat("\n")
 }
 ```
