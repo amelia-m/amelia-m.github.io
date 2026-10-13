@@ -21,6 +21,14 @@
 # Use `more` for extra links instead of writing a link call here.
 
 upcoming:
+  - id: nebraskajs
+    date: 2026-10-15
+    when: Thursday, October 15, 2026
+    where: DevObsessed, Omaha, NE
+    note: >-
+      This month's meetup joins the first AI Engineer Omaha meetup. Two talks,
+      the first on Jev, a narrow model that answers a typed question with a
+      probability rather than with prose.
   - id: wit-summit
     date: 2027-04-02
     when: Friday, April 2, 2027
@@ -40,9 +48,15 @@ regulars:
       - id: one-million-cups-lnk-linkedin
         label: LinkedIn
   - id: lincoln-code
-    note: a Lincoln meetup for people who write code.
+    note: A Lincoln meetup for people who write code.
   - id: lincoln-ai
-    note: a Lincoln meetup about artificial intelligence.
+    note: A Lincoln meetup about artificial intelligence.
+  - id: nebraskajs
+    cadence: monthly weekday evenings, usually Omaha
+    note: >-
+      Omaha's JavaScript community since 2009, these days as much about AI
+      tooling. It comes down to Lincoln some months, sometimes jointly with
+      Lincoln AI.
 
 past:
   - year: 2026

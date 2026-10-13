@@ -35,6 +35,15 @@ end_period <- function(x) {
   if (!nzchar(x) || grepl("[.?!]$", x)) x else paste0(x, ".")
 }
 
+# "a", "a and b", "a, b, and c". Collapsing on " and " was fine while there
+# were only ever two of anything; it reads as "a and b and c" from three on.
+and_list <- function(x) {
+  n <- length(x)
+  if (n < 2) return(paste0(x, collapse = ""))
+  if (n == 2) return(paste(x, collapse = " and "))
+  paste0(paste(x[-n], collapse = ", "), ", and ", x[n])
+}
+
 # ---- BibTeX field text -> plain Unicode text --------------------------------
 
 .greek <- c(
@@ -571,7 +580,7 @@ home_callout <- function(weeks = 6, today = Sys.Date(), events = site_events()) 
     rest <- vapply(reg[-1], function(r) link(r$id), character(1))
     out <- paste0("**Often at:** ", link(first$id), ", ", cadence)
     if (length(rest)) {
-      out <- paste0(out, ", plus ", paste(rest, collapse = " and "))
+      out <- paste0(out, ", plus ", and_list(rest))
     }
     return(paste0(out, ". [More events](events.qmd)."))
   }

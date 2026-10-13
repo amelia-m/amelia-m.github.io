@@ -122,3 +122,10 @@ events:
   - id: lincoln-ai
     label: Lincoln AI
     url: https://www.meetup.com/lincoln-ai/
+  # The group's own site, not Meetup: www.meetup.com/nebraskajs still answers
+  # 200 but renders "group you're looking for doesn't exist", and their
+  # invitations now come from lu.ma. The home page carries the next meetup, so
+  # it stays current between hand publishes in a way an event URL would not.
+  - id: nebraskajs
+    label: NebraskaJS
+    url: https://nebraskajs.com/
