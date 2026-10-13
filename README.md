@@ -8,7 +8,7 @@ Files in `_data/` and `files/` are generated from a separate source repository. 
 
 Edited by hand here: the home page, `research.qmd`, `teaching.qmd`, `contact.qmd`, `events.qmd`, `events.yml`, `posit-conf-2026.qmd`, `fun.qmd`, blog posts, and images.
 
-Events live in `events.yml`, which feeds both `events.qmd` and the home page callout. An event drops out of Upcoming the day after it happens, and the callout names the next one only within six weeks of it, falling back to the regulars; so there is nothing to keep in sync by hand.
+Events live in `events.yml`, which feeds both `events.qmd` and the home page callout. One dated list covers the whole page: an entry moves from Upcoming to Past the day after it happens, filed under its year, so attending something leaves a record rather than deleting a line. The callout names the next event only within six weeks of it and falls back to the regulars otherwise. Nothing here is kept in sync by hand. A note written looking forward can carry a `past_note` to replace it afterwards.
 
 ## Build and publish
 
