@@ -1,0 +1,153 @@
+# Every place a bio is published, with what it currently says, so they can be
+# read side by side when a job, title, or focus changes. BIOS.md has the order
+# to work through them in.
+#
+# Run `bio_report()` from R/site.R to print them all with character counts.
+#
+# The text is kept here even for the bios that live in this repository, so that
+# comparing them is reading one file. That does mean two copies, so every entry
+# carries the date its text was last checked against the real thing, and any
+# entry naming a `file` is checked automatically: the report looks for the
+# stored text inside that file and says so when it is no longer there.
+#
+# Fields:
+#   id       short key
+#   label    what to call the place
+#   url      where it is read or edited
+#   text     what it currently says
+#   updated  ISO date `text` was last checked against the live version
+#   file     a file in this repo holding this bio, checked by the report
+#   limit    character limit the platform imposes, if there is one
+#   note     anything worth knowing when editing it
+
+places:
+  - id: site-home
+    label: Website, home page
+    url: https://amelia-m.github.io/
+    file: index.qmd
+    updated: 2026-10-13
+    text: >-
+      Hi, I'm Amelia! I'm a postdoctoral researcher and adjunct faculty member
+      at the University of Nebraska–Lincoln. I work in the Nebraska Evaluation
+      and Research (NEAR) Center, a statistics and data consulting center, and
+      partner with the University of Nebraska Public Policy Center (NUPPC) and
+      the Nebraska Statewide Workforce and Educational Reporting System
+      (NSWERS), Nebraska's statewide longitudinal data system. I also teach
+      data management and survey methods to graduate students.
+    note: >-
+      The long first-person version. The others are shortened from this one, so
+      change it first.
+
+  - id: site-contact
+    label: Website, contact page
+    url: https://amelia-m.github.io/contact.html
+    file: contact.qmd
+    updated: 2026-10-13
+    text: >-
+      Amelia Miramonti, PhD, is a postdoctoral researcher at the Nebraska
+      Evaluation and Research (NEAR) Center and adjunct faculty in the
+      Department of Educational Psychology at the University of
+      Nebraska–Lincoln. She also supports applied research for Nebraska state
+      agencies and communities with the University of Nebraska Public Policy
+      Center, and develops privacy-preserving synthetic datasets from
+      administrative records with the Nebraska Statewide Workforce and
+      Educational Reporting System (NSWERS). She holds an interdisciplinary PhD
+      from the University of Nebraska–Lincoln (2025) that combined
+      quantitative, qualitative, and psychometric methods with exercise
+      physiology and nutrition, an MA in Quantitative, Qualitative, and
+      Psychometric Methods from the same institution, and a BSc and MSc in
+      sport and exercise science from the University of Central Florida. Her
+      more than 30 peer-reviewed articles range from neuromuscular physiology,
+      strength and conditioning, and sports nutrition to child nutrition and
+      career psychology. Her current work pairs measurement and missing-data
+      methods with practical R and Shiny tools for data documentation,
+      cleaning, and reporting, and she teaches graduate courses in
+      computer-assisted data analysis and survey methods.
+    note: >-
+      The full third-person version, the one to send a conference or seminar
+      organiser.
+
+  - id: site-description
+    label: Website, social preview text
+    url: https://amelia-m.github.io/
+    file: _quarto.yml
+    updated: 2026-10-13
+    text: >-
+      Amelia Miramonti, PhD - research methodology, psychometrics, synthetic
+      data, and R/Shiny tools for applied research.
+    note: >-
+      Also the Open Graph and Twitter card text, so it is what shows whenever
+      the site is linked anywhere.
+
+  - id: github-readme
+    label: GitHub profile README
+    url: https://github.com/amelia-m
+    updated: 2026-10-13
+    text: >-
+      Postdoctoral researcher at the Nebraska Evaluation and Research (NEAR)
+      Center and adjunct faculty in Educational Psychology at the University of
+      Nebraska–Lincoln. I work on measurement, missing data, and
+      privacy-preserving synthetic data, and I build R and Shiny tools for the
+      unglamorous middle of applied research: documenting, cleaning, linking,
+      and reporting on administrative data.
+    note: >-
+      The opening paragraph of the amelia-m/amelia-m repo. That page also lists
+      current projects, which go stale separately from the bio.
+
+  - id: bluesky
+    label: Bluesky
+    url: https://bsky.app/profile/ameliamiramonti.bsky.social
+    limit: 256
+    updated: 2026-10-13
+    text: >-
+      I make messy administrative data easier to document, clean, and report
+      on, mostly in R and Shiny. Postdoc and adjunct faculty at UNL; survey
+      methods, measurement, synthetic data, meta science. amelia-m.github.io
+    note: A bare domain is linkified, so the URL needs no https://.
+
+  # Below here the text has not been recorded yet. Paste in what the profile
+  # currently says and set `updated` to the date you checked it.
+
+  - id: linkedin
+    label: LinkedIn
+    url: https://www.linkedin.com/in/amelia-miramonti/
+    note: >-
+      Three separate fields: the headline, the About section, and the
+      Experience entry. The headline is what shows in search results and in
+      comments, so it does the most work.
+
+  - id: x
+    label: X
+    url: https://x.com/AmeliaMiramonti
+    limit: 160
+
+  - id: github-bio
+    label: GitHub profile Bio field
+    url: https://github.com/amelia-m
+    limit: 160
+    note: >-
+      Separate from the profile README and shown in the sidebar beside it.
+
+  - id: orcid
+    label: ORCID
+    url: https://orcid.org/0000-0002-0277-4064
+    note: >-
+      The Biography field, plus the Employment section. Add a new employment
+      entry rather than editing the old one, so the record keeps the history.
+
+  - id: scholar
+    label: Google Scholar
+    url: https://scholar.google.com/citations?hl=en&user=AcbJlasAAAAJ
+    note: >-
+      Affiliation line and the verified email domain. A stale verified email
+      can quietly stop new publications attaching to the profile.
+
+  - id: researchgate
+    label: ResearchGate
+    url: https://www.researchgate.net/profile/Amelia-Miramonti
+    note: Current institution, and an introduction field.
+
+  - id: osf
+    label: OSF
+    url: https://osf.io/zk8rv/
+    note: Employment history.
