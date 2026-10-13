@@ -1,0 +1,68 @@
+# Events shown on events.qmd and behind the home page callout.
+#
+# One source for both, so the home page cannot advertise something that has
+# already moved to Past. R/site.R reads this; `date` is what the callout
+# compares against today, and anything dated before today drops out of
+# Upcoming on its own.
+#
+# Fields:
+#   id      an id in links.yml, which supplies the label and the URL
+#   date    ISO date, upcoming events only; drives the callout
+#   when    the date as it should read on the page
+#   where   venue, optional
+#   note    extra prose, optional, Markdown allowed
+#   cadence for regulars, in place of a date ("most Wednesday mornings")
+#   more    further links.yml ids, shown in parentheses after the note
+#   year    for past events, the heading they sit under
+#   text    for past events with no links.yml entry
+#
+# `note` is Markdown but not knitr source, so it cannot carry inline R: the
+# page prints these with cat(), and knitr does not rescan what cat() emits.
+# Use `more` for extra links instead of writing a link call here.
+
+upcoming:
+  - id: nebraskajs
+    date: 2026-10-15
+    when: Thursday, October 15, 2026
+    where: DevObsessed, Omaha, NE
+    note: >-
+      This month's meetup joins the first AI Engineer Omaha meetup. Two talks,
+      the first on Jev, a narrow model that answers a typed question with a
+      probability rather than with prose.
+  - id: wit-summit
+    date: 2027-04-02
+    when: Friday, April 2, 2027
+    where: Kiewit La Vista, La Vista, NE
+    note: >-
+      I volunteered at the 2026 summit and am planning to volunteer again. The
+      Nebraska Women in Tech Awards are the evening before, April 1, at the
+      Kiewit Luminarium in Omaha.
+
+regulars:
+  - id: one-million-cups-lnk
+    cadence: most Wednesday mornings
+    note: >-
+      Local founders present their businesses and take questions from the
+      community.
+    more:
+      - id: one-million-cups-lnk-linkedin
+        label: LinkedIn
+  - id: lincoln-code
+    note: A Lincoln meetup for people who write code.
+  - id: lincoln-ai
+    note: A Lincoln meetup about artificial intelligence.
+  - id: nebraskajs
+    cadence: monthly weekday evenings, usually Omaha
+    note: >-
+      Omaha's JavaScript community since 2009, these days as much about AI
+      tooling. It comes down to Lincoln some months, sometimes jointly with
+      Lincoln AI.
+
+past:
+  - year: 2026
+    items:
+      - id: lincoln-code-2026-09-29
+      - text: >-
+          posit::conf(2026). [Things I'm happy to talk
+          about](posit-conf-2026.qmd).
+      - text: Nebraska Women in Tech Summit, event volunteer.

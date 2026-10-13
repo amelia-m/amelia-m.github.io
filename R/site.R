@@ -35,6 +35,15 @@ end_period <- function(x) {
   if (!nzchar(x) || grepl("[.?!]$", x)) x else paste0(x, ".")
 }
 
+# "a", "a and b", "a, b, and c". Collapsing on " and " was fine while there
+# were only ever two of anything; it reads as "a and b and c" from three on.
+and_list <- function(x) {
+  n <- length(x)
+  if (n < 2) return(paste0(x, collapse = ""))
+  if (n == 2) return(paste(x, collapse = " and "))
+  paste0(paste(x[-n], collapse = ", "), ", and ", x[n])
+}
+
 # ---- BibTeX field text -> plain Unicode text --------------------------------
 
 .greek <- c(
@@ -509,4 +518,71 @@ check_navbar_links <- function() {
          paste(missing, collapse = ", "))
   }
   invisible(TRUE)
+}
+
+# ---- Events --------------------------------------------------------------
+# events.yml is the single source for events.qmd and the home page callout, so
+# the home page cannot advertise something that has already moved to Past. See
+# the comment at the top of that file for the fields.
+
+site_events <- function(file = "events.yml") {
+  yaml::read_yaml(site_path(file))
+}
+
+# Markdown for one event: the linked name, then the date or cadence, the venue,
+# the note, and any further links in parentheses.
+event_line <- function(e, bold = TRUE) {
+  if (!is.null(e$text)) return(trimws(e$text))
+  name <- link(e$id)
+  if (bold) name <- paste0("**", name, "**")
+  parts <- c(name, e$when %||% NULL, e$cadence %||% NULL, e$where %||% NULL)
+  out <- paste(Filter(nzchar, parts), collapse = ", ")
+  if (!is.null(e$note)) out <- paste(end_period(out), trimws(e$note))
+  if (length(e$more)) {
+    extra <- vapply(e$more, function(m) link(m$id, m$label), character(1))
+    out <- paste0(end_period(out), " (", paste(extra, collapse = ", "), ")")
+  }
+  out
+}
+
+# Upcoming events still ahead of `today`, soonest first. An event drops out of
+# Upcoming on its own the day after it happens.
+upcoming_events <- function(today = Sys.Date(), events = site_events()) {
+  up <- events$upcoming
+  if (!length(up)) return(list())
+  dates <- as.Date(vapply(up, function(e) as.character(e$date %||% NA), character(1)))
+  keep <- !is.na(dates) & dates >= today
+  up[keep][order(dates[keep])]
+}
+
+# The home page callout.
+#
+# Names the next event only when it is close enough to be worth a reader's
+# attention: a summit eleven months out told them nothing they could act on,
+# while 1 Million Cups was happening that Wednesday. Past `weeks`, the callout
+# points at the regulars instead, and with neither it returns "" so the home
+# page simply omits it.
+home_callout <- function(weeks = 6, today = Sys.Date(), events = site_events()) {
+  soon <- upcoming_events(today, events)
+  if (length(soon)) {
+    e <- soon[[1]]
+    if (as.Date(e$date) - today <= weeks * 7) {
+      return(paste0(
+        "**Next up:** ", link(e$id), ", ", e$when,
+        ". [More events](events.qmd)."
+      ))
+    }
+  }
+  reg <- events$regulars
+  if (length(reg)) {
+    first <- reg[[1]]
+    cadence <- first$cadence %||% "regularly"
+    rest <- vapply(reg[-1], function(r) link(r$id), character(1))
+    out <- paste0("**Often at:** ", link(first$id), ", ", cadence)
+    if (length(rest)) {
+      out <- paste0(out, ", plus ", and_list(rest))
+    }
+    return(paste0(out, ". [More events](events.qmd)."))
+  }
+  ""
 }
