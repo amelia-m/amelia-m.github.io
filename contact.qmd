@@ -9,8 +9,7 @@ source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
 
 ## Email
 
-- University: `r link("email-unl")`
-- Personal: `r link("email-personal")`
+`r link("email-unl")`
 
 ## Profiles
 

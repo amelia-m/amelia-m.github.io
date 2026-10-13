@@ -1,0 +1,71 @@
+// Rules shared by both themes, imported from the scss:rules section of
+// styles.scss and styles-dark.scss.
+//
+// Anything whose value differs per theme stays in the theme file: the colour
+// variables, #particles-bg's --particles-rgb, the colour-scheme toggle icon,
+// and darkly's .btn-outline-primary overrides. Everything here was previously
+// duplicated byte for byte in both files, which meant every fix had to be made
+// twice and a fix applied to one file produced a bug in one colour scheme only.
+//
+// $primary and $body-bg resolve to the importing theme's values, so rules
+// using them are genuinely shared rather than accidentally identical.
+
+// Drifting-dot background (js/particles-bg.js), home page only. The layer is
+// fixed behind everything, so the page background moves to `html` and `body`
+// goes transparent — an opaque body would paint straight over a z-index: -1
+// child. --particles-rgb is what the script paints with; it re-reads that on a
+// theme change, and each theme file sets its own value.
+html { background-color: $body-bg; }
+body { background-color: transparent; }
+
+// No CSS transition on opacity: the script writes this value every frame from
+// the scroll position, and a transition would animate each of those writes,
+// leaving the layer lagging the scroll and holding a stale frame through the
+// fade-out.
+#particles-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) { #particles-bg { display: none; } }
+
+// Navbar, expanded state only. Below 1200px the bar is a hamburger, where
+// Bootstrap deliberately zeroes nav-link padding so the stacked links align
+// with the brand, and Quarto's calc(100% - 115px) cap on the brand container
+// is what reserves room for the toggler and search icon. Both must survive
+// there, so everything here is scoped to the same breakpoint Bootstrap uses
+// for .navbar-expand-xl.
+@media (min-width: 1200px) {
+  // Quarto clips the brand with overflow:hidden + text-overflow:ellipsis,
+  // which rendered the name as "Amelia Miram...". Let it keep its full width.
+  .navbar-brand { overflow: visible; text-overflow: clip; }
+  .navbar-brand-container { max-width: none; flex: 0 0 auto; }
+  // Multi-word labels ("Things I Like") were breaking mid-phrase and making
+  // the bar two rows tall while space was still free to the right. With nowrap
+  // the row needs ~1206px, six past the bottom of this range, so the per-link
+  // padding comes in slightly to fit.
+  .navbar-expand-xl .navbar-nav .nav-link {
+    white-space: nowrap;
+    padding-left: .4rem;
+    padding-right: .4rem;
+  }
+}
+
+.hero-banner img { width: 100%; height: clamp(160px, 26vw, 320px); object-fit: cover; object-position: center 40%; display: block; }
+.hero-banner p { margin: 0; }
+.hero-banner { margin-top: -1rem; margin-bottom: 2rem; }
+.home-grid { align-items: start; }
+.headshot { width: 100%; max-width: 280px; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: 12px; display: block; margin: 0 auto 1rem; }
+.home-side .btn { text-align: left; }
+.cv-when { float: right; font-weight: 400; opacity: .7; }
+.bio-block { border-left: 4px solid $primary; padding: .75rem 1rem; background: rgba($primary, .08); }
+.qr-block { text-align: center; margin-top: 2rem; }
+.qr-block img { background: #fff; padding: 10px; border-radius: 8px; }
+
+.like-grid { align-items: stretch; margin-bottom: 1.5rem; }
+.like-card { border: 1px solid var(--bs-border-color); border-radius: 10px; padding: .85rem 1rem; }
+.like-card p { margin-bottom: .4rem; }
+.like-card ul { margin: .25rem 0 0; padding-left: 1.1rem; font-size: .92em; }
+.like-by { font-weight: 400; opacity: .7; font-size: .9em; }
