@@ -54,12 +54,13 @@ body { background-color: transparent; }
 }
 
 // The 320px cap means a wider viewport shows a thinner horizontal slice of the
-// source, and the slice's top sits at `object-position` of the overflow: past
-// roughly 2250px wide, 40% started below the summit of the centre peak and cut
-// it off. The limit as the viewport grows is 1807 * the percentage, and the
-// summit is at y 586 of 1807, so anything at or above 32.4% clips it again
-// eventually. 30% keeps the peak clear at every width.
-.hero-banner img { width: 100%; height: clamp(160px, 26vw, 320px); object-fit: cover; object-position: center 30%; display: block; }
+// source, and the slice's top sits at `object-position` of the overflow, so the
+// crop creeps down the photo as the window widens. The summit of the centre
+// peak is at y 586 of 1807: 40% put the crop below it past roughly 2250px wide
+// and cut the peak off, while 30% cleared it everywhere but left most of the
+// band as sky. 35% keeps the summit in frame up to about 5800px, which is wider
+// than a browser window gets, and spends the rest of the band on the ridge.
+.hero-banner img { width: 100%; height: clamp(160px, 26vw, 320px); object-fit: cover; object-position: center 35%; display: block; }
 .hero-banner p { margin: 0; }
 .hero-banner { margin-top: -1rem; margin-bottom: 2rem; }
 .home-grid { align-items: start; }

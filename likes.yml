@@ -107,6 +107,12 @@ sections:
             links:
               - label: Free for work use
                 url: https://obsidian.md/blog/free-for-work/
+          - name: MarkText
+            url: https://marktext.me/
+            description: >-
+              A Markdown editor that formats as you type, so the screen shows
+              the finished document rather than the markup. Free and open
+              source.
           - name: Pandoc
             url: https://pandoc.org/
             description: Converts documents between formats, for example Markdown to Word or PDF.
