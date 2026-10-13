@@ -12,7 +12,7 @@
 
 // Drifting-dot background (js/particles-bg.js), home page only. The layer is
 // fixed behind everything, so the page background moves to `html` and `body`
-// goes transparent — an opaque body would paint straight over a z-index: -1
+// goes transparent - an opaque body would paint straight over a z-index: -1
 // child. --particles-rgb is what the script paints with; it re-reads that on a
 // theme change, and each theme file sets its own value.
 html { background-color: $body-bg; }
@@ -53,7 +53,13 @@ body { background-color: transparent; }
   }
 }
 
-.hero-banner img { width: 100%; height: clamp(160px, 26vw, 320px); object-fit: cover; object-position: center 40%; display: block; }
+// The 320px cap means a wider viewport shows a thinner horizontal slice of the
+// source, and the slice's top sits at `object-position` of the overflow: past
+// roughly 2250px wide, 40% started below the summit of the centre peak and cut
+// it off. The limit as the viewport grows is 1807 * the percentage, and the
+// summit is at y 586 of 1807, so anything at or above 32.4% clips it again
+// eventually. 30% keeps the peak clear at every width.
+.hero-banner img { width: 100%; height: clamp(160px, 26vw, 320px); object-fit: cover; object-position: center 30%; display: block; }
 .hero-banner p { margin: 0; }
 .hero-banner { margin-top: -1rem; margin-bottom: 2rem; }
 .home-grid { align-items: start; }
