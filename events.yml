@@ -43,6 +43,26 @@ events:
       Joint with the first AI Engineer Omaha meetup. Two talks, the first on
       Jev, a narrow model that answers a typed question with a probability
       rather than with prose.
+  - id: carpentries-sessions
+    date: 2026-10-21
+    when: Wednesday, October 21, 2026
+    where: online
+    note: >-
+      The Welcome Session, for people new to The Carpentries: what the
+      organisation does, the ways to get involved, and questions answered.
+  - id: carpentries-midwest
+    date: 2026-11-06
+    when: Friday, November 6, 2026
+    where: online
+    note: >-
+      Off the usual first Wednesday this month, because the Midwest community
+      is joining the Northeast Carpentries Community for their November
+      meeting, with guest speaker Toby Hodges.
+  - id: carpentries-midwest
+    date: 2026-12-02
+    when: Wednesday, December 2, 2026
+    where: online
+    note: Back in the usual slot.
   - id: lincoln-code-2026-09-29
     date: 2026-09-29
   - text: >-
@@ -65,6 +85,14 @@ regulars:
     note: A Lincoln meetup for people who write code.
   - id: lincoln-ai
     note: A Lincoln meetup about artificial intelligence.
+  - id: carpentries-midwest
+    cadence: first Wednesday of the month, noon CT, online
+    note: >-
+      The regional call for The Carpentries, which teaches foundational coding
+      and data science skills to researchers.
+    more:
+      - id: carpentries-sessions
+        label: Registration
   - id: nebraskajs
     cadence: monthly weekday evenings, usually Omaha
     note: >-

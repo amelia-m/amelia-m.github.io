@@ -341,3 +341,19 @@ sections:
       - name: Software Carpentry lessons
         url: https://software-carpentry.org/lessons/index.html
         description: Open lessons on the shell, Git, R, and Python for researchers.
+        see:
+          - The Carpentries Incubator
+          - The Carpentries Lab
+      - name: The Carpentries Incubator
+        url: https://carpentries-incubator.org/
+        description: >-
+          Where community members develop lessons in the open, before any
+          review. Plenty is taught from here already; treat it as work in
+          progress rather than as vetted material.
+      - name: The Carpentries Lab
+        url: https://carpentries-lab.org/
+        description: >-
+          The peer-reviewed tier: short-format lessons that have been through
+          review and follow the Carpentries lesson design. Review can also
+          carry journal credit through the Journal of Open Source Education.
+          Submission is by invitation while the review process is piloted.
