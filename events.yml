@@ -91,8 +91,12 @@ regulars:
         label: LinkedIn
   - id: lincoln-code
     note: A Lincoln meetup for people who write code.
+  # No day in the cadence on purpose. It ran on Wednesdays through the spring
+  # and has been on Tuesdays since July, so naming either one dates the page,
+  # and this site is only re-rendered by hand.
   - id: lincoln-ai
-    note: A Lincoln meetup about artificial intelligence.
+    cadence: monthly evenings at Don't Panic Labs
+    note: Talks and discussion on AI, from everyday tooling to model internals.
   # The US Midwest Carpentries call is deliberately not here. It does run on
   # the first Wednesday of the month, but Regulars is a claim about me rather
   # than about the event, and the first one I am registered for has not
