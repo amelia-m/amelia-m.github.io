@@ -73,6 +73,16 @@ events:
         label: Registration
   - id: lincoln-code-2026-09-29
     date: 2026-09-29
+  - id: lincoln-ai-2026-05-06
+    date: 2026-05-06
+    note: The first Explorers meeting, largely a discussion of what the group should be.
+  # No link: this one was organised through NebraskaJS on lu.ma rather than
+  # Meetup, and that domain does not resolve from the build environment, so
+  # the URL could not be checked before publishing it.
+  - text: >-
+      Share Your AI Workflow, March 11, 2026. A NebraskaJS and Lincoln AI
+      lightning talk night at Don't Panic Labs.
+    date: 2026-03-11
   - text: >-
       posit::conf(2026). [Things I'm happy to talk
       about](posit-conf-2026.qmd).
