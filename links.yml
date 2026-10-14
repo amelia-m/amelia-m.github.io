@@ -130,9 +130,14 @@ events:
     label: NebraskaJS
     url: https://nebraskajs.com/
   # The running notes pad for the monthly calls, which doubles as the regional
-  # community's home: agendas, notes, and the connection details live there, so
-  # it is the right thing to link rather than the per-date session pages or the
-  # Zoom room, whose URL carries its passcode in a query parameter.
+  # community's home: agendas, notes, and the connection details live there.
+  #
+  # Linked rather than the Zoom room itself. Not because that URL is secret,
+  # since The Carpentries publish it on their own registration pages, but
+  # because a room link is the wrong thing to put on a page nobody re-renders
+  # often: it goes stale if the room changes, and signing up is the thing a
+  # reader can act on. The per-date session pages are no better, since they go
+  # away once the date passes. Hence this pad, and the pretix listing below.
   - id: carpentries-midwest
     label: US Midwest Carpentries Community
     url: https://pad.carpentries.org/local-us-midwest

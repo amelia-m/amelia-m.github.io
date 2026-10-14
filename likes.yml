@@ -366,6 +366,8 @@ sections:
         url: https://carpentries-lab.org/
         description: >-
           The peer-reviewed tier: short-format lessons that have been through
-          review and follow the Carpentries lesson design. Review can also
-          carry journal credit through the Journal of Open Source Education.
-          Submission is by invitation while the review process is piloted.
+          review and follow the Carpentries lesson design. Review here can also
+          produce a paper in the Journal of Open Source Education, which mints
+          a DOI, so a lesson becomes a citable peer-reviewed publication rather
+          than only a teaching resource. Submission is by invitation while the
+          review process is piloted.

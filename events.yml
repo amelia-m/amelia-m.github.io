@@ -60,6 +60,9 @@ events:
       this month, because the Midwest community is joining the Northeast
       Carpentries Community for their November meeting, with guest speaker
       Toby Hodges.
+    more:
+      - id: carpentries-sessions
+        label: Registration
   - id: carpentries-midwest
     date: 2026-12-02
     when: Wednesday, December 2, 2026
