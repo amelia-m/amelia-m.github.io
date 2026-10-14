@@ -119,6 +119,9 @@ events:
   - id: lincoln-code-2026-09-29
     label: Lincoln.Code meetup, September 29, 2026
     url: https://www.meetup.com/lincoln-code/events/316586016/
+  - id: lincoln-ai-2026-05-06
+    label: Lincoln AI Explorers, May 6, 2026
+    url: https://www.meetup.com/lincoln-ai/events/314541902/
   - id: lincoln-ai
     label: Lincoln AI
     url: https://www.meetup.com/lincoln-ai/
