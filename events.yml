@@ -55,14 +55,19 @@ events:
     when: Friday, November 6, 2026
     where: online
     note: >-
-      Off the usual first Wednesday this month, because the Midwest community
-      is joining the Northeast Carpentries Community for their November
-      meeting, with guest speaker Toby Hodges.
+      The regional call for The Carpentries, which teaches foundational coding
+      and data science skills to researchers. Off its usual first Wednesday
+      this month, because the Midwest community is joining the Northeast
+      Carpentries Community for their November meeting, with guest speaker
+      Toby Hodges.
   - id: carpentries-midwest
     date: 2026-12-02
     when: Wednesday, December 2, 2026
     where: online
-    note: Back in the usual slot.
+    note: The monthly call, back on its usual first Wednesday.
+    more:
+      - id: carpentries-sessions
+        label: Registration
   - id: lincoln-code-2026-09-29
     date: 2026-09-29
   - text: >-
@@ -85,14 +90,10 @@ regulars:
     note: A Lincoln meetup for people who write code.
   - id: lincoln-ai
     note: A Lincoln meetup about artificial intelligence.
-  - id: carpentries-midwest
-    cadence: first Wednesday of the month, noon CT, online
-    note: >-
-      The regional call for The Carpentries, which teaches foundational coding
-      and data science skills to researchers.
-    more:
-      - id: carpentries-sessions
-        label: Registration
+  # The US Midwest Carpentries call is deliberately not here. It does run on
+  # the first Wednesday of the month, but Regulars is a claim about me rather
+  # than about the event, and the first one I am registered for has not
+  # happened yet. Move it here once going is actually a habit.
   - id: nebraskajs
     cadence: monthly weekday evenings, usually Omaha
     note: >-
