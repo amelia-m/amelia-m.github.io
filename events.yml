@@ -86,13 +86,15 @@ events:
       lightning talk night at Don't Panic Labs.
     date: 2026-03-11
   - text: >-
-      posit::conf(2026), Houston, September 14 to 16. Attended in person,
-      starting with Hadley Wickham and Jenny Bryan's pre-conference workshop
-      on the Monday. [Things I'm happy to talk about](posit-conf-2026.qmd).
+      posit::conf(2026), Houston, September 14 to 16, attended in person.
+      [Things I'm happy to talk about](posit-conf-2026.qmd). The Monday was
+      Hadley Wickham and Jenny Bryan's pre-conference workshop.
     date: 2026-09-14
+    # No label here on purpose. The links.yml entry already carries the
+    # workshop's name, so letting it supply the text names the workshop
+    # without the name being written out a second time.
     more:
       - id: modern-r-workflow
-        label: The workshop
   - text: Nebraska Women in Tech Summit, event volunteer.
     year: 2026
 
