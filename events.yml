@@ -18,7 +18,9 @@
 #   note      extra prose, optional, Markdown allowed
 #   past_note replaces `note` once the event is past, for a note written
 #             looking forward. Without it the `note` is kept as written.
-#   more      further links.yml ids, shown in parentheses after the note
+#   more      further links.yml ids, shown in parentheses at the end. Works on
+#             a `text` entry too, which is how one of those carries a link
+#             without the URL being written out here as a second copy.
 #   text      a whole line of Markdown, for an event with no links.yml entry
 #   cadence   regulars only, in place of a date ("most Wednesday mornings")
 #
@@ -84,9 +86,13 @@ events:
       lightning talk night at Don't Panic Labs.
     date: 2026-03-11
   - text: >-
-      posit::conf(2026). [Things I'm happy to talk
-      about](posit-conf-2026.qmd).
-    year: 2026
+      posit::conf(2026), Houston, September 14 to 16. Attended in person,
+      starting with Hadley Wickham and Jenny Bryan's pre-conference workshop
+      on the Monday. [Things I'm happy to talk about](posit-conf-2026.qmd).
+    date: 2026-09-14
+    more:
+      - id: modern-r-workflow
+        label: The workshop
   - text: Nebraska Women in Tech Summit, event volunteer.
     year: 2026
 

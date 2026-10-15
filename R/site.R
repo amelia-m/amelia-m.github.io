@@ -543,13 +543,20 @@ site_events <- function(file = "events.yml") {
 # the note, and any further links in parentheses. A past event is not bolded
 # and prefers `past_note`, for notes that were written looking forward.
 event_line <- function(e, past = FALSE) {
-  if (!is.null(e$text)) return(trimws(e$text))
-  name <- link(e$id)
-  if (!past) name <- paste0("**", name, "**")
-  parts <- c(name, e$when %||% NULL, e$cadence %||% NULL, e$where %||% NULL)
-  out <- paste(Filter(nzchar, parts), collapse = ", ")
-  note <- if (past) e$past_note %||% e$note else e$note
-  if (!is.null(note)) out <- paste(end_period(out), trimws(note))
+  # `more` applies to a `text` entry too. It used to return here, so an entry
+  # with no links.yml id of its own had no way to carry a link except by
+  # writing the URL into the text, which is the duplication links.yml exists
+  # to prevent.
+  if (!is.null(e$text)) {
+    out <- trimws(e$text)
+  } else {
+    name <- link(e$id)
+    if (!past) name <- paste0("**", name, "**")
+    parts <- c(name, e$when %||% NULL, e$cadence %||% NULL, e$where %||% NULL)
+    out <- paste(Filter(nzchar, parts), collapse = ", ")
+    note <- if (past) e$past_note %||% e$note else e$note
+    if (!is.null(note)) out <- paste(end_period(out), trimws(note))
+  }
   if (length(e$more)) {
     extra <- vapply(e$more, function(m) link(m$id, m$label), character(1))
     out <- paste0(end_period(out), " (", paste(extra, collapse = ", "), ")")
