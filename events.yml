@@ -42,7 +42,8 @@ events:
     when: Thursday, October 15, 2026
     where: DevObsessed, Omaha, NE
     note: >-
-      Joint with the first AI Engineer Omaha meetup. Two talks, the first on
+      Joint with the first meetup of AI Engineer Omaha, a new local chapter of
+      an international organisation. Two talks, the first on
       Jev, a narrow model that answers a typed question with a probability
       rather than with prose.
     # No label, so links.yml supplies the name and it matches the one already
