@@ -108,28 +108,24 @@ places:
   - id: ai-engineer-omaha
     label: AI Engineer Omaha member profile
     url: https://omahaai.engineer/me/profile
+    # Governs `text` below, which is the Headline. Read off that input's
+    # maxlength rather than counted off a screenshot.
+    limit: 120
     updated: 2026-10-16
     text: >-
-      Postdoctoral Researcher & Adjunct Faculty, University of Nebraska.
+      Statistical models are only as good as the data under them, so I build R
+      and Shiny tools for both ends
     note: >-
-      Set to members only, so it is not on the public web, and the directory
-      card shows the role and company above plus links out to GitHub and
-      LinkedIn. The Headline field, "what you build, in one line", is still
-      empty: it is the only part of this profile that says anything a job
-      title does not.
-    draft_headline: R and Shiny tools that make messy data trustworthy
-    # Paired with `draft_headline`, not written as `limit`: the Headline field
-    # and the Role field are different inputs, and `limit` is checked against
-    # `text`, which holds the role and company. Calling this one `limit` made
-    # the report compare a 66 character role against the headline's cap.
-    draft_limit: 120
-    draft_note: >-
-      Agreed but not yet entered on the site. Move it into `text` with the
-      date once it is, and move draft_limit to `limit` at the same time.
-      50 of the 120 characters, read off the input's maxlength. It carries no
-      narrowing adjective, so it does not read as though administrative data
-      is the whole of the work, and it answers what gets built rather than
-      which models get fitted, because that is what the field asks for.
+      The Headline field, "what you build, in one line", which is the only part
+      of this profile saying anything a job title does not. Role and Company
+      are separate inputs on the same form, currently "Postdoctoral Researcher
+      & Adjunct Faculty" and "University of Nebraska", and the card shows those
+      plus links out to GitHub and LinkedIn. Members only, so none of it is on
+      the public web.
+      Two earlier drafts were narrower and are not worth keeping: both named
+      administrative data, which reads as though cleaning is the whole of the
+      work. This one makes a claim instead of listing services, and "both ends"
+      is doing the work, so do not trim it back to the tooling half.
 
   # Below here the text has not been recorded yet. Paste in what the profile
   # currently says and set `updated` to the date you checked it.
