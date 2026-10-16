@@ -1,6 +1,11 @@
-# Work I contributed to without being a listed author, plus the ones where I
-# am. The point is the analysis work: much of it lives in other people's
-# theses and dissertations and is invisible from a publication list.
+# Every record that turns up under my name, and what my actual relationship to
+# each one is. The point is the analysis work: much of it lives in other
+# people's theses and dissertations and is invisible from a publication list.
+#
+# Not everything here is a credential. The groups run from `author` down to
+# `collegial` and `cited`, and the ones at that end exist precisely so a search
+# hit does not get mistaken for a contribution later, by me or anyone else.
+# Each group's comment says whether it belongs on a CV or a public page.
 #
 # Metadata here comes from the DigitalCommons search for "miramonti" (25 named
 # records, of which four are a different L. Miramonti on Pierre Auger
@@ -100,9 +105,8 @@ analysis:
     publication: "Dissertations and Doctoral Documents, University of Nebraska-Lincoln, 2023 onward"
     date: 2026-04
 
-# Acknowledged, contribution not recorded here yet. Worth checking whether
-# these are also analysis support, in which case they move up. The Chen
-# dissertation is a methods dissertation in its own right.
+# Acknowledged for a contribution, which is not recorded here yet. Worth
+# checking whether these are also analysis support, in which case they move up.
 acknowledged:
   - url: https://digitalcommons.unl.edu/cehsdiss/261/
     title: >-
@@ -119,11 +123,27 @@ acknowledged:
     authors: Zachary M. Gillen, Marni E. Shoemaker, Brianna D. McKay, Joel T. Cramer
     publication: "Department of Nutrition and Health Sciences: Faculty Publications"
     date: 2019-01
+
+# Named in an acknowledgement as a colleague, not for a contribution. Logged
+# so a search hit has an explanation attached and does not get mistaken for
+# analysis work later. NOT CV MATERIAL, and not for any public page: being
+# thanked as a good officemate is not a credential.
+collegial:
   - url: https://digitalcommons.unl.edu/cehsdiss/403/
     title: Statistical Mediation Analysis in Regression Discontinuity Design for Causal Inference
     authors: Donna Chen
     publication: "College of Education and Human Sciences: Dissertations, Theses, and Student Research"
     date: 2021-12
+    quote: >-
+      To my MAP coworkers and officemates: Chaorong Wu, Houston Lester, Ann
+      Arthur, Jayden Nord, Paul Dizona, Jared Stevens, Kirstie Bash, Dong Ho
+      Choi, Amelia Miramonti, and Sunhyeong Lee. Thank you for creating a
+      collaborative environment, teaching me so much, and being great company.
+    note: >-
+      I did not contribute to the analysis. A group thank-you to the MAP office,
+      ten people in one sentence. The dissertation is a methods dissertation,
+      which makes the hit look more significant than it is, which is the reason
+      to write down what it actually was.
 
 # Turns up in a full-text search for "Miramonti" from a lab I worked in, but
 # whether that is an acknowledgement or a citation is not recorded. Both are
