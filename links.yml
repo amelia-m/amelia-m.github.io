@@ -141,11 +141,17 @@ events:
   - id: nebraskajs
     label: NebraskaJS
     url: https://nebraskajs.com/
-  # The group that co-hosted the October 15 meetup, hosted by DevObsessed.
-  # Confirmed live from the signed-in site; it still does not resolve from
-  # the build environment and has no search presence, which is why the render
-  # cannot check it and why it looked doubtful at first. The group page
-  # rather than the per-event signup page, which goes stale after the date.
+  # The group that co-hosted the October 15 meetup, locally hosted by
+  # DevObsessed. It is the Omaha chapter of an international organisation,
+  # not a group founded here, so the parent has a footprint even though this
+  # city site has almost none. An earlier version of this comment explained
+  # the missing search results as a brand new group, which was wrong: only
+  # the chapter is new.
+  #
+  # Confirmed live from the signed-in site. It still does not resolve from
+  # the build environment, which is why the render cannot check it. The
+  # chapter page rather than the per-event signup page, which goes stale
+  # after the date.
   - id: ai-engineer-omaha
     label: AI Engineer Omaha
     url: https://omahaai.engineer/
