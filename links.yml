@@ -132,10 +132,10 @@ events:
   - id: nebraskajs
     label: NebraskaJS
     url: https://nebraskajs.com/
-  # From the calendar invitation for the October 15 meetup, which this group
-  # co-hosted. Not checkable from the build environment: the domain does not
-  # resolve through the proxy, and the group has no search presence at all,
-  # which fits a group whose first meetup was that night. The group page
+  # The group that co-hosted the October 15 meetup, hosted by DevObsessed.
+  # Confirmed live from the signed-in site; it still does not resolve from
+  # the build environment and has no search presence, which is why the render
+  # cannot check it and why it looked doubtful at first. The group page
   # rather than the per-event signup page, which goes stale after the date.
   - id: ai-engineer-omaha
     label: AI Engineer Omaha
