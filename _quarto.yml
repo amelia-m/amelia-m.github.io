@@ -40,7 +40,7 @@ website:
           # hamburger below 1200px with the items it has, and a menu entry
           # costs no width in the expanded bar.
           - href: dissertation.qmd
-            text: Dissertation
+            text: Dissertation & theses
           - href: publications.qmd
             text: Publications
           - href: talks.qmd
