@@ -12,10 +12,19 @@ to change when something changes. This file is the reasoning.
 These came out of actual edits, not from theory. They apply to anything written
 about me anywhere.
 
-**Purpose over tooling.** What the work is for matters more than what it was
-built with. A stack also dates: naming R and Shiny in a profile headline is a
-fact that has to be maintained, while the GitHub link on the same card answers
-the tooling question for anyone who cares and never goes stale.
+**Purpose over tooling, but only when something has to give.** This is a
+tie-breaker for a field with a hard character limit, not a general preference.
+In one line, what the work is for beats what it was built with, and a stack is
+also a fact that has to be maintained while a GitHub link answers the same
+question and never goes stale.
+
+Where there is room, name the tools. The site already does, and should:
+`fun.qmd` labels a project "React, TypeScript, and Vite", `research.qmd` names
+tidysynthesis and syntheval, `software.qmd` says R and Shiny outright. Specific
+tools are searchable, they tell a collaborator what they would actually be
+picking up, and on a CV or a LinkedIn profile they are often the thing being
+filtered on. Dropping "R & Shiny" from a 120 character headline was a decision
+about that headline, not a rule about the rest.
 
 **Do not pigeonhole the subject matter.** "Administrative data" and "applied
 research" both narrow the work to one of its halves. Name the specific project
@@ -71,7 +80,9 @@ Budget notes, because they bite:
 
 ### Settled
 
-- Purpose, not stack: "tools", not "R & Shiny tools".
+- "tools", not "R & Shiny tools". A budget decision for this field only. The
+  card links to GitHub, so the stack is one click away, and the 11 characters
+  bought "for everything from".
 - "for everything from X to Y to Z", with the ellipsis spelled out.
 - "reporting", not "report". Chosen twice over the noun.
 - No trailing full stop.
