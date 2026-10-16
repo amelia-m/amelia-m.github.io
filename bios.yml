@@ -114,7 +114,7 @@ places:
     updated: 2026-10-16
     text: >-
       Statistical models are only as good as the data under them, so I build R
-      and Shiny tools for both ends
+      & Shiny tools for both ends and the in-between.
     note: >-
       The Headline field, "what you build, in one line", which is the only part
       of this profile saying anything a job title does not. Role and Company
@@ -122,10 +122,14 @@ places:
       & Adjunct Faculty" and "University of Nebraska", and the card shows those
       plus links out to GitHub and LinkedIn. Members only, so none of it is on
       the public web.
-      Two earlier drafts were narrower and are not worth keeping: both named
-      administrative data, which reads as though cleaning is the whole of the
-      work. This one makes a claim instead of listing services, and "both ends"
-      is doing the work, so do not trim it back to the tooling half.
+      Exactly 120 of the 120 characters, with no slack at all. It only fits
+      because of the ampersand: spelling out "and" makes it 122. Anything added
+      here has to buy its room from somewhere else, and the full stop is the
+      cheapest character to sell, since a headline is a fragment anyway.
+      Earlier drafts named administrative data, which reads as though cleaning
+      is the whole of the work. This one makes a claim rather than listing
+      services, and "both ends and the in-between" is the load-bearing part, so
+      do not trim it back to the tooling half.
 
   # Below here the text has not been recorded yet. Paste in what the profile
   # currently says and set `updated` to the date you checked it.
