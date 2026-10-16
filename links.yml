@@ -36,6 +36,12 @@ scholarly:
   - id: dissertation
     label: Read the full text
     url: https://digitalcommons.unl.edu/dissunl/314/
+  - id: thesis-unl
+    label: Read the full text
+    url: https://digitalcommons.unl.edu/cehsdiss/327/
+  - id: thesis-ucf
+    label: Read the full text
+    url: https://stars.library.ucf.edu/etd/1426/
   - id: orcid
     label: ORCID
     url: https://orcid.org/0000-0002-0277-4064

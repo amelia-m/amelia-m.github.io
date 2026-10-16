@@ -1,0 +1,66 @@
+# Work I contributed to without being a listed author, plus a few where I am
+# one. The point is the analysis work: a lot of it lives in other people's
+# theses and dissertations and is invisible from a publication list.
+#
+# NOT RENDERED ANYWHERE YET. This is the captured list, waiting on two things:
+#
+#   1. Titles, authors and years. digitalcommons.unl.edu does not resolve from
+#      the build environment, so none of these could be read to fill them in.
+#      They have to come from a machine that can reach the site, or by hand.
+#   2. A decision about which groups belong on a public page at all. See the
+#      note on `cited` below.
+#
+# Fields:
+#   url      the DigitalCommons record
+#   role     author | acknowledged | analysis | cited | unknown
+#   title    to fill
+#   authors  to fill
+#   year     to fill
+#   methods  for `analysis` entries: what was actually run. This is the part
+#            worth having, since it is the evidence that the bios currently
+#            lack, and it does not depend on being acknowledged by name.
+#   quote    the acknowledgement wording, where there is one and it says
+#            something more specific than "thanks to"
+#   note     anything else
+
+# Listed author.
+author:
+  - url: https://digitalcommons.unl.edu/ucareresearch/92/
+  - url: https://digitalcommons.unl.edu/nutritionfacpub/194/
+  - url: https://digitalcommons.unl.edu/nutritionfacpub/103/
+  - url: https://digitalcommons.unl.edu/nutritionfacpub/70/
+
+# Analysis support on someone else's thesis or dissertation, and acknowledged
+# in it. This is the group that documents consulting and methods work, so it
+# is the one worth filling in first.
+analysis:
+  - url: https://digitalcommons.unl.edu/dissunl/463/
+  - url: https://digitalcommons.unl.edu/dissunl/326/
+  - url: https://digitalcommons.unl.edu/dissunl/370/
+  - url: https://digitalcommons.unl.edu/cehsdiss/444/
+  - url: https://digitalcommons.unl.edu/dissunl/312/
+  - url: https://digitalcommons.unl.edu/dissunl/95/
+  - url: https://digitalcommons.unl.edu/agronhortdiss/252/
+
+# Acknowledged, contribution not recorded here yet. Worth checking whether
+# these are also analysis support, in which case they move up.
+acknowledged:
+  - url: https://digitalcommons.unl.edu/nutritionfacpub/178/
+  - url: https://digitalcommons.unl.edu/cehsdiss/403/
+  - url: https://digitalcommons.unl.edu/cehsdiss/261/
+
+# Turns up in a full-text search for "Miramonti", from a lab I worked in and a
+# student I worked with, but whether that is an acknowledgement or a citation
+# is not known. Resolve before publishing either way.
+unknown:
+  - url: https://digitalcommons.unl.edu/honorsembargoed/47/
+  - url: https://digitalcommons.unl.edu/honorsembargoed/110/
+
+# Cites my work. Kept here for the record, but this is a different kind of
+# thing from the groups above: it is evidence that other people found the work
+# useful, not evidence of work I did, and an academic site listing the papers
+# that cite it reads oddly. Probably not for the public page.
+cited:
+  - url: https://digitalcommons.unl.edu/nutritionfacpub/245/
+  - url: https://digitalcommons.unl.edu/nutritionfacpub/248/
+  - url: https://digitalcommons.unl.edu/nutritionfacpub/153/
