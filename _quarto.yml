@@ -36,6 +36,11 @@ website:
         menu:
           - href: research.qmd
             text: Research interests
+          # In this menu rather than the top level: the bar already needs the
+          # hamburger below 1200px with the items it has, and a menu entry
+          # costs no width in the expanded bar.
+          - href: dissertation.qmd
+            text: Dissertation
           - href: publications.qmd
             text: Publications
           - href: talks.qmd

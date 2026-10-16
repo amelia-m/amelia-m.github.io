@@ -10,4 +10,4 @@ title: "Research interests"
 
 **Research data infrastructure.** Documentation, variable lineage, and reproducible pipelines: the tooling that lets teams trust and reuse their data. This is where my [software](software.qmd) comes from.
 
-**Youth physical activity & exercise physiology.** My dissertation examined youth sport participation and cognitive development, and the need for better measurement. Earlier work covered neuromuscular fatigue, high-intensity interval training, and physical performance testing. See [publications](publications.qmd).
+**Youth physical activity & exercise physiology.** My [dissertation](dissertation.qmd) examined youth sport participation and cognitive development, and the need for better measurement. Earlier work covered neuromuscular fatigue, high-intensity interval training, and physical performance testing. See [publications](publications.qmd).
