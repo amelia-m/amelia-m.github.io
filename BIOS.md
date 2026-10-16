@@ -2,7 +2,8 @@
 
 `bios.yml` is the list: every place a bio is published, what each one currently
 says, and the date that text was last checked. This file is the order to work
-through them in.
+through them in. `WORDING.md` is why each one says what it says, and which
+alternatives were already considered and dropped.
 
 ## Reading them side by side
 
