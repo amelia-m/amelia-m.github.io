@@ -33,6 +33,9 @@ code:
     url: https://git.unl.edu/amiramonti
 
 scholarly:
+  - id: dissertation
+    label: Read the full text
+    url: https://digitalcommons.unl.edu/dissunl/314/
   - id: orcid
     label: ORCID
     url: https://orcid.org/0000-0002-0277-4064

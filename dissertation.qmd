@@ -1,0 +1,32 @@
+---
+title: "Dissertation"
+---
+
+```{r}
+#| include: false
+source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
+```
+
+**Youth Sport Participation and Cognitive Development: The Need for Improved Measurement**
+
+Interdisciplinary PhD, University of Nebraska–Lincoln, conferred May 2025. Quantitative, Qualitative, and Psychometric Methods in Educational Psychology, with Exercise Physiology and Nutrition in Nutrition and Health Sciences. Advised by James A. Bovaird.
+
+`r link("dissertation")`{.btn .btn-primary}
+
+## The problem
+
+Plenty of studies report that youth sport is good for cognition. Most of them measure sport participation badly: a yes or no, or a count of seasons, from a single point in time. If the exposure is a blunt instrument, the estimate attached to it inherits that bluntness, and a literature can accumulate findings that are really artefacts of how the question was asked.
+
+## What I did
+
+I developed a more nuanced way of scoring sport participation and put it head to head against the operationalizations the field usually reaches for, predicting cognitive outcomes while controlling for general physical activity and overall health.
+
+The data come from the Adolescent Brain Cognitive Development (ABCD) Study, Year 2 follow-up: roughly 9,000 to 11,000 participants depending on the analysis, aged 10.6 to 14.0 years.
+
+## What came out of it
+
+Effects were modest, and they were moderated by socioeconomic context: who benefits, and how much, depends on circumstances the sport variable alone does not capture.
+
+The methodological result is the one I care about more. How you operationalize the exposure changes what you find, which means a measurement decision made early and casually can quietly set the conclusion. That argument is why my work since has leaned toward measurement, missing data, and the unglamorous question of whether a variable means what everyone assumes it means.
+
+See also my [research interests](research.qmd) and [publications](publications.qmd).
