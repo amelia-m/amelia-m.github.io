@@ -45,6 +45,10 @@ events:
       Joint with the first AI Engineer Omaha meetup. Two talks, the first on
       Jev, a narrow model that answers a typed question with a probability
       rather than with prose.
+    # No label, so links.yml supplies the name and it matches the one already
+    # written in the note above.
+    more:
+      - id: ai-engineer-omaha
   - id: carpentries-sessions
     date: 2026-10-21
     when: Wednesday, October 21, 2026
