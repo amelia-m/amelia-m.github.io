@@ -115,8 +115,15 @@ places:
       Set to members only, so it is not on the public web, and the directory
       card shows the role and company above plus links out to GitHub and
       LinkedIn. The Headline field, "what you build, in one line", is still
-      empty: fill it and record it here, since it is the only part of this
-      profile that says anything a job title does not.
+      empty: it is the only part of this profile that says anything a job
+      title does not.
+    draft_headline: R and Shiny tools that make messy data trustworthy
+    draft_note: >-
+      Agreed but not yet entered on the site. Move it into `text` with the
+      date once it is. 50 characters. It carries no narrowing adjective, so
+      it does not read as though administrative data is the whole of the
+      work, and it answers what gets built rather than which models get
+      fitted, because that is what the field asks for.
 
   # Below here the text has not been recorded yet. Paste in what the profile
   # currently says and set `updated` to the date you checked it.
