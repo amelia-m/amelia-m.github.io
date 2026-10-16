@@ -1,66 +1,183 @@
-# Work I contributed to without being a listed author, plus a few where I am
-# one. The point is the analysis work: a lot of it lives in other people's
+# Work I contributed to without being a listed author, plus the ones where I
+# am. The point is the analysis work: much of it lives in other people's
 # theses and dissertations and is invisible from a publication list.
 #
-# NOT RENDERED ANYWHERE YET. This is the captured list, waiting on two things:
+# Metadata here comes from the DigitalCommons search for "miramonti" (25 named
+# records, of which four are a different L. Miramonti on Pierre Auger
+# Collaboration papers and are not listed). My own dissertation and MA thesis
+# are the other two of the 21 real hits; they live on dissertation.qmd.
 #
-#   1. Titles, authors and years. digitalcommons.unl.edu does not resolve from
-#      the build environment, so none of these could be read to fill them in.
-#      They have to come from a machine that can reach the site, or by hand.
-#   2. A decision about which groups belong on a public page at all. See the
-#      note on `cited` below.
+# NOT RENDERED ANYWHERE YET. Two things are still open:
 #
-# Fields:
-#   url      the DigitalCommons record
-#   role     author | acknowledged | analysis | cited | unknown
-#   title    to fill
-#   authors  to fill
-#   year     to fill
-#   methods  for `analysis` entries: what was actually run. This is the part
-#            worth having, since it is the evidence that the bios currently
-#            lack, and it does not depend on being acknowledged by name.
-#   quote    the acknowledgement wording, where there is one and it says
-#            something more specific than "thanks to"
-#   note     anything else
+#   1. `methods`, the analyses actually run, and `quote`, the acknowledgement
+#      wording. Neither can be read from the build environment, which cannot
+#      resolve digitalcommons.unl.edu. They have to be filled from a machine
+#      that can reach it. `methods` is the valuable half and does not depend
+#      on being acknowledged by name.
+#   2. Whether `cited` belongs on a public page. See the note on it below.
+#
+# Fields: url, title, authors, publication, date, then methods / quote / note.
 
 # Listed author.
 author:
-  - url: https://digitalcommons.unl.edu/ucareresearch/92/
-  - url: https://digitalcommons.unl.edu/nutritionfacpub/194/
-  - url: https://digitalcommons.unl.edu/nutritionfacpub/103/
   - url: https://digitalcommons.unl.edu/nutritionfacpub/70/
+    title: >-
+      Four weeks of high- versus low-load resistance training to failure on the
+      rate of torque development, electromechanical delay, and contractile
+      twitch properties
+    authors: N. D. M. Jenkins, T. J. Housh, S. L. Buckner, H. C. Bergstrom, C. M. Smith, et al.
+    publication: "Department of Nutrition and Health Sciences: Faculty Publications"
+    date: 2016-01
+  - url: https://digitalcommons.unl.edu/ucareresearch/92/
+    title: >-
+      Exertional Rhabdomyolysis in a 21-year-old, Healthy Female after
+      Performing Three Sets of the Biceps Curl Exercise to Failure with 30%
+      1RM: A Case Report
+    authors: Noelle M. Yeo, Brianna D. McKay, Amelia A. Miramonti, Nathaniel D. M. Jenkins, Joel T. Cramer
+    publication: "UCARE: Research Products"
+    date: 2016-04
+  - url: https://digitalcommons.unl.edu/nutritionfacpub/194/
+    title: Greater Neural Adaptations following High- vs. Low-Load Resistance Training
+    authors: Nathaniel D. M. Jenkins, Amelia A. Miramonti, Ethan C. Hill, Cory M. Smith, Kristen C. Cochrane-Snyman, et al.
+    publication: "Department of Nutrition and Health Sciences: Faculty Publications"
+    date: 2017-01
+  - url: https://digitalcommons.unl.edu/nutritionfacpub/103/
+    title: >-
+      Stature, Body Mass, and BMI in High School American Football Players:
+      Appropriate determinants of obesity prevalence?
+    authors: Alegra I. Mendez, Amelia A. Miramonti, Zachary M. Gillen, Brianna D. McKay, Todd J. Leutzinger, et al.
+    publication: "Department of Nutrition and Health Sciences: Faculty Publications"
+    date: 2017-11
 
-# Analysis support on someone else's thesis or dissertation, and acknowledged
-# in it. This is the group that documents consulting and methods work, so it
-# is the one worth filling in first.
+# Analysis support on someone else's thesis or dissertation, acknowledged in
+# it. This is the group that documents consulting and methods work, so it is
+# the one worth filling `methods` on first.
 analysis:
-  - url: https://digitalcommons.unl.edu/dissunl/463/
-  - url: https://digitalcommons.unl.edu/dissunl/326/
-  - url: https://digitalcommons.unl.edu/dissunl/370/
-  - url: https://digitalcommons.unl.edu/cehsdiss/444/
-  - url: https://digitalcommons.unl.edu/dissunl/312/
   - url: https://digitalcommons.unl.edu/dissunl/95/
+    title: >-
+      Preparing the Next Generation of Music Teachers: Illuminating Motivations
+      of Nebraska Preservice Teacher Mentors
+    authors: Emily Marie Chapman
+    publication: "Dissertations and Doctoral Documents, University of Nebraska-Lincoln, 2023 onward"
+    date: 2024-05
   - url: https://digitalcommons.unl.edu/agronhortdiss/252/
+    title: >-
+      High Throughput Phenotyping: Field Based Triticale Breeding and
+      Educational Resource Impact
+    authors: Catherine Kay Mick
+    publication: "Department of Agronomy and Horticulture: Dissertations, Theses, and Student Research"
+    date: 2023-12
+  - url: https://digitalcommons.unl.edu/cehsdiss/444/
+    title: The Effect of Need for Closure, Gender Essentialism, and Contact on Transphobia
+    authors: Jacob E. Vargas
+    publication: "College of Education and Human Sciences: Dissertations, Theses, and Student Research"
+    date: 2025-01
+  - url: https://digitalcommons.unl.edu/dissunl/312/
+    title: Balance of Psychological Needs among University Aural Skills Students
+    authors: Elizabeth Ann Johnson
+    publication: "Dissertations and Doctoral Documents, University of Nebraska-Lincoln, 2023 onward"
+    date: 2025-04
+  - url: https://digitalcommons.unl.edu/dissunl/326/
+    title: >-
+      Familismo and Family Achievement Guilt in Latine College Students:
+      Relationships with Psychopathology and Wellbeing
+    authors: Abril Rangel-Pacheco
+    publication: "Dissertations and Doctoral Documents, University of Nebraska-Lincoln, 2023 onward"
+    date: 2025-05
+  - url: https://digitalcommons.unl.edu/dissunl/370/
+    title: >-
+      "Self-Compassion Has to Be the Heartbeat of How I Move Through Life": A
+      Mixed Methods Study of Family Caregiver Emotional Well-being
+    authors: Sarah O. Rasby
+    publication: "Dissertations and Doctoral Documents, University of Nebraska-Lincoln, 2023 onward"
+    date: 2025-08
+  - url: https://digitalcommons.unl.edu/dissunl/463/
+    title: >-
+      Leading with the Heart: Fostering Asset-based Teacher Beliefs and
+      Practices for Multilingual Learners Through Research-Practice Partnership
+      in a Diversifying Suburban Elementary School
+    authors: Valerie Anne Kyllmann
+    publication: "Dissertations and Doctoral Documents, University of Nebraska-Lincoln, 2023 onward"
+    date: 2026-04
 
 # Acknowledged, contribution not recorded here yet. Worth checking whether
-# these are also analysis support, in which case they move up.
+# these are also analysis support, in which case they move up. The Chen
+# dissertation is a methods dissertation in its own right.
 acknowledged:
-  - url: https://digitalcommons.unl.edu/nutritionfacpub/178/
-  - url: https://digitalcommons.unl.edu/cehsdiss/403/
   - url: https://digitalcommons.unl.edu/cehsdiss/261/
+    title: >-
+      Electromyographic and Mechanomyographic Time and Frequency Responses
+      During Fatiguing, Submaximal, Isokinetic Muscle Actions of the Biceps
+      Brachii
+    authors: Ethan C. Hill
+    publication: "College of Education and Human Sciences: Dissertations, Theses, and Student Research"
+    date: 2016-04
+  - url: https://digitalcommons.unl.edu/nutritionfacpub/178/
+    title: >-
+      State Population Influences Athletic Performance Combine Test Scores in
+      High School-Aged American Football Players
+    authors: Zachary M. Gillen, Marni E. Shoemaker, Brianna D. McKay, Joel T. Cramer
+    publication: "Department of Nutrition and Health Sciences: Faculty Publications"
+    date: 2019-01
+  - url: https://digitalcommons.unl.edu/cehsdiss/403/
+    title: Statistical Mediation Analysis in Regression Discontinuity Design for Causal Inference
+    authors: Donna Chen
+    publication: "College of Education and Human Sciences: Dissertations, Theses, and Student Research"
+    date: 2021-12
 
-# Turns up in a full-text search for "Miramonti", from a lab I worked in and a
-# student I worked with, but whether that is an acknowledgement or a citation
-# is not known. Resolve before publishing either way.
+# Turns up in a full-text search for "Miramonti" from a lab I worked in, but
+# whether that is an acknowledgement or a citation is not recorded. Both are
+# embargoed Honors senior projects, so the full text is not readable anyway.
 unknown:
   - url: https://digitalcommons.unl.edu/honorsembargoed/47/
+    title: >-
+      Stature, Body Mass, and BMI in High School American Football Players:
+      Appropriate Determinants of Obesity Prevalence?
+    authors: Alegra Mendez
+    publication: "Honors Program: Senior Projects (Embargoed)"
+    date: 2018-05
+    note: >-
+      Same title and same first author as nutritionfacpub/103, where I am
+      second author. This is the Honors project the paper came out of, so it
+      is very likely an acknowledgement rather than a citation.
   - url: https://digitalcommons.unl.edu/honorsembargoed/110/
+    title: >-
+      Test-Retest Reliability of Static and Counter-Movement Power Push-Up
+      Tests in 6-16-Year-Old Male Athletes
+    authors: Nicholas A. Bohannon, Zachary M. Gillen, Marni E. Shoemaker, Brianna D. McKay, Sydney M. Gibson, et al.
+    publication: "Honors Program: Senior Projects (Embargoed)"
+    date: 2019-10
+    note: >-
+      A reliability study, and the co-authors are the Cramer lab group I
+      published with, so measurement support is the likely connection.
 
-# Cites my work. Kept here for the record, but this is a different kind of
-# thing from the groups above: it is evidence that other people found the work
-# useful, not evidence of work I did, and an academic site listing the papers
-# that cite it reads oddly. Probably not for the public page.
+# Cites my work. Kept for the record, but this is a different kind of thing
+# from the groups above: it is evidence that other people found the work
+# useful, not evidence of work I did, and a personal site listing its own
+# citers reads oddly. Probably not for the public page.
+#
+# The two nutritionfacpub records below are the same article deposited twice.
 cited:
-  - url: https://digitalcommons.unl.edu/nutritionfacpub/245/
-  - url: https://digitalcommons.unl.edu/nutritionfacpub/248/
   - url: https://digitalcommons.unl.edu/nutritionfacpub/153/
+    title: >-
+      Co-Activation, Estimated Anterior and Posterior Cruciate Ligament Forces,
+      and Motor Unit Activation Strategies during the Time Course of Fatigue
+    authors: Cory M. Smith, Terry J. Housh, Ethan C. Hill, Josh L. Keller, Glen O. Johnson, et al.
+    publication: "Department of Nutrition and Health Sciences: Faculty Publications"
+    date: 2018-01
+  - url: https://digitalcommons.unl.edu/nutritionfacpub/245/
+    title: >-
+      Application of the neuromuscular fatigue threshold treadmill test to
+      muscles of the quadriceps and hamstrings
+    authors: Clayton L. Camic, Attila J. Kovacs, Trisha A. VanDusseldorp, Ethan C. Hill, Evan A. Enquist
+    publication: "Department of Nutrition and Health Sciences: Faculty Publications"
+    date: 2020-01
+    note: Duplicate deposit of the same article as nutritionfacpub/248.
+  - url: https://digitalcommons.unl.edu/nutritionfacpub/248/
+    title: >-
+      Application of the neuromuscular fatigue threshold treadmill test to
+      muscles of the quadriceps and hamstrings
+    authors: Clayton L. Camic, Attila J. Kovacs, Trisha A. VanDusseldorp, Ethan C. Hill, Evan A. Enquist
+    publication: "Department of Nutrition and Health Sciences: Faculty Publications"
+    date: 2020-01
+    note: Duplicate deposit of the same article as nutritionfacpub/245.
