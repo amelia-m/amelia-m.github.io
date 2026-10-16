@@ -132,6 +132,14 @@ events:
   - id: nebraskajs
     label: NebraskaJS
     url: https://nebraskajs.com/
+  # From the calendar invitation for the October 15 meetup, which this group
+  # co-hosted. Not checkable from the build environment: the domain does not
+  # resolve through the proxy, and the group has no search presence at all,
+  # which fits a group whose first meetup was that night. The group page
+  # rather than the per-event signup page, which goes stale after the date.
+  - id: ai-engineer-omaha
+    label: AI Engineer Omaha
+    url: https://omahaai.engineer/
   # The running notes pad for the monthly calls, which doubles as the regional
   # community's home: agendas, notes, and the connection details live there.
   #
