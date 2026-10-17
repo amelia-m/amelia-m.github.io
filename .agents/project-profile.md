@@ -21,8 +21,13 @@ Amelia, 2026-10-17: "level 2, push after review but ask before merging".
   - Every finding is fixed, or answered in the PR body.
   - `quarto render` of the whole project completes, not a single page: the navbar link check
     runs from `index.qmd`, and `R/site.R` also stops the render on a duplicate or unknown
-    `links.yml` id and on a bibliography it cannot find or convert. A warning that the blog listing
-    matches no files is expected until the first post exists.
+    `links.yml` id and on a bibliography it cannot find or convert. A warning that the blog
+    listing matches no files is expected until the first post exists.
+  - Then `grep -rlE '(&lt;|<|%3C)U\+[0-9A-Fa-f]{4}' _site`, which should find nothing. Under a
+    non-UTF-8 locale, which is what a cloud session has, R writes non-ASCII characters as
+    literal `<U+2013>` text and the render still succeeds. `R/site.R` switches the locale for
+    every page that sources it and stops if it cannot, and the cloud session hook sets a UTF-8
+    locale for everything else, so a hit means a page got past both.
   - Why first, not after: Amelia, 2026-10-17, of Copilot's review: "it routinely runs out of
     tokens, so we should be dispatching codereview agents before any pushes/merges on github
     to try to identify &address as many issues as possible before they reach the remote".

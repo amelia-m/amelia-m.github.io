@@ -7,10 +7,8 @@
 #
 # Renders nowhere, which is NOT the same as not published. This repository is
 # public, so everything written here is world-readable the moment it is pushed,
-# and git history keeps it even after an edit. An earlier version of this
-# comment said a project could be logged here "before deciding whether it
-# belongs in public at all", which was wrong and was acted on. Write nothing
-# here that could not go on the site itself, in particular about other people.
+# and git history keeps it even after an edit. Write nothing here that could not
+# go on the site itself, in particular about other people.
 #
 # A project carries every area it belongs to, not one. Most of them straddle:
 # the suicide mortality review is health data reported to a legislature. Run
@@ -30,12 +28,15 @@
 #   name     the project as it gets referred to
 #   where    the centre, lab, or partner it sits under
 #   when     years, or "ongoing"
-#   current  true while it is live work
+#   current    true while it is live work, "unknown" when that is not established
 #   areas    one or more ids from the `areas` block below
 #   role     what I actually did on it
 #   output   what came out of it: a report, an application, a paper
-#   note     anything worth knowing later
-#   todo     what still needs filling in
+#   note       anything worth knowing later
+#   built_with which assistants or tools did the building, read from the
+#              repository's commit history rather than from memory
+#   source     "recalled" for an entry with no CV line behind it
+#   todo       what still needs filling in
 
 areas:
   - id: research
@@ -92,14 +93,20 @@ projects:
 
   - name: Community Crops classes evaluation
     where: University of Nebraska Public Policy Center
-    when: 2023 to 2025
+    # My involvement, as for WeCook; the classes themselves ran 2023 to 2025.
+    when: 2025
+    current: unknown
     areas: [public-health, public-policy]
     role: Analysis and reporting.
     output: >-
       PytlikZillig LM, Miramonti AA (September 2025). Community Crops Classes
       2025 Evaluation Report: Reach and Impacts of Classes Offered June 2023
       to August 2025.
-    note: The one current-era project with a public report attached.
+    note: Has a public evaluation report.
+    todo: >-
+      Whether the work continued past the September 2025 report. The CV lists
+      it under the current NUPPC appointment, which may only mean it was one of
+      that appointment's projects.
 
   - name: Lincoln Food & Recyclable Waste initiative
     where: University of Nebraska Public Policy Center
@@ -108,10 +115,10 @@ projects:
     areas: [public-policy]
     role: Analysis, data management, and reporting.
     note: >-
-      The project none of the four areas really fits. It is municipal
-      environmental policy, which is public policy by audience but not by
-      subject. Worth remembering before treating the four areas as a complete
-      description of the work.
+      Public policy by audience rather than by subject: the subject is
+      municipal waste and food, which none of the four areas names. Worth
+      remembering before treating the areas as a description of subject
+      matter rather than of who the work is for.
 
   - name: Get in the Game
     where: >-
@@ -235,9 +242,10 @@ projects:
       visNetwork calls. One passing mention of Codex, no Gemini anywhere.
     note: >-
       The Python and Streamlit port is Eugene Aiken's, and he carried it on as
-      Cartographer at Common Gene Labs, which credits me as having originally
-      conceived and designed it, in the README and in the copyright headers of
-      two source files. I contributed its data privacy guide and local setup
+      Cartographer at Common Gene Labs. Its README says I originally conceived
+      and designed it, its NOTICE file says "original concept and design", and
+      three of its source files carry "Original concept by" in their headers.
+      I contributed its data privacy guide and local setup
       instructions. The arrangement runs both ways and only his side of it is
       currently written down anywhere.
       Worth stating properly rather than as "(with a Python/Streamlit port)",
@@ -336,9 +344,10 @@ projects:
     role: Graduate Research Assistant.
     todo: >-
       Whether this appointment was the WeCook programme, and whether it
-      covered anything else. Every WeCook output is co-authored with M.
-      Krehbiel and L. Franzen-Castle, and the dates line up, which makes the
-      connection likely rather than established.
+      covered anything else. M. Krehbiel is a co-author on every co-authored
+      WeCook output in `_data/` (presentations.bib and manuscripts.json), and
+      the dates line up, which makes the connection likely rather than
+      established.
 
   - name: "Nebraska Extension: Nutrition Education Program / SNAP-Ed"
     where: Department of Nutrition & Health Sciences

@@ -1,6 +1,29 @@
 # Shared helpers for pages that render the generated data in _data/.
 # Base R + jsonlite only.
 
+# Quarto does not set a locale: R inherits the shell's. In a cloud session that
+# is POSIX, and output written through cat() then turns every non-ASCII
+# character into literal "<U+2013>" text. The render still completes, so the
+# corruption is easy to miss: 66 such characters on the CV page alone, found
+# 2026-10-17. This switches the character locale for every page that sources
+# this file, during a render only, so an interactive source() for bio_report()
+# or work_areas() is left alone. A no-op wherever the locale is already UTF-8,
+# which includes R 4.2 and later on Windows. If no UTF-8 locale can be set it
+# stops, since a render that succeeds with mangled characters is worse than
+# one that fails and _quarto.yml hides warnings from the page.
+if (isTRUE(getOption("knitr.in.progress")) && !isTRUE(l10n_info()[["UTF-8"]])) {
+  local({
+    for (loc in c("C.UTF-8", "C.utf8", "en_US.UTF-8", "en_US.utf8")) {
+      if (nzchar(suppressWarnings(Sys.setlocale("LC_CTYPE", loc)))) break
+    }
+    if (!isTRUE(l10n_info()[["UTF-8"]])) {
+      stop("No UTF-8 locale could be set, so non-ASCII text would render as <U+...>. ",
+           "Set LC_ALL to a UTF-8 locale listed by `locale -a` and render again.",
+           call. = FALSE)
+    }
+  })
+}
+
 site_root <- function() {
   root <- Sys.getenv("QUARTO_PROJECT_DIR")
   if (nzchar(root)) return(root)
@@ -23,10 +46,10 @@ cv_data <- function(name) {
 
 # read_yaml_utf8() reads through readLines() in the session's locale, so under
 # a C locale it truncates a value at the first non-ASCII byte: the en dash in
-# "Nebraska-Lincoln" cut a 484 character bio down to 102. Quarto sets a UTF-8
-# locale so the rendered pages were always fine, but a plain Rscript was not.
-# Reading the bytes and marking them UTF-8 makes these files parse the same
-# whatever R is set to. likes.yml needs this too.
+# "Nebraska-Lincoln" cut a 484 character bio down to 102. The locale switch at
+# the top of this file only runs during a render, so this still matters for an
+# interactive source(): reading the bytes and marking them UTF-8 makes these
+# files parse the same whatever R is set to. likes.yml needs this too.
 read_yaml_utf8 <- function(path) {
   yaml::yaml.load(paste(readLines(path, encoding = "UTF-8", warn = FALSE), collapse = "\n"))
 }
@@ -706,25 +729,33 @@ site_areas <- function(file = "areas.yml") {
 # way round, which is the direction it gets read in.
 work_areas <- function(x = site_areas(), todo = TRUE, detail = TRUE) {
   known <- vapply(x$areas, function(a) a$id, character(1))
-  unknown <- setdiff(unique(unlist(lapply(x$projects, `[[`, "areas"))), known)
-  if (length(unknown)) {
-    cat("UNKNOWN AREA ID: ", paste(unknown, collapse = ", "), "\n", sep = "")
+  # A project whose areas are missing, empty, or all mistyped matches no
+  # section and would vanish from the report entirely, which is the one
+  # failure this file cannot afford: it exists to hold the projects nothing
+  # else records. Name each one, with any unknown id, before the sections.
+  for (p in x$projects) {
+    ids <- unlist(p$areas)
+    ok <- ids %in% known
+    if (!all(ok) || !any(ok)) {
+      cat(.squash(p$name), ": ",
+          if (any(!ok)) paste0("unknown area id ", paste(ids[!ok], collapse = ", "), "; "),
+          if (!any(ok)) "SHOWN NOWHERE BELOW" else "shown under its known areas only",
+          "\n", sep = "")
+    }
   }
-  # An entry with no `areas` at all matches no section and would otherwise
-  # vanish from the report entirely, which is the one failure this file cannot
-  # afford: it exists to hold the projects nothing else records.
-  orphans <- Filter(function(p) !length(unlist(p$areas)), x$projects)
-  for (p in orphans) cat("NO AREAS, SHOWN NOWHERE BELOW: ", .squash(p$name), "\n", sep = "")
   for (a in x$areas) {
     in_area <- Filter(function(p) a$id %in% unlist(p$areas), x$projects)
     cat("\n", strrep("-", 70), "\n", toupper(a$label),
         " (", length(in_area), ")\n", sep = "")
     cat(paste0("  ", strwrap(.squash(a$scope), width = 68)), sep = "\n")
     for (p in in_area) {
-      also <- setdiff(unlist(p$areas), a$id)
+      also <- intersect(setdiff(unlist(p$areas), a$id), known)
       head <- paste0(.squash(p$name),
                      if (!is.null(p$when)) paste0("  [", p$when, "]"),
-                     if (!isTRUE(p$current)) "  (past)")
+                     if (identical(p$current, "unknown")) "  (status unknown)"
+                     else if (!isTRUE(p$current)) "  (past)",
+                     # No CV line behind it, so a bio should not lean on it.
+                     if (identical(p$source, "recalled")) "  (recalled)")
       cat("\n", paste(strwrap(head, width = 70, initial = "  * ",
                               prefix = "    "), collapse = "\n"), "\n", sep = "")
       if (!is.null(p$where)) {

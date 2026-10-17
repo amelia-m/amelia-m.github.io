@@ -59,8 +59,6 @@ they were found.
       automatically.
 - [ ] GitHub profile Bio field: "R/Shiny apps for data cleaning, documentation" is missing its
       conjunction. 146 of 160 characters, so there is room.
-- [ ] `amelia-m/pleasantry`: tick "Use your GitHub Pages website" in the repository details now
-      that Pages is live, rather than typing the URL.
 - [ ] AI provenance on the `recode-studio`, `table-explorer` and `lspc-weather` descriptions.
       pleasantry now names both assistants and the others name none, which reads as though the
       joke package were the only one that had help. The verified split for the two work tools
@@ -78,19 +76,9 @@ they were found.
       Judgment Layer", while `events.yml` describes the Jev talk as the first of two. Those may
       be the meetup title and a talk title or the same thing; the entry was left as written
       rather than overwritten on a guess.
-- [ ] `areas.yml` carries twelve `todo` fields, mostly on the older positions, and five entries
-      with no role recorded at all. `work_areas()` lists both, so read it rather than trusting
-      this count.
-
-## From the 2026-10-17 pre-merge review
-
-- [ ] Confirm the look-into Claude Doc is not shared by link. Its URL sat in this repository for
-      about two hours on 2026-10-16 to 17, and a link-shared artifact is readable by whoever
-      holds the URL; a private one is not.
-      Context: the branch was rebuilt from `main` and force-pushed on 2026-10-17 to remove
-      content that did not belong in a public repository. GitHub still serves the old commits
-      to anyone who already has a SHA until it garbage-collects them. Not pursued with GitHub
-      Support (Amelia, 2026-10-17: "it's not that serious").
+- [ ] `areas.yml` has `todo` fields, mostly on the older positions, and entries with no role
+      recorded at all. `work_areas()` lists both.
+- [ ] Make sure the look-into Claude Doc is not shared by link, and turn link sharing off if it is.
 - [ ] The downstream-link association lives in two files: the ids and URLs in `links.yml`
       (`related:` group) and the software_dev-name-to-id mapping in `software.qmd`. A second
       downstream project means editing both. Putting the owning name on the links.yml entry

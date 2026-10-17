@@ -92,14 +92,16 @@ projects:
 # Kept out of `projects` above because that group is matched by label against
 # the software_dev data, and this is not one of my projects.
 related:
-  # Verified by cloning this exact URL. A plain fetch of the page returns 403,
-  # but every github.com request does from this environment, so that is the
-  # proxy rather than the repository.
+  # Confirmed public on 2026-10-17 by the cloud session's repository service,
+  # which serves a repository anonymously only when it is public. A clone alone
+  # did not show that: the session's git proxy adds Amelia's credentials, and
+  # she contributes to this repository.
   #
   # Two related URLs are deliberately not here, because neither could be
   # checked: the deployed Streamlit app at cartographer.streamlit.app, and the
-  # Common Gene Labs site linked from the Cartographer README. Both hosts are
-  # unreachable from the build environment. areas.yml records them instead.
+  # Common Gene Labs site linked from the Cartographer README. The build
+  # environment's proxy refuses both hosts, which says nothing about whether
+  # either is up; check them from a normal machine before linking.
   - id: cartographer
     label: Cartographer
     url: https://github.com/Common-Gene-Labs/cartographer
