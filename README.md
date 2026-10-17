@@ -15,7 +15,8 @@ Events live in `events.yml`, which feeds both `events.qmd` and the home page cal
 ## Build and publish
 
 ```bash
-quarto render                  # needs R with knitr, rmarkdown, jsonlite
+quarto render                  # needs R with knitr, rmarkdown, jsonlite, yaml; prints
+                               # "check-output: N files clean (whole project)" or fails
 quarto publish gh-pages        # renders, then pushes _site to the gh-pages branch
 ```
 

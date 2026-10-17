@@ -23,11 +23,15 @@ Amelia, 2026-10-17: "level 2, push after review but ask before merging".
     runs from `index.qmd`, and `R/site.R` also stops the render on a duplicate or unknown
     `links.yml` id and on a bibliography it cannot find or convert. A warning that the blog
     listing matches no files is expected until the first post exists.
-  - Then `grep -rlE '(&lt;|<|%3C)U\+[0-9A-Fa-f]{4}' _site`, which should find nothing. Under a
-    non-UTF-8 locale, which is what a cloud session has, R writes non-ASCII characters as
-    literal `<U+2013>` text and the render still succeeds. `R/site.R` switches the locale for
-    every page that sources it and stops if it cannot, and the cloud session hook sets a UTF-8
-    locale for everything else, so a hit means a page got past both.
+  - The render checks its own output. `R/check-output.R` runs after every render and fails
+    it, naming file and line, on escaped code points or octal escapes from a non-UTF-8 locale,
+    mojibake and other encoding damage, an empty page, and unevaluated inline R. Every check
+    skips source code shown on a page, so a post can show the same strings on purpose; chunk
+    output and prose are checked.
+    A whole-project render must print `check-output: N files clean (whole project)`. A
+    single-page render and a hand run say they are not a full check, and a render that prints
+    no such line did not run the check: none of these counts as passing. It does not catch
+    a missing field that renders as nothing; see `TODO.md`.
   - Why first, not after: Amelia, 2026-10-17, of Copilot's review: "it routinely runs out of
     tokens, so we should be dispatching codereview agents before any pushes/merges on github
     to try to identify &address as many issues as possible before they reach the remote".
@@ -46,3 +50,21 @@ Amelia, 2026-10-17: "level 2, push after review but ask before merging".
   setting can enforce the review or the merge rule: they rest on this section. Copilot
   reviewed one pull request of the first 25, PR #1, at Amelia's request, so automatic Copilot
   review is off in practice.
+
+## When something reports success
+
+Amelia, 2026-10-17: "We need to make sure things like that get flagged", of a render that
+reported success while writing corrupted characters.
+
+A step that says it succeeded is evidence that nothing threw an error, not that the result
+is right. The same day, a render completed with 66 corrupted characters on the CV page, and a
+clone was taken as proof a repository was public when the session's proxy had added
+credentials to it. So:
+
+- Check the artifact, not the exit status: open the rendered page, fetch the URL, read the
+  diff, query the setting.
+- Where a check can pass while the result is wrong, make it fail loudly instead, as
+  `R/check-output.R` does for the render, and run it against known-good output first so it
+  does not fire on correct work. A check that cries wolf gets ignored.
+- Say what a claim rests on: checked directly, inferred, or reported by a tool. "Verified"
+  means checked directly, and names how.

@@ -70,6 +70,15 @@ they were found.
       `maintenance_github_grooming.Rmd`. agent-config `docs/github-repo-settings.md` is the
       natural home for it.
 
+- [ ] Missing data vanishes silently instead of being flagged. `md()` in `R/site.R` turns a
+      missing value into an empty string, so a generated row with no `role` or `when` renders
+      as "* · 2026*" and the render succeeds. That is right for an optional field and wrong for
+      a required one; decide per field, and stop the render when a required one is missing.
+      The post-render check cannot see this: an empty field leaves no symptom in the HTML.
+      The same applies to a YAML field holding inline R, which `md()` escapes into literal
+      text; the check catches the common form, but stopping on it where the field is read
+      would be exact.
+
 ## Open questions
 
 - [ ] AI Engineer Omaha, 2026-10-15: Amelia's look-into log calls the meetup "Jev and the
