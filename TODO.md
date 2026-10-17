@@ -84,14 +84,13 @@ they were found.
 
 ## From the 2026-10-17 pre-merge review
 
-- [ ] What the 2026-10-17 history rewrite could not reach. The branch was rebuilt from `main`
-      and force-pushed to remove content that did not belong in a public repository, and no
-      branch, tag or pull request on GitHub references the old commits now. Two things a
-      force-push cannot touch: GitHub keeps serving an unreferenced commit to anyone who already
-      has its SHA until it garbage-collects it, which only GitHub Support can hurry; and any
-      clone that fetched the branch before the rewrite still has the old commits. Separately,
-      confirm the look-into Claude Doc is not shared by link, since its URL sat in this
-      repository for about two hours and a link-shared artifact is readable by whoever holds it.
+- [ ] Confirm the look-into Claude Doc is not shared by link. Its URL sat in this repository for
+      about two hours on 2026-10-16 to 17, and a link-shared artifact is readable by whoever
+      holds the URL; a private one is not.
+      Context: the branch was rebuilt from `main` and force-pushed on 2026-10-17 to remove
+      content that did not belong in a public repository. GitHub still serves the old commits
+      to anyone who already has a SHA until it garbage-collects them. Not pursued with GitHub
+      Support (Amelia, 2026-10-17: "it's not that serious").
 - [ ] The downstream-link association lives in two files: the ids and URLs in `links.yml`
       (`related:` group) and the software_dev-name-to-id mapping in `software.qmd`. A second
       downstream project means editing both. Putting the owning name on the links.yml entry
