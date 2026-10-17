@@ -98,11 +98,15 @@ they were found.
 
 ## Repo setup not done here
 
-- [ ] Nothing on GitHub enforces the review step in `.agents/project-profile.md`: no rulesets,
-      no CI. A ruleset on `main` requiring pull requests and blocking deletion and force-pushes
-      would back it up; settings are Amelia's to change. Path: repository Settings, Rules,
-      Rulesets.
-- [ ] Automatic Copilot review appears to be on for the account, against the global rules.
-      Account setting, Amelia's to change: https://github.com/settings/copilot/code_review
 - [ ] `_scratch/` is not in `.gitignore`. No such directory exists in this checkout yet, so
       this is only worth doing if one is going to be created.
+- [ ] `main` has no protection at all. A ruleset on `main` that requires a pull request and
+      blocks deletion and force-pushes would stop the one failure GitHub can see: something
+      pushed straight to `main`. It cannot enforce the review or the merge rule in
+      `.agents/project-profile.md`, because agents act on GitHub as Amelia. Settings are hers
+      to change: repository Settings, Rules, Rulesets.
+- [ ] Only Claude Code reads the profile, through the `@` import in `CLAUDE.md`. Copilot's coding
+      agent has worked here (`copilot/review-code-base-issues`) and nothing points it at the
+      push and merge rules. Whether to add a pointer it reads, such as an `AGENTS.md` or
+      `.github/copilot-instructions.md`, is a question for how agent-config wants instruction
+      files laid out, so it is not decided here.
