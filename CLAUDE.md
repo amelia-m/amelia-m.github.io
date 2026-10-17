@@ -2,6 +2,11 @@
 
 Guidance for AI assistants working in this repository.
 
+What agents may push and merge without asking is in the project profile, imported here so
+every session reads it:
+
+@.agents/project-profile.md
+
 ## Attribution
 
 On (Amelia, 2026-10-09). End commit messages with:

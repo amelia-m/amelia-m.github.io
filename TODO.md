@@ -98,8 +98,11 @@ they were found.
 
 ## Repo setup not done here
 
-- [ ] No `.agents/project-profile.md`. The `repo-workflow-setup` skill in agent-config needs
-      Amelia's choice of autonomy level first, in her own dated words, quoted rather than
-      paraphrased, so it cannot be written without her.
+- [ ] Nothing on GitHub enforces the review step in `.agents/project-profile.md`: no rulesets,
+      no CI. A ruleset on `main` requiring pull requests and blocking deletion and force-pushes
+      would back it up; settings are Amelia's to change. Path: repository Settings, Rules,
+      Rulesets.
+- [ ] Automatic Copilot review appears to be on for the account, against the global rules.
+      Account setting, Amelia's to change: https://github.com/settings/copilot/code_review
 - [ ] `_scratch/` is not in `.gitignore`. No such directory exists in this checkout yet, so
       this is only worth doing if one is going to be created.
