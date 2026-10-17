@@ -8,6 +8,14 @@ source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
 proj <- site_links()
 proj <- proj[proj$group == "projects", ]
 links <- setNames(proj$url, proj$label)
+
+# Downstream work, keyed by the software_dev name it came out of. The
+# generated data has no field for this, so the mapping is kept here. The
+# descriptions themselves are escaped with md() and so cannot carry a link,
+# which is why this is a button rather than a sentence.
+# The id is the links.yml entry; the value is the button label, since
+# "Cartographer" alone does not say how it relates to the tool above it.
+related <- list("Table Relationship Explorer" = c(cartographer = "Ported to Cartographer"))
 ```
 
 I build R and Shiny tools for the unglamorous middle of applied research: documenting, cleaning, linking, and reporting on administrative data.
@@ -15,15 +23,26 @@ I build R and Shiny tools for the unglamorous middle of applied research: docume
 ```{r}
 #| results: asis
 d <- cv_data("software_dev")
+# software_dev is generated, so a rename upstream would silently drop the
+# button. Every other link path here fails loudly; this one should too.
+stopifnot(all(names(related) %in% d$name))
 for (i in seq_len(nrow(d))) {
   cat("## ", md(d$name[i]), "\n\n", sep = "")
   cat("*", md(d$role[i]), " · ", md(d$when[i]), "*\n\n", sep = "")
   cat(md(d$description[i]), "\n\n", sep = "")
   if (d$name[i] %in% names(links)) {
-    cat("[Source on GitHub](", links[[d$name[i]]], "){.btn .btn-outline-primary .btn-sm}\n\n", sep = "")
+    btn <- paste0("[Source on GitHub](", links[[d$name[i]]],
+                  "){.btn .btn-outline-primary .btn-sm}")
   } else {
-    cat("*Internal tool; not publicly available.*\n\n")
+    btn <- "*Internal tool; not publicly available.*"
   }
+  rel <- related[[d$name[i]]]
+  for (k in seq_along(rel)) {
+    btn <- c(btn, paste0(link(names(rel)[k], rel[[k]]),
+                         "{.btn .btn-outline-secondary .btn-sm}"))
+  }
+  # One line, so the buttons sit in a row rather than stacking as paragraphs.
+  cat(paste(btn, collapse = " "), "\n\n", sep = "")
 }
 ```
 

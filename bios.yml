@@ -113,8 +113,8 @@ places:
     limit: 120
     updated: 2026-10-16
     text: >-
-      Statistical models are only as good as the data under them, so I build R
-      & Shiny tools for both ends and the in-between.
+      I build tools for problems I come across in my own work in research,
+      public policy, public health, and education
     note: >-
       The Headline field, "what you build, in one line", which is the only part
       of this profile saying anything a job title does not. Role and Company
@@ -122,14 +122,29 @@ places:
       & Adjunct Faculty" and "University of Nebraska", and the card shows those
       plus links out to GitHub and LinkedIn. Members only, so none of it is on
       the public web.
-      Exactly 120 of the 120 characters, with no slack at all. It only fits
-      because of the ampersand: spelling out "and" makes it 122. Anything added
-      here has to buy its room from somewhere else, and the full stop is the
-      cheapest character to sell, since a headline is a fragment anyway.
+      112 of the 120 characters. The four areas are the ones in areas.yml, and
+      are the reason this version has room: it replaced a claim that data
+      quality limits model quality, which was true of everyone in the room and
+      so distinguished nothing. No full stop, since a headline is a fragment.
+      WORDING.md has the rejected versions.
       Earlier drafts named administrative data, which reads as though cleaning
-      is the whole of the work. This one makes a claim rather than listing
-      services, and "both ends and the in-between" is the load-bearing part, so
-      do not trim it back to the tooling half.
+      is the whole of the work. Naming the four areas is what keeps this one
+      from reading that way, so do not trim it back to the tooling half.
+
+  - id: github-bio
+    label: GitHub profile Bio field
+    url: https://github.com/amelia-m
+    limit: 160
+    updated: 2026-10-16
+    text: >-
+      Postdoc @ UNL | Quantitative methods, synthetic data, and R/Shiny apps
+      for data cleaning, documentation. I teach Data Management & Survey
+      Methods.
+    note: >-
+      Separate from the profile README and shown in the sidebar beside it.
+      146 of 160. "data cleaning, documentation" is missing its conjunction,
+      and 14 spare characters is more than enough to fix it. The profile also
+      shows pronouns, location, and the link row, none of which is this field.
 
   # Below here the text has not been recorded yet. Paste in what the profile
   # currently says and set `updated` to the date you checked it.
@@ -146,13 +161,6 @@ places:
     label: X
     url: https://x.com/AmeliaMiramonti
     limit: 160
-
-  - id: github-bio
-    label: GitHub profile Bio field
-    url: https://github.com/amelia-m
-    limit: 160
-    note: >-
-      Separate from the profile README and shown in the sidebar beside it.
 
   - id: orcid
     label: ORCID

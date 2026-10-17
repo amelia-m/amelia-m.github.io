@@ -1,0 +1,49 @@
+# Things to look into. A queue, not an endorsement.
+#
+# likes.yml is for things I have used and would recommend. This is the step
+# before that: noted, not yet judged. An item either graduates to likes.yml
+# once it has been tried and is worth recommending, or gets deleted once it
+# has been tried and is not.
+#
+# Renders nowhere, which is NOT the same as not published. This repository is
+# public: everything here is world-readable once pushed, and git history keeps
+# it after an edit. An earlier version of this comment said the opposite and
+# was acted on, which is why the entries below are now limited to what can be
+# said publicly. Keep notes about other people, and anything personal, out.
+#
+# Keeping it out of likes.yml is the point: an untried thing listed among
+# recommendations is a recommendation, whatever the heading says.
+#
+# NOT THE CANONICAL LIST. Amelia keeps the real one as a Claude Doc, which is
+# the source of truth and is maintained elsewhere. Its link is deliberately
+# not written here: an artifact URL is a capability, and publishing it in a
+# public repository hands out the id to anyone who reads the file. This file
+# was started on 2026-10-16 before that doc was known about here, and should
+# either be deleted or kept strictly for verification results that belong with
+# the repository. Do not add new items here: they belong in the doc.
+#
+# Fields:
+#   name     what it is called, or the domain when the name is not known
+#   url      where to look
+#   added    ISO date it went on the list
+#   why      what prompted adding it, so a stale entry can be judged later
+#   checked  what is actually known so far, including when that is nothing
+#   verdict  fill in once it has been looked at, before moving or deleting it
+
+items:
+  - name: tstats-project.org
+    url: https://tstats-project.org/
+    added: 2026-10-16
+    why: Noted in passing. Nothing recorded about where it came from.
+    checked: >-
+      Nothing, and the name above is the domain rather than the project's own
+      name, which is not known either. The domain does not resolve from the
+      cloud build environment, so the page could not be read, and a web search
+      returned no page from the site at all: only generic t-statistic
+      explainers and an R package called Tstats in the cati family, which
+      computes T-statistics for traits in community ecology and is very
+      unlikely to be the same thing. Treat all of that as a dead end rather
+      than as a description. Nothing about this should be written anywhere
+      else until someone has actually opened the page.
+      Amelia's log has no description of it either, so the blank is not just
+      a limitation of this environment: nobody has written down what it is.

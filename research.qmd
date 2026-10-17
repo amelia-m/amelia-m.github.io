@@ -4,7 +4,7 @@ title: "Research interests"
 
 **Measurement & psychometrics.** How well we measure things drives everything downstream. I work on scale scoring and missing-data decisions (person-mean imputation, prorated scale scores, completeness thresholds), measurement invariance, and structural equation and item response models.
 
-**Privacy-preserving synthetic data.** With NSWERS, I generate synthetic versions of large, longitudinal administrative datasets so researchers and policymakers can explore them without exposing individuals, and I evaluate how faithfully they reproduce the original data (tidysynthesis, syntheval).
+**Privacy-preserving synthetic data.** With NSWERS, I generate synthetic versions of large, longitudinal administrative datasets and evaluate how faithfully they reproduce the original data (tidysynthesis, syntheval). The goal is analysis that does not expose individuals: as much a question of what can safely be released as of how well the synthesis works.
 
 **Applied evaluation & public policy research.** At the NEAR Center and the Public Policy Center, I support program evaluation and policy research for state agencies and community partners, from study design and survey methods through analysis and reporting.
 

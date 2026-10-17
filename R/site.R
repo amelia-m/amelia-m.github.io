@@ -690,3 +690,75 @@ bio_report <- function(bios = site_bios(), today = Sys.Date()) {
   }
   invisible()
 }
+
+# ---- Areas of work --------------------------------------------------------
+# areas.yml maps projects to the general areas they fall in, so a bio written
+# for one audience can name the strands that audience cares about, and so a
+# project that produced no publication still has somewhere to be recorded.
+# Renders nowhere: this is a reading aid, not page data.
+
+site_areas <- function(file = "areas.yml") {
+  read_yaml_utf8(site_path(file))
+}
+
+# The file stores the mapping project-first, since a project belongs to
+# several areas and should only be written down once. This prints it the other
+# way round, which is the direction it gets read in.
+work_areas <- function(x = site_areas(), todo = TRUE, detail = TRUE) {
+  known <- vapply(x$areas, function(a) a$id, character(1))
+  unknown <- setdiff(unique(unlist(lapply(x$projects, `[[`, "areas"))), known)
+  if (length(unknown)) {
+    cat("UNKNOWN AREA ID: ", paste(unknown, collapse = ", "), "\n", sep = "")
+  }
+  # An entry with no `areas` at all matches no section and would otherwise
+  # vanish from the report entirely, which is the one failure this file cannot
+  # afford: it exists to hold the projects nothing else records.
+  orphans <- Filter(function(p) !length(unlist(p$areas)), x$projects)
+  for (p in orphans) cat("NO AREAS, SHOWN NOWHERE BELOW: ", .squash(p$name), "\n", sep = "")
+  for (a in x$areas) {
+    in_area <- Filter(function(p) a$id %in% unlist(p$areas), x$projects)
+    cat("\n", strrep("-", 70), "\n", toupper(a$label),
+        " (", length(in_area), ")\n", sep = "")
+    cat(paste0("  ", strwrap(.squash(a$scope), width = 68)), sep = "\n")
+    for (p in in_area) {
+      also <- setdiff(unlist(p$areas), a$id)
+      head <- paste0(.squash(p$name),
+                     if (!is.null(p$when)) paste0("  [", p$when, "]"),
+                     if (!isTRUE(p$current)) "  (past)")
+      cat("\n", paste(strwrap(head, width = 70, initial = "  * ",
+                              prefix = "    "), collapse = "\n"), "\n", sep = "")
+      if (!is.null(p$where)) {
+        cat(strwrap(.squash(p$where), width = 70, initial = "      ",
+                    prefix = "      "), sep = "\n")
+      }
+      if (length(also)) cat("      also ", paste(also, collapse = ", "), "\n", sep = "")
+      if (isTRUE(detail)) {
+        for (f in c("role", "output", "built_with", "note")) {
+          if (!is.null(p[[f]])) {
+            cat(strwrap(.squash(p[[f]]), width = 70,
+                        initial = paste0("      ", f, ": "),
+                        prefix = "        "), sep = "\n")
+          }
+        }
+      }
+      if (todo && !is.null(p$todo)) {
+        cat(strwrap(.squash(p$todo), width = 70,
+                    initial = "      TODO ", prefix = "           "), sep = "\n")
+      }
+    }
+    cat("\n")
+  }
+  # Entries with no `role` are placeholders: a name and an era, nothing about
+  # what the work was. Worth seeing as one list, since filling them in is the
+  # point of the file.
+  stubs <- Filter(function(p) is.null(p$role), x$projects)
+  if (length(stubs)) {
+    cat(strrep("-", 70), "\nNOTHING RECORDED YET (", length(stubs), " of ",
+        length(x$projects), ")\n", sep = "")
+    for (p in stubs) {
+      cat("  ", .squash(p$name),
+          if (!is.null(p$when)) paste0("  [", p$when, "]"), "\n", sep = "")
+    }
+  }
+  invisible()
+}

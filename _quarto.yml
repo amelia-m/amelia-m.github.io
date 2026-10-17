@@ -88,6 +88,20 @@ format:
       dark: [darkly, styles-dark.scss]
     toc: false
     smooth-scroll: true
+    # Works, and cannot be checked by grepping the rendered HTML. Quarto
+    # implements this as a DOMContentLoaded script in
+    # share/formats/html/templates/quarto-html-after-body.ejs, so the
+    # target attribute is added in the browser and never appears in the
+    # file on disk. Verified in headless Chromium against the built site:
+    # external links come out with target="_blank" rel="noopener".
+    #
+    # Two things look like failures and are not. Links to
+    # amelia-m.github.io, such as the LSPC Weather app and the pleasantry
+    # docs, are correctly treated as internal and open in the same tab.
+    # Navbar and sidebar links are excluded by Quarto's own selector,
+    # `a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action)...`, so
+    # the navbar GitHub icon also stays in the tab. Forcing either needs an
+    # explicit target="_blank" on the link.
     link-external-newwindow: true
     # Analytics, on every page. index.qmd sets its own `include-after-body` for
     # the drifting-dot background; this is a different key, so a page-level

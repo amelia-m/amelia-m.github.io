@@ -5,6 +5,22 @@ says, and the date that text was last checked. This file is the order to work
 through them in. `WORDING.md` is why each one says what it says, and which
 alternatives were already considered and dropped.
 
+## Choosing what to say
+
+`areas.yml` groups the work into research, public policy, public health, and
+education, with the projects in each.
+
+```r
+source("R/site.R")
+work_areas()
+```
+
+Prints each area with its projects and what is still missing from them. Use it
+when a bio has to be written for one audience: it names the strands that
+audience will recognise, and the projects that back each strand up, so a claim
+about the range of the work is one the CV can support. Reading it also keeps
+the areas honest; one current project fits none of the four.
+
 ## Reading them side by side
 
 ```r
