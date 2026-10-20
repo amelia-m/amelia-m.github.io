@@ -38,6 +38,14 @@ they were found.
       kept elsewhere; this file was started before that was known about and now says so at the
       top. Either delete it or keep it strictly for verification results that belong with the
       repository.
+- [ ] Missing data vanishes silently instead of being flagged. `md()` in `R/site.R` turns a
+      missing value into an empty string, so a generated row with no `role` or `when` renders
+      as "* · 2026*" and the render succeeds. That is right for an optional field and wrong for
+      a required one; decide per field, and stop the render when a required one is missing.
+      The post-render check cannot see this: an empty field leaves no symptom in the HTML.
+      The same applies to a YAML field holding inline R, which `md()` escapes into literal
+      text; the check catches the common form, but stopping on it where the field is read
+      would be exact.
 
 ## Generated: fix in the export repository, not here
 
@@ -48,8 +56,15 @@ they were found.
       three files here on 2026-10-16.
 - [ ] `_data/software_dev.json`, Table Relationship Explorer: the description says "(with a
       Python/Streamlit port)" without saying whose. It is Eugene Aiken's, and he carried it on
-      as Cartographer at Common Gene Labs, which credits the original design. Drafted sentence
-      and the evidence are in `areas.yml`. This feeds the CV PDF as well as the site.
+      as Cartographer at Common Gene Labs, which credits the original design. Replace the
+      description with (agreed 2026-10-17; the evidence is in the `areas.yml` note):
+      "Interactive tool for discovering and visualizing primary/foreign-key relationships
+      across tabular data: multi-signal key inference with confidence scoring, interactive
+      entity-relationship diagrams, and exportable reports across many file and database
+      formats. Eugene Aiken contributed a Python and Streamlit port, which he carried on in
+      early 2026 as Cartographer at Common Gene Labs, crediting the original concept and
+      design. I contributed its data privacy guide and setup instructions."
+      This feeds the CV PDF as well as the site.
 
 ## Outside this repository
 
@@ -69,15 +84,6 @@ they were found.
       from the repository rather than a search result: `ropensci/dev_guide`, commit `71e2a5c`,
       `maintenance_github_grooming.Rmd`. agent-config `docs/github-repo-settings.md` is the
       natural home for it.
-
-- [ ] Missing data vanishes silently instead of being flagged. `md()` in `R/site.R` turns a
-      missing value into an empty string, so a generated row with no `role` or `when` renders
-      as "* · 2026*" and the render succeeds. That is right for an optional field and wrong for
-      a required one; decide per field, and stop the render when a required one is missing.
-      The post-render check cannot see this: an empty field leaves no symptom in the HTML.
-      The same applies to a YAML field holding inline R, which `md()` escapes into literal
-      text; the check catches the common form, but stopping on it where the field is read
-      would be exact.
 
 ## Open questions
 

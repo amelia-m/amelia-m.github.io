@@ -13,9 +13,10 @@ links <- setNames(proj$url, proj$label)
 # generated data has no field for this, so the mapping is kept here. The
 # descriptions themselves are escaped with md() and so cannot carry a link,
 # which is why this is a button rather than a sentence.
-# The id is the links.yml entry; the value is the button label, since
-# "Cartographer" alone does not say how it relates to the tool above it.
-related <- list("Table Relationship Explorer" = c(cartographer = "Ported to Cartographer"))
+# The id is the links.yml entry; the value is the button label, which says who
+# did the port, since beside "Source on GitHub" a bare name reads as if this
+# tool had moved there.
+related <- list("Table Relationship Explorer" = c(cartographer = "Cartographer, ported by Common Gene Labs"))
 ```
 
 I build R and Shiny tools for the unglamorous middle of applied research: documenting, cleaning, linking, and reporting on administrative data.
@@ -23,9 +24,10 @@ I build R and Shiny tools for the unglamorous middle of applied research: docume
 ```{r}
 #| results: asis
 d <- cv_data("software_dev")
-# software_dev is generated, so a rename upstream would silently drop the
-# button. Every other link path here fails loudly; this one should too.
-stopifnot(all(names(related) %in% d$name))
+# software_dev is generated, so a rename upstream would otherwise pass silently:
+# a public tool would be labelled "Internal tool" and a downstream button would
+# vanish. Both are matched by name, so both fail the render instead.
+stopifnot(all(proj$label %in% d$name), all(names(related) %in% d$name))
 for (i in seq_len(nrow(d))) {
   cat("## ", md(d$name[i]), "\n\n", sep = "")
   cat("*", md(d$role[i]), " · ", md(d$when[i]), "*\n\n", sep = "")

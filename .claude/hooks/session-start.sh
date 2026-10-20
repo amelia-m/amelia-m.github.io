@@ -26,7 +26,11 @@ QUARTO_VERSION="1.10.19"
 # locale for every page that sources it; this covers the rest, such as a blog
 # post with its own R chunks. CLAUDE_ENV_FILE exists only while this hook runs,
 # and its lines are applied to the session's later commands.
-if [ -n "${CLAUDE_ENV_FILE:-}" ] && locale -a 2>/dev/null | grep -qix 'c\.utf-\?8'; then
+# The list is captured first because, under pipefail, `locale -a | grep -q`
+# fails whenever grep quits early on a match and locale is killed writing the
+# rest, which would skip this without a word.
+locales="$(locale -a 2>/dev/null || true)"
+if [ -n "${CLAUDE_ENV_FILE:-}" ] && grep -qix 'c\.utf-\?8' <<<"$locales"; then
   echo 'export LANG=C.UTF-8 LC_CTYPE=C.UTF-8' >> "$CLAUDE_ENV_FILE"
 fi
 
