@@ -102,3 +102,38 @@ body { background-color: transparent; }
 .like-card p { margin-bottom: .4rem; }
 .like-card ul { margin: .25rem 0 0; padding-left: 1.1rem; font-size: .92em; }
 .like-by { font-weight: 400; opacity: .7; font-size: .9em; }
+
+// Footer credit line (page-footer right in _quarto.yml). Each brand logo is an
+// SVG used as a mask over currentColor, so it matches the footer text and
+// follows the light/dark toggle without a second set of files. Root-relative
+// URLs: this stylesheet is compiled into site_libs/, so a relative path would
+// resolve against that folder instead of the site root.
+.built-with { white-space: normal; }
+.built-with .bi { vertical-align: -0.125em; }
+// The padding brings each link to a 24px touch target.
+.built-with .brand-link { color: inherit; text-decoration: none; display: inline-block; padding: 0.2rem; margin: -0.2rem 0; }
+.built-with .brand-link:hover .brand-icon,
+.built-with .brand-link:focus-visible .brand-icon { background-color: $link-color; }
+.brand-icon {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: -0.25em;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+.icon-r { --icon: url("/images/icons/r.svg"); }
+.icon-quarto { --icon: url("/images/icons/quarto.svg"); }
+.icon-claude { --icon: url("/images/icons/claude.svg"); }
+
+// Home page only, identified by its banner: the page title right below already
+// says the name, so the navbar's copy goes. Everywhere else it is the way home
+// and the only place the name appears. Set here rather than in index.qmd,
+// where a page-level include-in-header would replace the project's analytics
+// include. Below the xl breakpoint the bar is centred around the brand, so it
+// keeps its space there and the bar matches every other page.
+body:has(.hero-banner) .navbar-brand-container { visibility: hidden; }
+@media (min-width: 1200px) {
+  body:has(.hero-banner) .navbar-brand-container { display: none; }
+}

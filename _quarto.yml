@@ -4,10 +4,16 @@ project:
   render:
     - "*.qmd"
     - "!README.md"
-  # js/ is referenced from _includes/particles-bg.html, which Quarto does not
-  # scan for resources, so name it here or it is left out of _site.
+  # Fails the render when the output shows a known symptom of breakage, such
+  # as R writing an en dash as literal "<U+2013>" text: a render that only
+  # "completes" once let exactly that through. See R/check-output.R.
+  post-render: R/check-output.R
+  # js/ is referenced from _includes/particles-bg.html and images/icons/ only
+  # from CSS mask urls, neither of which Quarto scans for resources, so name
+  # them here or they are left out of _site.
   resources:
     - js/
+    - images/icons/
 
 execute:
   echo: false
@@ -79,7 +85,11 @@ website:
         aria-label: Contact
   page-footer:
     left: "&copy; 2026 Amelia Miramonti"
-    right: "Written in [R](https://www.r-project.org), stitched together with [Quarto](https://quarto.org), with assistance from [Claude](https://claude.ai) and [GitHub Copilot](https://github.com/features/copilot)."
+    # Icons in the style of "</> with [heart] by [GitHub]": each logo is a link
+    # with its name as a tooltip and as screen-reader text, so the credits
+    # still read in words. The logos are Simple Icons (CC0), drawn as CSS masks
+    # in _shared.scss so they take the footer's text colour in both themes.
+    right: '<span class="built-with"><i class="bi bi-code-slash" aria-hidden="true"></i><span class="visually-hidden">Made</span> with <i class="bi bi-heart-fill" aria-hidden="true"></i><span class="visually-hidden">love</span> in <a href="https://www.r-project.org" class="brand-link" title="R"><span class="brand-icon icon-r" aria-hidden="true"></span><span class="visually-hidden">R</span></a> and <a href="https://quarto.org" class="brand-link" title="Quarto"><span class="brand-icon icon-quarto" aria-hidden="true"></span><span class="visually-hidden">Quarto</span></a>, with help from <a href="https://claude.ai" class="brand-link" title="Claude"><span class="brand-icon icon-claude" aria-hidden="true"></span><span class="visually-hidden">Claude</span></a></span>'
 
 format:
   html:
@@ -88,8 +98,24 @@ format:
       dark: [darkly, styles-dark.scss]
     toc: false
     smooth-scroll: true
+    # Works, and cannot be checked by grepping the rendered HTML. Quarto
+    # implements this as a DOMContentLoaded script in
+    # share/formats/html/templates/quarto-html-after-body.ejs, so the
+    # target attribute is added in the browser and never appears in the
+    # file on disk. Verified in headless Chromium against the built site:
+    # external links come out with target="_blank" rel="noopener".
+    #
+    # Two things look like failures and are not. Links to
+    # amelia-m.github.io, such as the LSPC Weather app and the pleasantry
+    # docs, are correctly treated as internal and open in the same tab.
+    # Navbar and sidebar links are excluded by Quarto's own selector,
+    # `a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action)...`, so
+    # the navbar GitHub icon also stays in the tab. Forcing either needs an
+    # explicit target="_blank" on the link.
     link-external-newwindow: true
-    # Analytics, on every page. index.qmd sets its own `include-after-body` for
-    # the drifting-dot background; this is a different key, so a page-level
-    # value cannot displace it.
+    # Analytics (GoatCounter), on every page. index.qmd sets its own
+    # `include-after-body` for the drifting-dot background; that is a different
+    # key, so it cannot displace this. A page that sets `include-in-header`
+    # itself would replace this one and stop being counted, so page-specific
+    # CSS goes in _shared.scss instead.
     include-in-header: _includes/analytics.html

@@ -5,6 +5,22 @@ says, and the date that text was last checked. This file is the order to work
 through them in. `WORDING.md` is why each one says what it says, and which
 alternatives were already considered and dropped.
 
+## Choosing what to say
+
+`areas.yml` groups the work into research, public policy, public health, and
+education, with the projects in each.
+
+```r
+source("R/site.R")
+work_areas()
+```
+
+Prints each area with its projects and what is still missing from them. Use it
+when a bio has to be written for one audience: it names the strands that
+audience will recognise, and the projects that back each strand up, so a claim
+about the range of the work is one the CV can support. Reading it also keeps
+the areas honest; one current project's subject fits none of the four, and it is listed under public policy only because of who the work is for.
+
 ## Reading them side by side
 
 ```r
@@ -18,7 +34,7 @@ against that file, and says `DRIFTED` when the recorded text is no longer in
 it. That is the one kind of staleness that catches itself; everything else
 relies on the `updated` date, so set it whenever you change a `text`.
 
-Seven profiles have no text recorded yet. Paste in what each currently says and
+`bio_report()` marks every profile with no text recorded as NOT RECORDED YET. Paste in what each currently says and
 date it, or delete the entry if that profile is not worth keeping current.
 
 ## Two of these are the source

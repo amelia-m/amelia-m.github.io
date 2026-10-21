@@ -1,0 +1,419 @@
+# The general areas the work falls in, and which projects sit in each.
+#
+# Two jobs. One: choosing which strands to name in a bio or a headline for a
+# particular audience, which is what prompted this file. Two: somewhere to put
+# a project that produced no publication, and so has no entry anywhere else.
+# contributions.yml covers the published record; this covers the work.
+#
+# Renders nowhere, which is NOT the same as not published. This repository is
+# public, so everything written here is world-readable the moment it is pushed,
+# and git history keeps it even after an edit. Write nothing here that could not
+# go on the site itself, in particular about other people.
+#
+# A project carries every area it belongs to, not one. Most of them straddle:
+# the suicide mortality review is health data reported to a legislature. Run
+# `work_areas()` from R/site.R to read it the other way round, by area.
+#
+# Project names and dates are quoted from the CV export in `_data/`, which is
+# generated. Where one disagrees with the CV, the CV is right and this is
+# stale. Not every entry has a CV line: the five logged from memory alone
+# carry `source: recalled`, so an absent CV entry for them is expected
+# rather than a sign the export is incomplete.
+#
+# This is deliberately incomplete and is being filled in backwards through the
+# older positions. `gaps` marks what is known to be missing; an absent project
+# is not evidence it did not happen.
+#
+# Fields:
+#   name     the project as it gets referred to
+#   where    the centre, lab, or partner it sits under
+#   when     years, or "ongoing"
+#   current    true while it is live work, "unknown" when that is not established
+#   areas    one or more ids from the `areas` block below
+#   role     what I actually did on it
+#   output   what came out of it: a report, an application, a paper
+#   note       anything worth knowing later
+#   built_with which assistants or tools did the building, read from the
+#              repository's commit history rather than from memory
+#   source     "recalled" for an entry with no CV line behind it
+#   gaps       what still needs filling in
+
+areas:
+  - id: research
+    label: research
+    scope: >-
+      Methods and infrastructure whose users are other researchers:
+      measurement, missing data, synthetic data for secondary analysis, and
+      the tooling around a reproducible workflow. The line between this and
+      the other three is who the work is for, not whether it is research. All
+      of it is research.
+  - id: public-policy
+    label: public policy
+    scope: >-
+      Work commissioned by, or reported to, government: state agencies,
+      municipal programmes, and statutory reporting.
+  - id: public-health
+    label: public health
+    scope: >-
+      Health outcomes and the services around them: care quality, nutrition,
+      physical activity, and mortality review.
+  - id: education
+    label: education
+    scope: >-
+      Schools, students, and teaching, from the statewide education data
+      system through to the graduate courses.
+
+projects:
+  # ---- Current -----------------------------------------------------------
+  - name: Nebraska Suicide Mortality Review
+    where: University of Nebraska Public Policy Center
+    when: 2025 to present
+    current: true
+    areas: [public-health, public-policy]
+    role: Analysis, data management, and reporting. Lead developer of the review application.
+    output: >-
+      An R and Shiny application that reconciles successive Nebraska Violent
+      Death Reporting System exports, tracks record-level changes between
+      them, supports structured case annotation, and generates both the
+      individual case reports and the annual report to the Legislature.
+      Internal, not publicly released.
+    note: >-
+      The clearest example of the two areas being one project rather than two:
+      the subject is health, the deliverable is a statutory report.
+
+  - name: Ryan White Clinical Quality Management program
+    where: University of Nebraska Public Policy Center
+    when: 2025 to present
+    current: true
+    areas: [public-health, public-policy]
+    role: Analysis, data management, and reporting.
+    gaps: >-
+      What the analyses actually are. The CV covers five Center projects in
+      one line, so everything specific to this one is missing.
+
+  - name: Community Crops classes evaluation
+    where: University of Nebraska Public Policy Center
+    # My involvement, as for WeCook; the classes themselves ran 2023 to 2025.
+    when: 2025
+    current: unknown
+    areas: [public-health, public-policy]
+    role: Analysis and reporting.
+    output: >-
+      PytlikZillig LM, Miramonti AA (September 2025). Community Crops Classes
+      2025 Evaluation Report: Reach and Impacts of Classes Offered June 2023
+      to August 2025.
+    note: Has a public evaluation report.
+    gaps: >-
+      Whether the work continued past the September 2025 report. The CV lists
+      it under the current NUPPC appointment, which may only mean it was one of
+      that appointment's projects.
+
+  - name: Lincoln Food & Recyclable Waste initiative
+    where: University of Nebraska Public Policy Center
+    when: 2025 to present
+    current: true
+    areas: [public-policy]
+    role: Analysis, data management, and reporting.
+    note: >-
+      Public policy by audience rather than by subject: the subject is
+      municipal waste and food, which none of the four areas names. Worth
+      remembering before treating the areas as a description of subject
+      matter rather than of who the work is for.
+
+  - name: Get in the Game
+    where: >-
+      University of Nebraska Public Policy Center, with the Community Learning
+      Centers (CLCs) associated with schools in Lincoln
+    when: 2025 to present
+    current: true
+    areas: [education, public-health]
+    role: Survey design.
+    note: >-
+      Youth physical activity, with the same partner organisation as the
+      WeCook programme the 2018 master's thesis came out of: the measurement
+      question there, the programme survey here, the same CLCs eight years
+      apart. See that entry.
+      The partner is the CLCs rather than the district. The CV line reads
+      "Lincoln Public Schools Community Learning Centers", which compresses
+      that into something that could be read as LPS itself.
+
+  - name: NSWERS privacy-preserving synthetic data
+    where: Nebraska Statewide Workforce & Educational Reporting System
+    when: 2025 to present
+    current: true
+    areas: [research, education]
+    role: >-
+      Generating synthetic versions of large-scale longitudinal administrative
+      data, and evaluating how faithfully they reproduce the originals.
+    output: tidysynthesis and syntheval workflows (Urban Institute R packages).
+    note: >-
+      Education by subject, research by intent, and the intent is the part to
+      be careful about. As of October 2026 the synthetic data is not available
+      to researchers and may never be released wholesale, so any wording that
+      has researchers working with it today is wrong. That phrasing had got
+      into three places at once, which is how easily it writes itself:
+      describe the generating and the evaluation, and leave what gets released
+      as the open question it is.
+
+  - name: NSWERS Data Explorer & Pipeline Visualization
+    where: Nebraska Statewide Workforce & Educational Reporting System
+    when: 2025 to present
+    current: true
+    areas: [research, education]
+    role: Author, R and Shiny.
+    output: >-
+      Internal application that locates which warehouse tables hold which
+      variables, retrieves definitions, and traces lineage back to the queries
+      and source tables each variable depends on. Not publicly released.
+
+  - name: Methods and analysis support across Center projects
+    where: Nebraska Evaluation and Research Center
+    when: 2021 to present
+    current: true
+    areas: [research]
+    role: >-
+      Methodological and analytic support across concurrent projects,
+      including graduate thesis and dissertation research and funded studies.
+      Supervising graduate research assistants, currently five.
+    note: >-
+      Not a project so much as the standing work, across a Research Assistant
+      post, the Research Coordinator post, and the postdoc. Listed because it
+      is where most of the consulting-shaped work lives.
+
+  - name: Graduate teaching
+    where: Department of Educational Psychology, University of Nebraska-Lincoln
+    when: 2022, then 2026 to present
+    current: true
+    areas: [education]
+    role: >-
+      EDPS 900D Survey Methods in Educational Research and EDPS 845
+      Computer-Assisted Research Data Analysis as instructor, EDPS 459
+      Statistical Methods as a teaching assistant in 2022. A non-credit
+      methods series for six students in autumn 2025 was the precursor to 845.
+
+  - name: Data Management Brown Bagger Series
+    where: University of Nebraska Public Policy Center
+    when: 2026
+    current: true
+    areas: [research, education]
+    role: Invited speaker. Session 1 of 2, "Data documentation for Teams", June 2026.
+    gaps: Session 2 title, scheduled for November 11, 2026.
+
+  # ---- Tools built outside a single project ------------------------------
+  # The headline on the AI Engineer Omaha profile says the tools come out of
+  # problems hit in the work. That is the claim these two entries should be
+  # able to evidence, and currently cannot: which project prompted each is not
+  # written down anywhere.
+  - name: Recode Studio
+    where: Own time
+    when: ongoing
+    current: true
+    areas: [research]
+    role: Author and maintainer, R and Shiny.
+    output: >-
+      Dataset-agnostic app for cleaning messy string variables without
+      hand-writing R: browse values, flag likely typos, build and preview
+      recode rules, export both a rule set and runnable code. Open source.
+    # Read off the commit trailers in the repository, not from memory.
+    built_with: >-
+      Claude Code throughout: 37 co-author trailers across 45 commits, naming
+      Opus 4.8, Opus 5, Sonnet 4.6, and Fable 5.1. No Copilot, Codex, or
+      Gemini commits, and no bot-authored commits at all.
+    gaps: Which project's data prompted it.
+
+  - name: Table Relationship Explorer
+    where: Own time
+    when: ongoing
+    current: true
+    areas: [research]
+    role: Author and maintainer, R and Shiny.
+    output: >-
+      Multi-signal primary and foreign key inference with confidence scoring,
+      interactive entity-relationship diagrams, and exportable reports across
+      many file and database formats. Open source. See `note` below before
+      describing the Python and Streamlit side of it.
+    # Read off the commit trailers and git blame, not from memory.
+    built_with: >-
+      Claude Code dominant: 134 co-author trailers across 224 commits, mostly
+      Opus 5 and Opus 5.5, with 37 commits authored by Claude directly.
+      GitHub Copilot's coding agent wrote features here rather than only
+      reviewing: 7 commits across 5 pull requests, including the golem package
+      structure, composite-key sample data, and namespacing the DT and
+      visNetwork calls. One passing mention of Codex, no Gemini anywhere.
+    note: >-
+      The Python and Streamlit port is Eugene Aiken's, and he carried it on as
+      Cartographer at Common Gene Labs. Its README says I originally conceived
+      and designed it, its NOTICE file says "original concept and design", and
+      three of its source files carry "Original concept by" in their headers.
+      I contributed its data privacy guide and local setup
+      instructions. The arrangement runs both ways and only his side of it is
+      currently written down anywhere.
+      Worth stating properly rather than as "(with a Python/Streamlit port)",
+      which says neither whose port it is nor that a lab picked the design up
+      and shipped it. The second half is the part a reader would actually find
+      interesting.
+    gaps: >-
+      Which project's data prompted it. The NSWERS warehouse work is the
+      obvious guess and is only a guess.
+      Also: the published descriptions still say "(with a Python/Streamlit
+      port)". The site's copy comes from _data/software_dev.json, which is
+      generated, so that sentence has to change in the export repository.
+
+  # ---- Earlier -----------------------------------------------------------
+  - name: "Dissertation: Youth Sport Participation and Cognitive Development"
+    where: University of Nebraska-Lincoln
+    when: 2015 to 2025
+    areas: [research, public-health, education]
+    role: Author. Conferred May 2025, advised by James A. Bovaird.
+    note: >-
+      Subtitled "The Need for Improved Measurement", which is the research
+      half. See dissertation.qmd.
+
+  - name: "WeCook: Food with Fun and Fitness"
+    where: >-
+      An after-school nutrition, cooking, and physical activity programme
+      hosted by the Community Learning Centers (CLCs) associated with schools
+      in Lincoln
+    # My involvement, not the programme's own run, which is not recorded here.
+    # It started after the autumn 2017 SNAP-Ed post, which was separate work.
+    when: 2018 to 2019
+    areas: [public-health, education, research]
+    role: >-
+      Measurement and analysis. The 2018 UNL master's thesis came out of this
+      programme, along with five conference presentations.
+    output: >-
+      Thesis: Evaluation of the Feasibility of a Two-Method Measurement Design
+      for the Assessment of Healthy Physical Activity Behavior in Youth, with a
+      manuscript still in progress. Presentations on measurement invariance of
+      a latent physical activity model across child surveys, parent surveys,
+      and wearable tracker data (NSCA 2019); unidimensionality and reliability
+      of step counts and floors climbed in 4th and 5th graders (ACSM 2019);
+      self-reported healthy eating behaviour and nutrition knowledge
+      (Nutrition 2019); a healthy-plate photo method for assessing nutrition
+      knowledge (National Association of Extension 4-H Agents, 2018); and the
+      programme evaluation itself (Nebraska Healthy Kids Summit 2019).
+    note: >-
+      The same partner organisation as Get in the Game, eight years earlier.
+      That is the strongest continuity in the whole record, and the thing to
+      reach for whenever a bio needs the range to read as one thread rather
+      than a change of career.
+      It is also the best-evidenced methods work on file: a latent model
+      across three measurement modes, measurement invariance testing across
+      them, and reliability analysis of the tracker data. No bio anywhere
+      mentions any of it, which is the "all I do is clean data" problem in
+      its most concrete form.
+
+  - name: >-
+      Nebraska Academy for Methodology, Analytics & Psychometrics, at the
+      Nebraska Center for Research on Children, Youth, Families, & Schools
+    where: University of Nebraska-Lincoln
+    when: 2018 to 2021
+    areas: [research, education]
+    role: Graduate Research Assistant.
+    gaps: >-
+      Which projects beyond the two below. contributions.yml records one paper
+      from these years that acknowledges the office rather than a
+      contribution.
+
+  - name: School breakfast project
+    where: Nebraska Academy for Methodology, Analytics & Psychometrics
+    # Placed in the MAP Academy years because that is the era it was named
+    # from. Nothing narrows it further yet.
+    when: 2018 to 2021
+    source: recalled
+    areas: [education, public-health]
+    gaps: >-
+      Everything: what the project was, who it was for, what I did on it, and
+      what came out of it. Areas are a guess from the name, school plus
+      nutrition, and nothing else.
+
+  - name: Special education teacher project
+    where: Nebraska Academy for Methodology, Analytics & Psychometrics
+    when: 2018 to 2021
+    source: recalled
+    areas: [education]
+    gaps: >-
+      Everything: what the project was, who it was for, what I did on it, and
+      what came out of it. Tagged education on the name alone. If the work was
+      measurement or survey design, it is research too.
+
+  - name: "Nebraska Extension: 4-H Youth Development"
+    where: Institute of Agriculture and Natural Resources
+    when: Spring 2018
+    areas: [education, public-health]
+    role: Graduate Research Assistant.
+    gaps: >-
+      Whether this appointment was the WeCook programme, and whether it
+      covered anything else. M. Krehbiel is a co-author on every co-authored
+      WeCook output in `_data/` (presentations.bib and manuscripts.json), and
+      the dates line up, which makes the connection likely rather than
+      established.
+
+  - name: "Nebraska Extension: Nutrition Education Program / SNAP-Ed"
+    where: Department of Nutrition & Health Sciences
+    when: Autumn 2017
+    areas: [public-health]
+    role: Graduate Research Assistant.
+    gaps: >-
+      Which project, and what the work was. Not WeCook, which came later: a
+      guess that it was, from the shared Extension collaborator and the
+      adjacent dates, was wrong. This is the earliest thing on file that is
+      public health by subject rather than by association, and nothing else is
+      known about it.
+
+  - name: Neuromuscular Research & Imaging Laboratory
+    where: Department of Nutrition & Health Sciences, University of Nebraska-Lincoln
+    when: 2015 to 2017
+    areas: [research]
+    role: >-
+      Study administration and data collection with participants from age nine
+      through older adulthood: recruitment and scheduling, and
+      electromyographic, mechanomyographic, and strength data collection and
+      processing.
+    note: >-
+      The source of most of the early publication record. Physiology by
+      subject, and the reason `_data/lab_skills.json` is all lab equipment.
+      Referred to as the Cramer lab, which is how its projects get dated.
+
+  - name: Youth sports combines
+    where: Neuromuscular Research & Imaging Laboratory
+    # Placed here because it was named as Cramer lab era, and this is the only
+    # lab on file in those years. Worth confirming they are the same thing.
+    when: 2015 to 2017
+    source: recalled
+    areas: [research]
+    gaps: >-
+      Everything: what was measured, for whom, and what I did. Performance
+      testing on the face of it, which is research by subject; if it fed
+      anything about youth physical activity more broadly it is public-health
+      too.
+
+  - name: Institute of Exercise Physiology & Wellness
+    where: University of Central Florida
+    when: 2012 to 2015
+    areas: [research]
+    role: >-
+      Study administration and data collection across metabolic, strength, and
+      neuromuscular assessment protocols. Includes the 2012 research practicum
+      and the UCF master's thesis on high-intensity interval training and
+      neuromuscular fatigue.
+
+  - name: Rugby player strength training
+    where: Institute of Exercise Physiology & Wellness, University of Central Florida
+    when: 2012 to 2015
+    source: recalled
+    areas: [research]
+    gaps: >-
+      Everything: the squad or club, what the training study tested, and what
+      I did. One of two rugby projects from these years; this is the training
+      one and the entry below is the assessment one, which is as much as is
+      recorded about how they differ.
+
+  - name: Rugby player performance assessments
+    where: Institute of Exercise Physiology & Wellness, University of Central Florida
+    when: 2012 to 2015
+    source: recalled
+    areas: [research]
+    gaps: >-
+      Everything: what was assessed, on whom, and what I did. See the entry
+      above on how the two rugby projects divide.

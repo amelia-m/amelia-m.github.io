@@ -4,10 +4,11 @@
 // hand-rolled rather than particles.js because the dot colour has to follow
 // the light/dark toggle and the layer's opacity is driven by scroll position.
 //
-// The layer stays invisible until the reader has scrolled past the banner
-// photo, then fades in; scrolling back up fades it out again. Nothing is
-// drawn while it is fully transparent, and nothing runs at all for readers
-// who ask for reduced motion.
+// The text column stays solid: dots and lines are cleared from it, and a thin
+// rail marks each edge, so nothing moves behind the words. The layer shows
+// faintly from the top of the page (the banner photo covers it there) and
+// reaches full strength once the banner has scrolled off. Nothing runs at all
+// for readers who ask for reduced motion.
 (function () {
   "use strict";
 
@@ -18,12 +19,21 @@
     window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)");
   if (reduceQuery && reduceQuery.matches) return;
 
-  var LINK = 140; // px: draw a line between dots closer than this
-  var AREA_PER_DOT = 26000; // px^2 of viewport per dot
-  var MIN_DOTS = 20;
-  var MAX_DOTS = 90;
-  var MAX_ALPHA = 0.55; // layer opacity once fully faded in
-  var FADE_SPAN = 320; // px of scrolling over which it fades in
+  var LINK = 160; // px: draw a line between dots closer than this
+  // Dots per area is the same on every screen. The bounds only catch the
+  // extremes: a small window still gets a few, and the cap is a cost limit,
+  // since every frame checks every pair (250 dots is ~31k pairs). Only a
+  // window above about 3.2 million px^2, such as 2560 x 1440, reaches it.
+  // A fixed cap of 90 used to thin out every large window, and a floor of
+  // 20 crowded small ones.
+  var AREA_PER_DOT = 13000; // px^2 of viewport per dot
+  var MIN_DOTS = 8;
+  var MAX_DOTS = 250;
+  var MAX_ALPHA = 0.55; // layer opacity once the banner has scrolled off
+  var START_FRACTION = 0.45; // share of MAX_ALPHA shown at the top of the page
+  var COLUMN_PAD = 32; // px of solid background either side of the text
+  var MIN_MARGIN = 48; // px: a narrower margin is treated as no margin at all
+  var RAIL_ALPHA = 0.5; // rail strength, relative to the layer
   var BUCKETS = 5; // line alphas are quantised into this many batched strokes
 
   var canvas = document.createElement("canvas");
@@ -35,7 +45,9 @@
   var dots = [];
   var w = 0;
   var h = 0;
-  var fadeStart = 150; // scroll offset at which the fade begins; set in resize()
+  var fadeEnd = 450; // scroll offset at which the banner is gone; set in resize()
+  var colL = 0; // the solid text column, in px; both 0 when there is none
+  var colR = 0;
   var dotColor = "43, 92, 138";
   var frame = null;
   var alpha = -1; // force the first opacity write
@@ -75,22 +87,46 @@
     while (dots.length < target) dots.push(spawn());
     if (dots.length > target) dots.length = target;
 
-    // The banner's height is set in CSS as clamp(160px, 26vw, 320px), so it
-    // only changes with viewport width. Measure it here instead of in the
-    // frame loop, where the read/write pair would thrash layout at 60fps.
-    var banner = document.querySelector(".hero-banner");
-    fadeStart = banner ? banner.getBoundingClientRect().height * 0.55 : 150;
-
+    measure();
     readColor();
   }
 
-  // 0 while the banner is still on screen, ramping to 1 once past it.
+  // Where the banner ends and where the text column sits. Both depend on the
+  // page layout rather than only the window, so this also runs when the page
+  // reflows (late fonts or images, a scrollbar appearing), which fires no
+  // window resize. Never from the frame loop, where the read/write pair would
+  // thrash layout at 60fps.
+  function measure() {
+    var y = window.pageYOffset || 0;
+
+    // The banner counts as gone once its bottom passes under the fixed navbar.
+    var banner = document.querySelector(".hero-banner");
+    if (banner) {
+      var header = document.getElementById("quarto-header");
+      var nav = header ? header.getBoundingClientRect().height : 0;
+      fadeEnd = banner.getBoundingClientRect().bottom + y - nav;
+    }
+
+    // The text column: the home grid under the banner, which shares its
+    // edges with the title above it. A margin too thin to show anything
+    // counts as none, so the rail is not drawn hugging the window edge.
+    var col = document.querySelector("main .home-grid");
+    colL = colR = 0;
+    if (col) {
+      var cr = col.getBoundingClientRect();
+      colL = Math.round(cr.left) - COLUMN_PAD;
+      colR = Math.round(cr.right) + COLUMN_PAD;
+      if (colL < MIN_MARGIN) colL = 0;
+      if (w - colR < MIN_MARGIN) colR = w;
+    }
+  }
+
+  // START_FRACTION at the top of the page, ramping to 1 as the banner leaves.
   function scrollFade() {
     var y = window.pageYOffset || document.documentElement.scrollTop || 0;
-    var t = (y - fadeStart) / FADE_SPAN;
-    if (t < 0) return 0;
-    if (t > 1) return 1;
-    return t;
+    var t = fadeEnd > 0 ? y / fadeEnd : 1;
+    if (t > 1) t = 1;
+    return START_FRACTION + (1 - START_FRACTION) * t;
   }
 
   // Scratch space for the batched line passes, reused across frames.
@@ -107,8 +143,9 @@
       host.style.opacity = String(alpha);
     }
 
-    if (alpha <= 0) {
-      // Clear, so returning to this scroll position never shows a stale frame.
+    // Column as wide as the window, as on a phone: nothing would show, so
+    // leave the frame empty and let the loop idle until a resize.
+    if (colL === 0 && colR >= w) {
       ctx.clearRect(0, 0, w, h);
       return;
     }
@@ -172,6 +209,27 @@
       ctx.fill();
     }
 
+    // Cut the text column out of the frame and mark its edges. A rail sitting
+    // on the window edge would only read as a border, so it is left off; on a
+    // phone the column is the whole width and neither rail is drawn.
+    if (colR > colL) {
+      ctx.clearRect(colL, 0, colR - colL, h);
+      ctx.strokeStyle = "rgb(" + dotColor + ")";
+      ctx.lineWidth = 1;
+      ctx.globalAlpha = RAIL_ALPHA;
+      ctx.beginPath();
+      if (colL > 0) {
+        ctx.moveTo(colL + 0.5, 0);
+        ctx.lineTo(colL + 0.5, h);
+      }
+      if (colR < w) {
+        ctx.moveTo(colR - 0.5, 0);
+        ctx.lineTo(colR - 0.5, h);
+      }
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+
     schedule();
   }
 
@@ -185,6 +243,12 @@
     resize();
     schedule();
   });
+  if (window.ResizeObserver) {
+    new ResizeObserver(function () {
+      measure();
+      schedule();
+    }).observe(document.body);
+  }
   window.addEventListener("scroll", schedule, { passive: true });
   document.addEventListener("visibilitychange", schedule);
 
