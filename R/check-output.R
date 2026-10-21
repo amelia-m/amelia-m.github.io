@@ -14,10 +14,11 @@
 # Every check skips source code shown on a page, so a post can show any of
 # these strings on purpose. Prose and chunk output are checked: chunk output is
 # where R's own breakage lands. Two checks were dropped because broken output
-# and correct output look the same: R's NA printed as text (an open item, tracked outside this repository), and
-# an unexpanded shortcode, which renders exactly like Quarto's documented
-# escape for showing one. A page whose content is missing but whose file was
-# written is not caught either; only a zero-length file is.
+# and correct output look the same: R's NA printed as text (an open item,
+# tracked outside this repository), and an unexpanded shortcode, which renders
+# exactly like Quarto's documented escape for showing one. A page whose content is missing but whose file was
+# written is not caught either; only a zero-length file is. It also fails a page
+# that has lost the analytics script, which nothing else would notice.
 #
 # Finding nothing to check is a failure, not a pass. Base R only, and wrapped
 # in local() so that source()-ing it by hand leaves nothing behind. Run it from
@@ -193,6 +194,14 @@ for (f in files) {
   }
   text <- readChar(f, file.size(f), useBytes = TRUE)
   Encoding(text) <- "bytes"
+  # Every page is counted through the include-in-header in _quarto.yml, and a
+  # page setting include-in-header of its own replaces that include silently.
+  # Vendored HTML under site_libs/ is not a page.
+  if (!grepl("(^|/)site_libs/", rel(f)) &&
+      !grepl("data-goatcounter=", text, fixed = TRUE, useBytes = TRUE)) {
+    found <- c(found, sprintf(paste0("  %s: no GoatCounter script\n    likely cause: the page sets ",
+                                     "include-in-header itself, which replaces _includes/analytics.html"), rel(f)))
+  }
   # Chunk output is a <pre> directly inside a cell-output div. <pre> blocks and
   # inline code spans are matched together, left to right, so a span inside a
   # block is taken with its block.

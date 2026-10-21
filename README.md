@@ -22,6 +22,26 @@ quarto publish gh-pages        # renders, then pushes _site to the gh-pages bran
 
 Blog posts go in `blog/posts/<slug>/index.qmd`.
 
+## Analytics
+
+[GoatCounter](https://www.goatcounter.com), live since 2026-10-21 on the
+`amelia-m` account (dashboard: <https://amelia-m.goatcounter.com>). It sets no
+cookies and keeps no personal data, so the site needs no consent banner. The
+script is `_includes/analytics.html`, pulled into every page by
+`include-in-header` in `_quarto.yml`.
+
+- A page that sets `include-in-header` itself replaces that include and stops
+  being counted. Page-specific CSS goes in `_shared.scss`. `R/check-output.R`
+  fails the render on any page without the script.
+- The script posts every page view to the subdomain it names, so that name must
+  stay one this site owns. It shipped commented out until the account existed.
+- Social apps often send no referrer, so visits from Bluesky or LinkedIn tend
+  to be recorded as direct. Tag the link instead, for example
+  `https://amelia-m.github.io/?utm_source=bluesky`. Campaign Parameters must be
+  switched on in the GoatCounter site settings for the tag to be recorded.
+- Ad blockers commonly block GoatCounter, so a test visit with one on does not
+  show up.
+
 ## Images
 
 `images/headshot.jpg` and `images/banner.jpg` are web-sized copies. `images/qr-site.svg` encodes `https://amelia-m.github.io/`.
