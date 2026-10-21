@@ -50,6 +50,15 @@ events:
     # written in the note above.
     more:
       - id: ai-engineer-omaha
+  - id: with-2026-10-21
+    date: 2026-10-21
+    when: Wednesday, October 21, 2026, 5 to 7pm
+    where: Improving, Elkhorn, NE
+    note: >-
+      A Women in Technology of the Heartland evening: four founders on the
+      startups they are building, in digital health, AI, construction
+      technology, and equity crowdfunding, with the Nebraska Enterprise Fund
+      on resources for founders.
   - id: carpentries-sessions
     date: 2026-10-27
     when: Tuesday, October 27, 2026, 5pm Central

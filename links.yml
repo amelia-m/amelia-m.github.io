@@ -140,6 +140,12 @@ events:
   - id: wit-summit
     label: Nebraska Women in Tech Summit
     url: https://aksarben.org/women-in-tech-summit/
+  # Meetup's share short link, as Amelia sent it. The build environment could
+  # not open meetu.ps, so it was not checked before publishing; swap in the
+  # full www.meetup.com event URL when convenient.
+  - id: with-2026-10-21
+    label: "She Built This! Founders Behind Heartland Startups"
+    url: https://meetu.ps/e/QkP0w/DX6bR/i
   - id: one-million-cups-lnk
     label: 1 Million Cups Lincoln
     url: https://www.1millioncups.com/s/account/0014W00002AqQeaQAF/lincoln-ne
