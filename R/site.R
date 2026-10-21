@@ -727,7 +727,7 @@ site_areas <- function(file = "areas.yml") {
 # The file stores the mapping project-first, since a project belongs to
 # several areas and should only be written down once. This prints it the other
 # way round, which is the direction it gets read in.
-work_areas <- function(x = site_areas(), todo = TRUE, detail = TRUE) {
+work_areas <- function(x = site_areas(), gaps = TRUE, detail = TRUE) {
   known <- vapply(x$areas, function(a) a$id, character(1))
   # A project whose areas are missing, empty, or all mistyped matches no
   # section and would vanish from the report entirely, which is the one
@@ -772,9 +772,9 @@ work_areas <- function(x = site_areas(), todo = TRUE, detail = TRUE) {
           }
         }
       }
-      if (todo && !is.null(p$todo)) {
-        cat(strwrap(.squash(p$todo), width = 70,
-                    initial = "      TODO ", prefix = "           "), sep = "\n")
+      if (isTRUE(gaps) && !is.null(p$gaps)) {
+        cat(strwrap(.squash(p$gaps), width = 70,
+                    initial = "      GAPS ", prefix = "           "), sep = "\n")
       }
     }
     cat("\n")

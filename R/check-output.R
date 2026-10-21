@@ -14,7 +14,7 @@
 # Every check skips source code shown on a page, so a post can show any of
 # these strings on purpose. Prose and chunk output are checked: chunk output is
 # where R's own breakage lands. Two checks were dropped because broken output
-# and correct output look the same: R's NA printed as text (see TODO.md), and
+# and correct output look the same: R's NA printed as text (an open item, tracked outside this repository), and
 # an unexpanded shortcode, which renders exactly like Quarto's documented
 # escape for showing one. A page whose content is missing but whose file was
 # written is not caught either; only a zero-length file is.
