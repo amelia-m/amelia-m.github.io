@@ -113,7 +113,9 @@ format:
     # the navbar GitHub icon also stays in the tab. Forcing either needs an
     # explicit target="_blank" on the link.
     link-external-newwindow: true
-    # Analytics, on every page. index.qmd sets its own `include-after-body` for
-    # the drifting-dot background; this is a different key, so a page-level
-    # value cannot displace it.
+    # Analytics (GoatCounter), on every page. index.qmd sets its own
+    # `include-after-body` for the drifting-dot background; that is a different
+    # key, so it cannot displace this. A page that sets `include-in-header`
+    # itself would replace this one and stop being counted, so page-specific
+    # CSS goes in _shared.scss instead.
     include-in-header: _includes/analytics.html
