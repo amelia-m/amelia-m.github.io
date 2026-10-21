@@ -15,6 +15,12 @@ they were found.
       `claude/website-review-message-removal-qref3z` on top of that
       (`git rev-list --count origin/main..HEAD`). Needs `git pull` on `main` and then
       `quarto publish gh-pages`, which only Amelia can run.
+- [ ] The nine commits on `claude/website-review-message-removal-qref3z`, `5e2dd49` to
+      `c8a670a`, are signed `Claude Opus 5` although Opus 5.5 made every one; `5e2dd49`, the
+      squash of 16-17 October, also carries Opus 5's work. Found 2026-10-21 by matching each
+      commit to the model recorded in the session transcript. Rewriting them means
+      force-pushing, which is Amelia's. A squash-merge whose message names both Opus 5 and
+      Opus 5.5 corrects the record on `main` without it.
 
 ## Site copy
 
@@ -88,6 +94,12 @@ they were found.
       from the repository rather than a search result: `ropensci/dev_guide`, commit `71e2a5c`,
       `maintenance_github_grooming.Rmd`. agent-config `docs/github-repo-settings.md` is the
       natural home for it.
+- [ ] The export repository's attribution rule may name a fixed model, as this one's did until
+      2026-10-21. `CLAUDE.md` says the same rule applies there, so it should say the model in
+      use at the time of the commit.
+- [ ] agent-config `AGENTS.md`, "AI attribution in git and pull requests is decided per
+      project": the "always the current model" rule belongs there too, for every project that
+      allows a trailer. A draft line was handed to Amelia on 2026-10-21.
 
 ## Open questions
 
