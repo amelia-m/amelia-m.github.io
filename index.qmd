@@ -5,6 +5,11 @@ page-layout: article
 toc: false
 # Drifting-dot background, this page only, kept out from behind the text column.
 include-after-body: _includes/particles-bg.html
+# The page title right below already says the name, so the navbar's copy goes,
+# on this page only: everywhere else it is the way home and the only place the
+# name appears.
+include-in-header:
+  text: <style>.navbar-brand-container { display: none; }</style>
 ---
 
 ```{r}
