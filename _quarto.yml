@@ -83,7 +83,11 @@ website:
         aria-label: Contact
   page-footer:
     left: "&copy; 2026 Amelia Miramonti"
-    right: "Written in [R](https://www.r-project.org), stitched together with [Quarto](https://quarto.org), with assistance from [Claude](https://claude.ai) and [GitHub Copilot](https://github.com/features/copilot)."
+    # Icons in the style of "</> with [heart] by [GitHub]": each logo is a link
+    # with its name as a tooltip and as screen-reader text, so the credits
+    # still read in words. The logos are Simple Icons (CC0), drawn as CSS masks
+    # in _shared.scss so they take the footer's text colour in both themes.
+    right: '<span class="built-with"><i class="bi bi-code-slash" aria-hidden="true"></i><span class="visually-hidden">Made</span> with <i class="bi bi-heart-fill" aria-hidden="true"></i><span class="visually-hidden">love</span> in <a href="https://www.r-project.org" class="brand-link" title="R"><span class="brand-icon icon-r" aria-hidden="true"></span><span class="visually-hidden">R</span></a> and <a href="https://quarto.org" class="brand-link" title="Quarto"><span class="brand-icon icon-quarto" aria-hidden="true"></span><span class="visually-hidden">Quarto</span></a>, with help from <a href="https://claude.ai" class="brand-link" title="Claude"><span class="brand-icon icon-claude" aria-hidden="true"></span><span class="visually-hidden">Claude</span></a> and <a href="https://github.com/features/copilot" class="brand-link" title="GitHub Copilot"><span class="brand-icon icon-copilot" aria-hidden="true"></span><span class="visually-hidden">GitHub Copilot</span></a></span>'
 
 format:
   html:
