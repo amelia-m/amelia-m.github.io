@@ -8,10 +8,12 @@ project:
   # as R writing an en dash as literal "<U+2013>" text: a render that only
   # "completes" once let exactly that through. See R/check-output.R.
   post-render: R/check-output.R
-  # js/ is referenced from _includes/particles-bg.html, which Quarto does not
-  # scan for resources, so name it here or it is left out of _site.
+  # js/ is referenced from _includes/particles-bg.html and images/icons/ only
+  # from CSS mask urls, neither of which Quarto scans for resources, so name
+  # them here or they are left out of _site.
   resources:
     - js/
+    - images/icons/
 
 execute:
   echo: false
@@ -87,7 +89,7 @@ website:
     # with its name as a tooltip and as screen-reader text, so the credits
     # still read in words. The logos are Simple Icons (CC0), drawn as CSS masks
     # in _shared.scss so they take the footer's text colour in both themes.
-    right: '<span class="built-with"><i class="bi bi-code-slash" aria-hidden="true"></i><span class="visually-hidden">Made</span> with <i class="bi bi-heart-fill" aria-hidden="true"></i><span class="visually-hidden">love</span> in <a href="https://www.r-project.org" class="brand-link" title="R"><span class="brand-icon icon-r" aria-hidden="true"></span><span class="visually-hidden">R</span></a> and <a href="https://quarto.org" class="brand-link" title="Quarto"><span class="brand-icon icon-quarto" aria-hidden="true"></span><span class="visually-hidden">Quarto</span></a>, with help from <a href="https://claude.ai" class="brand-link" title="Claude"><span class="brand-icon icon-claude" aria-hidden="true"></span><span class="visually-hidden">Claude</span></a> and <a href="https://github.com/features/copilot" class="brand-link" title="GitHub Copilot"><span class="brand-icon icon-copilot" aria-hidden="true"></span><span class="visually-hidden">GitHub Copilot</span></a></span>'
+    right: '<span class="built-with"><i class="bi bi-code-slash" aria-hidden="true"></i><span class="visually-hidden">Made</span> with <i class="bi bi-heart-fill" aria-hidden="true"></i><span class="visually-hidden">love</span> in <a href="https://www.r-project.org" class="brand-link" title="R"><span class="brand-icon icon-r" aria-hidden="true"></span><span class="visually-hidden">R</span></a> and <a href="https://quarto.org" class="brand-link" title="Quarto"><span class="brand-icon icon-quarto" aria-hidden="true"></span><span class="visually-hidden">Quarto</span></a>, with help from <a href="https://claude.ai" class="brand-link" title="Claude"><span class="brand-icon icon-claude" aria-hidden="true"></span><span class="visually-hidden">Claude</span></a></span>'
 
 format:
   html:
