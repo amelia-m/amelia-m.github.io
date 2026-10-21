@@ -11,7 +11,7 @@
     "href": "things-i-like.html#software",
     "title": "Things I Like",
     "section": "Software",
-    "text": "Software\n\nFiles and folders\n\n\nWizTree\nScans entire directories, folders and subfolders, and shows a treemap of where files are taking up space, among other things. I used to recommend TreeSize Free, but WizTree is faster and doesn’t push the paid version as much.\n\n\nPath Length Checker deadlydog on GitHub\nA stand-alone app that lists the path and length of every file and directory in a folder. Handy for tracking down Windows paths that are too long for some programs to handle.\n\n\nBeyond Compare\nFile and folder comparison: versions by date or folder, folder structure, and line-level differences in text files. It also syncs one folder to another.\n\n\n7-Zip\nUnzips files, with more options than the standard Windows unzip. Handy.\n\n\n\n\nWindows utilities and automation\n\n\nPowerToys Microsoft\nHandy Windows utilities, e.g. Find My Mouse, Workspaces, PowerRename, and the Command Palette.\n\n\nAutoHotkey\nAutomates keystrokes and repetitive tasks on Windows.\n\nSave Time by Saving Keystrokes with AutoHotkey\nAHK tutorials (YouTube)\nahkbook: the book for AutoHotkey\n\n\n\n\n\nBrowser extensions\n\n\nOneTab\nCollapses all your open tabs into one list you can restore later, which clears the tab bar and frees memory.\n\none-tab.com\n\n\n\nPushbullet\nSends links and files between your computer and your phone, and mirrors phone notifications to the desktop.\n\npushbullet.com\n\n\n\nZotero Connector\nSaves references and PDFs from a web page straight into Zotero from the browser toolbar.\n\n\n\n\nText and writing\n\n\nNotepad++\nMy favorite text editor, with so many fun tools.\n\nPlugin list\nPlugins recommended by others\n\n\n\nZettlr\nA Markdown editor built for academic writing, with citation support.\n\n\nObsidian\nNotes in plain Markdown files, linked together.\n\nFree for work use\n\n\n\nPandoc\nConverts documents between formats, for example Markdown to Word or PDF.\n\nSource on GitHub\n\n\n\n\n\nResearch and reading\n\n\nZotero\nFree reference manager for collecting, organizing, and citing sources.\n\nUsing tags\nZotero hotkeys in Word\n\nSee also: Zotero Connector\n\n\nCalibre\nFree ebook reader and library manager.\n\n\nTesseract OCR\nOpen-source optical character recognition: turns images and scanned pages into text.\n\n\nPDFsam Basic\nFree desktop tool to split, merge, and rearrange PDF pages.\n\n\n\n\nData science and publishing\n\n\nPositron Posit\nA free data science IDE purpose-built for Python and R, with a data explorer and AI assistance. Built on Code OSS, so VS Code extensions work in it too.\n\nA quick tour of Positron\nAir formatter extension\n\n\n\nQuarto\nPublishing system for documents, slides, and websites. This site is built with it.\n\nParameterized reports\n\n\n\nOpenRefine\nFree, open-source tool for cleaning and transforming messy data. The cleaning steps can be exported and reapplied.\n\n\ndiagrams.net\nFree diagram and flowchart editor."
+    "text": "Software\n\nFiles and folders\n\n\nWizTree\nScans entire directories, folders and subfolders, and shows a treemap of where files are taking up space, among other things. I used to recommend TreeSize Free, but WizTree is faster and doesn’t push the paid version as much.\n\n\nPath Length Checker deadlydog on GitHub\nA stand-alone app that lists the path and length of every file and directory in a folder. Handy for tracking down Windows paths that are too long for some programs to handle.\n\n\nBeyond Compare\nFile and folder comparison: versions by date or folder, folder structure, and line-level differences in text files. It also syncs one folder to another.\n\n\n7-Zip\nUnzips files, with more options than the standard Windows unzip. Handy.\n\n\n\n\nWindows utilities and automation\n\n\nPowerToys Microsoft\nHandy Windows utilities, e.g. Find My Mouse, Workspaces, PowerRename, and the Command Palette.\n\n\nAutoHotkey\nAutomates keystrokes and repetitive tasks on Windows.\n\nSave Time by Saving Keystrokes with AutoHotkey\nAHK tutorials (YouTube)\nahkbook: the book for AutoHotkey\n\n\n\n\n\nBrowser extensions\n\n\nOneTab\nCollapses all your open tabs into one list you can restore later, which clears the tab bar and frees memory.\n\none-tab.com\n\n\n\nPushbullet\nSends links and files between your computer and your phone, and mirrors phone notifications to the desktop.\n\npushbullet.com\n\n\n\nZotero Connector\nSaves references and PDFs from a web page straight into Zotero from the browser toolbar.\n\n\n\n\nText and writing\n\n\nNotepad++\nMy favorite text editor, with so many fun tools.\n\nPlugin list\nPlugins recommended by others\n\n\n\nZettlr\nA Markdown editor built for academic writing, with citation support.\n\n\nObsidian\nNotes in plain Markdown files, linked together.\n\nFree for work use\n\n\n\nMarkText\nA Markdown editor that formats as you type, so the screen shows the finished document rather than the markup. Free and open source.\n\n\nPandoc\nConverts documents between formats, for example Markdown to Word or PDF.\n\nSource on GitHub\n\n\n\n\n\nResearch and reading\n\n\nZotero\nFree reference manager for collecting, organizing, and citing sources.\n\nUsing tags\nZotero hotkeys in Word\n\nSee also: Zotero Connector\n\n\nCalibre\nFree ebook reader and library manager.\n\n\nTesseract OCR\nOpen-source optical character recognition: turns images and scanned pages into text.\n\n\nPDFsam Basic\nFree desktop tool to split, merge, and rearrange PDF pages.\n\n\n\n\nData science and publishing\n\n\nPositron Posit\nA free data science IDE purpose-built for Python and R, with a data explorer and AI assistance. Built on Code OSS, so VS Code extensions work in it too.\n\nA quick tour of Positron\nAir formatter extension\n\n\n\nQuarto\nPublishing system for documents, slides, and websites. This site is built with it.\n\nParameterized reports\n\n\n\nOpenRefine\nFree, open-source tool for cleaning and transforming messy data. The cleaning steps can be exported and reapplied.\n\n\ndiagrams.net\nFree diagram and flowchart editor."
   },
   {
     "objectID": "things-i-like.html#r-packages",
@@ -46,7 +46,7 @@
     "href": "things-i-like.html#books-podcasts-and-courses",
     "title": "Things I Like",
     "section": "Books, podcasts, and courses",
-    "text": "Books, podcasts, and courses\n\n\nData Management in Large-Scale Education Research Crystal Lewis\nFree online book covering the research data management life cycle.\n\n\nR for Data Science (2e) Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\nFree online book on doing data science with the tidyverse.\n\n\nR Packages (2e) Hadley Wickham and Jennifer Bryan\nFree online book on building R packages.\n\n\nMastering Shiny Hadley Wickham\nFree online book on building interactive web apps in R.\n\n\nFundamentals of Data Visualization Claus O. Wilke\nFree online book on making clear, accurate figures.\n\n\nPro Git\nThe free official Git book.\n\n\nSoftware Carpentry lessons\nOpen lessons on the shell, Git, R, and Python for researchers."
+    "text": "Books, podcasts, and courses\n\n\nData Management in Large-Scale Education Research Crystal Lewis\nFree online book covering the research data management life cycle.\n\n\nR for Data Science (2e) Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\nFree online book on doing data science with the tidyverse.\n\n\nR Packages (2e) Hadley Wickham and Jennifer Bryan\nFree online book on building R packages.\n\n\nMastering Shiny Hadley Wickham\nFree online book on building interactive web apps in R.\n\n\nFundamentals of Data Visualization Claus O. Wilke\nFree online book on making clear, accurate figures.\n\n\nPro Git\nThe free official Git book.\n\n\nSoftware Carpentry lessons\nOpen lessons on the shell, Git, R, and Python for researchers.\nSee also: Collaborative Lesson Development Training, The Carpentries Incubator, The Carpentries Lab\n\n\nCollaborative Lesson Development Training\nThe Carpentries’ own course on building a lesson as an open source project: lesson design, collaborating on one, and the lesson infrastructure. Teams of two to five work on a single real lesson across six half-days, and at least one person per team needs Instructor Training or Learner-Centered Teaching first.\nSee also: The Carpentries Incubator, The Carpentries Lab\n\n\nThe Carpentries Incubator\nWhere community members develop lessons in the open, before any review. Plenty is taught from here already; treat it as work in progress rather than as vetted material.\n\n\nThe Carpentries Lab\nThe peer-reviewed tier: short-format lessons that have been through review and follow the Carpentries lesson design. Review here can also produce a paper in the Journal of Open Source Education, which mints a DOI, so a lesson becomes a citable peer-reviewed publication rather than only a teaching resource. Submission is by invitation while the review process is piloted."
   },
   {
     "objectID": "talks.html",
@@ -140,53 +140,81 @@
     "text": "Thanks for saying hi at posit::conf(2026). Things I’m always happy to talk about:\n\nShiny apps for messy data: cleaning string variables, inferring table relationships, documenting data warehouses (Recode Studio, Table Relationship Explorer)\nSynthetic data that lowers the barriers for researchers and stakeholders to work with administrative data, without making it public\nTeaching data management and R to graduate students\nQuarto for course sites, reports, and parameterized reporting\nR in public-sector and evaluation work\n\nBest ways to follow up: LinkedIn, Bluesky, or email.\n\n\namelia-m.github.io"
   },
   {
-    "objectID": "events.html",
-    "href": "events.html",
-    "title": "Events",
+    "objectID": "fun.html",
+    "href": "fun.html",
+    "title": "Fun & side projects",
     "section": "",
-    "text": "Where to find me in person. If you’ll be at one of these, come say hi."
+    "text": "Things I build outside of research, mostly because I wanted them to exist."
   },
   {
-    "objectID": "events.html#upcoming",
-    "href": "events.html#upcoming",
-    "title": "Events",
-    "section": "Upcoming",
-    "text": "Upcoming\n\nNebraska Women in Tech Summit, Friday, April 2, 2027, Kiewit La Vista, La Vista, NE. I volunteered at the 2026 summit and am planning to volunteer again. The Nebraska Women in Tech Awards are the evening before, April 1, at the Kiewit Luminarium in Omaha."
+    "objectID": "fun.html#lspc-weather",
+    "href": "fun.html#lspc-weather",
+    "title": "Fun & side projects",
+    "section": "LSPC Weather",
+    "text": "LSPC Weather\nReact, TypeScript, and Vite\nA skydiving weather dashboard for the Lincoln Sport Parachute Club at Brown’s Airport (NE69) in Weeping Water, Nebraska, tuned to the club’s Cessna 182 jump plane. It folds a three-site manual routine (NOAA hourly forecast, cloud forecast, and the KPMV METAR) into one page, and adds winds aloft for freefall drift and density altitude for jump-plane climb.\nIt flags seven conditions: surface wind, the club waiver’s gust ceiling, visibility, FAA flight category, overcast sky, a thunderstorm reported in the METAR, and parachute ops between sunset and sunrise. Each one fires only on a published limit, from the USPA SIM, the CFRs, the FAA’s AIM, or the club’s posted waiver, or on a plain observed fact, and cites the source it rests on. Where nothing published sets a threshold, nothing fires: no invented numbers, and no go/no-go verdict. Everything else, winds aloft and density altitude included, is a reading to judge for yourself.\nIn development, and not endorsed by USPA, LSPC, or any licensed professional. Jump decisions stay with the jumper, the Safety and Training Advisor, and the pilot in command.\nOpen the app Source on GitHub"
   },
   {
-    "objectID": "events.html#regulars",
-    "href": "events.html#regulars",
-    "title": "Events",
-    "section": "Regulars",
-    "text": "Regulars\n\n1 Million Cups Lincoln, most Wednesday mornings. Local founders present their businesses and take questions from the community. (LinkedIn)\nLincoln.Code, a Lincoln meetup for people who write code.\nLincoln AI, a Lincoln meetup about artificial intelligence."
+    "objectID": "fun.html#pleasantry",
+    "href": "fun.html#pleasantry",
+    "title": "Fun & side projects",
+    "section": "pleasantry",
+    "text": "pleasantry\nR package\nStarted at posit::conf(2026) in Houston, in Hadley Wickham and Jenny Bryan’s Modern R workflow (ft. Positron and AI) workshop on Monday, September 14, and carried on from there. compliment() assembles a line from template, adjective, and subject banks, steered by a weirdness scale running sincere to quirky to bizarre, a mood (sincere, grumpy, cheerful, or dramatic), a profanity level that includes a deliberately silly clean tier, and a shakespearean flag for pseudo-Elizabethan phrasing. farewell() handles the goodbyes, drawing a whole phrase from its own mood bank rather than composing one, and takes the same options apart from weirdness. compliment_of_the_day() and farewell_of_the_day() each return one result that is fixed for a given date and leave the global random seed alone.\nMost of the effort went into making the composed compliments read like English: rejecting an adjective the chosen template already uses, resampling adjective and subject pairs that share a word stem (“creative” with “creativity”), and singularizing the subject banks so the Shakespearean blends stopped emitting “Thy vapours is.” The weirdness scale draws each component independently with triangular weights, so a value between tiers blends them instead of flipping over. Note that the strong profanity tier ships explicit language in the package source.\nSource on GitHub"
   },
   {
-    "objectID": "events.html#past",
-    "href": "events.html#past",
-    "title": "Events",
-    "section": "Past",
-    "text": "Past\n\n2026\n\nLincoln.Code meetup, September 29, 2026\nposit::conf(2026). Things I’m happy to talk about.\nNebraska Women in Tech Summit, event volunteer."
+    "objectID": "dissertation.html",
+    "href": "dissertation.html",
+    "title": "Dissertation & theses",
+    "section": "",
+    "text": "Youth Sport Participation and Cognitive Development: The Need for Improved Measurement\nInterdisciplinary PhD, University of Nebraska–Lincoln, conferred May 2025. Quantitative, Qualitative, and Psychometric Methods in Educational Psychology, with Exercise Physiology and Nutrition in Nutrition and Health Sciences. Advised by James A. Bovaird.\nRead the full text"
+  },
+  {
+    "objectID": "dissertation.html#the-problem",
+    "href": "dissertation.html#the-problem",
+    "title": "Dissertation & theses",
+    "section": "The problem",
+    "text": "The problem\nPlenty of studies report that youth sport is good for cognition. Most of them measure sport participation badly: a yes or no, or a count of seasons, from a single point in time. If the exposure is a blunt instrument, the estimate attached to it inherits that bluntness, and a literature can accumulate findings that are really artefacts of how the question was asked."
+  },
+  {
+    "objectID": "dissertation.html#what-i-did",
+    "href": "dissertation.html#what-i-did",
+    "title": "Dissertation & theses",
+    "section": "What I did",
+    "text": "What I did\nI developed a more nuanced way of scoring sport participation and put it head to head against the operationalizations the field usually reaches for, predicting cognitive outcomes while controlling for general physical activity and overall health.\nThe data come from the Adolescent Brain Cognitive Development (ABCD) Study, Year 2 follow-up: roughly 9,000 to 11,000 participants depending on the analysis, aged 10.6 to 14.0 years."
+  },
+  {
+    "objectID": "dissertation.html#what-came-out-of-it",
+    "href": "dissertation.html#what-came-out-of-it",
+    "title": "Dissertation & theses",
+    "section": "What came out of it",
+    "text": "What came out of it\nEffects were modest, and they were moderated by socioeconomic context: who benefits, and how much, depends on circumstances the sport variable alone does not capture.\nThe methodological result is the one I care about more. How you operationalize the exposure changes what you find, which means a measurement decision made early and casually can quietly set the conclusion. That argument is why my work since has leaned toward measurement, missing data, and the unglamorous question of whether a variable means what everyone assumes it means."
+  },
+  {
+    "objectID": "dissertation.html#masters-theses",
+    "href": "dissertation.html#masters-theses",
+    "title": "Dissertation & theses",
+    "section": "Master’s theses",
+    "text": "Master’s theses\nEvaluation of the Feasibility of a Two-Method Measurement Design for the Assessment of Healthy Physical Activity Behavior in Youth\nMA, Quantitative, Qualitative, and Psychometric Methods, University of Nebraska–Lincoln, 2018. A two-method measurement design pairs a cheap measure collected from everyone with an expensive one collected from a planned subsample, and leans on the missing data being missing by design. The question here was whether that trade is worth making for youth physical activity.\nRead the full text\nThe Effects of Four Weeks of High-Intensity Interval Training and β-Hydroxy-β-Methylbutyric Free Acid Supplementation on the Onset of Neuromuscular Fatigue\nMSc, Sport and Exercise Science, University of Central Florida, 2015. From the exercise physiology side of my training: how interval training and HMB supplementation affect the point at which neuromuscular fatigue sets in, measured with electromyography and mechanomyography.\nRead the full text\nSee also my research interests and publications."
   },
   {
     "objectID": "contact.html",
     "href": "contact.html",
     "title": "Contact",
     "section": "",
-    "text": "University: amiramonti2@unl.edu\nPersonal: amelia.miramonti@gmail.com"
+    "text": "amiramonti2@unl.edu"
   },
   {
     "objectID": "contact.html#email",
     "href": "contact.html#email",
     "title": "Contact",
     "section": "",
-    "text": "University: amiramonti2@unl.edu\nPersonal: amelia.miramonti@gmail.com"
+    "text": "amiramonti2@unl.edu"
   },
   {
     "objectID": "contact.html#profiles",
     "href": "contact.html#profiles",
     "title": "Contact",
     "section": "Profiles",
-    "text": "Profiles\nCode: GitHub · GitLab · UNL GitLab\nScholarly: ORCID · Google Scholar · ResearchGate · OSF · Scopus · Lens\nSocial: LinkedIn · Bluesky · X"
+    "text": "Profiles\nCode: GitHub · GitLab · UNL GitLab\nScholarly: Read the full text · Read the full text · Read the full text · ORCID · Google Scholar · ResearchGate · OSF · Scopus · Lens\nSocial: LinkedIn · Bluesky · X"
   },
   {
     "objectID": "contact.html#short-bio",
@@ -299,6 +327,34 @@
     "title": "Curriculum Vitae",
     "section": "Technical skills",
     "text": "Technical skills\n\nStatistical & Psychometric: R Statistical Software (tidyverse; lavaan and related psychometric packages; MplusAutomation and semPlot for SEM workflows); Mplus; SAS; SPSS (including PROCESS macro); MATLAB; Jamovi; JASP\nSynthetic Data Generation & Evaluation: tidysynthesis; syntheval (R packages, Urban Institute)\nData Collection: Qualtrics; REDCap; LabVIEW (data collection, signal processing, and analysis); Biopac (EMG/MMG data collection)\nData Management & Databases: dbplyr (R); SQL; Microsoft Access\nVisualization & Interactive Applications: ggplot2 (R); gt (R); Shiny (R); Veusz\nReproducible Reporting & Publishing: Quarto (course websites, slide decks, parameterized reports, this CV); R Markdown / knitr; Markdown; LaTeX / TinyTeX\nResearch Workflow & Reference Management: targets (R package for reproducible pipelines); renv; Zotero; Obsidian; Open Science Framework (OSF)\nProgramming & Version Control: Git (GitHub, GitLab); Python (basic & LLM-assisted); Unix / Bash\nDevelopment Environments & Editors: Positron; RStudio; Visual Studio Code; Notepad++\nLLM-Assisted Development: Claude Code; Gemini / Gemini CLI; GitHub Copilot; Antigravity IDE; Cursor\nProductivity & Collaboration: Microsoft Office Suite (Excel, PowerPoint, Word, Teams, SharePoint); Adobe Acrobat Pro DC; Adobe Illustrator\n\n\nLaboratory assessments\n\nHeart rate (Polar monitors), blood pressure, anthropometrics\nResting metabolic rate and maximal oxygen uptake (ParvoMedics TrueOne 2400, Sensormedics Vmax Encore); Wingate and 3-minute critical power testing (Lode Corrival cycle ergometer)\nIsometric, isokinetic, and isotonic strength testing (Biodex System)\nElectromyographic and mechanomyographic data collection and processing (Noraxon Desktop DTS, Biopac)\nSport performance testing: sprints, agility, jumps, and force plate assessments using custom LabVIEW data collection interfaces\nPhysical activity monitoring (Actigraph wGT3X-BT)\nFinger prick blood sample collection, basic sample processing"
+  },
+  {
+    "objectID": "events.html",
+    "href": "events.html",
+    "title": "Events",
+    "section": "",
+    "text": "Where to find me, in person and online. If you’ll be at one of these, come say hi."
+  },
+  {
+    "objectID": "events.html#upcoming",
+    "href": "events.html#upcoming",
+    "title": "Events",
+    "section": "Upcoming",
+    "text": "Upcoming\n\nThe Carpentries community sessions, Wednesday, October 21, 2026, online. The Welcome Session, for people new to The Carpentries: what the organisation does, the ways to get involved, and questions answered.\nUS Midwest Carpentries Community, Friday, November 6, 2026, online. The regional call for The Carpentries, which teaches foundational coding and data science skills to researchers. Off its usual first Wednesday this month, because the Midwest community is joining the Northeast Carpentries Community for their November meeting, with guest speaker Toby Hodges. (Registration)\nUS Midwest Carpentries Community, Wednesday, December 2, 2026, online. The monthly call, back on its usual first Wednesday. (Registration)\nNebraska Women in Tech Summit, Friday, April 2, 2027, Kiewit La Vista, La Vista, NE. I volunteered at the 2026 summit and am planning to volunteer again. The Nebraska Women in Tech Awards are the evening before, April 1, at the Kiewit Luminarium in Omaha."
+  },
+  {
+    "objectID": "events.html#regulars",
+    "href": "events.html#regulars",
+    "title": "Events",
+    "section": "Regulars",
+    "text": "Regulars\n\n1 Million Cups Lincoln, most Wednesday mornings. Local founders present their businesses and take questions from the community. (LinkedIn)\nLincoln.Code. A Lincoln meetup for people who write code.\nLincoln AI, monthly evenings at Don’t Panic Labs. Talks and discussion on AI, from everyday tooling to model internals.\nNebraskaJS, monthly weekday evenings, usually Omaha. Omaha’s JavaScript community since 2009, these days as much about AI tooling. It comes down to Lincoln some months, sometimes jointly with Lincoln AI."
+  },
+  {
+    "objectID": "events.html#past",
+    "href": "events.html#past",
+    "title": "Events",
+    "section": "Past",
+    "text": "Past\n\n2026\n\nNebraskaJS, Thursday, October 15, 2026, DevObsessed, Omaha, NE. Joint with the first meetup of AI Engineer Omaha, a new local chapter of an international organisation. Two talks, the first on Jev, a narrow model that answers a typed question with a probability rather than with prose. (AI Engineer Omaha)\nLincoln.Code meetup, September 29, 2026\nposit::conf(2026), Houston, September 14 to 16, attended in person. Things I’m happy to talk about. The Monday was Hadley Wickham and Jenny Bryan’s pre-conference workshop. (Modern R workflow (ft. Positron and AI))\nLincoln AI Explorers, May 6, 2026. The first Explorers meeting, largely a discussion of what the group should be.\nShare Your AI Workflow, March 11, 2026. A NebraskaJS and Lincoln AI lightning talk night at Don’t Panic Labs.\nNebraska Women in Tech Summit, event volunteer."
   },
   {
     "objectID": "index.html#currently",
@@ -438,7 +494,7 @@
     "href": "teaching.html#workshops-training-series",
     "title": "Teaching",
     "section": "Workshops & training series",
-    "text": "Workshops & training series\nData Management Brown Bagger Series University of Nebraska Public Policy Center · 2026 Session 1: Data documentation for Teams (June 2026)\nNon-credit graduate methods sessions Informal methods training for graduate students; precursor to EDPS 845 · Fall 2025"
+    "text": "Workshops & training series\nData Management Brown Bagger Series University of Nebraska Public Policy Center · 2026 Session 1: Data documentation for Teams (June 2026) Session 2: forthcoming (November 11, 2026)\nNon-credit graduate methods sessions Informal methods training for graduate students; precursor to EDPS 845 · Fall 2025"
   },
   {
     "objectID": "teaching.html#guest-lectures",
