@@ -152,6 +152,32 @@ organisational policy. "Adjunct faculty" is left out for space; see the last row
 | "Postdoc and adjunct at UNL. SEM, multilevel models, measurement, missing data. I build R & Shiny tools for problems I hit in research, policy, health, and education." (165) | Over the limit. Naming both roles costs the methods or the areas. |
 | "Postdoc and adjunct faculty at UNL. Measurement, SEM, multilevel models, missing data, synthetic data. I build R and Shiny tools for the problems I hit along the way." (166) | Over the limit, and "along the way" says less than naming the areas. |
 
+## GitLab bio
+
+The personal account's Bio field allows **250** characters. Job title, Organization, Location
+and Website are separate fields shown beside it, so the bio leaves out the role and the
+university: Amelia, of an earlier round, "postdoc and adjunct are already covered by the job
+title box". The same round changed "hit" to "find".
+
+Live, chosen 2026-10-21, 227 of 250:
+
+> I build R and Shiny tools for problems I find in my work in research, public policy, public
+> health, and education. Methods: measurement, SEM, multilevel models, logistic and
+> multinomial regression, missing data, synthetic data.
+
+The areas are written in full, as in the AI Engineer Omaha headline, and the space the role
+used to take goes to logistic and multinomial regression. "In my work" matters once the verb
+is "find": without it, "problems I find in research" can read as faults spotted in the field
+rather than problems met in her own work.
+
+### Not chosen
+
+| Wording | Its case |
+| --- | --- |
+| "Measurement, SEM, multilevel models, logistic and multinomial regression, missing data, and synthetic data. I build R and Shiny tools for problems I find in research, public policy, public health, and education." (211) | Recommended at the time: methods first, with the job title already sitting above the bio. Has the "find" ambiguity above. |
+| "Measurement, SEM, multilevel models, missing data, and synthetic data. I build R and Shiny tools for problems I find in research, public policy, public health, and education." (174) | Shortest. Leaves out the regression methods, and has the same ambiguity. |
+| Earlier round, 232 to 245 characters. Two of the three opened with "Postdoc and adjunct faculty", the third with "Quantitative methods in R:" | The two role openings spent the space on what the Job title field already shows, and said "hit" where these say "find". |
+
 ## Adding to this file
 
 A wording decision is worth an entry when it took more than one exchange, when

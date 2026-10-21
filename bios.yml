@@ -162,6 +162,25 @@ places:
       temporary; the reasons and the drafts not chosen are in WORDING.md under
       "X bio"
 
+  - id: gitlab
+    label: GitLab profile Bio field (personal account)
+    url: https://gitlab.com/amelia-m
+    limit: 250
+    updated: 2026-10-21
+    text: >-
+      I build R and Shiny tools for problems I find in my work in research,
+      public policy, public health, and education. Methods: measurement, SEM,
+      multilevel models, logistic and multinomial regression, missing data,
+      synthetic data.
+    note: >-
+      227 of 250. Job title, Organization, Location and Website are separate
+      fields on the same form and show beside the bio, so the role and the
+      university are left out of it. "In my work" keeps "find" meaning problems
+      met in her own work rather than faults spotted in the field. The only bio
+      so far naming logistic and multinomial regression. The drafts not chosen
+      are in WORDING.md under "GitLab bio". The UNL GitLab account in links.yml
+      is a separate profile, not tracked here.
+
   # Below here the text has not been recorded yet. Paste in what the profile
   # currently says and set `updated` to the date you checked it.
 

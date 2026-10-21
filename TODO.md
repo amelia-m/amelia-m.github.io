@@ -19,9 +19,9 @@ they were found.
 ## Site copy
 
 - [ ] The prose bios do not name the methods. SEM and multilevel models appear only in the X
-      bio (since 2026-10-21) and `research.qmd`; measurement invariance and logistic and
-      multinomial regression appear in no bio at all. The site's own bios and the GitHub
-      README are the ones that matter most here. The
+      and GitLab bios (both since 2026-10-21) and `research.qmd`; logistic and multinomial
+      regression only in the GitLab bio; measurement invariance in no bio at all. The site's
+      own bios and the GitHub README are the ones that matter most here. The
       strongest evidence available is already recorded in `areas.yml` under WeCook: a latent
       physical activity model across child surveys, parent surveys and wearable tracker data,
       with invariance tested across the three.
