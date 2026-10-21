@@ -197,3 +197,9 @@ events:
   - id: carpentries-sessions
     label: The Carpentries community sessions
     url: https://pretix.carpentries.org/community-events/
+  # The Zoom room for the October 27 Welcome Session, from the registration
+  # email. A public link, per Amelia (2026-10-21). Check it again before
+  # pointing a later session at it.
+  - id: carpentries-welcome-zoom
+    label: Zoom
+    url: https://carpentries.zoom.us/my/carpentriesroom2?pwd=WmVCOUlPUm1laFk5SUp1UWg5cjhEUT09
