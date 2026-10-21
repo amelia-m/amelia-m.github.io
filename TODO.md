@@ -18,9 +18,10 @@ they were found.
 
 ## Site copy
 
-- [ ] No bio anywhere names the methods. SEM, multilevel models, measurement invariance, and
-      logistic and multinomial regression appear in none of them; `research.qmd` names
-      structural equation and item response models and is the only place that does. The
+- [ ] The prose bios do not name the methods. SEM and multilevel models appear only in the X
+      bio (since 2026-10-21) and `research.qmd`; measurement invariance and logistic and
+      multinomial regression appear in no bio at all. The site's own bios and the GitHub
+      README are the ones that matter most here. The
       strongest evidence available is already recorded in `areas.yml` under WeCook: a latent
       physical activity model across child surveys, parent surveys and wearable tracker data,
       with invariance tested across the three.
@@ -46,6 +47,9 @@ they were found.
       The same applies to a YAML field holding inline R, which `md()` escapes into literal
       text; the check catches the common form, but stopping on it where the field is read
       would be exact.
+
+- [ ] The X bio chosen 2026-10-21 may change ("might want to change later"). The drafts not
+      chosen, and why each was a contender, are in `WORDING.md` under "X bio".
 
 ## Generated: fix in the export repository, not here
 

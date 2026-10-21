@@ -118,10 +118,39 @@ Dropped along the way, and worth revisiting elsewhere rather than here:
 - "R & Shiny". A budget decision for this field only, twice over. The card
   links to GitHub, so the stack is one click away.
 - "from raw data to model output to reporting", and with it "model output",
-  which was the only phrase in any bio saying I fit models at all. That gap is
-  now unaddressed everywhere, and belongs in the prose bios rather than in a
-  120 character field.
+  which was the only phrase in any bio saying I fit models at all. The X bio
+  closed that gap on 2026-10-21 by naming SEM and multilevel models; the prose
+  bios still have it, and are where it belongs rather than in a 120 character
+  field.
 - "reporting" over "report", chosen twice, if that clause ever comes back.
+
+## X bio
+
+The field allows **160** characters. X weights some characters double; by its published
+counting rules nothing below is one of them, so its count and a plain count should agree.
+That is inferred from the rules, not checked against X's own counter. The site goes in X's separate Website field rather
+than spending the bio on it.
+
+Live, chosen 2026-10-21, 159 of 160, and possibly temporary:
+
+> Postdoc at UNL: measurement, SEM, multilevel models, missing data, synthetic data. I build
+> R & Shiny tools for research, policy, health, and education. #rstats
+
+Chosen for discoverability: `#rstats` is how R users find each other on X, and it is the only
+draft that keeps synthetic data. This deliberately overrides the purpose-over-tooling
+tie-breaker in the principles above: on X, "R & Shiny" and `#rstats` are what people search
+for, so they stay and the purpose words are shortened instead. The cost is "policy" and
+"health" for "public policy" and "public health", and bare "policy" can read as
+organisational policy. "Adjunct faculty" is left out for space; see the last row below.
+
+### Not chosen, kept for when it changes
+
+| Wording | Its case |
+| --- | --- |
+| "Postdoc at UNL. I build R & Shiny tools for problems I hit in research, public policy, public health, and education. Measurement, SEM, multilevel models." (153) | Same provenance framing as the AI Engineer Omaha headline, so the two read as one person, with the areas written in full. Loses `#rstats` and synthetic data. |
+| "Measurement, SEM, multilevel models, and missing data, applied to research, public policy, public health, and education. R & Shiny tools. Postdoc at UNL." (153) | Leads with the methods, the strongest answer to bios that read as though cleaning data is the whole job. Tooling last. |
+| "Postdoc and adjunct at UNL. SEM, multilevel models, measurement, missing data. I build R & Shiny tools for problems I hit in research, policy, health, and education." (165) | Over the limit. Naming both roles costs the methods or the areas. |
+| "Postdoc and adjunct faculty at UNL. Measurement, SEM, multilevel models, missing data, synthetic data. I build R and Shiny tools for the problems I hit along the way." (166) | Over the limit, and "along the way" says less than naming the areas. |
 
 ## Adding to this file
 

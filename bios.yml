@@ -146,6 +146,22 @@ places:
       and 14 spare characters is more than enough to fix it. The profile also
       shows pronouns, location, and the link row, none of which is this field.
 
+  - id: x
+    label: X
+    url: https://x.com/AmeliaMiramonti
+    limit: 160
+    updated: 2026-10-21
+    text: >-
+      Postdoc at UNL: measurement, SEM, multilevel models, missing data,
+      synthetic data. I build R & Shiny tools for research, policy, health,
+      and education. #rstats
+    note: >-
+      The site goes in X's separate Website field, not here. Shortens "public
+      policy" and "public health", the AI Engineer Omaha headline's wording, to
+      fit, and leaves out "adjunct faculty" for the same reason. Possibly
+      temporary; the reasons and the drafts not chosen are in WORDING.md under
+      "X bio"
+
   # Below here the text has not been recorded yet. Paste in what the profile
   # currently says and set `updated` to the date you checked it.
 
@@ -156,11 +172,6 @@ places:
       Three separate fields: the headline, the About section, and the
       Experience entry. The headline is what shows in search results and in
       comments, so it does the most work.
-
-  - id: x
-    label: X
-    url: https://x.com/AmeliaMiramonti
-    limit: 160
 
   - id: orcid
     label: ORCID
