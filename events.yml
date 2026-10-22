@@ -70,6 +70,23 @@ events:
     more:
       - id: carpentries-sessions
         label: Registration
+  # Talk title, speaker and format read off the chapter's event page on
+  # 2026-10-21. Linked to the chapter, like the October meetup, because the
+  # event page goes stale after the date.
+  - id: ai-engineer-omaha
+    date: 2026-11-19
+    when: Thursday, November 19, 2026
+    where: DevObsessed, Omaha, NE
+    note: >-
+      Max Clouatre of FNBO on "Build the Factory, Not the Feature": making the
+      project itself one shared system that defines how work gets built, rather
+      than each developer running their own agents, prompts, and harness. A
+      second talk is still to be announced. Free, and streamed online for
+      anyone who RSVPs.
+    past_note: >-
+      Max Clouatre of FNBO on "Build the Factory, Not the Feature": making the
+      project itself one shared system that defines how work gets built, rather
+      than each developer running their own agents, prompts, and harness.
   - id: carpentries-midwest
     date: 2026-12-02
     when: Wednesday, December 2, 2026
