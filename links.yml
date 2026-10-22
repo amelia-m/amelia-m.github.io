@@ -9,6 +9,8 @@
 # icon:    a Bootstrap Icons name (https://icons.getbootstrap.com), optional.
 # icon_ai: an Academicons name (https://jpswalsh.github.io/academicons),
 #          for the scholarly profiles Bootstrap Icons does not cover.
+# Both are drawn only by link_button(), the home page's sidebar buttons. A
+# link written with link(), which is every other page, shows no icon.
 
 # Only the university address is published. The personal one was removed
 # rather than obfuscated: nothing client-side stops a headless-browser
@@ -88,6 +90,25 @@ projects:
     label: Table Relationship Explorer
     url: https://github.com/amelia-m/table-explorer
 
+# Downstream work: someone else's repository that came out of one of mine.
+# Kept out of `projects` above because that group is matched by label against
+# the software_dev data, and this is not one of my projects.
+related:
+  # Confirmed public on 2026-10-17 by the cloud session's repository service,
+  # which serves a repository anonymously only when it is public. A clone alone
+  # did not show that: the session's git proxy adds Amelia's credentials, and
+  # she contributes to this repository.
+  #
+  # Two related URLs are deliberately not here, because neither could be
+  # checked: the deployed Streamlit app at cartographer.streamlit.app, and the
+  # Common Gene Labs site linked from the Cartographer README. The build
+  # environment's proxy refuses both hosts, which says nothing about whether
+  # either is up; check them from a normal machine before linking.
+  - id: cartographer
+    label: Cartographer
+    url: https://github.com/Common-Gene-Labs/cartographer
+    icon: github
+
 # Side projects, shown on fun.qmd. The `projects` group above is matched by
 # name against the software_dev data on software.qmd; this group is not, so
 # it holds both the live app and its source.
@@ -99,10 +120,15 @@ fun:
     label: Source on GitHub
     url: https://github.com/amelia-m/lspc-weather
     icon: github
-  # No live link: the pkgdown url in the package's DESCRIPTION and
-  # _pkgdown.yml is not built or served yet, so only the repo is linked.
+  # Same split as LSPC Weather above: the bare id is the thing to open, the
+  # `-source` one is the code. The docs are built by the repo's pkgdown
+  # workflow on every push to main and served from its gh-pages branch, so
+  # this URL does not need republishing when the package changes.
   - id: pleasantry
     label: pleasantry
+    url: https://amelia-m.github.io/pleasantry/
+  - id: pleasantry-source
+    label: Source on GitHub
     url: https://github.com/amelia-m/pleasantry
     icon: github
   # The workshop compliment was started in. Posit's catalogue titles it
@@ -134,6 +160,10 @@ events:
   - id: lincoln-ai
     label: Lincoln AI
     url: https://www.meetup.com/lincoln-ai/
+  # Fetched 2026-10-22 and live; the ?eventOrigin tracking parameter is dropped.
+  - id: witheartland-2026-10-21
+    label: Women in Technology of the Heartland, October 21, 2026
+    url: https://www.meetup.com/witheartland/events/316903419/
   # The group's own site, not Meetup: www.meetup.com/nebraskajs still answers
   # 200 but renders "group you're looking for doesn't exist", and their
   # invitations now come from lu.ma. The home page carries the next meetup, so

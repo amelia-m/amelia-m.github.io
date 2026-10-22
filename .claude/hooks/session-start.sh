@@ -21,6 +21,19 @@ fi
 
 QUARTO_VERSION="1.10.19"
 
+# The container's locale is POSIX, under which R writes non-ASCII characters as
+# literal <U+2013> text and the render still succeeds. R/site.R switches the
+# locale for every page that sources it; this covers the rest, such as a blog
+# post with its own R chunks. CLAUDE_ENV_FILE exists only while this hook runs,
+# and its lines are applied to the session's later commands.
+# The list is captured first because, under pipefail, `locale -a | grep -q`
+# fails whenever grep quits early on a match and locale is killed writing the
+# rest, which would skip this without a word.
+locales="$(locale -a 2>/dev/null || true)"
+if [ -n "${CLAUDE_ENV_FILE:-}" ] && grep -qix 'c\.utf-\?8' <<<"$locales"; then
+  echo 'export LANG=C.UTF-8 LC_CTYPE=C.UTF-8' >> "$CLAUDE_ENV_FILE"
+fi
+
 # Site helpers: R/site.R uses jsonlite for _data/*.json and yaml for links.yml
 # and likes.yml. knitr executes the chunks in the .qmd files and rmarkdown is
 # what Quarto drives it through.
