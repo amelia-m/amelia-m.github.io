@@ -28,7 +28,8 @@
 #   name     the project as it gets referred to
 #   where    the centre, lab, or partner it sits under
 #   when     years, or "ongoing"
-#   current    true while it is live work, "unknown" when that is not established
+#   current    true while it is live work, "unknown" when that is not
+#              established; left out, the project is printed as past
 #   areas    one or more ids from the `areas` block below
 #   role     what I actually did on it
 #   output   what came out of it: a report, an application, a paper

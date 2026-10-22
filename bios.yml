@@ -129,7 +129,7 @@ places:
       WORDING.md has the rejected versions.
       Earlier drafts named administrative data, which reads as though cleaning
       is the whole of the work. Naming the four areas is what keeps this one
-      from reading that way, so do not trim it back to the tooling half.
+      from reading that way, so do not cut the areas to make room.
 
   - id: github-bio
     label: GitHub profile Bio field

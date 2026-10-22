@@ -9,6 +9,8 @@
 # icon:    a Bootstrap Icons name (https://icons.getbootstrap.com), optional.
 # icon_ai: an Academicons name (https://jpswalsh.github.io/academicons),
 #          for the scholarly profiles Bootstrap Icons does not cover.
+# Both are drawn only by link_button(), the home page's sidebar buttons. A
+# link written with link(), which is every other page, shows no icon.
 
 # Only the university address is published. The personal one was removed
 # rather than obfuscated: nothing client-side stops a headless-browser

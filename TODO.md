@@ -24,20 +24,21 @@ they were found.
 
 ## Site copy
 
-- [ ] The prose bios do not name the methods. SEM and multilevel models appear only in the X
-      and GitLab bios (both since 2026-10-21) and `research.qmd`; logistic and multinomial
-      regression only in the GitLab bio; measurement invariance in no bio at all. The site's
-      own bios and the GitHub README are the ones that matter most here. The
+- [ ] The prose bios do not name the methods. SEM appears only in the X and GitLab bios (both
+      since 2026-10-21) and `research.qmd`, which says "structural equation"; multilevel
+      models only in the X and GitLab bios; logistic and multinomial regression only in the
+      GitLab bio; measurement invariance in no bio at all. The site's own bios and the GitHub
+      README are the ones that matter most here. The
       strongest evidence available is already recorded in `areas.yml` under WeCook: a latent
       physical activity model across child surveys, parent surveys and wearable tracker data,
       with invariance tested across the three.
-- [ ] `software.qmd:21` says "the unglamorous middle of applied research: documenting,
+- [ ] `software.qmd` says "the unglamorous middle of applied research: documenting,
       cleaning, linking, and reporting on administrative data", which narrows the work twice in
       one sentence: to one subject area, and to the cleaning half. The same sentence is the
-      GitHub profile README's, recorded at `bios.yml:91`. `index.qmd:55` has the same problem in
-      different words: "R and Shiny tools that make messy administrative data easier to
-      document, clean, and report on". The four areas in `areas.yml` are what a general version
-      would draw on. Line numbers move; grep for "unglamorous" and "messy administrative".
+      GitHub profile README's, recorded in `bios.yml` under `github-readme`. `index.qmd` has the
+      same problem in different words: "R and Shiny tools that make messy administrative data
+      easier to document, clean, and report on". The four areas in `areas.yml` are what a
+      general version would draw on. Grep for "unglamorous" and "messy administrative".
 - [ ] Neither the `index.qmd` paragraph nor the `software.qmd` opening line is tracked in
       `bios.yml`, so `bio_report()` cannot tell when they drift.
 - [ ] Brown Bagger session 2 title, for 2026-11-11.
@@ -110,6 +111,13 @@ they were found.
 - [ ] `areas.yml` has `todo` fields, mostly on the older positions, and entries with no role
       recorded at all. `work_areas()` lists both.
 - [ ] Make sure the look-into Claude Doc is not shared by link, and turn link sharing off if it is.
+- [ ] The UTF-8 locale switch sits at the top of `R/site.R`, so it covers only pages that source
+      that file, plus cloud sessions through the session hook. A blog post with its own R chunks,
+      rendered on a Linux machine under a POSIX locale, would still write `<U+2013>`; the
+      post-render check stops that render rather than letting it through. A project-wide
+      setting, such as `LANG` in a Quarto `_environment` file, would fix the cause for every
+      page, but C.UTF-8 is not a locale every platform has, and it has not been tried on
+      Amelia's Windows machine. Raised by the whole-branch review of 2026-10-21.
 - [ ] The downstream-link association lives in two files: the ids and URLs in `links.yml`
       (`related:` group) and the software_dev-name-to-id mapping in `software.qmd`. A second
       downstream project means editing both. Putting the owning name on the links.yml entry

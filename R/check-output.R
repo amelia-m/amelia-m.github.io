@@ -12,7 +12,8 @@
 # apart was left out.
 #
 # Every check skips source code shown on a page, so a post can show any of
-# these strings on purpose. Prose and chunk output are checked: chunk output is
+# these strings on purpose, and the two inline R checks also skip scripts and
+# styles (not JSON data). Prose and chunk output are checked: chunk output is
 # where R's own breakage lands. Two checks were dropped because broken output
 # and correct output look the same: R's NA printed as text (see TODO.md), and
 # an unexpanded shortcode, which renders exactly like Quarto's documented
@@ -75,14 +76,25 @@ text_checks <- list(
 )
 
 # Inline R that knitr never saw, in its two forms. Both are looked for outside
-# <pre> blocks only, so chunk output that prints R source (an Rmd template,
-# "r = 0.42") is never mistaken for it. Inline R shown on purpose keeps its
+# <pre> blocks, scripts and styles, so chunk output that prints R source (an
+# Rmd template, "r = 0.42") and JavaScript are never mistaken for it. JSON
+# data blocks are still checked, because a widget shows its data on the page;
+# a JS() callback inside one that holds a template literal starting "r " would
+# be flagged, and is accepted as the cost. Inline R shown on purpose keeps its
 # backticks inside the span (`` `r x` `` gives <code>`r x`</code>) and so does
 # not match the first form.
+#
+# Both forms need "r " followed by something an R expression can start with:
+# a name, number, string or bracket, or a unary ! or - (with no space after,
+# so "r - 1" is not one). So `r = 0.42`, `r <- cor(x, y)`, `r != 0` and
+# `r ~ x` in code font, on a page with no R chunks, are ordinary code, while
+# `r nrow(d)`, `r 2026 - 1990`, `r "a"`, `r (a)` and `r -x` are caught.
+# Pandoc writes < > & as entities, hence the & in the exclusions.
+r_start <- "(?:[A-Za-z0-9._\"'(]|!(?![\\s=])|-(?![\\s=&]))"
 unrun_r <- list(name = "inline R left unevaluated",
-                pattern = "<code[^>]*>(r [^<\\s]|\\{r\\} )",
+                pattern = paste0("<code[^>]*>(r ", r_start, "|\\{r\\} )"),
                 cause = "a `r ...` call sits where knitr does not run it, such as a YAML field printed with cat()")
-literal_r <- list(name = "inline R left as literal text", pattern = "`r [A-Za-z_.]",
+literal_r <- list(name = "inline R left as literal text", pattern = paste0("`r ", r_start),
                   cause = "an inline R call passed through md() or another escape, so knitr never saw it")
 
 fail <- function(msg) {
@@ -185,6 +197,13 @@ blank <- function(text, pattern, keep = function(start, s) FALSE) {
 
 code <- "(?s)<pre[^>]*>.*?</pre>|<code[^>]*>.*?</code>"
 pre  <- "(?s)<pre[^>]*>.*?</pre>"
+# Scripts and styles, but not JSON data blocks such as htmlwidgets', whose
+# contents can be shown on the page. Skipped by the two inline R checks, where
+# JavaScript template literals look like `r x`, and kept for the encoding
+# checks, where damage is damage wherever it is. The type attribute must follow
+# whitespace, so data-type="application/json" on a real script does not count.
+script <- paste0("(?is)<script\\b(?![^>]*\\stype\\s*=\\s*[\"']?application/json)[^>]*>.*?</script\\s*>",
+                 "|<style\\b[^>]*>.*?</style\\s*>")
 found <- character()
 for (f in files) {
   if (file.size(f) == 0) {
@@ -202,8 +221,9 @@ for (f in files) {
             substr(text, max(1, start - 300), start - 1), perl = TRUE, useBytes = TRUE)
   }
   prose_and_output <- blank(text, code, keep = is_output)  # shown code skipped
-  prose_only <- blank(text, code)                           # all code skipped
-  prose_and_spans <- blank(text, pre)                       # inline spans kept
+  no_script <- blank(text, script)
+  prose_only <- blank(no_script, code)                      # all code skipped
+  prose_and_spans <- blank(no_script, pre)                  # inline spans kept
   for (ch in c(byte_checks, text_checks)) found <- c(found, report(prose_and_output, ch, f))
   found <- c(found, report(prose_only, literal_r, f), report(prose_and_spans, unrun_r, f))
 }

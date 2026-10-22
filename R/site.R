@@ -728,7 +728,23 @@ site_areas <- function(file = "areas.yml") {
 # several areas and should only be written down once. This prints it the other
 # way round, which is the direction it gets read in.
 work_areas <- function(x = site_areas(), todo = TRUE, detail = TRUE) {
+  # YAML reads `id: 2020` as a number and `id: yes` as TRUE, so check the type
+  # before vapply() does it with an error that names no area.
+  lab <- function(a) if (is.null(a$label)) "(no label)" else .squash(a$label)
+  id_ok <- vapply(x$areas, function(a) is.character(a$id) && length(a$id) == 1 && nzchar(a$id),
+                  logical(1))
+  if (!all(id_ok)) {
+    stop("areas.yml: every area needs a text id; check ",
+         paste(vapply(x$areas[!id_ok], lab, character(1)), collapse = ", "), call. = FALSE)
+  }
   known <- vapply(x$areas, function(a) a$id, character(1))
+  dup <- unique(known[duplicated(known)])
+  if (length(dup)) {
+    stop("areas.yml: an area id is used more than once: ",
+         paste(vapply(dup, function(d) paste0("'", d, "' by ", paste(
+           vapply(x$areas[known == d], lab, character(1)), collapse = " and ")), character(1)),
+           collapse = "; "), call. = FALSE)
+  }
   # A project whose areas are missing, empty, or all mistyped matches no
   # section and would vanish from the report entirely, which is the one
   # failure this file cannot afford: it exists to hold the projects nothing
