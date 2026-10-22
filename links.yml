@@ -160,6 +160,10 @@ events:
   - id: lincoln-ai
     label: Lincoln AI
     url: https://www.meetup.com/lincoln-ai/
+  # Fetched 2026-10-22 and live; the ?eventOrigin tracking parameter is dropped.
+  - id: witheartland-2026-10-21
+    label: Women in Technology of the Heartland, October 21, 2026
+    url: https://www.meetup.com/witheartland/events/316903419/
   # The group's own site, not Meetup: www.meetup.com/nebraskajs still answers
   # 200 but renders "group you're looking for doesn't exist", and their
   # invitations now come from lu.ma. The home page carries the next meetup, so

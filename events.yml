@@ -95,6 +95,16 @@ events:
     more:
       - id: carpentries-sessions
         label: Registration
+  # Title, the founders' sectors and the venue read off the Meetup event page on
+  # 2026-10-22. The venue is the sponsor's office, which the page names as
+  # providing it.
+  - id: witheartland-2026-10-21
+    date: 2026-10-21
+    where: Improving, Elkhorn, NE
+    note: >-
+      "She Built This! Founders Behind Heartland Startups": four women founders
+      on building startups in digital health, AI, construction technology, and
+      equity crowdfunding.
   - id: lincoln-code-2026-09-29
     date: 2026-09-29
   - id: lincoln-ai-2026-05-06
