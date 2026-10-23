@@ -31,29 +31,42 @@ QUARTO_VERSION="1.10.19"
 # rest, which would skip this without a word.
 #
 # C.UTF-8 by preference: it sorts the same way as C and POSIX, so the whole
-# locale can move to it. Failing that, any UTF-8 locale the machine has (such
-# as en_US.utf8, which R/site.R also accepts), but for character handling
-# only, LC_CTYPE, so sort order and number formats stay as they were (Amelia,
-# 2026-10-23: keep the fallback, character handling only). LC_ALL overrides
-# every category when set, as some images do with LC_ALL=POSIX: with C.UTF-8
-# it is replaced too; with a fallback it is emptied, which the C library
-# treats as unset, and its value kept as LANG, so only LC_CTYPE changes. With
-# no UTF-8 locale at all, say so rather than carry on as if it were fixed.
+# locale can move to it. Failing that, en_US.UTF-8, which R/site.R also
+# accepts, and only then whatever UTF-8 locale comes first, since some change
+# more than encoding (Turkish case rules make i and I match differently). A
+# fallback is set for character handling only, LC_CTYPE, so sort order and
+# number formats stay as they were (Amelia, 2026-10-23: keep the fallback,
+# character handling only). LC_ALL overrides every category when set, as some
+# images do with LC_ALL=POSIX: with C.UTF-8 it is replaced too; with a
+# fallback it is emptied, which the C library treats as unset, and every
+# other category is set to its value, so only LC_CTYPE changes. With no
+# UTF-8 locale at all, say so rather than carry on as if it were fixed.
 # grep -m 1 rather than a pipe into head, for the pipefail reason above.
 locales="$(locale -a 2>/dev/null || true)"
-c_utf8="$(grep -m 1 -ix 'c\.utf-\?8' <<<"$locales" || true)"
-any_utf8="$(grep -m 1 -i '\.utf-\?8$' <<<"$locales" || true)"
+utf8="$(grep -m 1 -ix 'c\.utf-\?8' <<<"$locales" || true)"
+full=1
+if [ -z "$utf8" ]; then
+  full=0
+  utf8="$(grep -m 1 -ix 'en_us\.utf-\?8' <<<"$locales" || true)"
+fi
+if [ -z "$utf8" ]; then
+  utf8="$(grep -m 1 -i '\.utf-\?8$' <<<"$locales" || true)"
+fi
 if [ -n "${CLAUDE_ENV_FILE:-}" ]; then
-  if [ -n "$c_utf8" ]; then
-    echo "export LANG=$c_utf8 LC_CTYPE=$c_utf8" >> "$CLAUDE_ENV_FILE"
+  if [ -n "$utf8" ] && [ "$full" = 1 ]; then
+    echo "export LANG=$utf8 LC_CTYPE=$utf8" >> "$CLAUDE_ENV_FILE"
     if [ -n "${LC_ALL:-}" ]; then
-      echo "export LC_ALL=$c_utf8" >> "$CLAUDE_ENV_FILE"
+      echo "export LC_ALL=$utf8" >> "$CLAUDE_ENV_FILE"
     fi
-  elif [ -n "$any_utf8" ]; then
+  elif [ -n "$utf8" ]; then
     if [ -n "${LC_ALL:-}" ]; then
-      printf 'export LC_ALL= LANG=%q\n' "$LC_ALL" >> "$CLAUDE_ENV_FILE"
+      for category in LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES LC_PAPER \
+                      LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT LC_IDENTIFICATION; do
+        printf 'export %s=%q\n' "$category" "$LC_ALL" >> "$CLAUDE_ENV_FILE"
+      done
+      echo "export LC_ALL=" >> "$CLAUDE_ENV_FILE"
     fi
-    echo "export LC_CTYPE=$any_utf8" >> "$CLAUDE_ENV_FILE"
+    echo "export LC_CTYPE=$utf8" >> "$CLAUDE_ENV_FILE"
   else
     echo "session-start: no UTF-8 locale; R chunks outside R/site.R render under the shell's (${LC_ALL:-${LC_CTYPE:-${LANG:-unset}}}), and check-output will flag any damage" >&2
   fi

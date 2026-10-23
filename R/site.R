@@ -617,8 +617,20 @@ site_events <- function(file = "events.yml") {
     if (!is.null(e$year) && !grepl("^[0-9]{4}$", as.character(e$year))) {
       stop(file, ": ", what, " has a `year` that is not a four-digit year: ", e$year)
     }
+    # `year` stands in for the date of an event already past whose day was
+    # not recorded, so it is written down after the fact, with whether she
+    # went; a year still to come needs a date instead.
+    if (is.null(e$date) && !is.null(e$year)) {
+      if (as.integer(e$year) > as.integer(format(site_today(), "%Y"))) {
+        stop(file, ": ", what, " has `year: ", e$year, "`, which is for a past event; give a `date`")
+      }
+      if (is.null(e$attended)) {
+        stop(file, ": ", what, " has only a `year`, so it is a past record and needs `attended: true` or `false`")
+      }
+    }
     if (!is.null(e$attended) && !(is.logical(e$attended) && length(e$attended) == 1 && !is.na(e$attended))) {
-      stop(file, ": ", what, " has `attended: ", e$attended, "`; use true or false")
+      stop(file, ": ", what, " has `attended: ", paste(deparse(e$attended), collapse = " "),
+           "`; use true or false")
     }
     extra <- setdiff(names(e), if (is.null(e$text)) linked else textual)
     if (length(extra)) {
@@ -676,28 +688,40 @@ event_year <- function(e) {
   }
 }
 
+# Which list each event is on as of `today`, decided here once so that every
+# event is on exactly one: "upcoming"; "past", which says Amelia was there
+# and so needs `attended: true`; "unconfirmed", gone by and not yet marked, on
+# neither list until she says; or "off", marked `attended: false`, which also
+# takes a future event out of Upcoming (Amelia, 2026-10-23: "need to fix so
+# it doesn't show I attended things I skipped"). A year-only entry always
+# carries `attended` (site_events() checks), so it is past or off.
+event_status <- function(ev, today = site_today()) {
+  dates <- event_dates(ev)
+  vapply(seq_along(ev), function(i) {
+    a <- ev[[i]]$attended
+    if (isFALSE(a)) return("off")
+    if (!is.na(dates[i]) && dates[i] >= today) return("upcoming")
+    if (isTRUE(a)) "past" else "unconfirmed"
+  }, character(1))
+}
+
 # Upcoming events still ahead of `today`, soonest first. An event leaves
 # Upcoming on its own the day after it happens.
 upcoming_events <- function(today = site_today(), events = site_events()) {
   ev <- events$events
   if (!length(ev)) return(list())
+  keep <- event_status(ev, today) == "upcoming"
   dates <- event_dates(ev)
-  # `attended: false` set ahead of time means not going after all.
-  keep <- !is.na(dates) & dates >= today & !vapply(ev, function(e) isFALSE(e$attended), logical(1))
   ev[keep][order(dates[keep])]
 }
 
-# The past half of the same list, as year blocks, newest year first. Past is a
-# claim that Amelia was there, so an event appears in it only once she has
-# confirmed that with `attended: true`; until then it is in neither half (see
-# unconfirmed_events), and `attended: false` keeps it off for good (Amelia,
-# 2026-10-23: "need to fix so it doesn't show I attended things I skipped").
-# Within a year the dated ones come newest first, the undated ones after them.
+# The past list, as year blocks, newest year first. Within a year the dated
+# ones come newest first, the undated ones after them.
 past_events <- function(today = site_today(), events = site_events()) {
   ev <- events$events
   if (!length(ev)) return(list())
+  keep <- event_status(ev, today) == "past"
   dates <- event_dates(ev)
-  keep <- (is.na(dates) | dates < today) & vapply(ev, function(e) isTRUE(e$attended), logical(1))
   ev <- ev[keep]
   dates <- dates[keep]
   if (!length(ev)) return(list())
@@ -709,14 +733,12 @@ past_events <- function(today = site_today(), events = site_events()) {
   })
 }
 
-# Dated events gone by with no `attended` yet: in neither Upcoming nor Past
-# until Amelia says whether she went. The events page prints them to the
-# render log, so a publish is where she is asked.
+# Events waiting for Amelia to say whether she went. The events page prints
+# them to the render log, so a publish is where she is asked.
 unconfirmed_events <- function(today = site_today(), events = site_events()) {
   ev <- events$events
   if (!length(ev)) return(list())
-  dates <- event_dates(ev)
-  ev[!is.na(dates) & dates < today & vapply(ev, function(e) is.null(e$attended), logical(1))]
+  ev[event_status(ev, today) == "unconfirmed"]
 }
 
 # Write the unconfirmed list to the render log. stderr rather than message(),
@@ -725,7 +747,7 @@ note_unconfirmed <- function(today = site_today(), events = site_events()) {
   ev <- unconfirmed_events(today, events)
   if (!length(ev)) return(invisible())
   what <- vapply(ev, function(e) {
-    paste0("  ", e$date, "  ", e$id %||% substr(trimws(e$text), 1, 50))
+    paste0("  ", e$date %||% e$year, "  ", e$id %||% substr(trimws(e$text), 1, 50))
   }, character(1))
   cat("events.yml: ", length(ev), " past event", if (length(ev) > 1) "s", " left off the page ",
       "until marked `attended: true` (went) or `attended: false` (did not):\n",

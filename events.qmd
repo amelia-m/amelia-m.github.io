@@ -1,7 +1,8 @@
 ---
 title: "Events"
-# Moves an event from Upcoming to Past the day after it happens, without a
-# republish. See js/events.js.
+# Takes an event out of Upcoming the day after it happens, without a
+# republish; it goes into Past only once events.yml marks it attended. See
+# js/events.js.
 include-after-body: _includes/events.html
 ---
 
@@ -30,11 +31,13 @@ if (length(soon)) {
 for (e in ev$regulars) cat("- ", event_line(e), "\n", sep = "")
 ```
 
-## Past
-
 ```{r}
 #| results: asis
-for (block in past_events(events = ev)) {
+# Past can be empty now that it needs confirming, so its heading is written
+# only when there is something under it, as Upcoming's is.
+blocks <- past_events(events = ev)
+if (length(blocks)) cat("## Past\n\n")
+for (block in blocks) {
   cat("### ", block$year, "\n\n", sep = "")
   for (e in block$items) cat("- ", event_line(e, past = TRUE), "\n", sep = "")
   cat("\n")
