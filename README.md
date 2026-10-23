@@ -10,6 +10,8 @@ Edited by hand here: the home page, `research.qmd`, `teaching.qmd`, `contact.qmd
 
 Events live in `events.yml`, which feeds both `events.qmd` and the home page callout. One dated list covers the whole page: an entry moves from Upcoming to Past the day after it happens, filed under its year, so attending something leaves a record rather than deleting a line. The callout names the next event only within six weeks of it and falls back to the regulars otherwise. Nothing here is kept in sync by hand. A note written looking forward can carry a `past_note` to replace it afterwards.
 
+That split is made twice: by `R/site.R` when the site is built, and again in the reader's browser by `js/events.js`, so an event moves to Past and the callout moves on without a republish. The two copies of the rule (an event is upcoming through its own day; the callout's six-week window, carried in the page as `data-from`) are kept in step by hand, so change them together. Republishing is still needed to add or change an event.
+
 `BIOS.md` lists every place a title, employer, or short biography is written down, here and on the external profiles, for when one of them changes. `WORDING.md` records why the words are the words, including the options that were rejected and the reasons they were. `areas.yml` groups the work into research, public policy, public health, and education and lists the projects in each, including past ones that produced no publication; it renders nowhere and is read with `work_areas()`. `investigate.yml` holds verification notes on look-into items; the look-into list itself is kept outside this repository, and new items go there, not here. It renders nowhere either.
 
 ## Build and publish

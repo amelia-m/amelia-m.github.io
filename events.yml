@@ -70,6 +70,24 @@ events:
     more:
       - id: carpentries-sessions
         label: Registration
+  # Title and speakers read off the Meetup event page on 2026-10-23. Werner
+  # hosts and sponsors it, which is how the page names the venue.
+  - id: ai-omaha-2026-11-05
+    date: 2026-11-05
+    when: Thursday, November 5, 2026
+    where: Werner Enterprises, Omaha, NE
+    note: >-
+      "From Auto-Complete to Dark Factories: Accelerating Engineering
+      Practices": Jason Nash and Jason Schwarz on how Werner has changed its
+      software engineering practices with AI.
+  # Details read off Amelia's screenshot of the Luma page on 2026-10-23.
+  - id: startup-week-2026-11-16
+    date: 2026-11-16
+    when: Monday, November 16, 2026
+    where: Ashland Brewing Company, Ashland, NE
+    note: >-
+      The opening night of Startup Week 2026, a week of startup events across
+      Nebraska from November 16 to 21, hosted by Open Range.
   # Talk title, speaker and format read off the chapter's event page on
   # 2026-10-21. Linked to the chapter, like the October meetup, because the
   # event page goes stale after the date.

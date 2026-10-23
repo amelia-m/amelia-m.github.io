@@ -160,6 +160,18 @@ events:
   - id: lincoln-ai
     label: Lincoln AI
     url: https://www.meetup.com/lincoln-ai/
+  # The event page rather than the group's, because Meetup keeps a past
+  # event's page, so it serves while upcoming and afterwards as the record.
+  # Fetched 2026-10-23 and live.
+  - id: ai-omaha-2026-11-05
+    label: AI Omaha
+    url: https://www.meetup.com/ai_omaha/events/317053693/
+  # As Amelia gave it on 2026-10-23, with the tk= invitation token and the
+  # utm_ tracking parameters removed. Luma does not resolve from the build
+  # environment, so the render cannot check it.
+  - id: startup-week-2026-11-16
+    label: Startup Week Launch Party
+    url: https://luma.com/8snwjdij
   # The group behind the October 21 meetup, as Amelia gave it on 2026-10-22.
   # It does not resolve from the build environment, so the render cannot check
   # it. Its LinkedIn, X, Facebook and Instagram accounts are all "witheartland";

@@ -689,7 +689,9 @@ home_callout <- function(weeks = 6, today = Sys.Date(), events = site_events()) 
   hide <- function(h) if (h) " hidden=\"hidden\"" else ""
   lines <- vapply(seq_along(soon), function(i) {
     e <- soon[[i]]
-    what <- if (is.null(e$id)) end_period(trimws(e$text)) else
+    # `text` wins over `id`, as in event_line(), so both pages name an entry
+    # the same way.
+    what <- if (!is.null(e$text)) end_period(trimws(e$text)) else
       paste0(link(e$id), if (!is.null(e$when)) paste0(", ", e$when), ".")
     paste0("::: {.event-next data-from=\"", dates[i] - weeks * 7, "\" data-date=\"",
            dates[i], "\"", hide(i != shown), "}\n**Next up:** ", what,
