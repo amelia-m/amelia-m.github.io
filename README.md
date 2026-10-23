@@ -6,7 +6,7 @@ Personal academic website for Amelia Miramonti, built with [Quarto](https://quar
 
 Files in `_data/` and `files/` are generated from a separate source repository. Do not edit them by hand; changes are overwritten on the next export.
 
-Edited by hand here: the home page, `research.qmd`, `teaching.qmd`, `contact.qmd`, `events.qmd`, `events.yml`, `posit-conf-2026.qmd`, `fun.qmd`, blog posts, and images.
+Everything else is edited by hand here: the pages, the data files at the root (`events.yml`, `links.yml`, `likes.yml`, `bios.yml`, `areas.yml`, `contributions.yml`, `investigate.yml`), `_quarto.yml`, the stylesheets, `R/`, `js/`, `_includes/`, blog posts, and images. A new file outside `_data/` and `files/` is hand-edited too.
 
 Events live in `events.yml`, which feeds both `events.qmd` and the home page callout. One dated list covers the whole page: an entry moves from Upcoming to Past the day after it happens, filed under its year, so attending something leaves a record rather than deleting a line. The callout names the next event only within six weeks of it and falls back to the regulars otherwise. Nothing here is kept in sync by hand. A note written looking forward can carry a `past_note` to replace it afterwards.
 

@@ -53,10 +53,14 @@ until going is actually a pattern.
 **Prefer durable to precise when the page is published by hand.** Lincoln AI
 moved from Wednesdays to Tuesdays partway through the year, so the cadence does
 not name a day. Link a group's home page rather than a dated event page, which
-stops being useful the day after.
+stops being useful the day after, unless the event page outlives the event:
+Meetup keeps a past meetup's page, so a Meetup event link serves first as the
+place to sign up and then as the record.
 
-**Do not publish a URL that could not be checked.** Where a link had to go in
-unverified, the data file says so next to it.
+**Do not publish a URL nobody has opened.** Check it from here where the
+build environment can reach the host. Where it cannot, a URL Amelia gave from
+her own browser counts as opened by her, and the data file says so next to it;
+one she has not given stays out until she does.
 
 **Say which AI, and which part.** "AI-assisted" covers everything from one
 completion to the whole thing, so it tells a reader nothing. pleasantry was
