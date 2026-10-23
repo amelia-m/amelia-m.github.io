@@ -4,9 +4,12 @@
 # already happened. R/site.R reads this.
 #
 # `events` is a single list covering both halves of the page. An entry dated
-# today or later is Upcoming; anything earlier is Past, newest year first.
-# Nothing is moved by hand, so an event you attended stays on the page as a
-# record of having attended it.
+# today or later is Upcoming. Past is a record of having been there, so an
+# earlier entry appears in it, newest year first, only once it is marked
+# `attended: true`; `attended: false` keeps it off the page. Until it is
+# marked it is in neither half, and every render lists it in the log so the
+# question gets asked (Amelia, 2026-10-23: "need to fix so it doesn't show I
+# attended things I skipped").
 #
 # Fields:
 #   id        an id in links.yml, which supplies the label and the URL
@@ -22,10 +25,13 @@
 #   more      further links.yml ids, shown in parentheses at the end. Works on
 #             a `text` entry too, which is how one of those carries a link
 #             without the URL being written out here as a second copy.
+#   attended  true once Amelia has confirmed she went, which is what puts a
+#             past event on the page; false if she did not, or will not, go.
+#             Left out for an event still to come.
 #   text      a whole line of Markdown, for an event with no links.yml entry.
-#             Only `date` or `year` and `more` go with it; `when`, `where`,
-#             `note` and `past_note` would be ignored, so they stop the
-#             render, as does a field name nothing uses.
+#             Only `date` or `year`, `more` and `attended` go with it; `when`,
+#             `where`, `note` and `past_note` would be ignored, so they stop
+#             the render, as does a field name nothing uses.
 #   cadence   regulars only, in place of a date ("most Wednesday mornings")
 #
 # `note` is Markdown but not knitr source, so it cannot carry inline R: the
@@ -125,6 +131,7 @@ events:
   # providing it.
   - id: witheartland-2026-10-21
     date: 2026-10-21
+    attended: true
     where: Improving, Elkhorn, NE
     note: >-
       "She Built This! Founders Behind Heartland Startups": four women founders
@@ -136,6 +143,7 @@ events:
     date: 2026-09-29
   - id: lincoln-ai-2026-05-06
     date: 2026-05-06
+    attended: true
     note: The first Explorers meeting, largely a discussion of what the group should be.
   # No link: this one was organised through NebraskaJS on lu.ma rather than
   # Meetup. lu.ma does not resolve from the build environment, and the URL
@@ -145,11 +153,13 @@ events:
       Share Your AI Workflow, March 11, 2026. A NebraskaJS and Lincoln AI
       lightning talk night at Don't Panic Labs.
     date: 2026-03-11
+    attended: true
   - text: >-
       posit::conf(2026), Houston, September 14 to 16, attended in person.
       [Things I'm happy to talk about](posit-conf-2026.qmd). The Monday was
       Hadley Wickham and Jenny Bryan's pre-conference workshop.
     date: 2026-09-14
+    attended: true
     # No label here on purpose. The links.yml entry already carries the
     # workshop's name, so letting it supply the text names the workshop
     # without the name being written out a second time.
@@ -157,6 +167,7 @@ events:
       - id: modern-r-workflow
   - text: Nebraska Women in Tech Summit, event volunteer.
     year: 2026
+    attended: true
 
 regulars:
   - id: one-million-cups-lnk

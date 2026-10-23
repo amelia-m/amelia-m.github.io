@@ -96,7 +96,8 @@ they were found.
       use at the time of the commit.
 - [ ] agent-config `AGENTS.md`, "AI attribution in git and pull requests is decided per
       project": the "always the current model" rule belongs there too, for every project that
-      allows a trailer. A draft line was handed to Amelia on 2026-10-21.
+      allows a trailer. Draft handed to the agent-config session on 2026-10-23; delete this
+      once it is in AGENTS.md there.
 
 ## Open questions
 
@@ -107,11 +108,10 @@ they were found.
 - [ ] `areas.yml` has `todo` fields, mostly on the older positions, and entries with no role
       recorded at all. `work_areas()` lists both.
 - [ ] Make sure the look-into Claude Doc is not shared by link, and turn link sharing off if it is.
-- [ ] Every dated event moves to Past on its own, and README.md and events.yml call Past a
-      record of having attended. An event Amelia registers for and then skips would be
-      published as attended until someone removes it. Options: remove a skipped event by hand
-      (as now), add an `attended: false` field that keeps it off Past, or describe Past as
-      events listed rather than attended. Raised by the whole-site review of 2026-10-23.
+- [ ] Confirm three past events, now off the page until marked: Lincoln.Code on 2026-09-29,
+      NebraskaJS with AI Engineer Omaha on 2026-10-15, and the Carpentries Welcome Session on
+      2026-10-21. Nothing in the repository records whether Amelia went, so each needs
+      `attended: true` or `attended: false` in events.yml. Every render lists them too.
 - [ ] The WiTH link is `http://witheartland.org/` as given. Does the site open as `https://`?
       The build environment cannot reach it to check.
 - [ ] The UTF-8 locale switch sits at the top of `R/site.R`, so it covers only pages that source

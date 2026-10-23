@@ -602,8 +602,8 @@ site_events <- function(file = "events.yml") {
   # does not read for that kind of entry, or a misspelled one, never shows.
   # A `text` entry is its own whole line, so only its date or year and
   # `more` links are read; a linked entry reads every field below.
-  linked <- c("id", "date", "year", "when", "where", "note", "past_note", "more")
-  textual <- c("text", "date", "year", "more")
+  linked <- c("id", "date", "year", "when", "where", "note", "past_note", "more", "attended")
+  textual <- c("text", "date", "year", "more", "attended")
   for (e in ev$events) {
     what <- e$id %||% substr(trimws(e$text %||% "(no id or text)"), 1, 40)
     if (is.null(e$date) && is.null(e$year)) stop(file, ": ", what, " has neither `date` nor `year`")
@@ -616,6 +616,9 @@ site_events <- function(file = "events.yml") {
     }
     if (!is.null(e$year) && !grepl("^[0-9]{4}$", as.character(e$year))) {
       stop(file, ": ", what, " has a `year` that is not a four-digit year: ", e$year)
+    }
+    if (!is.null(e$attended) && !(is.logical(e$attended) && length(e$attended) == 1 && !is.na(e$attended))) {
+      stop(file, ": ", what, " has `attended: ", e$attended, "`; use true or false")
     }
     extra <- setdiff(names(e), if (is.null(e$text)) linked else textual)
     if (length(extra)) {
@@ -679,19 +682,22 @@ upcoming_events <- function(today = site_today(), events = site_events()) {
   ev <- events$events
   if (!length(ev)) return(list())
   dates <- event_dates(ev)
-  keep <- !is.na(dates) & dates >= today
+  # `attended: false` set ahead of time means not going after all.
+  keep <- !is.na(dates) & dates >= today & !vapply(ev, function(e) isFALSE(e$attended), logical(1))
   ev[keep][order(dates[keep])]
 }
 
-# Everything else, as year blocks, newest year first. This is the other half of
-# the same list: an event does not need moving once it happens, it just stops
-# being upcoming, which is what keeps a record of where I have actually been.
+# The past half of the same list, as year blocks, newest year first. Past is a
+# claim that Amelia was there, so an event appears in it only once she has
+# confirmed that with `attended: true`; until then it is in neither half (see
+# unconfirmed_events), and `attended: false` keeps it off for good (Amelia,
+# 2026-10-23: "need to fix so it doesn't show I attended things I skipped").
 # Within a year the dated ones come newest first, the undated ones after them.
 past_events <- function(today = site_today(), events = site_events()) {
   ev <- events$events
   if (!length(ev)) return(list())
   dates <- event_dates(ev)
-  keep <- is.na(dates) | dates < today
+  keep <- (is.na(dates) | dates < today) & vapply(ev, function(e) isTRUE(e$attended), logical(1))
   ev <- ev[keep]
   dates <- dates[keep]
   if (!length(ev)) return(list())
@@ -703,6 +709,30 @@ past_events <- function(today = site_today(), events = site_events()) {
   })
 }
 
+# Dated events gone by with no `attended` yet: in neither Upcoming nor Past
+# until Amelia says whether she went. The events page prints them to the
+# render log, so a publish is where she is asked.
+unconfirmed_events <- function(today = site_today(), events = site_events()) {
+  ev <- events$events
+  if (!length(ev)) return(list())
+  dates <- event_dates(ev)
+  ev[!is.na(dates) & dates < today & vapply(ev, function(e) is.null(e$attended), logical(1))]
+}
+
+# Write the unconfirmed list to the render log. stderr rather than message(),
+# which the project's `message: false` would swallow.
+note_unconfirmed <- function(today = site_today(), events = site_events()) {
+  ev <- unconfirmed_events(today, events)
+  if (!length(ev)) return(invisible())
+  what <- vapply(ev, function(e) {
+    paste0("  ", e$date, "  ", e$id %||% substr(trimws(e$text), 1, 50))
+  }, character(1))
+  cat("events.yml: ", length(ev), " past event", if (length(ev) > 1) "s", " left off the page ",
+      "until marked `attended: true` (went) or `attended: false` (did not):\n",
+      paste(what, collapse = "\n"), "\n", sep = "", file = stderr())
+  invisible()
+}
+
 # The pages are rebuilt only when Amelia publishes, so what counts as upcoming
 # is decided twice: here, as of the build, and again in the reader's browser by
 # js/events.js, as of the day they read it. Each function below writes the
@@ -711,22 +741,13 @@ past_events <- function(today = site_today(), events = site_events()) {
 # as of today. The data- attributes and classes are the interface between the
 # two; change them together.
 
-# An Upcoming list item, carrying its date so the script can move it into Past
-# the day after it happens. The script un-bolds the name itself; only an event
-# with a `past_note` also carries its past wording, hidden, because that text
-# goes into the site search index as well, and a second copy of every line
-# would double every Upcoming entry there.
-#
-# The date is written as YYYY-MM-DD whatever form YAML gave it, since the
-# script compares dates as strings. Only a linked entry has a bold name to
-# drop (data-unbold); a `text` entry reads the same once past, as on a build,
-# and event_line() ignores `past_note` for one, so it never gets a copy.
+# An Upcoming list item, carrying its date so the script can drop it from
+# Upcoming the day after it happens. It does not move into Past there: that
+# waits for `attended: true` and the next publish. The date is written as
+# YYYY-MM-DD whatever form YAML gave it, since the script compares dates as
+# strings.
 event_item <- function(e) {
-  attrs <- paste0(".event data-date=\"", format(as.Date(as.character(e$date))), "\"",
-                  if (is.null(e$text)) " data-unbold=\"true\"")
-  if (!is.null(e$text) || is.null(e$past_note)) return(paste0("[", event_line(e), "]{", attrs, "}"))
-  paste0("[[", event_line(e), "]{.event-now}[", event_line(e, past = TRUE),
-         "]{.event-then hidden=\"hidden\"}]{", attrs, "}")
+  paste0("[", event_line(e), "]{.event data-date=\"", format(as.Date(as.character(e$date))), "\"}")
 }
 
 # The "Often at" line naming the regulars, or "" when there are none.

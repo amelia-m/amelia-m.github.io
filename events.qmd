@@ -39,4 +39,7 @@ for (block in past_events(events = ev)) {
   for (e in block$items) cat("- ", event_line(e, past = TRUE), "\n", sep = "")
   cat("\n")
 }
+# Past events not yet marked attended or not go to the render log, not the
+# page: this is where Amelia is asked.
+note_unconfirmed(events = ev)
 ```
