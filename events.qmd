@@ -1,5 +1,8 @@
 ---
 title: "Events"
+# Moves an event from Upcoming to Past the day after it happens, without a
+# republish. See js/events.js.
+include-after-body: _includes/events.html
 ---
 
 ```{r}
@@ -15,7 +18,7 @@ Where to find me, in person and online. If you'll be at one of these, come say h
 soon <- upcoming_events(events = ev)
 if (length(soon)) {
   cat("## Upcoming\n\n")
-  for (e in soon) cat("- ", event_line(e), "\n", sep = "")
+  for (e in soon) cat("- ", event_item(e), "\n", sep = "")
   cat("\n")
 }
 ```

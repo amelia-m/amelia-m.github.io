@@ -632,6 +632,40 @@ past_events <- function(today = Sys.Date(), events = site_events()) {
   })
 }
 
+# The pages are rebuilt only when Amelia publishes, so what counts as upcoming
+# is decided twice: here, as of the build, and again in the reader's browser by
+# js/events.js, as of the day they read it. Each function below writes the
+# build-time answer as the visible one and marks up the rest for the script, so
+# a reader without JavaScript sees the page as built and everyone else sees it
+# as of today. The data- attributes and classes are the interface between the
+# two; change them together.
+
+# An Upcoming list item, carrying its date so the script can move it into Past
+# the day after it happens. The script un-bolds the name itself; only an event
+# with a `past_note` also carries its past wording, hidden, because that text
+# goes into the site search index as well, and a second copy of every line
+# would double every Upcoming entry there.
+event_item <- function(e) {
+  attrs <- paste0(".event data-date=\"", e$date, "\"")
+  if (is.null(e$past_note)) return(paste0("[", event_line(e), "]{", attrs, "}"))
+  paste0("[[", event_line(e), "]{.event-now}[", event_line(e, past = TRUE),
+         "]{.event-then hidden=\"hidden\"}]{", attrs, "}")
+}
+
+# The "Often at" line naming the regulars, or "" when there are none.
+regulars_line <- function(events = site_events()) {
+  reg <- events$regulars
+  if (!length(reg)) return("")
+  first <- reg[[1]]
+  cadence <- first$cadence %||% "regularly"
+  rest <- vapply(reg[-1], function(r) link(r$id), character(1))
+  out <- paste0("**Often at:** ", link(first$id), ", ", cadence)
+  if (length(rest)) {
+    out <- paste0(out, ", plus ", and_list(rest))
+  }
+  paste0(out, ". [More events](events.qmd).")
+}
+
 # The home page callout.
 #
 # Names the next event only when it is close enough to be worth a reader's
@@ -639,29 +673,34 @@ past_events <- function(today = Sys.Date(), events = site_events()) {
 # while 1 Million Cups was happening that Wednesday. Past `weeks`, the callout
 # points at the regulars instead, and with neither it returns "" so the home
 # page simply omits it.
+#
+# Every upcoming event gets a line, soonest first, with the first day it is
+# worth naming (`data-from`) and its own date; only the one current at build
+# time is visible, and the script picks again on the day. The whole callout
+# sits in an .event-callout wrapper, hidden when nothing is current at build
+# time, so the script can still show an event that comes into range later.
+# Returns the complete Markdown, or "" when there is nothing it could ever show.
 home_callout <- function(weeks = 6, today = Sys.Date(), events = site_events()) {
   soon <- upcoming_events(today, events)
-  if (length(soon)) {
-    e <- soon[[1]]
-    if (as.Date(e$date) - today <= weeks * 7) {
-      return(paste0(
-        "**Next up:** ", link(e$id), ", ", e$when,
-        ". [More events](events.qmd)."
-      ))
-    }
+  fallback <- regulars_line(events)
+  if (!length(soon) && !nzchar(fallback)) return("")
+  dates <- event_dates(soon)
+  shown <- if (length(soon) && dates[1] - today <= weeks * 7) 1L else 0L
+  hide <- function(h) if (h) " hidden=\"hidden\"" else ""
+  lines <- vapply(seq_along(soon), function(i) {
+    e <- soon[[i]]
+    what <- if (is.null(e$id)) end_period(trimws(e$text)) else
+      paste0(link(e$id), if (!is.null(e$when)) paste0(", ", e$when), ".")
+    paste0("::: {.event-next data-from=\"", dates[i] - weeks * 7, "\" data-date=\"",
+           dates[i], "\"", hide(i != shown), "}\n**Next up:** ", what,
+           " [More events](events.qmd).\n:::")
+  }, character(1))
+  if (nzchar(fallback)) {
+    lines <- c(lines, paste0("::: {.event-fallback", hide(shown > 0), "}\n", fallback, "\n:::"))
   }
-  reg <- events$regulars
-  if (length(reg)) {
-    first <- reg[[1]]
-    cadence <- first$cadence %||% "regularly"
-    rest <- vapply(reg[-1], function(r) link(r$id), character(1))
-    out <- paste0("**Often at:** ", link(first$id), ", ", cadence)
-    if (length(rest)) {
-      out <- paste0(out, ", plus ", and_list(rest))
-    }
-    return(paste0(out, ". [More events](events.qmd)."))
-  }
-  ""
+  paste0(":::: {.event-callout", hide(!shown && !nzchar(fallback)), "}\n",
+         "::: {.callout-tip appearance=\"simple\"}\n",
+         paste(lines, collapse = "\n\n"), "\n:::\n::::\n")
 }
 
 # ---- Bios -----------------------------------------------------------------

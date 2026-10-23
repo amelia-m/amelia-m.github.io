@@ -4,7 +4,10 @@ title-block-banner: false
 page-layout: article
 toc: false
 # Drifting-dot background, this page only: it fades in below the banner photo.
-include-after-body: _includes/particles-bg.html
+# events.html keeps the "Next up" callout current between publishes.
+include-after-body:
+  - _includes/particles-bg.html
+  - _includes/events.html
 ---
 
 ```{r}
@@ -37,13 +40,12 @@ cat(link_button("github"), link_button("linkedin"), link_button("orcid"),
 
 ```{r}
 #| results: asis
-# Built from events.yml, so it cannot advertise something already past. Names
-# the next event when it is within six weeks and points at the regulars
-# otherwise; prints nothing when there is neither.
-note <- home_callout()
-if (nzchar(note)) {
-  cat("::: {.callout-tip appearance=\"simple\"}\n", note, "\n:::\n", sep = "")
-}
+# Built from events.yml as of the build, then chosen again in the reader's
+# browser by js/events.js, so with JavaScript it does not advertise something
+# already past; without it, it reads as built. Names the next event when it is
+# within six weeks and points at the regulars otherwise; prints nothing when
+# there is neither.
+cat(home_callout())
 ```
 
 Hi, I'm Amelia! I'm a postdoctoral researcher and adjunct faculty member at the University of Nebraska–Lincoln. I work in the Nebraska Evaluation and Research (NEAR) Center, a statistics and data consulting center, and partner with the University of Nebraska Public Policy Center (NUPPC) and the Nebraska Statewide Workforce and Educational Reporting System (NSWERS), Nebraska's statewide longitudinal data system. I also teach data management and survey methods to graduate students.
