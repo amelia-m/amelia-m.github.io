@@ -29,18 +29,33 @@ QUARTO_VERSION="1.10.19"
 # The list is captured first because, under pipefail, `locale -a | grep -q`
 # fails whenever grep quits early on a match and locale is killed writing the
 # rest, which would skip this without a word.
-# LC_ALL overrides both when set, as some images do with LC_ALL=POSIX, so it
-# is replaced too in that case. With no UTF-8 locale available, say so rather
-# than carry on as if the export had happened.
+#
+# C.UTF-8 by preference: it sorts the same way as C and POSIX, so the whole
+# locale can move to it. Failing that, any UTF-8 locale the machine has (such
+# as en_US.utf8, which R/site.R also accepts), but for character handling
+# only, LC_CTYPE, so sort order and number formats stay as they were (Amelia,
+# 2026-10-23: keep the fallback, character handling only). LC_ALL overrides
+# every category when set, as some images do with LC_ALL=POSIX: with C.UTF-8
+# it is replaced too; with a fallback it is emptied, which the C library
+# treats as unset, and its value kept as LANG, so only LC_CTYPE changes. With
+# no UTF-8 locale at all, say so rather than carry on as if it were fixed.
+# grep -m 1 rather than a pipe into head, for the pipefail reason above.
 locales="$(locale -a 2>/dev/null || true)"
+c_utf8="$(grep -m 1 -ix 'c\.utf-\?8' <<<"$locales" || true)"
+any_utf8="$(grep -m 1 -i '\.utf-\?8$' <<<"$locales" || true)"
 if [ -n "${CLAUDE_ENV_FILE:-}" ]; then
-  if grep -qix 'c\.utf-\?8' <<<"$locales"; then
-    echo 'export LANG=C.UTF-8 LC_CTYPE=C.UTF-8' >> "$CLAUDE_ENV_FILE"
+  if [ -n "$c_utf8" ]; then
+    echo "export LANG=$c_utf8 LC_CTYPE=$c_utf8" >> "$CLAUDE_ENV_FILE"
     if [ -n "${LC_ALL:-}" ]; then
-      echo 'export LC_ALL=C.UTF-8' >> "$CLAUDE_ENV_FILE"
+      echo "export LC_ALL=$c_utf8" >> "$CLAUDE_ENV_FILE"
     fi
+  elif [ -n "$any_utf8" ]; then
+    if [ -n "${LC_ALL:-}" ]; then
+      printf 'export LC_ALL= LANG=%q\n' "$LC_ALL" >> "$CLAUDE_ENV_FILE"
+    fi
+    echo "export LC_CTYPE=$any_utf8" >> "$CLAUDE_ENV_FILE"
   else
-    echo "session-start: no C.UTF-8 locale; R chunks outside R/site.R render under the shell's (${LC_ALL:-${LC_CTYPE:-${LANG:-unset}}}), and check-output will flag any damage" >&2
+    echo "session-start: no UTF-8 locale; R chunks outside R/site.R render under the shell's (${LC_ALL:-${LC_CTYPE:-${LANG:-unset}}}), and check-output will flag any damage" >&2
   fi
 fi
 
