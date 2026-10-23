@@ -35,6 +35,7 @@
   var dots = [];
   var w = 0;
   var h = 0;
+  var dpr = 1;
   var fadeStart = 150; // scroll offset at which the fade begins; set in resize()
   var dotColor = "43, 92, 138";
   var frame = null;
@@ -59,10 +60,14 @@
     };
   }
 
+  function pixelRatio() {
+    return Math.min(window.devicePixelRatio || 1, 2);
+  }
+
   // `recount` false keeps the dots as they are and only resizes the canvas;
   // see the resize listener below.
   function resize(recount) {
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    dpr = pixelRatio();
     w = host.clientWidth;
     h = host.clientHeight;
     canvas.width = Math.round(w * dpr);
@@ -187,16 +192,17 @@
 
   // On a phone the address bar showing and hiding fires resize over and over
   // during a scroll, changing only the height. Coalesce the events into one
-  // per frame, skip any that leave the size unchanged, and re-count the dots
-  // only when the width changes: adding and dropping dots on every height
-  // change made them visibly pop in and out while scrolling.
+  // per frame, skip any that leave the size and pixel ratio unchanged (the
+  // ratio changes alone when the window moves to a sharper screen), and
+  // re-count the dots only when the width changes: adding and dropping dots
+  // on every height change made them visibly pop in and out while scrolling.
   var resizePending = false;
   window.addEventListener("resize", function () {
     if (resizePending) return;
     resizePending = true;
     window.requestAnimationFrame(function () {
       resizePending = false;
-      if (host.clientWidth === w && host.clientHeight === h) return;
+      if (host.clientWidth === w && host.clientHeight === h && pixelRatio() === dpr) return;
       resize(host.clientWidth !== w);
       schedule();
     });

@@ -155,8 +155,9 @@ latex_text <- function(x) {
   x <- gsub("--", "–", x, fixed = TRUE)
   x <- gsub("~", " ", x, fixed = TRUE)
   x <- gsub("[{}]", "", x)
-  x <- chartr("\001\002\003", "${}", x)
+  # URLs back before the escaped specials, which a URL can contain too.
   for (i in seq_along(urls)) x <- sub(sprintf("\004%d\004", i), urls[i], x, fixed = TRUE)
+  x <- chartr("\001\002\003", "${}", x)
   trimws(gsub("[[:space:]]+", " ", x))
 }
 
@@ -536,10 +537,23 @@ print_likes <- function(file = "likes.yml") {
   # A repeated name gives two cards the same anchor, so `see:` lands on
   # whichever comes first; a bare duplicate line once rendered as an empty
   # card that way. Stop on both that and a `see:` naming no card.
+  # A section with groups draws only those, as the loop below does, so its
+  # own `items` would silently not appear: stop on that too. Unnamed items
+  # are left to card(), which says so more plainly; a name with no letters
+  # or digits would get the bare anchor "like-", so it stops here.
+  for (s in data$sections) {
+    if (length(s$groups) && length(s$items)) {
+      stop(file, ": section '", s$title, "' has both `groups` and `items`; only the groups are shown")
+    }
+  }
   items <- unlist(lapply(data$sections, function(s) {
-    c(s$items, unlist(lapply(s$groups, function(g) g$items), recursive = FALSE))
+    if (length(s$groups)) unlist(lapply(s$groups, function(g) g$items), recursive = FALSE) else s$items
   }), recursive = FALSE)
-  slugs <- vapply(items, function(it) slug(it$name %||% ""), character(1))
+  names <- vapply(items, function(it) it$name %||% "", character(1))
+  slugs <- vapply(names, slug, character(1), USE.NAMES = FALSE)
+  bare <- names[nzchar(names) & !nzchar(slugs)]
+  if (length(bare)) stop(file, ": a card name needs a letter or digit for its anchor: ", paste(bare, collapse = ", "))
+  slugs <- slugs[nzchar(slugs)]
   dup <- unique(slugs[duplicated(slugs)])
   if (length(dup)) stop(file, ": more than one card named ", paste(dup, collapse = ", "))
   see <- unlist(lapply(items, function(it) it$see))
@@ -581,14 +595,33 @@ check_navbar_links <- function() {
 
 site_events <- function(file = "events.yml") {
   ev <- read_yaml_utf8(site_path(file))
-  # An entry with neither a date nor a year would match no year block and
-  # vanish from the page with the render still succeeding; a date that does
-  # not parse would be filed wrongly. Stop on both instead.
+  # Each of these would otherwise vanish or be ignored with the render still
+  # succeeding: an entry with neither a date nor a year, or a year that is
+  # not a number, matches no year block; a date in another form (2026/12/02)
+  # turns NA in event_dates() and lands in Past; and a field event_line()
+  # does not read for that kind of entry, or a misspelled one, never shows.
+  # A `text` entry is its own whole line, so only its date or year and
+  # `more` links are read; a linked entry reads every field below.
+  linked <- c("id", "date", "year", "when", "where", "note", "past_note", "more")
+  textual <- c("text", "date", "year", "more")
   for (e in ev$events) {
     what <- e$id %||% substr(trimws(e$text %||% "(no id or text)"), 1, 40)
     if (is.null(e$date) && is.null(e$year)) stop(file, ": ", what, " has neither `date` nor `year`")
-    if (!is.null(e$date) && is.na(as.Date(as.character(e$date), optional = TRUE))) {
-      stop(file, ": ", what, " has a `date` that is not YYYY-MM-DD: ", e$date)
+    if (!is.null(e$date)) {
+      d <- as.character(e$date)
+      if (!grepl("^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$", d) ||
+          is.na(as.Date(d, format = "%Y-%m-%d", optional = TRUE))) {
+        stop(file, ": ", what, " has a `date` that is not YYYY-MM-DD: ", d)
+      }
+    }
+    if (!is.null(e$year) && !grepl("^[0-9]{4}$", as.character(e$year))) {
+      stop(file, ": ", what, " has a `year` that is not a four-digit year: ", e$year)
+    }
+    extra <- setdiff(names(e), if (is.null(e$text)) linked else textual)
+    if (length(extra)) {
+      stop(file, ": ", what, " has ", paste0("`", extra, "`", collapse = ", "),
+           if (is.null(e$text)) ", which no entry uses" else
+             ", which a `text` entry ignores; put it in the text instead")
     }
   }
   ev
@@ -627,7 +660,7 @@ event_line <- function(e, past = FALSE) {
 
 # The dates of every entry in `events`, NA where only a `year` is recorded.
 event_dates <- function(ev) {
-  as.Date(vapply(ev, function(e) as.character(e$date %||% NA), character(1)))
+  as.Date(vapply(ev, function(e) as.character(e$date %||% NA), character(1)), format = "%Y-%m-%d")
 }
 
 # The year an event is filed under: from its date, or from `year` for a past
@@ -733,8 +766,10 @@ home_callout <- function(weeks = 6, today = site_today(), events = site_events()
   hide <- function(h) if (h) " hidden=\"hidden\"" else ""
   lines <- vapply(seq_along(soon), function(i) {
     e <- soon[[i]]
-    # `text` wins over `id`, as in event_line(), which also adds its `more`
-    # links, so both pages name an entry the same way.
+    # `text` wins over `id`, as in event_line(). A text entry has no name to
+    # link, so it is given whole, with its `more` links; a linked entry is
+    # named by its link and date alone, the note and `more` links being for
+    # the events page.
     what <- if (!is.null(e$text)) end_period(event_line(e)) else
       paste0(link(e$id), if (!is.null(e$when)) paste0(", ", e$when), ".")
     paste0("::: {.event-next data-from=\"", dates[i] - weeks * 7, "\" data-date=\"",

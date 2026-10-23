@@ -22,7 +22,8 @@
   // Run on load, and again when the page comes back into view: a page left
   // open past midnight, or restored by the Back button from the browser's
   // page cache (which does not rerun scripts), would otherwise keep the day
-  // it was first shown. Running twice is safe: what has moved stays moved.
+  // it was first shown. Both events can fire on one restore; running twice
+  // is safe, since what has moved stays moved.
   function update() {
     var now = new Date();
     var today =
