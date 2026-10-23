@@ -51,7 +51,46 @@ body { background-color: transparent; }
     padding-left: .4rem;
     padding-right: .4rem;
   }
+  // The icon links on the right (.ms-auto) sat about 13px apart, which read
+  // as five separate items rather than one group; .2rem looked cramped.
+  .navbar-expand-xl .navbar-nav.ms-auto .nav-link {
+    padding-left: .25rem;
+    padding-right: .25rem;
+  }
 }
+
+// The envelope links to contact.qmd, and Quarto labels any navbar item that
+// points at a page in the site with that page's title, so it showed "Contact"
+// beside the icon, right after the "Contact" link on the left. Text in YAML
+// cannot prevent it: Quarto fills an empty `text` from the page title. Quarto
+// marks the icon-only items .compact, so the labelled one is the right-hand
+// item that is not; give it the icon size and top padding .compact gives the
+// others (Quarto's own values, copied: a 1.1rem icon, no 1px top padding)
+// and hide its label. Side padding is not set here: the rules for the
+// expanded bar and the open menu set it for every icon, and a padding rule
+// this specific would override them for this one item only. The icon keeps
+// its aria-label for screen readers. Everything on the right is meant to be
+// an icon, so a text item added there later would lose its label too.
+.navbar-nav.ms-auto .nav-item:not(.compact) {
+  padding-top: 0;
+  .nav-link { font-size: 1.1rem; }
+  .menu-text { display: none; }
+}
+
+// Quarto puts the search box and the colour toggle after the menu from 992px
+// up, where it expects the bar to be expanded; this bar stays collapsed until
+// 1200px. Between the two, opening the menu dropped both below the list,
+// leaving the name alone on the top row and pushed to the far right. Keep
+// Quarto's own narrow-screen order across the whole collapsed range. 1199.98
+// is `collapse-below: xl` in _quarto.yml; change the two together.
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar #quarto-search { order: 4; margin-left: auto; }
+  .navbar .quarto-navbar-tools { order: 3; }
+}
+
+// Bootstrap draws a heavy ring round the hamburger on :focus, so it stayed
+// boxed in white after a mouse click. Keep the ring for keyboard focus only.
+.navbar-toggler:focus:not(:focus-visible) { box-shadow: none; }
 
 // Collapsed state. Here Quarto's calc(100% - 115px) cap has to stay, since it
 // is what reserves room for the toggler and the search icon, so on a narrow
@@ -77,6 +116,12 @@ body { background-color: transparent; }
   // white-space: normal above had no effect until this stopped being flex.
   // Nothing here uses the logo or subtitle slots.
   .navbar-brand .navbar-title { display: block; min-width: 0; }
+  // In the open menu the five icons stacked one per line under the links, a
+  // tall column of single glyphs. One row instead, wrapping if it ever runs
+  // out of width, with the spacing set by the gap alone: no side padding, so
+  // the first icon lines up with the links above it.
+  .navbar-collapse .navbar-nav.ms-auto { flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
+  .navbar-collapse .navbar-nav.ms-auto .nav-link { padding-left: 0; padding-right: 0; }
 }
 
 // The 320px cap means a wider viewport shows a thinner horizontal slice of the

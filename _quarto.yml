@@ -30,7 +30,9 @@ website:
   navbar:
     # Ten links plus six icons do not fit beside the name at the default `lg`
     # (992px), which is what squeezed the brand and wrapped "Things I Like"
-    # onto two lines. Collapse to the hamburger below 1200px instead.
+    # onto two lines. Collapse to the hamburger below 1200px instead. The
+    # navbar rules in _shared.scss are written for this breakpoint (1200px,
+    # and Quarto's own switch at 992px); change them together.
     collapse-below: xl
     left:
       - href: index.qmd
