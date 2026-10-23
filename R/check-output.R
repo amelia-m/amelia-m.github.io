@@ -212,13 +212,16 @@ for (f in files) {
   }
   text <- readChar(f, file.size(f), useBytes = TRUE)
   Encoding(text) <- "bytes"
-  # Chunk output is a <pre> directly inside a cell-output div. <pre> blocks and
-  # inline code spans are matched together, left to right, so a span inside a
-  # block is taken with its block.
+  # Chunk output is a <pre> inside a cell-output div: directly, or, when the
+  # output is highlighted (class-output), inside the copy-button scaffold and
+  # sourceCode divs Quarto wraps it in. Shown source code sits in a "cell"
+  # div instead, so it is still skipped. <pre> blocks and inline code spans
+  # are matched together, left to right, so a span inside a block is taken
+  # with its block.
   is_output <- function(start, s) {
     startsWith(s, "<pre") &&
-      grepl("<div[^>]*class=\"[^\"]*cell-output[^\"]*\"[^>]*>\\s*$",
-            substr(text, max(1, start - 300), start - 1), perl = TRUE, useBytes = TRUE)
+      grepl("<div[^>]*class=\"[^\"]*cell-output[^\"]*\"[^>]*>\\s*(?:<div[^>]*>\\s*)*$",
+            substr(text, max(1, start - 400), start - 1), perl = TRUE, useBytes = TRUE)
   }
   prose_and_output <- blank(text, code, keep = is_output)  # shown code skipped
   no_script <- blank(text, script)

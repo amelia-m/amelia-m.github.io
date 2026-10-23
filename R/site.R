@@ -113,6 +113,14 @@ latex_text <- function(x) {
   x <- gsub("\\{", "\002", x, fixed = TRUE)
   x <- gsub("\\}", "\003", x, fixed = TRUE)
   x <- gsub("\\\\([&%#_])", "\\1", x)
+  # URLs, bare or in \url{}, keep their ~ and -- (a personal page under
+  # ~name, a slug with a double hyphen): park them until the end.
+  x <- gsub("\\\\url\\{([^}]*)\\}", "\\1", x)
+  um <- gregexpr("https?://[^[:space:]{}]+", x)
+  urls <- regmatches(x, um)[[1]]
+  regmatches(x, um) <- list(sprintf("\004%d\004", seq_along(urls)))
+  # Dotless i and j, as accents are written over them: {\'\i} is í.
+  x <- gsub("\\\\([ij])(?![A-Za-z])", "\\1", x, perl = TRUE)
   # Math delimiters \( \) and $ ... $: keep the content.
   x <- gsub("\\(", "", x, fixed = TRUE)
   x <- gsub("\\)", "", x, fixed = TRUE)
@@ -148,6 +156,7 @@ latex_text <- function(x) {
   x <- gsub("~", " ", x, fixed = TRUE)
   x <- gsub("[{}]", "", x)
   x <- chartr("\001\002\003", "${}", x)
+  for (i in seq_along(urls)) x <- sub(sprintf("\004%d\004", i), urls[i], x, fixed = TRUE)
   trimws(gsub("[[:space:]]+", " ", x))
 }
 
@@ -524,6 +533,18 @@ print_likes <- function(file = "likes.yml") {
     c(out, ":::", "")
   }
   grid <- function(items) c("::: {.grid .like-grid}", "", unlist(lapply(items, card)), ":::", "")
+  # A repeated name gives two cards the same anchor, so `see:` lands on
+  # whichever comes first; a bare duplicate line once rendered as an empty
+  # card that way. Stop on both that and a `see:` naming no card.
+  items <- unlist(lapply(data$sections, function(s) {
+    c(s$items, unlist(lapply(s$groups, function(g) g$items), recursive = FALSE))
+  }), recursive = FALSE)
+  slugs <- vapply(items, function(it) slug(it$name %||% ""), character(1))
+  dup <- unique(slugs[duplicated(slugs)])
+  if (length(dup)) stop(file, ": more than one card named ", paste(dup, collapse = ", "))
+  see <- unlist(lapply(items, function(it) it$see))
+  unknown <- see[!slug(see) %in% slugs]
+  if (length(unknown)) stop(file, ": `see:` names no card: ", paste(unknown, collapse = ", "))
   for (s in data$sections) {
     groups <- if (length(s$groups)) s$groups else list(list(title = NULL, items = s$items))
     groups <- Filter(function(g) length(g$items) > 0, groups)
@@ -559,8 +580,25 @@ check_navbar_links <- function() {
 # the comment at the top of that file for the fields.
 
 site_events <- function(file = "events.yml") {
-  read_yaml_utf8(site_path(file))
+  ev <- read_yaml_utf8(site_path(file))
+  # An entry with neither a date nor a year would match no year block and
+  # vanish from the page with the render still succeeding; a date that does
+  # not parse would be filed wrongly. Stop on both instead.
+  for (e in ev$events) {
+    what <- e$id %||% substr(trimws(e$text %||% "(no id or text)"), 1, 40)
+    if (is.null(e$date) && is.null(e$year)) stop(file, ": ", what, " has neither `date` nor `year`")
+    if (!is.null(e$date) && is.na(as.Date(as.character(e$date), optional = TRUE))) {
+      stop(file, ": ", what, " has a `date` that is not YYYY-MM-DD: ", e$date)
+    }
+  }
+  ev
 }
+
+# Today where the events happen. A build in a UTC container on a Nebraska
+# evening would otherwise already be on tomorrow's date and file that day's
+# event under Past, and js/events.js can only move events into Past, never
+# back out.
+site_today <- function() as.Date(format(Sys.time(), "%Y-%m-%d", tz = "America/Chicago"))
 
 # Markdown for one event: the linked name, then the date or cadence, the venue,
 # the note, and any further links in parentheses. A past event is not bolded
@@ -604,7 +642,7 @@ event_year <- function(e) {
 
 # Upcoming events still ahead of `today`, soonest first. An event leaves
 # Upcoming on its own the day after it happens.
-upcoming_events <- function(today = Sys.Date(), events = site_events()) {
+upcoming_events <- function(today = site_today(), events = site_events()) {
   ev <- events$events
   if (!length(ev)) return(list())
   dates <- event_dates(ev)
@@ -616,7 +654,7 @@ upcoming_events <- function(today = Sys.Date(), events = site_events()) {
 # the same list: an event does not need moving once it happens, it just stops
 # being upcoming, which is what keeps a record of where I have actually been.
 # Within a year the dated ones come newest first, the undated ones after them.
-past_events <- function(today = Sys.Date(), events = site_events()) {
+past_events <- function(today = site_today(), events = site_events()) {
   ev <- events$events
   if (!length(ev)) return(list())
   dates <- event_dates(ev)
@@ -645,9 +683,15 @@ past_events <- function(today = Sys.Date(), events = site_events()) {
 # with a `past_note` also carries its past wording, hidden, because that text
 # goes into the site search index as well, and a second copy of every line
 # would double every Upcoming entry there.
+#
+# The date is written as YYYY-MM-DD whatever form YAML gave it, since the
+# script compares dates as strings. Only a linked entry has a bold name to
+# drop (data-unbold); a `text` entry reads the same once past, as on a build,
+# and event_line() ignores `past_note` for one, so it never gets a copy.
 event_item <- function(e) {
-  attrs <- paste0(".event data-date=\"", e$date, "\"")
-  if (is.null(e$past_note)) return(paste0("[", event_line(e), "]{", attrs, "}"))
+  attrs <- paste0(".event data-date=\"", format(as.Date(as.character(e$date))), "\"",
+                  if (is.null(e$text)) " data-unbold=\"true\"")
+  if (!is.null(e$text) || is.null(e$past_note)) return(paste0("[", event_line(e), "]{", attrs, "}"))
   paste0("[[", event_line(e), "]{.event-now}[", event_line(e, past = TRUE),
          "]{.event-then hidden=\"hidden\"}]{", attrs, "}")
 }
@@ -680,7 +724,7 @@ regulars_line <- function(events = site_events()) {
 # sits in an .event-callout wrapper, hidden when nothing is current at build
 # time, so the script can still show an event that comes into range later.
 # Returns the complete Markdown, or "" when there is nothing it could ever show.
-home_callout <- function(weeks = 6, today = Sys.Date(), events = site_events()) {
+home_callout <- function(weeks = 6, today = site_today(), events = site_events()) {
   soon <- upcoming_events(today, events)
   fallback <- regulars_line(events)
   if (!length(soon) && !nzchar(fallback)) return("")
@@ -689,9 +733,9 @@ home_callout <- function(weeks = 6, today = Sys.Date(), events = site_events()) 
   hide <- function(h) if (h) " hidden=\"hidden\"" else ""
   lines <- vapply(seq_along(soon), function(i) {
     e <- soon[[i]]
-    # `text` wins over `id`, as in event_line(), so both pages name an entry
-    # the same way.
-    what <- if (!is.null(e$text)) end_period(trimws(e$text)) else
+    # `text` wins over `id`, as in event_line(), which also adds its `more`
+    # links, so both pages name an entry the same way.
+    what <- if (!is.null(e$text)) end_period(event_line(e)) else
       paste0(link(e$id), if (!is.null(e$when)) paste0(", ", e$when), ".")
     paste0("::: {.event-next data-from=\"", dates[i] - weeks * 7, "\" data-date=\"",
            dates[i], "\"", hide(i != shown), "}\n**Next up:** ", what,

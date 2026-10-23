@@ -29,9 +29,19 @@ QUARTO_VERSION="1.10.19"
 # The list is captured first because, under pipefail, `locale -a | grep -q`
 # fails whenever grep quits early on a match and locale is killed writing the
 # rest, which would skip this without a word.
+# LC_ALL overrides both when set, as some images do with LC_ALL=POSIX, so it
+# is replaced too in that case. With no UTF-8 locale available, say so rather
+# than carry on as if the export had happened.
 locales="$(locale -a 2>/dev/null || true)"
-if [ -n "${CLAUDE_ENV_FILE:-}" ] && grep -qix 'c\.utf-\?8' <<<"$locales"; then
-  echo 'export LANG=C.UTF-8 LC_CTYPE=C.UTF-8' >> "$CLAUDE_ENV_FILE"
+if [ -n "${CLAUDE_ENV_FILE:-}" ]; then
+  if grep -qix 'c\.utf-\?8' <<<"$locales"; then
+    echo 'export LANG=C.UTF-8 LC_CTYPE=C.UTF-8' >> "$CLAUDE_ENV_FILE"
+    if [ -n "${LC_ALL:-}" ]; then
+      echo 'export LC_ALL=C.UTF-8' >> "$CLAUDE_ENV_FILE"
+    fi
+  else
+    echo "session-start: no C.UTF-8 locale; R chunks outside R/site.R render under the shell's (${LC_ALL:-${LC_CTYPE:-${LANG:-unset}}}), and check-output will flag any damage" >&2
+  fi
 fi
 
 # Site helpers: R/site.R uses jsonlite for _data/*.json and yaml for links.yml

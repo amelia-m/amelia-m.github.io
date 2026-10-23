@@ -67,6 +67,9 @@ events:
       this month, because the Midwest community is joining the Northeast
       Carpentries Community for their November meeting, with guest speaker
       Toby Hodges.
+    past_note: >-
+      The regional call for The Carpentries, held jointly with the Northeast
+      Carpentries Community that month, with guest speaker Toby Hodges.
     more:
       - id: carpentries-sessions
         label: Registration
@@ -131,8 +134,9 @@ events:
     date: 2026-05-06
     note: The first Explorers meeting, largely a discussion of what the group should be.
   # No link: this one was organised through NebraskaJS on lu.ma rather than
-  # Meetup, and that domain does not resolve from the build environment, so
-  # the URL could not be checked before publishing it.
+  # Meetup, which does not resolve from the build environment, and its URL
+  # has not been given, so it stays out (WORDING.md, on unopened URLs). The
+  # November Startup Week page is linked because Amelia gave that one.
   - text: >-
       Share Your AI Workflow, March 11, 2026. A NebraskaJS and Lincoln AI
       lightning talk night at Don't Panic Labs.

@@ -220,7 +220,6 @@ sections:
           - label: GitHub
             url: https://github.com/hadley
       - name: Jenny Bryan
-      - name: Jenny Bryan
         url: https://github.com/jennybc
         description: >-
           R developer at Posit; co-author of R Packages and Happy Git and
