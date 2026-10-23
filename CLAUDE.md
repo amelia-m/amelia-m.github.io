@@ -33,9 +33,8 @@ per-project question does not need asking again.
 ## Generated files
 
 `_data/` and `files/` are written by an export from the source repository and
-are overwritten on the next run. Fix content at its source, never here. Hand
-edited: the pages, `likes.yml`, `links.yml`, `_quarto.yml`, the stylesheets,
-`R/site.R`, blog posts, and images. See README.md.
+are overwritten on the next run. Fix content at its source, never here.
+Everything else is hand edited; README.md lists it.
 
 ## House style
 

@@ -37,7 +37,7 @@ body { background-color: transparent; }
 // is what reserves room for the toggler and search icon. Both must survive
 // there, so everything here is scoped to the same breakpoint Bootstrap uses
 // for .navbar-expand-xl.
-@media (min-width: 1200px) {
+@include media-breakpoint-up(xl) {
   // Quarto clips the brand with overflow:hidden + text-overflow:ellipsis,
   // which rendered the name as "Amelia Miram...". Let it keep its full width.
   .navbar-brand { overflow: visible; text-overflow: clip; }
@@ -81,9 +81,9 @@ body { background-color: transparent; }
 // up, where it expects the bar to be expanded; this bar stays collapsed until
 // 1200px. Between the two, opening the menu dropped both below the list,
 // leaving the name alone on the top row and pushed to the far right. Keep
-// Quarto's own narrow-screen order across the whole collapsed range. 1199.98
-// is `collapse-below: xl` in _quarto.yml; change the two together.
-@media (min-width: 992px) and (max-width: 1199.98px) {
+// Quarto's own narrow-screen order across the whole collapsed range. `xl`
+// here and below is `collapse-below: xl` in _quarto.yml; change them together.
+@include media-breakpoint-between(lg, xl) {
   .navbar #quarto-search { order: 4; margin-left: auto; }
   .navbar .quarto-navbar-tools { order: 3; }
 }
@@ -99,7 +99,7 @@ body { background-color: transparent; }
 // rendered it "Amelia Mira...". Let it wrap onto a second line instead: it is
 // a name, and on twelve of the thirteen pages this is the only place it
 // appears, the h1 there being the page title rather than the name.
-@media (max-width: 1199.98px) {
+@include media-breakpoint-down(xl) {
   .navbar-brand {
     white-space: normal;
     overflow: visible;

@@ -10,9 +10,9 @@ they were found.
 
 ## Publish
 
-- [ ] Publish what the 2026-10-22 merge brought in. `gh-pages` was last published on 2026-10-20
-      (`83cf824`), after the previous merge to `main` on 2026-10-16, so `main` as of then is
-      probably live and this merge is not. Needs `git pull` on `main` and then
+- [ ] Publish what has been merged since 2026-10-20: #27 to #29 and anything after. `gh-pages`
+      was last published on 2026-10-20 (`83cf824`), after the merge to `main` on 2026-10-16,
+      so `main` as of then is probably live and these are not. Needs `git pull` on `main` and then
       `quarto publish gh-pages`, which only Amelia can run. A `gh-pages` commit does not
       record the source commit it was built from, so compare the dates in
       `git log origin/gh-pages` and `git log origin/main` rather than trusting a hash written
@@ -96,7 +96,8 @@ they were found.
       use at the time of the commit.
 - [ ] agent-config `AGENTS.md`, "AI attribution in git and pull requests is decided per
       project": the "always the current model" rule belongs there too, for every project that
-      allows a trailer. A draft line was handed to Amelia on 2026-10-21.
+      allows a trailer. Draft handed to the agent-config session on 2026-10-23; delete this
+      once it is in AGENTS.md there.
 
 ## Open questions
 
@@ -107,6 +108,12 @@ they were found.
 - [ ] `areas.yml` has `todo` fields, mostly on the older positions, and entries with no role
       recorded at all. `work_areas()` lists both.
 - [ ] Make sure the look-into Claude Doc is not shared by link, and turn link sharing off if it is.
+- [ ] Confirm three past events, now off the page until marked: Lincoln.Code on 2026-09-29,
+      NebraskaJS with AI Engineer Omaha on 2026-10-15, and the Carpentries Welcome Session on
+      2026-10-21. Nothing in the repository records whether Amelia went, so each needs
+      `attended: true` or `attended: false` in events.yml. Every render lists them too.
+- [ ] The WiTH link is `http://witheartland.org/` as given. Does the site open as `https://`?
+      The build environment cannot reach it to check.
 - [ ] The UTF-8 locale switch sits at the top of `R/site.R`, so it covers only pages that source
       that file, plus cloud sessions through the session hook. A blog post with its own R chunks,
       rendered on a Linux machine under a POSIX locale, would still write `<U+2013>`; the

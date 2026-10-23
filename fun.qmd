@@ -19,7 +19,7 @@ It flags seven conditions: surface wind, the club waiver's gust ceiling, visibil
 
 In development, and not endorsed by USPA, LSPC, or any licensed professional. Jump decisions stay with the jumper, the Safety and Training Advisor, and the pilot in command.
 
-`r link("lspc-weather", "Open the app")`{.btn .btn-primary .btn-sm target="_blank"} `r link("lspc-weather-source")`{.btn .btn-outline-primary .btn-sm}
+`r link("lspc-weather", "Open the app")`{.btn .btn-primary .btn-sm target="_blank" rel="noopener"} `r link("lspc-weather-source")`{.btn .btn-outline-primary .btn-sm}
 
 ## pleasantry
 
@@ -31,4 +31,4 @@ Both the workshop original and the later work on it were AI-assisted, which is w
 
 Most of the effort went into making the composed compliments read like English: rejecting an adjective the chosen template already uses, resampling adjective and subject pairs that share a word stem ("creative" with "creativity"), and singularizing the subject banks so the Shakespearean blends stopped emitting "Thy vapours is." The `weirdness` scale draws each component independently with triangular weights, so a value between tiers blends them instead of flipping over. Note that the `strong` profanity tier ships explicit language in the package source.
 
-`r link("pleasantry", "Open the docs")`{.btn .btn-primary .btn-sm target="_blank"} `r link("pleasantry-source")`{.btn .btn-outline-primary .btn-sm}
+`r link("pleasantry", "Open the docs")`{.btn .btn-primary .btn-sm target="_blank" rel="noopener"} `r link("pleasantry-source")`{.btn .btn-outline-primary .btn-sm}

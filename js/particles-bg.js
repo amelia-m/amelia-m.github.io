@@ -35,6 +35,7 @@
   var dots = [];
   var w = 0;
   var h = 0;
+  var dpr = 1;
   var fadeStart = 150; // scroll offset at which the fade begins; set in resize()
   var dotColor = "43, 92, 138";
   var frame = null;
@@ -59,8 +60,14 @@
     };
   }
 
-  function resize() {
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  function pixelRatio() {
+    return Math.min(window.devicePixelRatio || 1, 2);
+  }
+
+  // `recount` false keeps the dots as they are and only resizes the canvas;
+  // see the resize listener below.
+  function resize(recount) {
+    dpr = pixelRatio();
     w = host.clientWidth;
     h = host.clientHeight;
     canvas.width = Math.round(w * dpr);
@@ -69,11 +76,13 @@
     canvas.style.height = h + "px";
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    var target = Math.round((w * h) / AREA_PER_DOT);
-    if (target < MIN_DOTS) target = MIN_DOTS;
-    if (target > MAX_DOTS) target = MAX_DOTS;
-    while (dots.length < target) dots.push(spawn());
-    if (dots.length > target) dots.length = target;
+    if (recount !== false || !dots.length) {
+      var target = Math.round((w * h) / AREA_PER_DOT);
+      if (target < MIN_DOTS) target = MIN_DOTS;
+      if (target > MAX_DOTS) target = MAX_DOTS;
+      while (dots.length < target) dots.push(spawn());
+      if (dots.length > target) dots.length = target;
+    }
 
     // The banner's height is set in CSS as clamp(160px, 26vw, 320px), so it
     // only changes with viewport width. Measure it here instead of in the
@@ -181,9 +190,22 @@
     }
   }
 
+  // On a phone the address bar showing and hiding fires resize over and over
+  // during a scroll, changing only the height. Coalesce the events into one
+  // per frame, skip any that leave the size and pixel ratio unchanged (the
+  // ratio changes alone when the window moves to a sharper screen), and
+  // re-count the dots only when the width changes: adding and dropping dots
+  // on every height change made them visibly pop in and out while scrolling.
+  var resizePending = false;
   window.addEventListener("resize", function () {
-    resize();
-    schedule();
+    if (resizePending) return;
+    resizePending = true;
+    window.requestAnimationFrame(function () {
+      resizePending = false;
+      if (host.clientWidth === w && host.clientHeight === h && pixelRatio() === dpr) return;
+      resize(host.clientWidth !== w);
+      schedule();
+    });
   });
   window.addEventListener("scroll", schedule, { passive: true });
   document.addEventListener("visibilitychange", schedule);

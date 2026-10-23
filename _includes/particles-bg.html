@@ -2,7 +2,7 @@
      the page content and inert to the pointer; the script appends the canvas
      and drives this element's opacity from the scroll position. -->
 <div id="particles-bg" aria-hidden="true"></div>
-<!-- Root-relative: include-after-body content is emitted verbatim, so a
-     page-relative path would 404 if this include were reused on any page
-     below the site root. -->
+<!-- Written from the site root: Quarto rewrites a path starting with / into
+     one relative to each page (it comes out as ./js/particles-bg.js on the
+     home page), so the include works from a page at any depth. -->
 <script src="/js/particles-bg.js" defer></script>
