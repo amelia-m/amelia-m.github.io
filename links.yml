@@ -160,6 +160,13 @@ events:
   - id: lincoln-ai
     label: Lincoln AI
     url: https://www.meetup.com/lincoln-ai/
+  # The group behind the October 21 meetup, as Amelia gave it on 2026-10-22.
+  # It does not resolve from the build environment, so the render cannot check
+  # it. Its LinkedIn, X, Facebook and Instagram accounts are all "witheartland";
+  # none is linked from the page yet.
+  - id: witheartland
+    label: WiTH
+    url: http://witheartland.org/
   # Fetched 2026-10-22 and live; the ?eventOrigin tracking parameter is dropped.
   - id: witheartland-2026-10-21
     label: Women in Technology of the Heartland, October 21, 2026
