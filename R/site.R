@@ -741,14 +741,19 @@ unconfirmed_events <- function(today = site_today(), events = site_events()) {
   ev[event_status(ev, today) == "unconfirmed"]
 }
 
+# An event's name as plain text, for the render log and the pre-render
+# questions: its links.yml label, or the start of its `text`.
+event_label <- function(e) {
+  if (!is.null(e$text)) return(substr(trimws(e$text), 1, 60))
+  get_link(e$id)$label
+}
+
 # Write the unconfirmed list to the render log. stderr rather than message(),
 # which the project's `message: false` would swallow.
 note_unconfirmed <- function(today = site_today(), events = site_events()) {
   ev <- unconfirmed_events(today, events)
   if (!length(ev)) return(invisible())
-  what <- vapply(ev, function(e) {
-    paste0("  ", e$date %||% e$year, "  ", e$id %||% substr(trimws(e$text), 1, 50))
-  }, character(1))
+  what <- vapply(ev, function(e) paste0("  ", e$date %||% e$year, "  ", event_label(e)), character(1))
   cat("events.yml: ", length(ev), " past event", if (length(ev) > 1) "s", " left off the page ",
       "until marked `attended: true` (went) or `attended: false` (did not):\n",
       paste(what, collapse = "\n"), "\n", sep = "", file = stderr())

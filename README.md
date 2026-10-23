@@ -22,6 +22,8 @@ quarto render                  # needs R with knitr, rmarkdown, jsonlite, yaml; 
 quarto publish gh-pages        # renders, then pushes _site to the gh-pages branch
 ```
 
+Both start by asking, at a terminal, whether you went to each past event `events.yml` has not marked yet: `y` went, `n` did not, Enter to be asked again next time. Answers are written into `events.yml`, which then needs committing; `quarto render` first and commit before `quarto publish`, or the live site has marks `main` does not. `quarto preview` (and renders with no one at the keyboard) skip the questions and list the events in the log instead; `quarto preview --render all` renders the whole site, so it asks too.
+
 Blog posts go in `blog/posts/<slug>/index.qmd`.
 
 ## Images
