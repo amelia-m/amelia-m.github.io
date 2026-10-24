@@ -122,6 +122,19 @@ they were found.
       downstream project means editing both. Putting the owning name on the links.yml entry
       would let `site_links()` validate it and remove the per-page special case.
 
+## To compare
+
+- [ ] Compare this site with a guide to building an academic site in Quarto and its companion
+      website-builder app, and list what might be worth adopting: page structure, Quarto
+      features, how publications and the CV are handled, automation. Decide each item with
+      Amelia before changing anything. Logged 2026-10-24 at her request.
+      - <https://dsquintana.com/posts/quarto-academic-site/>
+      - <https://dsquintana.shinyapps.io/website-builder/>
+
+      Neither host resolves from the cloud build environment (checked 2026-10-24), so the
+      comparison needs a session that can reach them, or their text pasted in. Nothing about
+      their contents is recorded here yet, because none of it has been read.
+
 ## Repo setup not done here
 
 - [ ] `_scratch/` is not in `.gitignore`. No such directory exists in this checkout yet, so
