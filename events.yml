@@ -77,6 +77,20 @@ events:
     note: >-
       The Welcome Session, for people new to The Carpentries: what the
       organisation does, the ways to get involved, and questions answered.
+  # Title, host and venue read off the Meetup event page on 2026-10-27, which
+  # matches Amelia's calendar entry for the speaker and abstract.
+  - id: 402-developers-2026-10-27
+    date: 2026-10-27
+    when: Tuesday, October 27, 2026
+    where: 2000 Q Street, Lincoln, NE
+    note: >-
+      Nathan Platter on "When Should AI Stop and Hand the Work Back to a
+      Human?": a "Level-4 gate", where the machine does the checking first, a
+      named person still makes the call, and every decision leaves a trail to
+      review later.
+    more:
+      - id: dama-rocky-mountain-2026-kit
+      - id: dama-rocky-mountain-2026-source
   - id: carpentries-midwest
     date: 2026-11-06
     when: Friday, November 6, 2026
