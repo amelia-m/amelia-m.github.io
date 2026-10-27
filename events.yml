@@ -66,11 +66,13 @@ events:
     # written in the note above.
     more:
       - id: nebraskajs
-  # Amelia, 2026-10-24: did not go, "I had to reschedule".
+  # Moved from Wednesday October 21, which Amelia cancelled for a work meeting
+  # (2026-10-24: "I had to reschedule"), to this session, as her calendar
+  # records it. Linked to the registration listing, not the Zoom room, for the
+  # reason links.yml gives for the Carpentries calls.
   - id: carpentries-sessions
-    date: 2026-10-21
-    attended: false
-    when: Wednesday, October 21, 2026
+    date: 2026-10-27
+    when: Tuesday, October 27, 2026, 5pm Central
     where: online
     note: >-
       The Welcome Session, for people new to The Carpentries: what the
