@@ -190,8 +190,8 @@ events:
   - id: nebraskajs
     label: NebraskaJS
     url: https://nebraskajs.com/
-  # The group that co-hosted the October 15 meetup, locally hosted by
-  # DevObsessed. It is the Omaha chapter of an international organisation,
+  # The group behind the October 15 meetup, its Omaha chapter's first, held
+  # jointly with NebraskaJS and locally hosted by DevObsessed. It is the Omaha chapter of an international organisation,
   # not a group founded here, so the parent has a footprint even though this
   # city site has almost none. An earlier version of this comment explained
   # the missing search results as a brand new group, which was wrong: only

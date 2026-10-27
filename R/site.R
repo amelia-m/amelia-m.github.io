@@ -11,17 +11,21 @@
 # which includes R 4.2 and later on Windows. If no UTF-8 locale can be set it
 # stops, since a render that succeeds with mangled characters is worse than
 # one that fails and _quarto.yml hides warnings from the page.
-if (isTRUE(getOption("knitr.in.progress")) && !isTRUE(l10n_info()[["UTF-8"]])) {
-  local({
-    for (loc in c("C.UTF-8", "C.utf8", "en_US.UTF-8", "en_US.utf8")) {
-      if (nzchar(suppressWarnings(Sys.setlocale("LC_CTYPE", loc)))) break
-    }
-    if (!isTRUE(l10n_info()[["UTF-8"]])) {
-      stop("No UTF-8 locale could be set, so non-ASCII text would render as <U+...>. ",
-           "Set LC_ALL to a UTF-8 locale listed by `locale -a` and render again.",
-           call. = FALSE)
-    }
-  })
+#
+# use_utf8_ctype() does the switching; R/confirm-attendance.R calls it too, for
+# the questions it prints before any page renders. TRUE if the character
+# locale is UTF-8 afterwards.
+use_utf8_ctype <- function() {
+  if (isTRUE(l10n_info()[["UTF-8"]])) return(TRUE)
+  for (loc in c("C.UTF-8", "C.utf8", "en_US.UTF-8", "en_US.utf8")) {
+    if (nzchar(suppressWarnings(Sys.setlocale("LC_CTYPE", loc)))) break
+  }
+  isTRUE(l10n_info()[["UTF-8"]])
+}
+if (isTRUE(getOption("knitr.in.progress")) && !use_utf8_ctype()) {
+  stop("No UTF-8 locale could be set, so non-ASCII text would render as <U+...>. ",
+       "Set LC_ALL to a UTF-8 locale listed by `locale -a` and render again.",
+       call. = FALSE)
 }
 
 site_root <- function() {
@@ -733,8 +737,9 @@ past_events <- function(today = site_today(), events = site_events()) {
   })
 }
 
-# Events waiting for Amelia to say whether she went. The events page prints
-# them to the render log, so a publish is where she is asked.
+# Events waiting for Amelia to say whether she went. A whole-site render at a
+# terminal asks her about them first (R/confirm-attendance.R); any render of
+# the events page also lists them in the log, for renders no one is watching.
 unconfirmed_events <- function(today = site_today(), events = site_events()) {
   ev <- events$events
   if (!length(ev)) return(list())
@@ -745,7 +750,9 @@ unconfirmed_events <- function(today = site_today(), events = site_events()) {
 # questions: its links.yml label, or the start of its `text`.
 event_label <- function(e) {
   if (!is.null(e$text)) return(substr(trimws(e$text), 1, 60))
-  get_link(e$id)$label
+  # An unmarked event is on neither list of the page, so an id since dropped
+  # from links.yml should not stop the render; fall back to the id itself.
+  tryCatch(get_link(e$id)$label, error = function(err) e$id)
 }
 
 # Write the unconfirmed list to the render log. stderr rather than message(),

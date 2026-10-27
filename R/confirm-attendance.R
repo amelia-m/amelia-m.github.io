@@ -12,8 +12,8 @@
 # or a render run by an agent, a scheduled session or anything with piped
 # input, it does nothing, and the events page lists the unmarked events in the
 # render log instead. `quarto preview --render all` is a whole-project render
-# and does ask; Quarto gives no way to tell it apart. A blank or unrecognised
-# answer skips that event until the next render.
+# and does ask; Quarto gives no way to tell it apart. A blank answer skips
+# that event until the next render; anything other than y or n is asked again.
 #
 # An answer becomes an `attended:` line under the entry's `date:` line in
 # events.yml, and nothing else in the file changes. The render does not commit
@@ -27,122 +27,108 @@ if (Sys.getenv("QUARTO_PROJECT_RENDER_ALL") == "1" && isatty(stdin())) {
 # Into this local() environment, so every function below can use its helpers.
 source(file.path("R", "site.R"), local = TRUE)
 
-# R/site.R switches to a UTF-8 locale only inside knitr; the questions are
-# printed here, before any page renders, so switch for them too, or a dash
-# in an event's text prints as <U+2013> in a POSIX shell.
-if (!l10n_info()[["UTF-8"]]) {
-  for (loc in c("C.UTF-8", "C.utf8", "en_US.UTF-8", "en_US.utf8")) {
-    if (nzchar(suppressWarnings(Sys.setlocale("LC_CTYPE", loc)))) break
-  }
-}
+# The questions print here, before any page renders, so switch to a UTF-8
+# character locale for them as R/site.R does for pages, or a dash in an
+# event's text prints as <U+2013> in a POSIX shell.
+use_utf8_ctype()
 
-# The fields that identify an entry, as text, for matching a block of
-# events.yml against the parsed event it came from.
-key <- function(e) {
-  paste(e$id %||% "", e$text %||% "", as.character(e$date %||% ""),
-        as.character(e$year %||% ""), sep = "\r")
+# Each list item under `events:` as a block of lines, in file order, which is
+# the order site_events() returns them in, so block i is event i. Taken once,
+# before any question, so each answer is written where its entry was found
+# instead of being matched up again afterwards. Also the line to write under:
+# the entry's date, which may be its first key, on the "  - " line itself.
+event_blocks <- function(lines) {
+  start <- grep("^events:[[:space:]]*(#.*)?$", lines)[1]
+  if (is.na(start)) return(NULL)
+  top <- grep("^[A-Za-z_]+:", lines)
+  end <- c(top[top > start], length(lines) + 1)[1] - 1
+  heads <- grep("^  - ", lines)
+  heads <- heads[heads > start & heads <= end]
+  if (!length(heads)) return(NULL)
+  stops <- c(heads[-1] - 1, end)
+  date_line <- vapply(seq_along(heads), function(i) {
+    hit <- grep("^(  - |    )date:", lines[heads[i]:stops[i]])
+    if (length(hit)) heads[i] - 1L + hit[1] else NA_integer_
+  }, integer(1))
+  data.frame(head = heads, date_line = date_line)
 }
 
 ask_all <- function() {
-  ev <- unconfirmed_events()
-  if (!length(ev)) return(invisible())
-  ev <- ev[order(event_dates(ev))]
-  cat("\nevents.yml: ", length(ev), " past event", if (length(ev) > 1) "s",
+  path <- site_path("events.yml")
+  lines <- readLines(path, encoding = "UTF-8", warn = FALSE)
+  ev <- site_events()$events
+  blocks <- event_blocks(lines)
+  # The blocks have to line up one to one with the parsed entries. If the
+  # file is laid out in a way this cannot follow, ask nothing: the events
+  # page still lists the unmarked events in the render log.
+  if (is.null(blocks) || nrow(blocks) != length(ev)) {
+    cat("\nconfirm-attendance: could not line up the entries in events.yml with its lines,",
+        " so nothing is asked; the events page lists unmarked past events in the log.\n\n", sep = "")
+    return(invisible())
+  }
+  todo <- which(event_status(ev) == "unconfirmed" & !is.na(blocks$date_line))
+  if (!length(todo)) return(invisible())
+  todo <- todo[order(event_dates(ev[todo]))]
+  cat("\nevents.yml: ", length(todo), " past event", if (length(todo) > 1) "s",
       " not yet marked, so not on the events page.\n",
       "For each: y = went, n = did not go, Enter = ask again next time.\n\n", sep = "")
   con <- file("stdin", "r")
   on.exit(close(con), add = TRUE)
   answers <- list()
-  for (e in ev) {
-    cat("  ", e$date %||% e$year, "  ", event_label(e), "? [y/n/Enter] ", sep = "")
-    flush(stdout())
-    a <- tolower(trimws(readLines(con, n = 1)))
+  for (i in todo) {
+    e <- ev[[i]]
+    # A typo is asked again rather than taken as a skip.
+    repeat {
+      cat("  ", e$date, "  ", event_label(e), "? [y/n/Enter] ", sep = "")
+      flush(stdout())
+      a <- readLines(con, n = 1)
+      if (!length(a)) break
+      a <- tolower(trimws(a))
+      if (a %in% c("y", "yes", "n", "no", "")) break
+      cat("    y, n, or Enter to skip.\n")
+    }
     if (!length(a)) {
       cat("\n  no more input; the rest are skipped.\n")
       break
     }
-    if (a %in% c("y", "yes")) {
-      answers[[length(answers) + 1]] <- list(e = e, value = TRUE)
-    } else if (a %in% c("n", "no")) {
-      answers[[length(answers) + 1]] <- list(e = e, value = FALSE)
-    }
+    if (nzchar(a)) answers[[as.character(i)]] <- a %in% c("y", "yes")
   }
   if (!length(answers)) {
     cat("\nNothing recorded; rendering.\n\n")
     return(invisible())
   }
-  n <- record(answers)
-  cat("\nRecorded ", n, " in events.yml. Commit it, before publishing if you can,",
+  record(answers, lines, blocks, ev, path)
+  cat("\nRecorded ", length(answers), " in events.yml. Commit it, before publishing if you can,",
       " so main has the same marks as the site.\n\n", sep = "")
 }
 
-# Insert each answer under its entry's date line. Entries are found by
-# reading each list item under `events:` and matching it field for field,
-# among those not yet marked, so two entries sharing an id (a monthly call)
-# are told apart by their dates and an identical pair takes one answer each.
-# Returns how many were recorded.
-record <- function(answers) {
-  path <- site_path("events.yml")
-  original <- readLines(path, encoding = "UTF-8", warn = FALSE)
-  lines <- original
-  done <- 0
-  for (a in answers) {
-    top <- grep("^[A-Za-z_]+:", lines)
-    start <- which(lines == "events:")
-    end <- c(top[top > start], length(lines) + 1)[1] - 1
-    heads <- grep("^  - ", lines)
-    heads <- heads[heads > start & heads <= end]
-    stops <- c(heads[-1] - 1, end)
-    hit <- NA
-    for (i in seq_along(heads)) {
-      block <- lines[heads[i]:stops[i]]
-      p <- yaml::yaml.load(paste(block, collapse = "\n"))[[1]]
-      if (is.null(p$attended) && identical(key(p), key(a$e))) {
-        # The date may be the item's first key, on the "  - " line itself.
-        hit <- heads[i] - 1 + grep("^(  - |    )date:", block)[1]
-        break
-      }
-    }
-    if (is.na(hit)) {
-      cat("  could not find the entry for ", event_label(a$e), "; left unmarked.\n", sep = "")
-      next
-    }
-    lines <- append(lines, paste0("    attended: ", if (a$value) "true" else "false"), after = hit)
-    done <- done + 1
+# Write each answer as an `attended:` line under its entry's date line,
+# from the bottom of the file up so earlier line numbers stay right. Then
+# check the result, not just that it parses: the file read back must equal
+# the entries as they were with exactly the answered ones marked. Otherwise
+# put it back and stop the render with the reason.
+record <- function(answers, lines, blocks, ev, path) {
+  idx <- as.integer(names(answers))
+  updated <- lines
+  for (i in sort(idx, decreasing = TRUE)) {
+    updated <- append(updated, paste0("    attended: ", if (answers[[as.character(i)]]) "true" else "false"),
+                      after = blocks$date_line[i])
   }
-  write_lf(lines, path)
-  # Check the result, not just that it parses: every answered event marked as
-  # answered, and every other entry exactly as it was. Otherwise put the file
-  # back and stop the render with the reason.
-  # `after` is read the way the site reads it; read_yaml_utf8() is the same
-  # yaml.load() call used on `original` below, so the two compare like for like.
+  write_lf(updated, path)
+  expect <- ev
+  for (i in idx) expect[[i]]$attended <- answers[[as.character(i)]]
+  sorted <- function(x) lapply(x, function(e) e[order(names(e))])
   problem <- tryCatch({
-    after <- site_events()$events
-    NULL
-  }, error = function(err) conditionMessage(err))
-  if (is.null(problem)) {
-    old <- yaml::yaml.load(paste(original, collapse = "\n"))$events
-    if (length(after) != length(old)) {
-      problem <- "the number of entries changed"
-    } else {
-      expect <- old
-      for (a in answers) {
-        j <- which(vapply(expect, function(x) is.null(x$attended) && identical(key(x), key(a$e)),
-                          logical(1)))[1]
-        if (!is.na(j)) expect[[j]]$attended <- a$value
-      }
-      if (!identical(lapply(after, function(x) x[order(names(x))]),
-                     lapply(expect, function(x) x[order(names(x))]))) {
-        problem <- "an entry other than the answered ones changed, or an answer landed in the wrong one"
-      }
+    if (!identical(sorted(site_events()$events), sorted(expect))) {
+      "an entry other than the answered ones changed, or an answer landed in the wrong one"
     }
-  }
+  }, error = function(err) conditionMessage(err))
   if (!is.null(problem)) {
-    write_lf(original, path)
+    write_lf(lines, path)
     stop("confirm-attendance: events.yml was left as it was, because after the change ",
          problem, call. = FALSE)
   }
-  done
+  invisible(length(idx))
 }
 
 # LF endings whatever the platform, as .gitattributes asks for.

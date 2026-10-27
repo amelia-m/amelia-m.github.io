@@ -7,8 +7,9 @@
 # today or later is Upcoming. Past is a record of having been there, so an
 # earlier entry appears in it, newest year first, only once it is marked
 # `attended: true`; `attended: false` keeps it off the page. Until it is
-# marked it is in neither half, and any render of the events page (a
-# whole-site render is one) lists it in the log so the question gets asked
+# marked it is in neither half; a whole-site render at a terminal asks about
+# it first (R/confirm-attendance.R), and any render of the events page lists
+# it in the log for renders no one is watching, so the question gets asked
 # (Amelia, 2026-10-23: "need to fix so it doesn't show I attended things I
 # skipped").
 #
