@@ -27,7 +27,8 @@ Amelia, 2026-10-17: "level 2, push after review but ask before merging".
     it, naming file and line, on escaped code points or octal escapes from a non-UTF-8 locale,
     mojibake and other encoding damage, a zero-length file, and unevaluated inline R. Every check
     skips source code shown on a page, so a post can show the same strings on purpose; chunk
-    output and prose are checked.
+    output and prose are checked. It also fails any page whose GoatCounter script is missing or counts to
+    another account.
     A whole-project render must print `check-output: N files clean (whole project)`. A
     single-page render and a hand run say they are not a full check, and a render that prints
     no such line did not run the check: none of these counts as passing. It does not catch

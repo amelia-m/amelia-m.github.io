@@ -122,6 +122,13 @@ they were found.
       downstream project means editing both. Putting the owning name on the links.yml entry
       would let `site_links()` validate it and remove the per-page special case.
 
+- [ ] The GoatCounter script loads from the unversioned `https://gc.zgo.at/count.js` with no
+      integrity hash, as GoatCounter's own snippet does, so whatever that host serves runs on
+      every page. GoatCounter also publishes versioned files (`count.v4.js`) for use with an
+      `integrity` attribute. Pinning one needs the hash read from a host this build environment
+      can reach, which gc.zgo.at is not (checked 2026-10-27), and the pin has to be updated by
+      hand when GoatCounter changes its script. Raised by the review of the port on 2026-10-27.
+
 ## To compare
 
 - [ ] Compare this site with a guide to building an academic site in Quarto and its companion

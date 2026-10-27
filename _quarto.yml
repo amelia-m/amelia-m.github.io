@@ -13,11 +13,12 @@ project:
   # skipped. Asks nothing in preview or when no one is at the keyboard. See
   # R/confirm-attendance.R.
   pre-render: R/confirm-attendance.R
-  # js/ is referenced from _includes/particles-bg.html and events.html, which
-  # Quarto does not scan for resources, so name it here or it is left out of
-  # _site.
+  # js/ is referenced from _includes/particles-bg.html and events.html, and
+  # images/icons/ only from CSS mask urls, none of which Quarto scans for
+  # resources, so name them here or they are left out of _site.
   resources:
     - js/
+    - images/icons/
 
 execute:
   echo: false
@@ -91,7 +92,13 @@ website:
         aria-label: Contact
   page-footer:
     left: "&copy; 2026 Amelia Miramonti"
-    right: "Written in [R](https://www.r-project.org), stitched together with [Quarto](https://quarto.org), with assistance from [Claude](https://claude.ai) and [GitHub Copilot](https://github.com/features/copilot)."
+    # Icons in the style of "</> with [heart] by [GitHub]": each logo is a link
+    # with its name as a tooltip and as screen-reader text, so the credits
+    # still read in words. The logos are Simple Icons (CC0), drawn as CSS masks
+    # in _shared.scss so they take the footer's text colour in both themes.
+    # No GitHub Copilot (Amelia, 2026-10-21): its only part in this site was
+    # one review of PR #1.
+    right: '<span class="built-with"><i class="bi bi-code-slash" aria-hidden="true"></i><span class="visually-hidden">Made</span> with <i class="bi bi-heart-fill" aria-hidden="true"></i><span class="visually-hidden">love</span> in <a href="https://www.r-project.org" class="brand-link" title="R"><span class="brand-icon icon-r" aria-hidden="true"></span><span class="visually-hidden">R</span></a> and <a href="https://quarto.org" class="brand-link" title="Quarto"><span class="brand-icon icon-quarto" aria-hidden="true"></span><span class="visually-hidden">Quarto</span></a>, with help from <a href="https://claude.ai" class="brand-link" title="Claude"><span class="brand-icon icon-claude" aria-hidden="true"></span><span class="visually-hidden">Claude</span></a></span>'
 
 format:
   html:
@@ -115,7 +122,8 @@ format:
     # the navbar GitHub icon also stays in the tab. Forcing either needs an
     # explicit target="_blank" on the link.
     link-external-newwindow: true
-    # Analytics, on every page. index.qmd sets its own `include-after-body` for
-    # the drifting-dot background; this is a different key, so a page-level
-    # value cannot displace it.
+    # Analytics (GoatCounter), on every page. A page's own `include-in-header`
+    # is added alongside this rather than replacing it (checked with Quarto
+    # 1.10.19), and R/check-output.R fails the render on any page without the
+    # script. Notes in README.md, "Analytics".
     include-in-header: _includes/analytics.html

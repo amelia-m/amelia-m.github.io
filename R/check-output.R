@@ -18,7 +18,8 @@
 # and correct output look the same: R's NA printed as text (see TODO.md), and
 # an unexpanded shortcode, which renders exactly like Quarto's documented
 # escape for showing one. A page whose content is missing but whose file was
-# written is not caught either; only a zero-length file is.
+# written is not caught either; only a zero-length file is. It also fails a page
+# that has lost the analytics script, which nothing else would notice.
 #
 # Finding nothing to check is a failure, not a pass. Base R only, and wrapped
 # in local() so that source()-ing it by hand leaves nothing behind. Run it from
@@ -204,6 +205,11 @@ pre  <- "(?s)<pre[^>]*>.*?</pre>"
 # whitespace, so data-type="application/json" on a real script does not count.
 script <- paste0("(?is)<script\\b(?![^>]*\\stype\\s*=\\s*[\"']?application/json)[^>]*>.*?</script\\s*>",
                  "|<style\\b[^>]*>.*?</style\\s*>")
+# The analytics script, as a real tag: the escaped text of one shown on a page
+# does not count. The code must be this site's own, because the script posts
+# every page view to the subdomain it names, and a placeholder such as the
+# YOURCODE it once shipped with is a subdomain anyone could register.
+goatcounter <- "<script\\b[^>]*\\sdata-goatcounter=[\"']https://amelia-m\\.goatcounter\\.com/count[\"']"
 found <- character()
 for (f in files) {
   if (file.size(f) == 0) {
@@ -212,6 +218,14 @@ for (f in files) {
   }
   text <- readChar(f, file.size(f), useBytes = TRUE)
   Encoding(text) <- "bytes"
+  # Every page is counted through the include-in-header in _quarto.yml.
+  # Vendored HTML under site_libs/ is not a page.
+  if (!grepl("(^|/)site_libs/", rel(f)) &&
+      !grepl(goatcounter, text, perl = TRUE, useBytes = TRUE)) {
+    found <- c(found, sprintf(paste0("  %s: no GoatCounter script counting to amelia-m\n    likely cause: ",
+                                     "_includes/analytics.html, or the include-in-header in _quarto.yml that ",
+                                     "pulls it in, was changed or removed"), rel(f)))
+  }
   # Chunk output is a <pre> inside a cell-output div: directly, or, when the
   # output is highlighted (class-output), inside the copy-button scaffold and
   # sourceCode divs Quarto wraps it in. Shown source code sits in a "cell"

@@ -26,6 +26,15 @@ Both start by asking, at a terminal, whether you went to each past event `events
 
 Blog posts go in `blog/posts/<slug>/index.qmd`.
 
+## Analytics
+
+[GoatCounter](https://www.goatcounter.com), on the `amelia-m` account (dashboard: <https://amelia-m.goatcounter.com>). Chosen over Google Analytics because it sets no cookies and keeps no personal data, so the site needs no consent banner. The script is `_includes/analytics.html`, pulled into every page by `include-in-header` in `_quarto.yml`.
+
+- `R/check-output.R` fails the render on any page without the script, or with it counting to any account but `amelia-m`. A page's own `include-in-header` is added alongside the project's, not in place of it (checked with Quarto 1.10.19), so a page cannot drop out by setting one.
+- The script posts every page view to the subdomain it names, so that name must stay one this site owns. It shipped commented out until the account existed, rather than with a placeholder somebody else could register. A new account name means changing the check as well.
+- Social apps often send no referrer, so visits from Bluesky or LinkedIn tend to be recorded as direct. Tag the link instead, for example `https://amelia-m.github.io/?utm_source=bluesky`. Campaign Parameters must be switched on in the GoatCounter site settings for the tag to be recorded.
+- Ad blockers commonly block GoatCounter, so a test visit with one on does not show up.
+
 ## Images
 
 `images/headshot.jpg` and `images/banner.jpg` are web-sized copies. `images/qr-site.svg` encodes `https://amelia-m.github.io/`.
