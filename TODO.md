@@ -134,6 +134,13 @@ they were found.
       Neither host resolves from the cloud build environment (checked 2026-10-24), so the
       comparison needs a session that can reach them, or their text pasted in. Nothing about
       their contents is recorded here yet, because none of it has been read.
+- [ ] Review the features of another personal site and list any worth incorporating here,
+      each to be decided with Amelia: <https://schloerke.com/>. Logged 2026-10-27 at her request
+      ("dispatch an agent to review features on this website and we might incorporate some of
+      them"). Not done yet: the host does not resolve from the cloud build environment, the
+      Internet Archive is refused too, and no public source repository turned up (checked
+      2026-10-27). Needs a session with a browser that can reach it, the source repository's
+      name, or screenshots.
 
 ## Repo setup not done here
 
