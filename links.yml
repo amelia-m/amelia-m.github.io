@@ -164,6 +164,11 @@ events:
   - id: 402-developers-2026-10-27
     label: (402) Developers
     url: https://www.meetup.com/402-developers/events/317052375/
+  # The group's own page, as Amelia gave it on 2026-10-27. Fetched that day and
+  # live: "a monthly engineering meetup" in Lincoln.
+  - id: 402-developers
+    label: (402) Developers
+    url: https://www.meetup.com/402-developers/
   # The speaker's materials for that October 27 talk, as Amelia gave them on
   # 2026-10-27. Neither resolves from the build environment
   # (github.io is refused by its proxy, github.com answers 403), so they have
