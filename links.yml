@@ -154,9 +154,13 @@ events:
   - id: lincoln-code-2026-09-29
     label: Lincoln.Code meetup, September 29, 2026
     url: https://www.meetup.com/lincoln-code/events/316586016/
-  # Fetched 2026-10-27 and live; the ?eventOrigin tracking parameter is
-  # dropped. Amelia knows it as a Lincoln.Code night, but the page names only
-  # (402) Developers as the host, so the label follows the page.
+  # The October 27 talk, held by Lincoln.Code and cross-listed by (402)
+  # Developers, each with its own Meetup event page (Amelia's screenshot of
+  # both listings, 2026-10-27). Both fetched that day and live; the
+  # ?eventOrigin tracking parameter on the one she gave is dropped.
+  - id: lincoln-code-2026-10-27
+    label: Lincoln.Code
+    url: https://www.meetup.com/lincoln-code/events/317024050/
   - id: 402-developers-2026-10-27
     label: (402) Developers
     url: https://www.meetup.com/402-developers/events/317052375/
