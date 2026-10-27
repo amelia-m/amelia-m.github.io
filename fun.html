@@ -48,9 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a168a08f69bf5e415174c7fa87739fd1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-216aae7b7045822f66bb15fd86597a97.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a168a08f69bf5e415174c7fa87739fd1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a231f7d1c7768bf8ec158635f9ed32d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a30e146d53dc5077cd4b715758cfe607.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-a231f7d1c7768bf8ec158635f9ed32d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -427,14 +427,15 @@ ul.task-list li input[type="checkbox"] {
 <p>A skydiving weather dashboard for the Lincoln Sport Parachute Club at Brown’s Airport (NE69) in Weeping Water, Nebraska, tuned to the club’s Cessna 182 jump plane. It folds a three-site manual routine (NOAA hourly forecast, cloud forecast, and the KPMV METAR) into one page, and adds winds aloft for freefall drift and density altitude for jump-plane climb.</p>
 <p>It flags seven conditions: surface wind, the club waiver’s gust ceiling, visibility, FAA flight category, overcast sky, a thunderstorm reported in the METAR, and parachute ops between sunset and sunrise. Each one fires only on a published limit, from the USPA SIM, the CFRs, the FAA’s AIM, or the club’s posted waiver, or on a plain observed fact, and cites the source it rests on. Where nothing published sets a threshold, nothing fires: no invented numbers, and no go/no-go verdict. Everything else, winds aloft and density altitude included, is a reading to judge for yourself.</p>
 <p>In development, and not endorsed by USPA, LSPC, or any licensed professional. Jump decisions stay with the jumper, the Safety and Training Advisor, and the pilot in command.</p>
-<p><a href="https://amelia-m.github.io/lspc-weather/" class="btn btn-primary btn-sm">Open the app</a> <a href="https://github.com/amelia-m/lspc-weather" class="btn btn-outline-primary btn-sm">Source on GitHub</a></p>
+<p><a href="https://amelia-m.github.io/lspc-weather/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Open the app</a> <a href="https://github.com/amelia-m/lspc-weather" class="btn btn-outline-primary btn-sm">Source on GitHub</a></p>
 </section>
 <section id="pleasantry" class="level2">
 <h2 class="anchored" data-anchor-id="pleasantry">pleasantry</h2>
 <p><em>R package</em></p>
 <p>Started at posit::conf(2026) in Houston, in Hadley Wickham and Jenny Bryan’s <a href="https://github.com/posit-conf-2026/modern-r-workflow">Modern R workflow (ft. Positron and AI)</a> workshop on Monday, September 14, and carried on from there. <code>compliment()</code> assembles a line from template, adjective, and subject banks, steered by a <code>weirdness</code> scale running sincere to quirky to bizarre, a <code>mood</code> (sincere, grumpy, cheerful, or dramatic), a <code>profanity</code> level that includes a deliberately silly clean tier, and a <code>shakespearean</code> flag for pseudo-Elizabethan phrasing. <code>farewell()</code> handles the goodbyes, drawing a whole phrase from its own mood bank rather than composing one, and takes the same options apart from <code>weirdness</code>. <code>compliment_of_the_day()</code> and <code>farewell_of_the_day()</code> each return one result that is fixed for a given date and leave the global random seed alone.</p>
+<p>Both the workshop original and the later work on it were AI-assisted, which is worth being specific about rather than leaving to the workshop’s title. The original package was written in the workshop with Positron’s Posit Assistant, on credit allocated for the conference. The rename from <code>compliment</code>, the move to the repository root, and a round of defect fixes afterwards were done with Claude: among them seven templates that hardcoded <em>a</em> before a randomly drawn word, so the Shakespearean mode would emit <em>O, what a eldritch familiar thou dost possess!</em></p>
 <p>Most of the effort went into making the composed compliments read like English: rejecting an adjective the chosen template already uses, resampling adjective and subject pairs that share a word stem (“creative” with “creativity”), and singularizing the subject banks so the Shakespearean blends stopped emitting “Thy vapours is.” The <code>weirdness</code> scale draws each component independently with triangular weights, so a value between tiers blends them instead of flipping over. Note that the <code>strong</code> profanity tier ships explicit language in the package source.</p>
-<p><a href="https://github.com/amelia-m/pleasantry" class="btn btn-outline-primary btn-sm">Source on GitHub</a></p>
+<p><a href="https://amelia-m.github.io/pleasantry/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Open the docs</a> <a href="https://github.com/amelia-m/pleasantry" class="btn btn-outline-primary btn-sm">Source on GitHub</a></p>
 
 
 </section>
