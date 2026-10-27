@@ -72,6 +72,11 @@ disclosure.
 
 **No em dash.** From `CLAUDE.md`. A spaced hyphen, a comma, or a colon.
 
+**R package names stay plain.** pleasantry, tidysynthesis, syntheval, not
+`{pleasantry}`: the braces were suggested for the Fun page and turned down
+(Amelia, 2026-10-24: "Skip the curly braces"). A package named in passing as
+code, such as `compliment` on that page, keeps its code font.
+
 ## AI Engineer Omaha headline
 
 The field is labelled "what you build, in one line" and has a `maxlength` of

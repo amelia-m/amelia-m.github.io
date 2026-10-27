@@ -1,5 +1,14 @@
 ---
 title: "Amelia Miramonti, PhD"
+# The browser tab. Quarto writes every tab as "page title - site title", which
+# made this one "Amelia Miramonti, PhD - Amelia Miramonti"; it drops the site
+# title when the two are the same, so the tab is the name alone. Link
+# previews keep the full title.
+pagetitle: "Amelia Miramonti"
+open-graph:
+  title: "Amelia Miramonti, PhD"
+twitter-card:
+  title: "Amelia Miramonti, PhD"
 title-block-banner: false
 page-layout: article
 toc: false

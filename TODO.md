@@ -108,10 +108,6 @@ they were found.
 - [ ] `areas.yml` has `todo` fields, mostly on the older positions, and entries with no role
       recorded at all. `work_areas()` lists both.
 - [ ] Make sure the look-into Claude Doc is not shared by link, and turn link sharing off if it is.
-- [ ] Confirm three past events, now off the page until marked: Lincoln.Code on 2026-09-29,
-      NebraskaJS with AI Engineer Omaha on 2026-10-15, and the Carpentries Welcome Session on
-      2026-10-21. Nothing in the repository records whether Amelia went, so each needs
-      `attended: true` or `attended: false` in events.yml. Every render lists them too.
 - [ ] The WiTH link is `http://witheartland.org/` as given. Does the site open as `https://`?
       The build environment cannot reach it to check.
 - [ ] The UTF-8 locale switch sits at the top of `R/site.R`, so it covers only pages that source
@@ -125,6 +121,19 @@ they were found.
       (`related:` group) and the software_dev-name-to-id mapping in `software.qmd`. A second
       downstream project means editing both. Putting the owning name on the links.yml entry
       would let `site_links()` validate it and remove the per-page special case.
+
+## To compare
+
+- [ ] Compare this site with a guide to building an academic site in Quarto and its companion
+      website-builder app, and list what might be worth adopting: page structure, Quarto
+      features, how publications and the CV are handled, automation. Decide each item with
+      Amelia before changing anything. Logged 2026-10-24 at her request.
+      - <https://dsquintana.com/posts/quarto-academic-site/>
+      - <https://dsquintana.shinyapps.io/website-builder/>
+
+      Neither host resolves from the cloud build environment (checked 2026-10-24), so the
+      comparison needs a session that can reach them, or their text pasted in. Nothing about
+      their contents is recorded here yet, because none of it has been read.
 
 ## Repo setup not done here
 

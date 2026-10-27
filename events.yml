@@ -7,8 +7,9 @@
 # today or later is Upcoming. Past is a record of having been there, so an
 # earlier entry appears in it, newest year first, only once it is marked
 # `attended: true`; `attended: false` keeps it off the page. Until it is
-# marked it is in neither half, and any render of the events page (a
-# whole-site render is one) lists it in the log so the question gets asked
+# marked it is in neither half; a whole-site render at a terminal asks about
+# it first (R/confirm-attendance.R), and any render of the events page lists
+# it in the log for renders no one is watching, so the question gets asked
 # (Amelia, 2026-10-23: "need to fix so it doesn't show I attended things I
 # skipped").
 #
@@ -49,21 +50,26 @@ events:
       I volunteered at the 2026 summit and am planning to volunteer again. The
       Nebraska Women in Tech Awards are the evening before, April 1, at the
       Kiewit Luminarium in Omaha.
-  - id: nebraskajs
+  # Led by AI Engineer Omaha, which is how Amelia remembers it (2026-10-24:
+  # "this was the Omaha AI Engineer event I think"); NebraskaJS co-hosted.
+  - id: ai-engineer-omaha
     date: 2026-10-15
+    attended: true
     when: Thursday, October 15, 2026
     where: DevObsessed, Omaha, NE
     note: >-
-      Joint with the first meetup of AI Engineer Omaha, a new local chapter of
-      an international organisation. Two talks, the first on
-      Jev, a narrow model that answers a typed question with a probability
-      rather than with prose.
+      The first meetup of the new Omaha chapter of an international
+      organisation, held jointly with NebraskaJS. Two talks, the first on Jev,
+      a narrow model that answers a typed question with a probability rather
+      than with prose.
     # No label, so links.yml supplies the name and it matches the one already
     # written in the note above.
     more:
-      - id: ai-engineer-omaha
+      - id: nebraskajs
+  # Amelia, 2026-10-24: did not go, "I had to reschedule".
   - id: carpentries-sessions
     date: 2026-10-21
+    attended: false
     when: Wednesday, October 21, 2026
     where: online
     note: >-
@@ -143,6 +149,7 @@ events:
       - id: witheartland
   - id: lincoln-code-2026-09-29
     date: 2026-09-29
+    attended: true
   - id: lincoln-ai-2026-05-06
     date: 2026-05-06
     attended: true
