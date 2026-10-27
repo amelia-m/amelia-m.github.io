@@ -43,7 +43,7 @@ for (block in blocks) {
   cat("\n")
 }
 # Past events not yet marked attended or not go to the render log, not the
-# page. At a terminal the pre-render has asked about them already; this is
-# for renders with no one to ask.
+# page. At a terminal the pre-render asks about them first; this covers
+# renders with no one to ask, and any it could not ask about, which it says.
 note_unconfirmed(events = ev)
 ```

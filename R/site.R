@@ -752,7 +752,9 @@ event_label <- function(e) {
   if (!is.null(e$text)) return(substr(trimws(e$text), 1, 60))
   # An unmarked event is on neither list of the page, so an id since dropped
   # from links.yml should not stop the render; fall back to the id itself.
-  tryCatch(get_link(e$id)$label, error = function(err) e$id)
+  # Only that case: a links.yml that will not read still stops it.
+  if (!e$id %in% site_links()$id) return(e$id)
+  get_link(e$id)$label
 }
 
 # Write the unconfirmed list to the render log. stderr rather than message(),

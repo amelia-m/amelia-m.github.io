@@ -30,13 +30,17 @@ source(file.path("R", "site.R"), local = TRUE)
 # The questions print here, before any page renders, so switch to a UTF-8
 # character locale for them as R/site.R does for pages, or a dash in an
 # event's text prints as <U+2013> in a POSIX shell.
-use_utf8_ctype()
+if (!use_utf8_ctype()) {
+  cat("\nconfirm-attendance: no UTF-8 locale could be set, so accented letters or dashes in",
+      " event names may print as <U+...> below. The file is not affected.\n", sep = "")
+}
 
 # Each list item under `events:` as a block of lines, in file order, which is
-# the order site_events() returns them in, so block i is event i. Taken once,
-# before any question, so each answer is written where its entry was found
-# instead of being matched up again afterwards. Also the line to write under:
-# the entry's date, which may be its first key, on the "  - " line itself.
+# the order site_events() returns them in, so block i should be event i.
+# Taken once, before any question, so each answer is written where its entry
+# was found instead of being matched up again afterwards. Also the line to
+# write under: the entry's date, which may be its first key, on the "  - "
+# line itself.
 event_blocks <- function(lines) {
   start <- grep("^events:[[:space:]]*(#.*)?$", lines)[1]
   if (is.na(start)) return(NULL)
@@ -50,23 +54,36 @@ event_blocks <- function(lines) {
     hit <- grep("^(  - |    )date:", lines[heads[i]:stops[i]])
     if (length(hit)) heads[i] - 1L + hit[1] else NA_integer_
   }, integer(1))
-  data.frame(head = heads, date_line = date_line)
+  data.frame(head = heads, stop = stops, date_line = date_line)
 }
 
 ask_all <- function() {
+  ev <- site_events()$events
+  todo <- which(event_status(ev) == "unconfirmed")
+  if (!length(todo)) return(invisible())
   path <- site_path("events.yml")
   lines <- readLines(path, encoding = "UTF-8", warn = FALSE)
-  ev <- site_events()$events
   blocks <- event_blocks(lines)
-  # The blocks have to line up one to one with the parsed entries. If the
-  # file is laid out in a way this cannot follow, ask nothing: the events
-  # page still lists the unmarked events in the render log.
-  if (is.null(blocks) || nrow(blocks) != length(ev)) {
+  # Block i has to be event i. Counting is not enough on its own, so each
+  # block about to be asked about is also parsed and compared with its
+  # event. If either check fails, ask nothing; the events page still lists
+  # the unmarked events in the render log.
+  lined_up <- !is.null(blocks) && nrow(blocks) == length(ev) &&
+    all(vapply(todo, function(i) {
+      p <- yaml::yaml.load(paste(lines[blocks$head[i]:blocks$stop[i]], collapse = "\n"))[[1]]
+      identical(p, ev[[i]])
+    }, logical(1)))
+  if (!lined_up) {
     cat("\nconfirm-attendance: could not line up the entries in events.yml with its lines,",
-        " so nothing is asked; the events page lists unmarked past events in the log.\n\n", sep = "")
+        " so nothing is asked; the events page lists the unmarked past events in the log.\n\n", sep = "")
     return(invisible())
   }
-  todo <- which(event_status(ev) == "unconfirmed" & !is.na(blocks$date_line))
+  missing <- todo[is.na(blocks$date_line[todo])]
+  for (i in missing) {
+    cat("\nconfirm-attendance: cannot find the `date:` line of ", event_label(ev[[i]]),
+        ", so it is not asked about; write its date as `    date: YYYY-MM-DD`.\n", sep = "")
+  }
+  todo <- setdiff(todo, missing)
   if (!length(todo)) return(invisible())
   todo <- todo[order(event_dates(ev[todo]))]
   cat("\nevents.yml: ", length(todo), " past event", if (length(todo) > 1) "s",
@@ -97,7 +114,14 @@ ask_all <- function() {
     cat("\nNothing recorded; rendering.\n\n")
     return(invisible())
   }
-  record(answers, lines, blocks, ev, path)
+  # The file was read before the questions; if it was saved in the meantime,
+  # writing the answers in would overwrite that edit, so leave it.
+  if (!identical(readLines(path, encoding = "UTF-8", warn = FALSE), lines)) {
+    cat("\nconfirm-attendance: events.yml changed while waiting for answers, so they were not",
+        " written in; render again to be asked again.\n\n", sep = "")
+    return(invisible())
+  }
+  record(answers, lines, blocks$date_line, ev, path)
   cat("\nRecorded ", length(answers), " in events.yml. Commit it, before publishing if you can,",
       " so main has the same marks as the site.\n\n", sep = "")
 }
@@ -107,12 +131,12 @@ ask_all <- function() {
 # check the result, not just that it parses: the file read back must equal
 # the entries as they were with exactly the answered ones marked. Otherwise
 # put it back and stop the render with the reason.
-record <- function(answers, lines, blocks, ev, path) {
+record <- function(answers, lines, date_line, ev, path) {
   idx <- as.integer(names(answers))
   updated <- lines
   for (i in sort(idx, decreasing = TRUE)) {
     updated <- append(updated, paste0("    attended: ", if (answers[[as.character(i)]]) "true" else "false"),
-                      after = blocks$date_line[i])
+                      after = date_line[i])
   }
   write_lf(updated, path)
   expect <- ev
@@ -128,7 +152,6 @@ record <- function(answers, lines, blocks, ev, path) {
     stop("confirm-attendance: events.yml was left as it was, because after the change ",
          problem, call. = FALSE)
   }
-  invisible(length(idx))
 }
 
 # LF endings whatever the platform, as .gitattributes asks for.
