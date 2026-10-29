@@ -10,10 +10,10 @@ they were found.
 
 ## Publish
 
-- [ ] Publish what has been merged since 2026-10-20: #27 to #29 and anything after. `gh-pages`
-      was last published on 2026-10-20 (`83cf824`), after the merge to `main` on 2026-10-16,
-      so `main` as of then is probably live and these are not. Needs `git pull` on `main` and then
-      `quarto publish gh-pages`, which only Amelia can run. A `gh-pages` commit does not
+- [ ] Publish what has been merged since 2026-10-27: everything after #32. `gh-pages` was last
+      published on 2026-10-27 at 11:34 CDT (`95a3715`), after #32 was merged at 10:19, and the
+      live site was checked that day to show #32's Carpentries date. Needs `git pull` on `main`
+      and then `quarto publish gh-pages`, which only Amelia can run. A `gh-pages` commit does not
       record the source commit it was built from, so compare the dates in
       `git log origin/gh-pages` and `git log origin/main` rather than trusting a hash written
       here; this item named an older publish for a week after it was replaced.
@@ -141,13 +141,22 @@ they were found.
       Neither host resolves from the cloud build environment (checked 2026-10-24), so the
       comparison needs a session that can reach them, or their text pasted in. Nothing about
       their contents is recorded here yet, because none of it has been read.
-- [ ] Review the features of another personal site and list any worth incorporating here,
-      each to be decided with Amelia: <https://schloerke.com/>. Logged 2026-10-27 at her request
-      ("dispatch an agent to review features on this website and we might incorporate some of
-      them"). Not done yet: the host does not resolve from the cloud build environment, the
-      Internet Archive is refused too, and no public source repository turned up (checked
-      2026-10-27). Needs a session with a browser that can reach it, the source repository's
-      name, or screenshots.
+- [ ] Decide which features of another personal site to adopt: <https://schloerke.com/>,
+      reviewed 2026-10-27 at Amelia's request ("dispatch an agent to review features on this
+      website and we might incorporate some of them") from its source, which she gave:
+      <https://github.com/schloerke/schloerke.github.io> at `382b1c6`. The live site was not
+      reachable. Candidates, most useful first, none decided:
+      1. A page `description` on every page; none has one, and the home page has no
+         `og:description` either.
+      2. Follow the reader's system light or dark setting by default
+         (`respect-user-color-scheme`).
+      3. A build stamp in the footer: build date and source commit, linked to the source.
+      4. Refuse an export whose data shrank by more than half, best done in the export.
+      5. Links on talks (slides, posters, recordings) and on the 7 papers with no DOI.
+      6. A render check on pull requests, which overlaps publishing from GitHub Actions.
+      7. A print stylesheet; 8. showing work a publication list misses; 9. a custom domain.
+      Not worth adopting, per the review: activity heatmaps, download sparklines, nightly data
+      refreshes with a deploy key, hand-built HTML, and JavaScript email obfuscation.
 
 ## Repo setup not done here
 
