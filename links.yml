@@ -154,6 +154,33 @@ events:
   - id: lincoln-code-2026-09-29
     label: Lincoln.Code meetup, September 29, 2026
     url: https://www.meetup.com/lincoln-code/events/316586016/
+  # The October 27 talk, held by Lincoln.Code and cross-listed by (402)
+  # Developers, each with its own Meetup event page (Amelia's screenshot of
+  # both listings, 2026-10-27). Both fetched that day and live; the
+  # ?eventOrigin tracking parameter on the one she gave is dropped.
+  - id: lincoln-code-2026-10-27
+    label: Lincoln.Code
+    url: https://www.meetup.com/lincoln-code/events/317024050/
+  - id: 402-developers-2026-10-27
+    label: Cross-listing
+    url: https://www.meetup.com/402-developers/events/317052375/
+  # The group's own page, as Amelia gave it on 2026-10-27. Fetched that day and
+  # live: "a monthly engineering meetup" in Lincoln.
+  - id: 402-developers
+    label: (402) Developers
+    url: https://www.meetup.com/402-developers/
+  # The speaker's materials for that October 27 talk, as Amelia gave them on
+  # 2026-10-27. Neither resolves from the build environment
+  # (github.io is refused by its proxy, github.com answers 403), so they have
+  # not been opened from here. The kit is served by GitHub Pages from the
+  # repository.
+  - id: dama-rocky-mountain-2026-kit
+    label: Talk kit
+    url: https://nathanplatteruser.github.io/dama-rocky-mountain-2026/kit/
+  - id: dama-rocky-mountain-2026-source
+    label: Source on GitHub
+    url: https://github.com/nathanplatteruser/dama-rocky-mountain-2026
+    icon: github
   - id: lincoln-ai-2026-05-06
     label: Lincoln AI Explorers, May 6, 2026
     url: https://www.meetup.com/lincoln-ai/events/314541902/
