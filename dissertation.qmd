@@ -13,6 +13,12 @@ Interdisciplinary PhD, University of Nebraska–Lincoln, conferred May 2025. Qua
 
 `r link("dissertation")`{.btn .btn-primary}
 
+::: {.content-hidden}
+<!-- Left out of the site until Amelia has reviewed it (2026-10-29: "let's
+hide the prose related to my dissertation until I review it"). Delete this
+wrapper to show it again; TODO.md lists every place hidden for the same
+reason. -->
+
 ## The problem
 
 Plenty of studies report that youth sport is good for cognition. Most of them measure sport participation badly: a yes or no, or a count of seasons, from a single point in time. If the exposure is a blunt instrument, the estimate attached to it inherits that bluntness, and a literature can accumulate findings that are really artefacts of how the question was asked.
@@ -28,6 +34,7 @@ The data come from the Adolescent Brain Cognitive Development (ABCD) Study, Year
 Effects were modest, and they were moderated by socioeconomic context: who benefits, and how much, depends on circumstances the sport variable alone does not capture.
 
 The methodological result is the one I care about more. How you operationalize the exposure changes what you find, which means a measurement decision made early and casually can quietly set the conclusion. That argument is why my work since has leaned toward measurement, missing data, and the unglamorous question of whether a variable means what everyone assumes it means.
+:::
 
 ## Master's theses
 

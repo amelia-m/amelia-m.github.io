@@ -51,6 +51,16 @@ they were found.
       text; the check catches the common form, but stopping on it where the field is read
       would be exact.
 
+- [ ] Review the prose about the dissertation, hidden from the site until then (Amelia,
+      2026-10-29: "let's hide the prose related to my dissertation until I review it"). Hidden
+      with Quarto's `.content-hidden`, which leaves it out of the rendered pages and the search
+      index but not out of this public repository: the "The problem", "What I did" and "What
+      came out of it" sections of `dissertation.qmd`, and the dissertation sentence in
+      `research.qmd`. With that one hidden, the research paragraph's "Earlier work
+      covered..." has no dissertation before it to be earlier than. Left showing, as Amelia
+      asked ("leave the one on the bio for now"): the dissertation sentence in the `index.qmd`
+      bio. The title, degree line and full-text link stay, as do the CV's dissertation title
+      and the master's theses. Unwrap each to show it again.
 - [ ] The X bio chosen 2026-10-21 may change ("might want to change later"). The drafts not
       chosen, and why each was a contender, are in `WORDING.md` under "X bio".
 
