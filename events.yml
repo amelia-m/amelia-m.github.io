@@ -94,7 +94,6 @@ events:
       - id: dama-rocky-mountain-2026-kit
       - id: dama-rocky-mountain-2026-source
       - id: 402-developers-2026-10-27
-        label: Cross-listing
       - id: 402-developers
   - id: carpentries-midwest
     date: 2026-11-06

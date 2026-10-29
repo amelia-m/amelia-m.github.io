@@ -205,11 +205,21 @@ pre  <- "(?s)<pre[^>]*>.*?</pre>"
 # whitespace, so data-type="application/json" on a real script does not count.
 script <- paste0("(?is)<script\\b(?![^>]*\\stype\\s*=\\s*[\"']?application/json)[^>]*>.*?</script\\s*>",
                  "|<style\\b[^>]*>.*?</style\\s*>")
-# The analytics script, as a real tag: the escaped text of one shown on a page
-# does not count. The code must be this site's own, because the script posts
-# every page view to the subdomain it names, and a placeholder such as the
-# YOURCODE it once shipped with is a subdomain anyone could register.
-goatcounter <- "<script\\b[^>]*\\sdata-goatcounter=[\"']https://amelia-m\\.goatcounter\\.com/count[\"']"
+# The analytics script, as a real tag in the page head that loads
+# GoatCounter's count.js and that the browser will run: the escaped text of
+# one shown on a page does not count, nor does one inside an HTML comment,
+# which is how analytics.html shipped while switched off, nor one whose type
+# is not JavaScript, which is how consent tools switch a tracker off. The code
+# must be this site's own, because the script posts every page view to the
+# subdomain it names, and a placeholder such as the YOURCODE it once shipped
+# with is a subdomain anyone could register. Attributes are read whole, in any
+# order, so text inside another attribute's value cannot stand in for one.
+in_tag <- "(?=(?:[^>\"']|\"[^\"]*\"|'[^']*')*?\\s"
+goatcounter <- paste0("(?i)<script\\b",
+                      in_tag, "data-goatcounter\\s*=\\s*[\"']https://amelia-m\\.goatcounter\\.com/count[\"'])",
+                      in_tag, "src\\s*=\\s*[\"'](?:https:)?//gc\\.zgo\\.at/count[^\"']*[\"'])",
+                      "(?!(?:[^>\"']|\"[^\"]*\"|'[^']*')*?\\stype\\s*=\\s*[\"']?+(?!(?:text/javascript|application/javascript|module)\\b))")
+comment <- "(?s)<!--.*?-->"
 found <- character()
 for (f in files) {
   if (file.size(f) == 0) {
@@ -218,13 +228,16 @@ for (f in files) {
   }
   text <- readChar(f, file.size(f), useBytes = TRUE)
   Encoding(text) <- "bytes"
-  # Every page is counted through the include-in-header in _quarto.yml.
-  # Vendored HTML under site_libs/ is not a page.
+  # Every page is counted through the include-in-header in _quarto.yml, so
+  # only the head is searched. Vendored HTML under site_libs/ is not a page.
+  head_end <- regexpr("</head>", text, fixed = TRUE, useBytes = TRUE)
+  head <- if (head_end > 0) substr(text, 1, head_end - 1) else ""
   if (!grepl("(^|/)site_libs/", rel(f)) &&
-      !grepl(goatcounter, text, perl = TRUE, useBytes = TRUE)) {
-    found <- c(found, sprintf(paste0("  %s: no GoatCounter script counting to amelia-m\n    likely cause: ",
-                                     "_includes/analytics.html, or the include-in-header in _quarto.yml that ",
-                                     "pulls it in, was changed or removed"), rel(f)))
+      !grepl(goatcounter, blank(head, comment), perl = TRUE, useBytes = TRUE)) {
+    found <- c(found, sprintf(paste0("  %s: no GoatCounter script counting to amelia-m in the page head\n",
+                                     "    likely cause: _includes/analytics.html, or the include-in-header in ",
+                                     "_quarto.yml that pulls it in, was removed, commented out, given another ",
+                                     "code or type, or no longer loads gc.zgo.at/count.js"), rel(f)))
   }
   # Chunk output is a <pre> inside a cell-output div: directly, or, when the
   # output is highlighted (class-output), inside the copy-button scaffold and
