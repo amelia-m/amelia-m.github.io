@@ -12,11 +12,12 @@
 # apart was left out.
 #
 # Every check skips source code shown on a page, so a post can show any of
-# these strings on purpose. Prose and chunk output are checked: chunk output is
+# these strings on purpose, and the two inline R checks also skip scripts and
+# styles (not JSON data). Prose and chunk output are checked: chunk output is
 # where R's own breakage lands. Two checks were dropped because broken output
-# and correct output look the same: R's NA printed as text (an open item,
-# tracked outside this repository), and an unexpanded shortcode, which renders
-# exactly like Quarto's documented escape for showing one. A page whose content is missing but whose file was
+# and correct output look the same: R's NA printed as text (see TODO.md), and
+# an unexpanded shortcode, which renders exactly like Quarto's documented
+# escape for showing one. A page whose content is missing but whose file was
 # written is not caught either; only a zero-length file is. It also fails a page
 # that has lost the analytics script, which nothing else would notice.
 #
@@ -76,14 +77,25 @@ text_checks <- list(
 )
 
 # Inline R that knitr never saw, in its two forms. Both are looked for outside
-# <pre> blocks only, so chunk output that prints R source (an Rmd template,
-# "r = 0.42") is never mistaken for it. Inline R shown on purpose keeps its
+# <pre> blocks, scripts and styles, so chunk output that prints R source (an
+# Rmd template, "r = 0.42") and JavaScript are never mistaken for it. JSON
+# data blocks are still checked, because a widget shows its data on the page;
+# a JS() callback inside one that holds a template literal starting "r " would
+# be flagged, and is accepted as the cost. Inline R shown on purpose keeps its
 # backticks inside the span (`` `r x` `` gives <code>`r x`</code>) and so does
 # not match the first form.
+#
+# Both forms need "r " followed by something an R expression can start with:
+# a name, number, string or bracket, or a unary ! or - (with no space after,
+# so "r - 1" is not one). So `r = 0.42`, `r <- cor(x, y)`, `r != 0` and
+# `r ~ x` in code font, on a page with no R chunks, are ordinary code, while
+# `r nrow(d)`, `r 2026 - 1990`, `r "a"`, `r (a)` and `r -x` are caught.
+# Pandoc writes < > & as entities, hence the & in the exclusions.
+r_start <- "(?:[A-Za-z0-9._\"'(]|!(?![\\s=])|-(?![\\s=&]))"
 unrun_r <- list(name = "inline R left unevaluated",
-                pattern = "<code[^>]*>(r [^<\\s]|\\{r\\} )",
+                pattern = paste0("<code[^>]*>(r ", r_start, "|\\{r\\} )"),
                 cause = "a `r ...` call sits where knitr does not run it, such as a YAML field printed with cat()")
-literal_r <- list(name = "inline R left as literal text", pattern = "`r [A-Za-z_.]",
+literal_r <- list(name = "inline R left as literal text", pattern = paste0("`r ", r_start),
                   cause = "an inline R call passed through md() or another escape, so knitr never saw it")
 
 fail <- function(msg) {
@@ -186,6 +198,28 @@ blank <- function(text, pattern, keep = function(start, s) FALSE) {
 
 code <- "(?s)<pre[^>]*>.*?</pre>|<code[^>]*>.*?</code>"
 pre  <- "(?s)<pre[^>]*>.*?</pre>"
+# Scripts and styles, but not JSON data blocks such as htmlwidgets', whose
+# contents can be shown on the page. Skipped by the two inline R checks, where
+# JavaScript template literals look like `r x`, and kept for the encoding
+# checks, where damage is damage wherever it is. The type attribute must follow
+# whitespace, so data-type="application/json" on a real script does not count.
+script <- paste0("(?is)<script\\b(?![^>]*\\stype\\s*=\\s*[\"']?application/json)[^>]*>.*?</script\\s*>",
+                 "|<style\\b[^>]*>.*?</style\\s*>")
+# The analytics script, as a real tag in the page head that loads
+# GoatCounter's count.js and that the browser will run: the escaped text of
+# one shown on a page does not count, nor does one inside an HTML comment,
+# which is how analytics.html shipped while switched off, nor one whose type
+# is not JavaScript, which is how consent tools switch a tracker off. The code
+# must be this site's own, because the script posts every page view to the
+# subdomain it names, and a placeholder such as the YOURCODE it once shipped
+# with is a subdomain anyone could register. Attributes are read whole, in any
+# order, so text inside another attribute's value cannot stand in for one.
+in_tag <- "(?=(?:[^>\"']|\"[^\"]*\"|'[^']*')*?\\s"
+goatcounter <- paste0("(?i)<script\\b",
+                      in_tag, "data-goatcounter\\s*=\\s*[\"']https://amelia-m\\.goatcounter\\.com/count[\"'])",
+                      in_tag, "src\\s*=\\s*[\"'](?:https:)?//gc\\.zgo\\.at/count[^\"']*[\"'])",
+                      "(?!(?:[^>\"']|\"[^\"]*\"|'[^']*')*?\\stype\\s*=\\s*[\"']?+(?!(?:text/javascript|application/javascript|module)\\b))")
+comment <- "(?s)<!--.*?-->"
 found <- character()
 for (f in files) {
   if (file.size(f) == 0) {
@@ -194,25 +228,32 @@ for (f in files) {
   }
   text <- readChar(f, file.size(f), useBytes = TRUE)
   Encoding(text) <- "bytes"
-  # Every page is counted through the include-in-header in _quarto.yml, and a
-  # page setting include-in-header of its own replaces that include silently.
-  # Vendored HTML under site_libs/ is not a page.
+  # Every page is counted through the include-in-header in _quarto.yml, so
+  # only the head is searched. Vendored HTML under site_libs/ is not a page.
+  head_end <- regexpr("</head>", text, fixed = TRUE, useBytes = TRUE)
+  head <- if (head_end > 0) substr(text, 1, head_end - 1) else ""
   if (!grepl("(^|/)site_libs/", rel(f)) &&
-      !grepl("data-goatcounter=", text, fixed = TRUE, useBytes = TRUE)) {
-    found <- c(found, sprintf(paste0("  %s: no GoatCounter script\n    likely cause: the page sets ",
-                                     "include-in-header itself, which replaces _includes/analytics.html"), rel(f)))
+      !grepl(goatcounter, blank(head, comment), perl = TRUE, useBytes = TRUE)) {
+    found <- c(found, sprintf(paste0("  %s: no GoatCounter script counting to amelia-m in the page head\n",
+                                     "    likely cause: _includes/analytics.html, or the include-in-header in ",
+                                     "_quarto.yml that pulls it in, was removed, commented out, given another ",
+                                     "code or type, or no longer loads gc.zgo.at/count.js"), rel(f)))
   }
-  # Chunk output is a <pre> directly inside a cell-output div. <pre> blocks and
-  # inline code spans are matched together, left to right, so a span inside a
-  # block is taken with its block.
+  # Chunk output is a <pre> inside a cell-output div: directly, or, when the
+  # output is highlighted (class-output), inside the copy-button scaffold and
+  # sourceCode divs Quarto wraps it in. Shown source code sits in a "cell"
+  # div instead, so it is still skipped. <pre> blocks and inline code spans
+  # are matched together, left to right, so a span inside a block is taken
+  # with its block.
   is_output <- function(start, s) {
     startsWith(s, "<pre") &&
-      grepl("<div[^>]*class=\"[^\"]*cell-output[^\"]*\"[^>]*>\\s*$",
-            substr(text, max(1, start - 300), start - 1), perl = TRUE, useBytes = TRUE)
+      grepl("<div[^>]*class=\"[^\"]*cell-output[^\"]*\"[^>]*>\\s*(?:<div[^>]*>\\s*)*$",
+            substr(text, max(1, start - 400), start - 1), perl = TRUE, useBytes = TRUE)
   }
   prose_and_output <- blank(text, code, keep = is_output)  # shown code skipped
-  prose_only <- blank(text, code)                           # all code skipped
-  prose_and_spans <- blank(text, pre)                       # inline spans kept
+  no_script <- blank(text, script)
+  prose_only <- blank(no_script, code)                      # all code skipped
+  prose_and_spans <- blank(no_script, pre)                  # inline spans kept
   for (ch in c(byte_checks, text_checks)) found <- c(found, report(prose_and_output, ch, f))
   found <- c(found, report(prose_only, literal_r, f), report(prose_and_spans, unrun_r, f))
 }

@@ -129,7 +129,7 @@ places:
       WORDING.md has the rejected versions.
       Earlier drafts named administrative data, which reads as though cleaning
       is the whole of the work. Naming the four areas is what keeps this one
-      from reading that way, so do not trim it back to the tooling half.
+      from reading that way, so do not cut the areas to make room.
 
   - id: github-bio
     label: GitHub profile Bio field
@@ -163,7 +163,7 @@ places:
       "X bio"
 
   - id: gitlab
-    label: GitLab profile Bio field
+    label: GitLab profile Bio field (personal account)
     url: https://gitlab.com/amelia-m
     limit: 250
     updated: 2026-10-21
@@ -173,11 +173,13 @@ places:
       multilevel models, logistic and multinomial regression, missing data,
       synthetic data.
     note: >-
-      The personal profile, not UNL GitLab. Leaves out the role and the
-      university because the profile's own Job title and Organization fields
-      show them right beside it, which frees room for the methods. "In my
-      work" keeps "find" meaning problems she runs into, not faults spotted in
-      the field.
+      227 of 250. Job title, Organization, Location and Website are separate
+      fields on the same form and show beside the bio, so the role and the
+      university are left out of it. "In my work" keeps "find" meaning problems
+      met in her own work rather than faults spotted in the field. The only bio
+      so far naming logistic and multinomial regression. The drafts not chosen
+      are in WORDING.md under "GitLab bio". The UNL GitLab account in links.yml
+      is a separate profile, not tracked here.
 
   # Below here the text has not been recorded yet. Paste in what the profile
   # currently says and set `updated` to the date you checked it.

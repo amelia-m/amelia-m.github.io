@@ -27,7 +27,12 @@ d <- cv_data("software_dev")
 # software_dev is generated, so a rename upstream would otherwise pass silently:
 # a public tool would be labelled "Internal tool" and a downstream button would
 # vanish. Both are matched by name, so both fail the render instead.
-stopifnot(all(proj$label %in% d$name), all(names(related) %in% d$name))
+gone <- setdiff(c(proj$label, names(related)), d$name)
+if (length(gone)) {
+  stop("software_dev has no entry named ", paste0("'", gone, "'", collapse = ", "),
+       ". If the export renamed it, change the label in links.yml's `projects` group,",
+       " or the name in `related` in software.qmd, to match.", call. = FALSE)
+}
 for (i in seq_len(nrow(d))) {
   cat("## ", md(d$name[i]), "\n\n", sep = "")
   cat("*", md(d$role[i]), " · ", md(d$when[i]), "*\n\n", sep = "")

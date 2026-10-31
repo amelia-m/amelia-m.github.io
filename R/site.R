@@ -11,17 +11,21 @@
 # which includes R 4.2 and later on Windows. If no UTF-8 locale can be set it
 # stops, since a render that succeeds with mangled characters is worse than
 # one that fails and _quarto.yml hides warnings from the page.
-if (isTRUE(getOption("knitr.in.progress")) && !isTRUE(l10n_info()[["UTF-8"]])) {
-  local({
-    for (loc in c("C.UTF-8", "C.utf8", "en_US.UTF-8", "en_US.utf8")) {
-      if (nzchar(suppressWarnings(Sys.setlocale("LC_CTYPE", loc)))) break
-    }
-    if (!isTRUE(l10n_info()[["UTF-8"]])) {
-      stop("No UTF-8 locale could be set, so non-ASCII text would render as <U+...>. ",
-           "Set LC_ALL to a UTF-8 locale listed by `locale -a` and render again.",
-           call. = FALSE)
-    }
-  })
+#
+# use_utf8_ctype() does the switching; R/confirm-attendance.R calls it too, for
+# the questions it prints before any page renders. TRUE if the character
+# locale is UTF-8 afterwards.
+use_utf8_ctype <- function() {
+  if (isTRUE(l10n_info()[["UTF-8"]])) return(TRUE)
+  for (loc in c("C.UTF-8", "C.utf8", "en_US.UTF-8", "en_US.utf8")) {
+    if (nzchar(suppressWarnings(Sys.setlocale("LC_CTYPE", loc)))) break
+  }
+  isTRUE(l10n_info()[["UTF-8"]])
+}
+if (isTRUE(getOption("knitr.in.progress")) && !use_utf8_ctype()) {
+  stop("No UTF-8 locale could be set, so non-ASCII text would render as <U+...>. ",
+       "Set LC_ALL to a UTF-8 locale listed by `locale -a` and render again.",
+       call. = FALSE)
 }
 
 site_root <- function() {
@@ -113,6 +117,14 @@ latex_text <- function(x) {
   x <- gsub("\\{", "\002", x, fixed = TRUE)
   x <- gsub("\\}", "\003", x, fixed = TRUE)
   x <- gsub("\\\\([&%#_])", "\\1", x)
+  # URLs, bare or in \url{}, keep their ~ and -- (a personal page under
+  # ~name, a slug with a double hyphen): park them until the end.
+  x <- gsub("\\\\url\\{([^}]*)\\}", "\\1", x)
+  um <- gregexpr("https?://[^[:space:]{}]+", x)
+  urls <- regmatches(x, um)[[1]]
+  regmatches(x, um) <- list(sprintf("\004%d\004", seq_along(urls)))
+  # Dotless i and j, as accents are written over them: {\'\i} is í.
+  x <- gsub("\\\\([ij])(?![A-Za-z])", "\\1", x, perl = TRUE)
   # Math delimiters \( \) and $ ... $: keep the content.
   x <- gsub("\\(", "", x, fixed = TRUE)
   x <- gsub("\\)", "", x, fixed = TRUE)
@@ -147,6 +159,8 @@ latex_text <- function(x) {
   x <- gsub("--", "–", x, fixed = TRUE)
   x <- gsub("~", " ", x, fixed = TRUE)
   x <- gsub("[{}]", "", x)
+  # URLs back before the escaped specials, which a URL can contain too.
+  for (i in seq_along(urls)) x <- sub(sprintf("\004%d\004", i), urls[i], x, fixed = TRUE)
   x <- chartr("\001\002\003", "${}", x)
   trimws(gsub("[[:space:]]+", " ", x))
 }
@@ -524,6 +538,31 @@ print_likes <- function(file = "likes.yml") {
     c(out, ":::", "")
   }
   grid <- function(items) c("::: {.grid .like-grid}", "", unlist(lapply(items, card)), ":::", "")
+  # A repeated name gives two cards the same anchor, so `see:` lands on
+  # whichever comes first; a bare duplicate line once rendered as an empty
+  # card that way. Stop on both that and a `see:` naming no card.
+  # A section with groups draws only those, as the loop below does, so its
+  # own `items` would silently not appear: stop on that too. Unnamed items
+  # are left to card(), which says so more plainly; a name with no letters
+  # or digits would get the bare anchor "like-", so it stops here.
+  for (s in data$sections) {
+    if (length(s$groups) && length(s$items)) {
+      stop(file, ": section '", s$title, "' has both `groups` and `items`; only the groups are shown")
+    }
+  }
+  items <- unlist(lapply(data$sections, function(s) {
+    if (length(s$groups)) unlist(lapply(s$groups, function(g) g$items), recursive = FALSE) else s$items
+  }), recursive = FALSE)
+  names <- vapply(items, function(it) it$name %||% "", character(1))
+  slugs <- vapply(names, slug, character(1), USE.NAMES = FALSE)
+  bare <- names[nzchar(names) & !nzchar(slugs)]
+  if (length(bare)) stop(file, ": a card name needs a letter or digit for its anchor: ", paste(bare, collapse = ", "))
+  slugs <- slugs[nzchar(slugs)]
+  dup <- unique(slugs[duplicated(slugs)])
+  if (length(dup)) stop(file, ": more than one card named ", paste(dup, collapse = ", "))
+  see <- unlist(lapply(items, function(it) it$see))
+  unknown <- see[!slug(see) %in% slugs]
+  if (length(unknown)) stop(file, ": `see:` names no card: ", paste(unknown, collapse = ", "))
   for (s in data$sections) {
     groups <- if (length(s$groups)) s$groups else list(list(title = NULL, items = s$items))
     groups <- Filter(function(g) length(g$items) > 0, groups)
@@ -559,8 +598,59 @@ check_navbar_links <- function() {
 # the comment at the top of that file for the fields.
 
 site_events <- function(file = "events.yml") {
-  read_yaml_utf8(site_path(file))
+  ev <- read_yaml_utf8(site_path(file))
+  # Each of these would otherwise vanish or be ignored with the render still
+  # succeeding: an entry with neither a date nor a year, or a year that is
+  # not a number, matches no year block; a date in another form (2026/12/02)
+  # turns NA in event_dates() and lands in Past; and a field event_line()
+  # does not read for that kind of entry, or a misspelled one, never shows.
+  # A `text` entry is its own whole line, so only its date or year and
+  # `more` links are read; a linked entry reads every field below.
+  linked <- c("id", "date", "year", "when", "where", "note", "past_note", "more", "attended")
+  textual <- c("text", "date", "year", "more", "attended")
+  for (e in ev$events) {
+    what <- e$id %||% substr(trimws(e$text %||% "(no id or text)"), 1, 40)
+    if (is.null(e$date) && is.null(e$year)) stop(file, ": ", what, " has neither `date` nor `year`")
+    if (!is.null(e$date)) {
+      d <- as.character(e$date)
+      if (!grepl("^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$", d) ||
+          is.na(as.Date(d, format = "%Y-%m-%d", optional = TRUE))) {
+        stop(file, ": ", what, " has a `date` that is not YYYY-MM-DD: ", d)
+      }
+    }
+    if (!is.null(e$year) && !grepl("^[0-9]{4}$", as.character(e$year))) {
+      stop(file, ": ", what, " has a `year` that is not a four-digit year: ", e$year)
+    }
+    # `year` stands in for the date of an event already past whose day was
+    # not recorded, so it is written down after the fact, with whether she
+    # went; a year still to come needs a date instead.
+    if (is.null(e$date) && !is.null(e$year)) {
+      if (as.integer(e$year) > as.integer(format(site_today(), "%Y"))) {
+        stop(file, ": ", what, " has `year: ", e$year, "`, which is for a past event; give a `date`")
+      }
+      if (is.null(e$attended)) {
+        stop(file, ": ", what, " has only a `year`, so it is a past record and needs `attended: true` or `false`")
+      }
+    }
+    if (!is.null(e$attended) && !(is.logical(e$attended) && length(e$attended) == 1 && !is.na(e$attended))) {
+      stop(file, ": ", what, " has `attended: ", paste(deparse(e$attended), collapse = " "),
+           "`; use true or false")
+    }
+    extra <- setdiff(names(e), if (is.null(e$text)) linked else textual)
+    if (length(extra)) {
+      stop(file, ": ", what, " has ", paste0("`", extra, "`", collapse = ", "),
+           if (is.null(e$text)) ", which no entry uses" else
+             ", which a `text` entry ignores; put it in the text instead")
+    }
+  }
+  ev
 }
+
+# Today where the events happen. A build in a UTC container on a Nebraska
+# evening would otherwise already be on tomorrow's date and file that day's
+# event under Past, and js/events.js can only move events into Past, never
+# back out.
+site_today <- function() as.Date(format(Sys.time(), "%Y-%m-%d", tz = "America/Chicago"))
 
 # Markdown for one event: the linked name, then the date or cadence, the venue,
 # the note, and any further links in parentheses. A past event is not bolded
@@ -589,7 +679,7 @@ event_line <- function(e, past = FALSE) {
 
 # The dates of every entry in `events`, NA where only a `year` is recorded.
 event_dates <- function(ev) {
-  as.Date(vapply(ev, function(e) as.character(e$date %||% NA), character(1)))
+  as.Date(vapply(ev, function(e) as.character(e$date %||% NA), character(1)), format = "%Y-%m-%d")
 }
 
 # The year an event is filed under: from its date, or from `year` for a past
@@ -602,25 +692,40 @@ event_year <- function(e) {
   }
 }
 
+# Which list each event is on as of `today`, decided here once so that every
+# event is on exactly one: "upcoming"; "past", which says Amelia was there
+# and so needs `attended: true`; "unconfirmed", gone by and not yet marked, on
+# neither list until she says; or "off", marked `attended: false`, which also
+# takes a future event out of Upcoming (Amelia, 2026-10-23: "need to fix so
+# it doesn't show I attended things I skipped"). A year-only entry always
+# carries `attended` (site_events() checks), so it is past or off.
+event_status <- function(ev, today = site_today()) {
+  dates <- event_dates(ev)
+  vapply(seq_along(ev), function(i) {
+    a <- ev[[i]]$attended
+    if (isFALSE(a)) return("off")
+    if (!is.na(dates[i]) && dates[i] >= today) return("upcoming")
+    if (isTRUE(a)) "past" else "unconfirmed"
+  }, character(1))
+}
+
 # Upcoming events still ahead of `today`, soonest first. An event leaves
 # Upcoming on its own the day after it happens.
-upcoming_events <- function(today = Sys.Date(), events = site_events()) {
+upcoming_events <- function(today = site_today(), events = site_events()) {
   ev <- events$events
   if (!length(ev)) return(list())
+  keep <- event_status(ev, today) == "upcoming"
   dates <- event_dates(ev)
-  keep <- !is.na(dates) & dates >= today
   ev[keep][order(dates[keep])]
 }
 
-# Everything else, as year blocks, newest year first. This is the other half of
-# the same list: an event does not need moving once it happens, it just stops
-# being upcoming, which is what keeps a record of where I have actually been.
-# Within a year the dated ones come newest first, the undated ones after them.
-past_events <- function(today = Sys.Date(), events = site_events()) {
+# The past list, as year blocks, newest year first. Within a year the dated
+# ones come newest first, the undated ones after them.
+past_events <- function(today = site_today(), events = site_events()) {
   ev <- events$events
   if (!length(ev)) return(list())
+  keep <- event_status(ev, today) == "past"
   dates <- event_dates(ev)
-  keep <- is.na(dates) | dates < today
   ev <- ev[keep]
   dates <- dates[keep]
   if (!length(ev)) return(list())
@@ -632,6 +737,69 @@ past_events <- function(today = Sys.Date(), events = site_events()) {
   })
 }
 
+# Events waiting for Amelia to say whether she went. A whole-site render at a
+# terminal asks her about them first (R/confirm-attendance.R); any render of
+# the events page also lists them in the log, for renders no one is watching.
+unconfirmed_events <- function(today = site_today(), events = site_events()) {
+  ev <- events$events
+  if (!length(ev)) return(list())
+  ev[event_status(ev, today) == "unconfirmed"]
+}
+
+# An event's name as plain text, for the render log and the pre-render
+# questions: its links.yml label, or the start of its `text`.
+event_label <- function(e) {
+  if (!is.null(e$text)) return(substr(trimws(e$text), 1, 60))
+  # An unmarked event is on neither list of the page, so an id since dropped
+  # from links.yml should not stop the render; fall back to the id itself.
+  # Only that case: a links.yml that will not read still stops it.
+  if (!e$id %in% site_links()$id) return(e$id)
+  get_link(e$id)$label
+}
+
+# Write the unconfirmed list to the render log. stderr rather than message(),
+# which the project's `message: false` would swallow.
+note_unconfirmed <- function(today = site_today(), events = site_events()) {
+  ev <- unconfirmed_events(today, events)
+  if (!length(ev)) return(invisible())
+  what <- vapply(ev, function(e) paste0("  ", e$date %||% e$year, "  ", event_label(e)), character(1))
+  cat("events.yml: ", length(ev), " past event", if (length(ev) > 1) "s", " left off the page ",
+      "until marked `attended: true` (went) or `attended: false` (did not):\n",
+      paste(what, collapse = "\n"), "\n", sep = "", file = stderr())
+  invisible()
+}
+
+# The pages are rebuilt only when Amelia publishes, so what counts as upcoming
+# is decided twice: here, as of the build, and again in the reader's browser by
+# js/events.js, as of the day they read it. Each function below writes the
+# build-time answer as the visible one and marks up the rest for the script, so
+# a reader without JavaScript sees the page as built and everyone else sees it
+# as of today. The data- attributes and classes are the interface between the
+# two; change them together.
+
+# An Upcoming list item, carrying its date so the script can drop it from
+# Upcoming the day after it happens. It does not move into Past there: that
+# waits for `attended: true` and the next publish. The date is written as
+# YYYY-MM-DD whatever form YAML gave it, since the script compares dates as
+# strings.
+event_item <- function(e) {
+  paste0("[", event_line(e), "]{.event data-date=\"", format(as.Date(as.character(e$date))), "\"}")
+}
+
+# The "Often at" line naming the regulars, or "" when there are none.
+regulars_line <- function(events = site_events()) {
+  reg <- events$regulars
+  if (!length(reg)) return("")
+  first <- reg[[1]]
+  cadence <- first$cadence %||% "regularly"
+  rest <- vapply(reg[-1], function(r) link(r$id), character(1))
+  out <- paste0("**Often at:** ", link(first$id), ", ", cadence)
+  if (length(rest)) {
+    out <- paste0(out, ", plus ", and_list(rest))
+  }
+  paste0(out, ". [More events](events.qmd).")
+}
+
 # The home page callout.
 #
 # Names the next event only when it is close enough to be worth a reader's
@@ -639,29 +807,38 @@ past_events <- function(today = Sys.Date(), events = site_events()) {
 # while 1 Million Cups was happening that Wednesday. Past `weeks`, the callout
 # points at the regulars instead, and with neither it returns "" so the home
 # page simply omits it.
-home_callout <- function(weeks = 6, today = Sys.Date(), events = site_events()) {
+#
+# Every upcoming event gets a line, soonest first, with the first day it is
+# worth naming (`data-from`) and its own date; only the one current at build
+# time is visible, and the script picks again on the day. The whole callout
+# sits in an .event-callout wrapper, hidden when nothing is current at build
+# time, so the script can still show an event that comes into range later.
+# Returns the complete Markdown, or "" when there is nothing it could ever show.
+home_callout <- function(weeks = 6, today = site_today(), events = site_events()) {
   soon <- upcoming_events(today, events)
-  if (length(soon)) {
-    e <- soon[[1]]
-    if (as.Date(e$date) - today <= weeks * 7) {
-      return(paste0(
-        "**Next up:** ", link(e$id), ", ", e$when,
-        ". [More events](events.qmd)."
-      ))
-    }
+  fallback <- regulars_line(events)
+  if (!length(soon) && !nzchar(fallback)) return("")
+  dates <- event_dates(soon)
+  shown <- if (length(soon) && dates[1] - today <= weeks * 7) 1L else 0L
+  hide <- function(h) if (h) " hidden=\"hidden\"" else ""
+  lines <- vapply(seq_along(soon), function(i) {
+    e <- soon[[i]]
+    # `text` wins over `id`, as in event_line(). A text entry has no name to
+    # link, so it is given whole, with its `more` links; a linked entry is
+    # named by its link and date alone, the note and `more` links being for
+    # the events page.
+    what <- if (!is.null(e$text)) end_period(event_line(e)) else
+      paste0(link(e$id), if (!is.null(e$when)) paste0(", ", e$when), ".")
+    paste0("::: {.event-next data-from=\"", dates[i] - weeks * 7, "\" data-date=\"",
+           dates[i], "\"", hide(i != shown), "}\n**Next up:** ", what,
+           " [More events](events.qmd).\n:::")
+  }, character(1))
+  if (nzchar(fallback)) {
+    lines <- c(lines, paste0("::: {.event-fallback", hide(shown > 0), "}\n", fallback, "\n:::"))
   }
-  reg <- events$regulars
-  if (length(reg)) {
-    first <- reg[[1]]
-    cadence <- first$cadence %||% "regularly"
-    rest <- vapply(reg[-1], function(r) link(r$id), character(1))
-    out <- paste0("**Often at:** ", link(first$id), ", ", cadence)
-    if (length(rest)) {
-      out <- paste0(out, ", plus ", and_list(rest))
-    }
-    return(paste0(out, ". [More events](events.qmd)."))
-  }
-  ""
+  paste0(":::: {.event-callout", hide(!shown && !nzchar(fallback)), "}\n",
+         "::: {.callout-tip appearance=\"simple\"}\n",
+         paste(lines, collapse = "\n\n"), "\n:::\n::::\n")
 }
 
 # ---- Bios -----------------------------------------------------------------
@@ -727,8 +904,24 @@ site_areas <- function(file = "areas.yml") {
 # The file stores the mapping project-first, since a project belongs to
 # several areas and should only be written down once. This prints it the other
 # way round, which is the direction it gets read in.
-work_areas <- function(x = site_areas(), gaps = TRUE, detail = TRUE) {
+work_areas <- function(x = site_areas(), todo = TRUE, detail = TRUE) {
+  # YAML reads `id: 2020` as a number and `id: yes` as TRUE, so check the type
+  # before vapply() does it with an error that names no area.
+  lab <- function(a) if (is.null(a$label)) "(no label)" else .squash(a$label)
+  id_ok <- vapply(x$areas, function(a) is.character(a$id) && length(a$id) == 1 && nzchar(a$id),
+                  logical(1))
+  if (!all(id_ok)) {
+    stop("areas.yml: every area needs a text id; check ",
+         paste(vapply(x$areas[!id_ok], lab, character(1)), collapse = ", "), call. = FALSE)
+  }
   known <- vapply(x$areas, function(a) a$id, character(1))
+  dup <- unique(known[duplicated(known)])
+  if (length(dup)) {
+    stop("areas.yml: an area id is used more than once: ",
+         paste(vapply(dup, function(d) paste0("'", d, "' by ", paste(
+           vapply(x$areas[known == d], lab, character(1)), collapse = " and ")), character(1)),
+           collapse = "; "), call. = FALSE)
+  }
   # A project whose areas are missing, empty, or all mistyped matches no
   # section and would vanish from the report entirely, which is the one
   # failure this file cannot afford: it exists to hold the projects nothing
@@ -772,9 +965,9 @@ work_areas <- function(x = site_areas(), gaps = TRUE, detail = TRUE) {
           }
         }
       }
-      if (isTRUE(gaps) && !is.null(p$gaps)) {
-        cat(strwrap(.squash(p$gaps), width = 70,
-                    initial = "      GAPS ", prefix = "           "), sep = "\n")
+      if (todo && !is.null(p$todo)) {
+        cat(strwrap(.squash(p$todo), width = 70,
+                    initial = "      TODO ", prefix = "           "), sep = "\n")
       }
     }
     cat("\n")

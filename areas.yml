@@ -21,14 +21,15 @@
 # rather than a sign the export is incomplete.
 #
 # This is deliberately incomplete and is being filled in backwards through the
-# older positions. `gaps` marks what is known to be missing; an absent project
+# older positions. `todo` marks what is known to be missing; an absent project
 # is not evidence it did not happen.
 #
 # Fields:
 #   name     the project as it gets referred to
 #   where    the centre, lab, or partner it sits under
 #   when     years, or "ongoing"
-#   current    true while it is live work, "unknown" when that is not established
+#   current    true while it is live work, "unknown" when that is not
+#              established; left out, the project is printed as past
 #   areas    one or more ids from the `areas` block below
 #   role     what I actually did on it
 #   output   what came out of it: a report, an application, a paper
@@ -36,7 +37,7 @@
 #   built_with which assistants or tools did the building, read from the
 #              repository's commit history rather than from memory
 #   source     "recalled" for an entry with no CV line behind it
-#   gaps       what still needs filling in
+#   todo       what still needs filling in
 
 areas:
   - id: research
@@ -87,7 +88,7 @@ projects:
     current: true
     areas: [public-health, public-policy]
     role: Analysis, data management, and reporting.
-    gaps: >-
+    todo: >-
       What the analyses actually are. The CV covers five Center projects in
       one line, so everything specific to this one is missing.
 
@@ -103,7 +104,7 @@ projects:
       2025 Evaluation Report: Reach and Impacts of Classes Offered June 2023
       to August 2025.
     note: Has a public evaluation report.
-    gaps: >-
+    todo: >-
       Whether the work continued past the September 2025 report. The CV lists
       it under the current NUPPC appointment, which may only mean it was one of
       that appointment's projects.
@@ -197,7 +198,7 @@ projects:
     current: true
     areas: [research, education]
     role: Invited speaker. Session 1 of 2, "Data documentation for Teams", June 2026.
-    gaps: Session 2 title, scheduled for November 11, 2026.
+    todo: Session 2 title, scheduled for November 11, 2026.
 
   # ---- Tools built outside a single project ------------------------------
   # The headline on the AI Engineer Omaha profile says the tools come out of
@@ -219,7 +220,7 @@ projects:
       Claude Code throughout: 37 co-author trailers across 45 commits, naming
       Opus 4.8, Opus 5, Sonnet 4.6, and Fable 5.1. No Copilot, Codex, or
       Gemini commits, and no bot-authored commits at all.
-    gaps: Which project's data prompted it.
+    todo: Which project's data prompted it.
 
   - name: Table Relationship Explorer
     where: Own time
@@ -252,7 +253,7 @@ projects:
       which says neither whose port it is nor that a lab picked the design up
       and shipped it. The second half is the part a reader would actually find
       interesting.
-    gaps: >-
+    todo: >-
       Which project's data prompted it. The NSWERS warehouse work is the
       obvious guess and is only a guess.
       Also: the published descriptions still say "(with a Python/Streamlit
@@ -310,7 +311,7 @@ projects:
     when: 2018 to 2021
     areas: [research, education]
     role: Graduate Research Assistant.
-    gaps: >-
+    todo: >-
       Which projects beyond the two below. contributions.yml records one paper
       from these years that acknowledges the office rather than a
       contribution.
@@ -322,7 +323,7 @@ projects:
     when: 2018 to 2021
     source: recalled
     areas: [education, public-health]
-    gaps: >-
+    todo: >-
       Everything: what the project was, who it was for, what I did on it, and
       what came out of it. Areas are a guess from the name, school plus
       nutrition, and nothing else.
@@ -332,7 +333,7 @@ projects:
     when: 2018 to 2021
     source: recalled
     areas: [education]
-    gaps: >-
+    todo: >-
       Everything: what the project was, who it was for, what I did on it, and
       what came out of it. Tagged education on the name alone. If the work was
       measurement or survey design, it is research too.
@@ -342,7 +343,7 @@ projects:
     when: Spring 2018
     areas: [education, public-health]
     role: Graduate Research Assistant.
-    gaps: >-
+    todo: >-
       Whether this appointment was the WeCook programme, and whether it
       covered anything else. M. Krehbiel is a co-author on every co-authored
       WeCook output in `_data/` (presentations.bib and manuscripts.json), and
@@ -354,7 +355,7 @@ projects:
     when: Autumn 2017
     areas: [public-health]
     role: Graduate Research Assistant.
-    gaps: >-
+    todo: >-
       Which project, and what the work was. Not WeCook, which came later: a
       guess that it was, from the shared Extension collaborator and the
       adjacent dates, was wrong. This is the earliest thing on file that is
@@ -382,7 +383,7 @@ projects:
     when: 2015 to 2017
     source: recalled
     areas: [research]
-    gaps: >-
+    todo: >-
       Everything: what was measured, for whom, and what I did. Performance
       testing on the face of it, which is research by subject; if it fed
       anything about youth physical activity more broadly it is public-health
@@ -403,7 +404,7 @@ projects:
     when: 2012 to 2015
     source: recalled
     areas: [research]
-    gaps: >-
+    todo: >-
       Everything: the squad or club, what the training study tested, and what
       I did. One of two rugby projects from these years; this is the training
       one and the entry below is the assessment one, which is as much as is
@@ -414,6 +415,6 @@ projects:
     when: 2012 to 2015
     source: recalled
     areas: [research]
-    gaps: >-
+    todo: >-
       Everything: what was assessed, on whom, and what I did. See the entry
       above on how the two rugby projects divide.

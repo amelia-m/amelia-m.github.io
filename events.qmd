@@ -1,5 +1,9 @@
 ---
 title: "Events"
+# Takes an event out of Upcoming the day after it happens, without a
+# republish; it goes into Past only once events.yml marks it attended. See
+# js/events.js.
+include-after-body: _includes/events.html
 ---
 
 ```{r}
@@ -15,7 +19,7 @@ Where to find me, in person and online. If you'll be at one of these, come say h
 soon <- upcoming_events(events = ev)
 if (length(soon)) {
   cat("## Upcoming\n\n")
-  for (e in soon) cat("- ", event_line(e), "\n", sep = "")
+  for (e in soon) cat("- ", event_item(e), "\n", sep = "")
   cat("\n")
 }
 ```
@@ -27,13 +31,19 @@ if (length(soon)) {
 for (e in ev$regulars) cat("- ", event_line(e), "\n", sep = "")
 ```
 
-## Past
-
 ```{r}
 #| results: asis
-for (block in past_events(events = ev)) {
+# Past can be empty now that it needs confirming, so its heading is written
+# only when there is something under it, as Upcoming's is.
+blocks <- past_events(events = ev)
+if (length(blocks)) cat("## Past\n\n")
+for (block in blocks) {
   cat("### ", block$year, "\n\n", sep = "")
   for (e in block$items) cat("- ", event_line(e, past = TRUE), "\n", sep = "")
   cat("\n")
 }
+# Past events not yet marked attended or not go to the render log, not the
+# page. At a terminal the pre-render asks about them first; this covers
+# renders with no one to ask, and any it could not ask about, which it says.
+note_unconfirmed(events = ev)
 ```

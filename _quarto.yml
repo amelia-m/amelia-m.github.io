@@ -8,9 +8,14 @@ project:
   # as R writing an en dash as literal "<U+2013>" text: a render that only
   # "completes" once let exactly that through. See R/check-output.R.
   post-render: R/check-output.R
-  # js/ is referenced from _includes/particles-bg.html and images/icons/ only
-  # from CSS mask urls, neither of which Quarto scans for resources, so name
-  # them here or they are left out of _site.
+  # Before a whole-site render at a terminal, asks whether Amelia went to each
+  # past event events.yml has not marked yet, so Past never claims one she
+  # skipped. Asks nothing in preview or when no one is at the keyboard. See
+  # R/confirm-attendance.R.
+  pre-render: R/confirm-attendance.R
+  # js/ is referenced from _includes/particles-bg.html and events.html, and
+  # images/icons/ only from CSS mask urls, none of which Quarto scans for
+  # resources, so name them here or they are left out of _site.
   resources:
     - js/
     - images/icons/
@@ -31,7 +36,9 @@ website:
   navbar:
     # Ten links plus six icons do not fit beside the name at the default `lg`
     # (992px), which is what squeezed the brand and wrapped "Things I Like"
-    # onto two lines. Collapse to the hamburger below 1200px instead.
+    # onto two lines. Collapse to the hamburger below 1200px instead. The
+    # navbar rules in _shared.scss are written for this breakpoint (1200px,
+    # and Quarto's own switch at 992px); change them together.
     collapse-below: xl
     left:
       - href: index.qmd
@@ -89,6 +96,8 @@ website:
     # with its name as a tooltip and as screen-reader text, so the credits
     # still read in words. The logos are Simple Icons (CC0), drawn as CSS masks
     # in _shared.scss so they take the footer's text colour in both themes.
+    # No GitHub Copilot (Amelia, 2026-10-21): its only part in this site was
+    # one review of PR #1.
     right: '<span class="built-with"><i class="bi bi-code-slash" aria-hidden="true"></i><span class="visually-hidden">Made</span> with <i class="bi bi-heart-fill" aria-hidden="true"></i><span class="visually-hidden">love</span> in <a href="https://www.r-project.org" class="brand-link" title="R"><span class="brand-icon icon-r" aria-hidden="true"></span><span class="visually-hidden">R</span></a> and <a href="https://quarto.org" class="brand-link" title="Quarto"><span class="brand-icon icon-quarto" aria-hidden="true"></span><span class="visually-hidden">Quarto</span></a>, with help from <a href="https://claude.ai" class="brand-link" title="Claude"><span class="brand-icon icon-claude" aria-hidden="true"></span><span class="visually-hidden">Claude</span></a></span>'
 
 format:
@@ -113,9 +122,8 @@ format:
     # the navbar GitHub icon also stays in the tab. Forcing either needs an
     # explicit target="_blank" on the link.
     link-external-newwindow: true
-    # Analytics (GoatCounter), on every page. index.qmd sets its own
-    # `include-after-body` for the drifting-dot background; that is a different
-    # key, so it cannot displace this. A page that sets `include-in-header`
-    # itself would replace this one and stop being counted, so page-specific
-    # CSS goes in _shared.scss instead.
+    # Analytics (GoatCounter), on every page. A page's own `include-in-header`
+    # is added alongside this rather than replacing it (checked with Quarto
+    # 1.10.19), and R/check-output.R fails the render on any page without the
+    # script. Notes in README.md, "Analytics".
     include-in-header: _includes/analytics.html

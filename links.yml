@@ -9,6 +9,8 @@
 # icon:    a Bootstrap Icons name (https://icons.getbootstrap.com), optional.
 # icon_ai: an Academicons name (https://jpswalsh.github.io/academicons),
 #          for the scholarly profiles Bootstrap Icons does not cover.
+# Both are drawn only by link_button(), the home page's sidebar buttons. A
+# link written with link(), which is every other page, shows no icon.
 
 # Only the university address is published. The personal one was removed
 # rather than obfuscated: nothing client-side stops a headless-browser
@@ -140,12 +142,6 @@ events:
   - id: wit-summit
     label: Nebraska Women in Tech Summit
     url: https://aksarben.org/women-in-tech-summit/
-  # Meetup's share short link, as Amelia sent it. The build environment could
-  # not open meetu.ps, so it was not checked before publishing; swap in the
-  # full www.meetup.com event URL when convenient.
-  - id: with-2026-10-21
-    label: "She Built This! Founders Behind Heartland Startups"
-    url: https://meetu.ps/e/QkP0w/DX6bR/i
   - id: one-million-cups-lnk
     label: 1 Million Cups Lincoln
     url: https://www.1millioncups.com/s/account/0014W00002AqQeaQAF/lincoln-ne
@@ -158,12 +154,62 @@ events:
   - id: lincoln-code-2026-09-29
     label: Lincoln.Code meetup, September 29, 2026
     url: https://www.meetup.com/lincoln-code/events/316586016/
+  # The October 27 talk, held by Lincoln.Code and cross-listed by (402)
+  # Developers, each with its own Meetup event page (Amelia's screenshot of
+  # both listings, 2026-10-27). Both fetched that day and live; the
+  # ?eventOrigin tracking parameter on the one she gave is dropped.
+  - id: lincoln-code-2026-10-27
+    label: Lincoln.Code
+    url: https://www.meetup.com/lincoln-code/events/317024050/
+  - id: 402-developers-2026-10-27
+    label: Cross-listing
+    url: https://www.meetup.com/402-developers/events/317052375/
+  # The group's own page, as Amelia gave it on 2026-10-27. Fetched that day and
+  # live: "a monthly engineering meetup" in Lincoln.
+  - id: 402-developers
+    label: (402) Developers
+    url: https://www.meetup.com/402-developers/
+  # The speaker's materials for that October 27 talk, as Amelia gave them on
+  # 2026-10-27. Neither resolves from the build environment
+  # (github.io is refused by its proxy, github.com answers 403), so they have
+  # not been opened from here. The kit is served by GitHub Pages from the
+  # repository.
+  - id: dama-rocky-mountain-2026-kit
+    label: Talk kit
+    url: https://nathanplatteruser.github.io/dama-rocky-mountain-2026/kit/
+  - id: dama-rocky-mountain-2026-source
+    label: Source on GitHub
+    url: https://github.com/nathanplatteruser/dama-rocky-mountain-2026
+    icon: github
   - id: lincoln-ai-2026-05-06
     label: Lincoln AI Explorers, May 6, 2026
     url: https://www.meetup.com/lincoln-ai/events/314541902/
   - id: lincoln-ai
     label: Lincoln AI
     url: https://www.meetup.com/lincoln-ai/
+  # The event page rather than the group's, because Meetup keeps a past
+  # event's page, so it serves while upcoming and afterwards as the record.
+  # Fetched 2026-10-23 and live.
+  - id: ai-omaha-2026-11-05
+    label: AI Omaha
+    url: https://www.meetup.com/ai_omaha/events/317053693/
+  # As Amelia gave it on 2026-10-23, with the tk= invitation token and the
+  # utm_ tracking parameters removed. Luma does not resolve from the build
+  # environment, so the render cannot check it.
+  - id: startup-week-2026-11-16
+    label: Startup Week Launch Party
+    url: https://luma.com/8snwjdij
+  # The group behind the October 21 meetup, as Amelia gave it on 2026-10-22.
+  # It does not resolve from the build environment, so the render cannot check
+  # it. Its LinkedIn, X, Facebook and Instagram accounts are all "witheartland";
+  # none is linked from the page yet.
+  - id: witheartland
+    label: WiTH
+    url: http://witheartland.org/
+  # Fetched 2026-10-22 and live; the ?eventOrigin tracking parameter is dropped.
+  - id: witheartland-2026-10-21
+    label: Women in Technology of the Heartland, October 21, 2026
+    url: https://www.meetup.com/witheartland/events/316903419/
   # The group's own site, not Meetup: www.meetup.com/nebraskajs still answers
   # 200 but renders "group you're looking for doesn't exist", and their
   # invitations now come from lu.ma. The home page carries the next meetup, so
@@ -171,10 +217,10 @@ events:
   - id: nebraskajs
     label: NebraskaJS
     url: https://nebraskajs.com/
-  # The group that co-hosted the October 15 meetup, locally hosted by
-  # DevObsessed. It is the Omaha chapter of an international organisation,
-  # not a group founded here, so the parent has a footprint even though this
-  # city site has almost none. An earlier version of this comment explained
+  # The group behind the October 15 meetup, held jointly with NebraskaJS and
+  # locally hosted by DevObsessed: the first meetup of the Omaha chapter of an
+  # international organisation, not a group founded here, so the parent has a
+  # footprint even though this city site has almost none. An earlier version of this comment explained
   # the missing search results as a brand new group, which was wrong: only
   # the chapter is new.
   #
@@ -203,9 +249,3 @@ events:
   - id: carpentries-sessions
     label: The Carpentries community sessions
     url: https://pretix.carpentries.org/community-events/
-  # The Zoom room for the October 27 Welcome Session, from the registration
-  # email. A public link, per Amelia (2026-10-21). Check it again before
-  # pointing a later session at it.
-  - id: carpentries-welcome-zoom
-    label: Zoom
-    url: https://carpentries.zoom.us/my/carpentriesroom2?pwd=WmVCOUlPUm1laFk5SUp1UWg5cjhEUT09

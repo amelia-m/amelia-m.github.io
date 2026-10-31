@@ -53,10 +53,14 @@ until going is actually a pattern.
 **Prefer durable to precise when the page is published by hand.** Lincoln AI
 moved from Wednesdays to Tuesdays partway through the year, so the cadence does
 not name a day. Link a group's home page rather than a dated event page, which
-stops being useful the day after.
+stops being useful the day after, unless the event page outlives the event:
+Meetup keeps a past meetup's page, so a Meetup event link serves first as the
+place to sign up and then as the record.
 
-**Do not publish a URL that could not be checked.** Where a link had to go in
-unverified, the data file says so next to it.
+**Do not publish a URL nobody has opened.** Check it from here where the
+build environment can reach the host. Where it cannot, a URL Amelia gave from
+her own browser counts as opened by her, and the data file says so next to it;
+one she has not given stays out until she does.
 
 **Say which AI, and which part.** "AI-assisted" covers everything from one
 completion to the whole thing, so it tells a reader nothing. pleasantry was
@@ -67,6 +71,11 @@ the label. A workshop title that happens to contain the word AI is not a
 disclosure.
 
 **No em dash.** From `CLAUDE.md`. A spaced hyphen, a comma, or a colon.
+
+**R package names stay plain.** pleasantry, tidysynthesis, syntheval, not
+`{pleasantry}`: the braces were suggested for the Fun page and turned down
+(Amelia, 2026-10-24: "Skip the curly braces"). A package named in passing as
+code, such as `compliment` on that page, keeps its code font.
 
 ## AI Engineer Omaha headline
 
@@ -151,6 +160,32 @@ organisational policy. "Adjunct faculty" is left out for space; see the last row
 | "Measurement, SEM, multilevel models, and missing data, applied to research, public policy, public health, and education. R & Shiny tools. Postdoc at UNL." (153) | Leads with the methods, the strongest answer to bios that read as though cleaning data is the whole job. Tooling last. |
 | "Postdoc and adjunct at UNL. SEM, multilevel models, measurement, missing data. I build R & Shiny tools for problems I hit in research, policy, health, and education." (165) | Over the limit. Naming both roles costs the methods or the areas. |
 | "Postdoc and adjunct faculty at UNL. Measurement, SEM, multilevel models, missing data, synthetic data. I build R and Shiny tools for the problems I hit along the way." (166) | Over the limit, and "along the way" says less than naming the areas. |
+
+## GitLab bio
+
+The personal account's Bio field allows **250** characters. Job title, Organization, Location
+and Website are separate fields shown beside it, so the bio leaves out the role and the
+university: Amelia, of an earlier round, "postdoc and adjunct are already covered by the job
+title box". The same round changed "hit" to "find".
+
+Live, chosen 2026-10-21, 227 of 250:
+
+> I build R and Shiny tools for problems I find in my work in research, public policy, public
+> health, and education. Methods: measurement, SEM, multilevel models, logistic and
+> multinomial regression, missing data, synthetic data.
+
+The areas are written in full, as in the AI Engineer Omaha headline, and the space the role
+used to take goes to logistic and multinomial regression. "In my work" matters once the verb
+is "find": without it, "problems I find in research" can read as faults spotted in the field
+rather than problems met in her own work.
+
+### Not chosen
+
+| Wording | Its case |
+| --- | --- |
+| "Measurement, SEM, multilevel models, logistic and multinomial regression, missing data, and synthetic data. I build R and Shiny tools for problems I find in research, public policy, public health, and education." (211) | Recommended at the time: methods first, with the job title already sitting above the bio. Has the "find" ambiguity above. |
+| "Measurement, SEM, multilevel models, missing data, and synthetic data. I build R and Shiny tools for problems I find in research, public policy, public health, and education." (174) | Shortest. Leaves out the regression methods, and has the same ambiguity. |
+| Earlier round, 232 to 245 characters. Two of the three opened with "Postdoc and adjunct faculty", the third with "Quantitative methods in R:" | The two role openings spent the space on what the Job title field already shows, and said "hit" where these say "find". |
 
 ## Adding to this file
 

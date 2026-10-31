@@ -45,10 +45,11 @@
   var dots = [];
   var w = 0;
   var h = 0;
-  var fadeEnd = 450; // scroll offset at which the banner is gone; set in resize()
+  var dpr = 1;
+  var fadeEnd = 450; // scroll offset at which the banner is gone; set in measure()
   var colL = 0; // the solid text column, in px; both 0 when there is none
   var colR = 0;
-  var dotColor = "43, 92, 138";
+  var ink = "rgb(43, 92, 138)"; // dots, lines and rails; set in readColor()
   var frame = null;
   var alpha = -1; // force the first opacity write
   var stopped = false;
@@ -58,7 +59,7 @@
   // a style flush, and this value only changes when the theme does.
   function readColor() {
     var v = getComputedStyle(host).getPropertyValue("--particles-rgb");
-    if (v) dotColor = v.trim();
+    if (v) ink = "rgb(" + v.trim() + ")";
   }
 
   function spawn() {
@@ -71,8 +72,14 @@
     };
   }
 
-  function resize() {
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  function pixelRatio() {
+    return Math.min(window.devicePixelRatio || 1, 2);
+  }
+
+  // `recount` false keeps the dots as they are and only resizes the canvas;
+  // see the resize listener below.
+  function resize(recount) {
+    dpr = pixelRatio();
     w = host.clientWidth;
     h = host.clientHeight;
     canvas.width = Math.round(w * dpr);
@@ -81,11 +88,13 @@
     canvas.style.height = h + "px";
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    var target = Math.round((w * h) / AREA_PER_DOT);
-    if (target < MIN_DOTS) target = MIN_DOTS;
-    if (target > MAX_DOTS) target = MAX_DOTS;
-    while (dots.length < target) dots.push(spawn());
-    if (dots.length > target) dots.length = target;
+    if (recount !== false || !dots.length) {
+      var target = Math.round((w * h) / AREA_PER_DOT);
+      if (target < MIN_DOTS) target = MIN_DOTS;
+      if (target > MAX_DOTS) target = MAX_DOTS;
+      while (dots.length < target) dots.push(spawn());
+      if (dots.length > target) dots.length = target;
+    }
 
     measure();
     readColor();
@@ -161,6 +170,11 @@
       else if (a.x > w + 10) a.x = -10;
       if (a.y < -10) a.y = h + 10;
       else if (a.y > h + 10) a.y = -10;
+      // Well inside the text column, which is cleared below: no dot there
+      // shows, and nor does a line between two of them, since the column is
+      // a vertical band and the line stays inside it. The 3px clears the
+      // largest dot and a line's antialiasing.
+      a.hidden = a.x - 3 > colL && a.x + 3 < colR;
     }
 
     ctx.clearRect(0, 0, w, h);
@@ -173,6 +187,7 @@
       a = dots[i];
       for (j = i + 1; j < dots.length; j++) {
         b = dots[j];
+        if (a.hidden && b.hidden) continue;
         dx = a.x - b.x;
         dy = a.y - b.y;
         d2 = dx * dx + dy * dy;
@@ -186,7 +201,7 @@
       }
     }
 
-    ctx.strokeStyle = "rgb(" + dotColor + ")";
+    ctx.strokeStyle = ink;
     ctx.lineWidth = 1;
     for (i = 0; i < BUCKETS; i++) {
       arr = lines[i];
@@ -201,9 +216,10 @@
     }
     ctx.globalAlpha = 1;
 
-    ctx.fillStyle = "rgb(" + dotColor + ")";
+    ctx.fillStyle = ink;
     for (i = 0; i < dots.length; i++) {
       a = dots[i];
+      if (a.hidden) continue;
       ctx.beginPath();
       ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
       ctx.fill();
@@ -214,7 +230,7 @@
     // phone the column is the whole width and neither rail is drawn.
     if (colR > colL) {
       ctx.clearRect(colL, 0, colR - colL, h);
-      ctx.strokeStyle = "rgb(" + dotColor + ")";
+      ctx.strokeStyle = ink;
       ctx.lineWidth = 1;
       ctx.globalAlpha = RAIL_ALPHA;
       ctx.beginPath();
@@ -239,16 +255,32 @@
     }
   }
 
-  window.addEventListener("resize", function () {
-    resize();
+  // Re-fit the canvas when its size or the pixel ratio has changed (the ratio
+  // changes alone when the window moves to a sharper screen), and otherwise
+  // only re-measure the layout. Re-count the dots only when the width
+  // changes: adding and dropping dots on every height change made them
+  // visibly pop in and out while scrolling.
+  function refit() {
+    if (host.clientWidth === w && host.clientHeight === h && pixelRatio() === dpr) measure();
+    else resize(host.clientWidth !== w);
     schedule();
-  });
-  if (window.ResizeObserver) {
-    new ResizeObserver(function () {
-      measure();
-      schedule();
-    }).observe(document.body);
   }
+
+  // On a phone the address bar showing and hiding fires resize over and over
+  // during a scroll, changing only the height, so coalesce the events into
+  // one per frame.
+  var resizePending = false;
+  window.addEventListener("resize", function () {
+    if (resizePending) return;
+    resizePending = true;
+    window.requestAnimationFrame(function () {
+      resizePending = false;
+      refit();
+    });
+  });
+  // Layout changes that fire no window resize: late fonts or images moving
+  // the column, or a scrollbar appearing, which narrows the canvas too.
+  if (window.ResizeObserver) new ResizeObserver(refit).observe(document.body);
   window.addEventListener("scroll", schedule, { passive: true });
   document.addEventListener("visibilitychange", schedule);
 
