@@ -1,9 +1,12 @@
 # Project profile: amelia-m.github.io
 
 How agents work in this repository, kept here so it survives sessions. `CLAUDE.md` imports
-this file. Open items are not kept in this repository at all, since it is public: Amelia
-keeps them outside it (Amelia, 2026-10-31), and a session that finds new ones reports them
-to her instead.
+this file. Open items are not kept in this repository, since it is public (Amelia,
+2026-10-31): they are in `docs/website_todo.md` in the repository this site's content is
+exported from. A session with that checkout beside this one adds new items there; one
+without it reports them to Amelia. The file that held them here from 2026-10-17 was deleted
+on 2026-10-31 but stays readable in `main`'s history; removing it from there would mean
+rewriting history, which is Amelia's call.
 
 ## Review, push and merge
 

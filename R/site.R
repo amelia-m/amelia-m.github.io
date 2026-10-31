@@ -905,6 +905,9 @@ site_areas <- function(file = "areas.yml") {
 # several areas and should only be written down once. This prints it the other
 # way round, which is the direction it gets read in.
 work_areas <- function(x = site_areas(), gaps = TRUE, detail = TRUE) {
+  # A flag that is not TRUE or FALSE would quietly print no gaps, which reads
+  # as "nothing missing".
+  if (!(isTRUE(gaps) || isFALSE(gaps))) stop("work_areas(): gaps must be TRUE or FALSE", call. = FALSE)
   # YAML reads `id: 2020` as a number and `id: yes` as TRUE, so check the type
   # before vapply() does it with an error that names no area.
   lab <- function(a) if (is.null(a$label)) "(no label)" else .squash(a$label)

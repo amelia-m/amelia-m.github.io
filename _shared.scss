@@ -180,7 +180,8 @@ body { background-color: transparent; }
 // include-in-header would replace the project's analytics include. Below the xl
 // breakpoint the collapsed bar is laid out around the brand, so it keeps its
 // space there and the bar matches every other page.
+// xl is the collapse-below breakpoint in _quarto.yml, as for the rules above.
 body:has(.hero-banner) .navbar-brand-container { visibility: hidden; }
-@media (min-width: 1200px) {
+@include media-breakpoint-up(xl) {
   body:has(.hero-banner) .navbar-brand-container { display: none; }
 }
