@@ -82,17 +82,19 @@ places:
   - id: github-readme
     label: GitHub profile README
     url: https://github.com/amelia-m
-    updated: 2026-10-13
+    updated: 2026-10-31
     text: >-
-      Postdoctoral researcher at the Nebraska Evaluation and Research (NEAR)
-      Center and adjunct faculty in Educational Psychology at the University of
-      Nebraska–Lincoln. I work on measurement, missing data, and
-      privacy-preserving synthetic data, and I build R and Shiny tools for the
-      unglamorous middle of applied research: documenting, cleaning, linking,
-      and reporting on administrative data.
+      I'm a quantitative methodologist at the University of Nebraska–Lincoln. I
+      help people work out whether their data measures what they think it does,
+      and when the same problem keeps coming up, I build an R or Shiny tool for
+      it.
     note: >-
       The opening paragraph of the amelia-m/amelia-m repo. That page also lists
-      current projects, which go stale separately from the bio.
+      current projects, which go stale separately from the bio. Chosen
+      2026-10-31 from three drafts ("1 is better at least, go with that"); the
+      one it replaced said "the unglamorous middle of applied research" and
+      "administrative data", which Amelia disliked. It names neither the role
+      nor the methods, which the X and GitLab bios do.
 
   - id: bluesky
     label: Bluesky

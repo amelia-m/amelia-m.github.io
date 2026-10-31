@@ -20,11 +20,13 @@ they were found.
       with invariance tested across the three.
 - [ ] `software.qmd` says "the unglamorous middle of applied research: documenting,
       cleaning, linking, and reporting on administrative data", which narrows the work twice in
-      one sentence: to one subject area, and to the cleaning half. The same sentence is the
-      GitHub profile README's, recorded in `bios.yml` under `github-readme`. `index.qmd` has the
-      same problem in different words: "R and Shiny tools that make messy administrative data
-      easier to document, clean, and report on". The four areas in `areas.yml` are what a
-      general version would draw on. Grep for "unglamorous" and "messy administrative".
+      one sentence: to one subject area, and to the cleaning half. Amelia disliked the same
+      sentence in the GitHub profile README, and "unglamorous" in particular, and replaced it
+      there on 2026-10-31 (`github-readme` in `bios.yml`); that wording is a starting point
+      here. `index.qmd` has the same problem in different words: "R and Shiny tools that make
+      messy administrative data easier to document, clean, and report on". The four areas in
+      `areas.yml` are what a general version would draw on. Grep for "unglamorous" and "messy
+      administrative".
 - [ ] Neither the `index.qmd` paragraph nor the `software.qmd` opening line is tracked in
       `bios.yml`, so `bio_report()` cannot tell when they drift.
 - [ ] Brown Bagger session 2 title, for 2026-11-11.
@@ -82,13 +84,12 @@ they were found.
       `git ls-files --eol`, or `git grep -I -l -P "\r" <rev>` for a revision not checked out;
       and `git add --renormalize --dry-run .` lists every path whether or not it would change.
       Found by the line-endings session of 2026-10-30, which hit both.
-- [ ] GitHub profile README: still says "administrative data". Its em dashes are gone and the
-      "Also" section with the synthetic-data availability claim is removed for now
-      (`amelia-m/amelia-m` PR #1, 2026-10-31, at Amelia's request). Update the `github-readme`
-      entry in `bios.yml` after the next change to the opening paragraph; it has no `file`, so
-      drift there is not detected automatically. That repository has no instructions file, so
-      a session editing it does not see the house style; a one-line `CLAUDE.md` would fix
-      that.
+- [ ] GitHub profile README (`amelia-m/amelia-m`): it has no instructions file, so a session
+      editing it does not see the house style, which is how its em dashes got there; a
+      one-line `CLAUDE.md` would fix that. Its em dashes, the "Also" section and the
+      "administrative data" opening went on 2026-10-31 (PRs #1 and #2 there). The
+      `github-readme` entry in `bios.yml` has no `file`, so update it by hand after each
+      change to the opening paragraph.
 - [ ] GitHub profile Bio field: "R/Shiny apps for data cleaning, documentation" is missing its
       conjunction. 146 of 160 characters, so there is room.
 - [ ] AI provenance on the `recode-studio`, `table-explorer` and `lspc-weather` descriptions.
