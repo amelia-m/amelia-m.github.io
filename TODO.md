@@ -75,6 +75,13 @@ they were found.
 
 ## Outside this repository
 
+- [ ] agent-config, for its Windows Bash tool notes: besides halving backslashes (so `$'\r'`
+      arrives as a literal `r`), the Bash tool under MSYS rewrites `rev:path` arguments, so
+      `git show origin/main:.gitattributes` arrived as `origin\main;.gitattributes` and failed
+      as an ambiguous argument. The PowerShell tool is unaffected. To check for CR, use
+      `git ls-files --eol`, or `git grep -I -l -P "\r" <rev>` for a revision not checked out;
+      and `git add --renormalize --dry-run .` lists every path whether or not it would change.
+      Found by the line-endings session of 2026-10-30, which hit both.
 - [ ] GitHub profile README: says "administrative data", contains em dashes against house
       style, and repeats the synthetic-data availability claim. Update the `github-readme`
       entry in `bios.yml` afterwards; it has no `file`, so drift there is not detected
@@ -162,6 +169,15 @@ they were found.
 
 - [ ] `_scratch/` is not in `.gitignore`. No such directory exists in this checkout yet, so
       this is only worth doing if one is going to be created.
+- [ ] Keep or drop the `.gitattributes` patterns that match no tracked file: `*.bat`, `*.cmd`,
+      `*.jpeg`, `*.gif`, `*.ico`, `*.rds`, `*.RData` and `*.xlsx` (checked against `main` at
+      `835b880`, 2026-10-31). The recommendation, from the line-endings session of 2026-10-30,
+      is to keep them: they are agent-config's template, a guard for files that may arrive
+      later (`R/` makes `.rds` and `.RData` likely), and `.gitignore` excluding `.RData` does
+      not cover one force-added. Not a sign of line-ending trouble: every text file is LF in
+      the index and the working tree (`git ls-files --eol`) and none contains a CR, so a
+      `git add --renormalize .` commit would be empty. A review that says otherwise is the
+      false positive that session already ruled out.
 - [ ] Only Claude Code reads the profile, through the `@` import in `CLAUDE.md`. Copilot's coding
       agent has worked here (`copilot/review-code-base-issues`) and nothing points it at the
       push and merge rules. Whether to add a pointer it reads, such as an `AGENTS.md` or
