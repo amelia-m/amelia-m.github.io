@@ -82,10 +82,13 @@ they were found.
       `git ls-files --eol`, or `git grep -I -l -P "\r" <rev>` for a revision not checked out;
       and `git add --renormalize --dry-run .` lists every path whether or not it would change.
       Found by the line-endings session of 2026-10-30, which hit both.
-- [ ] GitHub profile README: says "administrative data", contains em dashes against house
-      style, and repeats the synthetic-data availability claim. Update the `github-readme`
-      entry in `bios.yml` afterwards; it has no `file`, so drift there is not detected
-      automatically.
+- [ ] GitHub profile README: still says "administrative data". Its em dashes are gone and the
+      "Also" section with the synthetic-data availability claim is removed for now
+      (`amelia-m/amelia-m` PR #1, 2026-10-31, at Amelia's request). Update the `github-readme`
+      entry in `bios.yml` after the next change to the opening paragraph; it has no `file`, so
+      drift there is not detected automatically. That repository has no instructions file, so
+      a session editing it does not see the house style; a one-line `CLAUDE.md` would fix
+      that.
 - [ ] GitHub profile Bio field: "R/Shiny apps for data cleaning, documentation" is missing its
       conjunction. 146 of 160 characters, so there is room.
 - [ ] AI provenance on the `recode-studio`, `table-explorer` and `lspc-weather` descriptions.
