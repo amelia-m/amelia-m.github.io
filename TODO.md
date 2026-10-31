@@ -8,16 +8,6 @@ agent-config profile warns against: nothing should live only in one tool's memor
 belong to another repository are marked as such rather than left out, because this is where
 they were found.
 
-## Publish
-
-- [ ] Publish what has been merged since 2026-10-27: everything after #32. `gh-pages` was last
-      published on 2026-10-27 at 11:34 CDT (`95a3715`), after #32 was merged at 10:19, and the
-      live site was checked that day to show #32's Carpentries date. Needs `git pull` on `main`
-      and then `quarto publish gh-pages`, which only Amelia can run. A `gh-pages` commit does not
-      record the source commit it was built from, so compare the dates in
-      `git log origin/gh-pages` and `git log origin/main` rather than trusting a hash written
-      here; this item named an older publish for a week after it was replaced.
-
 ## Site copy
 
 - [ ] The prose bios do not name the methods. SEM appears only in the X and GitLab bios (both
@@ -172,11 +162,6 @@ they were found.
 
 - [ ] `_scratch/` is not in `.gitignore`. No such directory exists in this checkout yet, so
       this is only worth doing if one is going to be created.
-- [ ] `main` has no protection at all. A ruleset on `main` that requires a pull request and
-      blocks deletion and force-pushes would stop the one failure GitHub can see: something
-      pushed straight to `main`. It cannot enforce the review or the merge rule in
-      `.agents/project-profile.md`, because agents act on GitHub as Amelia. Settings are hers
-      to change: repository Settings, Rules, Rulesets.
 - [ ] Only Claude Code reads the profile, through the `@` import in `CLAUDE.md`. Copilot's coding
       agent has worked here (`copilot/review-code-base-issues`) and nothing points it at the
       push and merge rules. Whether to add a pointer it reads, such as an `AGENTS.md` or
