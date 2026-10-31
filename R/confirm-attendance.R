@@ -59,8 +59,8 @@ event_blocks <- function(lines) {
 
 ask_all <- function() {
   ev <- site_events()$events
-  todo <- which(event_status(ev) == "unconfirmed")
-  if (!length(todo)) return(invisible())
+  pending <- which(event_status(ev) == "unconfirmed")
+  if (!length(pending)) return(invisible())
   path <- site_path("events.yml")
   lines <- readLines(path, encoding = "UTF-8", warn = FALSE)
   blocks <- event_blocks(lines)
@@ -69,7 +69,7 @@ ask_all <- function() {
   # event. If either check fails, ask nothing; the events page still lists
   # the unmarked events in the render log.
   lined_up <- !is.null(blocks) && nrow(blocks) == length(ev) &&
-    all(vapply(todo, function(i) {
+    all(vapply(pending, function(i) {
       p <- yaml::yaml.load(paste(lines[blocks$head[i]:blocks$stop[i]], collapse = "\n"))[[1]]
       identical(p, ev[[i]])
     }, logical(1)))
@@ -78,21 +78,21 @@ ask_all <- function() {
         " so nothing is asked; the events page lists the unmarked past events in the log.\n\n", sep = "")
     return(invisible())
   }
-  missing <- todo[is.na(blocks$date_line[todo])]
+  missing <- pending[is.na(blocks$date_line[pending])]
   for (i in missing) {
     cat("\nconfirm-attendance: cannot find the `date:` line of ", event_label(ev[[i]]),
         ", so it is not asked about; write its date as `    date: YYYY-MM-DD`.\n", sep = "")
   }
-  todo <- setdiff(todo, missing)
-  if (!length(todo)) return(invisible())
-  todo <- todo[order(event_dates(ev[todo]))]
-  cat("\nevents.yml: ", length(todo), " past event", if (length(todo) > 1) "s",
+  pending <- setdiff(pending, missing)
+  if (!length(pending)) return(invisible())
+  pending <- pending[order(event_dates(ev[pending]))]
+  cat("\nevents.yml: ", length(pending), " past event", if (length(pending) > 1) "s",
       " not yet marked, so not on the events page.\n",
       "For each: y = went, n = did not go, Enter = ask again next time.\n\n", sep = "")
   con <- file("stdin", "r")
   on.exit(close(con), add = TRUE)
   answers <- list()
-  for (i in todo) {
+  for (i in pending) {
     e <- ev[[i]]
     # A typo is asked again rather than taken as a skip.
     repeat {

@@ -16,8 +16,8 @@ Interdisciplinary PhD, University of Nebraska–Lincoln, conferred May 2025. Qua
 ::: {.content-hidden}
 <!-- Left out of the site until Amelia has reviewed it (2026-10-29: "let's
 hide the prose related to my dissertation until I review it"). Delete this
-wrapper to show it again; TODO.md lists every place hidden for the same
-reason. -->
+wrapper to show it again; the open items, kept outside this repository,
+list every place hidden for the same reason. -->
 
 ## The problem
 
