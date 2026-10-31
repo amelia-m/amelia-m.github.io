@@ -162,11 +162,6 @@ they were found.
 
 - [ ] `_scratch/` is not in `.gitignore`. No such directory exists in this checkout yet, so
       this is only worth doing if one is going to be created.
-- [ ] `main` has no protection at all. A ruleset on `main` that requires a pull request and
-      blocks deletion and force-pushes would stop the one failure GitHub can see: something
-      pushed straight to `main`. It cannot enforce the review or the merge rule in
-      `.agents/project-profile.md`, because agents act on GitHub as Amelia. Settings are hers
-      to change: repository Settings, Rules, Rulesets.
 - [ ] Only Claude Code reads the profile, through the `@` import in `CLAUDE.md`. Copilot's coding
       agent has worked here (`copilot/review-code-base-issues`) and nothing points it at the
       push and merge rules. Whether to add a pointer it reads, such as an `AGENTS.md` or

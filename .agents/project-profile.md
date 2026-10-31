@@ -8,9 +8,10 @@ this file. Open items go in `TODO.md`, not here.
 Level 2: push its own branch after a clean local review; every merge still waits for Amelia.
 Amelia, 2026-10-17: "level 2, push after review but ask before merging".
 
-- Own branch only. Never push to `main`: nothing on GitHub protects it, so a direct push there
-  is a merge Amelia never made. Never push to `gh-pages` or run `quarto publish gh-pages`:
-  that branch is what GitHub Pages serves, so pushing it publishes the live site at once.
+- Own branch only. Never push to `main`: a direct push there is a merge Amelia never made, and
+  since 2026-10-30 GitHub refuses one (see below). Never push to `gh-pages` or run
+  `quarto publish gh-pages`: that branch is what GitHub Pages serves, so pushing it publishes
+  the live site at once, and no ruleset covers it.
 - Clean local review, run before anything is pushed rather than after it reaches GitHub:
   - Before a push, review the commits being pushed. Before asking Amelia to merge, review the
     pull request's whole diff against `main`: this branch is reused, so a PR can carry commits
@@ -45,11 +46,15 @@ Amelia, 2026-10-17: "level 2, push after review but ask before merging".
   details. Not rendering into `_site` is not the same as not being published.
 - Still Amelia's at every level: deleting branches or tags, force-pushing, rewriting history,
   repository settings, and publishing the site.
-- GitHub checked 2026-10-17: `main` unprotected (`protected: false`, no branch protection, no
-  rulesets); `allow_auto_merge` false; `delete_branch_on_merge` false; no CI workflows. Agents
-  act on GitHub as `amelia-m` (PRs #23 to #25 were opened and merged under her login within
-  15 seconds), so GitHub cannot tell an agent's push or merge from hers, and no repository
-  setting can enforce the review or the merge rule: they rest on this section. Copilot
+- GitHub checked 2026-10-31, from the API: ruleset "protect main" (id 26251957), created by
+  Amelia on 2026-10-30, is active on the default branch only, with no bypass actors. It
+  requires a pull request (0 approvals; merge, squash and rebase all allowed) and blocks
+  deletion and force-pushes. `gh-pages` has no rules, which `quarto publish` needs. Checked
+  2026-10-17 and not since: `allow_auto_merge` false; `delete_branch_on_merge` false; no CI
+  workflows. Agents act on GitHub as `amelia-m` (PRs #23 to #25 were opened and merged under
+  her login within 15 seconds), so GitHub cannot tell an agent's push or merge from hers.
+  The ruleset stops a direct push to `main`, but nothing on GitHub can enforce the review or
+  the ask-before-merging rule: they rest on this section. Copilot
   reviewed one pull request of the first 25, PR #1, at Amelia's request, so automatic Copilot
   review is off in practice.
 
