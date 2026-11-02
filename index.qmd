@@ -63,7 +63,7 @@ My training spans several fields. I started in sport and exercise science, with 
 
 That range shows up in the work I've contributed to. Much of my early research is in exercise physiology and strength and conditioning: neuromuscular responses to training measured with electromyography and mechanomyography, interval and resistance training, sports nutrition, and athletic performance testing from youth to older adults, in journals such as the *Journal of Strength & Conditioning Research*, *European Journal of Applied Physiology*, *Muscle & Nerve*, and *Experimental Gerontology*. Since then my work has extended to child nutrition, career and counseling psychology, and educational and developmental research, shared in outlets like *Childhood Obesity* and the *Journal of Career Assessment* and at AERA, APA, and ISBNPA meetings, along with methods work on missing data and measurement invariance.
 
-These days much of my time goes to building R and Shiny tools that make messy administrative data easier to document, clean, and report on, and to generating privacy-preserving synthetic data. See my [publications](publications.qmd) and [talks](talks.qmd) for the full list.
+These days much of my time goes to measurement, missing data, and privacy-preserving synthetic data, and to building R and Shiny tools for the data problems that keep coming up along the way. See my [publications](publications.qmd) and [talks](talks.qmd) for the full list.
 
 I'd love to connect.
 

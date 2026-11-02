@@ -19,7 +19,7 @@ links <- setNames(proj$url, proj$label)
 related <- list("Table Relationship Explorer" = c(cartographer = "Cartographer, ported by Common Gene Labs"))
 ```
 
-I build R and Shiny tools for the unglamorous middle of applied research: documenting, cleaning, linking, and reporting on administrative data.
+I build R and Shiny tools when the same data problem keeps coming up: cleaning up inconsistent values, working out how a set of tables fit together, documenting what is in a data system, or reporting on it.
 
 ```{r}
 #| results: asis
