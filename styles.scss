@@ -13,8 +13,9 @@ $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetic
 
 @import "shared";
 
-// Dots in the slate blue; see _shared.scss for the layer itself.
-#particles-bg { --particles-rgb: 43, 92, 138; }
+// Dots in the slate blue; see _shared.scss for the layer itself. The footer
+// takes the same colour for its top rule, which meets the dots' rails.
+#particles-bg, .nav-footer { --particles-rgb: 43, 92, 138; }
 
 // Colour-scheme toggle: a moon while the light theme is on (click for dark).
 // Quarto adds .alternate to the toggle while the dark theme is on.

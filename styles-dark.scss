@@ -17,7 +17,7 @@ $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetic
 
 // Dots in the pale link blue: $primary (#2f6aa8) is a button fill and nearly
 // disappears against darkly's #222.
-#particles-bg { --particles-rgb: 143, 184, 230; }
+#particles-bg, .nav-footer { --particles-rgb: 143, 184, 230; }
 
 // Outline buttons put $primary text on the dark page, too dark at 2.8:1; use
 // the link blue instead, filling with $primary on hover.
