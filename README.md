@@ -32,7 +32,7 @@ Blog posts go in `blog/posts/<slug>/index.qmd`.
 
 - `R/check-output.R` fails the render on any page without the script, or with it counting to any account but `amelia-m`. A page's own `include-in-header` is added alongside the project's, not in place of it (checked with Quarto 1.10.19), so a page cannot drop out by setting one.
 - The script posts every page view to the subdomain it names, so that name must stay one this site owns. It shipped commented out until the account existed, rather than with a placeholder somebody else could register. A new account name means changing the check as well.
-- Social apps often send no referrer, so visits from Bluesky or LinkedIn tend to be recorded as direct. Tag the link instead, for example `https://amelia-m.github.io/?utm_source=bluesky`. Campaign Parameters must be switched on in the GoatCounter site settings for the tag to be recorded.
+- Social apps often send no referrer, so visits from Bluesky or LinkedIn tend to be recorded as direct. Tag the link instead, for example `https://amelia-m.github.io/?utm_source=bluesky`. GoatCounter reads `utm_source` (or `ref`, `src`, `source`) and `utm_campaign` from the address itself, with no setting to switch on; its Referrer box under data collection, on by default, covers them (read in GoatCounter's source, `hit.go`, 2026-10-31).
 - Ad blockers commonly block GoatCounter, so a test visit with one on does not show up.
 
 ## Images

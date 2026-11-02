@@ -172,3 +172,16 @@ body { background-color: transparent; }
 .icon-r { --icon: url("/images/icons/r.svg"); }
 .icon-quarto { --icon: url("/images/icons/quarto.svg"); }
 .icon-claude { --icon: url("/images/icons/claude.svg"); }
+
+// Home page only, identified by its banner: the page title right below already
+// says the name, so the navbar's copy goes (Amelia, 2026-10-21 and again
+// 2026-10-31). Everywhere else it is the way home and the only place the name
+// appears. Set here rather than in index.qmd, where a page-level
+// include-in-header would replace the project's analytics include. Below the xl
+// breakpoint the collapsed bar is laid out around the brand, so it keeps its
+// space there and the bar matches every other page.
+// xl is the collapse-below breakpoint in _quarto.yml, as for the rules above.
+body:has(.hero-banner) .navbar-brand-container { visibility: hidden; }
+@include media-breakpoint-up(xl) {
+  body:has(.hero-banner) .navbar-brand-container { display: none; }
+}

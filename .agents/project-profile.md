@@ -1,7 +1,12 @@
 # Project profile: amelia-m.github.io
 
 How agents work in this repository, kept here so it survives sessions. `CLAUDE.md` imports
-this file. Open items go in `TODO.md`, not here.
+this file. Open items are not kept in this repository, since it is public (Amelia,
+2026-10-31): they are in `docs/website_todo.md` in the repository this site's content is
+exported from. A session with that checkout beside this one adds new items there; one
+without it reports them to Amelia. The file that held them here from 2026-10-17 was deleted
+on 2026-10-31 but stays readable in `main`'s history; removing it from there would mean
+rewriting history, which is Amelia's call.
 
 ## Review, push and merge
 
@@ -34,7 +39,7 @@ Amelia, 2026-10-17: "level 2, push after review but ask before merging".
     single-page render and a hand run say they are not a full check, and a render that prints
     no such line did not run the check: none of these counts as passing. It does not catch
     a page whose file was written but whose content is missing, such as a field that
-    renders as nothing; see `TODO.md`.
+    renders as nothing; that is an open item, tracked outside this repository.
   - Why first, not after: Amelia, 2026-10-17, of Copilot's review: "it routinely runs out of
     tokens, so we should be dispatching codereview agents before any pushes/merges on github
     to try to identify &address as many issues as possible before they reach the remote".

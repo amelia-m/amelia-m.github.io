@@ -905,6 +905,9 @@ site_areas <- function(file = "areas.yml") {
 # several areas and should only be written down once. This prints it the other
 # way round, which is the direction it gets read in.
 work_areas <- function(x = site_areas(), todo = TRUE, detail = TRUE) {
+  # A flag that is not TRUE or FALSE would quietly print no todo lines, which
+  # reads as "nothing missing".
+  if (!(isTRUE(todo) || isFALSE(todo))) stop("work_areas(): todo must be TRUE or FALSE", call. = FALSE)
   # YAML reads `id: 2020` as a number and `id: yes` as TRUE, so check the type
   # before vapply() does it with an error that names no area.
   lab <- function(a) if (is.null(a$label)) "(no label)" else .squash(a$label)
@@ -965,9 +968,9 @@ work_areas <- function(x = site_areas(), todo = TRUE, detail = TRUE) {
           }
         }
       }
-      if (todo && !is.null(p$todo)) {
+      if (isTRUE(todo) && !is.null(p$todo)) {
         cat(strwrap(.squash(p$todo), width = 70,
-                    initial = "      TODO ", prefix = "           "), sep = "\n")
+                    initial = "      todo: ", prefix = "            "), sep = "\n")
       }
     }
     cat("\n")
