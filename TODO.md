@@ -18,15 +18,6 @@ they were found.
       strongest evidence available is already recorded in `areas.yml` under WeCook: a latent
       physical activity model across child surveys, parent surveys and wearable tracker data,
       with invariance tested across the three.
-- [ ] `software.qmd` says "the unglamorous middle of applied research: documenting,
-      cleaning, linking, and reporting on administrative data", which narrows the work twice in
-      one sentence: to one subject area, and to the cleaning half. Amelia disliked the same
-      sentence in the GitHub profile README, and "unglamorous" in particular, and replaced it
-      there on 2026-10-31 (`github-readme` in `bios.yml`); that wording is a starting point
-      here. `index.qmd` has the same problem in different words: "R and Shiny tools that make
-      messy administrative data easier to document, clean, and report on". The four areas in
-      `areas.yml` are what a general version would draw on. Grep for "unglamorous" and "messy
-      administrative".
 - [ ] Neither the `index.qmd` paragraph nor the `software.qmd` opening line is tracked in
       `bios.yml`, so `bio_report()` cannot tell when they drift.
 - [ ] Brown Bagger session 2 title, for 2026-11-11.
@@ -52,7 +43,9 @@ they were found.
       covered..." has no dissertation before it to be earlier than. Left showing, as Amelia
       asked ("leave the one on the bio for now"): the dissertation sentence in the `index.qmd`
       bio. The title, degree line and full-text link stay, as do the CV's dissertation title
-      and the master's theses. Unwrap each to show it again.
+      and the master's theses. Unwrap each to show it again. The hidden text says "the
+      unglamorous question of whether a variable means what everyone assumes it means", and
+      "unglamorous" is a word Amelia has since struck elsewhere (`WORDING.md`).
 - [ ] The X bio chosen 2026-10-21 may change ("might want to change later"). The drafts not
       chosen, and why each was a contender, are in `WORDING.md` under "X bio".
 

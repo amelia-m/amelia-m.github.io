@@ -45,6 +45,16 @@ cleaning data is the whole job. Measurement, missing data, multilevel and
 structural equation models are the other half and are easy to leave out,
 because tooling is more concrete and writes itself more readily.
 
+**Plain, not clever.** Say it the way I would say it out loud. Three lines went
+for this reason: "the unglamorous middle of applied research" (2026-10-31: it
+belittles the work), "Not serious; tested anyway" on pleasantry (2026-11-02:
+"it comes off... pretentious or something"), and an opening paragraph that read
+as a list of credentials. From three drafts of the GitHub profile opening, the
+one chosen was the one that sounded like speech: "I help people work out
+whether their data measures what they think it does, and when the same problem
+keeps coming up, I build an R or Shiny tool for it." Wry asides and
+self-deprecating adjectives are the things to cut.
+
 **A claim about regularity is a claim about me.** The Events page lists
 Regulars, which asserts a habit. An event that runs monthly and that I have
 never attended does not belong there. The dated entry is the honest version
