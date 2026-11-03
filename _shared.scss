@@ -148,6 +148,14 @@ body { background-color: transparent; }
 .like-card ul { margin: .25rem 0 0; padding-left: 1.1rem; font-size: .92em; }
 .like-by { font-weight: 400; opacity: .7; font-size: .9em; }
 
+// The footer is opaque, so on the home page the drifting dots stop at its top
+// edge. A rule there, in the dots' colour at the strength of their rails once
+// the layer is fully in (0.5 of the 0.55 layer opacity, js/particles-bg.js),
+// makes that edge the bottom of a frame the rails are the sides of, rather
+// than a line the dots vanish behind. Every page gets it, so the footer looks
+// the same throughout.
+.nav-footer { border-top: 1px solid rgba(var(--particles-rgb), .275); }
+
 // Footer credit line (page-footer right in _quarto.yml). Each brand logo is an
 // SVG used as a mask over currentColor, so it matches the footer text and
 // follows the light/dark toggle without a second set of files. Root-relative
