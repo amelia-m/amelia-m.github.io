@@ -133,6 +133,22 @@ places:
       is the whole of the work. Naming the four areas is what keeps this one
       from reading that way, so do not cut the areas to make room.
 
+  - id: luma
+    label: Luma profile Bio
+    updated: 2026-11-03
+    text: >-
+      Quantitative methodologist at the University of Nebraska–Lincoln. I build
+      tools for problems I come across in my own work in research, public
+      policy, public health, and education, these days mostly with Claude Code.
+    note: >-
+      215 characters. Edited in the Luma app under Your Profile ("Introduce
+      yourself to others in your events"), which has only Name and Bio, so the
+      bio carries the role. Luma is mostly for AI, coding and dev events, so
+      it is the AI Engineer Omaha headline with the role in front and Claude
+      Code at the end. Chosen by Amelia from three drafts on 2026-11-03. The
+      profile URL and any character limit are not recorded: Luma does not
+      resolve from the build environment.
+
   - id: github-bio
     label: GitHub profile Bio field
     url: https://github.com/amelia-m
