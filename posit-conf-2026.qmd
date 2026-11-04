@@ -7,7 +7,8 @@ title: "Met at posit::conf(2026)?"
 source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
 ```
 
-Thanks for saying hi at posit::conf(2026). Things I'm always happy to talk about:
+Thanks for saying hi at posit::conf(2026).
+Things I'm always happy to talk about:
 
 - **Shiny apps for messy data**: cleaning string variables, inferring table relationships, documenting data warehouses (`r link("recode-studio")`, `r link("table-explorer")`)
 - **Synthetic data** as a way to lower the barriers to working with administrative data without making it public, and the open question of what can safely be released
