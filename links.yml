@@ -184,6 +184,16 @@ events:
   - id: lincoln-ai-2026-05-06
     label: Lincoln AI Explorers, May 6, 2026
     url: https://www.meetup.com/lincoln-ai/events/314541902/
+  # The November 10 show and tell, run by NebraskaJS on Luma and listed by
+  # Lincoln AI on its own new site; Amelia registered on both. Both URLs as
+  # she gave them on 2026-11-03 (the Luma one from her browser's address bar,
+  # with no ?pk= key); neither host resolves from the build environment.
+  - id: nebraskajs-2026-11-10
+    label: AI Show and Tell
+    url: https://luma.com/nebras-1l0a
+  - id: lincoln-ai-2026-11-10
+    label: Lincoln AI's page
+    url: https://lincolnai.org/events/november-show-tell
   - id: lincoln-ai
     label: Lincoln AI
     url: https://www.meetup.com/lincoln-ai/
