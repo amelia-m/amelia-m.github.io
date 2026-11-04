@@ -15,10 +15,13 @@ project:
   pre-render: R/confirm-attendance.R
   # js/ is referenced from _includes/particles-bg.html and events.html, and
   # images/icons/ only from CSS mask urls, none of which Quarto scans for
-  # resources, so name them here or they are left out of _site.
+  # resources, so name them here or they are left out of _site. The leading
+  # slash anchors each to the project root: without it a pattern matches a
+  # folder of that name at any depth, which published two copies of an old
+  # particles-bg.js from a local _scratch/review-render/ from 2026-10-20 on.
   resources:
-    - js/
-    - images/icons/
+    - /js/
+    - /images/icons/
 
 execute:
   echo: false
