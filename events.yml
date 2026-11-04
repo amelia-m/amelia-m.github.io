@@ -123,6 +123,17 @@ events:
       "From Auto-Complete to Dark Factories: Accelerating Engineering
       Practices": Jason Nash and Jason Schwarz on how Werner has changed its
       software engineering practices with AI.
+  # Details read off the Luma event's description, as Amelia's calendar
+  # holds it, and her screenshot of the page, on 2026-11-03.
+  - id: nebraskajs-2026-11-10
+    date: 2026-11-10
+    when: Tuesday, November 10, 2026
+    where: Don't Panic Labs, Lincoln, NE
+    note: >-
+      NebraskaJS joins Lincoln AI for a show and tell: 15-minute presentations
+      on the AI tools people are using, from coding harnesses on.
+    more:
+      - id: lincoln-ai-2026-11-10
   # Details read off Amelia's screenshot of the Luma page on 2026-10-23.
   - id: startup-week-2026-11-16
     date: 2026-11-16
