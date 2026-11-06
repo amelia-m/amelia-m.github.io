@@ -7,4 +7,5 @@ listing:
   categories: true
 ---
 
-Notes on R, data management, and methods. First posts coming soon.
+Notes on R, data management, and methods.
+First posts coming soon.
