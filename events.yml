@@ -163,6 +163,19 @@ events:
       Max Clouatre of FNBO on "Build the Factory, Not the Feature": making the
       project itself one shared system that defines how work gets built, rather
       than each developer running their own agents, prompts, and harness.
+  # Read off Amelia's screenshot of the session's pretix page, 2026-11-06,
+  # the day she registered. A `text` entry so it carries the session's own
+  # name; the listing link is the sign-up, and the Zoom room stays in her
+  # calendar, for the reason links.yml gives.
+  - text: >-
+      Creating a Workshop Website, a Carpentries skill-up session, Wednesday,
+      November 18, 2026, 4am Central, online. A hands-on session on building
+      the website for a Carpentries workshop.
+    date: 2026-11-18
+    more:
+      - id: carpentries-sessions
+        label: Register here to join
+        upcoming_only: true
   - id: carpentries-midwest
     date: 2026-12-02
     when: Wednesday, December 2, 2026
