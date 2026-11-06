@@ -176,6 +176,19 @@ events:
       - id: carpentries-sessions
         label: Register here to join
         upcoming_only: true
+  # Read off Amelia's screenshot of the order page, 2026-11-06, the day she
+  # registered. pretix gives the time in UTC there (19:00 to 20:00), as the
+  # November 18 session's event page shows by giving both. Same handling as
+  # that entry: the session's own name, the listing as the sign-up link, and
+  # the Zoom room only in her calendar.
+  - text: >-
+      AI Carpentry GenAI and Teaching Discussion, a Carpentries community
+      discussion session, Thursday, November 19, 2026, 1pm Central, online.
+    date: 2026-11-19
+    more:
+      - id: carpentries-sessions
+        label: Register here to join
+        upcoming_only: true
   - id: carpentries-midwest
     date: 2026-12-02
     when: Wednesday, December 2, 2026
