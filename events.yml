@@ -27,7 +27,10 @@
 #             looking forward. Without it the `note` is kept as written.
 #   more      further links.yml ids, shown in parentheses at the end. Works on
 #             a `text` entry too, which is how one of those carries a link
-#             without the URL being written out here as a second copy.
+#             without the URL being written out here as a second copy. Each
+#             takes `id`, an optional `label` overriding links.yml's, and
+#             `upcoming_only: true` for a link that means nothing once the
+#             event is past, such as a sign-up page; Past leaves it out.
 #   attended  true once Amelia has confirmed she went, which is what puts a
 #             past event on the page; false if she did not, or will not, go.
 #             Left out for an event still to come.
@@ -112,7 +115,8 @@ events:
       Carpentries Community that month, with guest speaker Toby Hodges.
     more:
       - id: carpentries-sessions
-        label: Registration
+        label: Register here to join
+        upcoming_only: true
   # Title and speakers read off the Meetup event page on 2026-10-23. Werner
   # hosts and sponsors it, which is how the page names the venue.
   - id: ai-omaha-2026-11-05
@@ -166,7 +170,8 @@ events:
     note: The monthly call, back on its usual first Wednesday.
     more:
       - id: carpentries-sessions
-        label: Registration
+        label: Register here to join
+        upcoming_only: true
   # Title, the founders' sectors and the venue read off the Meetup event page on
   # 2026-10-22. The venue is the sponsor's office, which the page names as
   # providing it.

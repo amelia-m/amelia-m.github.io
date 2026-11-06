@@ -643,6 +643,27 @@ site_events <- function(file = "events.yml") {
              ", which a `text` entry ignores; put it in the text instead")
     }
   }
+  # `more` links, on events and regulars alike, are checked the same way: a
+  # misspelled `upcoming_only` would otherwise leave a sign-up link on an
+  # event long past, and a link that is not a mapping with an `id` fails later
+  # with an error that names no entry.
+  for (e in c(ev$events, ev$regulars)) {
+    what <- e$id %||% substr(trimws(e$text %||% "(no id or text)"), 1, 40)
+    for (m in e$more) {
+      if (!is.list(m) || is.null(m$id)) {
+        stop(file, ": ", what, " has a `more` link without an `id`; write each as `- id: ...`")
+      }
+      extra <- setdiff(names(m), c("id", "label", "upcoming_only"))
+      if (length(extra)) {
+        stop(file, ": ", what, " has a `more` link with ", paste0("`", extra, "`", collapse = ", "),
+             ", which no link uses")
+      }
+      if (!is.null(m$upcoming_only) && !isTRUE(m$upcoming_only) && !isFALSE(m$upcoming_only)) {
+        stop(file, ": ", what, " has a `more` link with `upcoming_only: ",
+             paste(deparse(m$upcoming_only), collapse = " "), "`; use true or false")
+      }
+    }
+  }
   ev
 }
 
@@ -670,8 +691,11 @@ event_line <- function(e, past = FALSE) {
     note <- if (past) e$past_note %||% e$note else e$note
     if (!is.null(note)) out <- paste(end_period(out), trimws(note))
   }
-  if (length(e$more)) {
-    extra <- vapply(e$more, function(m) link(m$id, m$label), character(1))
+  # A link marked `upcoming_only`, such as a sign-up page, means nothing once
+  # the event has happened, so Past leaves it out.
+  more <- if (past) Filter(function(m) !isTRUE(m$upcoming_only), e$more) else e$more
+  if (length(more)) {
+    extra <- vapply(more, function(m) link(m$id, m$label), character(1))
     out <- paste0(end_period(out), " (", paste(extra, collapse = ", "), ")")
   }
   out
