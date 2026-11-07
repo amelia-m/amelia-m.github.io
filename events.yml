@@ -189,11 +189,31 @@ events:
       - id: carpentries-sessions
         label: Register here to join
         upcoming_only: true
+  # Same source and handling as the two sessions above: the order page,
+  # 2026-11-06, times in UTC (15:00 to 16:00), the Zoom room kept private.
+  - text: >-
+      Networking Session, a Carpentries community discussion session,
+      Tuesday, November 24, 2026, 9am Central, online.
+    date: 2026-11-24
+    more:
+      - id: carpentries-sessions
+        label: Register here to join
+        upcoming_only: true
   - id: carpentries-midwest
     date: 2026-12-02
     when: Wednesday, December 2, 2026
     where: online
     note: The monthly call, back on its usual first Wednesday.
+    more:
+      - id: carpentries-sessions
+        label: Register here to join
+        upcoming_only: true
+  # The November 19 discussion again, from its order page, 2026-11-06:
+  # 19:00 to 20:00 UTC, the Zoom room kept private.
+  - text: >-
+      AI Carpentry GenAI and Teaching Discussion, a Carpentries community
+      discussion session, Thursday, December 17, 2026, 1pm Central, online.
+    date: 2026-12-17
     more:
       - id: carpentries-sessions
         label: Register here to join
