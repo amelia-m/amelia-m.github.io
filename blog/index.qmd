@@ -5,6 +5,9 @@ listing:
   sort: "date desc"
   type: default
   categories: true
+# Quarto turns maths on for listing pages, which loads MathJax and a
+# polyfill from CDNs. This page has no maths; a post that does sets its own.
+html-math-method: plain
 ---
 
 Notes on R, data management, and methods.

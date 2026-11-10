@@ -15,6 +15,11 @@ $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetic
 
 @import "shared";
 
+// Tells the browser which scheme the page is in, so its own scrollbars and
+// form controls match. Quarto leaves the light sheet on under the dark one,
+// and the dark sheet comes later, so its rule wins while it is active.
+:root { color-scheme: dark; }
+
 // Dots in the pale link blue: $primary (#2f6aa8) is a button fill and nearly
 // disappears against darkly's #222.
 #particles-bg, .nav-footer { --particles-rgb: 143, 184, 230; }
@@ -30,6 +35,20 @@ $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetic
   --bs-btn-active-bg: #{$primary};
   --bs-btn-active-border-color: #{$link-color};
   --bs-btn-active-color: #fff;
+}
+
+// Same problem for outline-secondary (the Software page's link to downstream
+// work): darkly's $secondary #444 on #222 is 1.6:1. Use a light grey, so it
+// still reads as secondary beside the blue, filling with it on hover.
+.btn-outline-secondary {
+  --bs-btn-color: #{$gray-500};
+  --bs-btn-border-color: #{$gray-500};
+  --bs-btn-hover-bg: #{$gray-500};
+  --bs-btn-hover-border-color: #{$gray-500};
+  --bs-btn-hover-color: #222;
+  --bs-btn-active-bg: #{$gray-500};
+  --bs-btn-active-border-color: #{$gray-500};
+  --bs-btn-active-color: #222;
 }
 
 // Colour-scheme toggle: a sun while the dark theme is on (click for light).

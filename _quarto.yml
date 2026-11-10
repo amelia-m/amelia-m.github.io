@@ -109,7 +109,13 @@ format:
       light: [cosmo, styles.scss]
       dark: [darkly, styles-dark.scss]
     toc: false
-    smooth-scroll: true
+    # Follow the reader's system light/dark setting until they use the
+    # toggle, which then wins (Quarto keeps that choice in localStorage).
+    respect-user-color-scheme: true
+    # Off here because Quarto's version animates even for readers who ask for
+    # reduced motion; _shared.scss turns smooth scrolling on only for those
+    # who have not.
+    smooth-scroll: false
     # Works, and cannot be checked by grepping the rendered HTML. Quarto
     # implements this as a DOMContentLoaded script in
     # share/formats/html/templates/quarto-html-after-body.ejs, so the
@@ -130,3 +136,5 @@ format:
     # 1.10.19), and R/check-output.R fails the render on any page without the
     # script. Notes in README.md, "Analytics".
     include-in-header: _includes/analytics.html
+    # "Skip to main content", the first tab stop on every page.
+    include-before-body: _includes/skip-link.html

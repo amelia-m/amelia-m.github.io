@@ -13,6 +13,11 @@ $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetic
 
 @import "shared";
 
+// Tells the browser which scheme the page is in, so its own scrollbars and
+// form controls match. Quarto leaves the light sheet on under the dark one,
+// and the dark sheet comes later, so its rule wins while it is active.
+:root { color-scheme: light; }
+
 // Dots in the slate blue; see _shared.scss for the layer itself. The footer
 // takes the same colour for its top rule, which meets the dots' rails.
 #particles-bg, .nav-footer { --particles-rgb: 43, 92, 138; }
