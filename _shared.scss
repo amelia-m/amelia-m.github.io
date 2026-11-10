@@ -146,6 +146,9 @@ body { background-color: transparent; }
 .like-card { border: 1px solid var(--bs-border-color); border-radius: 10px; padding: .85rem 1rem; }
 .like-card p { margin-bottom: .4rem; }
 .like-card ul { margin: .25rem 0 0; padding-left: 1.1rem; font-size: .92em; }
+// Stacked links at the smaller size were 19px tall; this brings each to the
+// 24px minimum touch target.
+.like-card li { padding-block: .15rem; }
 .like-by { font-weight: 400; opacity: .7; font-size: .9em; }
 
 // The footer is opaque, so on the home page the drifting dots stop at its top
@@ -176,6 +179,10 @@ body { background-color: transparent; }
   background-color: currentColor;
   -webkit-mask: var(--icon) center / contain no-repeat;
   mask: var(--icon) center / contain no-repeat;
+  // In forced colors (Windows High Contrast) the browser replaces the
+  // background colour, which is the whole logo; currentColor already follows
+  // the forced link colour, so keep it.
+  forced-color-adjust: none;
 }
 .icon-r { --icon: url("/images/icons/r.svg"); }
 .icon-quarto { --icon: url("/images/icons/quarto.svg"); }
@@ -184,8 +191,9 @@ body { background-color: transparent; }
 // Home page only, identified by its banner: the page title right below already
 // says the name, so the navbar's copy goes (Amelia, 2026-10-21 and again
 // 2026-10-31). Everywhere else it is the way home and the only place the name
-// appears. Set here rather than in index.qmd, where a page-level
-// include-in-header would replace the project's analytics include. Below the xl
+// appears. Set here so index.qmd needs no stylesheet include of its own (a
+// page-level include-in-header is added alongside the project's analytics
+// include, not instead of it: checked with Quarto 1.10.19). Below the xl
 // breakpoint the collapsed bar is laid out around the brand, so it keeps its
 // space there and the bar matches every other page.
 // xl is the collapse-below breakpoint in _quarto.yml, as for the rules above.
@@ -193,3 +201,59 @@ body:has(.hero-banner) .navbar-brand-container { visibility: hidden; }
 @include media-breakpoint-up(xl) {
   body:has(.hero-banner) .navbar-brand-container { display: none; }
 }
+
+// Accessibility fixes from a review against Chrome's Modern Web Guidance,
+// 2026-11-10.
+
+// Keyboard focus. Bootstrap replaces the outline on navbar links and buttons
+// with a faint box-shadow ring (about 1.5:1 on the light page, 1.1:1 on the
+// dark navbar) that forced colors drop entirely. An outline in the text colour
+// is 3:1 or better against both navbars. The doubled and nested selectors
+// outrank Bootstrap's own (`.btn:focus-visible`, `.nav-link:focus-visible`).
+.navbar .nav-link:focus-visible,
+.navbar .navbar-toggler:focus-visible,
+.navbar .quarto-color-scheme-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+// Not currentColor on buttons: Bootstrap gives a focused button its hover
+// text colour, which is the page colour for some (white on the light page,
+// #222 for outline-secondary on the dark one). The link colour is 7:1 or
+// better on both pages.
+.btn.btn:focus-visible {
+  outline: 2px solid $link-color;
+  outline-offset: 2px;
+}
+
+// Quarto's auto-hiding navbar slides away on scroll down, even while it holds
+// keyboard focus; bring it back whenever focus is inside it.
+#quarto-header.headroom--unpinned:focus-within { transform: none; }
+
+// Skip link (_includes/skip-link.html): shown only when focused, above the
+// fixed navbar. With JavaScript off it stays after the navbar, where Quarto
+// puts includes, so it is the first tab stop only with JavaScript on.
+.skip-link:focus {
+  position: fixed;
+  top: .5rem;
+  left: .5rem;
+  z-index: 2000;
+  padding: .5rem 1rem;
+  background: var(--bs-body-bg);
+  color: var(--bs-link-color);
+  border: 2px solid currentColor;
+  border-radius: .25rem;
+}
+
+// In-page jumps (skip link, contents, footnotes) stop below the fixed navbar,
+// which is up to 79px tall and reappears when a jump goes back up the page.
+html { scroll-padding-top: 5rem; }
+
+// Smooth in-page scrolling only for readers who have not asked for reduced
+// motion (smooth-scroll is off in _quarto.yml for this reason).
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+// Long unbroken link text, such as DOIs on the Publications page, pushed the
+// page wider than a 320px phone screen.
+main { overflow-wrap: break-word; }

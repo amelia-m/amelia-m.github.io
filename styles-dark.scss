@@ -15,6 +15,11 @@ $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetic
 
 @import "shared";
 
+// Tells the browser which scheme the page is in, so its own scrollbars and
+// form controls match. Quarto leaves the light sheet on under the dark one,
+// and the dark sheet comes later, so its rule wins while it is active.
+:root { color-scheme: dark; }
+
 // Dots in the pale link blue: $primary (#2f6aa8) is a button fill and nearly
 // disappears against darkly's #222.
 #particles-bg, .nav-footer { --particles-rgb: 143, 184, 230; }
