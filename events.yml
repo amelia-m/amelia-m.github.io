@@ -119,8 +119,10 @@ events:
         upcoming_only: true
   # Title and speakers read off the Meetup event page on 2026-10-23. Werner
   # hosts and sponsors it, which is how the page names the venue.
+  # Missed (Amelia, 2026-11-10: "I missed that one").
   - id: ai-omaha-2026-11-05
     date: 2026-11-05
+    attended: false
     when: Thursday, November 5, 2026
     where: Werner Enterprises, Omaha, NE
     note: >-
