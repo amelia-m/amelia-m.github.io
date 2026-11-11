@@ -9,7 +9,7 @@ source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
 
 ## Slides
 
-- [Teaching AI agents house rules](talks/lincoln-ai-2026-11/index.html): how my setup for AI coding agents grew, what it is made of, and how it keeps sensitive data out.
+- [Teaching AI agents house rules](talks/lincoln-ai-2026-11/index.html): how my setup for AI coding agents changed, what it is made of, and how it keeps sensitive data out.
   Lincoln AI meetup, November 2026.
   Press S for speaker notes.
 
