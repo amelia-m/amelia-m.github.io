@@ -22,6 +22,9 @@ project:
   resources:
     - /js/
     - /images/icons/
+    # Slide decks built elsewhere and copied in as finished, self-contained HTML
+    # (each carries the analytics include); one folder per talk.
+    - /talks/
 
 execute:
   echo: false

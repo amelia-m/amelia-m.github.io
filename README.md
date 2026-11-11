@@ -9,6 +9,8 @@ Do not edit them by hand; changes are overwritten on the next export.
 
 Everything else is edited by hand here: the pages, the data files at the root (`events.yml`, `links.yml`, `likes.yml`, `bios.yml`, `areas.yml`, `contributions.yml`, `investigate.yml`), `_quarto.yml`, the stylesheets, `R/`, `js/`, `_includes/`, blog posts, and images.
 A new file outside `_data/` and `files/` is hand-edited too.
+`talks/` is the exception: each folder holds a finished, self-contained slide deck built in the repository where its source lives and copied in as is, with the site's analytics include added at that render (`quarto render <deck>.qmd -M include-in-header:<this repo>/_includes/analytics.html`); fix a deck at its source and copy it in again.
+It is listed under `resources` in `_quarto.yml`, so Quarto copies it into `_site` without rendering it, and the render's own output check does not see it: run `Rscript R/check-output.R` after a render to check it too.
 
 Events live in `events.yml`, which feeds both `events.qmd` and the home page callout.
 One dated list covers the whole page: an entry leaves Upcoming the day after it happens, and goes into Past, filed under its year, only once it is marked `attended: true`, since Past says Amelia was there.
