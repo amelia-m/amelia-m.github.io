@@ -4,7 +4,7 @@
     "href": "things-i-like.html",
     "title": "Things I Like",
     "section": "",
-    "text": "Tools, people, and resources I use and recommend."
+    "text": "Skip to main content\nTools, people, and resources I use and recommend."
   },
   {
     "objectID": "things-i-like.html#software",
@@ -53,7 +53,21 @@
     "href": "talks.html",
     "title": "Talks & presentations",
     "section": "",
-    "text": "Papers, posters, and abstracts for professional meetings, newest first, with presentation status where recorded. Invited and guest lectures are in the CV.\n56 entries"
+    "text": "Skip to main content"
+  },
+  {
+    "objectID": "talks.html#slides",
+    "href": "talks.html#slides",
+    "title": "Talks & presentations",
+    "section": "Slides",
+    "text": "Slides\n\nTeaching AI agents house rules: how my setup for AI coding agents grew, what it is made of, and how it keeps sensitive data out. Lincoln AI meetup, November 2026. Press S for speaker notes."
+  },
+  {
+    "objectID": "talks.html#papers-posters-and-abstracts",
+    "href": "talks.html#papers-posters-and-abstracts",
+    "title": "Talks & presentations",
+    "section": "Papers, posters, and abstracts",
+    "text": "Papers, posters, and abstracts\nPapers, posters, and abstracts for professional meetings, newest first, with presentation status where recorded. Invited and guest lectures are in the CV.\n56 entries"
   },
   {
     "objectID": "talks.html#section",
@@ -130,21 +144,21 @@
     "href": "research.html",
     "title": "Research interests",
     "section": "",
-    "text": "Measurement & psychometrics. How well we measure things drives everything downstream. I work on scale scoring and missing-data decisions (person-mean imputation, prorated scale scores, completeness thresholds), measurement invariance, and structural equation and item response models.\nPrivacy-preserving synthetic data. With NSWERS, I generate synthetic versions of large, longitudinal administrative datasets and evaluate how faithfully they reproduce the original data (tidysynthesis, syntheval). The goal is analysis that does not expose individuals: as much a question of what can safely be released as of how well the synthesis works.\nApplied evaluation & public policy research. At the NEAR Center and the Public Policy Center, I support program evaluation and policy research for state agencies and community partners, from study design and survey methods through analysis and reporting.\nResearch data infrastructure. Documentation, variable lineage, and reproducible pipelines: the tooling that lets teams trust and reuse their data. This is where my software comes from.\nYouth physical activity & exercise physiology. Earlier work covered neuromuscular fatigue, high-intensity interval training, and physical performance testing. See publications."
+    "text": "Skip to main content\n\n\n\n\n\nMeasurement & psychometrics. How well we measure things drives everything downstream. I work on scale scoring and missing-data decisions (person-mean imputation, prorated scale scores, completeness thresholds), measurement invariance, and structural equation and item response models.\nPrivacy-preserving synthetic data. With NSWERS, I generate synthetic versions of large, longitudinal administrative datasets and evaluate how faithfully they reproduce the original data (tidysynthesis, syntheval). The goal is analysis that does not expose individuals: as much a question of what can safely be released as of how well the synthesis works.\nApplied evaluation & public policy research. At the NEAR Center and the Public Policy Center, I support program evaluation and policy research for state agencies and community partners, from study design and survey methods through analysis and reporting.\nResearch data infrastructure. Documentation, variable lineage, and reproducible pipelines: the tooling that lets teams trust and reuse their data. This is where my software comes from.\nYouth physical activity & exercise physiology. Earlier work covered neuromuscular fatigue, high-intensity interval training, and physical performance testing. See publications."
   },
   {
     "objectID": "posit-conf-2026.html",
     "href": "posit-conf-2026.html",
     "title": "Met at posit::conf(2026)?",
     "section": "",
-    "text": "Thanks for saying hi at posit::conf(2026). Things I’m always happy to talk about:\n\nShiny apps for messy data: cleaning string variables, inferring table relationships, documenting data warehouses (Recode Studio, Table Relationship Explorer)\nSynthetic data as a way to lower the barriers to working with administrative data without making it public, and the open question of what can safely be released\nTeaching data management and R to graduate students\nQuarto for course sites, reports, and parameterized reporting\nR in public-sector and evaluation work\n\nBest ways to follow up: LinkedIn, Bluesky, or email.\n\n\namelia-m.github.io"
+    "text": "Skip to main content\n\n\n\n\n\nThanks for saying hi at posit::conf(2026). Things I’m always happy to talk about:\n\nShiny apps for messy data: cleaning string variables, inferring table relationships, documenting data warehouses (Recode Studio, Table Relationship Explorer)\nSynthetic data as a way to lower the barriers to working with administrative data without making it public, and the open question of what can safely be released\nTeaching data management and R to graduate students\nQuarto for course sites, reports, and parameterized reporting\nR in public-sector and evaluation work\n\nBest ways to follow up: LinkedIn, Bluesky, or email.\n\n\namelia-m.github.io"
   },
   {
     "objectID": "fun.html",
     "href": "fun.html",
     "title": "Fun & side projects",
     "section": "",
-    "text": "Things I build outside of research, mostly because I wanted them to exist."
+    "text": "Skip to main content\nThings I build outside of research, mostly because I wanted them to exist."
   },
   {
     "objectID": "fun.html#lspc-weather",
@@ -165,7 +179,7 @@
     "href": "dissertation.html",
     "title": "Dissertation & theses",
     "section": "",
-    "text": "Youth Sport Participation and Cognitive Development: The Need for Improved Measurement\nInterdisciplinary PhD, University of Nebraska–Lincoln, conferred May 2025. Quantitative, Qualitative, and Psychometric Methods in Educational Psychology, with Exercise Physiology and Nutrition in Nutrition and Health Sciences. Advised by James A. Bovaird.\nRead the full text"
+    "text": "Skip to main content\nYouth Sport Participation and Cognitive Development: The Need for Improved Measurement\nInterdisciplinary PhD, University of Nebraska–Lincoln, conferred May 2025. Quantitative, Qualitative, and Psychometric Methods in Educational Psychology, with Exercise Physiology and Nutrition in Nutrition and Health Sciences. Advised by James A. Bovaird.\nRead the full text"
   },
   {
     "objectID": "dissertation.html#masters-theses",
@@ -179,14 +193,14 @@
     "href": "contact.html",
     "title": "Contact",
     "section": "",
-    "text": "amiramonti2@unl.edu"
+    "text": "Skip to main content"
   },
   {
     "objectID": "contact.html#email",
     "href": "contact.html#email",
     "title": "Contact",
-    "section": "",
-    "text": "amiramonti2@unl.edu"
+    "section": "Email",
+    "text": "Email\namiramonti2@unl.edu"
   },
   {
     "objectID": "contact.html#profiles",
@@ -207,14 +221,14 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Notes on R, data management, and methods. First posts coming soon.\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Skip to main content\n\n\n\n\n\nNotes on R, data management, and methods. First posts coming soon.\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "cv/index.html",
     "href": "cv/index.html",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "Download PDF\nPublications and presentations have their own pages: Publications · Talks & presentations."
+    "text": "Skip to main content\nDownload PDF\nPublications and presentations have their own pages: Publications · Talks & presentations."
   },
   {
     "objectID": "cv/index.html#education",
@@ -312,14 +326,14 @@
     "href": "events.html",
     "title": "Events",
     "section": "",
-    "text": "Where to find me, in person and online. If you’ll be at one of these, come say hi."
+    "text": "Skip to main content\nWhere to find me, in person and online. If you’ll be at one of these, come say hi."
   },
   {
     "objectID": "events.html#upcoming",
     "href": "events.html#upcoming",
     "title": "Events",
     "section": "Upcoming",
-    "text": "Upcoming\n\nAI Omaha, Thursday, November 5, 2026, Werner Enterprises, Omaha, NE. “From Auto-Complete to Dark Factories: Accelerating Engineering Practices”: Jason Nash and Jason Schwarz on how Werner has changed its software engineering practices with AI.\nUS Midwest Carpentries Community, Friday, November 6, 2026, online. The regional call for The Carpentries, which teaches foundational coding and data science skills to researchers. Off its usual first Wednesday this month, because the Midwest community is joining the Northeast Carpentries Community for their November meeting, with guest speaker Toby Hodges. (Registration)\nStartup Week Launch Party, Monday, November 16, 2026, Ashland Brewing Company, Ashland, NE. The opening night of Startup Week 2026, a week of startup events across Nebraska from November 16 to 21, hosted by Open Range.\nAI Engineer Omaha, Thursday, November 19, 2026, DevObsessed, Omaha, NE. Max Clouatre of FNBO on “Build the Factory, Not the Feature”: making the project itself one shared system that defines how work gets built, rather than each developer running their own agents, prompts, and harness. A second talk is still to be announced. Free, and streamed online for anyone who RSVPs.\nUS Midwest Carpentries Community, Wednesday, December 2, 2026, online. The monthly call, back on its usual first Wednesday. (Registration)\nNebraska Women in Tech Summit, Friday, April 2, 2027, Kiewit La Vista, La Vista, NE. I volunteered at the 2026 summit and am planning to volunteer again. The Nebraska Women in Tech Awards are the evening before, April 1, at the Kiewit Luminarium in Omaha."
+    "text": "Upcoming\n\nAI Show and Tell, Tuesday, November 10, 2026, Don’t Panic Labs, Lincoln, NE. NebraskaJS joins Lincoln AI for a show and tell: 15-minute presentations on the AI tools people are using, from coding harnesses on. (Lincoln AI’s page)\nStartup Week Launch Party, Monday, November 16, 2026, Ashland Brewing Company, Ashland, NE. The opening night of Startup Week 2026, a week of startup events across Nebraska from November 16 to 21, hosted by Open Range.\nCreating a Workshop Website, a Carpentries skill-up session, Wednesday, November 18, 2026, 4am Central, online. A hands-on session on building the website for a Carpentries workshop. (Register here to join)\nAI Engineer Omaha, Thursday, November 19, 2026, DevObsessed, Omaha, NE. Max Clouatre of FNBO on “Build the Factory, Not the Feature”: making the project itself one shared system that defines how work gets built, rather than each developer running their own agents, prompts, and harness. A second talk is still to be announced. Free, and streamed online for anyone who RSVPs.\nAI Carpentry GenAI and Teaching Discussion, a Carpentries community discussion session, Thursday, November 19, 2026, 1pm Central, online. (Register here to join)\nNetworking Session, a Carpentries community discussion session, Tuesday, November 24, 2026, 9am Central, online. (Register here to join)\nUS Midwest Carpentries Community, Wednesday, December 2, 2026, online. The monthly call, back on its usual first Wednesday. (Register here to join)\nAI Carpentry GenAI and Teaching Discussion, a Carpentries community discussion session, Thursday, December 17, 2026, 1pm Central, online. (Register here to join)\nNebraska Women in Tech Summit, Friday, April 2, 2027, Kiewit La Vista, La Vista, NE. I volunteered at the 2026 summit and am planning to volunteer again. The Nebraska Women in Tech Awards are the evening before, April 1, at the Kiewit Luminarium in Omaha."
   },
   {
     "objectID": "events.html#regulars",
@@ -333,7 +347,14 @@
     "href": "events.html#past",
     "title": "Events",
     "section": "Past",
-    "text": "Past\n\n2026\n\nThe Carpentries community sessions, Tuesday, October 27, 2026, 5pm Central, online. The Welcome Session, for people new to The Carpentries: what the organisation does, the ways to get involved, and questions answered.\nLincoln.Code, Tuesday, October 27, 2026, Assurity Life Insurance Company, Lincoln, NE. Nathan Platter on “When Should AI Stop and Hand the Work Back to a Human?”: a “Level-4 gate”, where the machine does the checking first, a named person still makes the call, and every decision leaves a trail to review later. Cross-listed by (402) Developers. (Talk kit, Source on GitHub, Cross-listing, (402) Developers)\nWomen in Technology of the Heartland, October 21, 2026, Improving, Elkhorn, NE. “She Built This! Founders Behind Heartland Startups”: four women founders on building startups in digital health, AI, construction technology, and equity crowdfunding. (WiTH)\nAI Engineer Omaha, Thursday, October 15, 2026, DevObsessed, Omaha, NE. The first meetup of the new Omaha chapter of an international organisation, held jointly with NebraskaJS. Two talks, the first on Jev, a narrow model that answers a typed question with a probability rather than with prose. (NebraskaJS)\nLincoln.Code meetup, September 29, 2026\nposit::conf(2026), Houston, September 14 to 16, attended in person. Things I’m happy to talk about. The Monday was Hadley Wickham and Jenny Bryan’s pre-conference workshop. (Modern R workflow (ft. Positron and AI))\nLincoln AI Explorers, May 6, 2026. The first Explorers meeting, largely a discussion of what the group should be.\nShare Your AI Workflow, March 11, 2026. A NebraskaJS and Lincoln AI lightning talk night at Don’t Panic Labs.\nNebraska Women in Tech Summit, event volunteer."
+    "text": "Past\n\n2026\n\nPaid in Pizza, November 4, 2026. A new meetup at Don’t Panic Labs from Chad Michel and Jeff Kodad of This Week in Za: two software professionals on how their work is changing, then a round of games with the audience voting.\nThe Carpentries community sessions, Tuesday, October 27, 2026, 5pm Central, online. The Welcome Session, for people new to The Carpentries: what the organisation does, the ways to get involved, and questions answered.\nLincoln.Code, Tuesday, October 27, 2026, Assurity Life Insurance Company, Lincoln, NE. Nathan Platter on “When Should AI Stop and Hand the Work Back to a Human?”: a “Level-4 gate”, where the machine does the checking first, a named person still makes the call, and every decision leaves a trail to review later. Cross-listed by (402) Developers. (Talk kit, Source on GitHub, Cross-listing, (402) Developers)\nWomen in Technology of the Heartland, October 21, 2026, Improving, Elkhorn, NE. “She Built This! Founders Behind Heartland Startups”: four women founders on building startups in digital health, AI, construction technology, and equity crowdfunding. (WiTH)\nAI Engineer Omaha, Thursday, October 15, 2026, DevObsessed, Omaha, NE. The first meetup of the new Omaha chapter of an international organisation, held jointly with NebraskaJS. Two talks, the first on Jev, a narrow model that answers a typed question with a probability rather than with prose. (NebraskaJS)\nLincoln.Code meetup, September 29, 2026\nposit::conf(2026), Houston, September 14 to 16, attended in person. Things I’m happy to talk about. The Monday was Hadley Wickham and Jenny Bryan’s pre-conference workshop. (Modern R workflow (ft. Positron and AI))\nLincoln AI Explorers, May 6, 2026. The first Explorers meeting, largely a discussion of what the group should be.\nShare Your AI Workflow, March 11, 2026. A NebraskaJS and Lincoln AI lightning talk night at Don’t Panic Labs.\nNebraska Women in Tech Summit, event volunteer."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Amelia Miramonti, PhD",
+    "section": "",
+    "text": "Skip to main content"
   },
   {
     "objectID": "index.html#currently",
@@ -347,7 +368,7 @@
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Peer-reviewed journal articles, newest first. See also Google Scholar and ORCID. Manuscripts in progress are listed in the CV.\n31 entries"
+    "text": "Skip to main content\nPeer-reviewed journal articles, newest first. See also Google Scholar and ORCID. Manuscripts in progress are listed in the CV.\n31 entries"
   },
   {
     "objectID": "publications.html#section",
@@ -417,7 +438,7 @@
     "href": "software.html",
     "title": "Software",
     "section": "",
-    "text": "I build R and Shiny tools when the same data problem keeps coming up: cleaning up inconsistent values, working out how a set of tables fit together, documenting what is in a data system, or reporting on it."
+    "text": "Skip to main content\nI build R and Shiny tools when the same data problem keeps coming up: cleaning up inconsistent values, working out how a set of tables fit together, documenting what is in a data system, or reporting on it."
   },
   {
     "objectID": "software.html#nebraska-suicide-mortality-review-reporting-application",
@@ -459,14 +480,14 @@
     "href": "teaching.html",
     "title": "Teaching",
     "section": "",
-    "text": "EDPS 900D: Survey Methods in Educational Research Department of Educational Psychology, University of Nebraska–Lincoln · Fall 2026\nEDPS 845: Computer-Assisted Research Data Analysis Department of Educational Psychology, University of Nebraska–Lincoln · Spring 2026"
+    "text": "Skip to main content"
   },
   {
     "objectID": "teaching.html#courses-instructor-of-record",
     "href": "teaching.html#courses-instructor-of-record",
     "title": "Teaching",
-    "section": "",
-    "text": "EDPS 900D: Survey Methods in Educational Research Department of Educational Psychology, University of Nebraska–Lincoln · Fall 2026\nEDPS 845: Computer-Assisted Research Data Analysis Department of Educational Psychology, University of Nebraska–Lincoln · Spring 2026"
+    "section": "Courses (instructor of record)",
+    "text": "Courses (instructor of record)\nEDPS 900D: Survey Methods in Educational Research Department of Educational Psychology, University of Nebraska–Lincoln · Fall 2026\nEDPS 845: Computer-Assisted Research Data Analysis Department of Educational Psychology, University of Nebraska–Lincoln · Spring 2026"
   },
   {
     "objectID": "teaching.html#workshops-training-series",
