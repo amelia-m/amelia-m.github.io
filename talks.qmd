@@ -7,6 +7,14 @@ title: "Talks & presentations"
 source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
 ```
 
+## Slides
+
+- [Teaching AI agents house rules](talks/lincoln-ai-2026-11/index.html): how my setup for AI coding agents changed, what it is made of, and how it keeps sensitive data out.
+  Lincoln AI meetup, November 2026.
+  Press S for speaker notes.
+
+## Papers, posters, and abstracts
+
 Papers, posters, and abstracts for professional meetings, newest first, with presentation status where recorded.
 Invited and guest lectures are in the [CV](cv/index.qmd#invited-guest-lectures).
 
