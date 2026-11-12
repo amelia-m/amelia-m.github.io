@@ -1,6 +1,6 @@
 # Public profile, contact, project, and event links: the single source for the
-# home, contact, software, publications, events, fun, and conference pages
-# (read through the link helpers in R/site.R).
+# home, contact, dissertation, software, publications, events, fun, and
+# conference pages (read through the link helpers in R/site.R).
 #
 # The navbar in _quarto.yml cannot read this file. Every render checks that
 # each external navbar link also appears here and stops if one does not, so
@@ -35,14 +35,16 @@ code:
     url: https://git.unl.edu/amiramonti
 
 scholarly:
+  # Named for what they are, so they read apart in the contact page's list;
+  # dissertation.qmd gives its buttons "Read the full text" instead.
   - id: dissertation
-    label: Read the full text
+    label: Dissertation
     url: https://digitalcommons.unl.edu/dissunl/314/
   - id: thesis-unl
-    label: Read the full text
+    label: Master's thesis (UNL)
     url: https://digitalcommons.unl.edu/cehsdiss/327/
   - id: thesis-ucf
-    label: Read the full text
+    label: Master's thesis (UCF)
     url: https://stars.library.ucf.edu/etd/1426/
   - id: orcid
     label: ORCID
@@ -229,7 +231,7 @@ events:
     url: https://nebraskajs.com/
   # The group behind the October 15 meetup, held jointly with NebraskaJS and
   # locally hosted by DevObsessed: the first meetup of the Omaha chapter of an
-  # international organisation, not a group founded here, so the parent has a
+  # international organization, not a group founded here, so the parent has a
   # footprint even though this city site has almost none. An earlier version of this comment explained
   # the missing search results as a brand new group, which was wrong: only
   # the chapter is new.

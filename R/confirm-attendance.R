@@ -148,17 +148,30 @@ record <- function(answers, lines, date_line, ev, path) {
     }
   }, error = function(err) conditionMessage(err))
   if (!is.null(problem)) {
-    write_lf(lines, path)
+    restored <- tryCatch({ write_lf(lines, path); TRUE }, error = function(err) FALSE)
+    if (!restored) {
+      stop("confirm-attendance: events.yml holds an unchecked change (", problem,
+           ") and could not be put back; restore it with `git checkout events.yml`", call. = FALSE)
+    }
     stop("confirm-attendance: events.yml was left as it was, because after the change ",
          problem, call. = FALSE)
   }
 }
 
-# LF endings whatever the platform, as .gitattributes asks for.
+# LF endings whatever the platform, as .gitattributes asks for. Written to a
+# temporary file beside the target and then renamed over it, so a write cut
+# short (a full disk, Ctrl-C) leaves events.yml as it was rather than half
+# written; the same directory keeps the rename on one file system.
 write_lf <- function(lines, path) {
-  con <- file(path, "wb")
-  on.exit(close(con))
-  writeLines(enc2utf8(lines), con, sep = "\n", useBytes = TRUE)
+  tmp <- tempfile(paste0(".", basename(path), "-"), tmpdir = dirname(path))
+  on.exit(if (file.exists(tmp)) unlink(tmp), add = TRUE)
+  con <- file(tmp, "wb")
+  tryCatch(writeLines(enc2utf8(lines), con, sep = "\n", useBytes = TRUE),
+           finally = close(con))
+  if (!file.rename(tmp, path)) {
+    stop("confirm-attendance: could not replace ", path, "; this write did not change it", call. = FALSE)
+  }
+  invisible(path)
 }
 
 ask_all()

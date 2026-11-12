@@ -72,8 +72,8 @@ if [ -n "${CLAUDE_ENV_FILE:-}" ]; then
   fi
 fi
 
-# Site helpers: R/site.R uses jsonlite for _data/*.json and yaml for links.yml
-# and likes.yml. knitr executes the chunks in the .qmd files and rmarkdown is
+# Site helpers: R/site.R uses jsonlite for _data/*.json and yaml for the .yml
+# files at the root and _quarto.yml. knitr executes the chunks in the .qmd files and rmarkdown is
 # what Quarto drives it through.
 APT_PACKAGES=(
   pandoc

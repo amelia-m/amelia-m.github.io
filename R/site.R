@@ -1,5 +1,5 @@
 # Shared helpers for pages that render the generated data in _data/.
-# Base R + jsonlite only.
+# Base R plus jsonlite and yaml.
 
 # Quarto does not set a locale: R inherits the shell's. In a cloud session that
 # is POSIX, and output written through cat() then turns every non-ASCII
@@ -125,12 +125,21 @@ latex_text <- function(x) {
   regmatches(x, um) <- list(sprintf("\004%d\004", seq_along(urls)))
   # Dotless i and j, as accents are written over them: {\'\i} is í.
   x <- gsub("\\\\([ij])(?![A-Za-z])", "\\1", x, perl = TRUE)
-  # Math delimiters \( \) and $ ... $: keep the content.
-  x <- gsub("\\(", "", x, fixed = TRUE)
-  x <- gsub("\\)", "", x, fixed = TRUE)
-  x <- gsub("$", "", x, fixed = TRUE)
+  # Math delimiters \( \) and $ ... $: keep the content, and mark where each
+  # delimiter was (\005, removed at the end), so a command converted below
+  # cannot take the real space after a closing $ for its own: "$\alpha$ = .05"
+  # is "α = .05" and "3 $\times$ 2" is "3 × 2".
+  x <- gsub("\\(", "\005", x, fixed = TRUE)
+  x <- gsub("\\)", "\005", x, fixed = TRUE)
+  x <- gsub("$", "\005", x, fixed = TRUE)
+  # A space right after a command ends the command, as in TeX. For the Greek
+  # letters and the symbols that stand apart from the next word it usually
+  # also separates two words ("\beta weights", "\copyright 2020"), so it is
+  # kept, and dropped only before punctuation or the end, so "$\beta $-hydroxy"
+  # stays "β-hydroxy".
+  keep_word_space <- "(?:[ ](?=\005*(?:[-\\x{2013}\\x{2014}.,;:!?)\\]}'\\x{2019}\"\\x{201D}/]|$)))?"
   for (nm in names(.greek)) {
-    x <- gsub(paste0("\\\\", nm, "(?![A-Za-z])[ ]?"), .greek[[nm]], x, perl = TRUE)
+    x <- gsub(paste0("\\\\", nm, "(?![A-Za-z])", keep_word_space), .greek[[nm]], x, perl = TRUE)
   }
   # Accents: \'e, \'{e}, {\'e}, \c{c}, \v s
   for (a in names(.latex_accents)) {
@@ -147,8 +156,13 @@ latex_text <- function(x) {
       }, character(1), USE.NAMES = FALSE)
     })
   }
+  # The same for the symbols that stand apart from the next word, such as
+  # "\textregistered curricula". The rest join it as TeX would: the letters
+  # (Stra\ss e is Straße), dashes, and signs written against a number or unit.
+  word_symbols <- c("textregistered", "texttrademark", "textcopyright", "copyright", "ldots", "dots")
   for (nm in names(.latex_symbols)) {
-    x <- gsub(paste0("\\\\", nm, "(?![A-Za-z])(\\{\\})?[ ]?"), .latex_symbols[[nm]], x, perl = TRUE)
+    space <- if (nm %in% word_symbols) keep_word_space else "[ ]?"
+    x <- gsub(paste0("\\\\", nm, "(?![A-Za-z])(\\{\\})?", space), .latex_symbols[[nm]], x, perl = TRUE)
   }
   x <- gsub("\\\\\\\\", " ", x)                  # \\ line break
   x <- gsub("\\\\[ ]", " ", x)                    # control space, as in "vs.\ "
@@ -161,6 +175,7 @@ latex_text <- function(x) {
   x <- gsub("[{}]", "", x)
   # URLs back before the escaped specials, which a URL can contain too.
   for (i in seq_along(urls)) x <- sub(sprintf("\004%d\004", i), urls[i], x, fixed = TRUE)
+  x <- gsub("\005", "", x, fixed = TRUE)
   x <- chartr("\001\002\003", "${}", x)
   trimws(gsub("[[:space:]]+", " ", x))
 }
@@ -643,12 +658,41 @@ site_events <- function(file = "events.yml") {
              ", which a `text` entry ignores; put it in the text instead")
     }
   }
+  # Regulars are checked the same way. event_line() and regulars_line() read
+  # only these fields from one, and name it by its links.yml id, so an entry
+  # without an `id`, or with any other field (a `date` copied from an event, a
+  # misspelled `cadance`), stops the render rather than showing without it.
+  # So does a misspelled `regulars:` key, which would drop every one of them.
+  top <- setdiff(names(ev), c("events", "regulars"))
+  if (length(top)) {
+    stop(file, ": ", paste0("`", top, ":`", collapse = ", "),
+         " is not a list this file has; it has `events:` and `regulars:`")
+  }
+  regular <- c("id", "cadence", "where", "note", "more")
+  for (k in seq_along(ev$regulars)) {
+    r <- ev$regulars[[k]]
+    if (!is.list(r) || is.null(names(r))) {
+      stop(file, ": regular ", k, " is not a set of fields; write it as `- id: ...`")
+    }
+    # [[ ]] rather than $, which would take a misspelled `identifier` for `id`.
+    id <- r[["id"]]
+    has_id <- is.character(id) && length(id) == 1 && nzchar(id)
+    what <- if (has_id) id else paste0("regular ", k)
+    extra <- setdiff(names(r), regular)
+    if (length(extra)) {
+      stop(file, ": ", what, " has ", paste0("`", extra, "`", collapse = ", "),
+           ", which a regular does not use; it takes ", paste0("`", regular, "`", collapse = ", "))
+    }
+    if (!has_id) {
+      stop(file, ": ", what, " has no `id`; a regular is named and linked by its links.yml id")
+    }
+  }
   # `more` links, on events and regulars alike, are checked the same way: a
   # misspelled `upcoming_only` would otherwise leave a sign-up link on an
   # event long past, and a link that is not a mapping with an `id` fails later
   # with an error that names no entry.
   for (e in c(ev$events, ev$regulars)) {
-    what <- e$id %||% substr(trimws(e$text %||% "(no id or text)"), 1, 40)
+    what <- e[["id"]] %||% substr(trimws(e[["text"]] %||% "(no id or text)"), 1, 40)
     for (m in e$more) {
       if (!is.list(m) || is.null(m$id)) {
         stop(file, ": ", what, " has a `more` link without an `id`; write each as `- id: ...`")
@@ -669,13 +713,18 @@ site_events <- function(file = "events.yml") {
 
 # Today where the events happen. A build in a UTC container on a Nebraska
 # evening would otherwise already be on tomorrow's date and file that day's
-# event under Past, and js/events.js can only move events into Past, never
-# back out.
+# event as gone, and js/events.js can only take events out of Upcoming, never
+# put them back. js/events.js takes today in the same time zone; change both
+# together.
 site_today <- function() as.Date(format(Sys.time(), "%Y-%m-%d", tz = "America/Chicago"))
 
 # Markdown for one event: the linked name, then the date or cadence, the venue,
 # the note, and any further links in parentheses. A past event is not bolded
-# and prefers `past_note`, for notes that were written looking forward.
+# and takes its `past_note` in place of `note`, for notes that were written
+# looking forward. That holds whenever the entry has a `past_note`, even an
+# empty one: `past_note: ""` (or a bare `past_note:`) leaves a past event with
+# no note at all. Without the field, `note` is kept as written. An empty note
+# adds nothing, rather than a stray period.
 event_line <- function(e, past = FALSE) {
   # `more` applies to a `text` entry too. It used to return here, so an entry
   # with no links.yml id of its own had no way to carry a link except by
@@ -688,8 +737,11 @@ event_line <- function(e, past = FALSE) {
     if (!past) name <- paste0("**", name, "**")
     parts <- c(name, e$when %||% NULL, e$cadence %||% NULL, e$where %||% NULL)
     out <- paste(Filter(nzchar, parts), collapse = ", ")
-    note <- if (past) e$past_note %||% e$note else e$note
-    if (!is.null(note)) out <- paste(end_period(out), trimws(note))
+    # Not `e$past_note %||% e$note`: %||% falls back on "" too, so an empty
+    # past_note would bring the forward-looking note back.
+    note <- if (past && "past_note" %in% names(e)) e[["past_note"]] else e$note
+    note <- trimws(paste(as.character(note), collapse = " "))
+    if (nzchar(note)) out <- paste(end_period(out), note)
   }
   # A link marked `upcoming_only`, such as a sign-up page, means nothing once
   # the event has happened, so Past leaves it out.

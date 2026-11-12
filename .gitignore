@@ -1,6 +1,9 @@
 /.quarto/
 /_site/
 /_freeze/
+# Temporary file R/confirm-attendance.R writes before renaming it over
+# events.yml; one is left behind only if R is killed mid-write.
+/.events.yml-*
 *_files/
 .Rhistory
 .RData

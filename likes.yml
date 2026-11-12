@@ -245,9 +245,6 @@ sections:
             url: https://posit.co/data-science-hangout/
             by: Posit
             description: Free weekly online conversation with data science leaders.
-            links:
-              - label: Past hangouts
-                url: https://posit.co/past-hangouts/
           - name: Posit Data Science Lab
             url: https://pos.it/dslab
             by: Posit
@@ -312,7 +309,7 @@ sections:
         url: https://shapecatcher.com/
         description: Draw a symbol to find its Unicode character.
 
-  - title: Books, podcasts, and courses
+  - title: Books and courses
     items:
       - name: Data Management in Large-Scale Education Research
         url: https://datamgmtinedresearch.com/
