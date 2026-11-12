@@ -125,16 +125,19 @@ latex_text <- function(x) {
   regmatches(x, um) <- list(sprintf("\004%d\004", seq_along(urls)))
   # Dotless i and j, as accents are written over them: {\'\i} is í.
   x <- gsub("\\\\([ij])(?![A-Za-z])", "\\1", x, perl = TRUE)
-  # Math delimiters \( \) and $ ... $: keep the content.
-  x <- gsub("\\(", "", x, fixed = TRUE)
-  x <- gsub("\\)", "", x, fixed = TRUE)
-  x <- gsub("$", "", x, fixed = TRUE)
-  # A space after a command ends the command, as in TeX, except before a
-  # letter: there it also separates two words, so "\beta weights" (or
-  # "$\beta$ weights", the $ being gone by now) reads "β weights", not
-  # "βweights". Before anything else it is still dropped, so "$\beta $-hydroxy"
+  # Math delimiters \( \) and $ ... $: keep the content, and mark where each
+  # delimiter was (\005, removed at the end), so a command converted below
+  # cannot take the real space after a closing $ for its own: "$\alpha$ = .05"
+  # is "α = .05" and "3 $\times$ 2" is "3 × 2".
+  x <- gsub("\\(", "\005", x, fixed = TRUE)
+  x <- gsub("\\)", "\005", x, fixed = TRUE)
+  x <- gsub("$", "\005", x, fixed = TRUE)
+  # A space right after a command ends the command, as in TeX. For the Greek
+  # letters and the symbols that stand apart from the next word it usually
+  # also separates two words ("\beta weights", "\copyright 2020"), so it is
+  # kept, and dropped only before punctuation or the end, so "$\beta $-hydroxy"
   # stays "β-hydroxy".
-  keep_word_space <- "(?:[ ](?![A-Za-z]))?"
+  keep_word_space <- "(?:[ ](?=\005*(?:[-\\x{2013}\\x{2014}.,;:!?)\\]}'\\x{2019}\"\\x{201D}/]|$)))?"
   for (nm in names(.greek)) {
     x <- gsub(paste0("\\\\", nm, "(?![A-Za-z])", keep_word_space), .greek[[nm]], x, perl = TRUE)
   }
@@ -172,6 +175,7 @@ latex_text <- function(x) {
   x <- gsub("[{}]", "", x)
   # URLs back before the escaped specials, which a URL can contain too.
   for (i in seq_along(urls)) x <- sub(sprintf("\004%d\004", i), urls[i], x, fixed = TRUE)
+  x <- gsub("\005", "", x, fixed = TRUE)
   x <- chartr("\001\002\003", "${}", x)
   trimws(gsub("[[:space:]]+", " ", x))
 }
@@ -496,21 +500,12 @@ link <- function(id, label = NULL) {
   paste0("[", md(if (is.null(label)) l$text else label), "](", l$url, ")")
 }
 
-# Links for one group, joined for a single line. `labels` overrides the text
-# of some of them for this line only, by id, for a label written for the
-# link's own context: the dissertation page's "Read the full text" buttons
-# would read as three identical links in a list of profiles.
-link_line <- function(group, sep = " · ", labels = character()) {
+# Links for one group, joined for a single line.
+link_line <- function(group, sep = " · ") {
   l <- site_links()
   l <- l[l$group == group, , drop = FALSE]
   if (!nrow(l)) stop("links.yml has no group '", group, "'")
-  stray <- setdiff(names(labels), l$id)
-  if (length(stray)) {
-    stop("link_line(\"", group, "\"): links.yml's '", group, "' group has no ",
-         paste0("'", stray, "'", collapse = ", "), call. = FALSE)
-  }
-  paste(vapply(l$id, function(id) link(id, if (id %in% names(labels)) labels[[id]]),
-               character(1)), collapse = sep)
+  paste(vapply(l$id, link, character(1)), collapse = sep)
 }
 
 # Full-width sidebar button, with the Bootstrap icon when one is set.
@@ -681,13 +676,14 @@ site_events <- function(file = "events.yml") {
     }
     # [[ ]] rather than $, which would take a misspelled `identifier` for `id`.
     id <- r[["id"]]
-    what <- if (is.character(id) && length(id) == 1 && nzchar(id)) id else paste0("regular ", k)
+    has_id <- is.character(id) && length(id) == 1 && nzchar(id)
+    what <- if (has_id) id else paste0("regular ", k)
     extra <- setdiff(names(r), regular)
     if (length(extra)) {
       stop(file, ": ", what, " has ", paste0("`", extra, "`", collapse = ", "),
            ", which a regular does not use; it takes ", paste0("`", regular, "`", collapse = ", "))
     }
-    if (identical(what, paste0("regular ", k))) {
+    if (!has_id) {
       stop(file, ": ", what, " has no `id`; a regular is named and linked by its links.yml id")
     }
   }
@@ -696,7 +692,7 @@ site_events <- function(file = "events.yml") {
   # event long past, and a link that is not a mapping with an `id` fails later
   # with an error that names no entry.
   for (e in c(ev$events, ev$regulars)) {
-    what <- e$id %||% substr(trimws(e$text %||% "(no id or text)"), 1, 40)
+    what <- e[["id"]] %||% substr(trimws(e[["text"]] %||% "(no id or text)"), 1, 40)
     for (m in e$more) {
       if (!is.list(m) || is.null(m$id)) {
         stop(file, ": ", what, " has a `more` link without an `id`; write each as `- id: ...`")

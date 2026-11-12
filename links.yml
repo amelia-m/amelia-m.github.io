@@ -35,14 +35,16 @@ code:
     url: https://git.unl.edu/amiramonti
 
 scholarly:
+  # Named for what they are, so they read apart in the contact page's list;
+  # dissertation.qmd gives its buttons "Read the full text" instead.
   - id: dissertation
-    label: Read the full text
+    label: Dissertation
     url: https://digitalcommons.unl.edu/dissunl/314/
   - id: thesis-unl
-    label: Read the full text
+    label: Master's thesis (UNL)
     url: https://digitalcommons.unl.edu/cehsdiss/327/
   - id: thesis-ucf
-    label: Read the full text
+    label: Master's thesis (UCF)
     url: https://stars.library.ucf.edu/etd/1426/
   - id: orcid
     label: ORCID

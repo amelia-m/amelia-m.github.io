@@ -229,6 +229,10 @@ body:has(.hero-banner) .navbar-brand-container { visibility: hidden; }
 // keyboard focus; bring it back whenever focus is inside it.
 #quarto-header.headroom--unpinned:focus-within { transform: none; }
 
+// The skip link focuses the content area itself (tabindex="-1"), which needs
+// no ring of its own: the next Tab moves on from there.
+#quarto-document-content:focus { outline: none; }
+
 // Skip link (_includes/skip-link.html): shown only when focused, above the
 // fixed navbar. With JavaScript off it stays after the navbar, where Quarto
 // puts includes, so it is the first tab stop only with JavaScript on.

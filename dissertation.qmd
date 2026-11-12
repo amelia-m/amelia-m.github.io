@@ -13,7 +13,7 @@ Interdisciplinary PhD, University of Nebraska–Lincoln, conferred May 2025.
 Quantitative, Qualitative, and Psychometric Methods in Educational Psychology, with Exercise Physiology and Nutrition in Nutrition and Health Sciences.
 Advised by James A. Bovaird.
 
-`r link("dissertation")`{.btn .btn-primary}
+`r link("dissertation", "Read the full text")`{.btn .btn-primary}
 
 ::: {.content-hidden}
 <!-- Left out of the site until Amelia has reviewed it (2026-10-29: "let's
@@ -50,13 +50,13 @@ MA, Quantitative, Qualitative, and Psychometric Methods, University of Nebraska�
 A two-method measurement design pairs a cheap measure collected from everyone with an expensive one collected from a planned subsample, and leans on the missing data being missing by design.
 The question here was whether that trade is worth making for youth physical activity.
 
-`r link("thesis-unl")`{.btn .btn-outline-primary .btn-sm}
+`r link("thesis-unl", "Read the full text")`{.btn .btn-outline-primary .btn-sm}
 
 **The Effects of Four Weeks of High-Intensity Interval Training and β-Hydroxy-β-Methylbutyric Free Acid Supplementation on the Onset of Neuromuscular Fatigue**
 
 MSc, Sport and Exercise Science, University of Central Florida, 2015.
 From the exercise physiology side of my training: how interval training and HMB supplementation affect the point at which neuromuscular fatigue sets in, measured with electromyography and mechanomyography.
 
-`r link("thesis-ucf")`{.btn .btn-outline-primary .btn-sm}
+`r link("thesis-ucf", "Read the full text")`{.btn .btn-outline-primary .btn-sm}
 
 See also my [research interests](research.qmd) and [publications](publications.qmd).

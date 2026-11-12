@@ -148,7 +148,11 @@ record <- function(answers, lines, date_line, ev, path) {
     }
   }, error = function(err) conditionMessage(err))
   if (!is.null(problem)) {
-    write_lf(lines, path)
+    restored <- tryCatch({ write_lf(lines, path); TRUE }, error = function(err) FALSE)
+    if (!restored) {
+      stop("confirm-attendance: events.yml holds an unchecked change (", problem,
+           ") and could not be put back; restore it with `git checkout events.yml`", call. = FALSE)
+    }
     stop("confirm-attendance: events.yml was left as it was, because after the change ",
          problem, call. = FALSE)
   }
@@ -165,7 +169,7 @@ write_lf <- function(lines, path) {
   tryCatch(writeLines(enc2utf8(lines), con, sep = "\n", useBytes = TRUE),
            finally = close(con))
   if (!file.rename(tmp, path)) {
-    stop("confirm-attendance: could not replace ", path, "; it was left as it was", call. = FALSE)
+    stop("confirm-attendance: could not replace ", path, "; this write did not change it", call. = FALSE)
   }
   invisible(path)
 }
