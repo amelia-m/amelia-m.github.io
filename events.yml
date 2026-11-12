@@ -24,7 +24,8 @@
 #   where     venue, optional
 #   note      extra prose, optional, Markdown allowed
 #   past_note replaces `note` once the event is past, for a note written
-#             looking forward. Without it the `note` is kept as written.
+#             looking forward. Without it the `note` is kept as written;
+#             `past_note: ""` drops the note once the event is past.
 #   more      further links.yml ids, shown in parentheses at the end. Works on
 #             a `text` entry too, which is how one of those carries a link
 #             without the URL being written out here as a second copy. Each
@@ -39,6 +40,9 @@
 #             `where`, `note` and `past_note` would be ignored, so they stop
 #             the render, as does a field name nothing uses.
 #   cadence   regulars only, in place of a date ("most Wednesday mornings")
+#
+# A regular takes `id`, which it must have, and optionally `cadence`, `where`,
+# `note` and `more`; any other field stops the render.
 #
 # `note` is Markdown but not knitr source, so it cannot carry inline R: the
 # page prints these with cat(), and knitr does not rescan what cat() emits.
@@ -62,7 +66,7 @@ events:
     where: DevObsessed, Omaha, NE
     note: >-
       The first meetup of the new Omaha chapter of an international
-      organisation, held jointly with NebraskaJS. Two talks, the first on Jev,
+      organization, held jointly with NebraskaJS. Two talks, the first on Jev,
       a narrow model that answers a typed question with a probability rather
       than with prose.
     # No label, so links.yml supplies the name and it matches the one already
@@ -80,7 +84,7 @@ events:
     where: online
     note: >-
       The Welcome Session, for people new to The Carpentries: what the
-      organisation does, the ways to get involved, and questions answered.
+      organization does, the ways to get involved, and questions answered.
   # Title, hosts and venue read off the two Meetup event pages on 2026-10-27,
   # which match Amelia's calendar entry for the speaker and abstract. The
   # venue's name is from the Lincoln.Code page; the (402) Developers page
@@ -240,7 +244,7 @@ events:
     date: 2026-05-06
     attended: true
     note: The first Explorers meeting, largely a discussion of what the group should be.
-  # No link: this one was organised through NebraskaJS on lu.ma rather than
+  # No link: this one was organized through NebraskaJS on lu.ma rather than
   # Meetup. lu.ma does not resolve from the build environment, and the URL
   # has not been given, so it stays out (WORDING.md, on unopened URLs). The
   # November Startup Week page is linked because Amelia gave that one.

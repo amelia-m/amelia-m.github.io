@@ -92,7 +92,7 @@ website:
         href: https://x.com/AmeliaMiramonti
         aria-label: X
       # Points at the contact page rather than a mailto:, which put a live
-      # address in the navbar of all 13 pages for harvesters to read.
+      # address in the navbar of every page for harvesters to read.
       - icon: envelope
         href: contact.qmd
         aria-label: Contact

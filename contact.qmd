@@ -15,7 +15,7 @@ source(file.path(Sys.getenv("QUARTO_PROJECT_DIR", "."), "R", "site.R"))
 
 **Code:** `r link_line("code")`
 
-**Scholarly:** `r link_line("scholarly")`
+**Scholarly:** `r link_line("scholarly", labels = c(dissertation = "Dissertation", "thesis-unl" = "Master's thesis (UNL)", "thesis-ucf" = "Master's thesis (UCF)"))`
 
 **Social:** `r link_line("social")`
 

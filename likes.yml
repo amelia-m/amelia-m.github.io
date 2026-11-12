@@ -312,7 +312,7 @@ sections:
         url: https://shapecatcher.com/
         description: Draw a symbol to find its Unicode character.
 
-  - title: Books, podcasts, and courses
+  - title: Books and courses
     items:
       - name: Data Management in Large-Scale Education Research
         url: https://datamgmtinedresearch.com/

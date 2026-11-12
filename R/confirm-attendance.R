@@ -154,11 +154,20 @@ record <- function(answers, lines, date_line, ev, path) {
   }
 }
 
-# LF endings whatever the platform, as .gitattributes asks for.
+# LF endings whatever the platform, as .gitattributes asks for. Written to a
+# temporary file beside the target and then renamed over it, so a write cut
+# short (a full disk, Ctrl-C) leaves events.yml as it was rather than half
+# written; the same directory keeps the rename on one file system.
 write_lf <- function(lines, path) {
-  con <- file(path, "wb")
-  on.exit(close(con))
-  writeLines(enc2utf8(lines), con, sep = "\n", useBytes = TRUE)
+  tmp <- tempfile(paste0(".", basename(path), "-"), tmpdir = dirname(path))
+  on.exit(if (file.exists(tmp)) unlink(tmp), add = TRUE)
+  con <- file(tmp, "wb")
+  tryCatch(writeLines(enc2utf8(lines), con, sep = "\n", useBytes = TRUE),
+           finally = close(con))
+  if (!file.rename(tmp, path)) {
+    stop("confirm-attendance: could not replace ", path, "; it was left as it was", call. = FALSE)
+  }
+  invisible(path)
 }
 
 ask_all()
