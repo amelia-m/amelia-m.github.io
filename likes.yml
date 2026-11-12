@@ -245,9 +245,6 @@ sections:
             url: https://posit.co/data-science-hangout/
             by: Posit
             description: Free weekly online conversation with data science leaders.
-            links:
-              - label: Past hangouts
-                url: https://posit.co/past-hangouts/
           - name: Posit Data Science Lab
             url: https://pos.it/dslab
             by: Posit

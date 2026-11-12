@@ -53,6 +53,7 @@ The site follows the reader's system light or dark setting until they use the na
 
 - `_includes/skip-link.html`, on every page through `include-before-body`, adds a "Skip to main content" link that shows only when focused.
   Quarto places it after the navbar, so a script moves it to the start of the page to make it the first tab stop; with JavaScript off it stays after the navbar.
+  The script also moves focus itself, because Quarto 1.10 rewrites the link on `index.html` into one that reloads the page; Quarto 1.11 has its own skip link, so this include goes when Quarto is upgraded.
 - `_shared.scss` gives keyboard focus a visible outline on navbar links, the menu and theme toggles, and buttons, brings the auto-hiding navbar back while focus is inside it, and keeps the footer logos visible in forced colors (Windows High Contrast).
 - Quarto's `smooth-scroll` is off, since it animates even for readers who ask for reduced motion; `_shared.scss` turns smooth scrolling on in CSS for everyone else.
   Readers who ask for reduced motion do not get the home page's drifting-dot background (`_includes/particles-bg.html`, `js/particles-bg.js`) either.

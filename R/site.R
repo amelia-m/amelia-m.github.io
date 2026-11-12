@@ -1,5 +1,5 @@
 # Shared helpers for pages that render the generated data in _data/.
-# Base R + jsonlite only.
+# Base R plus jsonlite and yaml.
 
 # Quarto does not set a locale: R inherits the shell's. In a cloud session that
 # is POSIX, and output written through cat() then turns every non-ASCII

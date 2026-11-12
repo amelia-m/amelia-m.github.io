@@ -94,7 +94,7 @@ places:
       2026-10-31 from three drafts ("1 is better at least, go with that"); the
       one it replaced said "the unglamorous middle of applied research" and
       "administrative data", which Amelia disliked. It names neither the role
-      nor the methods, which the X and GitLab bios do.
+      nor the methods; the X bio names both, the GitLab bio the methods.
 
   - id: bluesky
     label: Bluesky
@@ -178,7 +178,7 @@ places:
       policy" and "public health", the AI Engineer Omaha headline's wording, to
       fit, and leaves out "adjunct faculty" for the same reason. Possibly
       temporary; the reasons and the drafts not chosen are in WORDING.md under
-      "X bio"
+      "X bio".
 
   - id: gitlab
     label: GitLab profile Bio field (personal account)
