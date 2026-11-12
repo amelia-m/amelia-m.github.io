@@ -27,7 +27,7 @@ The same rule applies in the repository this site's content is exported from, so
 
 `_data/` and `files/` are written by an export from the source repository and are overwritten on the next run.
 Fix content at its source, never here.
-Everything else is hand edited; README.md lists it.
+Everything else is hand edited, apart from two folders copied in from elsewhere (`talks/`, `_extensions/`); README.md lists it all.
 
 ## House style
 

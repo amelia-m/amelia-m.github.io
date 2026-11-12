@@ -7,10 +7,12 @@ Personal academic website for Amelia Miramonti, built with [Quarto](https://quar
 Files in `_data/` and `files/` are generated from a separate source repository.
 Do not edit them by hand; changes are overwritten on the next export.
 
-Everything else is edited by hand here: the pages, the data files at the root (`events.yml`, `links.yml`, `likes.yml`, `bios.yml`, `areas.yml`, `contributions.yml`, `investigate.yml`), `_quarto.yml`, the stylesheets, `R/`, `js/`, `_includes/`, blog posts, and images.
-A new file outside `_data/` and `files/` is hand-edited too.
-`talks/` is the exception: each folder holds a finished, self-contained slide deck built in the repository where its source lives and copied in as is, with the site's analytics include added at that render (`quarto render <deck>.qmd -M include-in-header:<this repo>/_includes/analytics.html -o <name>.html`, run from the deck's own folder: run from elsewhere, the output is not self-contained); fix a deck at its source and copy it in again.
+Everything else is edited by hand here: the pages, the data files at the root (`events.yml`, `links.yml`, `likes.yml`, `bios.yml`, `areas.yml`, `contributions.yml`, `investigate.yml`), `_quarto.yml`, the stylesheets, `R/`, `js/`, `_includes/`, blog posts, images, and the files for agents (`CLAUDE.md`, `.agents/project-profile.md`, and `.claude/`, whose session-start hook installs Quarto and R in a cloud session).
+A new file outside `_data/` and `files/` is hand-edited too, apart from the two copied-in folders below.
+`talks/` is one exception: each folder holds a finished, self-contained slide deck built in the repository where its source lives and copied in as is, with the site's analytics include added at that render (`quarto render <deck>.qmd -M include-in-header:<this repo>/_includes/analytics.html -o <name>.html`, run from the deck's own folder: run from elsewhere, the output is not self-contained); fix a deck at its source and copy it in again.
 It is listed under `resources` in `_quarto.yml`, so Quarto copies it into `_site` without rendering it, and the render's own output check does not see it: run `Rscript R/check-output.R` after a render to check it too.
+`_extensions/` is the other copied-in folder: the academicons Quarto extension (schochastics/academicons), which draws the ORCID and Google Scholar icons Bootstrap Icons lacks.
+Update it from upstream rather than editing it here.
 
 Events live in `events.yml`, which feeds both `events.qmd` and the home page callout.
 One dated list covers the whole page: an entry leaves Upcoming the day after it happens, and goes into Past, filed under its year, only once it is marked `attended: true`, since Past says Amelia was there.
@@ -19,7 +21,7 @@ Until it is marked it is on neither list: a whole-site render at a terminal asks
 The callout names the next event only within six weeks of it and falls back to the regulars otherwise.
 A note written looking forward can carry a `past_note` to replace it afterwards.
 
-The Upcoming split is made twice: by `R/site.R` when the site is built, and again in the reader's browser by `js/events.js`, so a passed event leaves Upcoming and the callout moves on without a republish.
+The Upcoming split is made twice: by `R/site.R` when the site is built, and again in the reader's browser by `js/events.js`, which `_includes/events.html` loads on those two pages, so a passed event leaves Upcoming and the callout moves on without a republish.
 The two copies of the rule (an event is upcoming through its own day; the callout's six-week window, carried in the page as `data-from`) are kept in step by hand, so change them together.
 Republishing is still needed to add or change an event.
 
@@ -28,6 +30,7 @@ Republishing is still needed to add or change an event.
 `areas.yml` groups the work into research, public policy, public health, and education and lists the projects in each, including past ones that produced no publication; it renders nowhere and is read with `work_areas()`.
 `investigate.yml` holds verification notes on look-into items; the look-into list itself is kept outside this repository, and new items go there, not here.
 It renders nowhere either.
+`contributions.yml` lists every record that turns up under Amelia's name and her actual relationship to each one, since much of the analysis work sits in other people's theses and dissertations; it is not rendered anywhere yet.
 
 ## Build and publish
 
@@ -42,6 +45,17 @@ Answers are written into `events.yml`, which then needs committing; `quarto rend
 `quarto preview` (and renders with no one at the keyboard) skip the questions and list the events in the log instead; `quarto preview --render all` renders the whole site, so it asks too.
 
 Blog posts go in `blog/posts/<slug>/index.qmd`.
+
+## Themes and accessibility
+
+Two Bootstrap themes, cosmo for light and darkly for dark, each with a file for what differs between them (`styles.scss`, `styles-dark.scss`); both import `_shared.scss` for the rules they share, so a fix made there reaches both.
+The site follows the reader's system light or dark setting until they use the navbar toggle, whose choice Quarto then keeps in the browser (`respect-user-color-scheme` in `_quarto.yml`).
+
+- `_includes/skip-link.html`, on every page through `include-before-body`, adds a "Skip to main content" link that shows only when focused.
+  Quarto places it after the navbar, so a script moves it to the start of the page to make it the first tab stop; with JavaScript off it stays after the navbar.
+- `_shared.scss` gives keyboard focus a visible outline on navbar links, the menu and theme toggles, and buttons, brings the auto-hiding navbar back while focus is inside it, and keeps the footer logos visible in forced colors (Windows High Contrast).
+- Quarto's `smooth-scroll` is off, since it animates even for readers who ask for reduced motion; `_shared.scss` turns smooth scrolling on in CSS for everyone else.
+  Readers who ask for reduced motion do not get the home page's drifting-dot background (`_includes/particles-bg.html`, `js/particles-bg.js`) either.
 
 ## Analytics
 
@@ -63,6 +77,7 @@ The script is `_includes/analytics.html`, pulled into every page by `include-in-
 
 `images/headshot.jpg` and `images/banner.jpg` are web-sized copies.
 `images/qr-site.svg` encodes `https://amelia-m.github.io/`.
+`images/icons/` holds the R, Quarto and Claude logos in the footer, Simple Icons (CC0) drawn as CSS masks in `_shared.scss`; no page links them directly, so `_quarto.yml` lists the folder under `resources`.
 
 `images/avatar.jpg` is an 800×800 crop of the headshot for profile pictures elsewhere, and is not used by the site.
 The source photo is 4:5 with the crown close to the top edge, so a platform's own square crop takes the top of the head off.
