@@ -497,7 +497,7 @@ It was the most common choice among both the women and the men who answered.</p>
   </details>
 
   <h3 id="survey-quotes">In their words</h3>
-  <p>Short extracts from written answers, quoted exactly, with nothing that could identify the person.<sup class="fn"><a href="#fn-11" id="fnref-11-1" aria-label="Source 11">11</a></sup></p>
+  <p>Short extracts from written answers, quoted exactly.<sup class="fn"><a href="#fn-11" id="fnref-11-1" aria-label="Source 11">11</a></sup></p>
   <figure class="quote"><blockquote><p>&ldquo;&hellip;I didn't know what I didn't know and I spent a long time asking the wrong questions.&rdquo;</p></blockquote></figure>
   <figure class="quote"><blockquote><p>&ldquo;I have some great mentors, but most just say "good job, keep going......." they really don't have the connections that I need in the industry.&rdquo;</p></blockquote></figure>
   <figure class="quote"><blockquote><p>&ldquo;I leaned often on my network to try to find new work or clients.&rdquo;</p></blockquote></figure>
