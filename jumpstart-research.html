@@ -486,6 +486,11 @@ body.quarto-dark .jsr{--jsr-bg:#1f0d24;--jsr-card:#2c1632;--jsr-text:#f3ebe6;--j
 .jsr .hl-text a{color:var(--jsr-text);font-weight:600;text-decoration-color:var(--jsr-accent)}
 /* cards */
 .jsr details.card{background:var(--jsr-card);border:1px solid var(--jsr-border);border-left:5px solid var(--jsr-gold);border-radius:10px;margin:0 0 .8rem;box-shadow:0 1px 3px var(--jsr-shadow)}
+/* rest-of-research topics: cards two across (Amelia, 2026-11-16) */
+.jsr section.topic{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem 1rem;align-items:start;margin-bottom:1.2rem}
+.jsr section.topic>*{grid-column:1/-1}
+.jsr section.topic>details.card{grid-column:auto;margin:0}
+@media (max-width:720px){.jsr section.topic{grid-template-columns:minmax(0,1fr)}}
 .jsr details.card>summary{color:var(--jsr-text);list-style:none;cursor:pointer;padding:.85rem 2.6rem .85rem 1rem;position:relative;font-size:1.05rem;line-height:1.45}
 .jsr details.card>summary::-webkit-details-marker{display:none}
 .jsr details.card>summary::after{content:"";position:absolute;right:1.1rem;top:1.15rem;width:.6rem;height:.6rem;border-right:2px solid var(--jsr-accent);border-bottom:2px solid var(--jsr-accent);transform:rotate(45deg);transition:transform .15s}
@@ -647,13 +652,15 @@ Counting only businesses owned mostly by women, the share is about 37% (our arit
 <details class="card" id="cited-hiring">
 <summary>Only <strong>11%</strong> of women-owned Nebraska businesses have employees; for men it is <strong>23%</strong>, about double<sup class="fn" aria-hidden="true">1</sup></summary>
 <p><strong>In the pitch:</strong> slide 2 says "Only 11% of women-owned businesses in Nebraska grow to the point of hiring anyone. For men, it's double that."
-The script adds the men's figure: twenty-two and a half percent.</p>
+The script adds the men's figure: twenty-three percent, and says the pilot survey is too small to test that gap.</p>
 <p><strong>What the source says:</strong> of 67,994 Nebraska businesses owned by women, 7,494 (11%) have employees.
 Of 103,863 owned by men, 23,363 (23%) do.<sup class="fn"><a href="#fn-1" id="fnref-1-4" aria-label="Source 1">1</a></sup>
+Of 13,503 owned equally by women and men, 7,103 (53%) have employees.<sup class="fn"><a href="#fn-1" id="fnref-1-5" aria-label="Source 1">1</a></sup>
 23% is a little more than twice 11%.
 The figures are for 2022.</p>
-<p><strong>Where to find it:</strong> page 3 of the profile, in the table of business counts by owner demographic group or location type, rows Female and Male.</p>
+<p><strong>Where to find it:</strong> page 3 of the profile, in the table of business counts by owner demographic group or location type, rows Female and Male, and the row below them for businesses owned equally by both groups.</p>
 <p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read both rows in our saved copy of the profile PDF.
+We read the equally owned row there too.
 Newer Census figures for 2023 tell the same story: 11% of women-owned Nebraska businesses had employees, against 22% of men-owned (our arithmetic from the Census counts).<sup class="fn"><a href="#fn-8" id="fnref-8-1" aria-label="Source 8">8</a></sup></p>
 <p><strong>Read with care:</strong> the source counts businesses that have employees at one point in time.
 It does not follow businesses over time, so it does not show how many tried to grow and could not.
@@ -671,6 +678,7 @@ The yield rate is the share of deals brought to angel investors that end in an i
 <p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read both figures in our saved copy of the report.</p>
 <p><strong>Read with care:</strong> the comparison is with all deals, which include women's, not with men's deals alone.
 The figures are national, not for Nebraska.
+The two-page report does not give the number of deals behind each rate.
 The report reads the higher rate as a sign that women's deals were of high quality.
 Our pitch draws a related point: the hard part is getting in the room, not the ideas.
 That second step is our reading, not the report's.</p>
@@ -678,17 +686,21 @@ That second step is our reading, not the report's.</p>
 
 <details class="card" id="cited-mentoring-trial">
 <summary>In a large trial on an online mentoring platform, only <strong>14%</strong> of new users had a real back-and-forth with a mentor<sup class="fn" aria-hidden="true">9</sup></summary>
-<p><strong>In the pitch:</strong> the script says "In one large experiment on an online mentoring platform, only 14% of founders ever had a real conversation with a mentor."</p>
+<p><strong>In the pitch:</strong> the script says "In one large experiment on an online mentoring platform, only 14% of new users had a meaningful exchange with a mentor within a few months."</p>
 <p><strong>What the source says:</strong> Lall, Chen and Mason ran a randomised trial with 3,022 entrepreneurs who joined an online mentoring platform (MicroMentor) between May and August 2019.
 39% started at least one conversation with a mentor, but "only 14% have developed a meaningful connection".<sup class="fn"><a href="#fn-9" id="fnref-9-1" aria-label="Source 9">9</a></sup>
-A meaningful connection means four or more messages in one conversation between the entrepreneur and a mentor.</p>
-<p><strong>Where to find it:</strong> section 4 (Analysis), first paragraph (the 14% and 39%); section 3.2 (Variables), on what counts as a connection.</p>
+A meaningful connection means four or more messages in one conversation between the entrepreneur and a mentor.
+Women were less likely than men to start a conversation with a mentor (a statistically significant difference in the study's main model); the study found no such difference in making a meaningful connection.
+One of the trial's three approaches showed new users a video of a successful mentoring relationship.
+For women, the study reports: "The chance of a female entrepreneur reaching out to a mentor is increased by 57% after she watches the video."
+But the video did not raise their chance of a meaningful connection.<sup class="fn"><a href="#fn-9" id="fnref-9-2" aria-label="Source 9">9</a></sup>
+The 57% is a relative increase, not 57 percentage points, and it counts all women offered the video, whether or not they watched it.</p>
+<p><strong>Where to find it:</strong> section 4 (Analysis), first paragraph (the 14% and 39%); section 3.2 (Variables), on what counts as a connection; Tables 3 and 4 in section 4 and the text beside them, on the difference between women and men and on the video.</p>
 <p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read the figures and the definition in our saved copy of the full article, which is open access.</p>
-<p><strong>Read with care:</strong> our pitch wording says more than the study does.
+<p><strong>Read with care:</strong> the study describes one platform's new users, not founders in general.
 The people in the study were new users of one platform, writing in English or Spanish, and 31% were women, so they are not "founders" in general.
 They were followed for about three to six months, not "ever".
-And 39% did start a conversation; the 14% is for an exchange of at least four messages.
-A closer wording is: "only 14% of new users had a meaningful exchange with a mentor within a few months."</p>
+And 39% did start a conversation; the 14% is for an exchange of at least four messages.</p>
 </details>
 
 <details class="card" id="cited-right-person">
@@ -1056,6 +1068,7 @@ It was the most common choice among both the women and the men who answered.</p>
   <figure class="quote figure"><blockquote class="blockquote"><p>“I leaned often on my network to try to find new work or clients.”</p></blockquote></figure>
   <figure class="quote figure"><blockquote class="blockquote"><p>“First customers are the most difficult but the most important…”</p></blockquote></figure>
   <figure class="quote figure"><blockquote class="blockquote"><p>“Until we have more women investors, we won't see as many women comfortable with pitching to investors.”</p></blockquote></figure>
+  <p>Team members' conversations with women who launched startups in Lincoln in the 2010s pointed the same way: they did not know what they did not know, felt alone and unconnected, and had no idea what funding was available.<sup class="fn"><a href="#fn-85" id="fnref-85-1" aria-label="Source 85">85</a></sup></p>
 
   <h3 id="survey-limits">Read with care</h3>
   <details class="card" id="survey-limits-card">
@@ -1482,6 +1495,19 @@ In Sweden, having an entrepreneur parent raised the chance of becoming one by ab
 <section class="topic" id="rest-beliefs" aria-labelledby="rest-beliefs-heading">
 <h3 id="rest-beliefs-heading">Common beliefs, checked against the evidence</h3>
 
+<p class="section-intro">These are beliefs that came up in our pilot survey, mostly in supporters' answers on why women raise less funding, each checked against the research.<sup class="fn"><a href="#fn-10" id="fnref-10-9" aria-label="Source 10">10</a></sup></p>
+
+<details class="card" id="rest-beliefs-start">
+<summary>"Fewer women start businesses": true, but the gap is bigger in growing them: women own <strong>37%</strong> of Nebraska businesses outright but <strong>20%</strong> of those with employees<sup class="fn" aria-hidden="true">1</sup></summary>
+<p>Of Nebraska businesses with an owner's sex recorded in 2022, 37% were owned mostly by women, 56% mostly by men and 7% equally by both; counting the equally owned ones, women own 44%.<sup class="fn"><a href="#fn-1" id="fnref-1-6" aria-label="Source 1">1</a></sup>
+Only 11% of women-owned businesses had employees, against 23% of men-owned, so women own about 20% of the Nebraska businesses that employ people.<sup class="fn"><a href="#fn-1" id="fnref-1-7" aria-label="Source 1">1</a></sup>
+Nationally, women also start fewer businesses: each month in 2025, 0.28% of women and 0.44% of men who did not own a business started one.<sup class="fn"><a href="#fn-66" id="fnref-66-2" aria-label="Source 66">66</a></sup>
+The gap is widest among venture-funded startups: 20% of startups worldwide that raised a first funding round in 2019 had a woman among their founders.<sup class="fn"><a href="#fn-54" id="fnref-54-2" aria-label="Source 54">54</a></sup></p>
+<p><strong>How strong:</strong> Census-based counts for Nebraska and a large national survey for start rates; no start rate by gender is published for Nebraska.
+The 37% and the 20% are our arithmetic from the profile's counts (67,994 of 185,360 businesses; 7,494 of about 37,960 with employees).
+The venture figure is global and from one database.</p>
+</details>
+
 <details class="card" id="rest-beliefs-risk">
 <summary>"Women are more risk-averse": in <strong>54</strong> repeats of one standard risk test, gender differences were tiny once the data were pooled<sup class="fn" aria-hidden="true">70</sup></summary>
 <p>A review of 54 repeats of one laboratory risk test, with about 7,000 people, found gender differences in fewer than 10% of studies, and "negligible in magnitude once all the data are pooled".<sup class="fn"><a href="#fn-70" id="fnref-70-1" aria-label="Source 70">70</a></sup>
@@ -1506,6 +1532,27 @@ A US study of new founders found being female lowered the chance of asking for f
 The often-quoted claim that women apply for jobs only when 100% qualified and men at 60% has no published source behind it.<sup class="fn"><a href="#fn-76" id="fnref-76-1" aria-label="Source 76">76</a></sup></p>
 <p><strong>How strong:</strong> observational studies; the US study read at abstract level only.
 When women do reach investors, they do at least as well; see the cold-email card above and <a href="#cited-angels">Research cited in the pitch</a>.</p>
+</details>
+
+<details class="card" id="rest-beliefs-negotiate">
+<summary>"Women negotiate less": we found no study of founders negotiating terms; once women reach angel investors, <strong>27%</strong> of their deals are funded, against <strong>23%</strong> of all deals<sup class="fn" aria-hidden="true">3</sup></summary>
+<p>We found no study that measures how women founders negotiate investment or loan terms; that is a gap in our searches, not evidence either way.
+What is measured is asking: in a US panel of people starting businesses, "being female significantly decreases the probability of asking for financing", as in the card above.<sup class="fn"><a href="#fn-75" id="fnref-75-2" aria-label="Source 75">75</a></sup>
+Once women reach investors, they do at least as well: angels funded 27% of women entrepreneurs' deals in 2024, against 23% of all deals,<sup class="fn"><a href="#fn-3" id="fnref-3-4" aria-label="Source 3">3</a></sup> and in 80,000 identical cold emails, investors replied with interest 9% more often to women.<sup class="fn"><a href="#fn-38" id="fnref-38-2" aria-label="Source 38">38</a></sup>
+In the room, investors asked women more about risks and men more about gains, which fully accounted for the gender gap in funding at one major US startup competition.<sup class="fn"><a href="#fn-36" id="fnref-36-2" aria-label="Source 36">36</a></sup>
+4 of the 12 supporters who answered our survey said women ask or negotiate less, have less confidence or take fewer risks.<sup class="fn"><a href="#fn-10" id="fnref-10-10" aria-label="Source 10">10</a></sup></p>
+<p><strong>How strong:</strong> observational studies for asking, the US study read at abstract level only; a randomised field experiment for cold emails; the angel figures are one report's national estimates.
+No study of negotiating terms was found in our searches, which were of our own notes, not a full literature search.</p>
+</details>
+
+<details class="card" id="rest-beliefs-mentors">
+<summary>"More women mentors and success stories": they help women reach out, but the clearest funding lever is more women writing checks; a role-model video raised women's outreach to mentors by <strong>57%</strong>, not their connections<sup class="fn" aria-hidden="true">9</sup></summary>
+<p>On an online mentoring platform, a short video of a successful mentoring relationship made women 57% more likely to reach out to a mentor (a relative increase), but did not raise their chance of a meaningful exchange.<sup class="fn"><a href="#fn-9" id="fnref-9-3" aria-label="Source 9">9</a></sup>
+In one trial in Uganda, women entrepreneurs did better with a woman mentor;<sup class="fn"><a href="#fn-18" id="fnref-18-2" aria-label="Source 18">18</a></sup> a second, of group mentoring on top of a cash grant, found no significant difference between men and women mentors for women, so the two trials disagree.<sup class="fn"><a href="#fn-19" id="fnref-19-3" aria-label="Source 19">19</a></sup>
+In Norway, women were influenced by women: differences in peer groups explained about half (53%) of the early-career gap in starting businesses.<sup class="fn"><a href="#fn-67" id="fnref-67-2" aria-label="Source 67">67</a></sup>
+For funding, the clearest lever is who writes the checks: after US venture firms hired more women investors, the share of founders who were women rose, and male investors did not become more likely to back women.<sup class="fn"><a href="#fn-6" id="fnref-6-3" aria-label="Source 6">6</a></sup>
+In our survey, more women visible in pitch events, panels and classrooms, as mentors, as local success stories or as investors came up in 3 of the 12 supporters' answers; more women investors came up in fewer than 3.<sup class="fn"><a href="#fn-10" id="fnref-10-11" aria-label="Source 10">10</a></sup></p>
+<p><strong>How strong:</strong> randomised trials for the video and for mentor gender (the mentor trials outside the US, with different results); large observational studies for peers (Norway) and women investors (US, read at abstract level).</p>
 </details>
 </section>
 
@@ -1661,6 +1708,7 @@ Surveys of owners also find women and men give money and time to charity at simi
 <li id="fn-82">Gomez, N. and Siegrist, F. (2026). <cite>Women Entrepreneurs Leading the Way to More and Better Jobs for Women</cite>. Policy Indicators Brief No. 45, World Bank and We-Fi. <a href="https://we-fi.org/wp-content/uploads/2026/04/PIB45.pdf">https://we-fi.org/wp-content/uploads/2026/04/PIB45.pdf</a> <a href="#rest-community-women-workers" class="fn-back" aria-label="Back to the first mention of source 82">↩</a></li>
 <li id="fn-83">Grimes, M. G., Gehman, J. and Cao, K. (2018). <cite>Positively deviant: Identity work through B Corporation certification</cite>. Journal of Business Venturing 33(2): 130-148. <a href="https://ideas.repec.org/a/eee/jbvent/v33y2018i2p130-148.html">https://ideas.repec.org/a/eee/jbvent/v33y2018i2p130-148.html</a> <a href="#rest-community-bcorp" class="fn-back" aria-label="Back to the first mention of source 83">↩</a></li>
 <li id="fn-84">Williams, J. (December 2015). <cite>The Unprecedented Power and Potential of Women's Philanthropy in the Washington Region</cite>. Washington Area Women's Foundation, issue brief: <a href="https://thewomensfoundation.org/wp-content/uploads/2015/12/Power-and-Potential-Womens-Philanthropy-IB.pdf">PDF</a>. Page 1 says "female-headed households" reinvest "as much as 90 percent of their new income" in their families. Its only source (footnote 4) is an undated U.S. State Department page, "Why Women? Why Now?", at m.state.gov/mc36630.htm; that address no longer resolves and we could not retrieve an archived copy, so the study behind the figure cannot be traced. <a href="#rest-community-90" class="fn-back" aria-label="Back to the first mention of source 84">↩</a></li>
+<li id="fn-85">HerPath team (2026). Conversations with women who founded startups in Lincoln in the 2010s; notes, unpublished; no public link. <a href="#fnref-85-1" class="fn-back" aria-label="Back to the first mention of source 85">↩</a></li>
 </ol>
 </section>
 <p class="note to-top"><a href="#jsr-top">Back to top</a></p>
