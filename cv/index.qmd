@@ -70,7 +70,14 @@ for (i in seq_len(nrow(d))) entry(d$title[i], d$dates[i], md(join(d$unit[i], d$i
 ```{r}
 #| results: asis
 d <- cv_data("software_dev")
-for (i in seq_len(nrow(d))) entry(d$name[i], d$when[i], md(join(d$role[i])), if ("description" %in% names(d)) d$description[[i]])
+# Since 2026-11-12 the export keeps the closing availability sentence
+# ("Open source: ...", "Not publicly released.") in its own `availability`
+# field, which the Software page replaces with a button; the CV keeps it.
+for (i in seq_len(nrow(d))) {
+  why <- if ("description" %in% names(d)) d$description[[i]]
+  if ("availability" %in% names(d)) why <- join(why, d$availability[[i]], sep = " ")
+  entry(d$name[i], d$when[i], md(join(d$role[i])), why)
+}
 ```
 
 ## Manuscripts in progress
