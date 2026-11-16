@@ -1,5 +1,8 @@
 ---
 title: "JumpStart research summary"
+description: "HerPath, 2026 JumpStart Challenge: the evidence behind our pitch, what our Lincoln pilot survey heard, and the wider research we read."
+# Quarto's hover link icons on headings are not part of this page's design.
+anchor-sections: false
 ---
 
 ```{=html}
