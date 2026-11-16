@@ -265,7 +265,7 @@ Some owners choose to stay small; why the gap exists is covered under <a href="#
 <details class="card" id="cited-angels">
 <summary>When women get in front of angel investors, <strong>27%</strong> of their deals get funded, against <strong>23%</strong> across the whole market<sup class="fn" aria-hidden="true">3</sup></summary>
 <p><strong>In the pitch:</strong> slide 3 says "When women get in front of angel investors nationally, they get funded more often than average!"
-The slide gives the same two figures.</p>
+The slide gives no figures; the script's backup notes give these two.</p>
 <p><strong>What the source says:</strong> the University of New Hampshire's Center for Venture Research estimates the US angel market each year.
 For 2024 it reports that "the yield rate for women entrepreneurs seeking angel capital was 26.7%", above the 23% rate for the market as a whole.<sup class="fn"><a href="#fn-3" id="fnref-3-2" aria-label="Source 3">3</a></sup>
 The yield rate is the share of deals brought to angel investors that end in an investment.</p>
