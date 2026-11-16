@@ -81,6 +81,7 @@ body.quarto-dark .jsr{--jsr-bg:#1f0d24;--jsr-card:#2c1632;--jsr-text:#f3ebe6;--j
 .jsr .hl-text a{color:var(--jsr-text);font-weight:600;text-decoration-color:var(--jsr-accent)}
 /* cards */
 .jsr details.card{background:var(--jsr-card);border:1px solid var(--jsr-border);border-left:5px solid var(--jsr-gold);border-radius:10px;margin:0 0 .8rem;box-shadow:0 1px 3px var(--jsr-shadow)}
+.jsr details.card{color:var(--jsr-text)}
 /* rest-of-research topics: cards two across (Amelia, 2026-11-16) */
 .jsr section.topic{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem 1rem;align-items:start;margin-bottom:1.2rem}
 .jsr section.topic>*{grid-column:1/-1}
@@ -233,7 +234,7 @@ Only 54% say SCORE's admin processes let them focus on clients; SCORE summarises
 <section id="cited" class="page-section" aria-labelledby="cited-heading">
 <h2 id="cited-heading">Research cited in the pitch</h2>
 <p class="section-intro">These are the six facts our pitch rests on, in the order we say them.
-Open a card to see where each figure comes from, where to find it in the source, and how we checked it.
+Open a card to see where each figure comes from and where to find it in the source.
 Where our pitch wording says more than the source does, the card says so.</p>
 
 <details class="card" id="cited-women-own">
@@ -242,7 +243,6 @@ Where our pitch wording says more than the source does, the card says so.</p>
 <p><strong>What the source says:</strong> the U.S. Small Business Administration's 2025 profile of Nebraska says women made up 47% of workers and owned 44% of businesses.<sup class="fn"><a href="#fn-1" id="fnref-1-2" aria-label="Source 1">1</a></sup>
 The figures come from Census surveys of 2022.</p>
 <p><strong>Where to find it:</strong> page 3 of the profile, in the part on business ownership share by demographic group.</p>
-<p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read the figure in our saved copy of the profile PDF.</p>
 <p><strong>Read with care:</strong> the profile notes that "Ownership shares include equal and majority ownership."
 So the 44% counts businesses owned equally by a woman and a man as well as those mostly owned by women.
 Counting only businesses owned mostly by women, the share is about 37% (our arithmetic from the profile's table: 67,994 of the 185,360 businesses with an owner's sex recorded).<sup class="fn"><a href="#fn-1" id="fnref-1-3" aria-label="Source 1">1</a></sup></p>
@@ -258,9 +258,7 @@ Of 13,503 owned equally by women and men, 7,103 (53%) have employees.<sup class=
 23% is a little more than twice 11%.
 The figures are for 2022.</p>
 <p><strong>Where to find it:</strong> page 3 of the profile, in the table of business counts by owner demographic group or location type, rows Female and Male, and the row below them for businesses owned equally by both groups.</p>
-<p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read both rows in our saved copy of the profile PDF.
-We read the equally owned row there too.
-Newer Census figures for 2023 tell the same story: 11% of women-owned Nebraska businesses had employees, against 22% of men-owned (our arithmetic from the Census counts).<sup class="fn"><a href="#fn-8" id="fnref-8-1" aria-label="Source 8">8</a></sup></p>
+<p>Newer Census figures for 2023 tell the same story: 11% of women-owned Nebraska businesses had employees, against 22% of men-owned (our arithmetic from the Census counts).<sup class="fn"><a href="#fn-8" id="fnref-8-1" aria-label="Source 8">8</a></sup></p>
 <p><strong>Read with care:</strong> the source counts businesses that have employees at one point in time.
 It does not follow businesses over time, so it does not show how many tried to grow and could not.
 Some owners choose to stay small; why the gap exists is covered under <a href="#rest-employer">the rest of the research</a>.</p>
@@ -273,7 +271,6 @@ Some owners choose to stay small; why the gap exists is covered under <a href="#
 For 2024 it reports that "the yield rate for women entrepreneurs seeking angel capital was 26.7%", above the 23% rate for the market as a whole.<sup class="fn"><a href="#fn-3" id="fnref-3-2" aria-label="Source 3">3</a></sup>
 The yield rate is the share of deals brought to angel investors that end in an investment.</p>
 <p><strong>Where to find it:</strong> page 1 of the two-page report, in the part on yield rates (23%) and the part on women and minority entrepreneurs and investors (27%).</p>
-<p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read both figures in our saved copy of the report.</p>
 <p><strong>Read with care:</strong> the comparison is with all deals, which include women's, not with men's deals alone.
 The figures are national, not for Nebraska.
 The two-page report does not give the number of deals behind each rate.
@@ -294,7 +291,6 @@ For women, the study reports: "The chance of a female entrepreneur reaching out 
 But the video did not raise their chance of a meaningful connection.<sup class="fn"><a href="#fn-9" id="fnref-9-2" aria-label="Source 9">9</a></sup>
 The 57% is a relative increase, not 57 percentage points, and it counts all women offered the video, whether or not they watched it.</p>
 <p><strong>Where to find it:</strong> section 4 (Analysis), first paragraph (the 14% and 39%); section 3.2 (Variables), on what counts as a connection; Tables 3 and 4 in section 4 and the text beside them, on the difference between women and men and on the video.</p>
-<p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read the figures and the definition in our saved copy of the full article, which is open access.</p>
 <p><strong>Read with care:</strong> the study describes one platform's new users, not founders in general.
 The people in the study were new users of one platform, writing in English or Spanish, and 31% were women, so they are not "founders" in general.
 They were followed for about three to six months, not "ever".
@@ -309,7 +305,6 @@ And 39% did start a conversation; the 14% is for an exchange of at least four me
 14 of the 26 chose "I didn't know who the right person was", more than any other reason (women 7 of 14, men 7 of 12).<sup class="fn"><a href="#fn-7" id="fnref-7-4" aria-label="Source 7">7</a></sup>
 It was the most common reason among both the women and the men who answered.</p>
 <p><strong>Where to find it:</strong> survey question "What was the reason you weren't able to make these connections?"</p>
-<p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> Counted from the survey responses by script, and the figure was checked a second time with a separate script.</p>
 <p><strong>Read with care:</strong> the survey reached the team's own contacts, so these counts describe the people who answered, not all Lincoln founders.
 The groups are small, so no difference between women and men here can be called a gender difference.
 The 48 responses include one test response from our team; without it, this is still the most common reason.</p>
@@ -322,7 +317,6 @@ The 48 responses include one test response from our team; without it, this is st
 18 of the 33 chose "A mentor who's done it before", more than any other connection (women 10 of 16, men 8 of 17).<sup class="fn"><a href="#fn-7" id="fnref-7-5" aria-label="Source 7">7</a></sup>
 It was the most common choice among both the women and the men who answered.</p>
 <p><strong>Where to find it:</strong> survey question "Which connections do you wish you had?"</p>
-<p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> Counted from the survey responses by script, and the figure was checked a second time with a separate script.</p>
 <p><strong>Read with care:</strong> the same limits apply as for the card above: the team's own contacts, small groups, and one test response from our team, without which this is still the most common choice.</p>
 </details>
 </section>
