@@ -223,13 +223,15 @@ Counting only businesses owned mostly by women, the share is about 37% (our arit
 <details class="card" id="cited-hiring">
 <summary>Only <strong>11%</strong> of women-owned Nebraska businesses have employees; for men it is <strong>23%</strong>, about double<sup class="fn" aria-hidden="true">1</sup></summary>
 <p><strong>In the pitch:</strong> slide 2 says "Only 11% of women-owned businesses in Nebraska grow to the point of hiring anyone. For men, it's double that."
-The script adds the men's figure: twenty-two and a half percent.</p>
+The script adds the men's figure: twenty-three percent, and says the pilot survey is too small to test that gap.</p>
 <p><strong>What the source says:</strong> of 67,994 Nebraska businesses owned by women, 7,494 (11%) have employees.
 Of 103,863 owned by men, 23,363 (23%) do.<sup class="fn"><a href="#fn-1" id="fnref-1-4" aria-label="Source 1">1</a></sup>
+Of 13,503 owned equally by women and men, 7,103 (53%) have employees.<sup class="fn"><a href="#fn-1" id="fnref-1-5" aria-label="Source 1">1</a></sup>
 23% is a little more than twice 11%.
 The figures are for 2022.</p>
-<p><strong>Where to find it:</strong> page 3 of the profile, in the table of business counts by owner demographic group or location type, rows Female and Male.</p>
+<p><strong>Where to find it:</strong> page 3 of the profile, in the table of business counts by owner demographic group or location type, rows Female and Male, and the row below them for businesses owned equally by both groups.</p>
 <p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read both rows in our saved copy of the profile PDF.
+We read the equally owned row there too.
 Newer Census figures for 2023 tell the same story: 11% of women-owned Nebraska businesses had employees, against 22% of men-owned (our arithmetic from the Census counts).<sup class="fn"><a href="#fn-8" id="fnref-8-1" aria-label="Source 8">8</a></sup></p>
 <p><strong>Read with care:</strong> the source counts businesses that have employees at one point in time.
 It does not follow businesses over time, so it does not show how many tried to grow and could not.
@@ -247,6 +249,7 @@ The yield rate is the share of deals brought to angel investors that end in an i
 <p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read both figures in our saved copy of the report.</p>
 <p><strong>Read with care:</strong> the comparison is with all deals, which include women's, not with men's deals alone.
 The figures are national, not for Nebraska.
+The two-page report does not give the number of deals behind each rate.
 The report reads the higher rate as a sign that women's deals were of high quality.
 Our pitch draws a related point: the hard part is getting in the room, not the ideas.
 That second step is our reading, not the report's.</p>
@@ -254,17 +257,21 @@ That second step is our reading, not the report's.</p>
 
 <details class="card" id="cited-mentoring-trial">
 <summary>In a large trial on an online mentoring platform, only <strong>14%</strong> of new users had a real back-and-forth with a mentor<sup class="fn" aria-hidden="true">9</sup></summary>
-<p><strong>In the pitch:</strong> the script says "In one large experiment on an online mentoring platform, only 14% of founders ever had a real conversation with a mentor."</p>
+<p><strong>In the pitch:</strong> the script says "In one large experiment on an online mentoring platform, only 14% of new users had a meaningful exchange with a mentor within a few months."</p>
 <p><strong>What the source says:</strong> Lall, Chen and Mason ran a randomised trial with 3,022 entrepreneurs who joined an online mentoring platform (MicroMentor) between May and August 2019.
 39% started at least one conversation with a mentor, but "only 14% have developed a meaningful connection".<sup class="fn"><a href="#fn-9" id="fnref-9-1" aria-label="Source 9">9</a></sup>
-A meaningful connection means four or more messages in one conversation between the entrepreneur and a mentor.</p>
-<p><strong>Where to find it:</strong> section 4 (Analysis), first paragraph (the 14% and 39%); section 3.2 (Variables), on what counts as a connection.</p>
+A meaningful connection means four or more messages in one conversation between the entrepreneur and a mentor.
+Women were less likely than men to start a conversation with a mentor (a statistically significant difference in the study's main model); the study found no such difference in making a meaningful connection.
+One of the trial's three approaches showed new users a video of a successful mentoring relationship.
+For women, the study reports: "The chance of a female entrepreneur reaching out to a mentor is increased by 57% after she watches the video."
+But the video did not raise their chance of a meaningful connection.<sup class="fn"><a href="#fn-9" id="fnref-9-2" aria-label="Source 9">9</a></sup>
+The 57% is a relative increase, not 57 percentage points, and it counts all women offered the video, whether or not they watched it.</p>
+<p><strong>Where to find it:</strong> section 4 (Analysis), first paragraph (the 14% and 39%); section 3.2 (Variables), on what counts as a connection; Tables 3 and 4 in section 4 and the text beside them, on the difference between women and men and on the video.</p>
 <p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read the figures and the definition in our saved copy of the full article, which is open access.</p>
-<p><strong>Read with care:</strong> our pitch wording says more than the study does.
+<p><strong>Read with care:</strong> the study describes one platform's new users, not founders in general.
 The people in the study were new users of one platform, writing in English or Spanish, and 31% were women, so they are not "founders" in general.
 They were followed for about three to six months, not "ever".
-And 39% did start a conversation; the 14% is for an exchange of at least four messages.
-A closer wording is: "only 14% of new users had a meaningful exchange with a mentor within a few months."</p>
+And 39% did start a conversation; the 14% is for an exchange of at least four messages.</p>
 </details>
 
 <details class="card" id="cited-right-person">
@@ -516,6 +523,7 @@ It was the most common choice among both the women and the men who answered.</p>
   <figure class="quote"><blockquote><p>&ldquo;I leaned often on my network to try to find new work or clients.&rdquo;</p></blockquote></figure>
   <figure class="quote"><blockquote><p>&ldquo;First customers are the most difficult but the most important&hellip;&rdquo;</p></blockquote></figure>
   <figure class="quote"><blockquote><p>&ldquo;Until we have more women investors, we won't see as many women comfortable with pitching to investors.&rdquo;</p></blockquote></figure>
+  <p>Team members' conversations with women who launched startups in Lincoln in the 2010s pointed the same way: they did not know what they did not know, felt alone and unconnected, and had no idea what funding was available.<sup class="fn"><a href="#fn-85" id="fnref-85-1" aria-label="Source 85">85</a></sup></p>
 
   <h3 id="survey-limits">Read with care</h3>
   <details class="card" id="survey-limits-card">
@@ -1121,6 +1129,7 @@ Surveys of owners also find women and men give money and time to charity at simi
 <li id="fn-82">Gomez, N. and Siegrist, F. (2026). <cite>Women Entrepreneurs Leading the Way to More and Better Jobs for Women</cite>. Policy Indicators Brief No. 45, World Bank and We-Fi. <a href="https://we-fi.org/wp-content/uploads/2026/04/PIB45.pdf">https://we-fi.org/wp-content/uploads/2026/04/PIB45.pdf</a> <a href="#rest-community-women-workers" class="fn-back" aria-label="Back to the first mention of source 82">&#8617;</a></li>
 <li id="fn-83">Grimes, M. G., Gehman, J. and Cao, K. (2018). <cite>Positively deviant: Identity work through B Corporation certification</cite>. Journal of Business Venturing 33(2): 130-148. <a href="https://ideas.repec.org/a/eee/jbvent/v33y2018i2p130-148.html">https://ideas.repec.org/a/eee/jbvent/v33y2018i2p130-148.html</a> <a href="#rest-community-bcorp" class="fn-back" aria-label="Back to the first mention of source 83">&#8617;</a></li>
 <li id="fn-84">Williams, J. (December 2015). <cite>The Unprecedented Power and Potential of Women's Philanthropy in the Washington Region</cite>. Washington Area Women's Foundation, issue brief: <a href="https://thewomensfoundation.org/wp-content/uploads/2015/12/Power-and-Potential-Womens-Philanthropy-IB.pdf">PDF</a>. Page 1 says "female-headed households" reinvest "as much as 90 percent of their new income" in their families. Its only source (footnote 4) is an undated U.S. State Department page, "Why Women? Why Now?", at m.state.gov/mc36630.htm; that address no longer resolves and we could not retrieve an archived copy, so the study behind the figure cannot be traced. <a href="#rest-community-90" class="fn-back" aria-label="Back to the first mention of source 84">&#8617;</a></li>
+<li id="fn-85">HerPath team (2026). Conversations with women who founded startups in Lincoln in the 2010s; notes, unpublished; no public link. <a href="#fnref-85-1" class="fn-back" aria-label="Back to the first mention of source 85">&#8617;</a></li>
 </ol>
 </section>
 <p class="note to-top"><a href="#jsr-top">Back to top</a></p>
