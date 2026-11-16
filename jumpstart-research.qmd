@@ -1,6 +1,1133 @@
 ---
-title: "Jumpstart Challenge Research"
+title: "JumpStart research summary"
+description: "HerPath, 2026 JumpStart Challenge: the evidence behind our pitch, what our Lincoln pilot survey heard, and the wider research we read."
+# Quarto's hover link icons on headings are not part of this page's design.
+anchor-sections: false
 ---
 
-Research summary and survey findings from the HerPath group for the LPED Jumpstart Challenge 2026.
-Coming soon.
+```{=html}
+<style>
+/* Page-scoped: this style block is only in jumpstart-research.qmd. */
+#title-block-header{display:none !important}
+/* site navbar: hide everything except the light/dark toggle (Amelia, 2026-11-16: keep the toggle) */
+#quarto-header .navbar-brand,#quarto-header .navbar-toggler,#quarto-header .navbar-nav,#quarto-header #quarto-search,#quarto-header .quarto-navbar-tools>:not(.quarto-color-scheme-toggle){display:none !important}
+#particles-bg{display:none !important}
+body.quarto-light{background:#fbf7f4}
+body.quarto-dark{background:#1f0d24;color-scheme:dark}
+.jsr{--jsr-bg:#fbf7f4;--jsr-card:#ffffff;--jsr-text:#451f4e;--jsr-muted:#5c4a60;
+  --jsr-head:#451f4e;--jsr-accent:#ae4e36;--jsr-gold:#e8b65d;--jsr-tile:#f5e3de;
+  --jsr-tile-text:#8a3c29;--jsr-border:#e6d9d4;--jsr-link:#ae4e36;
+  --jsr-band:#451f4e;--jsr-band-text:#ffffff;--jsr-band-muted:#f1e4ec;--jsr-shadow:rgba(69,31,78,.08);
+  --jsr-focus:#451f4e;--jsr-bar:#7a3d87;}
+body.quarto-dark .jsr{--jsr-bg:#1f0d24;--jsr-card:#2c1632;--jsr-text:#f3ebe6;--jsr-muted:#cdbfd0;
+  --jsr-head:#f3ebe6;--jsr-accent:#f0a48e;--jsr-gold:#e8b65d;--jsr-tile:#3d1f45;
+  --jsr-tile-text:#f3ebe6;--jsr-border:#4a2a52;--jsr-link:#f0a48e;
+  --jsr-band:#5a2a66;--jsr-band-text:#ffffff;--jsr-band-muted:#f1e4ec;--jsr-shadow:rgba(0,0,0,.35);
+  --jsr-focus:#e8b65d;--jsr-pill-border:#6a3f74;--jsr-bar:#b779c4;}
+
+.jsr{color:var(--jsr-text);background:var(--jsr-bg);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:1rem;line-height:1.6;overflow-wrap:break-word}
+.jsr *,.jsr *::before,.jsr *::after{box-sizing:border-box}
+.jsr h1,.jsr h2,.jsr h3{font-family:Georgia,"Iowan Old Style","Palatino Linotype","Book Antiqua",Cambria,"Times New Roman",serif;
+  font-weight:700;color:var(--jsr-head);line-height:1.25;margin:0}
+.jsr a{color:var(--jsr-link);text-decoration:underline;text-underline-offset:2px}
+.jsr a:hover{text-decoration-thickness:2px}
+.jsr a:focus-visible,.jsr summary:focus-visible,.jsr .table-wrap:focus-visible{outline:3px solid var(--jsr-focus);outline-offset:2px;border-radius:4px}
+.jsr [id]{scroll-margin-top:1rem}
+.jsr details.card:target{box-shadow:0 0 0 3px var(--jsr-accent)}
+.jsr p{margin:0 0 .75em}
+.jsr strong{font-weight:700}
+.jsr-header{background:var(--jsr-band);color:var(--jsr-band-text);padding:2rem 1.25rem 1.75rem;border-bottom:6px solid var(--jsr-gold);border-radius:0 0 14px 14px}
+.jsr-header .jsr-title{color:var(--jsr-band-text);font-size:clamp(1.6rem,4.5vw,2.4rem);margin:.25rem 0 .75rem}
+.jsr-kicker{color:var(--jsr-gold);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.85rem;margin:0}
+.jsr-sub{color:var(--jsr-band-muted);font-size:1.05rem;margin:0;max-width:44rem}
+.jsr-toc{margin:1rem 0 0;padding:0}
+.jsr-toc ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.jsr-toc a{display:inline-block;padding:.35rem .8rem;border-radius:999px;background:var(--jsr-tile);color:var(--jsr-tile-text);text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid var(--jsr-pill-border,transparent)}
+.jsr-toc a:hover{text-decoration:underline}
+.jsr-main{padding:0 0 2rem}
+.jsr .page-section{margin:2.5rem 0 0}
+.jsr .page-section>h2{font-size:clamp(1.45rem,3.6vw,1.9rem);padding-bottom:.4rem;margin-bottom:1rem;border-bottom:3px solid var(--jsr-gold)}
+.jsr h3{font-size:1.25rem;margin:2rem 0 .75rem}
+.jsr .section-intro,.jsr .lede{font-size:1.05rem;color:var(--jsr-text)}
+.jsr .note{color:var(--jsr-muted);font-size:.95rem}
+.jsr .topic{margin-top:1.5rem}
+/* highlights */
+.jsr .highlights{list-style:none;margin:0 0 1rem;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:.9rem}
+.jsr .hl:last-child:nth-child(3n+1){grid-column:1/-1}
+.jsr .hl{background:var(--jsr-card);border:1px solid var(--jsr-border);border-top:5px solid var(--jsr-accent);border-radius:12px;padding:1rem 1rem .5rem;box-shadow:0 1px 3px var(--jsr-shadow)}
+.jsr .hl-figure{display:inline-block;background:var(--jsr-tile);color:var(--jsr-tile-text);font-family:Georgia,"Palatino Linotype",Cambria,serif;font-weight:700;font-size:1.35rem;line-height:1.2;padding:.3rem .65rem;border-radius:8px;margin:0 0 .6rem}
+.jsr .hl-vs{font-size:.85rem;font-weight:400;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.jsr .hl-text a{color:var(--jsr-text);font-weight:600;text-decoration-color:var(--jsr-accent)}
+/* cards */
+.jsr details.card{background:var(--jsr-card);border:1px solid var(--jsr-border);border-left:5px solid var(--jsr-gold);border-radius:10px;margin:0 0 .8rem;box-shadow:0 1px 3px var(--jsr-shadow)}
+.jsr details.card>summary{color:var(--jsr-text);list-style:none;cursor:pointer;padding:.85rem 2.6rem .85rem 1rem;position:relative;font-size:1.05rem;line-height:1.45}
+.jsr details.card>summary::-webkit-details-marker{display:none}
+.jsr details.card>summary::after{content:"";position:absolute;right:1.1rem;top:1.15rem;width:.6rem;height:.6rem;border-right:2px solid var(--jsr-accent);border-bottom:2px solid var(--jsr-accent);transform:rotate(45deg);transition:transform .15s}
+.jsr details.card[open]>summary::after{transform:rotate(-135deg);top:1.4rem}
+.jsr details.card>summary strong{color:var(--jsr-accent)}
+.jsr details.card[open]>summary{border-bottom:1px solid var(--jsr-border)}
+.jsr details.card>:not(summary){margin-left:1rem;margin-right:1rem}
+.jsr details.card>:not(summary):first-of-type{margin-top:.8rem}
+.jsr details.card>:last-child{margin-bottom:.9rem}
+.jsr .card-headline{font-weight:700}
+.jsr .card-figure{display:inline-block;margin-left:.35rem;background:var(--jsr-tile);color:var(--jsr-tile-text);font-weight:700;padding:0 .5rem;border-radius:6px;white-space:normal;max-width:100%}
+.jsr .to-top{margin:1.2rem 0 0;text-align:right}
+.jsr .card-body ul,.jsr details.card ul{padding-left:1.25rem;margin:0 0 .75em}
+.jsr .status{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.03em;padding:.05rem .5rem;border-radius:999px;margin-right:.3rem;vertical-align:.08em}
+.jsr .status-checked{background:var(--jsr-tile);color:var(--jsr-tile-text)}
+.jsr .status-caution{background:#ae4e36;color:#ffffff}
+.jsr sup.fn{font-size:.72em;line-height:0;margin-left:.1em}
+.jsr sup.fn a{text-decoration:none;font-weight:700;padding:0 .3em;margin:0 -.1em}
+.jsr sup.fn a:hover{text-decoration:underline}
+/* survey table */
+.jsr .table-wrap{overflow-x:auto;margin:0 0 .75rem;border:1px solid var(--jsr-border);border-radius:10px;background:var(--jsr-card)}
+.jsr table.survey-table{border-collapse:collapse;width:100%;min-width:34rem;font-size:.95rem;color:var(--jsr-text);background:transparent;margin:0}
+.jsr table.survey-table th,.jsr table.survey-table td{padding:.5rem .6rem;border-bottom:1px solid var(--jsr-border);text-align:left;vertical-align:top;color:var(--jsr-text);background:transparent}
+.jsr table.survey-table thead th{background:var(--jsr-tile);color:var(--jsr-tile-text);font-weight:700}
+.jsr table.survey-table tbody th{font-weight:600;min-width:12rem}
+.jsr table.survey-table td{white-space:nowrap}
+.jsr table.survey-table td:last-child{white-space:normal;min-width:9rem}
+/* quotes */
+.jsr figure.quote{margin:0 0 .8rem;padding:.8rem 1rem;background:var(--jsr-card);border:1px solid var(--jsr-border);border-left:5px solid var(--jsr-accent);border-radius:10px;font-family:Georgia,"Palatino Linotype",Cambria,serif;font-size:1.08rem;color:var(--jsr-text)}
+.jsr figure.quote blockquote{margin:0;padding:0;border:0;font-size:inherit;color:inherit;background:transparent}
+.jsr figure.quote p{margin:0}
+.jsr figure.quote.pending{border:2px dashed var(--jsr-gold);border-left:5px solid var(--jsr-gold)}
+.jsr .quote-status{display:inline-block;margin-top:.45rem !important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:var(--jsr-tile);color:var(--jsr-tile-text);padding:.05rem .5rem;border-radius:999px}
+/* sources */
+.jsr ol.footnotes{padding-left:1.6rem;font-size:.92rem;color:var(--jsr-text)}
+.jsr ol.footnotes li{margin:0 0 .55rem;overflow-wrap:anywhere}
+.jsr ol.footnotes li:target{outline:2px solid var(--jsr-accent);outline-offset:3px;border-radius:4px}
+.jsr .table-hint{display:none;margin:0 0 .4rem}
+.jsr .card-source{margin-bottom:.4rem}
+.jsr-footer{margin:2rem 0 0;padding-top:1rem;border-top:1px solid var(--jsr-border)}
+.jsr .ai-note .quote-status{margin:0 .4rem 0 0 !important}
+.jsr .fn-back{text-decoration:none;font-weight:700;margin-left:.2rem}
+.jsr cite{font-style:italic}
+/* survey overview and bar charts */
+.jsr .survey-glance{margin:0 0 1.25rem}
+.jsr .glance-charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.5rem 1.5rem}
+.jsr figure.bar-chart{margin:0 0 1rem;min-width:0}
+.jsr figure.bar-chart figcaption{font-weight:700;font-size:.98rem;line-height:1.35;margin:0 0 .5rem;color:var(--jsr-text)}
+.jsr figure.bar-chart svg.bars{display:block;width:100%;max-width:20rem;height:auto}
+.jsr .bar-chart .bar{fill:var(--jsr-bar)}
+.jsr .bar-chart .lbl{fill:var(--jsr-text)}
+.jsr .bar-chart .val{fill:var(--jsr-text);font-weight:700}
+.jsr .bar-chart .hit{fill:transparent}
+.jsr .bar-chart g.row:hover .bar{fill:var(--jsr-text)}
+.jsr .chart-note{font-size:.95rem;color:var(--jsr-muted);margin:.5rem 0 0}
+.jsr .gender-line{margin:0 0 .5rem}
+@media (max-width:480px){
+  .jsr-header{padding:1.5rem 1rem 1.25rem}
+  .jsr details.card>summary{padding:.75rem 2.3rem .75rem .8rem;font-size:1rem}
+  .jsr details.card>:not(summary){margin-left:.8rem;margin-right:.8rem}
+  .jsr .hl-figure{font-size:1.2rem}
+}
+@media (max-width:40rem){.jsr .table-hint{display:block}}
+@media (prefers-reduced-motion:reduce){.jsr details.card>summary::after{transition:none}}
+
+@media print{
+  .jsr details::details-content{content-visibility:visible;display:block}
+  .jsr details.card>summary::after,.jsr-toc{display:none}
+  .jsr details.card,.jsr .hl,.jsr figure.quote{box-shadow:none;break-inside:avoid}
+  .jsr-header{border-radius:0;background:none !important;border-bottom:3px solid #451f4e}
+  .jsr-header .jsr-title,.jsr-sub{color:#451f4e !important}
+  .jsr-kicker{color:#ae4e36 !important}
+  .jsr .status-caution{background:none !important;color:#ae4e36 !important;border:1px solid #ae4e36}
+  .jsr .table-hint,.jsr .to-top,.jsr .print-hint{display:none !important}
+  .jsr a{color:inherit}
+}
+@media print{body .jsr,body.quarto-dark .jsr{--jsr-bg:#fbf7f4;--jsr-card:#ffffff;--jsr-text:#451f4e;--jsr-muted:#5c4a60;
+  --jsr-head:#451f4e;--jsr-accent:#ae4e36;--jsr-gold:#e8b65d;--jsr-tile:#f5e3de;
+  --jsr-tile-text:#8a3c29;--jsr-border:#e6d9d4;--jsr-link:#ae4e36;
+  --jsr-band:#451f4e;--jsr-band-text:#ffffff;--jsr-band-muted:#f1e4ec;--jsr-shadow:rgba(69,31,78,.08);
+  --jsr-focus:#451f4e;--jsr-bar:#7a3d87;} body.quarto-dark{background:#fff}}
+</style>
+<div class="jsr">
+<header class="jsr-header" id="jsr-top">
+<p class="jsr-kicker">HerPath &middot; 2026 JumpStart Challenge</p>
+<h1 class="jsr-title">Helping more women-founded companies in Lincoln get funded and grow: the research</h1>
+<p class="jsr-sub">The evidence behind our pitch, what our Lincoln pilot survey heard, and the wider research we read.</p>
+</header>
+<nav class="jsr-toc" aria-label="On this page">
+<ol>
+<li><a href="#highlights">Highlights</a></li>
+<li><a href="#cited">Research cited in the pitch</a></li>
+<li><a href="#survey">Survey results</a></li>
+<li><a href="#rest">The rest of the research</a></li>
+<li><a href="#sources">Sources</a></li>
+</ol>
+</nav>
+<div class="jsr-main">
+<section id="highlights" class="page-section" aria-labelledby="highlights-heading">
+<h2 id="highlights-heading">Highlights</h2>
+<p class="section-intro">Seven findings from across this page.
+Each links to a card further down; open the card for the detail, the source and how strong the evidence is.</p>
+<ol class="highlights">
+<li class="hl">
+<p class="hl-figure">11% <span class="hl-vs">vs</span> 23%</p>
+<p class="hl-text"><a href="#cited-hiring">Only 11% of women-owned Nebraska businesses have employees, against 23% of men-owned.</a><sup class="fn"><a href="#fn-1" id="fnref-1-1" aria-label="Source 1">1</a></sup>
+Lincoln shows the same gap: <a href="#rest-local-lincoln">13% against 23%</a>.<sup class="fn"><a href="#fn-2" id="fnref-2-1" aria-label="Source 2">2</a></sup></p>
+</li>
+<li class="hl">
+<p class="hl-figure">27% <span class="hl-vs">vs</span> 23%</p>
+<p class="hl-text"><a href="#cited-angels">When women's deals reach US angel investors, 27% get funded, against 23% of all deals.</a><sup class="fn"><a href="#fn-3" id="fnref-3-1" aria-label="Source 3">3</a></sup>
+The comparison is with the whole market, not with men's deals alone.</p>
+</li>
+<li class="hl">
+<p class="hl-figure">78%</p>
+<p class="hl-text"><a href="#rest-capital-not-applying">Most women-owned employer firms did not ask for credit: 78% did not apply for new credit in 2024.</a><sup class="fn"><a href="#fn-4" id="fnref-4-1" aria-label="Source 4">4</a></sup>
+Once they apply, <a href="#rest-evidence-approval">women's full-approval rate is close to men's</a> (49% against 52% in 2025).<sup class="fn"><a href="#fn-5" id="fnref-5-1" aria-label="Source 5">5</a></sup></p>
+</li>
+<li class="hl">
+<p class="hl-figure">Who invests</p>
+<p class="hl-text"><a href="#rest-evidence-women-investors">More women writing checks moved money to women founders.</a><sup class="fn"><a href="#fn-6" id="fnref-6-1" aria-label="Source 6">6</a></sup>
+When US venture firms hired more women investors, the share of funded founders who were women rose; male investors did not become more likely to back women.</p>
+</li>
+<li class="hl">
+<p class="hl-figure">18 of 33</p>
+<p class="hl-text"><a href="#survey-f1">In our pilot survey, the connection people wish for most is a mentor who has done it before.</a><sup class="fn"><a href="#fn-7" id="fnref-7-1" aria-label="Source 7">7</a></sup></p>
+</li>
+<li class="hl">
+<p class="hl-figure">14 of 26</p>
+<p class="hl-text"><a href="#survey-f2">The top reason a wanted connection did not happen: &ldquo;I didn't know who the right person was.&rdquo;</a><sup class="fn"><a href="#fn-7" id="fnref-7-2" aria-label="Source 7">7</a></sup></p>
+</li>
+<li class="hl">
+<p class="hl-figure">10 of 21 women</p>
+<p class="hl-text"><a href="#survey-f5">Caregiving takes up time for 10 of 21 women who answered, and for fewer than 3 of 19 men.</a><sup class="fn"><a href="#fn-7" id="fnref-7-3" aria-label="Source 7">7</a></sup></p>
+</li>
+</ol>
+<p class="note">The survey figures come from a small pilot that reached the team's own contacts; read them as illustrations, not estimates for Lincoln. See <a href="#survey-limits">what the survey can and cannot tell us</a>.</p>
+</section>
+
+<p class="note to-top"><a href="#jsr-top">Back to top</a></p>
+<section id="cited" class="page-section" aria-labelledby="cited-heading">
+<h2 id="cited-heading">Research cited in the pitch</h2>
+<p class="section-intro">These are the six facts our pitch rests on, in the order we say them.
+Open a card to see where each figure comes from, where to find it in the source, and how we checked it.
+Where our pitch wording says more than the source does, the card says so.</p>
+
+<details class="card" id="cited-women-own">
+<summary>Women own <strong>44%</strong> of Nebraska businesses<sup class="fn" aria-hidden="true">1</sup></summary>
+<p><strong>In the pitch:</strong> the spoken script opens with "Women own 44% of Nebraska businesses."</p>
+<p><strong>What the source says:</strong> the U.S. Small Business Administration's 2025 profile of Nebraska says women made up 47% of workers and owned 44% of businesses.<sup class="fn"><a href="#fn-1" id="fnref-1-2" aria-label="Source 1">1</a></sup>
+The figures come from Census surveys of 2022.</p>
+<p><strong>Where to find it:</strong> page 3 of the profile, in the part on business ownership share by demographic group.</p>
+<p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read the figure in our saved copy of the profile PDF.</p>
+<p><strong>Read with care:</strong> the profile notes that "Ownership shares include equal and majority ownership."
+So the 44% counts businesses owned equally by a woman and a man as well as those mostly owned by women.
+Counting only businesses owned mostly by women, the share is about 37% (our arithmetic from the profile's table: 67,994 of the 185,360 businesses with an owner's sex recorded).<sup class="fn"><a href="#fn-1" id="fnref-1-3" aria-label="Source 1">1</a></sup></p>
+</details>
+
+<details class="card" id="cited-hiring">
+<summary>Only <strong>11%</strong> of women-owned Nebraska businesses have employees; for men it is <strong>23%</strong>, about double<sup class="fn" aria-hidden="true">1</sup></summary>
+<p><strong>In the pitch:</strong> slide 2 says "Only 11% of women-owned businesses in Nebraska grow to the point of hiring anyone. For men, it's double that."
+The script adds the men's figure: twenty-two and a half percent.</p>
+<p><strong>What the source says:</strong> of 67,994 Nebraska businesses owned by women, 7,494 (11%) have employees.
+Of 103,863 owned by men, 23,363 (23%) do.<sup class="fn"><a href="#fn-1" id="fnref-1-4" aria-label="Source 1">1</a></sup>
+23% is a little more than twice 11%.
+The figures are for 2022.</p>
+<p><strong>Where to find it:</strong> page 3 of the profile, in the table of business counts by owner demographic group or location type, rows Female and Male.</p>
+<p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read both rows in our saved copy of the profile PDF.
+Newer Census figures for 2023 tell the same story: 11% of women-owned Nebraska businesses had employees, against 22% of men-owned (our arithmetic from the Census counts).<sup class="fn"><a href="#fn-8" id="fnref-8-1" aria-label="Source 8">8</a></sup></p>
+<p><strong>Read with care:</strong> the source counts businesses that have employees at one point in time.
+It does not follow businesses over time, so it does not show how many tried to grow and could not.
+Some owners choose to stay small; why the gap exists is covered under <a href="#rest-employer">the rest of the research</a>.</p>
+</details>
+
+<details class="card" id="cited-angels">
+<summary>When women get in front of angel investors, <strong>27%</strong> of their deals get funded, against <strong>23%</strong> across the whole market<sup class="fn" aria-hidden="true">3</sup></summary>
+<p><strong>In the pitch:</strong> slide 3 says "When women get in front of angel investors nationally, they get funded more often than average!"
+The slide gives the same two figures.</p>
+<p><strong>What the source says:</strong> the University of New Hampshire's Center for Venture Research estimates the US angel market each year.
+For 2024 it reports that "the yield rate for women entrepreneurs seeking angel capital was 26.7%", above the 23% rate for the market as a whole.<sup class="fn"><a href="#fn-3" id="fnref-3-2" aria-label="Source 3">3</a></sup>
+The yield rate is the share of deals brought to angel investors that end in an investment.</p>
+<p><strong>Where to find it:</strong> page 1 of the two-page report, in the part on yield rates (23%) and the part on women and minority entrepreneurs and investors (27%).</p>
+<p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read both figures in our saved copy of the report.</p>
+<p><strong>Read with care:</strong> the comparison is with all deals, which include women's, not with men's deals alone.
+The figures are national, not for Nebraska.
+The report reads the higher rate as a sign that women's deals were of high quality.
+Our pitch draws a related point: the hard part is getting in the room, not the ideas.
+That second step is our reading, not the report's.</p>
+</details>
+
+<details class="card" id="cited-mentoring-trial">
+<summary>In a large trial on an online mentoring platform, only <strong>14%</strong> of new users had a real back-and-forth with a mentor<sup class="fn" aria-hidden="true">9</sup></summary>
+<p><strong>In the pitch:</strong> the script says "In one large experiment on an online mentoring platform, only 14% of founders ever had a real conversation with a mentor."</p>
+<p><strong>What the source says:</strong> Lall, Chen and Mason ran a randomised trial with 3,022 entrepreneurs who joined an online mentoring platform (MicroMentor) between May and August 2019.
+39% started at least one conversation with a mentor, but "only 14% have developed a meaningful connection".<sup class="fn"><a href="#fn-9" id="fnref-9-1" aria-label="Source 9">9</a></sup>
+A meaningful connection means four or more messages in one conversation between the entrepreneur and a mentor.</p>
+<p><strong>Where to find it:</strong> section 4 (Analysis), first paragraph (the 14% and 39%); section 3.2 (Variables), on what counts as a connection.</p>
+<p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> We read the figures and the definition in our saved copy of the full article, which is open access.</p>
+<p><strong>Read with care:</strong> our pitch wording says more than the study does.
+The people in the study were new users of one platform, writing in English or Spanish, and 31% were women, so they are not "founders" in general.
+They were followed for about three to six months, not "ever".
+And 39% did start a conversation; the 14% is for an exchange of at least four messages.
+A closer wording is: "only 14% of new users had a meaningful exchange with a mentor within a few months."</p>
+</details>
+
+<details class="card" id="cited-right-person">
+<summary>Our survey: the top reason a connection did not happen was "I didn't know who the right person was", for <strong>14 of 26</strong> who answered<sup class="fn" aria-hidden="true">7</sup></summary>
+<p><strong>In the pitch:</strong> the script says "We surveyed 48 people in our startup network. The top reason a connection didn't happen: 'I didn't know who the right person was.'"</p>
+<p><strong>What the source says:</strong> Our pilot survey had 48 responses: 23 from women, 24 from men and 1 with no gender given.
+26 of them answered the question on why they could not make the connections they wanted, choosing as many reasons as applied.
+14 of the 26 chose "I didn't know who the right person was", more than any other reason (women 7 of 14, men 7 of 12).<sup class="fn"><a href="#fn-7" id="fnref-7-4" aria-label="Source 7">7</a></sup>
+It was the most common reason among both the women and the men who answered.</p>
+<p><strong>Where to find it:</strong> survey question "What was the reason you weren't able to make these connections?"</p>
+<p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> Counted from the survey responses by script, and the figure was checked a second time with a separate script.</p>
+<p><strong>Read with care:</strong> the survey reached the team's own contacts, so these counts describe the people who answered, not all Lincoln founders.
+The groups are small, so no difference between women and men here can be called a gender difference.
+The 48 responses include one test response from our team; without it, this is still the most common reason.</p>
+</details>
+
+<details class="card" id="cited-mentor-wish">
+<summary>Our survey: the connection people wish for most is "a mentor who's done it before", for <strong>18 of 33</strong> who answered<sup class="fn" aria-hidden="true">7</sup></summary>
+<p><strong>In the pitch:</strong> slide 3 asks "What do they want most? A mentor who's done it before." The script says the same.</p>
+<p><strong>What the source says:</strong> 33 people answered the question on which connections they wish they had, choosing as many as applied.
+18 of the 33 chose "A mentor who's done it before", more than any other connection (women 10 of 16, men 8 of 17).<sup class="fn"><a href="#fn-7" id="fnref-7-5" aria-label="Source 7">7</a></sup>
+It was the most common choice among both the women and the men who answered.</p>
+<p><strong>Where to find it:</strong> survey question "Which connections do you wish you had?"</p>
+<p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> Counted from the survey responses by script, and the figure was checked a second time with a separate script.</p>
+<p><strong>Read with care:</strong> the same limits apply as for the card above: the team's own contacts, small groups, and one test response from our team, without which this is still the most common choice.</p>
+</details>
+</section>
+
+<p class="note to-top"><a href="#jsr-top">Back to top</a></p>
+<section id="survey" class="page-section survey" aria-labelledby="survey-title">
+  <h2 id="survey-title">Survey results: what we heard in Lincoln</h2>
+  <p class="lede">
+    In November 2026 we ran a short pilot survey of founders, people thinking about starting a business, and the mentors, investors and program staff who support them.
+    It is small and it reached people we already knew, so read every number as an illustration, not an estimate for Lincoln as a whole.<sup class="fn"><a href="#fn-7" id="fnref-7-6" aria-label="Source 7">7</a></sup>
+  </p>
+
+  <div class="survey-glance" role="group" aria-labelledby="survey-glance-title">
+    <h3 id="survey-glance-title">Who answered at a glance</h3>
+    <div class="glance-charts">
+      <figure class="bar-chart">
+        <figcaption id="chart-status-cap">Where they are as founders (all 48, one group each)</figcaption>
+        <svg class="bars" viewBox="0 0 260 189" width="100%" role="img" aria-labelledby="chart-status-cap" font-size="13"><g class="row"><title>Current business owners: 34 of 48</title><rect class="hit" x="0" y="0" width="260" height="37"/><text class="lbl" x="0" y="13">Current business owners</text><path class="bar" d="M0 17H224.0A4 4 0 0 1 228.0 21V24A4 4 0 0 1 224.0 28H0Z"/><text class="val" x="233.0" y="26.5">34</text></g><g class="row"><title>Former owners (business closed, sold or left): 4 of 48</title><rect class="hit" x="0" y="37" width="260" height="53"/><text class="lbl" x="0" y="50">Former owners (business closed,</text><text class="lbl" x="0" y="66">sold or left)</text><path class="bar" d="M0 70H22.8A4 4 0 0 1 26.8 74V77A4 4 0 0 1 22.8 81H0Z"/><text class="val" x="31.8" y="79.5">4</text></g><g class="row"><title>Planning to start, not yet an owner: 3 of 48</title><rect class="hit" x="0" y="90" width="260" height="53"/><text class="lbl" x="0" y="103">Planning to start, not yet an</text><text class="lbl" x="0" y="119">owner</text><path class="bar" d="M0 123H16.1A4 4 0 0 1 20.1 127V130A4 4 0 0 1 16.1 134H0Z"/><text class="val" x="25.1" y="132.5">3</text></g><g class="row"><title>Supporters or startup employees only: 7 of 48</title><rect class="hit" x="0" y="143" width="260" height="53"/><text class="lbl" x="0" y="156">Supporters or startup employees</text><text class="lbl" x="0" y="172">only</text><path class="bar" d="M0 176H42.9A4 4 0 0 1 46.9 180V183A4 4 0 0 1 42.9 187H0Z"/><text class="val" x="51.9" y="185.5">7</text></g></svg>
+        <p class="chart-note">7 of 48 said they plan to start a business, including 4 current owners planning another.</p>
+      </figure>
+      <figure class="bar-chart">
+        <figcaption id="chart-age-cap">Age (all 48)</figcaption>
+        <svg class="bars" viewBox="0 0 260 141" width="100%" role="img" aria-labelledby="chart-age-cap" font-size="13"><g class="row"><title>18 to 35: 7 of 48</title><rect class="hit" x="0" y="0" width="260" height="37"/><text class="lbl" x="0" y="13">18 to 35</text><path class="bar" d="M0 17H80.0A4 4 0 0 1 84.0 21V24A4 4 0 0 1 80.0 28H0Z"/><text class="val" x="89.0" y="26.5">7</text></g><g class="row"><title>36 to 45: 19 of 48</title><rect class="hit" x="0" y="37" width="260" height="37"/><text class="lbl" x="0" y="50">36 to 45</text><path class="bar" d="M0 54H224.0A4 4 0 0 1 228.0 58V61A4 4 0 0 1 224.0 65H0Z"/><text class="val" x="233.0" y="63.5">19</text></g><g class="row"><title>46 to 55: 15 of 48</title><rect class="hit" x="0" y="74" width="260" height="37"/><text class="lbl" x="0" y="87">46 to 55</text><path class="bar" d="M0 91H176.0A4 4 0 0 1 180.0 95V98A4 4 0 0 1 176.0 102H0Z"/><text class="val" x="185.0" y="100.5">15</text></g><g class="row"><title>56 and over: 7 of 48</title><rect class="hit" x="0" y="111" width="260" height="37"/><text class="lbl" x="0" y="124">56 and over</text><path class="bar" d="M0 128H80.0A4 4 0 0 1 84.0 132V135A4 4 0 0 1 80.0 139H0Z"/><text class="val" x="89.0" y="137.5">7</text></g></svg>
+      </figure>
+    </div>
+    <p class="gender-line">23 women and 24 men took part; 1 person did not give a gender.</p>
+  </div>
+
+  <details class="card" id="survey-who">
+    <summary><span class="card-headline">Who answered</span> <span class="card-figure">48 responses</span></summary>
+    <div class="card-body">
+      <p>48 responses came in between 13 and 16 November 2026.<sup class="fn"><a href="#fn-7" id="fnref-7-7" aria-label="Source 7">7</a></sup>
+        23 women and 24 men took part; 1 person did not give a gender.
+        Because that last group is so small, we show women and men separately only for questions it did not answer.</p>
+      <p>People could pick more than one role:</p>
+      <ul>
+        <li>business owners: 38 of 48</li>
+        <li>supporters (mentors, investors, program staff and service providers): 17 of 48</li>
+        <li>people working at a startup: 16 of 48</li>
+        <li>people planning to start a business: 7 of 48</li>
+      </ul>
+      <p>Where they live or work: Lincoln 32 of 48, elsewhere in Nebraska 12 of 48, outside Nebraska 4 of 48.</p>
+      <p>Not everyone answered every question, so each figure below gives the number who answered that question, for example "18 of 33".</p>
+    </div>
+  </details>
+
+  <h3 id="survey-findings">Headline findings</h3>
+
+  <details class="card" id="survey-f1">
+    <summary><span class="card-headline">What people want most is a mentor who has done it before</span> <span class="card-figure">18 of 33</span></summary>
+    <div class="card-body">
+      <p>Asked which connections they wish they had, 18 of the 33 who answered picked "a mentor who's done it before" (women 10 of 16, men 8 of 17).<sup class="fn"><a href="#fn-7" id="fnref-7-8" aria-label="Source 7">7</a></sup>
+        It was the most common choice, ahead of customers or distributors (16 of 33) and an investor (11 of 33).</p>
+      <p>Mentors also matter in hindsight: a mentor or advisor was the most common kind of connection that mattered most to people's businesses, for 11 of 34 who answered (women 7 of 18, men 4 of 16), just ahead of another business owner (10 of 34).
+        In their written answers, 12 of all 48 respondents credited a mentor or advisor with making a difference.<sup class="fn"><a href="#fn-10" id="fnref-10-1" aria-label="Source 10">10</a></sup></p>
+    </div>
+  </details>
+
+  <details class="card" id="survey-f2">
+    <summary><span class="card-headline">The gap is knowing who to ask for the next step</span> <span class="card-figure">14 of 26</span></summary>
+    <div class="card-body">
+      <p>Among people who said a connection they wanted did not happen, the most common reason was "I didn't know who the right person was": 14 of the 26 who answered (women 7 of 14, men 7 of 12).<sup class="fn"><a href="#fn-7" id="fnref-7-9" aria-label="Source 7">7</a></sup>
+        Next came not knowing where to find them, for 9 of 26.</p>
+      <p>The most common obstacle overall was not being sure how to carry out the next step, such as building the product, finding customers, marketing or hiring: 14 of 35 (women 7 of 18, men 7 of 17).
+        Yet 22 of 37 agree they know who to ask in their community for business help in general (women 12 of 20, men 10 of 17).
+        So the gap seems to be the specific person for the specific next step, not knowing anyone at all.</p>
+    </div>
+  </details>
+
+  <details class="card" id="survey-f3">
+    <summary><span class="card-headline">Help comes through people</span> <span class="card-figure">24 of 48</span></summary>
+    <div class="card-body">
+      <p>When people wrote about what helped, the most common thread was networks and introductions: 24 of all 48 respondents.<sup class="fn"><a href="#fn-10" id="fnref-10-2" aria-label="Source 10">10</a></sup>
+        Next came a named program, event or grant scheme (18 of 48), then a mentor or advisor (12 of 48) and grants (10 of 48).</p>
+      <p>These counts use everyone who took the survey as the base, whether or not they wrote anything, so they may undercount.
+        When people credited a program, it was often for the network it gave them.</p>
+    </div>
+  </details>
+
+  <details class="card" id="survey-f4">
+    <summary><span class="card-headline">Programs are known, but few people use them and many do not feel they are meant for them</span> <span class="card-figure">12 of 37</span></summary>
+    <div class="card-body">
+      <p>Only 12 of 37 agree that local business programs are "meant for people like me" (women 4 of 20, men 8 of 17).<sup class="fn"><a href="#fn-7" id="fnref-7-10" aria-label="Source 7">7</a></sup></p>
+      <p>Programs are better known than used.
+        StartupLNK had been heard of or used by 22 of 35 who answered (women 12 of 18, men 10 of 17), but used by fewer than 3 of 35.
+        1 Million Cups had been heard of or used by 25 of 35 (women 14 of 18, men 11 of 17) and used by 12 of 35.</p>
+    </div>
+  </details>
+
+  <details class="card" id="survey-f5">
+    <summary><span class="card-headline">Caregiving takes up time mainly for women</span> <span class="card-figure">10 of 21 women</span></summary>
+    <div class="card-body">
+      <p>Caring for children or for a parent or relative takes up time for 10 of 21 women who answered, and for fewer than 3 of 19 men.<sup class="fn"><a href="#fn-7" id="fnref-7-11" aria-label="Source 7">7</a></sup>
+        We do not show the total for everyone here, because it would let a reader work out the exact small number for men.</p>
+      <p>Most people are also fitting their business around a job: a full-time job takes up time for 32 of 40 (women 18 of 21, men 14 of 19), and not enough time is an obstacle for 11 of 35 (women 6 of 18, men 5 of 17).
+        Yet fewer than 3 of 35 picked childcare or caregiving as one of their biggest obstacles, and very few wrote about their own load at home.
+        The survey asked about help more than about burdens, which may be why.</p>
+    </div>
+  </details>
+
+  <details class="card" id="survey-f6">
+    <summary><span class="card-headline">Most owners fund their business themselves</span> <span class="card-figure">25 of 35</span></summary>
+    <div class="card-body">
+      <p>Personal savings fund the business for 25 of 35 who answered (women 12 of 17, men 13 of 18), and revenue from the business for 14 of 35 (women 6 of 17, men 8 of 18).<sup class="fn"><a href="#fn-7" id="fnref-7-12" aria-label="Source 7">7</a></sup></p>
+      <p>17 people had sought money from others, and 11 of those 17 got some or all of what they needed (women 6 of 9, men 5 of 8); that is too few answers to say how seeking money usually goes.
+        Raising outside money is a goal for the next 12 months for 8 of 32 (women 3 of 17, men 5 of 15).
+        In written answers, 5 of 48 described seeking money going badly, such as a bank saying no or an application not being selected.<sup class="fn"><a href="#fn-10" id="fnref-10-3" aria-label="Source 10">10</a></sup></p>
+    </div>
+  </details>
+
+  <details class="card" id="survey-f7">
+    <summary><span class="card-headline">Help is needed after launch, not only at the start</span> <span class="card-figure">14 of 37</span></summary>
+    <div class="card-body">
+      <p>Growing or expanding is the stage where people most often need help: 14 of 37 who answered (women 7 of 19, men 7 of 18), ahead of legal and business setup (10 of 37).<sup class="fn"><a href="#fn-7" id="fnref-7-13" aria-label="Source 7">7</a></sup>
+        More customers or revenue is the most common goal for the next 12 months, for 19 of 32 (women 12 of 17, men 7 of 15).</p>
+      <p>In written answers, 10 of 48 credited help with legal and accounting basics, such as an introduction to a trusted attorney or accountant.<sup class="fn"><a href="#fn-10" id="fnref-10-4" aria-label="Source 10">10</a></sup></p>
+    </div>
+  </details>
+
+  <details class="card" id="survey-f8">
+    <summary><span class="card-headline">People feel connected, but their networks may not reach money</span> <span class="card-figure">22 of 37</span></summary>
+    <div class="card-body">
+      <p>22 of 37 agree that someone could introduce them to a lender or investor (women 14 of 20, men 8 of 17).<sup class="fn"><a href="#fn-7" id="fnref-7-14" aria-label="Source 7">7</a></sup></p>
+      <p>But among the 24 people whose written answers credited networks and introductions, 13 of 24 agree, compared with 9 of the 13 others who answered.<sup class="fn"><a href="#fn-10" id="fnref-10-5" aria-label="Source 10">10</a></sup>
+        That is a gap of only a few people, so treat it as an idea worth testing, not a finding.</p>
+    </div>
+  </details>
+
+  <h3 id="survey-table-title">Headline figures for everyone, women and men</h3>
+  <p>Each cell is the number who picked that answer out of the number in that group who answered the question.
+    Counts of 1 or 2 are shown as "fewer than 3", and a few other cells are held back so that a small count cannot be worked out by subtraction.<sup class="fn"><a href="#fn-7" id="fnref-7-15" aria-label="Source 7">7</a></sup></p>
+  <p class="note table-hint">Scroll sideways to see all columns.</p>
+  <div class="table-wrap" role="region" aria-label="Survey table, scrolls sideways" tabindex="0">
+    <table class="survey-table" aria-labelledby="survey-table-title">
+      <thead>
+        <tr><th scope="col">Finding</th><th scope="col">All</th><th scope="col">Women</th><th scope="col">Men</th><th scope="col">Held back?</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Wish they had a mentor who's done it before</th><td>18 of 33</td><td>10 of 16</td><td>8 of 17</td><td>No</td></tr>
+        <tr><th scope="row">A connection did not happen because they didn't know who the right person was</th><td>14 of 26</td><td>7 of 14</td><td>7 of 12</td><td>No</td></tr>
+        <tr><th scope="row">Obstacle: not sure how to carry out the next step</th><td>14 of 35</td><td>7 of 18</td><td>7 of 17</td><td>No</td></tr>
+        <tr><th scope="row">Agree: I know who to ask in my community for business help</th><td>22 of 37</td><td>12 of 20</td><td>10 of 17</td><td>No</td></tr>
+        <tr><th scope="row">Agree: business programs here are meant for people like me</th><td>12 of 37</td><td>4 of 20</td><td>8 of 17</td><td>No</td></tr>
+        <tr><th scope="row">Agree: someone could introduce me to a lender or investor</th><td>22 of 37</td><td>14 of 20</td><td>8 of 17</td><td>No</td></tr>
+        <tr><th scope="row">A mentor or advisor was a connection that mattered most</th><td>11 of 34</td><td>7 of 18</td><td>4 of 16</td><td>No</td></tr>
+        <tr><th scope="row">StartupLNK: heard of or used</th><td>22 of 35</td><td>12 of 18</td><td>10 of 17</td><td>No</td></tr>
+        <tr><th scope="row">StartupLNK: used</th><td>fewer than 3 of 35</td><td>not shown</td><td>not shown</td><td>Yes: small counts; everyone only</td></tr>
+        <tr><th scope="row">1 Million Cups: used</th><td>12 of 35</td><td>not shown</td><td>not shown</td><td>Yes: one group is fewer than 3; everyone only</td></tr>
+        <tr><th scope="row">Time taken up by caring for children or a parent or relative</th><td>held back</td><td>10 of 21</td><td>fewer than 3 of 19</td><td>Yes: total held back so the men's count cannot be worked out</td></tr>
+        <tr><th scope="row">Time taken up by a full-time job</th><td>32 of 40</td><td>18 of 21</td><td>14 of 19</td><td>No</td></tr>
+        <tr><th scope="row">Obstacle: childcare or caregiving</th><td>fewer than 3 of 35</td><td>not shown</td><td>not shown</td><td>Yes: small counts; everyone only</td></tr>
+        <tr><th scope="row">Fund the business from personal savings</th><td>25 of 35</td><td>12 of 17</td><td>13 of 18</td><td>No</td></tr>
+        <tr><th scope="row">Sought outside money and got some or all of it</th><td>11 of 17</td><td>6 of 9</td><td>5 of 8</td><td>No</td></tr>
+        <tr><th scope="row">12-month goal: more customers or revenue</th><td>19 of 32</td><td>12 of 17</td><td>7 of 15</td><td>No</td></tr>
+        <tr><th scope="row">12-month goal: raise outside money</th><td>8 of 32</td><td>3 of 17</td><td>5 of 15</td><td>No</td></tr>
+        <tr><th scope="row">Stage needing most help: growing or expanding</th><td>14 of 37</td><td>7 of 19</td><td>7 of 18</td><td>No</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">The groups are small, so no difference between women and men in this table can be called a gender difference.</p>
+
+  <details class="card" id="survey-resources">
+    <summary><span class="card-headline">Local resources people used</span> <span class="card-figure">1 Million Cups 12 of 35</span></summary>
+    <div class="card-body">
+      <p>35 people answered the question on Lincoln and Nebraska resources; here is how many had used each one (resources used by fewer than 3 are left out).<sup class="fn"><a href="#fn-7" id="fnref-7-16" aria-label="Source 7">7</a></sup></p>
+      <figure class="bar-chart">
+        <figcaption id="chart-resources-cap">Used it, out of 35</figcaption>
+        <svg class="bars" viewBox="0 0 260 337" width="100%" role="img" aria-labelledby="chart-resources-cap" font-size="13"><g class="row"><title>1 Million Cups: 12 of 35</title><rect class="hit" x="0" y="0" width="260" height="37"/><text class="lbl" x="0" y="13">1 Million Cups</text><path class="bar" d="M0 17H224.0A4 4 0 0 1 228.0 21V24A4 4 0 0 1 224.0 28H0Z"/><text class="val" x="233.0" y="26.5">12</text></g><g class="row"><title>Nebraska Business Innovation Act (BIA) prototype grants: 6 of 35</title><rect class="hit" x="0" y="37" width="260" height="53"/><text class="lbl" x="0" y="50">Nebraska Business Innovation Act</text><text class="lbl" x="0" y="66">(BIA) prototype grants</text><path class="bar" d="M0 70H110.0A4 4 0 0 1 114.0 74V77A4 4 0 0 1 110.0 81H0Z"/><text class="val" x="119.0" y="79.5">6</text></g><g class="row"><title>Nebraska Innovation Studio (makerspace): 5 of 35</title><rect class="hit" x="0" y="90" width="260" height="53"/><text class="lbl" x="0" y="103">Nebraska Innovation Studio</text><text class="lbl" x="0" y="119">(makerspace)</text><path class="bar" d="M0 123H91.0A4 4 0 0 1 95.0 127V130A4 4 0 0 1 91.0 134H0Z"/><text class="val" x="100.0" y="132.5">5</text></g><g class="row"><title>Nebraska Business Development Center (NBDC): 5 of 35</title><rect class="hit" x="0" y="143" width="260" height="53"/><text class="lbl" x="0" y="156">Nebraska Business Development</text><text class="lbl" x="0" y="172">Center (NBDC)</text><path class="bar" d="M0 176H91.0A4 4 0 0 1 95.0 180V183A4 4 0 0 1 91.0 187H0Z"/><text class="val" x="100.0" y="185.5">5</text></g><g class="row"><title>SCORE Lincoln (free mentoring): 4 of 35</title><rect class="hit" x="0" y="196" width="260" height="37"/><text class="lbl" x="0" y="209">SCORE Lincoln (free mentoring)</text><path class="bar" d="M0 213H72.0A4 4 0 0 1 76.0 217V220A4 4 0 0 1 72.0 224H0Z"/><text class="val" x="81.0" y="222.5">4</text></g><g class="row"><title>Invest Nebraska: 4 of 35</title><rect class="hit" x="0" y="233" width="260" height="37"/><text class="lbl" x="0" y="246">Invest Nebraska</text><path class="bar" d="M0 250H72.0A4 4 0 0 1 76.0 254V257A4 4 0 0 1 72.0 261H0Z"/><text class="val" x="81.0" y="259.5">4</text></g><g class="row"><title>LaunchLNK grants: 3 of 35</title><rect class="hit" x="0" y="270" width="260" height="37"/><text class="lbl" x="0" y="283">LaunchLNK grants</text><path class="bar" d="M0 287H53.0A4 4 0 0 1 57.0 291V294A4 4 0 0 1 53.0 298H0Z"/><text class="val" x="62.0" y="296.5">3</text></g><g class="row"><title>Nebraska Angels: 3 of 35</title><rect class="hit" x="0" y="307" width="260" height="37"/><text class="lbl" x="0" y="320">Nebraska Angels</text><path class="bar" d="M0 324H53.0A4 4 0 0 1 57.0 328V331A4 4 0 0 1 53.0 335H0Z"/><text class="val" x="62.0" y="333.5">3</text></g></svg>
+      </figure>
+      <p>Many more had heard of these resources than had used them: Invest Nebraska 23 of 35, LaunchLNK grants 22, StartupLNK 22, the Innovation Studio 21, BIA prototype grants 19, SCORE Lincoln 18, NBDC 18 and Nebraska Angels 18.</p>
+      <p>Using a resource is not the same as saying it helped; programs people credited in their own words are counted in the themes below.</p>
+    </div>
+  </details>
+
+  <h3 id="survey-themes">What people wrote</h3>
+
+  <details class="card" id="survey-themes-card">
+    <summary><span class="card-headline">Themes in the written answers</span> <span class="card-figure">37 of 48 wrote something on theme</span></summary>
+    <div class="card-body">
+      <p>We grouped the written answers into themes.<sup class="fn"><a href="#fn-10" id="fnref-10-6" aria-label="Source 10">10</a></sup>
+        Counts are people, out of all 48 respondents, and one answer can carry several themes.
+        37 of 48 wrote something that fits at least one theme.</p>
+      <figure class="bar-chart bar-chart-wide">
+        <figcaption id="chart-themes-cap">People out of 48 whose written answers fit each theme (themes named by 3 or more)</figcaption>
+        <svg class="bars" viewBox="0 0 260 358" width="100%" role="img" aria-labelledby="chart-themes-cap" font-size="13"><g class="row"><title>Networks and introductions: 24 of 48</title><rect class="hit" x="0" y="0" width="260" height="37"/><text class="lbl" x="0" y="13">Networks and introductions</text><path class="bar" d="M0 17H224.0A4 4 0 0 1 228.0 21V24A4 4 0 0 1 224.0 28H0Z"/><text class="val" x="233.0" y="26.5">24</text></g><g class="row"><title>A program, event or grant scheme helped: 18 of 48</title><rect class="hit" x="0" y="37" width="260" height="53"/><text class="lbl" x="0" y="50">A program, event or grant scheme</text><text class="lbl" x="0" y="66">helped</text><path class="bar" d="M0 70H167.0A4 4 0 0 1 171.0 74V77A4 4 0 0 1 167.0 81H0Z"/><text class="val" x="176.0" y="79.5">18</text></g><g class="row"><title>A mentor made the difference: 12 of 48</title><rect class="hit" x="0" y="90" width="260" height="37"/><text class="lbl" x="0" y="103">A mentor made the difference</text><path class="bar" d="M0 107H110.0A4 4 0 0 1 114.0 111V114A4 4 0 0 1 110.0 118H0Z"/><text class="val" x="119.0" y="116.5">12</text></g><g class="row"><title>Grants and other money that does not have to be paid back: 10 of 48</title><rect class="hit" x="0" y="127" width="260" height="53"/><text class="lbl" x="0" y="140">Grants and other money that does</text><text class="lbl" x="0" y="156">not have to be paid back</text><path class="bar" d="M0 160H91.0A4 4 0 0 1 95.0 164V167A4 4 0 0 1 91.0 171H0Z"/><text class="val" x="100.0" y="169.5">10</text></g><g class="row"><title>Legal and accounting basics: 10 of 48</title><rect class="hit" x="0" y="180" width="260" height="37"/><text class="lbl" x="0" y="193">Legal and accounting basics</text><path class="bar" d="M0 197H91.0A4 4 0 0 1 95.0 201V204A4 4 0 0 1 91.0 208H0Z"/><text class="val" x="100.0" y="206.5">10</text></g><g class="row"><title>Learned on their own: 6 of 48</title><rect class="hit" x="0" y="217" width="260" height="37"/><text class="lbl" x="0" y="230">Learned on their own</text><path class="bar" d="M0 234H53.0A4 4 0 0 1 57.0 238V241A4 4 0 0 1 53.0 245H0Z"/><text class="val" x="62.0" y="243.5">6</text></g><g class="row"><title>Seeking money went badly: 5 of 48</title><rect class="hit" x="0" y="254" width="260" height="37"/><text class="lbl" x="0" y="267">Seeking money went badly</text><path class="bar" d="M0 271H43.5A4 4 0 0 1 47.5 275V278A4 4 0 0 1 43.5 282H0Z"/><text class="val" x="52.5" y="280.5">5</text></g><g class="row"><title>Finding first customers or pilots: 3 of 48</title><rect class="hit" x="0" y="291" width="260" height="37"/><text class="lbl" x="0" y="304">Finding first customers or pilots</text><path class="bar" d="M0 308H24.5A4 4 0 0 1 28.5 312V315A4 4 0 0 1 24.5 319H0Z"/><text class="val" x="33.5" y="317.5">3</text></g><g class="row"><title>Did not know what to ask: 3 of 48</title><rect class="hit" x="0" y="328" width="260" height="37"/><text class="lbl" x="0" y="341">Did not know what to ask</text><path class="bar" d="M0 345H24.5A4 4 0 0 1 28.5 349V352A4 4 0 0 1 24.5 356H0Z"/><text class="val" x="33.5" y="354.5">3</text></g></svg>
+      </figure>
+      <ul>
+        <li><strong>Networks and introductions (24 of 48):</strong> clients, referrals, word of mouth and advice came through peers, friends and family, work contacts, a banker they already knew, and introductions through friends of friends, rather than formal channels.</li>
+        <li><strong>A program, event or grant scheme helped (18 of 48):</strong> people credited local programs, events and grants, often for the network they built.</li>
+        <li><strong>A mentor made the difference (12 of 48):</strong> a mentor, coach or advisory board built confidence and skills, helped test the idea with customers, or opened doors to investors.</li>
+        <li><strong>Grants and other money that does not have to be paid back (10 of 48):</strong> grants were used or wanted, with a wish for early funding of this kind.</li>
+        <li><strong>Legal and accounting basics (10 of 48):</strong> introductions to trusted attorneys and accountants, borrowed templates and help with payroll got the business set up.</li>
+        <li><strong>Learned on their own (6 of 48):</strong> research, trial and error and online tools instead of programs.</li>
+        <li><strong>Seeking money went badly (5 of 48):</strong> a bank deferred or declined, applications were not selected, or investors were unwilling.</li>
+        <li><strong>Finding first customers or pilots (3 of 48):</strong> landing a first customer, client or pilot was named as the hardest and most important step, with a wish for established businesses to pilot new products.</li>
+        <li><strong>Did not know what to ask (3 of 48)</strong> and <strong>pricing and sales to grow (fewer than 3 of 48):</strong> rare in writing, though the multiple-choice answers on the next step point the same way.</li>
+      </ul>
+      <p>We do not split the themes by gender, because subtracting the women's and men's counts from the total would reveal the answers of the 1 person who did not give a gender.</p>
+    </div>
+  </details>
+
+  <details class="card" id="survey-supporters">
+    <summary><span class="card-headline">Supporters on why women raise less funding</span> <span class="card-figure">12 answers</span></summary>
+    <div class="card-body">
+      <p>People in a supporter role were asked why women entrepreneurs raise less funding than men, and what could help.
+        12 of the 17 in that role answered.<sup class="fn"><a href="#fn-10" id="fnref-10-7" aria-label="Source 10">10</a></sup>
+        The question states the funding gap as a starting point, which may shape the answers.</p>
+      <ul>
+        <li>Bias, including a perception that men build scalable companies and women build solo service businesses, and a preference for tech startups: 6 of 12.</li>
+        <li>Women ask or negotiate less, have less confidence or take fewer risks: 4 of 12.</li>
+        <li>Childcare and healthcare: 3 of 12.</li>
+        <li>Women's time and load: 3 of 12.</li>
+        <li>Cultural and gender-role expectations: fewer than 3 of 12.</li>
+      </ul>
+      <p>5 of the 12 answers suggest a remedy.
+        Two came up 3 times each: more women visible in pitch events, panels and classrooms, as mentors, as local success stories or as investors; and support with childcare and healthcare.
+        More women investors came up in fewer than 3 of the 12 answers.</p>
+    </div>
+  </details>
+
+  <h3 id="survey-quotes">In their words</h3>
+  <p>Short extracts from written answers, quoted exactly.<sup class="fn"><a href="#fn-11" id="fnref-11-1" aria-label="Source 11">11</a></sup></p>
+  <figure class="quote"><blockquote><p>&ldquo;&hellip;I didn't know what I didn't know and I spent a long time asking the wrong questions.&rdquo;</p></blockquote></figure>
+  <figure class="quote"><blockquote><p>&ldquo;I have some great mentors, but most just say "good job, keep going......." they really don't have the connections that I need in the industry.&rdquo;</p></blockquote></figure>
+  <figure class="quote"><blockquote><p>&ldquo;I leaned often on my network to try to find new work or clients.&rdquo;</p></blockquote></figure>
+  <figure class="quote"><blockquote><p>&ldquo;First customers are the most difficult but the most important&hellip;&rdquo;</p></blockquote></figure>
+  <figure class="quote"><blockquote><p>&ldquo;Until we have more women investors, we won't see as many women comfortable with pitching to investors.&rdquo;</p></blockquote></figure>
+
+  <h3 id="survey-limits">Read with care</h3>
+  <details class="card" id="survey-limits-card">
+    <summary><span class="card-headline">What this survey can and cannot tell us</span> <span class="card-figure">a pilot, not an estimate</span></summary>
+    <div class="card-body">
+      <ul>
+        <li>It reached the team's own contacts, mostly people already inside Lincoln's startup scene, not a random sample of Lincoln founders.</li>
+        <li>There were 48 responses, and most questions were answered by 32 to 40 of them; one more answer can move a figure noticeably.</li>
+        <li>The groups of women and men are small, so no difference between them here can be called a gender difference.</li>
+        <li>The figures include one test entry made by the team and one partial response.</li>
+        <li>Written answers were grouped into themes with the help of an AI assistant (Claude Code, using Anthropic's Claude Opus 5.5 model), first with one coder per answer; a second, independent coding of every answer (same model, without seeing the first codes) agreed on 146 of 160 answers, and the counts shown come from the second coding, with a code for finding first customers added.<sup class="fn"><a href="#fn-10" id="fnref-10-8" aria-label="Source 10">10</a></sup></li>
+        <li>Theme counts use everyone as the base, including people who wrote nothing, so they undercount.</li>
+        <li>To protect individuals, counts of 1 or 2 read "fewer than 3", some cells are held back, and some breakdowns by gender are not shown.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<p class="note to-top"><a href="#jsr-top">Back to top</a></p>
+<section id="rest" class="page-section" aria-labelledby="rest-heading">
+<h2 id="rest-heading">The rest of the research</h2>
+<p class="section-intro">Beyond the figures in our pitch, we logged about 300 sources on women business owners, capital, mentoring and programs.
+Here are the key findings, grouped by topic.
+Each card shows the headline first; open it for the detail, how strong the evidence is, and the source.
+Most of this evidence is national or from other countries; where it is about Nebraska or Lincoln, the card says so.
+Sources already covered in "Research cited in the pitch" are pointed to rather than repeated.</p>
+
+<section class="topic" id="rest-capital" aria-labelledby="rest-capital-heading">
+<h3 id="rest-capital-heading">Capital: loans, grants and investment</h3>
+
+<details class="card" id="rest-capital-ladder">
+<summary>Nebraska lenders cover loans from <strong>$1,000</strong> to <strong>$5 million</strong>, but nothing lays them out as one path<sup class="fn" aria-hidden="true">12</sup></summary>
+<p>A Lincoln owner can find 0% Kiva loans ($1,000 to $15,000), SBA microloans through Community Development Resources ($1,000 to $50,000), the Nebraska Enterprise Fund ($1,000 to $150,000), Center for Rural Affairs loans ($1,000 to $250,000) and SBA 504 loans through NEDCO for buildings and equipment (up to $5 million).<sup class="fn"><a href="#fn-12" id="fnref-12-1" aria-label="Source 12">12</a></sup>
+None of the pages we read sets these out as a route by business stage or size, so an owner has to work out for herself which one fits.</p>
+<p><strong>How strong:</strong> loan terms are what each lender states on its own website, read in November 2026.</p>
+</details>
+
+<details class="card" id="rest-capital-women-specific">
+<summary>Only <strong>one</strong> women-specific source of capital found in Nebraska: a crowdfunding portal for raises of <strong>$150,000 to $5 million</strong><sup class="fn" aria-hidden="true">13</sup></summary>
+<p>AeQuitas Invest (AQi), based in Omaha, hosts only companies that are at least 50% women-owned, raising $150,000 to $5 million a year through regulated crowdfunding.<sup class="fn"><a href="#fn-13" id="fnref-13-1" aria-label="Source 13">13</a></sup>
+Almost every other Nebraska source of capital we found is open to everyone, not aimed at women.
+Repeated searches found no women's angel group, women-led fund, women's grant or women's pitch competition in Nebraska.</p>
+<p><strong>How strong:</strong> "not found" after several searches in November 2026, not proof that none exists.</p>
+</details>
+
+<details class="card" id="rest-capital-not-applying">
+<summary><strong>78%</strong> of women-owned employer firms did not apply for new credit in 2024<sup class="fn" aria-hidden="true">4</sup></summary>
+<p>In the Census Bureau's national survey, 13% of women-owned businesses with employees applied for new credit in 2024, 78% did not, and 9% did not know.
+Of those that applied, 53% got all they asked for, 28% some and 8% none.
+Community development lenders (CDFIs) supplied credit to only about 1% of those that got it.<sup class="fn"><a href="#fn-4" id="fnref-4-2" aria-label="Source 4">4</a></sup></p>
+<p>This points to not applying, rather than being turned down, as a large part of the story.
+The source gives no figure for men-owned firms to compare.</p>
+<p><strong>How strong:</strong> national federal survey, preliminary estimates; no Nebraska figure was checked.</p>
+</details>
+
+<details class="card" id="rest-capital-risk-sharing">
+<summary>When a development bank shared lenders' risk, women's share of business lending rose by about <strong>23%</strong><sup class="fn" aria-hidden="true">14</sup></summary>
+<p>In Türkiye, a development bank lent to five commercial banks on condition they lent on to women-led small businesses, covered first losses up to 10% of each bank's portfolio, and trained bank staff.
+In two years, participating banks raised women's share of their business lending by 2 percentage points on average, a rise of almost a quarter from a base of about 9%.
+Half of the rise came from new borrowers, and first-time women borrowers were as likely to repay as others.<sup class="fn"><a href="#fn-14" id="fnref-14-1" aria-label="Source 14">14</a></sup></p>
+<p><strong>How strong:</strong> a careful before-and-after comparison using the national credit registry, read in the bank's four-page brief; the brief does not separate the effect of the risk cover from the credit lines and training.</p>
+</details>
+
+<details class="card" id="rest-capital-loan-design">
+<summary>Changing loan terms changed results for women: a <strong>two-month</strong> repayment grace period raised long-run profits, and also defaults<sup class="fn" aria-hidden="true">15</sup></summary>
+<p>In a trial in India, giving women borrowers two months before their first repayment led to more business investment and higher long-run profits, but more of them defaulted.<sup class="fn"><a href="#fn-15" id="fnref-15-1" aria-label="Source 15">15</a></sup>
+In a small trial in Ethiopia, judging loan applications on a psychometric test instead of fixed collateral improved women's access to credit and their businesses' survival, with little sign of growth.<sup class="fn"><a href="#fn-16" id="fnref-16-1" aria-label="Source 16">16</a></sup></p>
+<p><strong>How strong:</strong> both are randomised trials outside the US.
+The India result was read at abstract level.
+For Ethiopia we give only the direction of the effect, because the draft that holds the figures asks not to be cited.</p>
+</details>
+</section>
+
+<section class="topic" id="rest-networks" aria-labelledby="rest-networks-heading">
+<h3 id="rest-networks-heading">Networks and mentoring</h3>
+
+<details class="card" id="rest-networks-kenya">
+<summary>A local mentor raised women's business profits by about <strong>20%</strong>, but only while the pair kept meeting<sup class="fn" aria-hidden="true">17</sup></summary>
+<p>In Kenya, women running small businesses who were paired with an experienced local businesswoman raised their profits by about 20%, while a business class did not help.
+The gains faded as pairs stopped meeting, and lasted for pairs still meeting after a year.<sup class="fn"><a href="#fn-17" id="fnref-17-1" aria-label="Source 17">17</a></sup>
+In an earlier version of the study, 45% of pairs were still meeting after twelve months, and mentees said nearly 70% of the matches that ended were ended by the mentor.<sup class="fn"><a href="#fn-17" id="fnref-17-2" aria-label="Source 17">17</a></sup></p>
+<p><strong>How strong:</strong> randomised trial with 372 women, outside the US.</p>
+</details>
+
+<details class="card" id="rest-networks-mentor-gender">
+<summary>Women mentored by women in Uganda raised sales <strong>32%</strong> and profits <strong>31%</strong>; a second trial points the other way<sup class="fn" aria-hidden="true">18</sup></summary>
+<p>In one trial, women entrepreneurs mentored remotely by a woman raised sales 32% and profits 31%, while women mentored by a man did not improve significantly; mentor gender made no difference for men.<sup class="fn"><a href="#fn-18" id="fnref-18-1" aria-label="Source 18">18</a></sup>
+The women-with-women group was small: 48 in the final analysis.</p>
+<p>A second Uganda trial, of group mentoring on top of a cash grant, found mentoring did not help women overall.
+Its draft brief reports lower profits for women in all-women groups with a woman mentor, while its full paper finds no significant difference between men and women mentors for women.<sup class="fn"><a href="#fn-19" id="fnref-19-1" aria-label="Source 19">19</a></sup>
+The two trials differ in design (one-to-one and remote against group mentoring with cash), so they are best read as disagreeing, not as one cancelling the other.</p>
+<p><strong>How strong:</strong> two randomised trials, both outside the US, with different results.</p>
+</details>
+
+<details class="card" id="rest-networks-getting-matched">
+<summary>Signing up is not being mentored: only <strong>27%</strong> of surveyed users of an online mentoring platform had received mentoring<sup class="fn" aria-hidden="true">20</sup></summary>
+<p>In a 2020 evaluation of MicroMentor, 27% of 894 surveyed entrepreneurs had been mentored.
+Among those who had not, 28% said a mentor never replied and 23% did not know how to contact one.<sup class="fn"><a href="#fn-20" id="fnref-20-1" aria-label="Source 20">20</a></sup>
+In a UK survey, 39% of small firms that had never used a mentor did not know where they would find one.<sup class="fn"><a href="#fn-21" id="fnref-21-1" aria-label="Source 21">21</a></sup>
+The randomised trial on the same platform that our pitch cites found the same bottleneck; see <a href="#cited-mentoring-trial">Research cited in the pitch</a>.</p>
+<p><strong>How strong:</strong> an evaluation commissioned by the platform's funder, mostly of users in developing countries, and a UK government survey of 902 firms; observational.
+The report is not consistent on whether the 28% and 23% are shares of users who had not been mentored or of all surveyed users.</p>
+</details>
+
+<details class="card" id="rest-networks-groups">
+<summary>Group formats can match one-to-one help at lower cost: group consulting cost about <strong>a third</strong> as much per firm<sup class="fn" aria-hidden="true">22</sup></summary>
+<p>In Colombia, consulting delivered to groups of firms raised sales, profits and productivity at about a third of the cost of one-to-one consulting (US$10,500 against US$28,950 per firm), whose effects were weaker.<sup class="fn"><a href="#fn-22" id="fnref-22-1" aria-label="Source 22">22</a></sup>
+In China, monthly meetings among small groups of business owners, with no mentor, raised revenue 8%, and the gain lasted a year after the meetings ended.<sup class="fn"><a href="#fn-23" id="fnref-23-1" aria-label="Source 23">23</a></sup>
+In Kenya, mentoring added to a cash grant only marginally improved results, and cash alone cost less per dollar of extra profit (US$3.43 against US$4.56).<sup class="fn"><a href="#fn-19" id="fnref-19-2" aria-label="Source 19">19</a></sup></p>
+<p><strong>How strong:</strong> randomised trials outside the US; the Kenya cash result is from a draft research brief.</p>
+</details>
+
+<details class="card" id="rest-networks-sparing-mentors">
+<summary>Mentors' time is the scarce resource: SCORE, a national volunteer mentoring network, asks for <strong>10 to 12 hours</strong> a month and caps new requests each week<sup class="fn" aria-hidden="true">24</sup></summary>
+<p>SCORE asks mentors for 10 to 12 hours a month, lets them pause for up to 30 days, and since November 2025 limits how many new requests each mentor receives a week, hiding mentors who have reached their limit.<sup class="fn"><a href="#fn-24" id="fnref-24-1" aria-label="Source 24">24</a></sup>
+How programs back their volunteers matters too: on one online platform, corporate-recruited mentors given intensive support did well, while those given only light support did worse than those given none at all (2,344 mentors).<sup class="fn"><a href="#fn-25" id="fnref-25-1" aria-label="Source 25">25</a></sup></p>
+<p><strong>How strong:</strong> SCORE's rules are its own published procedures, with no data on whether they keep mentors longer; the platform study is observational.</p>
+</details>
+
+<details class="card" id="rest-networks-lincoln">
+<summary>Lincoln has several pools of mentors, but few published counts: SCORE reports <strong>61</strong> volunteers across Nebraska<sup class="fn" aria-hidden="true">26</sup></summary>
+<p>SCORE has two Nebraska chapters, Lincoln and Greater Omaha, with 61 volunteers statewide in its 2024 figures; no Lincoln-only count was found.<sup class="fn"><a href="#fn-26" id="fnref-26-1" aria-label="Source 26">26</a></sup>
+The University of Nebraska-Lincoln reports mentors supporting student entrepreneurs rising from 165 to 252 in one year, all for UNL students.<sup class="fn"><a href="#fn-27" id="fnref-27-1" aria-label="Source 27">27</a></sup>
+NMotion, Lincoln's accelerator, takes six companies per cohort.<sup class="fn"><a href="#fn-28" id="fnref-28-1" aria-label="Source 28">28</a></sup></p>
+<p><strong>How strong:</strong> each organisation's own figures, not independently checked.</p>
+</details>
+</section>
+
+<section class="topic" id="rest-models" aria-labelledby="rest-models-heading">
+<h3 id="rest-models-heading">Program models elsewhere</h3>
+
+<details class="card" id="rest-models-10ksb">
+<summary>A free growth program for established owners: <strong>57%</strong> of graduates reported adding jobs within 30 months<sup class="fn" aria-hidden="true">29</sup></summary>
+<p>Goldman Sachs 10,000 Small Businesses teaches owners of existing businesses to plan for growth.
+In its 2018 impact report, 45% of participants were women, and 57% of alumni reported adding jobs at 30 months, against 25% of small businesses in a national survey used as a benchmark.<sup class="fn"><a href="#fn-29" id="fnref-29-1" aria-label="Source 29">29</a></sup>
+It is free to participants, and it now accepts applicants from Omaha through a regional cohort.</p>
+<p><strong>How strong:</strong> self-reported follow-up surveys; no randomised or matched comparison group, and no results by gender.</p>
+</details>
+
+<details class="card" id="rest-models-uk-code">
+<summary>In the UK, investors who report founder gender backed teams with a woman founder in <strong>33%</strong> of deals, against <strong>25%</strong> in the wider market<sup class="fn" aria-hidden="true">30</sup></summary>
+<p>The UK's Investing in Women Code asks investors and lenders to report each year who they fund.
+By March 2026 it had 337 signatories.
+In 2025, 33% of signatories' venture deals went to teams with at least one woman founder, against 25% in the wider market, and community lenders that signed made 37% of their business loans to women-led firms.<sup class="fn"><a href="#fn-30" id="fnref-30-1" aria-label="Source 30">30</a></sup></p>
+<p><strong>How strong:</strong> government-published annual figures; firms choose to sign, so the gap does not prove the Code caused it.</p>
+</details>
+
+<details class="card" id="rest-models-wwbic">
+<summary>A Wisconsin women's lender: <strong>69%</strong> of its borrowers were still in business after five years, against <strong>50%</strong> nationally<sup class="fn" aria-hidden="true">31</sup></summary>
+<p>The Wisconsin Women's Business Initiative Corporation, founded in 1987, combines small loans with training and coaching.
+A third-party study released in 2022 found 69% of its borrowers still in business after five years, against 50% nationally, and 70% of borrowers who came with poor credit improved their score.<sup class="fn"><a href="#fn-31" id="fnref-31-1" aria-label="Source 31">31</a></sup></p>
+<p><strong>How strong:</strong> compared with population averages, not with similar businesses, and not split by gender.</p>
+</details>
+
+<details class="card" id="rest-models-canada">
+<summary>Canada's grants to women-owned firms: <strong>41%</strong> of recipients reported hiring, but support groups stopped when the money ended<sup class="fn" aria-hidden="true">32</sup></summary>
+<p>Canada's Women Entrepreneurship Strategy gave grants of up to C$100,000 to 322 women-owned firms and funded 52 support organisations.
+41% of grant recipients reported hiring more staff.
+The evaluators found that no new businesses were funded, because two years of accounts were required, and that many support organisations stopped their services when the funding ended.<sup class="fn"><a href="#fn-32" id="fnref-32-1" aria-label="Source 32">32</a></sup></p>
+<p><strong>How strong:</strong> government evaluation based on recipients' own reports, with no comparison group.</p>
+</details>
+
+<details class="card" id="rest-models-ireland">
+<summary>Ireland's development agency went from <strong>1 in 10</strong> to <strong>more than 1 in 3</strong> supported start-ups led by women<sup class="fn" aria-hidden="true">33</sup></summary>
+<p>Enterprise Ireland paired a start-up fund for women-led companies with a women's accelerator from 2012.
+By 2017, more than one in three start-ups it supported were led by women, against one in ten in 2012, and 46% of that year's start-fund investments went to women-led companies.<sup class="fn"><a href="#fn-33" id="fnref-33-1" aria-label="Source 33">33</a></sup>
+The women-only fund's last call closed in 2021; a women founders' accelerator continues.</p>
+<p><strong>How strong:</strong> the agency's own figures, which it credits to its targeted programs; not an independent evaluation.</p>
+</details>
+
+<details class="card" id="rest-models-care">
+<summary>A Hawai'i accelerator pays each founder a <strong>$4,000</strong> care stipend; no Nebraska program found pays for childcare<sup class="fn" aria-hidden="true">34</sup></summary>
+<p>Hawai'i FoundHer gives each founder a $20,000 grant and a $4,000 stipend for child or elder care during its six-month program.<sup class="fn"><a href="#fn-34" id="fnref-34-1" aria-label="Source 34">34</a></sup>
+We found no program in Nebraska, or any national online program, that pays for or provides childcare for founders; Nebraska programs fit around caregiving, if at all, through online or part-time formats.</p>
+<p><strong>How strong:</strong> program terms from its website; the absence in Nebraska is "not found" in our searches.</p>
+</details>
+</section>
+
+<section class="topic" id="rest-evidence" aria-labelledby="rest-evidence-heading">
+<h3 id="rest-evidence-heading">Evidence on the funding gap</h3>
+
+<details class="card" id="rest-evidence-approval">
+<summary>Once women-owned firms apply for a loan, the approval gap is small and changes direction: <strong>49%</strong> against <strong>52%</strong> got the full amount in 2025<sup class="fn" aria-hidden="true">5</sup></summary>
+<p>In the Federal Reserve's national survey of businesses with employees, the share of women-owned firms that got the full amount they applied for was 49% in 2025 (men-owned 52%), 54% in 2024 (men-owned 50%) and 45% in 2022 (men-owned 55%).<sup class="fn"><a href="#fn-5" id="fnref-5-2" aria-label="Source 5">5</a></sup>
+The larger gaps sit earlier: in having employees at all (see <a href="#cited-hiring">Research cited in the pitch</a>) and in applying at all (see the capital cards above).</p>
+<p><strong>How strong:</strong> large national survey, read from the Federal Reserve's own data series; there is no Nebraska breakdown.</p>
+</details>
+
+<details class="card" id="rest-evidence-women-investors">
+<summary>More women writing checks moved money to women founders; persuading men did not<sup class="fn" aria-hidden="true">6</sup></summary>
+<p>After a high-profile 2015 lawsuit, US venture firms hired more women investors, and the share of funded founders who were women rose.
+The rise was "driven entirely by the hiring of female venture capitalists"; male investors did not become more likely to back women.<sup class="fn"><a href="#fn-6" id="fnref-6-2" aria-label="Source 6">6</a></sup>
+On an online investing platform where every investor saw the same profiles, women-led startups did less well with male investors and better with female investors.<sup class="fn"><a href="#fn-35" id="fnref-35-1" aria-label="Source 35">35</a></sup>
+Women were 39% of active US angel investors in 2024, according to the angel market report also used in <a href="#cited-angels">Research cited in the pitch</a>.<sup class="fn"><a href="#fn-3" id="fnref-3-3" aria-label="Source 3">3</a></sup></p>
+<p><strong>How strong:</strong> two US studies, a journal article read through its authors' summary and a working paper read at abstract level; both observational. The 39% is the angel report's own count.</p>
+</details>
+
+<details class="card" id="rest-evidence-questions">
+<summary>Investors ask men about gains and women about risks; startups asked mostly about gains raised <strong>$16.8 million</strong> on average, against <strong>$2.3 million</strong><sup class="fn" aria-hidden="true">36</sup></summary>
+<p>At a major US startup competition (189 startups, 2010 to 2016), investors tended to ask men questions about gains and growth and women questions about risks and losses.
+Startups asked mostly about gains raised $16.8 million on average, against $2.3 million, and each extra question about risks meant $3.8 million less, which fully accounted for gender's effect on funding.
+In a follow-up experiment, founders who answered risk questions by talking about gains raised more.<sup class="fn"><a href="#fn-36" id="fnref-36-1" aria-label="Source 36">36</a></sup></p>
+<p><strong>How strong:</strong> peer-reviewed field study plus experiment, US, high-growth tech startups; checked against the published paper.</p>
+</details>
+
+<details class="card" id="rest-evidence-voice">
+<summary>With identical pitches, <strong>68%</strong> chose to fund the one narrated by a man<sup class="fn" aria-hidden="true">37</sup></summary>
+<p>In an experiment, 356 of 521 participants (68%) chose to fund the pitch voiced by a man when the words were the same.
+In real pitch competitions, male entrepreneurs were 60% more likely to win.<sup class="fn"><a href="#fn-37" id="fnref-37-1" aria-label="Source 37">37</a></sup></p>
+<p><strong>How strong:</strong> peer-reviewed US study from 2014, so dated; checked against the published paper.</p>
+</details>
+
+<details class="card" id="rest-evidence-cold-email">
+<summary>At first contact, investors replied with interest <strong>9%</strong> more often to women<sup class="fn" aria-hidden="true">38</sup></summary>
+<p>In an experiment, 80,000 pitch emails from fictitious founders went to about 28,000 venture investors and angels.
+Only 4% got an interested reply, and emails from women got a 9% higher rate of interested replies than identical emails from men.<sup class="fn"><a href="#fn-38" id="fnref-38-1" aria-label="Source 38">38</a></sup>
+So the barrier does not seem to be the first written contact; the evidence points more to who is in the room and how women are received there.</p>
+<p><strong>How strong:</strong> randomised field experiment, US and international investors, 2018; read in the 2019 working paper.</p>
+</details>
+
+<details class="card" id="rest-evidence-loan-officers">
+<summary>Loan officers asked for a guarantor <strong>26%</strong> more often when the same application came from a woman<sup class="fn" aria-hidden="true">39</sup></summary>
+<p>In an experiment with 334 loan officers at a large Turkish bank, approval rates did not differ, but officers were 26% more likely to require a guarantor when an identical application came from a woman; the gap sat mostly with young, inexperienced officers.<sup class="fn"><a href="#fn-39" id="fnref-39-1" aria-label="Source 39">39</a></sup>
+At an Albanian microlender, first-time borrowers assigned a loan officer of the other sex paid 38 basis points more a year and were 10% less likely to apply for a second loan.<sup class="fn"><a href="#fn-40" id="fnref-40-1" aria-label="Source 40">40</a></sup></p>
+<p><strong>How strong:</strong> one randomised and one quasi-random study, both outside the US; the Turkish result read at abstract level.</p>
+</details>
+</section>
+
+<section class="topic" id="rest-gaps" aria-labelledby="rest-gaps-heading">
+<h3 id="rest-gaps-heading">Gaps in what exists</h3>
+
+<details class="card" id="rest-gaps-front-door">
+<summary>The rural women's business center that covers Lincoln went from <strong>four</strong> staff to <strong>one</strong><sup class="fn" aria-hidden="true">41</sup></summary>
+<p>Lincoln's startup hub is framed around startups and names no women's resource, and Nebraska's two women's business centers are based in Omaha and Grand Island.
+The Center for Rural Affairs center, whose service area includes Lincoln, had four staff in 2020 and one full-time person in 2026, and two more Nebraska centers announced in January 2025, one for child care businesses, were never funded.<sup class="fn"><a href="#fn-41" id="fnref-41-1" aria-label="Source 41">41</a></sup>
+So there is no Lincoln front door for women who own businesses but do not call themselves founders.</p>
+<p><strong>How strong:</strong> the center's own account; the Lincoln picture comes from our review of local program pages.</p>
+</details>
+
+<details class="card" id="rest-gaps-start-not-grow">
+<summary>Women's business centers help people start, not grow: clients' growth and access to capital were <strong>lower</strong> than similar non-clients'<sup class="fn" aria-hidden="true">42</sup></summary>
+<p>The SBA's 2025 evaluation of its women's business centers compared clients with similar businesses that did not use them.
+Clients started more businesses, but "business growth outcomes and access to capital declined on average", and businesses they started employed fewer people.
+Referrals between centers fell from 28% of clients in 2020 to 8% in 2024.<sup class="fn"><a href="#fn-42" id="fnref-42-1" aria-label="Source 42">42</a></sup></p>
+<p><strong>How strong:</strong> federal evaluation with a matched comparison group; the evaluators note gaps in their data.</p>
+</details>
+
+<details class="card" id="rest-gaps-training">
+<summary>Training alone did not move sales or hiring, even though more than <strong>85%</strong> of trainees called it useful<sup class="fn" aria-hidden="true">43</sup></summary>
+<p>In a US trial with 4,197 applicants, free entrepreneurship training raised business ownership at first, but had no effect on sales or on having an employee, and no lasting effect for women.
+More than 85% of trainees said the training was useful.<sup class="fn"><a href="#fn-43" id="fnref-43-1" aria-label="Source 43">43</a></sup>
+Studies of accelerators in mostly developing countries found women-led ventures raised nearly US$100,000 less equity than men-led ones after acceleration<sup class="fn"><a href="#fn-44" id="fnref-44-1" aria-label="Source 44">44</a></sup>, and men-led startups raised 2.6 times as much additional equity after acceleration as women-led ones.<sup class="fn"><a href="#fn-45" id="fnref-45-1" aria-label="Source 45">45</a></sup></p>
+<p><strong>How strong:</strong> one randomised US trial from 2003 to 2005, and one observational and one quasi-experimental study of accelerators outside the US.</p>
+</details>
+
+<details class="card" id="rest-gaps-investor-groups">
+<summary>Women's angel groups need a local base: <strong>two</strong> elsewhere closed for lack of members or investors<sup class="fn" aria-hidden="true">46</sup></summary>
+<p>X-Squared Angels in Columbus, Ohio, disbanded at the end of 2018 "as membership fizzled", and Golden Seeds' Philadelphia chapter shut after 2011 because there were not enough local investors.<sup class="fn"><a href="#fn-46" id="fnref-46-1" aria-label="Source 46">46</a></sup>
+We found no women's angel group, angel training or women-led fund in Nebraska.</p>
+<p><strong>How strong:</strong> news reports from 2013 and 2019; the Nebraska absence is "not found" in our searches.</p>
+</details>
+
+<details class="card" id="rest-gaps-data">
+<summary>Nebraska publishes almost nothing on capital by owner gender: one figure, <strong>41%</strong> of <strong>17</strong> state-backed deals<sup class="fn" aria-hidden="true">47</sup></summary>
+<p>The only published Nebraska figure we found: of 17 state-backed loans and investments under the federal State Small Business Credit Initiative from August 2022 to December 2023, 41% went to women-owned or controlled businesses.<sup class="fn"><a href="#fn-47" id="fnref-47-1" aria-label="Source 47">47</a></sup>
+The Federal Reserve's small business survey has too few Nebraska responses for a state view.<sup class="fn"><a href="#fn-48" id="fnref-48-1" aria-label="Source 48">48</a></sup>
+A new federal rule will collect owner gender on small business loans, but the first full year of data is due in 2029, and farm lending is left out.<sup class="fn"><a href="#fn-49" id="fnref-49-1" aria-label="Source 49">49</a></sup></p>
+<p><strong>How strong:</strong> official reports and the federal rule text.</p>
+</details>
+
+<details class="card" id="rest-gaps-legal">
+<summary>Programs limited by identity face legal challenge: one grant fund for Black women founders <strong>closed</strong> in 2024<sup class="fn" aria-hidden="true">50</sup></summary>
+<p>The Fearless Fund closed its grant contest for Black women business owners after a 2024 court ruling and settlement, and another grant program paid $125,000 in legal fees to settle a similar suit.<sup class="fn"><a href="#fn-50" id="fnref-50-1" aria-label="Source 50">50</a></sup>
+In October 2025 an interim federal rule removed the transportation contracting program's presumption that women-owned firms are disadvantaged; whether a final rule followed was not checked.<sup class="fn"><a href="#fn-51" id="fnref-51-1" aria-label="Source 51">51</a></sup>
+Any program open only to women would need legal review.</p>
+<p><strong>How strong:</strong> news reports and the federal rule text; this is not legal advice.</p>
+</details>
+</section>
+
+<section class="topic" id="rest-size" aria-labelledby="rest-size-heading">
+<h3 id="rest-size-heading">How big each gap is</h3>
+
+<details class="card" id="rest-size-path">
+<summary>Most of the shortfall shows up <strong>before</strong> a woman ever applies for capital</summary>
+<p>No source ranks the barriers against each other, and they are measured in different ways, so this is a sense of scale, not a ranking.
+Read along the path from owner to funded, hiring company: few women-owned firms have employees (see <a href="#cited-hiring">Research cited in the pitch</a>), and most do not apply for credit (see the capital cards above).
+Loan approval shows a small, unstable gap.
+Venture capital shows a very large gap in share, but touches few businesses.</p>
+<p><strong>How strong:</strong> our reading of the research, not a single source.</p>
+</details>
+
+<details class="card" id="rest-size-earnings">
+<summary>Nebraska men in their own incorporated businesses earn about <strong>1.7 times</strong> what women do<sup class="fn" aria-hidden="true">52</sup></summary>
+<p>In 2023, Nebraska men running their own incorporated businesses earned about $61,507, roughly 1.7 times women's $37,136.
+Women were 33% of these business owners.<sup class="fn"><a href="#fn-52" id="fnref-52-1" aria-label="Source 52">52</a></sup></p>
+<p><strong>How strong:</strong> University of Nebraska Omaha analysis; covers people self-employed in incorporated businesses only.</p>
+</details>
+
+<details class="card" id="rest-size-heartland-vc">
+<summary>Women-founded firms in the US heartland got under <strong>0.9%</strong> of US venture capital in 2020<sup class="fn" aria-hidden="true">53</sup></summary>
+<p>Firms with at least one woman founder in 20 heartland states, Nebraska among them, received less than 0.9% of US venture capital in 2020.
+Over five years their average deal was $1.7 million, against $3.0 million for women-founded firms nationally.<sup class="fn"><a href="#fn-53" id="fnref-53-1" aria-label="Source 53">53</a></sup></p>
+<p><strong>How strong:</strong> one analysis of investment data; the 0.9% figure was checked, the deal sizes were not reviewed a second time.</p>
+</details>
+
+<details class="card" id="rest-size-definitions">
+<summary>Headline venture figures depend on the definition: <strong>3%</strong> of dollars to women-only teams, <strong>10%</strong> to mixed teams<sup class="fn" aria-hidden="true">54</sup></summary>
+<p>A 2019 count found 3% of venture dollars went to startups founded only by women and 10% to teams of women and men.<sup class="fn"><a href="#fn-54" id="fnref-54-1" aria-label="Source 54">54</a></sup>
+Figures for "at least one woman founder" always run far higher than for all-women teams, so a figure is only comparable with others that use the same definition.
+Our challenge packet says all-women teams got about 1% of 2025 US venture dollars; we could not open that source to check it.<sup class="fn"><a href="#fn-55" id="fnref-55-1" aria-label="Source 55">55</a></sup></p>
+<p><strong>How strong:</strong> the 2019 figures were read on the publisher's page; the 2025 figure is <span class="status status-caution">Not checked</span>.</p>
+</details>
+</section>
+
+<section class="topic" id="rest-employer" aria-labelledby="rest-employer-heading">
+<h3 id="rest-employer-heading">Why women-owned firms stay without employees: choice or constraint?</h3>
+
+<details class="card" id="rest-employer-capital">
+<summary>Lower start-up capital is the largest measured reason, about <strong>32%</strong> of the explained gap in having employees<sup class="fn" aria-hidden="true">56</sup></summary>
+<p>In the one large US breakdown we found, measured differences explained about 55% of the gap between women- and men-owned firms in having employees.
+Lower start-up capital was the largest single piece (32%), prior work in a similar business added about 7%, and the choice of industry only about 4%.<sup class="fn"><a href="#fn-56" id="fnref-56-1" aria-label="Source 56">56</a></sup>
+The authors cannot say whether lower start-up capital reflects borrowing limits or different plans for the business.</p>
+<p><strong>How strong:</strong> observational, and based on 1992 Census data, so dated.</p>
+</details>
+
+<details class="card" id="rest-employer-start-small">
+<summary>Women start with less: <strong>37%</strong> of women-owned firms began with under $5,000, against <strong>30%</strong> of men-owned<sup class="fn" aria-hidden="true">57</sup></summary>
+<p>In 2012, 37% of women-owned firms started with under $5,000 against 30% of men-owned, and 3% started with $100,000 or more against 8%.
+Women owners also worked fewer hours in the business: 40% worked under 20 hours a week, against 32% of men.<sup class="fn"><a href="#fn-57" id="fnref-57-1" aria-label="Source 57">57</a></sup>
+Fewer hours do not explain it all: in older data, women's firms were less likely to reach $100,000 in sales at every level of hours.<sup class="fn"><a href="#fn-56" id="fnref-56-2" aria-label="Source 56">56</a></sup></p>
+<p><strong>How strong:</strong> official Census survey; fewer hours can reflect both preference and caregiving.</p>
+</details>
+
+<details class="card" id="rest-employer-survival">
+<summary>Women-owned firms survive as often, but start with <strong>34%</strong> lower revenue and stay smaller<sup class="fn" aria-hidden="true">58</sup></summary>
+<p>In bank data on 138,000 firms founded in 2013, women-owned firms were no more likely to close once other traits were held equal, but started with 34% lower revenue and stayed smaller.<sup class="fn"><a href="#fn-58" id="fnref-58-1" aria-label="Source 58">58</a></sup></p>
+<p><strong>How strong:</strong> observational, from one bank's customers.</p>
+</details>
+
+<details class="card" id="rest-employer-motives">
+<summary>Motives differ, but modestly: <strong>60%</strong> of women employer-owners call work-family balance very important, against <strong>54%</strong> of men<sup class="fn" aria-hidden="true">59</sup></summary>
+<p>Among US owners of firms with employees in 2023, women more often called balancing work and family (60% against 54%) and flexible hours (57% against 50%) very important reasons for owning a business, and less often greater income (57% against 65%) or being their own boss (54% against 65%).<sup class="fn"><a href="#fn-59" id="fnref-59-1" aria-label="Source 59">59</a></sup></p>
+<p><strong>How strong:</strong> official national survey of owners who already have employees.</p>
+</details>
+
+<details class="card" id="rest-employer-no-split">
+<summary>No study found splits the gap into "chose not to grow" and "was held back"; women-owned startups were about <strong>9 points</strong> less likely to make a first hire<sup class="fn" aria-hidden="true">60</sup></summary>
+<p>We searched for a study that separates choice from constraint and found none.
+The one study of the step from no employees to a first employee (US startups of 2004) found women-owned startups about 9 percentage points less likely to hire within a year or two, with owner traits held equal; it does not measure motives.<sup class="fn"><a href="#fn-60" id="fnref-60-1" aria-label="Source 60">60</a></sup>
+The measured drivers cut both ways: less start-up capital can mean smaller plans or less access, and fewer hours can mean preference or caregiving.</p>
+<p><strong>How strong:</strong> "searched, nothing found" for a direct split, limited to the searches we ran; the first-hire study is observational.</p>
+</details>
+</section>
+
+<section class="topic" id="rest-local" aria-labelledby="rest-local-heading">
+<h3 id="rest-local-heading">Lincoln and Nebraska in numbers</h3>
+
+<details class="card" id="rest-local-lincoln">
+<summary>The Lincoln area has about <strong>12,600</strong> women-owned businesses; <strong>13%</strong> have employees, against <strong>23%</strong> of men-owned<sup class="fn" aria-hidden="true">2</sup></summary>
+<p>In 2023 the Lincoln metro area had about 12,600 women-owned businesses: about 1,600 with employees and about 11,000 without.
+13% of them had employees, against 23% of men-owned businesses, the same pattern as across Nebraska (11% against 22%).
+Lancaster County alone gives 13% against 23%.<sup class="fn"><a href="#fn-2" id="fnref-2-2" aria-label="Source 2">2</a></sup>
+So the hiring gap in our pitch is not only a rural Nebraska effect.</p>
+<p><strong>How strong:</strong> Census counts; the counts of businesses with employees are survey estimates with about 10% sampling error for Lincoln.</p>
+</details>
+
+<details class="card" id="rest-local-employers">
+<summary>Women-owned firms are <strong>21%</strong> of Lincoln-area employers and employ about <strong>11,200</strong> people<sup class="fn" aria-hidden="true">61</sup></summary>
+<p>Of about 7,600 Lincoln-area businesses with employees in 2023, women-owned firms were 21%.
+They employed about 11,200 people, against about 52,900 at men-owned firms.<sup class="fn"><a href="#fn-61" id="fnref-61-1" aria-label="Source 61">61</a></sup></p>
+<p><strong>How strong:</strong> Census survey estimates.</p>
+</details>
+
+<details class="card" id="rest-local-start-rate">
+<summary>Nebraskans start businesses at about three quarters of the US rate: <strong>0.27%</strong> of adults a month, against <strong>0.36%</strong><sup class="fn" aria-hidden="true">62</sup></summary>
+<p>In 2025, 0.27% of Nebraska adults started a business each month, against 0.36% nationally, ranking Nebraska 35th; Nebraska has been below the US rate in every year since 2019.
+Firms that do start survive well: 79% survive their first year, 14th among states.<sup class="fn"><a href="#fn-62" id="fnref-62-1" aria-label="Source 62">62</a></sup>
+No state figures are published by gender because state samples are too small.</p>
+<p><strong>How strong:</strong> national indicators built from federal survey and administrative data; rechecked against the data files.</p>
+</details>
+
+<details class="card" id="rest-local-applications">
+<summary>New business applications in Lancaster County hit <strong>3,992</strong> in 2025, the most since at least 2005<sup class="fn" aria-hidden="true">63</sup></summary>
+<p>Business applications in Lancaster County rose from 2,435 in 2019 to 3,992 in 2025, the highest in the 2005 to 2025 series, about 12 per 1,000 residents.
+Part of the rise reflects a 53-week year in 2025; on a 52-week basis the rise is about 61%.<sup class="fn"><a href="#fn-63" id="fnref-63-1" aria-label="Source 63">63</a></sup>
+These counts are not split by the owner's sex.</p>
+<p><strong>How strong:</strong> Census administrative counts with privacy noise added; per-resident figure and the 52-week adjustment are our arithmetic.</p>
+</details>
+
+<details class="card" id="rest-local-co-owned">
+<summary>Nebraska ranked <strong>45th</strong> on businesses owned by women, but <strong>3rd</strong> on businesses owned equally by women and men<sup class="fn" aria-hidden="true">64</sup></summary>
+<p>Among businesses with employees in 2018, 16% in Nebraska were owned by women (45th of 51) and 20% were owned equally by a woman and a man (3rd).<sup class="fn"><a href="#fn-64" id="fnref-64-1" aria-label="Source 64">64</a></sup>
+Many Nebraska women may run businesses as co-owners, which counts of women-owned firms leave out.</p>
+<p><strong>How strong:</strong> Nebraska Department of Labor summary of Census survey data; covers businesses with employees only; the co-ownership reading is ours.</p>
+</details>
+</section>
+
+<section class="topic" id="rest-founders" aria-labelledby="rest-founders-heading">
+<h3 id="rest-founders-heading">Who becomes a founder</h3>
+
+<details class="card" id="rest-founders-pipeline">
+<summary>The gender gap is small at "I intend to start" and widens after: <strong>12%</strong> of US women were starting a business in 2025, against <strong>15%</strong> of men<sup class="fn" aria-hidden="true">65</sup></summary>
+<p>In the US in 2025, 13% of women and 14% of men intended to start a business; 12% and 15% were in the process of starting one; and 6% and 8% owned a new business.<sup class="fn"><a href="#fn-65" id="fnref-65-1" aria-label="Source 65">65</a></sup>
+Each month, 0.28% of women and 0.44% of men who did not own a business started one.<sup class="fn"><a href="#fn-66" id="fnref-66-1" aria-label="Source 66">66</a></sup>
+So women are lost between intending and running a business, not only before intending.</p>
+<p><strong>How strong:</strong> two large national surveys; neither gives figures for Nebraska by gender.</p>
+</details>
+
+<details class="card" id="rest-founders-peers">
+<summary>Women are influenced by women: peer groups explain about <strong>half</strong> of the early-career gender gap in starting businesses<sup class="fn" aria-hidden="true">67</sup></summary>
+<p>Following about 213,000 school graduates in Norway, 11% of men and 6% of women did some entrepreneurship in their first five years.
+Men were more influenced by men and women by women, and differences in peer groups explained 53% of the gap.<sup class="fn"><a href="#fn-67" id="fnref-67-1" aria-label="Source 67">67</a></sup>
+In Sweden, having an entrepreneur parent raised the chance of becoming one by about 60%, and mothers passed it to daughters more strongly than fathers did.<sup class="fn"><a href="#fn-68" id="fnref-68-1" aria-label="Source 68">68</a></sup></p>
+<p><strong>How strong:</strong> large observational studies outside the US.</p>
+</details>
+
+<details class="card" id="rest-founders-intention">
+<summary>Saying you plan to start is a leaky signal: <strong>63%</strong> of those who did had taken no step a year later<sup class="fn" aria-hidden="true">69</sup></summary>
+<p>In a panel of adults in Austria and Finland, 63% of the 371 people who said they intended to start a business had taken no action a year later.<sup class="fn"><a href="#fn-69" id="fnref-69-1" aria-label="Source 69">69</a></sup></p>
+<p><strong>How strong:</strong> observational panel outside the US.</p>
+</details>
+</section>
+
+<section class="topic" id="rest-beliefs" aria-labelledby="rest-beliefs-heading">
+<h3 id="rest-beliefs-heading">Common beliefs, checked against the evidence</h3>
+
+<details class="card" id="rest-beliefs-risk">
+<summary>"Women are more risk-averse": in <strong>54</strong> repeats of one standard risk test, gender differences were tiny once the data were pooled<sup class="fn" aria-hidden="true">70</sup></summary>
+<p>A review of 54 repeats of one laboratory risk test, with about 7,000 people, found gender differences in fewer than 10% of studies, and "negligible in magnitude once all the data are pooled".<sup class="fn"><a href="#fn-70" id="fnref-70-1" aria-label="Source 70">70</a></sup>
+A re-analysis of 35 studies found men's and women's risk-taking overlapping by more than 80%.<sup class="fn"><a href="#fn-71" id="fnref-71-1" aria-label="Source 71">71</a></sup>
+This is a contested literature: other widely cited reviews report women choosing less risk on average, and we did not read them, so we call the belief overstated rather than wrong.</p>
+<p><strong>How strong:</strong> both reviews read at abstract level; mostly lab experiments with students, not founders.</p>
+</details>
+
+<details class="card" id="rest-beliefs-fear">
+<summary>Fear of failure does differ somewhat: <strong>53%</strong> of US women and <strong>46%</strong> of men said it held them back in 2024<sup class="fn" aria-hidden="true">72</sup></summary>
+<p>In the Global Entrepreneurship Monitor's 2024 survey, 53% of US women and 46% of men said fear of failure held them back from starting a business (asked of adults who see good opportunities to start one).<sup class="fn"><a href="#fn-72" id="fnref-72-1" aria-label="Source 72">72</a></sup>
+GEM's newest women's report finds the gap much smaller among high-potential founders and concludes that "confidence is not the biggest constraint", pointing instead to finance, networks and support.<sup class="fn"><a href="#fn-65" id="fnref-65-2" aria-label="Source 65">65</a></sup>
+GEM's own reports do not fully agree on the US rate, for reasons we could not establish.</p>
+<p><strong>How strong:</strong> large self-reported survey; the figures do not all line up, so read them as a direction, not a precise size.</p>
+</details>
+
+<details class="card" id="rest-beliefs-asking">
+<summary>"Women don't ask": women-led firms do apply for bank credit less often, often because they <strong>expect</strong> to be turned down<sup class="fn" aria-hidden="true">73</sup></summary>
+<p>In about 6,000 small firms in 17 countries, women owners were more often discouraged from applying for bank credit where gender bias was higher, while rejection rates and loan terms did not differ.<sup class="fn"><a href="#fn-73" id="fnref-73-1" aria-label="Source 73">73</a></sup>
+In Europe, women-led firms more often held back from applying, as discouraged borrowers and because more relied on their own funds.<sup class="fn"><a href="#fn-74" id="fnref-74-1" aria-label="Source 74">74</a></sup>
+A US study of new founders found being female lowered the chance of asking for financing.<sup class="fn"><a href="#fn-75" id="fnref-75-1" aria-label="Source 75">75</a></sup>
+The often-quoted claim that women apply for jobs only when 100% qualified and men at 60% has no published source behind it.<sup class="fn"><a href="#fn-76" id="fnref-76-1" aria-label="Source 76">76</a></sup></p>
+<p><strong>How strong:</strong> observational studies; the US study read at abstract level only.
+When women do reach investors, they do at least as well; see the cold-email card above and <a href="#cited-angels">Research cited in the pitch</a>.</p>
+</details>
+</section>
+
+<section class="topic" id="rest-ai" aria-labelledby="rest-ai-heading">
+<h3 id="rest-ai-heading">Women and AI tools</h3>
+
+<details class="card" id="rest-ai-gap">
+<summary>Women used generative AI less than men in 17 of 18 surveys; pooled, they had about <strong>20%</strong> lower odds of using it<sup class="fn" aria-hidden="true">77</sup></summary>
+<p>A review of surveys from 2023 and 2024 found women used generative AI less than men in every survey but one; pooling the 12 with enough data, women had about 20% lower odds of using it.<sup class="fn"><a href="#fn-77" id="fnref-77-1" aria-label="Source 77">77</a></sup>
+The reasons most often measured are lower familiarity and lower confidence; even when everyone in a Kenyan study was offered the same chance to learn ChatGPT, women were about 13% less likely to want to.<sup class="fn"><a href="#fn-77" id="fnref-77-2" aria-label="Source 77">77</a></sup></p>
+<p><strong>How strong:</strong> a review of published surveys, not a quality-rated systematic review.</p>
+</details>
+
+<details class="card" id="rest-ai-owners">
+<summary>Among small-business owners the gap is smaller: <strong>17%</strong> of women-owned and <strong>20%</strong> of men-owned firms paid for an AI service by the end of 2025<sup class="fn" aria-hidden="true">78</sup></summary>
+<p>In Chase business-banking data, 17% of women-owned and 20% of men-owned small businesses had paid for at least one AI service by the end of 2025.
+The gap was widest among the youngest owners (14% against 20%) and almost nil among the oldest.<sup class="fn"><a href="#fn-78" id="fnref-78-1" aria-label="Source 78">78</a></sup></p>
+<p><strong>How strong:</strong> observational transaction data from one bank's customers.</p>
+</details>
+
+<details class="card" id="rest-ai-pew">
+<summary>US women have nearly caught up on ever using AI chatbots (<strong>47%</strong> against <strong>50%</strong>), but use them less often<sup class="fn" aria-hidden="true">79</sup></summary>
+<p>In February 2026, 47% of US women and 50% of men said they ever use AI chatbots; 20% of women and 27% of men used them daily, and 35% and 40% of employed adults used them for work tasks.<sup class="fn"><a href="#fn-79" id="fnref-79-1" aria-label="Source 79">79</a></sup></p>
+<p><strong>How strong:</strong> large national probability survey; the earlier year's question was worded differently, so change over time is approximate.</p>
+</details>
+
+<details class="card" id="rest-ai-mentor">
+<summary>An AI business mentor may have helped strong businesses by over <strong>15%</strong>, and set weaker ones back by nearly <strong>10%</strong><sup class="fn" aria-hidden="true">80</sup></summary>
+<p>In a trial with 640 Kenyan entrepreneurs, some were given an AI business mentor on WhatsApp.
+On average it did not improve their results; high performers may have gained over 15%, while low performers did "nearly 10% worse", which the authors put down to which advice owners acted on.<sup class="fn"><a href="#fn-80" id="fnref-80-1" aria-label="Source 80">80</a></sup>
+None of the AI next-step tools for founders that we reviewed publishes evidence on whether users got funded, grew, or met the person they were sent to.</p>
+<p><strong>How strong:</strong> randomised trial outside the US; earlier versions of the paper give different figures.</p>
+</details>
+</section>
+
+<section class="topic" id="rest-community" aria-labelledby="rest-community-heading">
+<h3 id="rest-community-heading">Do women owners reinvest in their communities?</h3>
+
+<details class="card" id="rest-community-jobs">
+<summary>In the Great Recession, women-owned US firms cut jobs up to <strong>29%</strong> less than men-owned firms<sup class="fn" aria-hidden="true">81</sup></summary>
+<p>Privately held US firms owned by women were less likely to downsize; year-to-year job cuts were as much as 29% smaller, even after allowing for industry, size and profitability.<sup class="fn"><a href="#fn-81" id="fnref-81-1" aria-label="Source 81">81</a></sup></p>
+<p><strong>How strong:</strong> observational with controls, 2005 to 2009 data; about keeping jobs in a downturn, not hiring locally.</p>
+</details>
+
+<details class="card" id="rest-community-women-workers">
+<summary>Women-owned firms employ far more women: <strong>48%</strong> of their full-time workers, against <strong>28%</strong> in men-owned firms<sup class="fn" aria-hidden="true">82</sup></summary>
+<p>Across firms with five or more workers in 168 economies, 48% of full-time workers in women-owned firms were women, against 28% in men-owned firms.
+Women-owned firms were smaller, though, adding fewer jobs per firm.<sup class="fn"><a href="#fn-82" id="fnref-82-1" aria-label="Source 82">82</a></sup></p>
+<p><strong>How strong:</strong> descriptive World Bank survey data, not US-specific and not adjusted for other differences.</p>
+</details>
+
+<details class="card" id="rest-community-bcorp">
+<summary>Woman-owned businesses were <strong>more than three times</strong> as likely to certify as B Corps<sup class="fn" aria-hidden="true">83</sup></summary>
+<p>Among 1,251 US firms in B Lab's records, woman-owned businesses were twice as likely to qualify for B Corp certification, which scores social and environmental performance, and more than three times as likely to certify.<sup class="fn"><a href="#fn-83" id="fnref-83-1" aria-label="Source 83">83</a></sup></p>
+<p><strong>How strong:</strong> read at abstract level; compares firms already known to B Lab, not all US firms.</p>
+</details>
+
+<details class="card" id="rest-community-90">
+<summary>The popular claim that women reinvest <strong>90%</strong> of their income in their families has no traceable study behind it<sup class="fn" aria-hidden="true">84</sup></summary>
+<p>The most specific citation we found points to a US government web page that no longer resolves; no primary study was found, and the claim is about household income, not business owners.<sup class="fn"><a href="#fn-84" id="fnref-84-1" aria-label="Source 84">84</a></sup>
+Surveys of owners also find women and men give money and time to charity at similar levels, and we found no study measuring whether women owners hire, buy or bank more locally.</p>
+<p><strong>How strong:</strong> no study behind the 90% figure was found, so it should not be relied on.</p>
+</details>
+</section>
+</section>
+
+<p class="note to-top"><a href="#jsr-top">Back to top</a></p>
+<section id="sources" class="page-section" aria-labelledby="sources-heading">
+<h2 id="sources-heading">Sources</h2>
+<p class="section-intro">Numbered in the order they first appear on this page. The arrow after each source returns to where it is first used.</p>
+<ol class="footnotes">
+<li id="fn-1">U.S. Small Business Administration, Office of Advocacy (2025). <cite>2025 Small Business Profile: Nebraska</cite>. <a href="https://advocacy.sba.gov/wp-content/uploads/2025/06/Nebraska_2025-State-Profile.pdf">https://advocacy.sba.gov/wp-content/uploads/2025/06/Nebraska_2025-State-Profile.pdf</a> <a href="#fnref-1-1" class="fn-back" aria-label="Back to the first mention of source 1">&#8617;</a></li>
+<li id="fn-2">U.S. Census Bureau. <cite>Nonemployer Statistics by Demographics</cite>, 2023 data, table AB2300NESD01 (Lincoln, NE Metro Area; Lancaster County; Nebraska). <a href="https://www2.census.gov/programs-surveys/abs/data/2023/AB2300NESD01.zip">https://www2.census.gov/programs-surveys/abs/data/2023/AB2300NESD01.zip</a> <a href="#fnref-2-1" class="fn-back" aria-label="Back to the first mention of source 2">&#8617;</a></li>
+<li id="fn-3">Sohl, Jeffrey (2024). <cite>The Angel Market in 2024: A Stable Market Before the AI Frenzy</cite>. Center for Venture Research, University of New Hampshire. <a href="https://paulcollege.unh.edu/sites/default/files/media/2025-12/FY%202024%20Analysis%20Report%20Final.pdf">https://paulcollege.unh.edu/sites/default/files/media/2025-12/FY%202024%20Analysis%20Report%20Final.pdf</a> <a href="#fnref-3-1" class="fn-back" aria-label="Back to the first mention of source 3">&#8617;</a></li>
+<li id="fn-4">U.S. Census Bureau (2026). <cite>Access to Capital</cite> (Annual Business Survey 2025, women-owned employer firms, data year 2024, preliminary). <a href="https://www.census.gov/content/dam/Census/library/visualizations/2026/comm/access-to-capital.pdf">https://www.census.gov/content/dam/Census/library/visualizations/2026/comm/access-to-capital.pdf</a> <a href="#fnref-4-1" class="fn-back" aria-label="Back to the first mention of source 4">&#8617;</a></li>
+<li id="fn-5">Federal Reserve Small Business Credit Survey, share of applicants approved for the full amount, women-owned and men-owned employer firms, via FRED: <a href="https://fred.stlouisfed.org/series/SBCSS3B4V3FRB">women-owned series</a>; <a href="https://fred.stlouisfed.org/series/SBCSS3B4V1FRB">men-owned series</a> <a href="#fnref-5-1" class="fn-back" aria-label="Back to the first mention of source 5">&#8617;</a></li>
+<li id="fn-6">Calder-Wang, Gompers and Sweeney (2021). <cite>Venture Capital's "Me Too" Moment</cite>. NBER Working Paper 28679. <a href="https://ideas.repec.org/p/nbr/nberwo/28679.html">https://ideas.repec.org/p/nbr/nberwo/28679.html</a> <a href="#fnref-6-1" class="fn-back" aria-label="Back to the first mention of source 6">&#8617;</a></li>
+<li id="fn-7">HerPath team (2026). Lincoln pilot survey of founders and supporters: multiple-choice answers. 48 responses, collected 13 to 16 November 2026. Unpublished survey data; no public link. <a href="#fnref-7-1" class="fn-back" aria-label="Back to the first mention of source 7">&#8617;</a></li>
+<li id="fn-8">U.S. Census Bureau. <cite>Nonemployer Statistics by Demographics</cite>, 2023 data, table AB2300NESD01 (Nebraska, all sectors, by owner's sex). <a href="https://www2.census.gov/programs-surveys/abs/data/2023/AB2300NESD01.zip">https://www2.census.gov/programs-surveys/abs/data/2023/AB2300NESD01.zip</a> Same table as source 2, Nebraska rows. <a href="#cited-hiring" class="fn-back" aria-label="Back to the first mention of source 8">&#8617;</a></li>
+<li id="fn-9">Lall, Saurabh A., Li-Wei Chen and Dyana P. Mason (2022). <cite>Digital platforms and entrepreneurial support: a field experiment in online mentoring</cite>. Small Business Economics. <a href="https://link.springer.com/article/10.1007/s11187-022-00704-8">https://link.springer.com/article/10.1007/s11187-022-00704-8</a> <a href="#cited-mentoring-trial" class="fn-back" aria-label="Back to the first mention of source 9">&#8617;</a></li>
+<li id="fn-10">HerPath team (2026). Lincoln pilot survey of founders and supporters: written answers, grouped into themes with an AI assistant (Claude Code, using Anthropic's Claude Opus 5.5 model), one coder per answer, then coded again independently by a second coder with the same model; counts use the second coding. 48 responses, collected 13 to 16 November 2026. Unpublished survey data; no public link. <a href="#survey-f1" class="fn-back" aria-label="Back to the first mention of source 10">&#8617;</a></li>
+<li id="fn-11">HerPath team (2026). Lincoln pilot survey of founders and supporters: written answers, quoted exactly. Unpublished survey data; no public link. <a href="#fnref-11-1" class="fn-back" aria-label="Back to the first mention of source 11">&#8617;</a></li>
+<li id="fn-12">Lenders' own web pages, read November 2026: Kiva, <a href="https://www.kiva.org/borrow">https://www.kiva.org/borrow</a>; Community Development Resources, <cite>SBA Micro Loans</cite>, <a href="https://cdr-nebraska.org/what-we-do/sba-micro-loans.html">https://cdr-nebraska.org/what-we-do/sba-micro-loans.html</a>; Nebraska Enterprise Fund, <a href="https://www.nebraskaenterprisefund.org">https://www.nebraskaenterprisefund.org</a>; Center for Rural Affairs, <cite>Small business loans</cite>, <a href="https://www.cfra.org/small-business-loans">https://www.cfra.org/small-business-loans</a>; NEDCO, SBA 504 loans, <a href="https://nedcoloans.org/">https://nedcoloans.org/</a>. <a href="#rest-capital-ladder" class="fn-back" aria-label="Back to the first mention of source 12">&#8617;</a></li>
+<li id="fn-13">AeQuitas Invest (AQi), home page and <cite>Mission</cite> page, read 2026-11-10. <a href="https://www.aequitasinvest.com/">home page</a>; <a href="https://www.aequitasinvest.com/mission">Mission page</a> <a href="#rest-capital-women-specific" class="fn-back" aria-label="Back to the first mention of source 13">&#8617;</a></li>
+<li id="fn-14">European Bank for Reconstruction and Development (2023). <cite>Blended finance and women entrepreneurs: evidence from Türkiye</cite>. Impact Brief 09. <a href="https://www.ebrd.com/content/dam/ebrd_dxp/assets/pdfs/office-of-the-chief-economist/impact-briefs/blended-finance-and-women-entrepreneurs-evidence-from-t%C3%BCrkiye/Blended-finance-and-women-entrepreneurs-Evidence-from-T%C3%BCrkiye.pdf">https://www.ebrd.com/content/dam/ebrd_dxp/assets/pdfs/office-of-the-chief-economist/impact-briefs/blended-finance-and-women-entrepreneurs-evidence-from-t%C3%BCrkiye/Blended-finance-and-women-entrepreneurs-Evidence-from-T%C3%BCrkiye.pdf</a> <a href="#rest-capital-risk-sharing" class="fn-back" aria-label="Back to the first mention of source 14">&#8617;</a></li>
+<li id="fn-15">Field, Pande, Papp and Rigol (2013). American Economic Review 103(6). Summary page: <a href="https://www.hks.harvard.edu/publications/does-classic-microfinance-model-discourage-entrepreneurship-among-poor-experimental">https://www.hks.harvard.edu/publications/does-classic-microfinance-model-discourage-entrepreneurship-among-poor-experimental</a> <a href="#rest-capital-loan-design" class="fn-back" aria-label="Back to the first mention of source 15">&#8617;</a></li>
+<li id="fn-16">Alibhai, Cassidy, Goldstein and Papineni (2022). <cite>Evening the Credit Score? Impact of Psychometric Loan Appraisal for Women Entrepreneurs</cite>. World Bank. <a href="https://openknowledge.worldbank.org/entities/publication/d30b9cbb-c23a-47d5-bc58-9d6c21da3a6e">https://openknowledge.worldbank.org/entities/publication/d30b9cbb-c23a-47d5-bc58-9d6c21da3a6e</a> <a href="#rest-capital-loan-design" class="fn-back" aria-label="Back to the first mention of source 16">&#8617;</a></li>
+<li id="fn-17">Brooks, W., Donovan, K. and Johnson, T. R. (2018). <cite>Mentors or Teachers? Microenterprise Training in Kenya</cite>. American Economic Journal: Applied Economics 10(4): 196-221. <a href="https://www.aeaweb.org/articles?id=10.1257/app.20170042">journal page</a>; working paper version (2017): <a href="https://conference.nber.org/conf_papers/f98363/f98363.pdf">PDF</a> <a href="#rest-networks-kenya" class="fn-back" aria-label="Back to the first mention of source 17">&#8617;</a></li>
+<li id="fn-18">Germann, F., Anderson, S. J., Chintagunta, P. K. and Vilcassim, N. J. (2024). <cite>Frontiers: breaking the glass ceiling: empowering female entrepreneurs through female mentors</cite>. Marketing Science 43(2): 244-253. <a href="https://researchonline.lse.ac.uk/id/eprint/120477/3/germann-et-al-2023-frontiers-breaking-the-glass-ceiling-empowering-female-entrepreneurs-through-female-mentors.pdf">https://researchonline.lse.ac.uk/id/eprint/120477/3/germann-et-al-2023-frontiers-breaking-the-glass-ceiling-empowering-female-entrepreneurs-through-female-mentors.pdf</a> <a href="#rest-networks-mentor-gender" class="fn-back" aria-label="Back to the first mention of source 18">&#8617;</a></li>
+<li id="fn-19">Re:BUiLD, International Rescue Committee (2025). Wave 1 RCT research brief (draft), with sections on Nairobi, Kenya (November 2024) and Kampala, Uganda (January 2025). <a href="https://rebuild.rescue.org/sites/default/files/2025-05/Wave%201%20RCT%20Draft%20-%20Research%20Brief.pdf">https://rebuild.rescue.org/sites/default/files/2025-05/Wave%201%20RCT%20Draft%20-%20Research%20Brief.pdf</a> <a href="#rest-networks-mentor-gender" class="fn-back" aria-label="Back to the first mention of source 19">&#8617;</a></li>
+<li id="fn-20">DevLearn (2020). <cite>Evaluation of MicroMentor</cite>. Report for Porticus. <a href="https://www.porticus.com/media/k1umec2g/devlearn-micromentor-evaluation.pdf">https://www.porticus.com/media/k1umec2g/devlearn-micromentor-evaluation.pdf</a> <a href="#rest-networks-getting-matched" class="fn-back" aria-label="Back to the first mention of source 20">&#8617;</a></li>
+<li id="fn-21">BMG Research and Galli, L. for the Department for Business, Innovation and Skills (2013). <cite>Demand for mentoring among SMEs</cite>. BIS Research Paper 158. <a href="https://assets.publishing.service.gov.uk/media/5a74c19c40f0b61df47783d4/demand_for_mentoring_among_SMEs.pdf">https://assets.publishing.service.gov.uk/media/5a74c19c40f0b61df47783d4/demand_for_mentoring_among_SMEs.pdf</a> <a href="#rest-networks-getting-matched" class="fn-back" aria-label="Back to the first mention of source 21">&#8617;</a></li>
+<li id="fn-22">Iacovone, L., Maloney, W. and McKenzie, D. (2022). <cite>Improving management with individual and group-based consulting: results from a randomized experiment in Colombia</cite>. Review of Economic Studies 89(1): 346-371. <a href="https://econpapers.repec.org/RePEc:oup:restud:v:89:y:2022:i:1:p:346-371">https://econpapers.repec.org/RePEc:oup:restud:v:89:y:2022:i:1:p:346-371</a> <a href="#rest-networks-groups" class="fn-back" aria-label="Back to the first mention of source 22">&#8617;</a></li>
+<li id="fn-23">Cai, J. and Szeidl, A. (2018). <cite>Interfirm relationships and business performance</cite>. Quarterly Journal of Economics 133(3): 1229-1282. <a href="https://econpapers.repec.org/RePEc:oup:qjecon:v:133:y:2018:i:3:p:1229-1282">https://econpapers.repec.org/RePEc:oup:qjecon:v:133:y:2018:i:3:p:1229-1282</a> <a href="#rest-networks-groups" class="fn-back" aria-label="Back to the first mention of source 23">&#8617;</a></li>
+<li id="fn-24">SCORE Support Center (2026). <cite>Mentoring Definition, Standards and Expectations</cite>; <cite>Technology Updates to Support One SCORE Mentoring Standards</cite>. <a href="https://supportcenter.score.org/kb/article/150-mentoring-definition-standards-and-expectations/">article 150</a>; <a href="https://supportcenter.score.org/kb/article/88-technology-updates-to-support-one-score-mentoring-standards">article 88</a> <a href="#rest-networks-sparing-mentors" class="fn-back" aria-label="Back to the first mention of source 24">&#8617;</a></li>
+<li id="fn-25">Mason, D. P., Chen, L.-W. and Lall, S. A. (2022). <cite>Can institutional support improve volunteer quality? An analysis of online volunteer mentors</cite>. Voluntas 33(3): 641-655. <a href="https://eprints.gla.ac.uk/274508/1/274508.pdf">https://eprints.gla.ac.uk/274508/1/274508.pdf</a> <a href="#rest-networks-sparing-mentors" class="fn-back" aria-label="Back to the first mention of source 25">&#8617;</a></li>
+<li id="fn-26">SCORE (2025). <cite>2024 SCORE State Impact Sheet NE</cite>. Listed on SCORE's page <a href="https://supportcenter.score.org/kb/article/372-client-impact-report-handouts/">Client Impact Report Handouts</a>; file: <a href="https://drive.google.com/uc?export=download&amp;id=1yCODvlkUaScFUfQCH9VJBII_6XnMCVlk">https://drive.google.com/uc?export=download&amp;id=1yCODvlkUaScFUfQCH9VJBII_6XnMCVlk</a> <a href="#rest-networks-lincoln" class="fn-back" aria-label="Back to the first mention of source 26">&#8617;</a></li>
+<li id="fn-27">University of Nebraska-Lincoln College of Business (2025). <cite>University of Nebraska-Lincoln ranked No. 35 worldwide in entrepreneurship</cite>, 12 November 2025. <a href="https://business.unl.edu/entrepreneurship/news/university-nebraska-lincoln-ranked-no-35-worldwide-entrepreneurship/">https://business.unl.edu/entrepreneurship/news/university-nebraska-lincoln-ranked-no-35-worldwide-entrepreneurship/</a> <a href="#rest-networks-lincoln" class="fn-back" aria-label="Back to the first mention of source 27">&#8617;</a></li>
+<li id="fn-28">NMotion powered by gener8tor (2026). Blog post announcing the Fall 2026 cohort, 3 August 2026. <a href="https://nmotion.co/blog/2026/8/3/nmotion-powered-by-gener8tor-welcomes-six-great-plains-startups">https://nmotion.co/blog/2026/8/3/nmotion-powered-by-gener8tor-welcomes-six-great-plains-startups</a> <a href="#rest-networks-lincoln" class="fn-back" aria-label="Back to the first mention of source 28">&#8617;</a></li>
+<li id="fn-29">Babson College (2018). Goldman Sachs 10,000 Small Businesses impact report 2018 (hosted by LaGuardia Community College). <a href="https://www.laguardia.edu/wp-content/uploads/2023/04/10ksb-impact-report-2018.pdf">https://www.laguardia.edu/wp-content/uploads/2023/04/10ksb-impact-report-2018.pdf</a> <a href="#rest-models-10ksb" class="fn-back" aria-label="Back to the first mention of source 29">&#8617;</a></li>
+<li id="fn-30">UK Department for Business and Trade with Code Partners (2026). <cite>Investing in Women Code</cite>, sixth annual report. <a href="https://assets.publishing.service.gov.uk/media/6a47b449045e1108aaa5eb37/iwc-annual-report-2026.pdf">https://assets.publishing.service.gov.uk/media/6a47b449045e1108aaa5eb37/iwc-annual-report-2026.pdf</a> <a href="#rest-models-uk-code" class="fn-back" aria-label="Back to the first mention of source 30">&#8617;</a></li>
+<li id="fn-31">WisBusiness (2022). <cite>WWBIC research shows every dollar WWBIC invests results in $22 in economic activity</cite>. <a href="https://www.wisbusiness.com/2022/wwbic-research-shows-every-dollar-wwbic-invests-results-in-22-in-economic-activity/">article</a>; WWBIC, <cite>2026 Impact Summary of 2025</cite>: <a href="https://www.wwbic.com/wp-content/uploads/2026/06/2026-Impact-Summary-of-2025.pdf">PDF</a> <a href="#rest-models-wwbic" class="fn-back" aria-label="Back to the first mention of source 31">&#8617;</a></li>
+<li id="fn-32">Innovation, Science and Economic Development Canada (2025). <cite>Summary: evaluation of the Women Entrepreneurship Strategy RDA-delivered programming</cite>. <a href="https://ised-isde.canada.ca/site/audits-evaluations/en/evaluation/summary-evaluation-women-entrepreneurship-strategy-rda-delivered-programming">https://ised-isde.canada.ca/site/audits-evaluations/en/evaluation/summary-evaluation-women-entrepreneurship-strategy-rda-delivered-programming</a> <a href="#rest-models-canada" class="fn-back" aria-label="Back to the first mention of source 32">&#8617;</a></li>
+<li id="fn-33">Department of Business, Enterprise and Innovation, Ireland (2018). News release, 17 April 2018. <a href="https://enterprise.gov.ie/en/news-and-events/department-news/2018/april/17042018.html">2018 release</a>; on the 2021 closing call: <a href="https://enterprise.gov.ie/en/News-And-Events/Department-News/2021/September/20210907.html">2021 release</a> <a href="#rest-models-ireland" class="fn-back" aria-label="Back to the first mention of source 33">&#8617;</a></li>
+<li id="fn-34">Hawai'i FoundHer, home page, read November 2026. <a href="https://www.foundher.org/">https://www.foundher.org/</a> <a href="#rest-models-care" class="fn-back" aria-label="Back to the first mention of source 34">&#8617;</a></li>
+<li id="fn-35">Ewens and Townsend (2020). <cite>Are Early Stage Investors Biased Against Women?</cite> Journal of Financial Economics 135(3). Authors' summary: <a href="https://corpgov.law.harvard.edu/2019/09/20/are-early-stage-investors-biased-against-women">https://corpgov.law.harvard.edu/2019/09/20/are-early-stage-investors-biased-against-women</a> <a href="#rest-evidence-women-investors" class="fn-back" aria-label="Back to the first mention of source 35">&#8617;</a></li>
+<li id="fn-36">Kanze, Huang, Conley and Higgins (2018). <cite>We Ask Men to Win and Women Not to Lose</cite>. Academy of Management Journal 61(2). <a href="https://doi.org/10.5465/amj.2016.1215">https://doi.org/10.5465/amj.2016.1215</a> <a href="#rest-evidence-questions" class="fn-back" aria-label="Back to the first mention of source 36">&#8617;</a></li>
+<li id="fn-37">Brooks, Huang, Kearney and Murray (2014). <cite>Investors prefer entrepreneurial ventures pitched by attractive men</cite>. PNAS 111(12): 4427-4431. <a href="https://dspace.mit.edu/handle/1721.1/91283">https://dspace.mit.edu/handle/1721.1/91283</a> <a href="#rest-evidence-voice" class="fn-back" aria-label="Back to the first mention of source 37">&#8617;</a></li>
+<li id="fn-38">Gornall, W. and Strebulaev, I. A. (2019). <cite>Gender, Race, and Entrepreneurship: A Randomized Field Experiment on Venture Capitalists and Angels</cite>. Working paper. <a href="https://www.aeaweb.org/conference/2020/preliminary/paper/2HANfhEn">https://www.aeaweb.org/conference/2020/preliminary/paper/2HANfhEn</a> <a href="#rest-evidence-cold-email" class="fn-back" aria-label="Back to the first mention of source 38">&#8617;</a></li>
+<li id="fn-39">Brock and De Haas (2023). American Economic Journal: Applied Economics 15(2): 31-68. <a href="https://econpapers.repec.org/RePEc:aea:aejapp:v:15:y:2023:i:2:p:31-68">https://econpapers.repec.org/RePEc:aea:aejapp:v:15:y:2023:i:2:p:31-68</a> <a href="#rest-evidence-loan-officers" class="fn-back" aria-label="Back to the first mention of source 39">&#8617;</a></li>
+<li id="fn-40">Beck, Behr and Madestam (2018). <cite>Sex and Credit</cite>. Journal of Banking and Finance 87: 380-396. Accepted manuscript: <a href="https://openaccess.city.ac.uk/19105/1/sex_and_credit_September_2017.pdf">https://openaccess.city.ac.uk/19105/1/sex_and_credit_September_2017.pdf</a> <a href="#rest-evidence-loan-officers" class="fn-back" aria-label="Back to the first mention of source 40">&#8617;</a></li>
+<li id="fn-41">Center for Rural Affairs (2026). Blog post on the Women's Business Center's 25 years, 5 August 2026. <a href="https://www.cfra.org/blog/womens-business-center-celebrates-25-years-providing-resources-and-training">https://www.cfra.org/blog/womens-business-center-celebrates-25-years-providing-resources-and-training</a> <a href="#rest-gaps-front-door" class="fn-back" aria-label="Back to the first mention of source 41">&#8617;</a></li>
+<li id="fn-42">2M Research for the U.S. Small Business Administration (2025). <cite>Women's Business Centers' client outcomes: evaluation report</cite>. <a href="https://legacy.sba.gov/sites/default/files/2026-03/WBCO%20Report_Final_508%20updated_1292026.pdf">https://legacy.sba.gov/sites/default/files/2026-03/WBCO%20Report_Final_508%20updated_1292026.pdf</a> <a href="#rest-gaps-start-not-grow" class="fn-back" aria-label="Back to the first mention of source 42">&#8617;</a></li>
+<li id="fn-43">J-PAL, evaluation summary of Fairlie, Karlan and Zinman (2015), <cite>Behind the GATE experiment: evidence on effects of and rationales for subsidized entrepreneurship training</cite>, American Economic Journal: Economic Policy 7(2). <a href="https://www.povertyactionlab.org/print/pdf/node/1711?lang=en">https://www.povertyactionlab.org/print/pdf/node/1711?lang=en</a> <a href="#rest-gaps-training" class="fn-back" aria-label="Back to the first mention of source 43">&#8617;</a></li>
+<li id="fn-44">Global Accelerator Learning Initiative (2020). <cite>Accelerating Women-led Startups</cite>. <a href="https://gali.andeglobal.org/assets/report/pdf/accelarating_women_led_startups_final.pdf">https://gali.andeglobal.org/assets/report/pdf/accelarating_women_led_startups_final.pdf</a> <a href="#rest-gaps-training" class="fn-back" aria-label="Back to the first mention of source 44">&#8617;</a></li>
+<li id="fn-45">IFC, We-Fi, Village Capital and World Bank Gender Innovation Lab (2020). <cite>Venture Capital and the Gender Financing Gap: The Role of Accelerators</cite>. <a href="https://documents1.worldbank.org/curated/en/225391587029693451/pdf/Venture-Capital-and-the-Gender-Financing-Gap-The-Role-of-Accelerators-Research-Snapshot.pdf">https://documents1.worldbank.org/curated/en/225391587029693451/pdf/Venture-Capital-and-the-Gender-Financing-Gap-The-Role-of-Accelerators-Research-Snapshot.pdf</a> <a href="#rest-gaps-training" class="fn-back" aria-label="Back to the first mention of source 45">&#8617;</a></li>
+<li id="fn-46">Smart Business Dealmakers (18 April 2019), on X-Squared Angels: <a href="https://www.smartbusinessdealmakers.com/articles/topic/columbus-women-ceo-angel-wsba/">article</a>; Technical.ly (8 November 2013), on Golden Seeds' Philadelphia chapter: <a href="https://technical.ly/philly/2013/11/08/gloria-rabinowitz-golden-seeds/">article</a> <a href="#rest-gaps-investor-groups" class="fn-back" aria-label="Back to the first mention of source 46">&#8617;</a></li>
+<li id="fn-47">U.S. Department of the Treasury. <cite>SSBCI Annual Report 2022-2023</cite>, Figure 25. <a href="https://home.treasury.gov/system/files/136/SSBCI-AnnualReport-2022-2023.pdf">https://home.treasury.gov/system/files/136/SSBCI-AnnualReport-2022-2023.pdf</a> <a href="#rest-gaps-data" class="fn-back" aria-label="Back to the first mention of source 47">&#8617;</a></li>
+<li id="fn-48">Federal Reserve Bank of Kansas City (4 August 2025). <cite>From Main Street to data sheet: how community partners boost small business survey reach</cite>. <a href="https://www.kansascityfed.org/community/community-connections/from-main-street-to-data-sheet-how-community-partners-boost-small-business-survey-reach/">https://www.kansascityfed.org/community/community-connections/from-main-street-to-data-sheet-how-community-partners-boost-small-business-survey-reach/</a> <a href="#rest-gaps-data" class="fn-back" aria-label="Back to the first mention of source 48">&#8617;</a></li>
+<li id="fn-49">Federal Register (1 May 2026). <cite>Small Business Lending Under the Equal Credit Opportunity Act (Regulation B)</cite>. <a href="https://www.federalregister.gov/documents/2026/05/01/2026-08494/small-business-lending-under-the-equal-credit-opportunity-act-regulation-b">https://www.federalregister.gov/documents/2026/05/01/2026-08494/small-business-lending-under-the-equal-credit-opportunity-act-regulation-b</a> <a href="#rest-gaps-data" class="fn-back" aria-label="Back to the first mention of source 49">&#8617;</a></li>
+<li id="fn-50">NPR (11 September 2024), on the Fearless Fund grant program: <a href="https://www.npr.org/2024/09/11/nx-s1-5108729/fearless-fund-atlanta-grant-program-shut-down-lawsuit">article</a>; Bloomberg Law (17 October 2024), on the Founders First settlement: <a href="https://news.bloomberglaw.com/litigation/minority-grants-program-settles-with-edward-blum-anti-dei-group">article</a> <a href="#rest-gaps-legal" class="fn-back" aria-label="Back to the first mention of source 50">&#8617;</a></li>
+<li id="fn-51">Federal Register (3 October 2025). U.S. Department of Transportation, Disadvantaged Business Enterprise program, interim final rule. <a href="https://www.govinfo.gov/content/pkg/FR-2025-10-03/html/2025-19460.htm">https://www.govinfo.gov/content/pkg/FR-2025-10-03/html/2025-19460.htm</a> <a href="#rest-gaps-legal" class="fn-back" aria-label="Back to the first mention of source 51">&#8617;</a></li>
+<li id="fn-52">UNO Center for Public Affairs Research (2025). <cite>Advancing Nebraska's Inclusive Entrepreneurial Ecosystem</cite>, p. 10. <a href="https://www.unomaha.edu/college-of-public-affairs-and-community-service/center-for-public-affairs-research/programs/workforce-access-and-equity.php">https://www.unomaha.edu/college-of-public-affairs-and-community-service/center-for-public-affairs-research/programs/workforce-access-and-equity.php</a> <a href="#rest-size-earnings" class="fn-back" aria-label="Back to the first mention of source 52">&#8617;</a></li>
+<li id="fn-53">Trivitt, J., Milligan, K. and Lai, Y.-L. (2021). <cite>Heartland entrepreneurs feel venture capital slight</cite>. Heartland Forward. <a href="https://heartlandforward.org/heartland-entrepreneurs-feel-venture-capital-slight">https://heartlandforward.org/heartland-entrepreneurs-feel-venture-capital-slight</a> <a href="#rest-size-heartland-vc" class="fn-back" aria-label="Back to the first mention of source 53">&#8617;</a></li>
+<li id="fn-54">Crunchbase News (2019). End-of-year 2019 diversity report. <a href="https://news.crunchbase.com/venture/eoy-2019-diversity-report-20-percent-of-newly-funded-startups-in-2019-have-a-female-founder/">https://news.crunchbase.com/venture/eoy-2019-diversity-report-20-percent-of-newly-funded-startups-in-2019-have-a-female-founder/</a> <a href="#rest-size-definitions" class="fn-back" aria-label="Back to the first mention of source 54">&#8617;</a></li>
+<li id="fn-55">PitchBook (2025). <cite>US All In: Female Founders in the VC Ecosystem</cite>, as quoted in the challenge packet; the report page could not be opened, so the figure is not checked. <a href="https://pitchbook.com/news/reports/2025-us-all-in-female-founders-in-the-vc-ecosystem">https://pitchbook.com/news/reports/2025-us-all-in-female-founders-in-the-vc-ecosystem</a> <a href="#rest-size-definitions" class="fn-back" aria-label="Back to the first mention of source 55">&#8617;</a></li>
+<li id="fn-56">Fairlie, R. W. and Robb, A. M. (2008). <cite>Gender Differences in Business Performance: Evidence from the Characteristics of Business Owners Survey</cite>. IZA Discussion Paper 3718. <a href="https://docs.iza.org/dp3718.pdf">https://docs.iza.org/dp3718.pdf</a> <a href="#rest-employer-capital" class="fn-back" aria-label="Back to the first mention of source 56">&#8617;</a></li>
+<li id="fn-57">U.S. Census Bureau. Survey of Business Owners 2012, tables SB1200CSCBO04, SB1200CSCBO05 and SB1200CSCB16. <a href="https://www2.census.gov/programs-surveys/sbo/data/2012/">https://www2.census.gov/programs-surveys/sbo/data/2012/</a> <a href="#rest-employer-start-small" class="fn-back" aria-label="Back to the first mention of source 57">&#8617;</a></li>
+<li id="fn-58">JPMorgan Chase Institute (2019). <cite>Gender, Age, and Small Business Financial Outcomes</cite>. <a href="https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/institute/pdf/institute-report-small-business-financial-outcomes.pdf">https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/institute/pdf/institute-report-small-business-financial-outcomes.pdf</a> <a href="#rest-employer-survival" class="fn-back" aria-label="Back to the first mention of source 58">&#8617;</a></li>
+<li id="fn-59">U.S. Census Bureau. Annual Business Survey 2023, <cite>Characteristics of Business Owners</cite>, table AB2300CSCBO. <a href="https://www2.census.gov/programs-surveys/abs/data/2023/AB2300CSCBO.zip">https://www2.census.gov/programs-surveys/abs/data/2023/AB2300CSCBO.zip</a> <a href="#rest-employer-motives" class="fn-back" aria-label="Back to the first mention of source 59">&#8617;</a></li>
+<li id="fn-60">Fairlie, R. W. and Miranda, J. (2016). <cite>Taking the Leap: The Determinants of Entrepreneurs Hiring their First Employee</cite>. NBER Working Paper 22428. <a href="https://www.nber.org/system/files/working_papers/w22428/w22428.pdf">https://www.nber.org/system/files/working_papers/w22428/w22428.pdf</a> <a href="#rest-employer-no-split" class="fn-back" aria-label="Back to the first mention of source 60">&#8617;</a></li>
+<li id="fn-61">U.S. Census Bureau. Annual Business Survey 2023, company summary, table AB2300CSA01 (Lincoln, NE Metro Area). Data folder: <a href="https://www2.census.gov/programs-surveys/abs/data/2023/">https://www2.census.gov/programs-surveys/abs/data/2023/</a> <a href="#rest-local-employers" class="fn-back" aria-label="Back to the first mention of source 61">&#8617;</a></li>
+<li id="fn-62">Fairlie, R. (2026). <cite>State Report on Early-Stage Entrepreneurship in the United States: 2025</cite>. Kauffman Indicators of Entrepreneurship. <a href="https://indicators.kauffman.org/wp-content/uploads/sites/13/2026/05/2025_Early-Stage-Entrepreneurship-State-Report.pdf">report (PDF)</a>; data: <a href="https://indicators.kauffman.org/wp-content/uploads/sites/13/2026/05/KauffmanEarlyStageEntrepreneurship_May2026.zip">data (zip)</a> <a href="#rest-local-start-rate" class="fn-back" aria-label="Back to the first mention of source 62">&#8617;</a></li>
+<li id="fn-63">U.S. Census Bureau. <cite>Business Formation Statistics</cite>, business applications by county, release of 10 June 2026 (Lancaster County, NE). No link given. <a href="#rest-local-applications" class="fn-back" aria-label="Back to the first mention of source 63">&#8617;</a></li>
+<li id="fn-64">Meyer, J. (2022). <cite>Map Facts: Women-Owned Businesses</cite>. Nebraska Workforce Trends, May 2022, Nebraska Department of Labor (from the Census Annual Business Survey, reference year 2018). <a href="https://dol.nebraska.gov/webdocs/Resources/Trends/May%202022/Trends%20May%202022.pdf">https://dol.nebraska.gov/webdocs/Resources/Trends/May%202022/Trends%20May%202022.pdf</a> <a href="#rest-local-co-owned" class="fn-back" aria-label="Back to the first mention of source 64">&#8617;</a></li>
+<li id="fn-65">Elam, A. et al. (2026). <cite>GEM 2025/2026 Women's Entrepreneurship Report: How Metrics Shape the Narrative</cite>. Global Entrepreneurship Monitor. <a href="https://www.gemconsortium.org">https://www.gemconsortium.org</a> <a href="#rest-founders-pipeline" class="fn-back" aria-label="Back to the first mention of source 65">&#8617;</a></li>
+<li id="fn-66">Fairlie, R. (2026). <cite>National Report on Early-Stage Entrepreneurship in the United States: 2025</cite>. Kauffman Indicators of Entrepreneurship. <a href="https://indicators.kauffman.org/wp-content/uploads/sites/13/2026/05/2025-Early-Stage-Entrepreneurship-National-Report.pdf">https://indicators.kauffman.org/wp-content/uploads/sites/13/2026/05/2025-Early-Stage-Entrepreneurship-National-Report.pdf</a> <a href="#rest-founders-pipeline" class="fn-back" aria-label="Back to the first mention of source 66">&#8617;</a></li>
+<li id="fn-67">Markussen, S. and Roed, K. (2017). <cite>The gender gap in entrepreneurship: the role of peer effects</cite>. Journal of Economic Behavior and Organization 134: 356-373. Read as IZA DP 9984: <a href="https://docs.iza.org/dp9984.pdf">https://docs.iza.org/dp9984.pdf</a> <a href="#rest-founders-peers" class="fn-back" aria-label="Back to the first mention of source 67">&#8617;</a></li>
+<li id="fn-68">Lindquist, M. J., Sol, J. and Van Praag, M. (2015). <cite>Why do entrepreneurial parents have entrepreneurial children?</cite> Journal of Labor Economics 33(2): 269-296. Read as IZA DP 6740: <a href="https://docs.iza.org/dp6740.pdf">https://docs.iza.org/dp6740.pdf</a> <a href="#rest-founders-peers" class="fn-back" aria-label="Back to the first mention of source 68">&#8617;</a></li>
+<li id="fn-69">Kautonen, T., van Gelderen, M. and Fink, M. (2015). <cite>Robustness of the theory of planned behavior in predicting entrepreneurial intentions and actions</cite>. Entrepreneurship Theory and Practice 39(3): 655-674. Read via the Aalto University repository; no link given. <a href="#rest-founders-intention" class="fn-back" aria-label="Back to the first mention of source 69">&#8617;</a></li>
+<li id="fn-70">Filippin, A. and Crosetto, P. (2016). <cite>A Reconsideration of Gender Differences in Risk Attitudes</cite>. Management Science 62(11): 3138-3160. <a href="https://dx.doi.org/10.1287/mnsc.2015.2294">https://dx.doi.org/10.1287/mnsc.2015.2294</a> <a href="#rest-beliefs-risk" class="fn-back" aria-label="Back to the first mention of source 70">&#8617;</a></li>
+<li id="fn-71">Nelson, J. A. (2015). <cite>Are Women Really More Risk-Averse Than Men? A Re-Analysis of the Literature Using Expanded Methods</cite>. Journal of Economic Surveys 29(3): 566-585. <a href="https://ideas.repec.org/a/bla/jecsur/v29y2015i3p566-585.html">https://ideas.repec.org/a/bla/jecsur/v29y2015i3p566-585.html</a> <a href="#rest-beliefs-risk" class="fn-back" aria-label="Back to the first mention of source 71">&#8617;</a></li>
+<li id="fn-72">Global Entrepreneurship Monitor (2025). <cite>GEM 2024/2025 Women's Entrepreneurship Report</cite>, Table A2.11. <a href="https://www.gemconsortium.org">https://www.gemconsortium.org</a> <a href="#rest-beliefs-fear" class="fn-back" aria-label="Back to the first mention of source 72">&#8617;</a></li>
+<li id="fn-73">Ongena, S. and Popov, A. (2015). <cite>Gender bias and credit access</cite>. European Central Bank Working Paper 1822. <a href="https://ideas.repec.org/s/ecb/ecbwps.html">https://ideas.repec.org/s/ecb/ecbwps.html</a> <a href="#rest-beliefs-asking" class="fn-back" aria-label="Back to the first mention of source 73">&#8617;</a></li>
+<li id="fn-74">Galli, E., Mascia, D. V. and Rossi, S. P. S. (2020). <cite>Bank Credit Constraints for Women-Led SMEs: Self-Restraint or Lender Bias?</cite> European Financial Management 26(4): 1147-1188. <a href="https://doi.org/10.1111/eufm.12255">https://doi.org/10.1111/eufm.12255</a> <a href="#rest-beliefs-asking" class="fn-back" aria-label="Back to the first mention of source 74">&#8617;</a></li>
+<li id="fn-75">Kwapisz, A. and Hechavarria, D. (2018). <cite>Women don't ask: an investigation of start-up financing and gender</cite>. Venture Capital 20(2): 159-190. <a href="https://ideas.repec.org/a/taf/veecee/v20y2018i2p159-190.html">https://ideas.repec.org/a/taf/veecee/v20y2018i2p159-190.html</a> <a href="#rest-beliefs-asking" class="fn-back" aria-label="Back to the first mention of source 75">&#8617;</a></li>
+<li id="fn-76">Behavioural Insights Team (2022). <cite>Gender differences in response to requirements in job adverts</cite>; and Rice, C. (2014), <cite>How McKinsey's Story Became Sheryl Sandberg's Statistic - and Why It Didn't Deserve To</cite>, HuffPost UK. No links given. <a href="#rest-beliefs-asking" class="fn-back" aria-label="Back to the first mention of source 76">&#8617;</a></li>
+<li id="fn-77">Otis, Delecourt, Cranney and Koning (2024). <cite>Global Evidence on Gender Gaps and Generative AI</cite>. Harvard Business School Working Paper 25-023. <a href="https://osf.io/h6a7c/download">https://osf.io/h6a7c/download</a> <a href="#rest-ai-gap" class="fn-back" aria-label="Back to the first mention of source 77">&#8617;</a></li>
+<li id="fn-78">Wheat, Mac and Passalacqua (2026). <cite>The AI adoption gap: Gender and generation among small business owners</cite>. JPMorganChase Institute. <a href="https://www.jpmorganchase.com/content/dam/jpmorganchase/images/institute/ai-adoption-gap-gender-generation-among-small-business-owners/institute-sbai-report.pdf">https://www.jpmorganchase.com/content/dam/jpmorganchase/images/institute/ai-adoption-gap-gender-generation-among-small-business-owners/institute-sbai-report.pdf</a> <a href="#rest-ai-owners" class="fn-back" aria-label="Back to the first mention of source 78">&#8617;</a></li>
+<li id="fn-79">Pew Research Center (2026). <cite>The gender gap in AI</cite>. <a href="https://www.pewresearch.org/short-reads/2026/10/16/the-gender-gap-in-ai/">https://www.pewresearch.org/short-reads/2026/10/16/the-gender-gap-in-ai/</a> <a href="#rest-ai-pew" class="fn-back" aria-label="Back to the first mention of source 79">&#8617;</a></li>
+<li id="fn-80">Otis, N. G., Clarke, R., Delecourt, S., Holtz, D. and Koning, R. (2025). <cite>The Uneven Impact of Generative AI on Entrepreneurial Performance</cite>. OSF preprint, version 3 (3 October 2025): <a href="https://osf.io/hdjpk_v3">preprint page</a>; earlier version with different figures, Harvard Business School Working Paper 24-042 (2023): <a href="https://www.hbs.edu/ris/download.aspx?name=24-042.pdf">PDF</a> <a href="#rest-ai-mentor" class="fn-back" aria-label="Back to the first mention of source 80">&#8617;</a></li>
+<li id="fn-81">Matsa, D. A. and Miller, A. R. (2014). <cite>Workforce Reductions at Women-Owned Businesses in the United States</cite>. ILR Review 67(2): 422-452. <a href="https://econpapers.repec.org/RePEc:sae:ilrrev:v:67:y:2014:i:2:p:422-452">https://econpapers.repec.org/RePEc:sae:ilrrev:v:67:y:2014:i:2:p:422-452</a> <a href="#rest-community-jobs" class="fn-back" aria-label="Back to the first mention of source 81">&#8617;</a></li>
+<li id="fn-82">Gomez, N. and Siegrist, F. (2026). <cite>Women Entrepreneurs Leading the Way to More and Better Jobs for Women</cite>. Policy Indicators Brief No. 45, World Bank and We-Fi. <a href="https://we-fi.org/wp-content/uploads/2026/04/PIB45.pdf">https://we-fi.org/wp-content/uploads/2026/04/PIB45.pdf</a> <a href="#rest-community-women-workers" class="fn-back" aria-label="Back to the first mention of source 82">&#8617;</a></li>
+<li id="fn-83">Grimes, M. G., Gehman, J. and Cao, K. (2018). <cite>Positively deviant: Identity work through B Corporation certification</cite>. Journal of Business Venturing 33(2): 130-148. <a href="https://ideas.repec.org/a/eee/jbvent/v33y2018i2p130-148.html">https://ideas.repec.org/a/eee/jbvent/v33y2018i2p130-148.html</a> <a href="#rest-community-bcorp" class="fn-back" aria-label="Back to the first mention of source 83">&#8617;</a></li>
+<li id="fn-84">Williams, J. (December 2015). <cite>The Unprecedented Power and Potential of Women's Philanthropy in the Washington Region</cite>. Washington Area Women's Foundation, issue brief: <a href="https://thewomensfoundation.org/wp-content/uploads/2015/12/Power-and-Potential-Womens-Philanthropy-IB.pdf">PDF</a>. Page 1 says "female-headed households" reinvest "as much as 90 percent of their new income" in their families. Its only source (footnote 4) is an undated U.S. State Department page, "Why Women? Why Now?", at m.state.gov/mc36630.htm; that address no longer resolves and we could not retrieve an archived copy, so the study behind the figure cannot be traced. <a href="#rest-community-90" class="fn-back" aria-label="Back to the first mention of source 84">&#8617;</a></li>
+</ol>
+</section>
+<p class="note to-top"><a href="#jsr-top">Back to top</a></p>
+<footer class="jsr-footer">
+<p class="note ai-note">This page was drafted with Claude Code (Anthropic), which gathered and summarised the sources and survey counts; the HerPath team reviewed and edited it and is responsible for its content.</p>
+<p class="note print-hint">To print every detail, open the cards you need first (Chrome and Edge print them all).</p>
+</footer>
+</div>
+</div>
+```
