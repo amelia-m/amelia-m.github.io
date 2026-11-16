@@ -182,7 +182,7 @@ body.quarto-dark .jsr{--jsr-bg:#1f0d24;--jsr-card:#2c1632;--jsr-text:#f3ebe6;--j
 <div class="jsr-main">
 <section id="highlights" class="page-section" aria-labelledby="highlights-heading">
 <h2 id="highlights-heading">Highlights</h2>
-<p class="section-intro">Seven findings from across this page.
+<p class="section-intro">Eight findings from across this page.
 Each links to a card further down; open the card for the detail, the source and how strong the evidence is.</p>
 <ol class="highlights">
 <li class="hl">
@@ -216,6 +216,10 @@ When US venture firms hired more women investors, the share of funded founders w
 <li class="hl">
 <p class="hl-figure">10 of 21 women</p>
 <p class="hl-text"><a href="#survey-f5">Caregiving takes up time for 10 of 21 women who answered, and for fewer than 3 of 19 men.</a><sup class="fn"><a href="#fn-7" id="fnref-7-3" aria-label="Source 7">7</a></sup></p>
+<li class="hl">
+<p class="hl-figure">AI help</p>
+<p class="hl-text"><a href="#rest-networks-volunteer-survey">SCORE's own volunteer mentors asked for &ldquo;more AI-driven automation&rdquo;, such as note-taking, to free their time for clients.</a><sup class="fn"><a href="#fn-86" id="fnref-86-2" aria-label="Source 86">86</a></sup>
+Only 54% say SCORE's admin processes let them focus on clients; SCORE summarises the AI request from written comments, without a count.</p>
 </li>
 </ol>
 <p class="note">The survey figures come from a small pilot that reached the team's own contacts; read them as illustrations, not estimates for Lincoln. See <a href="#survey-limits">what the survey can and cannot tell us</a>.</p>
@@ -665,9 +669,9 @@ How programs back their volunteers matters too: on one online platform, corporat
 </details>
 
 <details class="card" id="rest-networks-volunteer-survey">
-<summary>SCORE's own mentors flag admin, not clients: only <strong>54%</strong> say its admin processes let them focus on clients<sup class="fn" aria-hidden="true">86</sup></summary>
+<summary>SCORE's own mentors ask for AI help with admin: they want &ldquo;more AI-driven automation&rdquo;, and only <strong>54%</strong> say admin lets them focus on clients<sup class="fn" aria-hidden="true">86</sup></summary>
 <p>In SCORE's 2026 survey of its volunteers, 54% agreed that its administrative processes are efficient and let them focus their time on client impact, and only 38% of volunteers in leadership roles did.<sup class="fn"><a href="#fn-86" id="fnref-86-1" aria-label="Source 86">86</a></sup>
-Volunteers asked for more automation, such as note-taking; SCORE summarises these comments without a count.
+In their written comments, volunteers asked for &ldquo;more AI-driven automation&rdquo;, such as note-taking; SCORE lists this request in its summary of the comments, without a count.
 Most mean to stay: 81% intend to continue for at least another 12 months, and 60% feel meaningfully recognised for their contributions.
 There were 1,838 responses, collected in January 2026, and 73% of respondents are retired.</p>
 <p><strong>How strong:</strong> SCORE's own survey of its volunteers, with no response rate given; intent to stay is not the same as staying.
