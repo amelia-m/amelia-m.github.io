@@ -110,7 +110,7 @@ body.quarto-dark .jsr{--jsr-bg:#1f0d24;--jsr-card:#2c1632;--jsr-text:#f3ebe6;--j
 .jsr .glance-charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.5rem 1.5rem}
 .jsr figure.bar-chart{margin:0 0 1rem;min-width:0}
 .jsr figure.bar-chart figcaption{font-weight:700;font-size:.98rem;line-height:1.35;margin:0 0 .5rem;color:var(--jsr-text)}
-.jsr figure.bar-chart svg.bars{display:block;width:100%;max-width:25rem;height:auto}
+.jsr figure.bar-chart svg.bars{display:block;width:100%;max-width:20rem;height:auto}
 .jsr .bar-chart .bar{fill:var(--jsr-bar)}
 .jsr .bar-chart .lbl{fill:var(--jsr-text)}
 .jsr .bar-chart .val{fill:var(--jsr-text);font-weight:700}
@@ -186,16 +186,16 @@ Once they apply, <a href="#rest-evidence-approval">women's full-approval rate is
 When US venture firms hired more women investors, the share of funded founders who were women rose; male investors did not become more likely to back women.</p>
 </li>
 <li class="hl">
-<p class="hl-figure">17 of 30</p>
+<p class="hl-figure">18 of 33</p>
 <p class="hl-text"><a href="#survey-f1">In our pilot survey, the connection people wish for most is a mentor who has done it before.</a><sup class="fn"><a href="#fn-7" id="fnref-7-1" aria-label="Source 7">7</a></sup></p>
 </li>
 <li class="hl">
-<p class="hl-figure">13 of 23</p>
+<p class="hl-figure">14 of 26</p>
 <p class="hl-text"><a href="#survey-f2">The top reason a wanted connection did not happen: &ldquo;I didn't know who the right person was.&rdquo;</a><sup class="fn"><a href="#fn-7" id="fnref-7-2" aria-label="Source 7">7</a></sup></p>
 </li>
 <li class="hl">
-<p class="hl-figure">10 of 20 women</p>
-<p class="hl-text"><a href="#survey-f5">Caregiving takes up time for 10 of 20 women who answered, and for fewer than 3 of 17 men.</a><sup class="fn"><a href="#fn-7" id="fnref-7-3" aria-label="Source 7">7</a></sup></p>
+<p class="hl-figure">10 of 21 women</p>
+<p class="hl-text"><a href="#survey-f5">Caregiving takes up time for 10 of 21 women who answered, and for fewer than 3 of 19 men.</a><sup class="fn"><a href="#fn-7" id="fnref-7-3" aria-label="Source 7">7</a></sup></p>
 </li>
 </ol>
 <p class="note">The survey figures come from a small pilot that reached the team's own contacts; read them as illustrations, not estimates for Lincoln. See <a href="#survey-limits">what the survey can and cannot tell us</a>.</p>
@@ -268,24 +268,24 @@ A closer wording is: "only 14% of new users had a meaningful exchange with a men
 </details>
 
 <details class="card" id="cited-right-person">
-<summary>Our survey: the top reason a connection did not happen was "I didn't know who the right person was", for <strong>13 of 23</strong> who answered<sup class="fn" aria-hidden="true">7</sup></summary>
-<p><strong>In the pitch:</strong> the script says "We surveyed 45 people in our startup network. The top reason a connection didn't happen: 'I didn't know who the right person was.'"</p>
-<p><strong>What the source says:</strong> Our pilot survey had 45 responses: 22 from women, 22 from men and 1 with no gender given.
-23 of them answered the question on why they could not make the connections they wanted, choosing as many reasons as applied.
-13 of the 23 chose "I didn't know who the right person was", more than any other reason (women 7 of 13, men 6 of 10).<sup class="fn"><a href="#fn-7" id="fnref-7-4" aria-label="Source 7">7</a></sup>
+<summary>Our survey: the top reason a connection did not happen was "I didn't know who the right person was", for <strong>14 of 26</strong> who answered<sup class="fn" aria-hidden="true">7</sup></summary>
+<p><strong>In the pitch:</strong> the script says "We surveyed 48 people in our startup network. The top reason a connection didn't happen: 'I didn't know who the right person was.'"</p>
+<p><strong>What the source says:</strong> Our pilot survey had 48 responses: 23 from women, 24 from men and 1 with no gender given.
+26 of them answered the question on why they could not make the connections they wanted, choosing as many reasons as applied.
+14 of the 26 chose "I didn't know who the right person was", more than any other reason (women 7 of 14, men 7 of 12).<sup class="fn"><a href="#fn-7" id="fnref-7-4" aria-label="Source 7">7</a></sup>
 It was the most common reason among both the women and the men who answered.</p>
 <p><strong>Where to find it:</strong> survey question "What was the reason you weren't able to make these connections?"</p>
 <p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> Counted from the survey responses by script, and the figure was checked a second time with a separate script.</p>
 <p><strong>Read with care:</strong> the survey reached the team's own contacts, so these counts describe the people who answered, not all Lincoln founders.
 The groups are small, so no difference between women and men here can be called a gender difference.
-The 45 responses include one test response from our team; without it, this is still the most common reason.</p>
+The 48 responses include one test response from our team; without it, this is still the most common reason.</p>
 </details>
 
 <details class="card" id="cited-mentor-wish">
-<summary>Our survey: the connection people wish for most is "a mentor who's done it before", for <strong>17 of 30</strong> who answered<sup class="fn" aria-hidden="true">7</sup></summary>
+<summary>Our survey: the connection people wish for most is "a mentor who's done it before", for <strong>18 of 33</strong> who answered<sup class="fn" aria-hidden="true">7</sup></summary>
 <p><strong>In the pitch:</strong> slide 3 asks "What do they want most? A mentor who's done it before." The script says the same.</p>
-<p><strong>What the source says:</strong> 30 people answered the question on which connections they wish they had, choosing as many as applied.
-17 of the 30 chose "A mentor who's done it before", more than any other connection (women 10 of 15, men 7 of 15).<sup class="fn"><a href="#fn-7" id="fnref-7-5" aria-label="Source 7">7</a></sup>
+<p><strong>What the source says:</strong> 33 people answered the question on which connections they wish they had, choosing as many as applied.
+18 of the 33 chose "A mentor who's done it before", more than any other connection (women 10 of 16, men 8 of 17).<sup class="fn"><a href="#fn-7" id="fnref-7-5" aria-label="Source 7">7</a></sup>
 It was the most common choice among both the women and the men who answered.</p>
 <p><strong>Where to find it:</strong> survey question "Which connections do you wish you had?"</p>
 <p><strong>How we checked:</strong> <span class="status status-checked">Checked</span> Counted from the survey responses by script, and the figure was checked a second time with a separate script.</p>
@@ -305,114 +305,114 @@ It was the most common choice among both the women and the men who answered.</p>
     <h3 id="survey-glance-title">Who answered at a glance</h3>
     <div class="glance-charts">
       <figure class="bar-chart">
-        <figcaption id="chart-status-cap">Where they are as founders (all 45, one group each)</figcaption>
-        <svg class="bars" viewBox="0 0 320 152" width="100%" role="img" aria-labelledby="chart-status-cap" font-size="12.5"><g class="row"><title>Current business owners: 31 of 45</title><rect class="hit" x="0" y="0" width="320" height="36"/><text class="lbl" x="0" y="12">Current business owners</text><path class="bar" d="M0 16H276.0A4 4 0 0 1 280.0 20V23A4 4 0 0 1 276.0 27H0Z"/><text class="val" x="285.0" y="25.5">31</text></g><g class="row"><title>Former owners (business closed, sold or left): 4 of 45</title><rect class="hit" x="0" y="36" width="320" height="51"/><text class="lbl" x="0" y="48">Former owners (business closed, sold or</text><text class="lbl" x="0" y="63">left)</text><path class="bar" d="M0 67H32.1A4 4 0 0 1 36.1 71V74A4 4 0 0 1 32.1 78H0Z"/><text class="val" x="41.1" y="76.5">4</text></g><g class="row"><title>Planning to start, not yet an owner: 3 of 45</title><rect class="hit" x="0" y="87" width="320" height="36"/><text class="lbl" x="0" y="99">Planning to start, not yet an owner</text><path class="bar" d="M0 103H23.1A4 4 0 0 1 27.1 107V110A4 4 0 0 1 23.1 114H0Z"/><text class="val" x="32.1" y="112.5">3</text></g><g class="row"><title>Supporters or startup employees only: 7 of 45</title><rect class="hit" x="0" y="123" width="320" height="36"/><text class="lbl" x="0" y="135">Supporters or startup employees only</text><path class="bar" d="M0 139H59.2A4 4 0 0 1 63.2 143V146A4 4 0 0 1 59.2 150H0Z"/><text class="val" x="68.2" y="148.5">7</text></g></svg>
-        <p class="chart-note">6 of 45 said they plan to start a business, including 3 current owners planning another.</p>
+        <figcaption id="chart-status-cap">Where they are as founders (all 48, one group each)</figcaption>
+        <svg class="bars" viewBox="0 0 260 189" width="100%" role="img" aria-labelledby="chart-status-cap" font-size="13"><g class="row"><title>Current business owners: 34 of 48</title><rect class="hit" x="0" y="0" width="260" height="37"/><text class="lbl" x="0" y="13">Current business owners</text><path class="bar" d="M0 17H224.0A4 4 0 0 1 228.0 21V24A4 4 0 0 1 224.0 28H0Z"/><text class="val" x="233.0" y="26.5">34</text></g><g class="row"><title>Former owners (business closed, sold or left): 4 of 48</title><rect class="hit" x="0" y="37" width="260" height="53"/><text class="lbl" x="0" y="50">Former owners (business closed,</text><text class="lbl" x="0" y="66">sold or left)</text><path class="bar" d="M0 70H22.8A4 4 0 0 1 26.8 74V77A4 4 0 0 1 22.8 81H0Z"/><text class="val" x="31.8" y="79.5">4</text></g><g class="row"><title>Planning to start, not yet an owner: 3 of 48</title><rect class="hit" x="0" y="90" width="260" height="53"/><text class="lbl" x="0" y="103">Planning to start, not yet an</text><text class="lbl" x="0" y="119">owner</text><path class="bar" d="M0 123H16.1A4 4 0 0 1 20.1 127V130A4 4 0 0 1 16.1 134H0Z"/><text class="val" x="25.1" y="132.5">3</text></g><g class="row"><title>Supporters or startup employees only: 7 of 48</title><rect class="hit" x="0" y="143" width="260" height="53"/><text class="lbl" x="0" y="156">Supporters or startup employees</text><text class="lbl" x="0" y="172">only</text><path class="bar" d="M0 176H42.9A4 4 0 0 1 46.9 180V183A4 4 0 0 1 42.9 187H0Z"/><text class="val" x="51.9" y="185.5">7</text></g></svg>
+        <p class="chart-note">7 of 48 said they plan to start a business, including 4 current owners planning another.</p>
       </figure>
       <figure class="bar-chart">
-        <figcaption id="chart-age-cap">Age (all 45)</figcaption>
-        <svg class="bars" viewBox="0 0 320 137" width="100%" role="img" aria-labelledby="chart-age-cap" font-size="12.5"><g class="row"><title>18 to 35: 7 of 45</title><rect class="hit" x="0" y="0" width="320" height="36"/><text class="lbl" x="0" y="12">18 to 35</text><path class="bar" d="M0 16H111.3A4 4 0 0 1 115.3 20V23A4 4 0 0 1 111.3 27H0Z"/><text class="val" x="120.3" y="25.5">7</text></g><g class="row"><title>36 to 45: 17 of 45</title><rect class="hit" x="0" y="36" width="320" height="36"/><text class="lbl" x="0" y="48">36 to 45</text><path class="bar" d="M0 52H276.0A4 4 0 0 1 280.0 56V59A4 4 0 0 1 276.0 63H0Z"/><text class="val" x="285.0" y="61.5">17</text></g><g class="row"><title>46 to 55: 14 of 45</title><rect class="hit" x="0" y="72" width="320" height="36"/><text class="lbl" x="0" y="84">46 to 55</text><path class="bar" d="M0 88H226.6A4 4 0 0 1 230.6 92V95A4 4 0 0 1 226.6 99H0Z"/><text class="val" x="235.6" y="97.5">14</text></g><g class="row"><title>56 and over: 7 of 45</title><rect class="hit" x="0" y="108" width="320" height="36"/><text class="lbl" x="0" y="120">56 and over</text><path class="bar" d="M0 124H111.3A4 4 0 0 1 115.3 128V131A4 4 0 0 1 111.3 135H0Z"/><text class="val" x="120.3" y="133.5">7</text></g></svg>
+        <figcaption id="chart-age-cap">Age (all 48)</figcaption>
+        <svg class="bars" viewBox="0 0 260 141" width="100%" role="img" aria-labelledby="chart-age-cap" font-size="13"><g class="row"><title>18 to 35: 7 of 48</title><rect class="hit" x="0" y="0" width="260" height="37"/><text class="lbl" x="0" y="13">18 to 35</text><path class="bar" d="M0 17H80.0A4 4 0 0 1 84.0 21V24A4 4 0 0 1 80.0 28H0Z"/><text class="val" x="89.0" y="26.5">7</text></g><g class="row"><title>36 to 45: 19 of 48</title><rect class="hit" x="0" y="37" width="260" height="37"/><text class="lbl" x="0" y="50">36 to 45</text><path class="bar" d="M0 54H224.0A4 4 0 0 1 228.0 58V61A4 4 0 0 1 224.0 65H0Z"/><text class="val" x="233.0" y="63.5">19</text></g><g class="row"><title>46 to 55: 15 of 48</title><rect class="hit" x="0" y="74" width="260" height="37"/><text class="lbl" x="0" y="87">46 to 55</text><path class="bar" d="M0 91H176.0A4 4 0 0 1 180.0 95V98A4 4 0 0 1 176.0 102H0Z"/><text class="val" x="185.0" y="100.5">15</text></g><g class="row"><title>56 and over: 7 of 48</title><rect class="hit" x="0" y="111" width="260" height="37"/><text class="lbl" x="0" y="124">56 and over</text><path class="bar" d="M0 128H80.0A4 4 0 0 1 84.0 132V135A4 4 0 0 1 80.0 139H0Z"/><text class="val" x="89.0" y="137.5">7</text></g></svg>
       </figure>
     </div>
-    <p class="gender-line">22 women and 22 men took part; 1 person did not give a gender.</p>
+    <p class="gender-line">23 women and 24 men took part; 1 person did not give a gender.</p>
   </div>
 
   <details class="card" id="survey-who">
-    <summary><span class="card-headline">Who answered</span> <span class="card-figure">45 responses</span></summary>
+    <summary><span class="card-headline">Who answered</span> <span class="card-figure">48 responses</span></summary>
     <div class="card-body">
-      <p>45 responses came in between 13 and 15 November 2026.<sup class="fn"><a href="#fn-7" id="fnref-7-7" aria-label="Source 7">7</a></sup>
-        22 women and 22 men took part; 1 person did not give a gender.
+      <p>48 responses came in between 13 and 16 November 2026.<sup class="fn"><a href="#fn-7" id="fnref-7-7" aria-label="Source 7">7</a></sup>
+        23 women and 24 men took part; 1 person did not give a gender.
         Because that last group is so small, we show women and men separately only for questions it did not answer.</p>
       <p>People could pick more than one role:</p>
       <ul>
-        <li>business owners: 35 of 45</li>
-        <li>supporters (mentors, investors, program staff and service providers): 16 of 45</li>
-        <li>people working at a startup: 14 of 45</li>
-        <li>people planning to start a business: 6 of 45</li>
+        <li>business owners: 38 of 48</li>
+        <li>supporters (mentors, investors, program staff and service providers): 17 of 48</li>
+        <li>people working at a startup: 16 of 48</li>
+        <li>people planning to start a business: 7 of 48</li>
       </ul>
-      <p>Where they live or work: Lincoln 31 of 45, elsewhere in Nebraska 10 of 45, outside Nebraska 4 of 45.</p>
-      <p>Not everyone answered every question, so each figure below gives the number who answered that question, for example "17 of 30".</p>
+      <p>Where they live or work: Lincoln 32 of 48, elsewhere in Nebraska 12 of 48, outside Nebraska 4 of 48.</p>
+      <p>Not everyone answered every question, so each figure below gives the number who answered that question, for example "18 of 33".</p>
     </div>
   </details>
 
   <h3 id="survey-findings">Headline findings</h3>
 
   <details class="card" id="survey-f1">
-    <summary><span class="card-headline">What people want most is a mentor who has done it before</span> <span class="card-figure">17 of 30</span></summary>
+    <summary><span class="card-headline">What people want most is a mentor who has done it before</span> <span class="card-figure">18 of 33</span></summary>
     <div class="card-body">
-      <p>Asked which connections they wish they had, 17 of the 30 who answered picked "a mentor who's done it before" (women 10 of 15, men 7 of 15).<sup class="fn"><a href="#fn-7" id="fnref-7-8" aria-label="Source 7">7</a></sup>
-        It was the most common choice, ahead of customers or distributors (14 of 30) and an investor (10 of 30).</p>
-      <p>Mentors also matter in hindsight: a mentor or advisor was the most common kind of connection that mattered most to people's businesses, for 10 of 31 who answered (women 6 of 17, men 4 of 14), just ahead of another business owner (9 of 31).
-        In their written answers, 10 of all 45 respondents credited a mentor or advisor with making a difference.<sup class="fn"><a href="#fn-10" id="fnref-10-1" aria-label="Source 10">10</a></sup></p>
+      <p>Asked which connections they wish they had, 18 of the 33 who answered picked "a mentor who's done it before" (women 10 of 16, men 8 of 17).<sup class="fn"><a href="#fn-7" id="fnref-7-8" aria-label="Source 7">7</a></sup>
+        It was the most common choice, ahead of customers or distributors (16 of 33) and an investor (11 of 33).</p>
+      <p>Mentors also matter in hindsight: a mentor or advisor was the most common kind of connection that mattered most to people's businesses, for 11 of 34 who answered (women 7 of 18, men 4 of 16), just ahead of another business owner (10 of 34).
+        In their written answers, 12 of all 48 respondents credited a mentor or advisor with making a difference.<sup class="fn"><a href="#fn-10" id="fnref-10-1" aria-label="Source 10">10</a></sup></p>
     </div>
   </details>
 
   <details class="card" id="survey-f2">
-    <summary><span class="card-headline">The gap is knowing who to ask for the next step</span> <span class="card-figure">13 of 23</span></summary>
+    <summary><span class="card-headline">The gap is knowing who to ask for the next step</span> <span class="card-figure">14 of 26</span></summary>
     <div class="card-body">
-      <p>Among people who said a connection they wanted did not happen, the most common reason was "I didn't know who the right person was": 13 of the 23 who answered (women 7 of 13, men 6 of 10).<sup class="fn"><a href="#fn-7" id="fnref-7-9" aria-label="Source 7">7</a></sup>
-        Next came not knowing where to find them, for 9 of 23.</p>
-      <p>The most common obstacle overall was not being sure how to carry out the next step, such as building the product, finding customers, marketing or hiring: 14 of 32 (women 7 of 17, men 7 of 15).
-        Yet 20 of 34 agree they know who to ask in their community for business help in general (women 12 of 19, men 8 of 15).
+      <p>Among people who said a connection they wanted did not happen, the most common reason was "I didn't know who the right person was": 14 of the 26 who answered (women 7 of 14, men 7 of 12).<sup class="fn"><a href="#fn-7" id="fnref-7-9" aria-label="Source 7">7</a></sup>
+        Next came not knowing where to find them, for 9 of 26.</p>
+      <p>The most common obstacle overall was not being sure how to carry out the next step, such as building the product, finding customers, marketing or hiring: 14 of 35 (women 7 of 18, men 7 of 17).
+        Yet 22 of 37 agree they know who to ask in their community for business help in general (women 12 of 20, men 10 of 17).
         So the gap seems to be the specific person for the specific next step, not knowing anyone at all.</p>
     </div>
   </details>
 
   <details class="card" id="survey-f3">
-    <summary><span class="card-headline">Help comes through people</span> <span class="card-figure">22 of 45</span></summary>
+    <summary><span class="card-headline">Help comes through people</span> <span class="card-figure">24 of 48</span></summary>
     <div class="card-body">
-      <p>When people wrote about what helped, the most common thread was networks and introductions: 22 of all 45 respondents.<sup class="fn"><a href="#fn-10" id="fnref-10-2" aria-label="Source 10">10</a></sup>
-        Next came a named program, event or grant scheme (17 of 45), then a mentor or advisor (12 of 45) and grants (10 of 45).</p>
+      <p>When people wrote about what helped, the most common thread was networks and introductions: 24 of all 48 respondents.<sup class="fn"><a href="#fn-10" id="fnref-10-2" aria-label="Source 10">10</a></sup>
+        Next came a named program, event or grant scheme (18 of 48), then a mentor or advisor (12 of 48) and grants (10 of 48).</p>
       <p>These counts use everyone who took the survey as the base, whether or not they wrote anything, so they may undercount.
         When people credited a program, it was often for the network it gave them.</p>
     </div>
   </details>
 
   <details class="card" id="survey-f4">
-    <summary><span class="card-headline">Programs are known, but few people use them and many do not feel they are meant for them</span> <span class="card-figure">11 of 34</span></summary>
+    <summary><span class="card-headline">Programs are known, but few people use them and many do not feel they are meant for them</span> <span class="card-figure">12 of 37</span></summary>
     <div class="card-body">
-      <p>Only 11 of 34 agree that local business programs are "meant for people like me" (women 4 of 19, men 7 of 15).<sup class="fn"><a href="#fn-7" id="fnref-7-10" aria-label="Source 7">7</a></sup></p>
+      <p>Only 12 of 37 agree that local business programs are "meant for people like me" (women 4 of 20, men 8 of 17).<sup class="fn"><a href="#fn-7" id="fnref-7-10" aria-label="Source 7">7</a></sup></p>
       <p>Programs are better known than used.
-        StartupLNK had been heard of or used by 20 of 32 who answered (women 12 of 17, men 8 of 15), but used by fewer than 3 of 32.
-        1 Million Cups had been heard of or used by 23 of 32 (women 13 of 17, men 10 of 15) and used by 11 of 32.</p>
+        StartupLNK had been heard of or used by 22 of 35 who answered (women 12 of 18, men 10 of 17), but used by fewer than 3 of 35.
+        1 Million Cups had been heard of or used by 25 of 35 (women 14 of 18, men 11 of 17) and used by 12 of 35.</p>
     </div>
   </details>
 
   <details class="card" id="survey-f5">
-    <summary><span class="card-headline">Caregiving takes up time mainly for women</span> <span class="card-figure">10 of 20 women</span></summary>
+    <summary><span class="card-headline">Caregiving takes up time mainly for women</span> <span class="card-figure">10 of 21 women</span></summary>
     <div class="card-body">
-      <p>Caring for children or for a parent or relative takes up time for 10 of 20 women who answered, and for fewer than 3 of 17 men.<sup class="fn"><a href="#fn-7" id="fnref-7-11" aria-label="Source 7">7</a></sup>
+      <p>Caring for children or for a parent or relative takes up time for 10 of 21 women who answered, and for fewer than 3 of 19 men.<sup class="fn"><a href="#fn-7" id="fnref-7-11" aria-label="Source 7">7</a></sup>
         We do not show the total for everyone here, because it would let a reader work out the exact small number for men.</p>
-      <p>Most people are also fitting their business around a job: a full-time job takes up time for 29 of 37 (women 17 of 20, men 12 of 17), and not enough time is an obstacle for 11 of 32 (women 6 of 17, men 5 of 15).
-        Yet fewer than 3 of 32 picked childcare or caregiving as one of their biggest obstacles, and very few wrote about their own load at home.
+      <p>Most people are also fitting their business around a job: a full-time job takes up time for 32 of 40 (women 18 of 21, men 14 of 19), and not enough time is an obstacle for 11 of 35 (women 6 of 18, men 5 of 17).
+        Yet fewer than 3 of 35 picked childcare or caregiving as one of their biggest obstacles, and very few wrote about their own load at home.
         The survey asked about help more than about burdens, which may be why.</p>
     </div>
   </details>
 
   <details class="card" id="survey-f6">
-    <summary><span class="card-headline">Most owners fund their business themselves</span> <span class="card-figure">22 of 32</span></summary>
+    <summary><span class="card-headline">Most owners fund their business themselves</span> <span class="card-figure">25 of 35</span></summary>
     <div class="card-body">
-      <p>Personal savings fund the business for 22 of 32 who answered (women 11 of 16, men 11 of 16), and revenue from the business for 13 of 32 (women 6 of 16, men 7 of 16).<sup class="fn"><a href="#fn-7" id="fnref-7-12" aria-label="Source 7">7</a></sup></p>
-      <p>14 people had sought money from others, and 8 of those 14 got some or all of what they needed (women 5 of 8, men 3 of 6); that is too few answers to say how seeking money usually goes.
-        Raising outside money is a goal for the next 12 months for 8 of 30 (women 3 of 16, men 5 of 14).
-        In written answers, 5 of 45 described seeking money going badly, such as a bank saying no or an application not being selected.<sup class="fn"><a href="#fn-10" id="fnref-10-3" aria-label="Source 10">10</a></sup></p>
+      <p>Personal savings fund the business for 25 of 35 who answered (women 12 of 17, men 13 of 18), and revenue from the business for 14 of 35 (women 6 of 17, men 8 of 18).<sup class="fn"><a href="#fn-7" id="fnref-7-12" aria-label="Source 7">7</a></sup></p>
+      <p>17 people had sought money from others, and 11 of those 17 got some or all of what they needed (women 6 of 9, men 5 of 8); that is too few answers to say how seeking money usually goes.
+        Raising outside money is a goal for the next 12 months for 8 of 32 (women 3 of 17, men 5 of 15).
+        In written answers, 5 of 48 described seeking money going badly, such as a bank saying no or an application not being selected.<sup class="fn"><a href="#fn-10" id="fnref-10-3" aria-label="Source 10">10</a></sup></p>
     </div>
   </details>
 
   <details class="card" id="survey-f7">
-    <summary><span class="card-headline">Help is needed after launch, not only at the start</span> <span class="card-figure">14 of 34</span></summary>
+    <summary><span class="card-headline">Help is needed after launch, not only at the start</span> <span class="card-figure">14 of 37</span></summary>
     <div class="card-body">
-      <p>Growing or expanding is the stage where people most often need help: 14 of 34 who answered (women 7 of 18, men 7 of 16), ahead of legal and business setup (9 of 34).<sup class="fn"><a href="#fn-7" id="fnref-7-13" aria-label="Source 7">7</a></sup>
-        More customers or revenue is the most common goal for the next 12 months, for 18 of 30 (women 11 of 16, men 7 of 14).</p>
-      <p>In written answers, 8 of 45 credited help with legal and accounting basics, such as an introduction to a trusted attorney or accountant.<sup class="fn"><a href="#fn-10" id="fnref-10-4" aria-label="Source 10">10</a></sup></p>
+      <p>Growing or expanding is the stage where people most often need help: 14 of 37 who answered (women 7 of 19, men 7 of 18), ahead of legal and business setup (10 of 37).<sup class="fn"><a href="#fn-7" id="fnref-7-13" aria-label="Source 7">7</a></sup>
+        More customers or revenue is the most common goal for the next 12 months, for 19 of 32 (women 12 of 17, men 7 of 15).</p>
+      <p>In written answers, 10 of 48 credited help with legal and accounting basics, such as an introduction to a trusted attorney or accountant.<sup class="fn"><a href="#fn-10" id="fnref-10-4" aria-label="Source 10">10</a></sup></p>
     </div>
   </details>
 
   <details class="card" id="survey-f8">
-    <summary><span class="card-headline">People feel connected, but their networks may not reach money</span> <span class="card-figure">20 of 34</span></summary>
+    <summary><span class="card-headline">People feel connected, but their networks may not reach money</span> <span class="card-figure">22 of 37</span></summary>
     <div class="card-body">
-      <p>20 of 34 agree that someone could introduce them to a lender or investor (women 13 of 19, men 7 of 15).<sup class="fn"><a href="#fn-7" id="fnref-7-14" aria-label="Source 7">7</a></sup></p>
-      <p>But among the 22 people whose written answers credited networks and introductions, 11 of 22 agree, compared with 9 of the 12 others who answered.<sup class="fn"><a href="#fn-10" id="fnref-10-5" aria-label="Source 10">10</a></sup>
+      <p>22 of 37 agree that someone could introduce them to a lender or investor (women 14 of 20, men 8 of 17).<sup class="fn"><a href="#fn-7" id="fnref-7-14" aria-label="Source 7">7</a></sup></p>
+      <p>But among the 24 people whose written answers credited networks and introductions, 13 of 24 agree, compared with 9 of the 13 others who answered.<sup class="fn"><a href="#fn-10" id="fnref-10-5" aria-label="Source 10">10</a></sup>
         That is a gap of only a few people, so treat it as an idea worth testing, not a finding.</p>
     </div>
   </details>
@@ -427,72 +427,85 @@ It was the most common choice among both the women and the men who answered.</p>
         <tr><th scope="col">Finding</th><th scope="col">All</th><th scope="col">Women</th><th scope="col">Men</th><th scope="col">Held back?</th></tr>
       </thead>
       <tbody>
-        <tr><th scope="row">Wish they had a mentor who's done it before</th><td>17 of 30</td><td>10 of 15</td><td>7 of 15</td><td>No</td></tr>
-        <tr><th scope="row">A connection did not happen because they didn't know who the right person was</th><td>13 of 23</td><td>7 of 13</td><td>6 of 10</td><td>No</td></tr>
-        <tr><th scope="row">Obstacle: not sure how to carry out the next step</th><td>14 of 32</td><td>7 of 17</td><td>7 of 15</td><td>No</td></tr>
-        <tr><th scope="row">Agree: I know who to ask in my community for business help</th><td>20 of 34</td><td>12 of 19</td><td>8 of 15</td><td>No</td></tr>
-        <tr><th scope="row">Agree: business programs here are meant for people like me</th><td>11 of 34</td><td>4 of 19</td><td>7 of 15</td><td>No</td></tr>
-        <tr><th scope="row">Agree: someone could introduce me to a lender or investor</th><td>20 of 34</td><td>13 of 19</td><td>7 of 15</td><td>No</td></tr>
-        <tr><th scope="row">A mentor or advisor was a connection that mattered most</th><td>10 of 31</td><td>6 of 17</td><td>4 of 14</td><td>No</td></tr>
-        <tr><th scope="row">StartupLNK: heard of or used</th><td>20 of 32</td><td>12 of 17</td><td>8 of 15</td><td>No</td></tr>
-        <tr><th scope="row">StartupLNK: used</th><td>fewer than 3 of 32</td><td>not shown</td><td>not shown</td><td>Yes: small counts; everyone only</td></tr>
-        <tr><th scope="row">1 Million Cups: used</th><td>11 of 32</td><td>not shown</td><td>not shown</td><td>Yes: one group is fewer than 3; everyone only</td></tr>
-        <tr><th scope="row">Time taken up by caring for children or a parent or relative</th><td>held back</td><td>10 of 20</td><td>fewer than 3 of 17</td><td>Yes: total held back so the men's count cannot be worked out</td></tr>
-        <tr><th scope="row">Time taken up by a full-time job</th><td>29 of 37</td><td>17 of 20</td><td>12 of 17</td><td>No</td></tr>
-        <tr><th scope="row">Obstacle: childcare or caregiving</th><td>fewer than 3 of 32</td><td>not shown</td><td>not shown</td><td>Yes: small counts; everyone only</td></tr>
-        <tr><th scope="row">Fund the business from personal savings</th><td>22 of 32</td><td>11 of 16</td><td>11 of 16</td><td>No</td></tr>
-        <tr><th scope="row">Sought outside money and got some or all of it</th><td>8 of 14</td><td>5 of 8</td><td>3 of 6</td><td>No</td></tr>
-        <tr><th scope="row">12-month goal: more customers or revenue</th><td>18 of 30</td><td>11 of 16</td><td>7 of 14</td><td>No</td></tr>
-        <tr><th scope="row">12-month goal: raise outside money</th><td>8 of 30</td><td>3 of 16</td><td>5 of 14</td><td>No</td></tr>
-        <tr><th scope="row">Stage needing most help: growing or expanding</th><td>14 of 34</td><td>7 of 18</td><td>7 of 16</td><td>No</td></tr>
+        <tr><th scope="row">Wish they had a mentor who's done it before</th><td>18 of 33</td><td>10 of 16</td><td>8 of 17</td><td>No</td></tr>
+        <tr><th scope="row">A connection did not happen because they didn't know who the right person was</th><td>14 of 26</td><td>7 of 14</td><td>7 of 12</td><td>No</td></tr>
+        <tr><th scope="row">Obstacle: not sure how to carry out the next step</th><td>14 of 35</td><td>7 of 18</td><td>7 of 17</td><td>No</td></tr>
+        <tr><th scope="row">Agree: I know who to ask in my community for business help</th><td>22 of 37</td><td>12 of 20</td><td>10 of 17</td><td>No</td></tr>
+        <tr><th scope="row">Agree: business programs here are meant for people like me</th><td>12 of 37</td><td>4 of 20</td><td>8 of 17</td><td>No</td></tr>
+        <tr><th scope="row">Agree: someone could introduce me to a lender or investor</th><td>22 of 37</td><td>14 of 20</td><td>8 of 17</td><td>No</td></tr>
+        <tr><th scope="row">A mentor or advisor was a connection that mattered most</th><td>11 of 34</td><td>7 of 18</td><td>4 of 16</td><td>No</td></tr>
+        <tr><th scope="row">StartupLNK: heard of or used</th><td>22 of 35</td><td>12 of 18</td><td>10 of 17</td><td>No</td></tr>
+        <tr><th scope="row">StartupLNK: used</th><td>fewer than 3 of 35</td><td>not shown</td><td>not shown</td><td>Yes: small counts; everyone only</td></tr>
+        <tr><th scope="row">1 Million Cups: used</th><td>12 of 35</td><td>not shown</td><td>not shown</td><td>Yes: one group is fewer than 3; everyone only</td></tr>
+        <tr><th scope="row">Time taken up by caring for children or a parent or relative</th><td>held back</td><td>10 of 21</td><td>fewer than 3 of 19</td><td>Yes: total held back so the men's count cannot be worked out</td></tr>
+        <tr><th scope="row">Time taken up by a full-time job</th><td>32 of 40</td><td>18 of 21</td><td>14 of 19</td><td>No</td></tr>
+        <tr><th scope="row">Obstacle: childcare or caregiving</th><td>fewer than 3 of 35</td><td>not shown</td><td>not shown</td><td>Yes: small counts; everyone only</td></tr>
+        <tr><th scope="row">Fund the business from personal savings</th><td>25 of 35</td><td>12 of 17</td><td>13 of 18</td><td>No</td></tr>
+        <tr><th scope="row">Sought outside money and got some or all of it</th><td>11 of 17</td><td>6 of 9</td><td>5 of 8</td><td>No</td></tr>
+        <tr><th scope="row">12-month goal: more customers or revenue</th><td>19 of 32</td><td>12 of 17</td><td>7 of 15</td><td>No</td></tr>
+        <tr><th scope="row">12-month goal: raise outside money</th><td>8 of 32</td><td>3 of 17</td><td>5 of 15</td><td>No</td></tr>
+        <tr><th scope="row">Stage needing most help: growing or expanding</th><td>14 of 37</td><td>7 of 19</td><td>7 of 18</td><td>No</td></tr>
       </tbody>
     </table>
   </div>
   <p class="note">The groups are small, so no difference between women and men in this table can be called a gender difference.</p>
 
+  <details class="card" id="survey-resources">
+    <summary><span class="card-headline">Local resources people used</span> <span class="card-figure">1 Million Cups 12 of 35</span></summary>
+    <div class="card-body">
+      <p>35 people answered the question on Lincoln and Nebraska resources; here is how many had used each one (resources used by fewer than 3 are left out).<sup class="fn"><a href="#fn-7" id="fnref-7-16" aria-label="Source 7">7</a></sup></p>
+      <figure class="bar-chart">
+        <figcaption id="chart-resources-cap">Used it, out of 35</figcaption>
+        <svg class="bars" viewBox="0 0 260 337" width="100%" role="img" aria-labelledby="chart-resources-cap" font-size="13"><g class="row"><title>1 Million Cups: 12 of 35</title><rect class="hit" x="0" y="0" width="260" height="37"/><text class="lbl" x="0" y="13">1 Million Cups</text><path class="bar" d="M0 17H224.0A4 4 0 0 1 228.0 21V24A4 4 0 0 1 224.0 28H0Z"/><text class="val" x="233.0" y="26.5">12</text></g><g class="row"><title>Nebraska Business Innovation Act (BIA) prototype grants: 6 of 35</title><rect class="hit" x="0" y="37" width="260" height="53"/><text class="lbl" x="0" y="50">Nebraska Business Innovation Act</text><text class="lbl" x="0" y="66">(BIA) prototype grants</text><path class="bar" d="M0 70H110.0A4 4 0 0 1 114.0 74V77A4 4 0 0 1 110.0 81H0Z"/><text class="val" x="119.0" y="79.5">6</text></g><g class="row"><title>Nebraska Innovation Studio (makerspace): 5 of 35</title><rect class="hit" x="0" y="90" width="260" height="53"/><text class="lbl" x="0" y="103">Nebraska Innovation Studio</text><text class="lbl" x="0" y="119">(makerspace)</text><path class="bar" d="M0 123H91.0A4 4 0 0 1 95.0 127V130A4 4 0 0 1 91.0 134H0Z"/><text class="val" x="100.0" y="132.5">5</text></g><g class="row"><title>Nebraska Business Development Center (NBDC): 5 of 35</title><rect class="hit" x="0" y="143" width="260" height="53"/><text class="lbl" x="0" y="156">Nebraska Business Development</text><text class="lbl" x="0" y="172">Center (NBDC)</text><path class="bar" d="M0 176H91.0A4 4 0 0 1 95.0 180V183A4 4 0 0 1 91.0 187H0Z"/><text class="val" x="100.0" y="185.5">5</text></g><g class="row"><title>SCORE Lincoln (free mentoring): 4 of 35</title><rect class="hit" x="0" y="196" width="260" height="37"/><text class="lbl" x="0" y="209">SCORE Lincoln (free mentoring)</text><path class="bar" d="M0 213H72.0A4 4 0 0 1 76.0 217V220A4 4 0 0 1 72.0 224H0Z"/><text class="val" x="81.0" y="222.5">4</text></g><g class="row"><title>Invest Nebraska: 4 of 35</title><rect class="hit" x="0" y="233" width="260" height="37"/><text class="lbl" x="0" y="246">Invest Nebraska</text><path class="bar" d="M0 250H72.0A4 4 0 0 1 76.0 254V257A4 4 0 0 1 72.0 261H0Z"/><text class="val" x="81.0" y="259.5">4</text></g><g class="row"><title>LaunchLNK grants: 3 of 35</title><rect class="hit" x="0" y="270" width="260" height="37"/><text class="lbl" x="0" y="283">LaunchLNK grants</text><path class="bar" d="M0 287H53.0A4 4 0 0 1 57.0 291V294A4 4 0 0 1 53.0 298H0Z"/><text class="val" x="62.0" y="296.5">3</text></g><g class="row"><title>Nebraska Angels: 3 of 35</title><rect class="hit" x="0" y="307" width="260" height="37"/><text class="lbl" x="0" y="320">Nebraska Angels</text><path class="bar" d="M0 324H53.0A4 4 0 0 1 57.0 328V331A4 4 0 0 1 53.0 335H0Z"/><text class="val" x="62.0" y="333.5">3</text></g></svg>
+      </figure>
+      <p>Many more had heard of these resources than had used them: Invest Nebraska 23 of 35, LaunchLNK grants 22, StartupLNK 22, the Innovation Studio 21, BIA prototype grants 19, SCORE Lincoln 18, NBDC 18 and Nebraska Angels 18.</p>
+      <p>Using a resource is not the same as saying it helped; programs people credited in their own words are counted in the themes below.</p>
+    </div>
+  </details>
+
   <h3 id="survey-themes">What people wrote</h3>
 
   <details class="card" id="survey-themes-card">
-    <summary><span class="card-headline">Themes in the written answers</span> <span class="card-figure">35 of 45 wrote something on theme</span></summary>
+    <summary><span class="card-headline">Themes in the written answers</span> <span class="card-figure">37 of 48 wrote something on theme</span></summary>
     <div class="card-body">
       <p>We grouped the written answers into themes.<sup class="fn"><a href="#fn-10" id="fnref-10-6" aria-label="Source 10">10</a></sup>
-        Counts are people, out of all 45 respondents, and one answer can carry several themes.
-        35 of 45 wrote something that fits at least one theme.</p>
+        Counts are people, out of all 48 respondents, and one answer can carry several themes.
+        37 of 48 wrote something that fits at least one theme.</p>
       <figure class="bar-chart bar-chart-wide">
-        <figcaption id="chart-themes-cap">People out of 45 whose written answers fit each theme (themes named by 3 or more)</figcaption>
-        <svg class="bars" viewBox="0 0 320 296" width="100%" role="img" aria-labelledby="chart-themes-cap" font-size="12.5"><g class="row"><title>Networks and introductions: 22 of 45</title><rect class="hit" x="0" y="0" width="320" height="36"/><text class="lbl" x="0" y="12">Networks and introductions</text><path class="bar" d="M0 16H276.0A4 4 0 0 1 280.0 20V23A4 4 0 0 1 276.0 27H0Z"/><text class="val" x="285.0" y="25.5">22</text></g><g class="row"><title>A program, event or grant scheme helped: 17 of 45</title><rect class="hit" x="0" y="36" width="320" height="36"/><text class="lbl" x="0" y="48">A program, event or grant scheme helped</text><path class="bar" d="M0 52H212.4A4 4 0 0 1 216.4 56V59A4 4 0 0 1 212.4 63H0Z"/><text class="val" x="221.4" y="61.5">17</text></g><g class="row"><title>A mentor made the difference: 12 of 45</title><rect class="hit" x="0" y="72" width="320" height="36"/><text class="lbl" x="0" y="84">A mentor made the difference</text><path class="bar" d="M0 88H148.7A4 4 0 0 1 152.7 92V95A4 4 0 0 1 148.7 99H0Z"/><text class="val" x="157.7" y="97.5">12</text></g><g class="row"><title>Grants and other money that does not have to be paid back: 10 of 45</title><rect class="hit" x="0" y="108" width="320" height="51"/><text class="lbl" x="0" y="120">Grants and other money that does not have to</text><text class="lbl" x="0" y="135">be paid back</text><path class="bar" d="M0 139H123.3A4 4 0 0 1 127.3 143V146A4 4 0 0 1 123.3 150H0Z"/><text class="val" x="132.3" y="148.5">10</text></g><g class="row"><title>Legal and accounting basics: 8 of 45</title><rect class="hit" x="0" y="159" width="320" height="36"/><text class="lbl" x="0" y="171">Legal and accounting basics</text><path class="bar" d="M0 175H97.8A4 4 0 0 1 101.8 179V182A4 4 0 0 1 97.8 186H0Z"/><text class="val" x="106.8" y="184.5">8</text></g><g class="row"><title>Learned on their own: 6 of 45</title><rect class="hit" x="0" y="195" width="320" height="36"/><text class="lbl" x="0" y="207">Learned on their own</text><path class="bar" d="M0 211H72.4A4 4 0 0 1 76.4 215V218A4 4 0 0 1 72.4 222H0Z"/><text class="val" x="81.4" y="220.5">6</text></g><g class="row"><title>Seeking money went badly: 5 of 45</title><rect class="hit" x="0" y="231" width="320" height="36"/><text class="lbl" x="0" y="243">Seeking money went badly</text><path class="bar" d="M0 247H59.6A4 4 0 0 1 63.6 251V254A4 4 0 0 1 59.6 258H0Z"/><text class="val" x="68.6" y="256.5">5</text></g><g class="row"><title>Finding first customers or pilots: 3 of 45</title><rect class="hit" x="0" y="267" width="320" height="36"/><text class="lbl" x="0" y="279">Finding first customers or pilots</text><path class="bar" d="M0 283H34.2A4 4 0 0 1 38.2 287V290A4 4 0 0 1 34.2 294H0Z"/><text class="val" x="43.2" y="292.5">3</text></g></svg>
+        <figcaption id="chart-themes-cap">People out of 48 whose written answers fit each theme (themes named by 3 or more)</figcaption>
+        <svg class="bars" viewBox="0 0 260 358" width="100%" role="img" aria-labelledby="chart-themes-cap" font-size="13"><g class="row"><title>Networks and introductions: 24 of 48</title><rect class="hit" x="0" y="0" width="260" height="37"/><text class="lbl" x="0" y="13">Networks and introductions</text><path class="bar" d="M0 17H224.0A4 4 0 0 1 228.0 21V24A4 4 0 0 1 224.0 28H0Z"/><text class="val" x="233.0" y="26.5">24</text></g><g class="row"><title>A program, event or grant scheme helped: 18 of 48</title><rect class="hit" x="0" y="37" width="260" height="53"/><text class="lbl" x="0" y="50">A program, event or grant scheme</text><text class="lbl" x="0" y="66">helped</text><path class="bar" d="M0 70H167.0A4 4 0 0 1 171.0 74V77A4 4 0 0 1 167.0 81H0Z"/><text class="val" x="176.0" y="79.5">18</text></g><g class="row"><title>A mentor made the difference: 12 of 48</title><rect class="hit" x="0" y="90" width="260" height="37"/><text class="lbl" x="0" y="103">A mentor made the difference</text><path class="bar" d="M0 107H110.0A4 4 0 0 1 114.0 111V114A4 4 0 0 1 110.0 118H0Z"/><text class="val" x="119.0" y="116.5">12</text></g><g class="row"><title>Grants and other money that does not have to be paid back: 10 of 48</title><rect class="hit" x="0" y="127" width="260" height="53"/><text class="lbl" x="0" y="140">Grants and other money that does</text><text class="lbl" x="0" y="156">not have to be paid back</text><path class="bar" d="M0 160H91.0A4 4 0 0 1 95.0 164V167A4 4 0 0 1 91.0 171H0Z"/><text class="val" x="100.0" y="169.5">10</text></g><g class="row"><title>Legal and accounting basics: 10 of 48</title><rect class="hit" x="0" y="180" width="260" height="37"/><text class="lbl" x="0" y="193">Legal and accounting basics</text><path class="bar" d="M0 197H91.0A4 4 0 0 1 95.0 201V204A4 4 0 0 1 91.0 208H0Z"/><text class="val" x="100.0" y="206.5">10</text></g><g class="row"><title>Learned on their own: 6 of 48</title><rect class="hit" x="0" y="217" width="260" height="37"/><text class="lbl" x="0" y="230">Learned on their own</text><path class="bar" d="M0 234H53.0A4 4 0 0 1 57.0 238V241A4 4 0 0 1 53.0 245H0Z"/><text class="val" x="62.0" y="243.5">6</text></g><g class="row"><title>Seeking money went badly: 5 of 48</title><rect class="hit" x="0" y="254" width="260" height="37"/><text class="lbl" x="0" y="267">Seeking money went badly</text><path class="bar" d="M0 271H43.5A4 4 0 0 1 47.5 275V278A4 4 0 0 1 43.5 282H0Z"/><text class="val" x="52.5" y="280.5">5</text></g><g class="row"><title>Finding first customers or pilots: 3 of 48</title><rect class="hit" x="0" y="291" width="260" height="37"/><text class="lbl" x="0" y="304">Finding first customers or pilots</text><path class="bar" d="M0 308H24.5A4 4 0 0 1 28.5 312V315A4 4 0 0 1 24.5 319H0Z"/><text class="val" x="33.5" y="317.5">3</text></g><g class="row"><title>Did not know what to ask: 3 of 48</title><rect class="hit" x="0" y="328" width="260" height="37"/><text class="lbl" x="0" y="341">Did not know what to ask</text><path class="bar" d="M0 345H24.5A4 4 0 0 1 28.5 349V352A4 4 0 0 1 24.5 356H0Z"/><text class="val" x="33.5" y="354.5">3</text></g></svg>
       </figure>
       <ul>
-        <li><strong>Networks and introductions (22 of 45):</strong> clients, referrals, word of mouth and advice came through peers, friends and family, work contacts, a banker they already knew, and introductions through friends of friends, rather than formal channels.</li>
-        <li><strong>A program, event or grant scheme helped (17 of 45):</strong> people credited local programs, events and grants, often for the network they built.</li>
-        <li><strong>A mentor made the difference (12 of 45):</strong> a mentor, coach or advisory board built confidence and skills, helped test the idea with customers, or opened doors to investors.</li>
-        <li><strong>Grants and other money that does not have to be paid back (10 of 45):</strong> grants were used or wanted, with a wish for early funding of this kind.</li>
-        <li><strong>Legal and accounting basics (8 of 45):</strong> introductions to trusted attorneys and accountants, borrowed templates and help with payroll got the business set up.</li>
-        <li><strong>Learned on their own (6 of 45):</strong> research, trial and error and online tools instead of programs.</li>
-        <li><strong>Seeking money went badly (5 of 45):</strong> a bank deferred or declined, applications were not selected, or investors were unwilling.</li>
-        <li><strong>Finding first customers or pilots (3 of 45):</strong> landing a first customer, client or pilot was named as the hardest and most important step, with a wish for established businesses to pilot new products.</li>
-        <li><strong>Did not know what to ask (fewer than 3 of 45)</strong> and <strong>pricing and sales to grow (fewer than 3 of 45):</strong> rare in writing, though the multiple-choice answers on the next step point the same way.</li>
+        <li><strong>Networks and introductions (24 of 48):</strong> clients, referrals, word of mouth and advice came through peers, friends and family, work contacts, a banker they already knew, and introductions through friends of friends, rather than formal channels.</li>
+        <li><strong>A program, event or grant scheme helped (18 of 48):</strong> people credited local programs, events and grants, often for the network they built.</li>
+        <li><strong>A mentor made the difference (12 of 48):</strong> a mentor, coach or advisory board built confidence and skills, helped test the idea with customers, or opened doors to investors.</li>
+        <li><strong>Grants and other money that does not have to be paid back (10 of 48):</strong> grants were used or wanted, with a wish for early funding of this kind.</li>
+        <li><strong>Legal and accounting basics (10 of 48):</strong> introductions to trusted attorneys and accountants, borrowed templates and help with payroll got the business set up.</li>
+        <li><strong>Learned on their own (6 of 48):</strong> research, trial and error and online tools instead of programs.</li>
+        <li><strong>Seeking money went badly (5 of 48):</strong> a bank deferred or declined, applications were not selected, or investors were unwilling.</li>
+        <li><strong>Finding first customers or pilots (3 of 48):</strong> landing a first customer, client or pilot was named as the hardest and most important step, with a wish for established businesses to pilot new products.</li>
+        <li><strong>Did not know what to ask (3 of 48)</strong> and <strong>pricing and sales to grow (fewer than 3 of 48):</strong> rare in writing, though the multiple-choice answers on the next step point the same way.</li>
       </ul>
       <p>We do not split the themes by gender, because subtracting the women's and men's counts from the total would reveal the answers of the 1 person who did not give a gender.</p>
     </div>
   </details>
 
   <details class="card" id="survey-supporters">
-    <summary><span class="card-headline">Supporters on why women raise less funding</span> <span class="card-figure">11 answers</span></summary>
+    <summary><span class="card-headline">Supporters on why women raise less funding</span> <span class="card-figure">12 answers</span></summary>
     <div class="card-body">
       <p>People in a supporter role were asked why women entrepreneurs raise less funding than men, and what could help.
-        11 of the 16 in that role answered.<sup class="fn"><a href="#fn-10" id="fnref-10-7" aria-label="Source 10">10</a></sup>
+        12 of the 17 in that role answered.<sup class="fn"><a href="#fn-10" id="fnref-10-7" aria-label="Source 10">10</a></sup>
         The question states the funding gap as a starting point, which may shape the answers.</p>
       <ul>
-        <li>Bias, including a perception that men build scalable companies and women build solo service businesses, and a preference for tech startups: 5 of 11.</li>
-        <li>Women ask or negotiate less, have less confidence or take fewer risks: 4 of 11.</li>
-        <li>Childcare and healthcare: 3 of 11.</li>
-        <li>Women's time and load: 3 of 11.</li>
-        <li>Cultural and gender-role expectations: fewer than 3 of 11.</li>
+        <li>Bias, including a perception that men build scalable companies and women build solo service businesses, and a preference for tech startups: 6 of 12.</li>
+        <li>Women ask or negotiate less, have less confidence or take fewer risks: 4 of 12.</li>
+        <li>Childcare and healthcare: 3 of 12.</li>
+        <li>Women's time and load: 3 of 12.</li>
+        <li>Cultural and gender-role expectations: fewer than 3 of 12.</li>
       </ul>
-      <p>5 of the 11 answers suggest a remedy.
+      <p>5 of the 12 answers suggest a remedy.
         Two came up 3 times each: more women visible in pitch events, panels and classrooms, as mentors, as local success stories or as investors; and support with childcare and healthcare.
-        More women investors came up in fewer than 3 of the 11 answers.</p>
+        More women investors came up in fewer than 3 of the 12 answers.</p>
     </div>
   </details>
 
@@ -510,10 +523,10 @@ It was the most common choice among both the women and the men who answered.</p>
     <div class="card-body">
       <ul>
         <li>It reached the team's own contacts, mostly people already inside Lincoln's startup scene, not a random sample of Lincoln founders.</li>
-        <li>There were 45 responses, and most questions were answered by 30 to 37 of them; one more answer can move a figure noticeably.</li>
+        <li>There were 48 responses, and most questions were answered by 32 to 40 of them; one more answer can move a figure noticeably.</li>
         <li>The groups of women and men are small, so no difference between them here can be called a gender difference.</li>
         <li>The figures include one test entry made by the team and one partial response.</li>
-        <li>Written answers were grouped into themes with the help of an AI assistant (Claude Code, using Anthropic's Claude Opus 5.5 model), first with one coder per answer; a second, independent coding of every answer (same model, without seeing the first codes) agreed on 133 of 147 answers, and the counts shown come from the second coding, with a code for finding first customers added.<sup class="fn"><a href="#fn-10" id="fnref-10-8" aria-label="Source 10">10</a></sup></li>
+        <li>Written answers were grouped into themes with the help of an AI assistant (Claude Code, using Anthropic's Claude Opus 5.5 model), first with one coder per answer; a second, independent coding of every answer (same model, without seeing the first codes) agreed on 146 of 160 answers, and the counts shown come from the second coding, with a code for finding first customers added.<sup class="fn"><a href="#fn-10" id="fnref-10-8" aria-label="Source 10">10</a></sup></li>
         <li>Theme counts use everyone as the base, including people who wrote nothing, so they undercount.</li>
         <li>To protect individuals, counts of 1 or 2 read "fewer than 3", some cells are held back, and some breakdowns by gender are not shown.</li>
       </ul>
@@ -1030,10 +1043,10 @@ Surveys of owners also find women and men give money and time to charity at simi
 <li id="fn-4">U.S. Census Bureau (2026). <cite>Access to Capital</cite> (Annual Business Survey 2025, women-owned employer firms, data year 2024, preliminary). <a href="https://www.census.gov/content/dam/Census/library/visualizations/2026/comm/access-to-capital.pdf">https://www.census.gov/content/dam/Census/library/visualizations/2026/comm/access-to-capital.pdf</a> <a href="#fnref-4-1" class="fn-back" aria-label="Back to the first mention of source 4">&#8617;</a></li>
 <li id="fn-5">Federal Reserve Small Business Credit Survey, share of applicants approved for the full amount, women-owned and men-owned employer firms, via FRED: <a href="https://fred.stlouisfed.org/series/SBCSS3B4V3FRB">women-owned series</a>; <a href="https://fred.stlouisfed.org/series/SBCSS3B4V1FRB">men-owned series</a> <a href="#fnref-5-1" class="fn-back" aria-label="Back to the first mention of source 5">&#8617;</a></li>
 <li id="fn-6">Calder-Wang, Gompers and Sweeney (2021). <cite>Venture Capital's "Me Too" Moment</cite>. NBER Working Paper 28679. <a href="https://ideas.repec.org/p/nbr/nberwo/28679.html">https://ideas.repec.org/p/nbr/nberwo/28679.html</a> <a href="#fnref-6-1" class="fn-back" aria-label="Back to the first mention of source 6">&#8617;</a></li>
-<li id="fn-7">HerPath team (2026). Lincoln pilot survey of founders and supporters: multiple-choice answers. 45 responses, collected 13 to 15 November 2026. Unpublished survey data; no public link. <a href="#fnref-7-1" class="fn-back" aria-label="Back to the first mention of source 7">&#8617;</a></li>
+<li id="fn-7">HerPath team (2026). Lincoln pilot survey of founders and supporters: multiple-choice answers. 48 responses, collected 13 to 16 November 2026. Unpublished survey data; no public link. <a href="#fnref-7-1" class="fn-back" aria-label="Back to the first mention of source 7">&#8617;</a></li>
 <li id="fn-8">U.S. Census Bureau. <cite>Nonemployer Statistics by Demographics</cite>, 2023 data, table AB2300NESD01 (Nebraska, all sectors, by owner's sex). <a href="https://www2.census.gov/programs-surveys/abs/data/2023/AB2300NESD01.zip">https://www2.census.gov/programs-surveys/abs/data/2023/AB2300NESD01.zip</a> Same table as source 2, Nebraska rows. <a href="#cited-hiring" class="fn-back" aria-label="Back to the first mention of source 8">&#8617;</a></li>
 <li id="fn-9">Lall, Saurabh A., Li-Wei Chen and Dyana P. Mason (2022). <cite>Digital platforms and entrepreneurial support: a field experiment in online mentoring</cite>. Small Business Economics. <a href="https://link.springer.com/article/10.1007/s11187-022-00704-8">https://link.springer.com/article/10.1007/s11187-022-00704-8</a> <a href="#cited-mentoring-trial" class="fn-back" aria-label="Back to the first mention of source 9">&#8617;</a></li>
-<li id="fn-10">HerPath team (2026). Lincoln pilot survey of founders and supporters: written answers, grouped into themes with an AI assistant (Claude Code, using Anthropic's Claude Opus 5.5 model), one coder per answer, then coded again independently by a second coder with the same model; counts use the second coding. 45 responses, collected 13 to 15 November 2026. Unpublished survey data; no public link. <a href="#survey-f1" class="fn-back" aria-label="Back to the first mention of source 10">&#8617;</a></li>
+<li id="fn-10">HerPath team (2026). Lincoln pilot survey of founders and supporters: written answers, grouped into themes with an AI assistant (Claude Code, using Anthropic's Claude Opus 5.5 model), one coder per answer, then coded again independently by a second coder with the same model; counts use the second coding. 48 responses, collected 13 to 16 November 2026. Unpublished survey data; no public link. <a href="#survey-f1" class="fn-back" aria-label="Back to the first mention of source 10">&#8617;</a></li>
 <li id="fn-11">HerPath team (2026). Lincoln pilot survey of founders and supporters: written answers, quoted exactly. Unpublished survey data; no public link. <a href="#fnref-11-1" class="fn-back" aria-label="Back to the first mention of source 11">&#8617;</a></li>
 <li id="fn-12">Lenders' own web pages, read November 2026: Kiva, <a href="https://www.kiva.org/borrow">https://www.kiva.org/borrow</a>; Community Development Resources, <cite>SBA Micro Loans</cite>, <a href="https://cdr-nebraska.org/what-we-do/sba-micro-loans.html">https://cdr-nebraska.org/what-we-do/sba-micro-loans.html</a>; Nebraska Enterprise Fund, <a href="https://www.nebraskaenterprisefund.org">https://www.nebraskaenterprisefund.org</a>; Center for Rural Affairs, <cite>Small business loans</cite>, <a href="https://www.cfra.org/small-business-loans">https://www.cfra.org/small-business-loans</a>; NEDCO, SBA 504 loans, <a href="https://nedcoloans.org/">https://nedcoloans.org/</a>. <a href="#rest-capital-ladder" class="fn-back" aria-label="Back to the first mention of source 12">&#8617;</a></li>
 <li id="fn-13">AeQuitas Invest (AQi), home page and <cite>Mission</cite> page, read 2026-11-10. <a href="https://www.aequitasinvest.com/">home page</a>; <a href="https://www.aequitasinvest.com/mission">Mission page</a> <a href="#rest-capital-women-specific" class="fn-back" aria-label="Back to the first mention of source 13">&#8617;</a></li>
