@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -43,14 +43,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-66c584857b2e98065f65c921485713f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e01671839f7b2c156211afcfa786753a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-66c584857b2e98065f65c921485713f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-11547d6381bb30caa022123fe3dcdb4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-18379427ee506ffc6c84c18248fdca79.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-11547d6381bb30caa022123fe3dcdb4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -399,7 +399,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#lincoln-and-nebraska" id="toc-lincoln-and-nebraska" class="nav-link" data-scroll-target="#lincoln-and-nebraska">Lincoln and Nebraska</a></li>
   </ul></li>
   <li><a href="#websites-and-resources" id="toc-websites-and-resources" class="nav-link" data-scroll-target="#websites-and-resources">Websites and resources</a></li>
-  <li><a href="#books-podcasts-and-courses" id="toc-books-podcasts-and-courses" class="nav-link" data-scroll-target="#books-podcasts-and-courses">Books, podcasts, and courses</a></li>
+  <li><a href="#books-and-courses" id="toc-books-and-courses" class="nav-link" data-scroll-target="#books-and-courses">Books and courses</a></li>
   </ul>
 </nav>
     </div>
@@ -409,10 +409,26 @@ ul.task-list li input[type="checkbox"] {
 <!-- Skip link: hidden until focused (Bootstrap's visually-hidden-focusable),
      so keyboard users can pass the navbar's tab stops. Styled in _shared.scss.
      Quarto places include-before-body after the navbar, so the script moves
-     the link to the start of <body> to make it the first tab stop. -->
+     the link to the start of <body> to make it the first tab stop. It also
+     moves focus itself on activation: Quarto 1.10 rewrites in-page hrefs on
+     index.html to "/#...", which reloads the page instead of skipping
+     (quarto-dev/quarto-cli#14875). Quarto 1.11 adds its own skip link; remove
+     this include when upgrading. -->
 <a class="visually-hidden-focusable skip-link" id="skip-link" href="#quarto-document-content">Skip to main content</a>
 <script>
-  (function () { var a = document.getElementById("skip-link"); if (a) document.body.insertBefore(a, document.body.firstChild); })();
+  (function () {
+    var a = document.getElementById("skip-link");
+    if (!a) return;
+    document.body.insertBefore(a, document.body.firstChild);
+    a.addEventListener("click", function (e) {
+      var t = document.getElementById("quarto-document-content");
+      if (!t) return;
+      e.preventDefault();
+      if (!t.hasAttribute("tabindex")) t.setAttribute("tabindex", "-1");
+      t.focus({ preventScroll: true });
+      t.scrollIntoView();
+    });
+  })();
 </script>
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -663,9 +679,6 @@ ul.task-list li input[type="checkbox"] {
 <div id="like-posit-data-science-hangout" class="g-col-12 g-col-md-6 like-card">
 <p><strong><a href="https://posit.co/data-science-hangout/">Posit Data Science Hangout</a></strong> <span class="like-by">Posit</span></p>
 <p>Free weekly online conversation with data science leaders.</p>
-<ul>
-<li><a href="https://posit.co/past-hangouts/">Past hangouts</a></li>
-</ul>
 </div>
 <div id="like-posit-data-science-lab" class="g-col-12 g-col-md-6 like-card">
 <p><strong><a href="https://pos.it/dslab">Posit Data Science Lab</a></strong> <span class="like-by">Posit</span></p>
@@ -745,8 +758,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="books-podcasts-and-courses" class="level2">
-<h2 class="anchored" data-anchor-id="books-podcasts-and-courses">Books, podcasts, and courses</h2>
+<section id="books-and-courses" class="level2">
+<h2 class="anchored" data-anchor-id="books-and-courses">Books and courses</h2>
 <div class="grid like-grid">
 <div id="like-data-management-in-large-scale-education-research" class="g-col-12 g-col-md-6 like-card">
 <p><strong><a href="https://datamgmtinedresearch.com/">Data Management in Large-Scale Education Research</a></strong> <span class="like-by">Crystal Lewis</span></p>

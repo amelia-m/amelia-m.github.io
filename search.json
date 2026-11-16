@@ -32,7 +32,7 @@
     "href": "things-i-like.html#communities",
     "title": "Things I Like",
     "section": "Communities",
-    "text": "Communities\n\nOnline\n\n\nPosit Data Science Hangout Posit\nFree weekly online conversation with data science leaders.\n\nPast hangouts\n\n\n\nPosit Data Science Lab Posit\nWeekly live-coding and screen-sharing session. Drop in or just watch.\n\nRecordings (YouTube)\n\n\n\nrOpenSci\nCommunity and infrastructure for open, reproducible research software in R.\n\n\nTidyTuesday\nA weekly dataset for practicing data wrangling and visualization.\n\n\n\n\nLincoln and Nebraska\n\n\n1 Million Cups Lincoln\nWednesday-morning gathering where local founders present their businesses and take questions from the community.\n\nLinkedIn\n\n\n\nLincoln.Code\nLincoln meetup for people who write code.\n\n\nLincoln AI\nLincoln meetup about artificial intelligence.\n\n\nNebraska Women in Tech Summit AKSARBEN Foundation\nAnnual summit and awards celebrating women in technology across Nebraska. I volunteer there."
+    "text": "Communities\n\nOnline\n\n\nPosit Data Science Hangout Posit\nFree weekly online conversation with data science leaders.\n\n\nPosit Data Science Lab Posit\nWeekly live-coding and screen-sharing session. Drop in or just watch.\n\nRecordings (YouTube)\n\n\n\nrOpenSci\nCommunity and infrastructure for open, reproducible research software in R.\n\n\nTidyTuesday\nA weekly dataset for practicing data wrangling and visualization.\n\n\n\n\nLincoln and Nebraska\n\n\n1 Million Cups Lincoln\nWednesday-morning gathering where local founders present their businesses and take questions from the community.\n\nLinkedIn\n\n\n\nLincoln.Code\nLincoln meetup for people who write code.\n\n\nLincoln AI\nLincoln meetup about artificial intelligence.\n\n\nNebraska Women in Tech Summit AKSARBEN Foundation\nAnnual summit and awards celebrating women in technology across Nebraska. I volunteer there."
   },
   {
     "objectID": "things-i-like.html#websites-and-resources",
@@ -42,11 +42,11 @@
     "text": "Websites and resources\n\n\nRDM Weekly Crystal Lewis\nWeekly newsletter of research data management resources.\n\n\nrdrr.io\nSearchable index of R package documentation from CRAN, Bioconductor, GitHub, and R-Forge.\n\n\nR for the Rest of Us\nBeginner-friendly R tutorials, a free book, and a YouTube channel.\n\n\nDMPTool\nBuilds data management plans from funder templates.\n\n\nData Is Plural\nNewsletter of interesting public datasets.\n\nDataset archive (spreadsheet)\n\n\n\nR Graph Gallery\nHundreds of R chart examples with code.\n\n\nShapecatcher\nDraw a symbol to find its Unicode character."
   },
   {
-    "objectID": "things-i-like.html#books-podcasts-and-courses",
-    "href": "things-i-like.html#books-podcasts-and-courses",
+    "objectID": "things-i-like.html#books-and-courses",
+    "href": "things-i-like.html#books-and-courses",
     "title": "Things I Like",
-    "section": "Books, podcasts, and courses",
-    "text": "Books, podcasts, and courses\n\n\nData Management in Large-Scale Education Research Crystal Lewis\nFree online book covering the research data management life cycle.\n\n\nR for Data Science (2e) Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\nFree online book on doing data science with the tidyverse.\n\n\nR Packages (2e) Hadley Wickham and Jennifer Bryan\nFree online book on building R packages.\n\n\nMastering Shiny Hadley Wickham\nFree online book on building interactive web apps in R.\n\n\nFundamentals of Data Visualization Claus O. Wilke\nFree online book on making clear, accurate figures.\n\n\nPro Git\nThe free official Git book.\n\n\nSoftware Carpentry lessons\nOpen lessons on the shell, Git, R, and Python for researchers.\nSee also: Collaborative Lesson Development Training, The Carpentries Incubator, The Carpentries Lab\n\n\nCollaborative Lesson Development Training\nThe Carpentries’ own course on building a lesson as an open source project: lesson design, collaborating on one, and the lesson infrastructure. Teams of two to five work on a single real lesson across six half-days, and at least one person per team needs Instructor Training or Learner-Centered Teaching first.\nSee also: The Carpentries Incubator, The Carpentries Lab\n\n\nThe Carpentries Incubator\nWhere community members develop lessons in the open, before any review. Plenty is taught from here already; treat it as work in progress rather than as vetted material.\n\n\nThe Carpentries Lab\nThe peer-reviewed tier: short-format lessons that have been through review and follow the Carpentries lesson design. Review here can also produce a paper in the Journal of Open Source Education, which mints a DOI, so a lesson becomes a citable peer-reviewed publication rather than only a teaching resource. Submission is by invitation while the review process is piloted."
+    "section": "Books and courses",
+    "text": "Books and courses\n\n\nData Management in Large-Scale Education Research Crystal Lewis\nFree online book covering the research data management life cycle.\n\n\nR for Data Science (2e) Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund\nFree online book on doing data science with the tidyverse.\n\n\nR Packages (2e) Hadley Wickham and Jennifer Bryan\nFree online book on building R packages.\n\n\nMastering Shiny Hadley Wickham\nFree online book on building interactive web apps in R.\n\n\nFundamentals of Data Visualization Claus O. Wilke\nFree online book on making clear, accurate figures.\n\n\nPro Git\nThe free official Git book.\n\n\nSoftware Carpentry lessons\nOpen lessons on the shell, Git, R, and Python for researchers.\nSee also: Collaborative Lesson Development Training, The Carpentries Incubator, The Carpentries Lab\n\n\nCollaborative Lesson Development Training\nThe Carpentries’ own course on building a lesson as an open source project: lesson design, collaborating on one, and the lesson infrastructure. Teams of two to five work on a single real lesson across six half-days, and at least one person per team needs Instructor Training or Learner-Centered Teaching first.\nSee also: The Carpentries Incubator, The Carpentries Lab\n\n\nThe Carpentries Incubator\nWhere community members develop lessons in the open, before any review. Plenty is taught from here already; treat it as work in progress rather than as vetted material.\n\n\nThe Carpentries Lab\nThe peer-reviewed tier: short-format lessons that have been through review and follow the Carpentries lesson design. Review here can also produce a paper in the Journal of Open Source Education, which mints a DOI, so a lesson becomes a citable peer-reviewed publication rather than only a teaching resource. Submission is by invitation while the review process is piloted."
   },
   {
     "objectID": "talks.html",
@@ -154,74 +154,46 @@
     "text": "Skip to main content\n\n\n\n\n\nThanks for saying hi at posit::conf(2026). Things I’m always happy to talk about:\n\nShiny apps for messy data: cleaning string variables, inferring table relationships, documenting data warehouses (Recode Studio, Table Relationship Explorer)\nSynthetic data as a way to lower the barriers to working with administrative data without making it public, and the open question of what can safely be released\nTeaching data management and R to graduate students\nQuarto for course sites, reports, and parameterized reporting\nR in public-sector and evaluation work\n\nBest ways to follow up: LinkedIn, Bluesky, or email.\n\n\namelia-m.github.io"
   },
   {
-    "objectID": "fun.html",
-    "href": "fun.html",
-    "title": "Fun & side projects",
-    "section": "",
-    "text": "Skip to main content\nThings I build outside of research, mostly because I wanted them to exist."
-  },
-  {
-    "objectID": "fun.html#lspc-weather",
-    "href": "fun.html#lspc-weather",
-    "title": "Fun & side projects",
-    "section": "LSPC Weather",
-    "text": "LSPC Weather\nReact, TypeScript, and Vite\nA skydiving weather dashboard for the Lincoln Sport Parachute Club at Brown’s Airport (NE69) in Weeping Water, Nebraska, tuned to the club’s Cessna 182 jump plane. It folds a three-site manual routine (NOAA hourly forecast, cloud forecast, and the KPMV METAR) into one page, and adds winds aloft for freefall drift and density altitude for jump-plane climb.\nIt flags seven conditions: surface wind, the club waiver’s gust ceiling, visibility, FAA flight category, overcast sky, a thunderstorm reported in the METAR, and parachute ops between sunset and sunrise. Each one fires only on a published limit, from the USPA SIM, the CFRs, the FAA’s AIM, or the club’s posted waiver, or on a plain observed fact, and cites the source it rests on. Where nothing published sets a threshold, nothing fires: no invented numbers, and no go/no-go verdict. Everything else, winds aloft and density altitude included, is a reading to judge for yourself.\nIn development, and not endorsed by USPA, LSPC, or any licensed professional. Jump decisions stay with the jumper, the Safety and Training Advisor, and the pilot in command.\nOpen the app Source on GitHub"
-  },
-  {
-    "objectID": "fun.html#pleasantry",
-    "href": "fun.html#pleasantry",
-    "title": "Fun & side projects",
-    "section": "pleasantry",
-    "text": "pleasantry\nR package\nStarted at posit::conf(2026) in Houston, in Hadley Wickham and Jenny Bryan’s Modern R workflow (ft. Positron and AI) workshop on Monday, September 14, and carried on from there. compliment() assembles a line from template, adjective, and subject banks, steered by a weirdness scale running sincere to quirky to bizarre, a mood (sincere, grumpy, cheerful, or dramatic), a profanity level that includes a deliberately silly clean tier, and a shakespearean flag for pseudo-Elizabethan phrasing. farewell() handles the goodbyes, drawing a whole phrase from its own mood bank rather than composing one, and takes the same options apart from weirdness. compliment_of_the_day() and farewell_of_the_day() each return one result that is fixed for a given date and leave the global random seed alone.\nBoth the workshop original and the later work on it were AI-assisted, which is worth being specific about rather than leaving to the workshop’s title. The original package was written in the workshop with Positron’s Posit Assistant, on credit allocated for the conference. The rename from compliment, the move to the repository root, and a round of defect fixes afterwards were done with Claude: among them seven templates that hardcoded a before a randomly drawn word, so the Shakespearean mode would emit O, what a eldritch familiar thou dost possess!\nMost of the effort went into making the composed compliments read like English: rejecting an adjective the chosen template already uses, resampling adjective and subject pairs that share a word stem (“creative” with “creativity”), and singularizing the subject banks so the Shakespearean blends stopped emitting “Thy vapours is.” The weirdness scale draws each component independently with triangular weights, so a value between tiers blends them instead of flipping over. Note that the strong profanity tier ships explicit language in the package source.\nOpen the docs Source on GitHub"
-  },
-  {
-    "objectID": "dissertation.html",
-    "href": "dissertation.html",
-    "title": "Dissertation & theses",
-    "section": "",
-    "text": "Skip to main content\nYouth Sport Participation and Cognitive Development: The Need for Improved Measurement\nInterdisciplinary PhD, University of Nebraska–Lincoln, conferred May 2025. Quantitative, Qualitative, and Psychometric Methods in Educational Psychology, with Exercise Physiology and Nutrition in Nutrition and Health Sciences. Advised by James A. Bovaird.\nRead the full text"
-  },
-  {
-    "objectID": "dissertation.html#masters-theses",
-    "href": "dissertation.html#masters-theses",
-    "title": "Dissertation & theses",
-    "section": "Master’s theses",
-    "text": "Master’s theses\nEvaluation of the Feasibility of a Two-Method Measurement Design for the Assessment of Healthy Physical Activity Behavior in Youth\nMA, Quantitative, Qualitative, and Psychometric Methods, University of Nebraska–Lincoln, 2018. A two-method measurement design pairs a cheap measure collected from everyone with an expensive one collected from a planned subsample, and leans on the missing data being missing by design. The question here was whether that trade is worth making for youth physical activity.\nRead the full text\nThe Effects of Four Weeks of High-Intensity Interval Training and β-Hydroxy-β-Methylbutyric Free Acid Supplementation on the Onset of Neuromuscular Fatigue\nMSc, Sport and Exercise Science, University of Central Florida, 2015. From the exercise physiology side of my training: how interval training and HMB supplementation affect the point at which neuromuscular fatigue sets in, measured with electromyography and mechanomyography.\nRead the full text\nSee also my research interests and publications."
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Amelia Miramonti, PhD",
     "section": "",
     "text": "Skip to main content"
   },
   {
-    "objectID": "contact.html#email",
-    "href": "contact.html#email",
-    "title": "Contact",
-    "section": "Email",
-    "text": "Email\namiramonti2@unl.edu"
+    "objectID": "index.html#currently",
+    "href": "index.html#currently",
+    "title": "Amelia Miramonti, PhD",
+    "section": "Currently",
+    "text": "Currently\n\nAdjunct Faculty Instructor, Department of Educational Psychology (January 2026–present)\nPostdoctoral Researcher, Nebraska Evaluation and Research Center (NEAR Center), Department of Educational Psychology (July 2025–present)\nPostdoctoral Research Associate (contracted affiliation), Nebraska Statewide Workforce & Educational Reporting System (NSWERS) (July 2025–present)\nPostdoctoral Research Associate (contracted affiliation), University of Nebraska Public Policy Center (NUPPC) (July 2025–present)"
   },
   {
-    "objectID": "contact.html#profiles",
-    "href": "contact.html#profiles",
-    "title": "Contact",
-    "section": "Profiles",
-    "text": "Profiles\nCode: GitHub · GitLab · UNL GitLab\nScholarly: Read the full text · Read the full text · Read the full text · ORCID · Google Scholar · ResearchGate · OSF · Scopus · Lens\nSocial: LinkedIn · Bluesky · X"
-  },
-  {
-    "objectID": "contact.html#short-bio",
-    "href": "contact.html#short-bio",
-    "title": "Contact",
-    "section": "Short bio",
-    "text": "Short bio\nFor programs, introductions, and session chairs:\n\nAmelia Miramonti, PhD, is a postdoctoral researcher at the Nebraska Evaluation and Research (NEAR) Center and adjunct faculty in the Department of Educational Psychology at the University of Nebraska–Lincoln. She also supports applied research for Nebraska state agencies and communities with the University of Nebraska Public Policy Center, and develops privacy-preserving synthetic datasets from administrative records with the Nebraska Statewide Workforce and Educational Reporting System (NSWERS). She holds an interdisciplinary PhD from the University of Nebraska–Lincoln (2025) that combined quantitative, qualitative, and psychometric methods with exercise physiology and nutrition, an MA in Quantitative, Qualitative, and Psychometric Methods from the same institution, and a BSc and MSc in sport and exercise science from the University of Central Florida. Her more than 30 peer-reviewed articles range from neuromuscular physiology, strength and conditioning, and sports nutrition to child nutrition and career psychology. Her current work pairs measurement and missing-data methods with practical R and Shiny tools for data documentation, cleaning, and reporting, and she teaches graduate courses in computer-assisted data analysis and survey methods."
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
+    "objectID": "events.html",
+    "href": "events.html",
+    "title": "Events",
     "section": "",
-    "text": "Skip to main content\n\n\n\n\n\nNotes on R, data management, and methods. First posts coming soon.\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Skip to main content\nWhere to find me, in person and online. If you’ll be at one of these, come say hi."
+  },
+  {
+    "objectID": "events.html#upcoming",
+    "href": "events.html#upcoming",
+    "title": "Events",
+    "section": "Upcoming",
+    "text": "Upcoming\n\nStartup Week Launch Party, Monday, November 16, 2026, Ashland Brewing Company, Ashland, NE. The opening night of Startup Week 2026, a week of startup events across Nebraska from November 16 to 21, hosted by Open Range.\nCreating a Workshop Website, a Carpentries skill-up session, Wednesday, November 18, 2026, 4am Central, online. A hands-on session on building the website for a Carpentries workshop. (Register here to join)\nAI Engineer Omaha, Thursday, November 19, 2026, DevObsessed, Omaha, NE. Max Clouatre of FNBO on “Build the Factory, Not the Feature”: making the project itself one shared system that defines how work gets built, rather than each developer running their own agents, prompts, and harness. A second talk is still to be announced. Free, and streamed online for anyone who RSVPs.\nAI Carpentry GenAI and Teaching Discussion, a Carpentries community discussion session, Thursday, November 19, 2026, 1pm Central, online. (Register here to join)\nNetworking Session, a Carpentries community discussion session, Tuesday, November 24, 2026, 9am Central, online. (Register here to join)\nUS Midwest Carpentries Community, Wednesday, December 2, 2026, online. The monthly call, back on its usual first Wednesday. (Register here to join)\nAI Carpentry GenAI and Teaching Discussion, a Carpentries community discussion session, Thursday, December 17, 2026, 1pm Central, online. (Register here to join)\nNebraska Women in Tech Summit, Friday, April 2, 2027, Kiewit La Vista, La Vista, NE. I volunteered at the 2026 summit and am planning to volunteer again. The Nebraska Women in Tech Awards are the evening before, April 1, at the Kiewit Luminarium in Omaha."
+  },
+  {
+    "objectID": "events.html#regulars",
+    "href": "events.html#regulars",
+    "title": "Events",
+    "section": "Regulars",
+    "text": "Regulars\n\n1 Million Cups Lincoln, most Wednesday mornings. Local founders present their businesses and take questions from the community. (LinkedIn)\nLincoln.Code. A Lincoln meetup for people who write code.\nLincoln AI, monthly evenings at Don’t Panic Labs. Talks and discussion on AI, from everyday tooling to model internals.\nNebraskaJS, monthly weekday evenings, usually Omaha. Omaha’s JavaScript community since 2009, these days as much about AI tooling. It comes down to Lincoln some months, sometimes jointly with Lincoln AI."
+  },
+  {
+    "objectID": "events.html#past",
+    "href": "events.html#past",
+    "title": "Events",
+    "section": "Past",
+    "text": "Past\n\n2026\n\nPaid in Pizza, November 4, 2026. A new meetup at Don’t Panic Labs from Chad Michel and Jeff Kodad of This Week in Za: two software professionals on how their work is changing, then a round of games with the audience voting.\nThe Carpentries community sessions, Tuesday, October 27, 2026, 5pm Central, online. The Welcome Session, for people new to The Carpentries: what the organization does, the ways to get involved, and questions answered.\nLincoln.Code, Tuesday, October 27, 2026, Assurity Life Insurance Company, Lincoln, NE. Nathan Platter on “When Should AI Stop and Hand the Work Back to a Human?”: a “Level-4 gate”, where the machine does the checking first, a named person still makes the call, and every decision leaves a trail to review later. Cross-listed by (402) Developers. (Talk kit, Source on GitHub, Cross-listing, (402) Developers)\nWomen in Technology of the Heartland, October 21, 2026, Improving, Elkhorn, NE. “She Built This! Founders Behind Heartland Startups”: four women founders on building startups in digital health, AI, construction technology, and equity crowdfunding. (WiTH)\nAI Engineer Omaha, Thursday, October 15, 2026, DevObsessed, Omaha, NE. The first meetup of the new Omaha chapter of an international organization, held jointly with NebraskaJS. Two talks, the first on Jev, a narrow model that answers a typed question with a probability rather than with prose. (NebraskaJS)\nLincoln.Code meetup, September 29, 2026\nposit::conf(2026), Houston, September 14 to 16, attended in person. Things I’m happy to talk about. The Monday was Hadley Wickham and Jenny Bryan’s pre-conference workshop. (Modern R workflow (ft. Positron and AI))\nLincoln AI Explorers, May 6, 2026. The first Explorers meeting, largely a discussion of what the group should be.\nShare Your AI Workflow, March 11, 2026. A NebraskaJS and Lincoln AI lightning talk night at Don’t Panic Labs.\nNebraska Women in Tech Summit, event volunteer."
   },
   {
     "objectID": "cv/index.html",
@@ -322,46 +294,81 @@
     "text": "Technical skills\n\nStatistical & Psychometric: R Statistical Software (tidyverse; lavaan and related psychometric packages; MplusAutomation and semPlot for SEM workflows); Mplus; SAS; SPSS (including PROCESS macro); MATLAB; Jamovi; JASP\nSynthetic Data Generation & Evaluation: tidysynthesis; syntheval (R packages, Urban Institute)\nData Collection: Qualtrics; REDCap; LabVIEW (data collection, signal processing, and analysis); Biopac (EMG/MMG data collection)\nData Management & Databases: dbplyr (R); SQL; Microsoft Access\nVisualization & Interactive Applications: ggplot2 (R); gt (R); Shiny (R); Veusz\nReproducible Reporting & Publishing: Quarto (course websites, slide decks, parameterized reports, this CV); R Markdown / knitr; Markdown; LaTeX / TinyTeX\nResearch Workflow & Reference Management: targets (R package for reproducible pipelines); renv; Zotero; Obsidian; Open Science Framework (OSF)\nProgramming & Version Control: Git (GitHub, GitLab); Python (basic & LLM-assisted); Unix / Bash\nDevelopment Environments & Editors: Positron; RStudio; Visual Studio Code; Notepad++\nLLM-Assisted Development: Claude Code; Gemini / Gemini CLI; GitHub Copilot; Antigravity IDE; Cursor\nProductivity & Collaboration: Microsoft Office Suite (Excel, PowerPoint, Word, Teams, SharePoint); Adobe Acrobat Pro DC; Adobe Illustrator\n\n\nLaboratory assessments\n\nHeart rate (Polar monitors), blood pressure, anthropometrics\nResting metabolic rate and maximal oxygen uptake (ParvoMedics TrueOne 2400, Sensormedics Vmax Encore); Wingate and 3-minute critical power testing (Lode Corrival cycle ergometer)\nIsometric, isokinetic, and isotonic strength testing (Biodex System)\nElectromyographic and mechanomyographic data collection and processing (Noraxon Desktop DTS, Biopac)\nSport performance testing: sprints, agility, jumps, and force plate assessments using custom LabVIEW data collection interfaces\nPhysical activity monitoring (Actigraph wGT3X-BT)\nFinger prick blood sample collection, basic sample processing"
   },
   {
-    "objectID": "events.html",
-    "href": "events.html",
-    "title": "Events",
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
     "section": "",
-    "text": "Skip to main content\nWhere to find me, in person and online. If you’ll be at one of these, come say hi."
+    "text": "Skip to main content\n\n\n\n\n\nNotes on R, data management, and methods. First posts coming soon.\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "events.html#upcoming",
-    "href": "events.html#upcoming",
-    "title": "Events",
-    "section": "Upcoming",
-    "text": "Upcoming\n\nAI Show and Tell, Tuesday, November 10, 2026, Don’t Panic Labs, Lincoln, NE. NebraskaJS joins Lincoln AI for a show and tell: 15-minute presentations on the AI tools people are using, from coding harnesses on. (Lincoln AI’s page)\nStartup Week Launch Party, Monday, November 16, 2026, Ashland Brewing Company, Ashland, NE. The opening night of Startup Week 2026, a week of startup events across Nebraska from November 16 to 21, hosted by Open Range.\nCreating a Workshop Website, a Carpentries skill-up session, Wednesday, November 18, 2026, 4am Central, online. A hands-on session on building the website for a Carpentries workshop. (Register here to join)\nAI Engineer Omaha, Thursday, November 19, 2026, DevObsessed, Omaha, NE. Max Clouatre of FNBO on “Build the Factory, Not the Feature”: making the project itself one shared system that defines how work gets built, rather than each developer running their own agents, prompts, and harness. A second talk is still to be announced. Free, and streamed online for anyone who RSVPs.\nAI Carpentry GenAI and Teaching Discussion, a Carpentries community discussion session, Thursday, November 19, 2026, 1pm Central, online. (Register here to join)\nNetworking Session, a Carpentries community discussion session, Tuesday, November 24, 2026, 9am Central, online. (Register here to join)\nUS Midwest Carpentries Community, Wednesday, December 2, 2026, online. The monthly call, back on its usual first Wednesday. (Register here to join)\nAI Carpentry GenAI and Teaching Discussion, a Carpentries community discussion session, Thursday, December 17, 2026, 1pm Central, online. (Register here to join)\nNebraska Women in Tech Summit, Friday, April 2, 2027, Kiewit La Vista, La Vista, NE. I volunteered at the 2026 summit and am planning to volunteer again. The Nebraska Women in Tech Awards are the evening before, April 1, at the Kiewit Luminarium in Omaha."
-  },
-  {
-    "objectID": "events.html#regulars",
-    "href": "events.html#regulars",
-    "title": "Events",
-    "section": "Regulars",
-    "text": "Regulars\n\n1 Million Cups Lincoln, most Wednesday mornings. Local founders present their businesses and take questions from the community. (LinkedIn)\nLincoln.Code. A Lincoln meetup for people who write code.\nLincoln AI, monthly evenings at Don’t Panic Labs. Talks and discussion on AI, from everyday tooling to model internals.\nNebraskaJS, monthly weekday evenings, usually Omaha. Omaha’s JavaScript community since 2009, these days as much about AI tooling. It comes down to Lincoln some months, sometimes jointly with Lincoln AI."
-  },
-  {
-    "objectID": "events.html#past",
-    "href": "events.html#past",
-    "title": "Events",
-    "section": "Past",
-    "text": "Past\n\n2026\n\nPaid in Pizza, November 4, 2026. A new meetup at Don’t Panic Labs from Chad Michel and Jeff Kodad of This Week in Za: two software professionals on how their work is changing, then a round of games with the audience voting.\nThe Carpentries community sessions, Tuesday, October 27, 2026, 5pm Central, online. The Welcome Session, for people new to The Carpentries: what the organisation does, the ways to get involved, and questions answered.\nLincoln.Code, Tuesday, October 27, 2026, Assurity Life Insurance Company, Lincoln, NE. Nathan Platter on “When Should AI Stop and Hand the Work Back to a Human?”: a “Level-4 gate”, where the machine does the checking first, a named person still makes the call, and every decision leaves a trail to review later. Cross-listed by (402) Developers. (Talk kit, Source on GitHub, Cross-listing, (402) Developers)\nWomen in Technology of the Heartland, October 21, 2026, Improving, Elkhorn, NE. “She Built This! Founders Behind Heartland Startups”: four women founders on building startups in digital health, AI, construction technology, and equity crowdfunding. (WiTH)\nAI Engineer Omaha, Thursday, October 15, 2026, DevObsessed, Omaha, NE. The first meetup of the new Omaha chapter of an international organisation, held jointly with NebraskaJS. Two talks, the first on Jev, a narrow model that answers a typed question with a probability rather than with prose. (NebraskaJS)\nLincoln.Code meetup, September 29, 2026\nposit::conf(2026), Houston, September 14 to 16, attended in person. Things I’m happy to talk about. The Monday was Hadley Wickham and Jenny Bryan’s pre-conference workshop. (Modern R workflow (ft. Positron and AI))\nLincoln AI Explorers, May 6, 2026. The first Explorers meeting, largely a discussion of what the group should be.\nShare Your AI Workflow, March 11, 2026. A NebraskaJS and Lincoln AI lightning talk night at Don’t Panic Labs.\nNebraska Women in Tech Summit, event volunteer."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Amelia Miramonti, PhD",
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
     "section": "",
     "text": "Skip to main content"
   },
   {
-    "objectID": "index.html#currently",
-    "href": "index.html#currently",
-    "title": "Amelia Miramonti, PhD",
-    "section": "Currently",
-    "text": "Currently\n\nAdjunct Faculty Instructor, Department of Educational Psychology (January 2026–present)\nPostdoctoral Researcher, Nebraska Evaluation and Research Center (NEAR Center), Department of Educational Psychology (July 2025–present)\nPostdoctoral Research Associate (contracted affiliation), Nebraska Statewide Workforce & Educational Reporting System (NSWERS) (July 2025–present)\nPostdoctoral Research Associate (contracted affiliation), University of Nebraska Public Policy Center (NUPPC) (July 2025–present)"
+    "objectID": "contact.html#email",
+    "href": "contact.html#email",
+    "title": "Contact",
+    "section": "Email",
+    "text": "Email\namiramonti2@unl.edu"
+  },
+  {
+    "objectID": "contact.html#profiles",
+    "href": "contact.html#profiles",
+    "title": "Contact",
+    "section": "Profiles",
+    "text": "Profiles\nCode: GitHub · GitLab · UNL GitLab\nScholarly: Dissertation · Master’s thesis (UNL) · Master’s thesis (UCF) · ORCID · Google Scholar · ResearchGate · OSF · Scopus · Lens\nSocial: LinkedIn · Bluesky · X"
+  },
+  {
+    "objectID": "contact.html#short-bio",
+    "href": "contact.html#short-bio",
+    "title": "Contact",
+    "section": "Short bio",
+    "text": "Short bio\nFor programs, introductions, and session chairs:\n\nAmelia Miramonti, PhD, is a postdoctoral researcher at the Nebraska Evaluation and Research (NEAR) Center and adjunct faculty in the Department of Educational Psychology at the University of Nebraska–Lincoln. She also supports applied research for Nebraska state agencies and communities with the University of Nebraska Public Policy Center, and develops privacy-preserving synthetic datasets from administrative records with the Nebraska Statewide Workforce and Educational Reporting System (NSWERS). She holds an interdisciplinary PhD from the University of Nebraska–Lincoln (2025) that combined quantitative, qualitative, and psychometric methods with exercise physiology and nutrition, an MA in Quantitative, Qualitative, and Psychometric Methods from the same institution, and a BSc and MSc in sport and exercise science from the University of Central Florida. Her more than 30 peer-reviewed articles range from neuromuscular physiology, strength and conditioning, and sports nutrition to child nutrition and career psychology. Her current work pairs measurement and missing-data methods with practical R and Shiny tools for data documentation, cleaning, and reporting, and she teaches graduate courses in computer-assisted data analysis and survey methods."
+  },
+  {
+    "objectID": "dissertation.html",
+    "href": "dissertation.html",
+    "title": "Dissertation & theses",
+    "section": "",
+    "text": "Skip to main content\nYouth Sport Participation and Cognitive Development: The Need for Improved Measurement\nInterdisciplinary PhD, University of Nebraska–Lincoln, conferred May 2025. Quantitative, Qualitative, and Psychometric Methods in Educational Psychology, with Exercise Physiology and Nutrition in Nutrition and Health Sciences. Advised by James A. Bovaird.\nRead the full text"
+  },
+  {
+    "objectID": "dissertation.html#masters-theses",
+    "href": "dissertation.html#masters-theses",
+    "title": "Dissertation & theses",
+    "section": "Master’s theses",
+    "text": "Master’s theses\nEvaluation of the Feasibility of a Two-Method Measurement Design for the Assessment of Healthy Physical Activity Behavior in Youth\nMA, Quantitative, Qualitative, and Psychometric Methods, University of Nebraska–Lincoln, 2018. A two-method measurement design pairs a cheap measure collected from everyone with an expensive one collected from a planned subsample, and leans on the missing data being missing by design. The question here was whether that trade is worth making for youth physical activity.\nRead the full text\nThe Effects of Four Weeks of High-Intensity Interval Training and β-Hydroxy-β-Methylbutyric Free Acid Supplementation on the Onset of Neuromuscular Fatigue\nMSc, Sport and Exercise Science, University of Central Florida, 2015. From the exercise physiology side of my training: how interval training and HMB supplementation affect the point at which neuromuscular fatigue sets in, measured with electromyography and mechanomyography.\nRead the full text\nSee also my research interests and publications."
+  },
+  {
+    "objectID": "fun.html",
+    "href": "fun.html",
+    "title": "Fun & side projects",
+    "section": "",
+    "text": "Skip to main content\nThings I build outside of research, mostly because I wanted them to exist."
+  },
+  {
+    "objectID": "fun.html#lspc-weather",
+    "href": "fun.html#lspc-weather",
+    "title": "Fun & side projects",
+    "section": "LSPC Weather",
+    "text": "LSPC Weather\nReact, TypeScript, and Vite\nA skydiving weather dashboard for the Lincoln Sport Parachute Club at Brown’s Airport (NE69) in Weeping Water, Nebraska, tuned to the club’s Cessna 182 jump plane. It folds a three-site manual routine (NOAA hourly forecast, cloud forecast, and the KPMV METAR) into one page, and adds winds aloft for freefall drift and density altitude for jump-plane climb.\nIt flags seven conditions: surface wind, the club waiver’s gust ceiling, visibility, FAA flight category, overcast sky, a thunderstorm reported in the METAR, and parachute ops between sunset and sunrise. Each one fires only on a published limit, from the USPA SIM, the CFRs, the FAA’s AIM, or the club’s posted waiver, or on a plain observed fact, and cites the source it rests on. Where nothing published sets a threshold, nothing fires: no invented numbers, and no go/no-go verdict. Everything else, winds aloft and density altitude included, is a reading to judge for yourself.\nIn development, and not endorsed by USPA, LSPC, or any licensed professional. Jump decisions stay with the jumper, the Safety and Training Advisor, and the pilot in command.\nOpen the app Source on GitHub"
+  },
+  {
+    "objectID": "fun.html#pleasantry",
+    "href": "fun.html#pleasantry",
+    "title": "Fun & side projects",
+    "section": "pleasantry",
+    "text": "pleasantry\nR package\nStarted at posit::conf(2026) in Houston, in Hadley Wickham and Jenny Bryan’s Modern R workflow (ft. Positron and AI) workshop on Monday, September 14, and carried on from there. compliment() assembles a line from template, adjective, and subject banks, steered by a weirdness scale running sincere to quirky to bizarre, a mood (sincere, grumpy, cheerful, or dramatic), a profanity level that includes a deliberately silly clean tier, and a shakespearean flag for pseudo-Elizabethan phrasing. farewell() handles the goodbyes, drawing a whole phrase from its own mood bank rather than composing one, and takes the same options apart from weirdness. compliment_of_the_day() and farewell_of_the_day() each return one result that is fixed for a given date and leave the global random seed alone.\nBoth the workshop original and the later work on it were AI-assisted, which is worth being specific about rather than leaving to the workshop’s title. The original package was written in the workshop with Positron’s Posit Assistant, on credit allocated for the conference. The rename from compliment, the move to the repository root, and a round of defect fixes afterwards were done with Claude: among them seven templates that hardcoded a before a randomly drawn word, so the Shakespearean mode would emit O, what a eldritch familiar thou dost possess!\nMost of the effort went into making the composed compliments read like English: rejecting an adjective the chosen template already uses, resampling adjective and subject pairs that share a word stem (“creative” with “creativity”), and singularizing the subject banks so the Shakespearean blends stopped emitting “Thy vapours is.” The weirdness scale draws each component independently with triangular weights, so a value between tiers blends them instead of flipping over. Note that the strong profanity tier ships explicit language in the package source.\nOpen the docs Source on GitHub"
+  },
+  {
+    "objectID": "jumpstart-research.html",
+    "href": "jumpstart-research.html",
+    "title": "Jumpstart Challenge Research",
+    "section": "",
+    "text": "Skip to main content\n\n\n\n\n\nResearch summary and survey findings from the HerPath group for the LPED Jumpstart Challenge 2026. Coming soon."
   },
   {
     "objectID": "publications.html",
@@ -487,21 +494,21 @@
     "href": "teaching.html#courses-instructor-of-record",
     "title": "Teaching",
     "section": "Courses (instructor of record)",
-    "text": "Courses (instructor of record)\nEDPS 900D: Survey Methods in Educational Research Department of Educational Psychology, University of Nebraska–Lincoln · Fall 2026\nEDPS 845: Computer-Assisted Research Data Analysis Department of Educational Psychology, University of Nebraska–Lincoln · Spring 2026"
+    "text": "Courses (instructor of record)\nEDPS 900D: Survey Methods in Educational Research\nDepartment of Educational Psychology, University of Nebraska–Lincoln · Fall 2026\nEDPS 845: Computer-Assisted Research Data Analysis\nDepartment of Educational Psychology, University of Nebraska–Lincoln · Spring 2026"
   },
   {
     "objectID": "teaching.html#workshops-training-series",
     "href": "teaching.html#workshops-training-series",
     "title": "Teaching",
     "section": "Workshops & training series",
-    "text": "Workshops & training series\nData Management Brown Bagger Series University of Nebraska Public Policy Center · 2026 Session 1: Data documentation for Teams (June 2026) Session 2: forthcoming (November 11, 2026)\nNon-credit graduate methods sessions Informal methods training for graduate students; precursor to EDPS 845 · Fall 2025"
+    "text": "Workshops & training series\nData Management Brown Bagger Series\nUniversity of Nebraska Public Policy Center · 2026\nSession 1: Data documentation for Teams (June 2026)\nSession 2: forthcoming (November 11, 2026)\nNon-credit graduate methods sessions\nInformal methods training for graduate students; precursor to EDPS 845 · Fall 2025"
   },
   {
     "objectID": "teaching.html#guest-lectures",
     "href": "teaching.html#guest-lectures",
     "title": "Teaching",
     "section": "Guest lectures",
-    "text": "Guest lectures\nInteraction Contrasts in ANOVA EDPS 941: Intermediate Statistics: Experimental Methods · March 26, 2026"
+    "text": "Guest lectures\nInteraction Contrasts in ANOVA\nEDPS 941: Intermediate Statistics: Experimental Methods · March 26, 2026"
   },
   {
     "objectID": "teaching.html#earlier-teaching",

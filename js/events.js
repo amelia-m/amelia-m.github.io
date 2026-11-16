@@ -5,18 +5,43 @@
 // build: a session that had already happened stayed "Next up" until the next
 // publish. R/site.R now writes every candidate into the page with its date,
 // the build-time choice visible and the rest hidden, and this script makes the
-// choice again with the reader's own date. Without JavaScript the page reads
-// as built. The classes and data- attributes are set in R/site.R; change the
-// two together.
+// choice again with the current date. Without JavaScript the page reads as
+// built. The classes and data- attributes are set in R/site.R; change the two
+// together.
 //
-// Dates are compared as YYYY-MM-DD strings in the reader's time zone. An event
-// stays upcoming through its own day and leaves the day after, the same rule
-// the build uses.
+// Dates are compared as YYYY-MM-DD strings, and today is today in Central
+// time, where the events happen, whatever the reader's own time zone: the
+// build uses the same (site_today() in R/site.R), so a reader in Tokyo does
+// not see an event leave Upcoming while it is still that day in Nebraska. An
+// event stays upcoming through its own day and leaves the day after, the
+// same rule the build uses.
 (function () {
   "use strict";
 
   function pad(n) {
     return (n < 10 ? "0" : "") + n;
+  }
+
+  // Today in America/Chicago as YYYY-MM-DD. Built from the parts rather than
+  // from a locale's date format, which browsers have changed between
+  // versions. A browser without time zone support falls back to its own date.
+  function centralToday(now) {
+    try {
+      var parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/Chicago",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).formatToParts(now);
+      var p = {};
+      for (var k = 0; k < parts.length; k++) p[parts[k].type] = parts[k].value;
+      if (/^\d{4}$/.test(p.year) && /^\d{2}$/.test(p.month) && /^\d{2}$/.test(p.day)) {
+        return p.year + "-" + p.month + "-" + p.day;
+      }
+    } catch (e) {
+      // fall through to the reader's own date
+    }
+    return now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate());
   }
 
   // Run on load, and again when the page comes back into view: a page left
@@ -25,9 +50,7 @@
   // it was first shown. Both events can fire on one restore; running twice
   // is safe, since what has been hidden stays hidden.
   function update() {
-    var now = new Date();
-    var today =
-      now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate());
+    var today = centralToday(new Date());
 
     // Home page: one .event-next per upcoming event, soonest first, each with
     // the first day it is worth naming (data-from) and its date. Show the
