@@ -3,6 +3,21 @@ title: "JumpStart research summary"
 description: "HerPath, 2026 JumpStart Challenge: the evidence behind our pitch, what our Lincoln pilot survey heard, and the wider research we read."
 # Quarto's hover link icons on headings are not part of this page's design.
 anchor-sections: false
+# Site-side overrides, kept out of the raw block so a re-copy of the page
+# source leaves them in place (Amelia, 2026-11-16): the navbar takes the
+# page's own background instead of the theme's blue, and the site name
+# shows small as a link home. The ID-plus-element selectors outrank the
+# raw block's "#quarto-header .navbar-brand{display:none}".
+include-in-header:
+  text: |
+    <style>
+    body.quarto-light #quarto-header,body.quarto-light #quarto-header nav.navbar{background:#fbf7f4 !important;border-bottom:1px solid #e6d9d4}
+    body.quarto-dark #quarto-header,body.quarto-dark #quarto-header nav.navbar{background:#1f0d24 !important;border-bottom:1px solid #4a2a52}
+    #quarto-header nav.navbar a.navbar-brand{display:inline-flex !important;align-items:center;font-size:.9rem;font-weight:600;padding:0;margin:0}
+    body.quarto-light #quarto-header nav.navbar a.navbar-brand{color:#451f4e}
+    body.quarto-dark #quarto-header nav.navbar a.navbar-brand{color:#f3ebe6}
+    #quarto-header nav.navbar a.navbar-brand:hover,#quarto-header nav.navbar a.navbar-brand:focus-visible{text-decoration:underline}
+    </style>
 ---
 
 ```{=html}
@@ -363,7 +378,7 @@ It was the most common choice among both the women and the men who answered.</p>
     <summary><span class="card-headline">The gap is knowing who to ask for the next step</span> <span class="card-figure">14 of 26</span></summary>
     <div class="card-body">
       <p>Among people who said a connection they wanted did not happen, the most common reason was "I didn't know who the right person was": 14 of the 26 who answered (women 7 of 14, men 7 of 12).<sup class="fn"><a href="#fn-7" id="fnref-7-9" aria-label="Source 7">7</a></sup>
-        Next came not knowing where to find them, for 9 of 26.</p>
+        Two reasons came next, tied at 9 of 26 each: not knowing where to find them, and feeling that events or groups were not for them.</p>
       <p>The most common obstacle overall was not being sure how to carry out the next step, such as building the product, finding customers, marketing or hiring: 14 of 35 (women 7 of 18, men 7 of 17).
         Yet 22 of 37 agree they know who to ask in their community for business help in general (women 12 of 20, men 10 of 17).
         So the gap seems to be the specific person for the specific next step, not knowing anyone at all.</p>
@@ -496,7 +511,8 @@ It was the most common choice among both the women and the men who answered.</p>
         <li><strong>Learned on their own (6 of 48):</strong> research, trial and error and online tools instead of programs.</li>
         <li><strong>Seeking money went badly (5 of 48):</strong> a bank deferred or declined, applications were not selected, or investors were unwilling.</li>
         <li><strong>Finding first customers or pilots (3 of 48):</strong> landing a first customer, client or pilot was named as the hardest and most important step, with a wish for established businesses to pilot new products.</li>
-        <li><strong>Did not know what to ask (3 of 48)</strong> and <strong>pricing and sales to grow (fewer than 3 of 48):</strong> rare in writing, though the multiple-choice answers on the next step point the same way.</li>
+        <li><strong>Did not know what to ask (3 of 48)</strong> and <strong>pricing and sales to grow (fewer than 3 of 48):</strong> rare in writing, though the multiple-choice answers on the next step point the same way.
+        Two points came up in fewer than 3 of 48 answers each: finding cofounders or business partners, and preferring to stay outside the local business scene.</li>
       </ul>
       <p>We do not split the themes by gender, because subtracting the women's and men's counts from the total would reveal the answers of the 1 person who did not give a gender.</p>
     </div>
