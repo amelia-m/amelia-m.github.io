@@ -664,6 +664,16 @@ How programs back their volunteers matters too: on one online platform, corporat
 <p><strong>How strong:</strong> SCORE's rules are its own published procedures, with no data on whether they keep mentors longer; the platform study is observational.</p>
 </details>
 
+<details class="card" id="rest-networks-volunteer-survey">
+<summary>SCORE's own mentors flag admin, not clients: only <strong>54%</strong> say its admin processes let them focus on clients<sup class="fn" aria-hidden="true">86</sup></summary>
+<p>In SCORE's 2026 survey of its volunteers, 54% agreed that its administrative processes are efficient and let them focus their time on client impact, and only 38% of volunteers in leadership roles did.<sup class="fn"><a href="#fn-86" id="fnref-86-1" aria-label="Source 86">86</a></sup>
+Volunteers asked for more automation, such as note-taking; SCORE summarises these comments without a count.
+Most mean to stay: 81% intend to continue for at least another 12 months, and 60% feel meaningfully recognised for their contributions.
+There were 1,838 responses, collected in January 2026, and 73% of respondents are retired.</p>
+<p><strong>How strong:</strong> SCORE's own survey of its volunteers, with no response rate given; intent to stay is not the same as staying.
+The results are national only, with nothing for Nebraska.</p>
+</details>
+
 <details class="card" id="rest-networks-lincoln">
 <summary>Lincoln has several pools of mentors, but few published counts: SCORE reports <strong>61</strong> volunteers across Nebraska<sup class="fn" aria-hidden="true">26</sup></summary>
 <p>SCORE has two Nebraska chapters, Lincoln and Greater Omaha, with 61 volunteers statewide in its 2024 figures; no Lincoln-only count was found.<sup class="fn"><a href="#fn-26" id="fnref-26-1" aria-label="Source 26">26</a></sup>
@@ -1185,6 +1195,7 @@ Surveys of owners also find women and men give money and time to charity at simi
 <li id="fn-83">Grimes, M. G., Gehman, J. and Cao, K. (2018). <cite>Positively deviant: Identity work through B Corporation certification</cite>. Journal of Business Venturing 33(2): 130-148. <a href="https://ideas.repec.org/a/eee/jbvent/v33y2018i2p130-148.html">https://ideas.repec.org/a/eee/jbvent/v33y2018i2p130-148.html</a> <a href="#rest-community-bcorp" class="fn-back" aria-label="Back to the first mention of source 83">&#8617;</a></li>
 <li id="fn-84">Williams, J. (December 2015). <cite>The Unprecedented Power and Potential of Women's Philanthropy in the Washington Region</cite>. Washington Area Women's Foundation, issue brief: <a href="https://thewomensfoundation.org/wp-content/uploads/2015/12/Power-and-Potential-Womens-Philanthropy-IB.pdf">PDF</a>. Page 1 says "female-headed households" reinvest "as much as 90 percent of their new income" in their families. Its only source (footnote 4) is an undated U.S. State Department page, "Why Women? Why Now?", at m.state.gov/mc36630.htm; that address no longer resolves and we could not retrieve an archived copy, so the study behind the figure cannot be traced. <a href="#rest-community-90" class="fn-back" aria-label="Back to the first mention of source 84">&#8617;</a></li>
 <li id="fn-85">HerPath team (2026). Conversations with women who founded startups in Lincoln in the 2010s; notes, unpublished; no public link. <a href="#fnref-85-1" class="fn-back" aria-label="Back to the first mention of source 85">&#8617;</a></li>
+<li id="fn-86">SCORE (2026). <cite>2026 SCORE Volunteer Pulse Survey</cite> results, a survey of SCORE's volunteers published by SCORE: results slides and regional analysis, linked from the Support Center article <a href="https://supportcenter.score.org/kb/article/801-2026-annual-volunteer-survey-results/">2026 Annual Volunteer Survey Results</a> <a href="#rest-networks-volunteer-survey" class="fn-back" aria-label="Back to the first mention of source 86">&#8617;</a></li>
 </ol>
 </section>
 <p class="note to-top"><a href="#jsr-top">Back to top</a></p>
