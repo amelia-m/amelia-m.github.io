@@ -8,9 +8,13 @@ anchor-sections: false
 # page's own background instead of the theme's blue, and the site name
 # shows small as a link home. The ID-plus-element selectors outrank the
 # raw block's "#quarto-header .navbar-brand{display:none}".
+# Card text takes the page's own colour (plum light, cream dark) rather
+# than Bootstrap's ".card{color:var(--bs-body-color)}", gray or white
+# (Amelia, 2026-11-16: "fix the card text colour too").
 include-in-header:
   text: |
     <style>
+    .jsr details.card{color:var(--jsr-text)}
     body.quarto-light #quarto-header,body.quarto-light #quarto-header nav.navbar{background:#fbf7f4 !important;border-bottom:1px solid #e6d9d4}
     body.quarto-dark #quarto-header,body.quarto-dark #quarto-header nav.navbar{background:#1f0d24 !important;border-bottom:1px solid #4a2a52}
     #quarto-header nav.navbar a.navbar-brand{display:inline-flex !important;align-items:center;font-size:.9rem;font-weight:600;padding:0;margin:0}
