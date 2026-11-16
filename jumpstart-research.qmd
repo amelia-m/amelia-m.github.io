@@ -3,6 +3,21 @@ title: "JumpStart research summary"
 description: "HerPath, 2026 JumpStart Challenge: the evidence behind our pitch, what our Lincoln pilot survey heard, and the wider research we read."
 # Quarto's hover link icons on headings are not part of this page's design.
 anchor-sections: false
+# Site-side overrides, kept out of the raw block so a re-copy of the page
+# source leaves them in place (Amelia, 2026-11-16): the navbar takes the
+# page's own background instead of the theme's blue, and the site name
+# shows small as a link home. The ID-plus-element selectors outrank the
+# raw block's "#quarto-header .navbar-brand{display:none}".
+include-in-header:
+  text: |
+    <style>
+    body.quarto-light #quarto-header,body.quarto-light #quarto-header nav.navbar{background:#fbf7f4 !important;border-bottom:1px solid #e6d9d4}
+    body.quarto-dark #quarto-header,body.quarto-dark #quarto-header nav.navbar{background:#1f0d24 !important;border-bottom:1px solid #4a2a52}
+    #quarto-header nav.navbar a.navbar-brand{display:inline-flex !important;align-items:center;font-size:.9rem;font-weight:600;padding:0;margin:0}
+    body.quarto-light #quarto-header nav.navbar a.navbar-brand{color:#451f4e}
+    body.quarto-dark #quarto-header nav.navbar a.navbar-brand{color:#f3ebe6}
+    #quarto-header nav.navbar a.navbar-brand:hover,#quarto-header nav.navbar a.navbar-brand:focus-visible{text-decoration:underline}
+    </style>
 ---
 
 ```{=html}
