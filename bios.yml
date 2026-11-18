@@ -231,5 +231,7 @@ places:
 
   - id: osf
     label: OSF
-    url: https://osf.io/zk8rv/
-    note: Employment history.
+    url: https://osf.io/user/zk8rv
+    note: >-
+      Employment history. The profile's own links field still carries the old
+      https://osf.io/zk8rv/, which is now a dead page.
