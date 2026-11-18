@@ -154,6 +154,19 @@ events:
     note: >-
       The opening night of Startup Week 2026, a week of startup events across
       Nebraska from November 16 to 21, hosted by Open Range.
+  # From the 1 Million Cups email of 2026-11-16 (title, place, time); the date
+  # from Open Range's Foundersgiving reminder for the same day ("If you are
+  # coming from 1 Million Cups ... it is a short walk"). Linked to the Lincoln
+  # chapter, as the regular is. Attended (Amelia, 2026-11-18: "I went").
+  - id: one-million-cups-lnk
+    date: 2026-11-18
+    attended: true
+    when: Wednesday, November 18, 2026
+    where: Arbor Day Foundation, Lincoln, NE
+    note: >-
+      "1 Million Cups x Funding Fireside Chat", part of Startup Week: every
+      1 Million Cups chapter in Nebraska together in Lincoln, and streamed
+      live.
   # Talk title, speaker and format read off the chapter's event page on
   # 2026-10-21. Linked to the chapter, like the October meetup, because the
   # event page goes stale after the date.
@@ -174,12 +187,14 @@ events:
   # Read off Amelia's screenshot of the session's pretix page, 2026-11-06,
   # the day she registered. A `text` entry so it carries the session's own
   # name; the listing link is the sign-up, and the Zoom room stays in her
-  # calendar, for the reason links.yml gives.
+  # calendar, for the reason links.yml gives. Skipped (Amelia, 2026-11-18,
+  # removing it from her calendar: "And website").
   - text: >-
       Creating a Workshop Website, a Carpentries skill-up session, Wednesday,
       November 18, 2026, 4am Central, online. A hands-on session on building
       the website for a Carpentries workshop.
     date: 2026-11-18
+    attended: false
     more:
       - id: carpentries-sessions
         label: Register here to join
