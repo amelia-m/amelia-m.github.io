@@ -172,12 +172,14 @@ events:
   # Read off Amelia's screenshot of the session's pretix page, 2026-11-06,
   # the day she registered. A `text` entry so it carries the session's own
   # name; the listing link is the sign-up, and the Zoom room stays in her
-  # calendar, for the reason links.yml gives.
+  # calendar, for the reason links.yml gives. Skipped (Amelia, 2026-11-18,
+  # removing it from her calendar: "And website").
   - text: >-
       Creating a Workshop Website, a Carpentries skill-up session, Wednesday,
       November 18, 2026, 4am Central, online. A hands-on session on building
       the website for a Carpentries workshop.
     date: 2026-11-18
+    attended: false
     more:
       - id: carpentries-sessions
         label: Register here to join
