@@ -106,6 +106,7 @@ events:
       - id: 402-developers
   - id: carpentries-midwest
     date: 2026-11-06
+    attended: true
     when: Friday, November 6, 2026
     where: online
     note: >-
@@ -137,6 +138,7 @@ events:
   # holds it, and her screenshot of the page, on 2026-11-03.
   - id: nebraskajs-2026-11-10
     date: 2026-11-10
+    attended: true
     when: Tuesday, November 10, 2026
     where: Don't Panic Labs, Lincoln, NE
     note: >-
