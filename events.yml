@@ -152,6 +152,18 @@ events:
     note: >-
       The opening night of Startup Week 2026, a week of startup events across
       Nebraska from November 16 to 21, hosted by Open Range.
+  # From the 1 Million Cups email of 2026-11-16 (title, place, time); the date
+  # from Open Range's Foundersgiving reminder for the same day ("If you are
+  # coming from 1 Million Cups ... it is a short walk"). Linked to the Lincoln
+  # chapter, as the regular is.
+  - id: one-million-cups-lnk
+    date: 2026-11-18
+    when: Wednesday, November 18, 2026
+    where: Arbor Day Foundation, Lincoln, NE
+    note: >-
+      "1 Million Cups x Funding Fireside Chat", part of Startup Week: every
+      1 Million Cups chapter in Nebraska together in Lincoln, and streamed
+      live.
   # Talk title, speaker and format read off the chapter's event page on
   # 2026-10-21. Linked to the chapter, like the October meetup, because the
   # event page goes stale after the date.
