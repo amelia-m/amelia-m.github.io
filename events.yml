@@ -155,9 +155,10 @@ events:
   # From the 1 Million Cups email of 2026-11-16 (title, place, time); the date
   # from Open Range's Foundersgiving reminder for the same day ("If you are
   # coming from 1 Million Cups ... it is a short walk"). Linked to the Lincoln
-  # chapter, as the regular is.
+  # chapter, as the regular is. Attended (Amelia, 2026-11-18: "I went").
   - id: one-million-cups-lnk
     date: 2026-11-18
+    attended: true
     when: Wednesday, November 18, 2026
     where: Arbor Day Foundation, Lincoln, NE
     note: >-
