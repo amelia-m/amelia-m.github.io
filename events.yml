@@ -167,6 +167,20 @@ events:
       "1 Million Cups x Funding Fireside Chat", part of Startup Week: every
       1 Million Cups chapter in Nebraska together in Lincoln, and streamed
       live.
+  # Date, time, place and description read off NMotion's showcase page on
+  # 2026-11-18, the day Amelia asked for it.
+  - id: nmotion-showcase-2026-11-18
+    date: 2026-11-18
+    when: Wednesday, November 18, 2026, 6 to 8pm
+    where: Museum of American Speed, Lincoln, NE
+    note: >-
+      A free community celebration of the six companies in the NMotion
+      Accelerator's Fall 2026 cohort and the 124 startups to complete the
+      program over its 14 years.
+    past_note: >-
+      A community celebration of the six companies in the NMotion Accelerator's
+      Fall 2026 cohort and the 124 startups to complete the program over its
+      14 years.
   # Talk title, speaker and format read off the chapter's event page on
   # 2026-10-21. Linked to the chapter, like the October meetup, because the
   # event page goes stale after the date.
