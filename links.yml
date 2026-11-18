@@ -214,6 +214,11 @@ events:
   - id: startup-week-2026-11-16
     label: Startup Week Launch Party
     url: https://luma.com/8snwjdij
+  # As Amelia gave it on 2026-11-18, with the tk= token and lm_source removed;
+  # the page answered 200 and showed the event that day.
+  - id: foundersgiving-2026-11-18
+    label: Foundersgiving Pasta Feed
+    url: https://luma.com/lr3lrk1m
   # The group behind the October 21 meetup, as Amelia gave it on 2026-10-22.
   # It does not resolve from the build environment, so the render cannot check
   # it. Its LinkedIn, X, Facebook and Instagram accounts are all "witheartland";

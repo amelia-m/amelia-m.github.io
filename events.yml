@@ -167,6 +167,16 @@ events:
       "1 Million Cups x Funding Fireside Chat", part of Startup Week: every
       1 Million Cups chapter in Nebraska together in Lincoln, and streamed
       live.
+  # Title, time, place, host and donation read off the Luma page on
+  # 2026-11-18. Attended (Amelia, 2026-11-18: "I went").
+  - id: foundersgiving-2026-11-18
+    date: 2026-11-18
+    attended: true
+    when: Wednesday, November 18, 2026
+    where: Elevator Co-Warehousing, Lincoln, NE
+    note: >-
+      A Startup Week lunch hosted by Open Range, with a suggested $5 donation
+      going to a local nonprofit.
   # Talk title, speaker and format read off the chapter's event page on
   # 2026-10-21. Linked to the chapter, like the October meetup, because the
   # event page goes stale after the date.
