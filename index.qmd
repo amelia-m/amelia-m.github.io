@@ -59,7 +59,8 @@ cat(home_callout())
 
 Hi, I'm Amelia!
 I'm a postdoctoral researcher and adjunct faculty member at the University of Nebraska–Lincoln.
-I work in the Nebraska Evaluation and Research (NEAR) Center, a statistics and data consulting center, and partner with the University of Nebraska Public Policy Center (NUPPC) and the Nebraska Statewide Workforce and Educational Reporting System (NSWERS), Nebraska's statewide longitudinal data system.
+I work in the Nebraska Evaluation and Research (NEAR) Center, a statistics and data consulting center, and partner with the University of Nebraska Public Policy Center (NUPPC).
+Until October 2026 I worked with the Nebraska Statewide Workforce and Educational Reporting System (NSWERS), Nebraska's statewide longitudinal data system.
 I also teach data management and survey methods to graduate students.
 
 My training spans several fields.
