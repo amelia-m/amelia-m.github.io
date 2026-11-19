@@ -58,9 +58,12 @@ scholarly:
     label: ResearchGate
     url: https://www.researchgate.net/profile/Amelia-Miramonti
     icon_ai: researchgate
+  # OSF serves profiles under /user/ now. The old https://osf.io/zk8rv/ still
+  # answers 200 and renders "Page Not Found", so a status check does not catch
+  # it; opened on 2026-11-12, the /user/ form shows her record.
   - id: osf
     label: OSF
-    url: https://osf.io/zk8rv/
+    url: https://osf.io/user/zk8rv
     icon_ai: osf
   - id: scopus
     label: Scopus
