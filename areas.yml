@@ -140,8 +140,8 @@ projects:
 
   - name: NSWERS privacy-preserving synthetic data
     where: Nebraska Statewide Workforce & Educational Reporting System
-    when: 2025 to present
-    current: true
+    when: July 2025 to October 2026
+    current: false
     areas: [research, education]
     role: >-
       Generating synthetic versions of large-scale longitudinal administrative
@@ -158,8 +158,8 @@ projects:
 
   - name: NSWERS Data Explorer & Pipeline Visualization
     where: Nebraska Statewide Workforce & Educational Reporting System
-    when: 2025 to present
-    current: true
+    when: July 2025 to October 2026
+    current: false
     areas: [research, education]
     role: Author, R and Shiny.
     output: >-
@@ -222,7 +222,7 @@ projects:
       Gemini commits, and no bot-authored commits at all.
     todo: Which project's data prompted it.
 
-  - name: Table Relationship Explorer
+  - name: Table Explorer
     where: Own time
     when: ongoing
     current: true
