@@ -1,5 +1,11 @@
 [
   {
+    "role": "Volunteer, survey development and data reporting",
+    "organization": "Belmont Community Center, Lincoln, NE",
+    "dates": "October 2026–present",
+    "current": true
+  },
+  {
     "role": "Conference Abstract Reviewer",
     "organization": "National Strength & Conditioning Association",
     "dates": "2016, 2019",
@@ -31,7 +37,7 @@
   },
   {
     "role": "Graduate Student Volunteer Poster Judge",
-    "organization": "UNL CEHS Undergraduate Research Fair",
+    "organization": "Undergraduate Research Fair, College of Education and Human Sciences, University of Nebraska–Lincoln",
     "dates": "2019",
     "current": false
   }

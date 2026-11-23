@@ -8,8 +8,8 @@
     "description": "EDPS 900D – Survey Methods in Educational Research (Fall 2026); EDPS 845 – Computer-Assisted Research Data Analysis (Spring 2026)."
   },
   {
-    "title": "Postdoctoral Researcher",
-    "unit": "Nebraska Evaluation and Research Center (NEAR Center), Department of Educational Psychology",
+    "title": "Postdoctoral Associate",
+    "unit": "Nebraska Evaluation and Research (NEAR) Center, Department of Educational Psychology",
     "institution": "University of Nebraska–Lincoln",
     "dates": "July 2025–present",
     "current": true,
@@ -19,9 +19,9 @@
     "title": "Postdoctoral Research Associate (contracted affiliation)",
     "unit": "Nebraska Statewide Workforce & Educational Reporting System (NSWERS)",
     "institution": "University of Nebraska–Lincoln",
-    "dates": "July 2025–present",
-    "current": true,
-    "description": "Creating privacy-preserving synthetic datasets from large-scale, longitudinal administrative data to support public research initiatives."
+    "dates": "July 2025–October 2026",
+    "current": false,
+    "description": "Created privacy-preserving synthetic datasets from large-scale, longitudinal administrative data to support public research initiatives."
   },
   {
     "title": "Postdoctoral Research Associate (contracted affiliation)",
@@ -33,7 +33,7 @@
   },
   {
     "title": "Research Coordinator (full-time)",
-    "unit": "Nebraska Evaluation and Research Center, Department of Educational Psychology",
+    "unit": "Nebraska Evaluation and Research (NEAR) Center, Department of Educational Psychology",
     "institution": "University of Nebraska–Lincoln",
     "dates": "September 2024–July 2025",
     "current": false,
@@ -41,7 +41,7 @@
   },
   {
     "title": "Graduate Research Assistant",
-    "unit": "Nebraska Evaluation and Research Center, Department of Educational Psychology",
+    "unit": "Nebraska Evaluation and Research (NEAR) Center, Department of Educational Psychology",
     "institution": "University of Nebraska–Lincoln",
     "dates": "2021–August 2024",
     "current": false

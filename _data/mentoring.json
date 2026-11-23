@@ -1,13 +1,20 @@
 [
   {
+    "role": "Research Mentor, graduate student survey study",
+    "program": "EDPS 900D – Survey Methods in Educational Research",
+    "institution": "University of Nebraska–Lincoln",
+    "dates": "Fall 2026–present",
+    "current": true
+  },
+  {
     "role": "Graduate Research Assistant Supervisor",
-    "program": "Nebraska Evaluation and Research Center",
+    "program": "Nebraska Evaluation and Research (NEAR) Center",
     "institution": "University of Nebraska–Lincoln",
     "dates": "2024–present",
     "current": true
   },
   {
-    "role": "Instructor, non-credit methods sessions",
+    "role": "Developer and facilitator, non-credit methods sessions",
     "program": "Informal graduate methods training for six students; precursor to EDPS 845",
     "institution": "University of Nebraska–Lincoln",
     "dates": "Fall 2025",
