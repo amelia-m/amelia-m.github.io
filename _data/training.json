@@ -1,5 +1,17 @@
 [
   {
+    "title": "Modern R Workflow (ft. Positron and AI), pre-conference workshop",
+    "presenter": "Hadley Wickham & Jenny Bryan, Posit",
+    "series": "posit::conf(2026)",
+    "date": "September 2026"
+  },
+  {
+    "title": "UNMC Carpentries Workshop (Software Carpentry)",
+    "presenter": "Brian Maass, Lisa Chinn, & Caughlin Bohn",
+    "series": "The Carpentries",
+    "date": "October 2024"
+  },
+  {
     "title": "Regression Discontinuity Designs in Social Science Research: Causal Inference of Cutoff-Based Programs",
     "presenter": "HyeonJin Yoon",
     "series": "Nebraska MAP Apps",
@@ -12,16 +24,28 @@
     "date": "February 2020"
   },
   {
+    "title": "Addressing One Research Question Using Multiple Methodological Approaches",
+    "presenter": "Marc Goodrich",
+    "series": "Nebraska MAP Apps",
+    "date": "April 2019"
+  },
+  {
+    "title": "Training and Assessing Communication Skills Using Virtual Human Technology",
+    "presenter": "Tim Guetterman",
+    "series": "Emerging Scholars",
+    "date": "April 2019"
+  },
+  {
     "title": "Improving Data Quality Through Qualtrics Survey Design",
     "presenter": "Jared Stevens",
     "series": "Nebraska MAP Apps",
     "date": "February 2019"
   },
   {
-    "title": "Addressing One Research Question Using Multiple Methodological Approaches",
-    "presenter": "Marc Goodrich",
-    "series": "Nebraska MAP Apps",
-    "date": "April 2019"
+    "title": "Evidence-Based Assessment: From simple clinical judgments to statistical learning",
+    "presenter": "Eric Youngstrom",
+    "series": "Emerging Scholars",
+    "date": "April 2018"
   },
   {
     "title": "Time is on my side: What British rock bands can teach us about designing longitudinal studies",
@@ -36,21 +60,9 @@
     "date": "November 2017"
   },
   {
-    "title": "Evidence-Based Assessment: From simple clinical judgments to statistical learning",
-    "presenter": "Eric Youngstrom",
-    "series": "Emerging Scholars",
-    "date": "April 2018"
-  },
-  {
     "title": "Does Model Fit have a Validity Problem?",
     "presenter": "Mike Edwards",
     "series": "Emerging Scholars",
     "date": "September 2017"
-  },
-  {
-    "title": "Training and Assessing Communication Skills Using Virtual Human Technology",
-    "presenter": "Tim Guetterman",
-    "series": "Emerging Scholars",
-    "date": "April 2019"
   }
 ]

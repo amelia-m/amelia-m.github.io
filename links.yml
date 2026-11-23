@@ -92,7 +92,7 @@ projects:
     label: Recode Studio
     url: https://github.com/amelia-m/recode-studio
   - id: table-explorer
-    label: Table Relationship Explorer
+    label: Table Explorer
     url: https://github.com/amelia-m/table-explorer
 
 # Downstream work: someone else's repository that came out of one of mine.

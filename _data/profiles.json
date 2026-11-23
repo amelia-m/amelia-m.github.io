@@ -12,7 +12,7 @@
     "url": "https://www.researchgate.net/profile/Amelia-Miramonti"
   },
   {
-    "platform": "ORCiD",
+    "platform": "ORCID",
     "url": "https://orcid.org/0000-0002-0277-4064"
   },
   {
@@ -20,12 +20,16 @@
     "url": "https://github.com/amelia-m"
   },
   {
+    "platform": "GitLab",
+    "url": "https://gitlab.com/amelia-m"
+  },
+  {
     "platform": "GitLab (UNL)",
     "url": "https://git.unl.edu/amiramonti"
   },
   {
     "platform": "OSF",
-    "url": "https://osf.io/zk8rv/"
+    "url": "https://osf.io/user/zk8rv"
   },
   {
     "platform": "Lens",

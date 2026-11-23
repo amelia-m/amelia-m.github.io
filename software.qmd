@@ -16,7 +16,7 @@ links <- setNames(proj$url, proj$label)
 # The id is the links.yml entry; the value is the button label, which says who
 # did the port, since beside "Source on GitHub" a bare name reads as if this
 # tool had moved there.
-related <- list("Table Relationship Explorer" = c(cartographer = "Cartographer, ported by Common Gene Labs"))
+related <- list("Table Explorer" = c(cartographer = "Cartographer, ported by Common Gene Labs"))
 ```
 
 I build R and Shiny tools when the same data problem keeps coming up: cleaning up inconsistent values, working out how a set of tables fit together, documenting what is in a data system, or reporting on it.

@@ -17,3 +17,7 @@
 images/background.jpg
 images/headshot-1.jpg
 images/headshot-2.jpg
+
+# UNL directory QR codes, kept locally only: each encodes a vCard with a
+# university phone number and email (Amelia, 2026-11-20: "ignore them").
+/images/unl/

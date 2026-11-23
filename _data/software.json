@@ -21,7 +21,7 @@
   },
   {
     "category": "Reproducible Reporting & Publishing",
-    "tools": "Quarto (course websites, slide decks, parameterized reports, this CV); R Markdown / knitr; Markdown; LaTeX / TinyTeX"
+    "tools": "Quarto (course websites, slide decks, parameterized reports, my CV); R Markdown / knitr; Markdown; LaTeX / TinyTeX"
   },
   {
     "category": "Research Workflow & Reference Management",
@@ -37,7 +37,7 @@
   },
   {
     "category": "LLM-Assisted Development",
-    "tools": "Claude Code; Gemini / Gemini CLI; GitHub Copilot; Antigravity IDE; Cursor"
+    "tools": "Claude Code; Gemini / Gemini CLI; GitHub Copilot; Antigravity IDE"
   },
   {
     "category": "Productivity & Collaboration",

@@ -149,6 +149,7 @@ events:
   # Details read off Amelia's screenshot of the Luma page on 2026-10-23.
   - id: startup-week-2026-11-16
     date: 2026-11-16
+    attended: true
     when: Monday, November 16, 2026
     where: Ashland Brewing Company, Ashland, NE
     note: >-
@@ -222,6 +223,16 @@ events:
       - id: carpentries-sessions
         label: Register here to join
         upcoming_only: true
+  # Read off Amelia's screenshot of the event (marked Going), 2026-11-19, and
+  # her calendar entry for it, which has the speaker and a Meetup short link.
+  # No link here: the short link does not resolve from the build environment,
+  # and the full Meetup URL has not been given. The screenshot gives only the
+  # street address, so no city is named.
+  - text: >-
+      Beyond Vibe Coding: Structured AI-Driven Development with HVE Core,
+      Tuesday, November 24, 2026, 6pm Central, 2000 Q St. Vaibhav Gujral on
+      bringing structure to AI-assisted development with HVE Core.
+    date: 2026-11-24
   - id: carpentries-midwest
     date: 2026-12-02
     when: Wednesday, December 2, 2026
