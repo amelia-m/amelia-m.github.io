@@ -25,9 +25,9 @@ places:
     label: Website, home page
     url: https://amelia-m.github.io/
     file: index.qmd
-    updated: 2026-10-13
+    updated: 2026-11-23
     text: >-
-      Hi, I'm Amelia! I'm a postdoctoral researcher and adjunct faculty member
+      Hi, I'm Amelia! I'm a postdoctoral associate and adjunct faculty member
       at the University of Nebraska–Lincoln. I work in the Nebraska Evaluation
       and Research (NEAR) Center, a statistics and data consulting center, and
       partner with the University of Nebraska Public Policy Center (NUPPC).
@@ -43,9 +43,9 @@ places:
     label: Website, contact page
     url: https://amelia-m.github.io/contact.html
     file: contact.qmd
-    updated: 2026-10-13
+    updated: 2026-11-23
     text: >-
-      Amelia Miramonti, PhD, is a postdoctoral researcher at the Nebraska
+      Amelia Miramonti, PhD, is a postdoctoral associate at the Nebraska
       Evaluation and Research (NEAR) Center and adjunct faculty in the
       Department of Educational Psychology at the University of
       Nebraska–Lincoln. She also supports applied research for Nebraska state
