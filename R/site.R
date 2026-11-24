@@ -46,6 +46,16 @@ cv_data <- function(name) {
   jsonlite::read_json(site_path("_data", paste0(name, ".json")), simplifyVector = TRUE)
 }
 
+# The contracts of row i of cv_data("positions"): contract work done under that
+# position (the cv repo's position_contracts), as a data frame with
+# organization, dates, current and description. Zero rows when the position
+# has none, or when the data predates the `contracts` field (exports before
+# 2026-11-24), so pages render the same either way.
+position_contracts <- function(pos, i) {
+  k <- if ("contracts" %in% names(pos)) pos$contracts[[i]]
+  if (is.data.frame(k)) k else data.frame()
+}
+
 `%||%` <- function(a, b) if (is.null(a) || length(a) == 0 || identical(a, "")) b else a
 
 # read_yaml_utf8() reads through readLines() in the session's locale, so under

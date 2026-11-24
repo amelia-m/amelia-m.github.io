@@ -90,9 +90,13 @@ is_cur <- if ("current" %in% names(pos)) {
 } else {
   grepl("(?i)(–|-|\\bto)\\s*present\\s*$", pos$dates, perl = TRUE)
 }
-cur <- pos[is_cur, ]
-for (i in seq_len(nrow(cur))) {
-  cat("- **", md(cur$title[i]), "**, ", md(cur$unit[i]), " (", md(cur$dates[i]), ")\n", sep = "")
+for (i in which(is_cur)) {
+  cat("- **", md(pos$title[i]), "**, ", md(pos$unit[i]), " (", md(pos$dates[i]), ")\n", sep = "")
+  # Current contract work under this position, one line each beneath it.
+  k <- position_contracts(pos, i)
+  for (j in seq_len(nrow(k))[k$current %in% TRUE]) {
+    cat("    - Contracted to the ", md(k$organization[j]), " (", md(k$dates[j]), ")\n", sep = "")
+  }
 }
 ```
 
