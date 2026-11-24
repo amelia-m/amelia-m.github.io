@@ -28,13 +28,15 @@ sentence <- function(x) {
   if (!nzchar(x) || grepl("[.?!]$", x)) x else paste0(x, ".")
 }
 
-entry <- function(what, when = NULL, with = NULL, why = NULL) {
+# `more` is extra bullets already written as Markdown (escaped by the caller),
+# printed after `why`.
+entry <- function(what, when = NULL, with = NULL, why = NULL, more = NULL) {
   when <- clean(when)
   with <- clean(with)
-  why <- clean(why)
+  why <- c(md(clean(why)), clean(more))
   cat("**", md(what), "**", if (length(when)) paste0(" <span class='cv-when'>", md(when[1]), "</span>"), "  \n", sep = "")
   if (length(with)) cat(with[1], "\n", sep = "")
-  if (length(why)) cat("\n", paste0("- ", md(why), collapse = "\n"), "\n", sep = "")
+  if (length(why)) cat("\n", paste0("- ", why, collapse = "\n"), "\n", sep = "")
   cat("\n")
 }
 
@@ -62,7 +64,13 @@ for (i in seq_len(nrow(d))) entry(d$degree[i], d$dates[i], md(join(d$institution
 ```{r}
 #| results: asis
 d <- cv_data("positions")
-for (i in seq_len(nrow(d))) entry(d$title[i], d$dates[i], md(join(d$unit[i], d$institution[i])), if ("description" %in% names(d)) d$description[[i]])
+for (i in seq_len(nrow(d))) {
+  # Contract work under this position: one bullet each after its description,
+  # with the same italic lead-in as the PDF.
+  k <- position_contracts(d, i)
+  more <- sprintf("*Contracted to the %s, %s:* %s", md(k$organization), md(k$dates), md(k$description))
+  entry(d$title[i], d$dates[i], md(join(d$unit[i], d$institution[i])), if ("description" %in% names(d)) d$description[[i]], more)
+}
 ```
 
 ## Software
